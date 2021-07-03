@@ -1,0 +1,43 @@
+﻿<Window x:Class="CamemisOffLine.Windows.ShowListStudentToPrint"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:CamemisOffLine.Windows"
+        mc:Ignorable="d"
+        Title="" Height="650" Width="400" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="តារាឈ្មោះសិស្សសម្រាប់ធ្វើការបោះពុម្ភព្រឹត្តិប័ត្រពិន្ទុ" HorizontalAlignment="Center" Margin="10" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="16" ></TextBlock>
+            <StackPanel Orientation="Vertical" Margin="10 0 0 0">
+                <TextBlock Text="ស្វែងរកសិស្ស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Name="txtStudentName" materialDesign:HintAssist.Hint="បញ្ចូលឈ្មោះសិស្ស" BorderThickness="1" Height="28" Width="230" VerticalAlignment="Center" HorizontalAlignment="Left" TextChanged="txtStudentName_TextChanged" Padding="3 0 0 0" VerticalContentAlignment="Center" BorderBrush="Gray" MouseEnter="txtStudentName_MouseEnter" MouseLeave="txtStudentName_MouseLeave" GotFocus="txtStudentName_GotFocus" LostFocus="txtStudentName_LostFocus" MouseDown="txtStudentName_MouseDown" FontSize="10" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBox>
+                    <materialDesign:PackIcon Name="iconClose" Kind="Close" VerticalAlignment="Center" Foreground="Gray" Margin="-18 0 0 0" MouseUp="iconClose_MouseUp" Cursor="Hand" Visibility="Collapsed"/>
+                </StackPanel>
+            </StackPanel>
+            <CheckBox Name="checkAll" Content="ជ្រើសរើសទាំងអស់" Margin="10 10 0 0" Background="LightBlue" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Click="checkAll_Click"></CheckBox>
+            <DataGrid Name="DGStudentName" VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False" GridLinesVisibility="None" IsReadOnly="True" CanUserSortColumns="False" SelectionMode="Extended" SelectionUnit="FullRow" ScrollViewer.CanContentScroll="True" Margin="10 -10 0 0" Background="Transparent" BorderThickness="0" Width="370" HorizontalAlignment="Left" Height="400" VirtualizingPanel.ScrollUnit="Pixel" ScrollViewer.HorizontalScrollBarVisibility="Hidden" AlternatingRowBackground="WhiteSmoke">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Width="320">
+                                    <CheckBox Name="checkStu" Content="{Binding name}" Background="LightBlue" Click="checkStu_Click" IsChecked="{Binding print}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+                <Button Name="btnNamePrint" Content="បោះពុម្ភ" Width="100" Margin="0 0 10 0" Background="Gray" BorderBrush="Transparent" Click="btnNamePrint_Click" FontSize="10" Height="23" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Button>
+                <Button Name="btnCancel" Content="ដកការជ្រើសរើស" Width="100" Background="Red" BorderBrush="Transparent" Click="btnCancel_Click" FontSize="10" Height="23" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Button>
+            </StackPanel>
+        </StackPanel>
+        <Border HorizontalAlignment="Right" VerticalAlignment="Bottom" CornerRadius="50" Height="15" Width="15" Background="Red" BorderBrush="Black" BorderThickness="1" Margin="0 0 120 70">
+            <TextBlock Name="txtNotification" Foreground="White" Text="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Thin" FontSize="10" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+        </Border>
+    </Grid>
+</Window>

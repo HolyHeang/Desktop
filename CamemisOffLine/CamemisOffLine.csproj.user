@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <PublishUrlHistory>\\SiiYaNo\Users\MSI\Desktop\Deploy\|\\SiiYaNo\Users\MSI\Desktop\Publish Demo\|C:\Users\MSI\Desktop\Publish Demo\|\\Heang-Holy\Users\ASUS\Desktop\DesktopDeploy\|\\\Users\ASUS\Desktop\DesktopDeploy\</PublishUrlHistory>
+    <InstallUrlHistory>\\SiiYaNo\Users\MSI\Desktop\Deploy\|\\SiiYaNo\Users\MSI\Desktop\Publish Demo\|\\Heang-Holy\Users\ASUS\Desktop\DesktopDeploy\|\\Heang-Holy\Users\ASUS\Desktop\Deploy\</InstallUrlHistory>
+    <SupportUrlHistory />
+    <UpdateUrlHistory>\\SiiYaNo\Users\MSI\Desktop\Deploy\|\\SiiYaNo\Users\MSI\Desktop\Publish Demo\|\\Heang-Holy\Users\ASUS\Desktop\DesktopDeploy\|\\Heang-Holy\Users\ASUS\Desktop\Deploy\</UpdateUrlHistory>
+    <BootstrapperUrlHistory />
+    <ErrorReportUrlHistory />
+    <FallbackCulture>en-US</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ReferencePath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\</ReferencePath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnableSecurityDebugging>false</EnableSecurityDebugging>
+  </PropertyGroup>
+</Project>

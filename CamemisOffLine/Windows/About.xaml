@@ -1,0 +1,54 @@
+﻿<Window x:Class="CamemisOffLine.Windows.About"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesing="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:CamemisOffLine"
+        mc:Ignorable="d"
+        Title="AboutCamemis" Height="450" Width="1080" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+
+        <Grid Height="40" VerticalAlignment="Top" HorizontalAlignment="Stretch" Background="#11698e">
+            <Label Name="lblTitle" Content="ABOUT CAMEMIS" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" Foreground="White"></Label>
+        </Grid>
+
+        <Grid Margin="38,69,24,0" Height="276" VerticalAlignment="Top">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="536*"/>
+                <ColumnDefinition Width="535*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Background="#FFDCD8D8" Margin="0,0,35,0" Grid.RowSpan="2">
+
+                <Grid Height="40" HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="#FFA29E9E">
+                    <Label Name="lblIntro" Content="Introduction" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="18"></Label>
+                </Grid>
+                <Grid>
+                    <TextBox Margin="10,39,0,0" IsReadOnly="True" TextWrapping="Wrap" FontSize="15" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Height="237" VerticalAlignment="Top" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"
+                             Text="CAMEMIS Campus is modern infomation technology and can facilitate management general administations at all levels of both public and private education institutions. CAMEMIS provides many benefits to parents or guardians to minitor the lerning process, attendent, and result evaluation of the theri children at any timeand any place. In addition, teacher and student can tech and learn remotely easily. Moreover, CAMeMIS is a system in the connecting closely between the school management, teachers,students and parents or guardians. "/>
+
+                </Grid>
+
+            </Grid>
+
+            <Grid Grid.Column="1" Background="#FFDCD8D8" Height="276" VerticalAlignment="Bottom" Margin="0,0,10,0" Grid.RowSpan="2">
+                <Grid Height="40" HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="#FFA29E9E">
+                    <Label Name="lblCon" Content="Contant Information" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="18"></Label>
+                </Grid>
+                <Grid Margin="0,10,-13,0">
+
+                    <TextBox Margin="10,30,24,43" IsReadOnly="True" TextWrapping="Wrap" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"
+                             Text="-Address: # 97 , Street 592, SangKat Beoung Kak ll, Khan Toul Kork, Phnom Penh."/>
+                    <Label Name="lblPhone" Content="- Phone Number" Margin="0,86,0,22" FontSize="15" Foreground="Black"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                    <Label Name="lblPhone1" Content="  077 92 63 16 (Cellcard) " Margin="0,115,0,100" FontSize="15" Foreground="Black"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                    <Label Name="lblPhone2" Content="  010 92 63 16 (Smart)" Margin="0,140,10,68" FontSize="15" Foreground="Black"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                    <Label Name="lblPhone3" Content="  071 866 43 16 (Metfone)" Margin="0,171,10,40" FontSize="15" Foreground="Black"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                    <Label Name="lblFace" Content="- FaceBook Page: CAMEMIS (Link)" Margin="0,223,0,0" FontSize="15" Foreground="Black"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

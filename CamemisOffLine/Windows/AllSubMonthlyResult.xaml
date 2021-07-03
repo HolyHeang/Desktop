@@ -1,0 +1,247 @@
+﻿<Window x:Class="CamemisOffLine.Windows.AllSubMonthlyResult"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CamemisOffLine.Windows"
+        mc:Ignorable="d"
+       Title="MonthlyResult" Height="25cm" MinWidth="45cm" Loaded="Window_Loaded" Width="45cm">
+    <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Hidden">
+        <StackPanel Orientation="Vertical" Name="Grid" HorizontalAlignment="Center" MaxWidth="45cm" Margin="10">
+            <Grid Name="Header">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical" Grid.Column="0" Margin="5 40 0 0">
+                    <Image Source="/CamemisOffLine;component/Image/MoEYS.png" Height="100"></Image>
+                    <Label Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="14" HorizontalAlignment="Center"></Label>
+                    <Label Name="lblSchoolName" Content="វិទ្យាល័យ ហ៊ុន សែន បូរី១០០ខ្នង" HorizontalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="14"></Label>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Grid.Column="1">
+                    <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="16" ></Label>
+                    <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="16" Margin="0 -15 0 0"></Label>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 50 0 0">
+                        <Label Content="លទ្ធផលប្រចាំ" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="14" Foreground="Blue"></Label>
+                        <Label Name="lblMonth" Content="--" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="14" Foreground="Blue"></Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 -10 0 0">
+                        <Label Content="ថ្នាក់ទី" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="14" Foreground="Blue"></Label>
+                        <Label Name="lblClass" Content="--" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="14" Foreground="Blue"></Label>
+                    </StackPanel>
+                </StackPanel>
+                <Grid Grid.Column="2"/>
+            </Grid>
+            <Grid>
+                <DataGrid Name="Data" AutoGenerateColumns="False" CanUserAddRows="False" HeadersVisibility="Column" BorderBrush="Black" BorderThickness="1 1 1 0"  FontSize="14" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Hidden" HorizontalAlignment="Center" HorizontalContentAlignment="Center" MinWidth="35cm" MaxWidth="44cm" Margin="10">
+
+                    <DataGrid.Resources>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="White" />
+                            <Setter Property="FontFamily" Value="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                            <Setter Property="BorderThickness" Value="1"></Setter>
+                            <Setter Property="Margin" Value="-1 -1 -1 0"></Setter>
+                            <Setter Property="Padding" Value="5"></Setter>
+                            <Setter Property="BorderBrush" Value="Black"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                            <Setter Property="Width" Value="200"/>
+                            <Setter Property="FontWeight" Value="Bold"></Setter>
+                            <Setter Property="Foreground" Value="Black"></Setter>
+                            <Setter Property="LayoutTransform" >
+                                <Setter.Value>
+                                    <RotateTransform Angle="270"></RotateTransform>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                        <Style TargetType="DataGrid">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="BorderBrush" Value="Black"/>
+                            <Setter Property="BorderThickness" Value="1 1 1 0"/>
+                        </Style>
+
+                        <Style BasedOn="{StaticResource {x:Type DataGridRowHeader}}" TargetType="{x:Type DataGridRowHeader}">
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="Width" Value="0"/>
+                            <Setter Property="Height" Value="0"></Setter>
+                        </Style>
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Header="លេខ" Width="0.7*" MinWidth="70" Binding="{Binding number}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang">
+                            <DataGridColumn.HeaderStyle>
+
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Background" Value="White" />
+                                    <Setter Property="FontFamily" Value="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                    <Setter Property="BorderThickness" Value="1"></Setter>
+                                    <Setter Property="Margin" Value="-1 -1 -1 0"></Setter>
+                                    <Setter Property="BorderBrush" Value="Black"/>
+                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    <Setter Property="Height" Value="200"/>
+                                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                                    <Setter Property="VerticalContentAlignment" Value="Bottom"></Setter>
+
+                                </Style>
+                            </DataGridColumn.HeaderStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="អត្តលេខ" Width="0.6*" MinWidth="65" Binding="{Binding student_schoolyear_id}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang">
+                            <DataGridColumn.HeaderStyle>
+
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Background" Value="White" />
+                                    <Setter Property="FontFamily" Value="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                    <Setter Property="BorderThickness" Value="1"></Setter>
+                                    <Setter Property="Margin" Value="-1 -1 -1 0"></Setter>
+                                    <Setter Property="BorderBrush" Value="Black"/>
+                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    <Setter Property="Height" Value="200"/>
+                                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                                    <Setter Property="VerticalContentAlignment" Value="Bottom"></Setter>
+
+                                </Style>
+                            </DataGridColumn.HeaderStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="គោត្តនាម នាម"  Width="2*" MinWidth="180" Binding="{Binding name}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang">
+                            <DataGridColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Background" Value="White" />
+                                    <Setter Property="FontFamily" Value="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                    <Setter Property="BorderThickness" Value="1 1 1 1"></Setter>
+                                    <Setter Property="Margin" Value="-1 -1 -1 0"></Setter>
+                                    <Setter Property="BorderBrush" Value="Black"/>
+                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    <Setter Property="Height" Value="200"/>
+                                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                                    <Setter Property="VerticalContentAlignment" Value="Bottom"></Setter>
+                                </Style>
+                            </DataGridColumn.HeaderStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="ភេទ"  Width="0.8*" MinWidth="60" Binding="{Binding gender}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang">
+                            <DataGridColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Background" Value="White" />
+                                    <Setter Property="FontFamily" Value="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                    <Setter Property="BorderThickness" Value="1 1 0 1"></Setter>
+                                    <Setter Property="Margin" Value="-1 -1 -1 0"></Setter>
+                                    <Setter Property="BorderBrush" Value="Black"/>
+                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    <Setter Property="VerticalContentAlignment" Value="Bottom"></Setter>
+                                    <Setter Property="Height" Value="200"/>
+                                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                                </Style>
+                            </DataGridColumn.HeaderStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn  MinWidth="110" Width="*" Header="ថ្ងៃខែឆ្នាំកំណើត" Binding="{Binding dob}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ></DataGridTextColumn>
+                        <DataGridTextColumn MinWidth="60" Width="0.6*" Binding="{Binding score1}" Visibility="{Binding visible1}"   FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></DataGridTextColumn>
+                        <DataGridTextColumn MinWidth="60" Width="0.6*" Binding="{Binding score2}" Visibility="{Binding visible2}"   FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ></DataGridTextColumn>
+                        <DataGridTextColumn MinWidth="60" Width="0.6*" Binding="{Binding score3}" Visibility="{Binding visible3}"   FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ></DataGridTextColumn>
+                        <DataGridTextColumn MinWidth="60" Width="0.6*" Binding="{Binding score4}" Visibility="{Binding visible4}"   FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ></DataGridTextColumn>
+                        <DataGridTextColumn MinWidth="60" Width="0.6*" Binding="{Binding score5}" Visibility="{Binding visible5}"   FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ></DataGridTextColumn>
+                        <DataGridTextColumn MinWidth="60" Width="0.6*" Binding="{Binding score6}" Visibility="{Binding visible6}"   FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ></DataGridTextColumn>
+                        <DataGridTextColumn MinWidth="60" Width="0.6*" Binding="{Binding score7}" Visibility="{Binding visible7}"   FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ></DataGridTextColumn>
+                        <DataGridTextColumn MinWidth="60" Width="0.6*" Binding="{Binding score8}" Visibility="{Binding visible8}"   FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ></DataGridTextColumn>
+                        <DataGridTextColumn MinWidth="60" Width="0.6*" Binding="{Binding score9}" Visibility="{Binding visible9}"   FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ></DataGridTextColumn>
+                        <DataGridTextColumn MinWidth="60" Width="0.6*" Binding="{Binding score10}" Visibility="{Binding visible10}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ></DataGridTextColumn>
+                        <DataGridTextColumn MinWidth="60" Width="0.6*" Binding="{Binding score11}" Visibility="{Binding visible11}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ></DataGridTextColumn>
+                        <DataGridTextColumn MinWidth="60" Width="0.6*" Binding="{Binding score12}" Visibility="{Binding visible12}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ></DataGridTextColumn>
+                        <DataGridTextColumn MinWidth="60" Width="0.6*" Binding="{Binding score13}" Visibility="{Binding visible13}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ></DataGridTextColumn>
+                        <DataGridTextColumn MinWidth="60" Width="0.6*" Binding="{Binding score14}" Visibility="{Binding visible14}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ></DataGridTextColumn>
+                        <DataGridTextColumn MinWidth="60" Width="0.6*" Binding="{Binding score15}" Visibility="{Binding visible15}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ></DataGridTextColumn>
+                        <DataGridTextColumn MinWidth="60" Width="0.6*" Binding="{Binding score16}" Visibility="{Binding visible16}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ></DataGridTextColumn>
+                        <DataGridTextColumn MinWidth="60" Width="0.6*" Binding="{Binding score17}" Visibility="{Binding visible17}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ></DataGridTextColumn>
+                        <DataGridTextColumn MinWidth="60" Width="0.6*" Binding="{Binding score18}" Visibility="{Binding visible18}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ></DataGridTextColumn>
+                        <DataGridTextColumn MinWidth="60" Width="0.6*" Binding="{Binding score19}" Visibility="{Binding visible19}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ></DataGridTextColumn>
+                        <DataGridTextColumn MinWidth="60" Width="0.6*" Binding="{Binding score20}" Visibility="{Binding visible20}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ></DataGridTextColumn>
+                        <DataGridTextColumn MinWidth="100" Width="*" Header="ពិន្ទុសរុប" Binding="{Binding total_score}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Foreground" Value="Black"></Setter>
+                                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="មធ្យមភាគ" MinWidth="100" Width="*" Binding="{Binding avg_score}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" >
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Foreground" Value="{Binding color}"></Setter>
+                                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn  MinWidth="80" Width="*" Header="ចំណាត់ថ្នាក់" Binding="{Binding rank}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" >
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Foreground" Value="Red"></Setter>
+                                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn  MinWidth="100" Width="*" Header="និទេ្ទស" Binding="{Binding grading}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" >
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Foreground" Value="Black"></Setter>
+                                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            <StackPanel Orientation="Vertical" Name="Footer" Margin="0 10 0 0">
+                <Grid Margin="0 0 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" VerticalAlignment="Center">
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="បានឃើញ និងឯកភាព" FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                <TextBlock Text="នាយកសាលា" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
+                            </StackPanel>
+                        </Label>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <StackPanel Orientation="Vertical">
+                            <Label HorizontalAlignment="Center">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="ថ្ងៃ" FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Name="lblDay" Text="..................." FontSize="12"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Text="ខែ" FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Name="lblMonths" Text="..................." FontSize="12"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Text="ឆ្នាំ" FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Name="lblYear" Text="..................." FontSize="12"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Text="ព.ស" FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Name="lblKhmerYear" Text="..................." FontSize="12"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                </StackPanel>
+                            </Label>
+                            <Label HorizontalAlignment="Center" Margin="0 10 0 0" FontSize="10">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="ធ្វើនៅរាជធានីភ្នំពេញ " FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Text="ថ្ងៃទី" FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Text="{Binding Text,ElementName=lblDay}" FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Text="ខែ" FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Text="{Binding Text,ElementName=lblMonths}" FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Text="ឆ្នាំ" FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Text="{Binding Text,ElementName=lblMonths}" FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                </StackPanel>
+                            </Label>
+                            <Label Content="គ្រូប្រចាំថ្នាក់" HorizontalAlignment="Center" Margin=" 0 5 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontWeight="Bold" FontSize="14"></Label>
+                            <Label Name="lblTeacherName" Content="----" HorizontalAlignment="Center" Margin=" 50 40 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontWeight="Bold" FontSize="14"></Label>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Window>
