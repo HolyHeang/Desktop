@@ -206,6 +206,19 @@
                         </Grid>
                     <Border BorderBrush="Black" BorderThickness="0 0 0 1"></Border>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <materialDesign:PackIcon Name="wifiIcon" Kind="Wifi" Foreground="Green" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 10 0"/>
+                            <TextBlock Name="txtPing" Text="Ping: 22ms" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                            <Grid HorizontalAlignment="Right" Width="150" Height="40" Margin="0,0,102,0" VerticalAlignment="Center">
+                                <Label Name="txtxCheckinternet" HorizontalAlignment="Left" Content="Online"  VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Width="80" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
+                                <ToggleButton Name="btnCheck" Foreground="Black" TextBlock.FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Background="Blue" Height="20" Width="70" HorizontalAlignment="Right" VerticalAlignment="Center" Click="btnCheck_Click">
+                                    <materialDesign:ToggleButtonAssist.SwitchTrackOffBackground>
+                                        <SolidColorBrush Color="Black" TextOptions.TextHintingMode="Animated"></SolidColorBrush>
+                                    </materialDesign:ToggleButtonAssist.SwitchTrackOffBackground>
+                                    <materialDesign:ToggleButtonAssist.SwitchTrackOnBackground>
+                                        <SolidColorBrush Color="Blue" TextOptions.TextHintingMode="Animated"></SolidColorBrush>
+                                    </materialDesign:ToggleButtonAssist.SwitchTrackOnBackground>
+                                </ToggleButton>
+                            </Grid>
                             <Grid Name="gridMin" HorizontalAlignment="Center" Height="35" Width="35" Cursor="Hand" MouseDown="gridMin_MouseDown" MouseEnter="gridMin_MouseEnter" MouseLeave="gridMin_MouseLeave">
                                 <materialDesign:PackIcon Name="materiaMin" VerticalAlignment="Center" HorizontalAlignment="Center" Kind="WindowMinimize" Height="15" Width="15"/>
                             </Grid>
@@ -333,7 +346,8 @@
                                                                 </Grid>
 
                                                                 <Grid Grid.Row="1" Background="WhiteSmoke">
-
+                                                                    <Button Name="btnSave" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="12" Foreground="Black" Content="រក្សាទុកលទ្ធផល" Background="#66D3D3D3" BorderThickness="0 0 0 0" BorderBrush="LightGray" Click="btnSave_Click" Height="35" Width="auto" Margin="0,0,50,0" materialDesign:ShadowAssist.ShadowDepth="Depth0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                                                                    <Button Name="btnPost" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="12" Foreground="Black" Content="បញ្ជូនទិន្នន័យ" Background="#66D3D3D3" BorderThickness="0 0 0 0" BorderBrush="LightGray" Click="btnPost_Click" Height="35" Width="auto" Margin="0,0,200,0" materialDesign:ShadowAssist.ShadowDepth="Depth0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
                                                                     <Grid>
                                                                         <StackPanel Orientation="Horizontal">
                                                                             <Grid>
@@ -459,7 +473,7 @@
                                                                                                                                             </Style>
                                                                                                                                         </DataGridTextColumn.ElementStyle>
                                                                                                                                     </DataGridTextColumn>
-                                                                                                                                    <DataGridTextColumn Width="200" Header="គោត្តនាម នាម" CanUserResize="False" Binding="{Binding name}">
+                                                                                                                                    <DataGridTextColumn Width="200" Header="គោត្តនាម នាម" CanUserResize="False" Binding="{Binding name,Mode=TwoWay}">
                                                                                                                                         <DataGridTextColumn.ElementStyle>
                                                                                                                                             <Style TargetType="TextBlock">
                                                                                                                                                 <Setter Property="HorizontalAlignment" Value="Left" />
@@ -494,12 +508,12 @@
 
                                                                                                                                                         </Grid>
                                                                                                                                                         <Grid Grid.Column="1">
-                                                                                                                                                            <TextBox Padding="2 -1 0 0" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="White" Text="{Binding result_subject.score}">
+                                                                                                                                                            <TextBox Padding="2 -1 0 0" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="White" Text="{Binding Path=score,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding check}">
 
                                                                                                                                                             </TextBox>
                                                                                                                                                         </Grid>
                                                                                                                                                         <Grid Grid.Column="2">
-                                                                                                                                                            <Button BorderThickness="0" Background="Transparent" Style="{DynamicResource Siemreap}" Content="+"></Button>
+                                                                                                                                                            <Button BorderThickness="0" Background="Transparent" Style="{DynamicResource Siemreap}" Content="+" ></Button>
                                                                                                                                                         </Grid>
                                                                                                                                                     </Grid>
 
@@ -510,7 +524,7 @@
                                                                                                                                     <DataGridTemplateColumn Width="100" Header="អវត្តមាន" CanUserResize="False">
                                                                                                                                         <DataGridTemplateColumn.CellTemplate>
                                                                                                                                             <DataTemplate>
-                                                                                                                                                <CheckBox Height="30" Width="30" IsChecked="{Binding result_subject.is_fail}">A</CheckBox>
+                                                                                                                                                <CheckBox Name="isCheck" Height="30" Width="30" IsChecked="{Binding absent_exam,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Click="isCheck_Click">A</CheckBox>
                                                                                                                                             </DataTemplate>
                                                                                                                                         </DataGridTemplateColumn.CellTemplate>
                                                                                                                                     </DataGridTemplateColumn>
@@ -518,7 +532,7 @@
                                                                                                                                         <DataGridTemplateColumn.CellTemplate>
                                                                                                                                             <DataTemplate>
                                                                                                                                                 <StackPanel Margin="0">
-                                                                                                                                                    <TextBox Padding="2 -1 0 0" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="White">
+                                                                                                                                                    <TextBox Padding="2 -1 0 0" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="White" Text="{Binding Path=teacher_comment,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding check}">
 
                                                                                                                                                     </TextBox>
                                                                                                                                                 </StackPanel>

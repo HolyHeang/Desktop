@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\ASUS\Downloads\Telegram Desktop\CamemisOffLine(02-07-2021)\CamemisOffLine\CamemisOffLine\obj\Debug\
+D:\Clone\7-7-2021\CamemisOffLine\obj\Debug\
 CamemisOffLine
 none
 false
 DEBUG;TRACE
-C:\Users\ASUS\Downloads\Telegram Desktop\CamemisOffLine(02-07-2021)\CamemisOffLine\CamemisOffLine\App.xaml
+D:\Clone\7-7-2021\CamemisOffLine\App.xaml
 26180534733
 3-1125448426
 421808831055
-48980911922
+4839566836
 Component\MessageBoxControl.xaml;Component\PrintCardStyle.xaml;PopupUserControl.xaml;Report\AdministratorReport.xaml;Report\AttendanceReport.xaml;Report\DistributionLetter.xaml;Report\DistributionStaffAcademy.xaml;Report\DistributionTeacher.xaml;Report\Education_Staff_Information_Sheet.xaml;Report\ListStudentCencel.xaml;Report\Semi-classification.xaml;Report\StudentList.xaml;Windows\About.xaml;Windows\Account.xaml;Windows\AllSubMonthlyResult.xaml;Windows\HonoraryList.xaml;Windows\Loading.xaml;Windows\Login.xaml;Windows\MainWindow.xaml;Windows\MonthlyResult.xaml;Windows\MonthlyStatisticResult.xaml;Windows\PartTeacher.xaml;Windows\ShowListStudentToPrint.xaml;Windows\StudentResultDetail.xaml;Windows\Teacher.xaml;Windows\Transcript.xaml;
 
 False

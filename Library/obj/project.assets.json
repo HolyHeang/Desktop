@@ -265,20 +265,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
+    "C:\\Users\\MSI\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ASUS\\Downloads\\Telegram Desktop\\CamemisOffLine(02-07-2021)\\CamemisOffLine\\Library\\Library.csproj",
+      "projectUniqueName": "D:\\Clone\\7-7-2021\\Library\\Library.csproj",
       "projectName": "Library",
-      "projectPath": "C:\\Users\\ASUS\\Downloads\\Telegram Desktop\\CamemisOffLine(02-07-2021)\\CamemisOffLine\\Library\\Library.csproj",
-      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ASUS\\Downloads\\Telegram Desktop\\CamemisOffLine(02-07-2021)\\CamemisOffLine\\Library\\obj\\",
+      "projectPath": "D:\\Clone\\7-7-2021\\Library\\Library.csproj",
+      "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
+      "outputPath": "D:\\Clone\\7-7-2021\\Library\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MSI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
