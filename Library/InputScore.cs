@@ -14,7 +14,8 @@ namespace Library
         public string subject_id { get; set; }
         public string type { get; set; }
         public string term { get; set; }
-        
+        public string message { get; set; }
+
         public List<StudentInformation> data { get; set; }
     }
     public class StudentInformation : INotifyPropertyChanged
@@ -23,6 +24,9 @@ namespace Library
         private bool? Absance_exam;
         private string TeacherRecomment;
         private bool Check;
+        public string error { get; set; } = "ទិន្នន័យមិនត្រឺមត្រូវ";
+        public string visible { get; set; } = "Collapsed";
+        public string number { get; set; }
         public string student_id { get; set; }
         public string student_schoolyear_id { get; set; }
         public string class_id { get; set; }
