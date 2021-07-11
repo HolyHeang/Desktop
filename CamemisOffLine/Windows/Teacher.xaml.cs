@@ -30,6 +30,7 @@ using MonthlyResult = CamemisOffLine.Windows.MonthlyResult;
 using CamemisOffLine.Asset;
 using CamemisOffLine.Component;
 using CamemisOffLine.Report;
+using System.Net.NetworkInformation;
 
 namespace CamemisOffLine
 {
@@ -51,10 +52,61 @@ namespace CamemisOffLine
             timer.Tick += new EventHandler(UpdateTimer_Tick);
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.Start();
-
-
+            DispatcherTimer Internet = new DispatcherTimer();
+            Internet.Tick += Internet_Tick;
+            Internet.Interval = TimeSpan.FromSeconds(1);
+            Internet.Start();
 
         }
+
+        private void Internet_Tick(object sender, EventArgs e)
+        {
+
+            Ping myPing = new Ping();
+            int ping = 0;
+            try
+            {
+               PingReply reply = myPing.Send(@"Google.com", 1000);
+               if(InternetChecker()&&internet)
+                {
+                    if (reply != null)
+                    {
+                        ping = int.Parse((reply.RoundtripTime).ToString());
+                        if (ping >= 0 && ping <= 99)
+                            wifiIcon.Foreground = Brushes.Green;
+                        else if (ping >= 100 && ping <= 200)
+                            wifiIcon.Foreground = Brushes.Yellow;
+                        else
+                        {
+                            wifiIcon.Foreground = Brushes.Red;
+                            this.Opacity = 0.5;
+                            MessageBoxControl message = new MessageBoxControl();
+                            message.title = "ដំណឹង";
+                            message.discription = "សេវាអ៊ីនធឺណែតខ្សោយ!! សូមត្រួតពីនិត្យអ៊ីនធឺណែតរបស់អ្នកម្តងទៀត";
+                            message.buttonType = 2;
+                            message.ShowDialog();
+                            this.Opacity = 1;
+                        }
+                        txtPing.Text = "Ping :" + (ping) + "ms";
+                    }
+                }
+                else
+                {
+                    ping = 999;
+                    wifiIcon.Foreground = Brushes.Red;
+                    txtPing.Text = "Ping :" + (ping) + "ms";
+                    wifiIcon.Kind = MaterialDesignThemes.Wpf.PackIconKind.WifiOff;
+                }
+            }
+            catch
+            {
+                ping = 999;
+                wifiIcon.Foreground = Brushes.Red;
+                txtPing.Text = "Ping :" + (ping) + "ms";
+                wifiIcon.Kind = MaterialDesignThemes.Wpf.PackIconKind.WifiOff;
+            }
+        }
+
         string todayDate = "";
         bool checkSaveImgae = true, getAllData = false;
         public Teacher(string userName, int role)
@@ -138,7 +190,18 @@ namespace CamemisOffLine
 
             if (Properties.Settings.Default.checkLoginOrLogut == "login")
             {
-               if(Properties.Settings.Default.role=="1")
+                if (InternetChecker())
+                {
+                    btnCheck.IsChecked = true;
+                    txtxCheckinternet.Content = "Online";
+                }
+                else
+                {
+                    btnCheck.IsChecked = false;
+                    txtxCheckinternet.Content = "Offline";
+                }
+
+                if (Properties.Settings.Default.role=="1")
                 {
                     Loading loading = new Loading();
                     //------Loading-----
@@ -288,7 +351,7 @@ namespace CamemisOffLine
                     DGStudentAtt.ItemsSource = at;
 
                     //Load Year of Academy
-                    if (InternetChecker())
+                    if (InternetChecker()&&internet)
                     {
 
                         ///.................Part Setting...................
@@ -2327,12 +2390,12 @@ namespace CamemisOffLine
                 using (var client = new WebClient())
                 using (var stream = client.OpenRead("http://www.google.com"))
                 {
-                    return false;
+                    return true;
                 }
             }
             catch
             {
-                return true;
+                return false;
             }
         }
         //end Internet checker
@@ -2403,7 +2466,7 @@ namespace CamemisOffLine
                     DGMonthlyResult.Visibility = Visibility.Collapsed;
                     checkSaveImgae = true;
                     getAllData = false;
-                    if (InternetChecker())
+                    if (InternetChecker()&&internet)
                     {
                         string accessUrl = Properties.Settings.Default.acessUrl;
                         string token = Properties.Settings.Default.Token;
@@ -3280,7 +3343,7 @@ namespace CamemisOffLine
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            if (InternetChecker())
+            if (InternetChecker()&&internet)
             {
                 getAllData = true;
                 GetMonthlyResultFormApiAsync();
@@ -4131,6 +4194,40 @@ namespace CamemisOffLine
                 schoolYearId = items.id;
             }
         }
+        //---------------Turn on turn off internet------------------
+        bool internet = true;
+        private void btnCheck_Click(object sender, RoutedEventArgs e)
+        {
+           if(InternetChecker()==true)
+            {
+                if (btnCheck.IsChecked == true)
+                {
+                    txtxCheckinternet.Content = "Online";
+                    internet = true;
+                    wifiIcon.Kind = MaterialDesignThemes.Wpf.PackIconKind.Wifi;
+                }
+                else
+                {
+                    txtxCheckinternet.Content = "Offline";
+                    internet = false;
+                    wifiIcon.Kind = MaterialDesignThemes.Wpf.PackIconKind.WifiOff;
+                }
+                    
+            }
+            else
+            {
+                btnCheck.IsChecked = false;
+                this.Opacity = 0.5;
+                MessageBoxControl message = new MessageBoxControl();
+                message.title = "អ៊ិនធឺណែត";
+                message.discription = "មិនមានការភ្ជាប់អ៊ិនធឺណែត";
+                message.buttonType = 2;
+                message.Owner = this;
+                message.ShowDialog();
+                this.Opacity = 1;
+            }
+        }
+        //-----------------------------------------------------------
         //---------------------------------------------------------------------------
         string studentMonth = "";
         string id = "", month = "", yearPrint = "";

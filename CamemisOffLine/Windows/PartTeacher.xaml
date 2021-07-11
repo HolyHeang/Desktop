@@ -12,78 +12,78 @@
     <Grid>
         <DockPanel LastChildFill="True">
 
-        <DockPanel DockPanel.Dock="Left" Background="#1183CA" Width="320" Height="auto" Name="slidLeft" MouseEnter="slidLeft_MouseEnter" MouseLeave="slidLeft_MouseLeave">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="35"></RowDefinition>
-                    <RowDefinition Height="75"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="35"></RowDefinition>
-                </Grid.RowDefinitions>
+            <DockPanel DockPanel.Dock="Left" Background="#1183CA" Width="320" Height="auto" Name="slidLeft" MouseEnter="slidLeft_MouseEnter" MouseLeave="slidLeft_MouseLeave">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"></RowDefinition>
+                        <RowDefinition Height="75"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="35"></RowDefinition>
+                    </Grid.RowDefinitions>
 
-                <Grid Grid.Row="0">
-                    <Grid.ColumnDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
 
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
 
-                    <Grid Grid.Column="0">
+                        <Grid Grid.Column="0">
 
-                        <!--<Grid Name="gridMenu" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <!--<Grid Name="gridMenu" VerticalAlignment="Center" HorizontalAlignment="Center">
                                 <materialDesign:PackIcon Kind="Menu" Foreground="White" Height="35" Width="35" Cursor="Hand"  MouseDown="gridMenu_MouseDown" ToolTip="{x:Static language:Lang.Tooltip_top_bar_Menu}" HorizontalAlignment="Right" Margin="-11,0,2,0"/>
                             </Grid>-->
 
-                    </Grid>
-                    <Grid Grid.Column="0" Name="titleSchool">
-                        <Grid>
-                            <TextBlock Text="បុរី១០០ខ្នង" Name="TitleSchool" Style="{DynamicResource Muol}" FontSize="12" Foreground="White" HorizontalAlignment="Center" Margin="0 0 0 0" VerticalAlignment="Center"></TextBlock>
+                        </Grid>
+                        <Grid Grid.Column="0" Name="titleSchool">
+                            <Grid>
+                                <TextBlock Text="បុរី១០០ខ្នង" Name="TitleSchool" Style="{DynamicResource Muol}" FontSize="12" Foreground="White" HorizontalAlignment="Center" Margin="0 0 0 0" VerticalAlignment="Center"></TextBlock>
+                            </Grid>
                         </Grid>
                     </Grid>
-                </Grid>
                     <Grid x:Name="gridAcc" Margin="0 0 0 0" Grid.Row="1" Background="#1183CA" DataContext="{x:Static properties:Settings.Default}">
-                    <Grid Margin="5 0 5 5" Background="#66111111">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="2.8*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <Grid Grid.Column="0">
-                                <Grid>
-                                    <Image Name="imgUserProfile" Source="/CamemisOffLine;component/Image/account (1).png" Cursor="Hand" Width="60" Height="60"></Image>
+                        <Grid Margin="5 0 5 5" Background="#66111111">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2.8*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Grid>
+                                        <Image Name="imgUserProfile" Source="/CamemisOffLine;component/Image/account (1).png" Cursor="Hand" Width="60" Height="60"></Image>
+                                    </Grid>
                                 </Grid>
-                            </Grid>
-                            <Grid Grid.Column="1">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="1.3*"></RowDefinition>
-                                    <RowDefinition Height="*"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Grid Grid.Row="0">
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1.3*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
                                         <TextBlock Text="{Binding profileName}" Margin="10 10 0 0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="18" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="White"></TextBlock>
-                                </Grid>
-                                <Grid Grid.Row="1">
-                                    <Label Name="lblForm" Margin="5 0 0 0" Content="Teacher" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" FontSize="12" FontWeight="Bold" Style="{DynamicResource Siemreap}"></Label>
+                                    </Grid>
+                                    <Grid Grid.Row="1">
+                                        <Label Name="lblForm" Margin="5 0 0 0" Content="Teacher" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" FontSize="12" FontWeight="Bold" Style="{DynamicResource Siemreap}"></Label>
 
+                                    </Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
+
                     </Grid>
 
-                </Grid>
-
-                <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
-                    <Grid Name="gridfeature">
-                        <StackPanel Margin="0,0,0,0">
+                    <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
+                        <Grid Name="gridfeature">
+                            <StackPanel Margin="0,0,0,0">
 
 
-                            <StackPanel Orientation="Vertical" Name="TeacherPart" HorizontalAlignment="Stretch"  Height="auto" >
-                                <Button Name="btnScore" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="35" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" Margin="5,10,5,5" Click="btnScore_Click" MouseEnter="btnScore_MouseEnter" MouseLeave="btnScore_MouseLeave">
+                                <StackPanel Orientation="Vertical" Name="TeacherPart" HorizontalAlignment="Stretch"  Height="auto" >
+                                    <Button Name="btnScore" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="35" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" Margin="5,10,5,5" Click="btnScore_Click" MouseEnter="btnScore_MouseEnter" MouseLeave="btnScore_MouseLeave">
 
-                                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="-10 0" Width="272" Height="25">
+                                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="-10 0" Width="272" Height="25">
 
-                                        <materialDesign:PackIcon Kind="ChartBoxOutline" Foreground="White" Name="MateriaScore" VerticalAlignment="Center" HorizontalAlignment="Left" Height="24" Width="24" Margin="0,0,0,0" ></materialDesign:PackIcon>
-                                        <Label Name="lblScore" Content="{x:Static language:Lang.score}" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" VerticalContentAlignment="Center" Height="34" Width="240" Foreground="White" Margin="0,-4,1,0" Style="{DynamicResource Siemreap}" FontWeight="Bold"/>
-                                    </Grid>
-                                </Button>
+                                            <materialDesign:PackIcon Kind="ChartBoxOutline" Foreground="White" Name="MateriaScore" VerticalAlignment="Center" HorizontalAlignment="Left" Height="24" Width="24" Margin="0,0,0,0" ></materialDesign:PackIcon>
+                                            <Label Name="lblScore" Content="{x:Static language:Lang.score}" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" VerticalContentAlignment="Center" Height="34" Width="240" Foreground="White" Margin="0,-4,1,0" Style="{DynamicResource Siemreap}" FontWeight="Bold"/>
+                                        </Grid>
+                                    </Button>
 
                                     <StackPanel Name="SettingPart" Margin="0 50 0 0">
                                         <Separator Foreground="Gray" VerticalAlignment="Bottom"></Separator>
@@ -179,33 +179,46 @@
                                     </StackPanel>
                                 </StackPanel>
 
-                        </StackPanel>
-                    </Grid>
-                </ScrollViewer>
-                <StackPanel Grid.Row="3" Margin="0 0 0 0">
-                    <Grid>
-                        <Label Name="lblnameCompany" Content="Power by CAMEMIS" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" FontFamily="Segoe UI Semibold"  Foreground="White">
+                            </StackPanel>
+                        </Grid>
+                    </ScrollViewer>
+                    <StackPanel Grid.Row="3" Margin="0 0 0 0">
+                        <Grid>
+                            <Label Name="lblnameCompany" Content="Power by CAMEMIS" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" FontFamily="Segoe UI Semibold"  Foreground="White">
 
-                        </Label>
-                    </Grid>
-                </StackPanel>
-            </Grid>
-        </DockPanel>
+                            </Label>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </DockPanel>
 
-        <DockPanel DockPanel.Dock="Right">
+            <DockPanel DockPanel.Dock="Right">
 
-            <Grid >
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
 
-                <Grid Grid.Row="0" >
+                    <Grid Grid.Row="0" >
                         <Grid  VerticalAlignment="Center" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
                             <Label Name="lblTitle" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Title" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="15"></Label>
                         </Grid>
-                    <Border BorderBrush="Black" BorderThickness="0 0 0 1"></Border>
+                        <Border BorderBrush="Black" BorderThickness="0 0 0 1"></Border>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <materialDesign:PackIcon Name="wifiIcon" Kind="Wifi" Foreground="Green" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 10 0"/>
+                            <TextBlock Name="txtPing" Text="Ping: 22ms" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                            <Grid HorizontalAlignment="Right" Width="150" Height="40" Margin="0,0,102,0" VerticalAlignment="Center">
+                                <Label Name="txtxCheckinternet" HorizontalAlignment="Left" Content="Online"  VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Width="80" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
+                                <ToggleButton Name="btnCheck" Foreground="Black" TextBlock.FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Background="Blue" Height="20" Width="70" HorizontalAlignment="Right" VerticalAlignment="Center" Click="btnCheck_Click">
+                                    <materialDesign:ToggleButtonAssist.SwitchTrackOffBackground>
+                                        <SolidColorBrush Color="Black" TextOptions.TextHintingMode="Animated"></SolidColorBrush>
+                                    </materialDesign:ToggleButtonAssist.SwitchTrackOffBackground>
+                                    <materialDesign:ToggleButtonAssist.SwitchTrackOnBackground>
+                                        <SolidColorBrush Color="Blue" TextOptions.TextHintingMode="Animated"></SolidColorBrush>
+                                    </materialDesign:ToggleButtonAssist.SwitchTrackOnBackground>
+                                </ToggleButton>
+                            </Grid>
                             <Grid Name="gridMin" HorizontalAlignment="Center" Height="35" Width="35" Cursor="Hand" MouseDown="gridMin_MouseDown" MouseEnter="gridMin_MouseEnter" MouseLeave="gridMin_MouseLeave">
                                 <materialDesign:PackIcon Name="materiaMin" VerticalAlignment="Center" HorizontalAlignment="Center" Kind="WindowMinimize" Height="15" Width="15"/>
                             </Grid>
@@ -218,14 +231,14 @@
                         </StackPanel>
                     </Grid>
 
-                <Grid Grid.Row="1" Margin="0 0 0 0">
-                    <Grid>
-                        <TabControl BorderThickness="0" Margin=" 0 0 0 0" Name="tabcontrolMenu">
-                            <TabItem BorderThickness="0"  Name="tabScore">
-                                <Grid Margin="-2 2 -2 -2" Background="White">
-                                    <DockPanel LastChildFill="True">
-                                        <DockPanel Name="DockTree" HorizontalAlignment="Left" Width="250">
-                                            <Grid Margin="0 7 0 0" Background="WhiteSmoke">
+                    <Grid Grid.Row="1" Margin="0 0 0 0">
+                        <Grid>
+                            <TabControl BorderThickness="0" Margin=" 0 0 0 0" Name="tabcontrolMenu">
+                                <TabItem BorderThickness="0"  Name="tabScore">
+                                    <Grid Margin="-2 2 -2 -2" Background="White">
+                                        <DockPanel LastChildFill="True">
+                                            <DockPanel Name="DockTree" HorizontalAlignment="Left" Width="250">
+                                                <Grid Margin="0 7 0 0" Background="WhiteSmoke">
                                                     <Grid.RowDefinitions>
                                                         <RowDefinition Height="40"/>
                                                         <RowDefinition Height="*"/>
@@ -282,27 +295,27 @@
                                                             </TreeView>
                                                         </ScrollViewer>
                                                     </Grid>
-                                            </Grid>
-                                        </DockPanel>
-                                        <DockPanel Name="DockBody" Margin="10 0 10 0">
-                                            <Grid>
-                                                <TabControl BorderThickness="0" Name="tabcontrolResult">
-                                                    <TabItem Name="TabErrorandSelect">
+                                                </Grid>
+                                            </DockPanel>
+                                            <DockPanel Name="DockBody" Margin="10 0 10 0">
+                                                <Grid>
+                                                    <TabControl BorderThickness="0" Name="tabcontrolResult">
+                                                        <TabItem Name="TabErrorandSelect">
                                                             <Grid Margin="-2 2 -2 -2"  Background="WhiteSmoke">
                                                                 <Grid Margin="10">
                                                                     <Grid Height="200" Margin="50 50 50 0" VerticalAlignment="Top" Background="White">
                                                                         <Label Name="LabelTitle" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Content="{x:Static language:Lang.Message_Box_Stu_Result_Title_select_year}" Foreground="Black" Style="{DynamicResource Siemreap}" FontSize="18" FontWeight="Bold"/>
-                                                                    </Grid>   
+                                                                    </Grid>
                                                                 </Grid>
-                                                        </Grid>
-                                                    </TabItem>
-                                                    <TabItem Name="TabBodyResult">
-                                                        <Grid>
-                                                            <Grid.RowDefinitions>
-                                                                <RowDefinition Height="40"/>
-                                                                <RowDefinition Height="35"/>
-                                                                <RowDefinition Height="*"/>
-                                                            </Grid.RowDefinitions>
+                                                            </Grid>
+                                                        </TabItem>
+                                                        <TabItem Name="TabBodyResult">
+                                                            <Grid>
+                                                                <Grid.RowDefinitions>
+                                                                    <RowDefinition Height="40"/>
+                                                                    <RowDefinition Height="35"/>
+                                                                    <RowDefinition Height="*"/>
+                                                                </Grid.RowDefinitions>
 
                                                                 <Grid Grid.Row="0"  Background="#1183CA">
                                                                     <Grid.ColumnDefinitions>
@@ -333,12 +346,22 @@
                                                                 </Grid>
 
                                                                 <Grid Grid.Row="1" Background="WhiteSmoke">
-
+                                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="auto" Height="40" Margin="0,0,10,0" VerticalAlignment="Center">
+                                                                        <Label Name="txtxCheckAutoSave" HorizontalAlignment="Left" Content="រក្សាទុកស្វ័យប្រវត្តិ"  VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Width="auto" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="0 0 10 0"></Label>
+                                                                        <ToggleButton Name="btnCheckAutoSave" Foreground="Black" TextBlock.FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Background="Blue" Height="20" Width="auto" HorizontalAlignment="Right" VerticalAlignment="Center" Click="btnCheckAutoSave_Click">
+                                                                            <materialDesign:ToggleButtonAssist.SwitchTrackOffBackground>
+                                                                                <SolidColorBrush Color="Black" TextOptions.TextHintingMode="Animated"></SolidColorBrush>
+                                                                            </materialDesign:ToggleButtonAssist.SwitchTrackOffBackground>
+                                                                            <materialDesign:ToggleButtonAssist.SwitchTrackOnBackground>
+                                                                                <SolidColorBrush Color="Blue" TextOptions.TextHintingMode="Animated"></SolidColorBrush>
+                                                                            </materialDesign:ToggleButtonAssist.SwitchTrackOnBackground>
+                                                                        </ToggleButton>
+                                                                    </StackPanel>
                                                                     <Grid>
                                                                         <StackPanel Orientation="Horizontal">
                                                                             <Grid>
                                                                                 <Button Name="btnInputScore" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="12" Foreground="Black" Content="បញ្ចូលពិន្ទុ" Width="120" Background="#66D3D3D3" BorderThickness="0 0 1 0" BorderBrush="WhiteSmoke" Click="btnInputScore_Click" Height="Auto" Margin="0,0,0,-2" materialDesign:ShadowAssist.ShadowDepth="Depth0"></Button>
-                                                                               
+
                                                                             </Grid>
                                                                             <Grid>
                                                                                 <Button Name="btnLearningResult" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="12" Foreground="Black" Content="លទ្ធផលសិក្សា" Background="#66D3D3D3" BorderThickness="0 0 0 0" BorderBrush="LightGray" Click="btnLearningResult_Click" Height="Auto" Margin="0,0,0,-2" materialDesign:ShadowAssist.ShadowDepth="Depth0"/>
@@ -349,10 +372,10 @@
                                                                 </Grid>
 
                                                                 <Grid Grid.Row="2">
-                                                                <Grid>
-                                                                    <TabControl Name="tabcontrolResulandInput" BorderThickness="0" Background="WhiteSmoke">
-                                                                       
-                                                                        <TabItem Name="tabInputScore">
+                                                                    <Grid>
+                                                                        <TabControl Name="tabcontrolResulandInput" BorderThickness="0" Background="WhiteSmoke">
+
+                                                                            <TabItem Name="tabInputScore">
                                                                                 <Grid Margin="-2 20 -2 -2" Background="WhiteSmoke">
                                                                                     <Grid Margin="10 0 10 10" Background="WhiteSmoke">
                                                                                         <Grid.RowDefinitions>
@@ -370,6 +393,30 @@
                                                                                                 <ComboBox Style="{StaticResource combobox}" Name="cbSelectSubject" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35"  materialDesign:HintAssist.Hint="សូមជ្រើសរើស" BorderThickness="1" BorderBrush="WhiteSmoke" Margin="0,4,10,11" SelectionChanged="cbSelectSubject_SelectionChanged"/>
 
                                                                                             </Grid>
+                                                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1" Margin="0 0 10 0">
+                                                                                                <Button Name="btnSave" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="12" Foreground="Black" Content="រក្សាទុកលទ្ធផល" Background="#66D3D3D3" BorderThickness="0 0 0 0" BorderBrush="LightGray" Click="btnSave_Click" Height="35" Width="auto" materialDesign:ShadowAssist.ShadowDepth="Depth0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10"/>
+                                                                                                <Button Name="btnPost" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="12" Foreground="Black" Content="បញ្ជូនទិន្នន័យ" Background="#66D3D3D3" BorderThickness="0 0 0 0" BorderBrush="LightGray" Click="btnPost_Click" Height="35" Width="auto" materialDesign:ShadowAssist.ShadowDepth="Depth0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10"/>
+                                                                                                <Button Name="btnDeleteAll" Height="35" BorderThickness="0" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" Background="LightGray" Margin="0" Click="btnDeleteAll_Click" VerticalAlignment="Center">
+                                                                                                    <Grid Height="35" Width="auto">
+                                                                                                        <Grid.ColumnDefinitions>
+                                                                                                            <ColumnDefinition Width="30"></ColumnDefinition>
+                                                                                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                                                                                        </Grid.ColumnDefinitions>
+                                                                                                        <Grid Grid.Column="0" Margin="0,0,0,1" Background="#FFAE1717">
+                                                                                                            <Border BorderBrush="Gray" BorderThickness="0 0 0 0"></Border>
+                                                                                                            <materialDesign:PackIcon Kind="TrashCan" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" Height="20" Width="20"/>
+                                                                                                        </Grid>
+                                                                                                        <Grid Grid.Column="1" Background="#FFE20000">
+                                                                                                            <Label Content="លុបទាំងអស់" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="10,2,0,4">
+
+                                                                                                            </Label>
+                                                                                                        </Grid>
+
+
+                                                                                                    </Grid>
+                                                                                                </Button>
+                                                                                            </StackPanel>
+
                                                                                         </Grid>
                                                                                         <Grid Grid.Row="1">
                                                                                             <DockPanel LastChildFill="True">
@@ -416,7 +463,7 @@
 
                                                                                                                     <ScrollViewer x:Name="scrolScoreMonth" Margin="0 5 0 0" VerticalScrollBarVisibility="Auto" Grid.RowSpan="2">
                                                                                                                         <StackPanel>
-                                                                                                                            <DataGrid BorderThickness="1 0 1 1" BorderBrush="#7F808080" Background="WhiteSmoke" RowHeight="45" Margin="0 0 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Name="DGScoreMonth" FontSize="13" AutoGenerateColumns="False" GridLinesVisibility="All" AlternatingRowBackground="#339FDADA" AlternationCount="1" IsReadOnly="True" CanUserSortColumns="False" SelectionMode="Extended" SelectionUnit="FullRow" VirtualizingPanel.ScrollUnit="Pixel">
+                                                                                                                            <DataGrid BorderThickness="1 0 1 1" BorderBrush="#7F808080" Background="WhiteSmoke" Margin="0 0 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Name="DGScoreMonth" FontSize="13" AutoGenerateColumns="False" GridLinesVisibility="All" AlternatingRowBackground="#339FDADA" AlternationCount="1" IsReadOnly="True" CanUserSortColumns="False" SelectionMode="Extended" SelectionUnit="FullRow" VirtualizingPanel.ScrollUnit="Pixel">
                                                                                                                                 <DataGrid.Resources>
                                                                                                                                     <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                                                                                                                                         <Setter Property="Background" Value="WhiteSmoke" />
@@ -459,7 +506,7 @@
                                                                                                                                             </Style>
                                                                                                                                         </DataGridTextColumn.ElementStyle>
                                                                                                                                     </DataGridTextColumn>
-                                                                                                                                    <DataGridTextColumn Width="200" Header="គោត្តនាម នាម" CanUserResize="False" Binding="{Binding name}">
+                                                                                                                                    <DataGridTextColumn Width="200" Header="គោត្តនាម នាម" CanUserResize="False" Binding="{Binding name,Mode=TwoWay}">
                                                                                                                                         <DataGridTextColumn.ElementStyle>
                                                                                                                                             <Style TargetType="TextBlock">
                                                                                                                                                 <Setter Property="HorizontalAlignment" Value="Left" />
@@ -478,7 +525,7 @@
                                                                                                                                     <DataGridTemplateColumn Width="150" Header="ពិន្ទុ" CanUserResize="False">
                                                                                                                                         <DataGridTemplateColumn.CellTemplate>
                                                                                                                                             <DataTemplate>
-                                                                                                                                                <StackPanel Margin="0">
+                                                                                                                                                <StackPanel Margin="0" Orientation="Vertical">
                                                                                                                                                     <Grid>
                                                                                                                                                         <Grid.ColumnDefinitions>
                                                                                                                                                             <ColumnDefinition Width="25"/>
@@ -487,22 +534,22 @@
                                                                                                                                                         </Grid.ColumnDefinitions>
                                                                                                                                                         <Grid Grid.Column="0">
 
-                                                                                                                                                            <Button BorderThickness="0" Background="Transparent" Style="{DynamicResource Siemreap}" Content="--">
+                                                                                                                                                            <Button BorderThickness="0" Background="Transparent" Style="{DynamicResource Siemreap}" Content="-">
 
                                                                                                                                                             </Button>
 
 
                                                                                                                                                         </Grid>
-                                                                                                                                                        <Grid Grid.Column="1">
-                                                                                                                                                            <TextBox Padding="2 -1 0 0" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="White" Text="{Binding result_subject.score}">
+                                                                                                                                                        <StackPanel Orientation="Vertical" Grid.Column="1">
+                                                                                                                                                            <TextBlock Name="txtError" Text="{Binding error}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" Visibility="{Binding visible}"/>
+                                                                                                                                                            <TextBox Padding="2 -1 0 0" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="White" Text="{Binding Path=score,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding check}" LostFocus="TextBox_LostFocus">
 
                                                                                                                                                             </TextBox>
-                                                                                                                                                        </Grid>
+                                                                                                                                                        </StackPanel>
                                                                                                                                                         <Grid Grid.Column="2">
-                                                                                                                                                            <Button BorderThickness="0" Background="Transparent" Style="{DynamicResource Siemreap}" Content="+"></Button>
+                                                                                                                                                            <Button BorderThickness="0" Background="Transparent" Style="{DynamicResource Siemreap}" Content="+" ></Button>
                                                                                                                                                         </Grid>
                                                                                                                                                     </Grid>
-
                                                                                                                                                 </StackPanel>
                                                                                                                                             </DataTemplate>
                                                                                                                                         </DataGridTemplateColumn.CellTemplate>
@@ -510,7 +557,7 @@
                                                                                                                                     <DataGridTemplateColumn Width="100" Header="អវត្តមាន" CanUserResize="False">
                                                                                                                                         <DataGridTemplateColumn.CellTemplate>
                                                                                                                                             <DataTemplate>
-                                                                                                                                                <CheckBox Height="30" Width="30" IsChecked="{Binding result_subject.is_fail}">A</CheckBox>
+                                                                                                                                                <CheckBox Name="isCheck" Height="30" Width="30" IsChecked="{Binding absent_exam,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Click="isCheck_Click">A</CheckBox>
                                                                                                                                             </DataTemplate>
                                                                                                                                         </DataGridTemplateColumn.CellTemplate>
                                                                                                                                     </DataGridTemplateColumn>
@@ -518,7 +565,7 @@
                                                                                                                                         <DataGridTemplateColumn.CellTemplate>
                                                                                                                                             <DataTemplate>
                                                                                                                                                 <StackPanel Margin="0">
-                                                                                                                                                    <TextBox Padding="2 -1 0 0" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="White">
+                                                                                                                                                    <TextBox Padding="2 -1 0 0" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="White" Text="{Binding Path=teacher_comment,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding check}">
 
                                                                                                                                                     </TextBox>
                                                                                                                                                 </StackPanel>
@@ -530,7 +577,7 @@
                                                                                                                                         <DataGridTemplateColumn.CellTemplate>
                                                                                                                                             <DataTemplate>
                                                                                                                                                 <StackPanel Margin="-12" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                                                                                                                                    <Button Name="btnDelect" Height="28" BorderThickness="0" Cursor="Hand" Width="90" HorizontalAlignment="Right" Style="{DynamicResource Siemreap}" Background="LightGray" Margin="0">
+                                                                                                                                                    <Button Name="btnDelect" Height="28" BorderThickness="0" Cursor="Hand" Width="90" HorizontalAlignment="Right" Style="{DynamicResource Siemreap}" Background="LightGray" Margin="0" Click="btnDelect_Click">
                                                                                                                                                         <Grid Height="28" Width="90">
                                                                                                                                                             <Grid.ColumnDefinitions>
                                                                                                                                                                 <ColumnDefinition Width="30"></ColumnDefinition>
@@ -541,7 +588,7 @@
                                                                                                                                                                 <materialDesign:PackIcon Kind="TrashCan" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" Height="20" Width="20"/>
                                                                                                                                                             </Grid>
                                                                                                                                                             <Grid Grid.Column="1" Background="#FFE20000">
-                                                                                                                                                                <Label Content="{x:Static language:Lang.back}" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="10,2,0,4">
+                                                                                                                                                                <Label Content="លុប" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="10,2,0,4">
 
                                                                                                                                                                 </Label>
                                                                                                                                                             </Grid>
@@ -883,7 +930,7 @@
                                                                                                         <Rectangle Height="10" VerticalAlignment="Top" Margin="0 0 0 0" Fill="White"></Rectangle>
 
                                                                                                     </Grid>
-                                                                                                    
+
 
                                                                                                 </DockPanel>
                                                                                             </DockPanel>
@@ -1491,30 +1538,30 @@
                                                                                 </Grid>
                                                                             </TabItem>
                                                                         </TabControl>
-                                                                    <Rectangle Height="20" VerticalAlignment="Top" Margin="0 0 0 0" Fill="White"></Rectangle>
+                                                                        <Rectangle Height="20" VerticalAlignment="Top" Margin="0 0 0 0" Fill="White"></Rectangle>
+                                                                    </Grid>
+
                                                                 </Grid>
 
                                                             </Grid>
-
-                                                        </Grid>
-                                                    </TabItem>
-                                                </TabControl>
-                                                <Rectangle Height="7" VerticalAlignment="Top" Margin="0 0 0 0" Fill="White"></Rectangle>
-                                            </Grid>
+                                                        </TabItem>
+                                                    </TabControl>
+                                                    <Rectangle Height="7" VerticalAlignment="Top" Margin="0 0 0 0" Fill="White"></Rectangle>
+                                                </Grid>
+                                            </DockPanel>
                                         </DockPanel>
-                                    </DockPanel>
-                                </Grid>
-                            </TabItem>
+                                    </Grid>
+                                </TabItem>
 
-                        </TabControl>
-                        <Rectangle Height="7" VerticalAlignment="Top" Margin="0 0 0 0" Fill="White"></Rectangle>
+                            </TabControl>
+                            <Rectangle Height="7" VerticalAlignment="Top" Margin="0 0 0 0" Fill="White"></Rectangle>
+
+                        </Grid>
 
                     </Grid>
 
                 </Grid>
-
-            </Grid>
+            </DockPanel>
         </DockPanel>
-       </DockPanel>
     </Grid>
 </Window>

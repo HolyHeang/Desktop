@@ -270,9 +270,11 @@
                             <Label Name="Tiltle" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontWeight="Bold"></Label>
                         </Grid>
                         <Grid>
+                            <materialDesign:PackIcon Name="wifiIcon" Kind="Wifi" Foreground="Green" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 330 0"/>
+                            <TextBlock Name="txtPing" Text="Ping: 22ms" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 260 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                             <Grid HorizontalAlignment="Right" Width="150" Height="40" Margin="0,0,102,0" VerticalAlignment="Center">
-                                <Label HorizontalAlignment="Left" Content="Online"  VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Width="80" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
-                                <ToggleButton Name="btnCheck" Foreground="Black" TextBlock.FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Background="Blue" Height="20" Width="70" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <Label Name="txtxCheckinternet" HorizontalAlignment="Left" Content="Online"  VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Width="80" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
+                                <ToggleButton Name="btnCheck" Foreground="Black" TextBlock.FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Background="Blue" Height="20" Width="70" HorizontalAlignment="Right" VerticalAlignment="Center" Click="btnCheck_Click">
                                     <materialDesign:ToggleButtonAssist.SwitchTrackOffBackground>
                                         <SolidColorBrush Color="Black" TextOptions.TextHintingMode="Animated"></SolidColorBrush>
                                     </materialDesign:ToggleButtonAssist.SwitchTrackOffBackground>

@@ -1,10 +1,15 @@
 ﻿using CamemisOffLine.Component;
 using Library;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -15,6 +20,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace CamemisOffLine.Windows
 {
@@ -24,17 +30,79 @@ namespace CamemisOffLine.Windows
     public partial class PartTeacher : Window
     {
         public string YearSelection { get; private set; }
-        string classId = "";
-
+        string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
+        string classId = "",term="";
+        InputScore obj = new InputScore();
         private string studentYear;
 
         public PartTeacher()
         {
             InitializeComponent();
+            DispatcherTimer Internet = new DispatcherTimer();
+            Internet.Tick += Internet_Tick;
+            Internet.Interval = TimeSpan.FromSeconds(1);
+            Internet.Start();
+        }
+
+        private void Internet_Tick(object sender, EventArgs e)
+        {
+
+            Ping myPing = new Ping();
+            int ping = 0;
+            try
+            {
+                PingReply reply = myPing.Send(@"Google.com", 1000);
+                if (Teacher.InternetChecker() && internet)
+                {
+                    if (reply != null)
+                    {
+                        ping = int.Parse((reply.RoundtripTime).ToString());
+                        if (ping >= 0 && ping <= 99)
+                            wifiIcon.Foreground = Brushes.Green;
+                        else if (ping >= 100 && ping <= 200)
+                            wifiIcon.Foreground = Brushes.Yellow;
+                        else
+                        {
+                            wifiIcon.Foreground = Brushes.Red;
+                            this.Opacity = 0.5;
+                            MessageBoxControl message = new MessageBoxControl();
+                            message.title = "ដំណឹង";
+                            message.discription = "សេវាអ៊ីនធឺណែតខ្សោយ!! សូមត្រួតពីនិត្យអ៊ីនធឺណែតរបស់អ្នកម្តងទៀត";
+                            message.buttonType = 2;
+                            message.ShowDialog();
+                            this.Opacity = 1;
+                        }
+                        txtPing.Text = "Ping :" + (ping) + "ms";
+                    }
+                }
+                else
+                {
+                    ping = 999;
+                    wifiIcon.Foreground = Brushes.Red;
+                    txtPing.Text = "Ping :" + (ping) + "ms";
+                    wifiIcon.Kind = MaterialDesignThemes.Wpf.PackIconKind.WifiOff;
+                }
+            }
+            catch
+            {
+                ping = 999;
+                wifiIcon.Foreground = Brushes.Red;
+                txtPing.Text = "Ping :" + (ping) + "ms";
+            }
         }
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            if (Teacher.InternetChecker())
+            {
+                btnCheck.IsChecked = true;
+                txtxCheckinternet.Content = "Online";
+            }
+            else
+            {
+                btnCheck.IsChecked = false;
+                txtxCheckinternet.Content = "Offline";
+            }
             //-------------User Profile----------------
             if (Properties.Settings.Default.localProfileLink.ToString() != "")
                 imgUserProfile.Source = new BitmapImage(new Uri(Properties.Settings.Default.localProfileLink.ToString()));
@@ -73,7 +141,7 @@ namespace CamemisOffLine.Windows
             //....................End.........................
             Loading loading = new Loading();
             //-------------------Acadymic Year----------------
-            if (Teacher.InternetChecker()==false)
+            if (Teacher.InternetChecker()==true)
             {
                 loading.Owner = this;
                 loading.ShowInTaskbar = false;
@@ -85,6 +153,12 @@ namespace CamemisOffLine.Windows
                 Properties.Settings.Default.schoolAcademyYear = respone;
                 Properties.Settings.Default.Save();
                 cbAcademyYear.ItemsSource = obj.Select(s=>s.name);
+            }
+            else
+            {
+                string respone = Properties.Settings.Default.schoolAcademyYear;
+                var obj = JObject.Parse(respone).ToObject<Teachers>().data;              
+                cbAcademyYear.ItemsSource = obj.Select(s => s.name);
             }
             //------------------------------------------------
             loading.Close();
@@ -392,7 +466,7 @@ namespace CamemisOffLine.Windows
                 classId = item.id;
                 LabelTitle.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title_select_month;
                 
-                if (Teacher.InternetChecker()==false)
+                if (Teacher.InternetChecker()==true&&internet)
                 {
                     
                     string accessUrl = Properties.Settings.Default.acessUrl;
@@ -410,7 +484,13 @@ namespace CamemisOffLine.Windows
                 }
                 else
                 {
-                    //DataButton = JObject.Parse(Properties.Settings.Default.monthofTheAcademyYear).ToObject<TimesButton>().data;
+                    string respone = Properties.Settings.Default.teachingSubject;
+                    var obj = JObject.Parse(respone).ToObject<GetTeachingSubjectClass>().data;
+                    treeViewItemChange(item.id);
+
+                    cbSelectSubject.ItemsSource = obj;
+                    cbSelectSubject.DisplayMemberPath = "name";
+                    cbSelectSubject.SelectedValuePath = "id";
                 }
             }
             catch
@@ -456,16 +536,29 @@ namespace CamemisOffLine.Windows
             {
                 var subject = cbSelectSubject.SelectedItem as TeachingSubject;
                 SubjectId = subject.id;
-                string accessUrl = Properties.Settings.Default.acessUrl;
-                string token = Properties.Settings.Default.Token;
-                var respone = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/grade-time-shift", token);
-                Properties.Settings.Default.monthofTheAcademyYear = respone;
-                Properties.Settings.Default.Save();
-                var obj = JObject.Parse(respone).ToObject<TimesButton>().data;
-                lButton.ItemsSource = obj;
-                lButton1.ItemsSource = obj;
-                btnResultofTheYear.Visibility = Visibility.Visible;
-                btnResultofTheYear1.Visibility = Visibility.Visible;
+                if (Teacher.InternetChecker()&&internet)
+                {
+                    
+                    string accessUrl = Properties.Settings.Default.acessUrl;
+                    string token = Properties.Settings.Default.Token;
+                    var respone = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/grade-time-shift", token);
+                    Properties.Settings.Default.monthofTheAcademyYear = respone;
+                    Properties.Settings.Default.Save();
+                    var obj = JObject.Parse(respone).ToObject<TimesButton>().data;
+                    lButton.ItemsSource = obj;
+                    lButton1.ItemsSource = obj;
+                    btnResultofTheYear.Visibility = Visibility.Visible;
+                    btnResultofTheYear1.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    string respone = Properties.Settings.Default.monthofTheAcademyYear;
+                    var obj = JObject.Parse(respone).ToObject<TimesButton>().data;
+                    lButton.ItemsSource = obj;
+                    lButton1.ItemsSource = obj;
+                    btnResultofTheYear.Visibility = Visibility.Visible;
+                    btnResultofTheYear1.Visibility = Visibility.Visible;
+                }
             }
             catch { }
         }
@@ -496,32 +589,289 @@ namespace CamemisOffLine.Windows
             tvAcademy.ItemsSource = null;
             tvAcademy.ItemsSource = obj.Where(y => y.name.Equals(year));
         }
+        bool internet = true;
+        private void btnCheck_Click(object sender, RoutedEventArgs e)
+        {
+            //---------------Turn on turn off internet------------------
+           
+            if (Teacher.InternetChecker() == true)
+            {
+                if (btnCheck.IsChecked == true)
+                {
+                    txtxCheckinternet.Content = "Online";
+                    internet = true;
+                    wifiIcon.Kind = MaterialDesignThemes.Wpf.PackIconKind.Wifi;
+                }
+                else
+                {
+                    txtxCheckinternet.Content = "Offline";
+                    internet = false;
+                    wifiIcon.Kind = MaterialDesignThemes.Wpf.PackIconKind.WifiOff;
+                }
 
+            }
+            else
+            {
+                btnCheck.IsChecked = false;
+                this.Opacity = 0.5;
+                MessageBoxControl message = new MessageBoxControl();
+                message.title = "អ៊ិនធឺណែត";
+                message.discription = "មិនមានការភ្ជាប់អ៊ិនធឺណែត";
+                message.buttonType = 2;
+                message.Owner = this;
+                message.ShowDialog();
+                this.Opacity = 1;
+            }
+            //-----------------------------------------------------------
+        }
+        string months = "";
         private async void btnMonths_Click(object sender, RoutedEventArgs e)
         {
-            var button = sender as Button;
-            var month = DateChange.checkMonthString(button.Content.ToString());
-            
             MessageBoxControl message = new MessageBoxControl();
             Loading loading = new Loading();
-            message.title = "ដំណឹង";
-            message.discription = "ទាញទិន្នន័យបានជោគជ័យ";
-            message.buttonType = 1;
-            loading.Show();
+            try
+            {
+                string respone = "";
+                var button = sender as Button;
+                var month = DateChange.checkMonthString(button.Content.ToString());
+                term = button.Tag.ToString();
+                months = month.ToString();
+                message.title = "ដំណឹង";
+                message.discription = "ទាញទិន្នន័យបានជោគជ័យ";
+                message.buttonType = 2;
+                loading.Show();
+
+                if (CheckFileExist(months) == false)
+                {
+                    if (Teacher.InternetChecker() && internet)
+                    {
+                        respone = await SaveString(months);
+                    }
+                }
+                else
+                {
+                    respone = File.ReadAllText(filePath + "\\" + classId + " " + month + " " + SubjectId + ".txt");
+                }
+                obj = JObject.Parse(respone).ToObject<InputScore>();
+                NumberList(obj.data);
+                DGScoreMonth.ItemsSource = null;
+                DGScoreMonth.ItemsSource = obj.data;
+                loading.Close();
+                this.Opacity = 0.5;
+                message.ShowDialog();
+                this.Opacity = 1;
+            }
+            catch {
+                DGScoreMonth.ItemsSource = null;
+                loading.Close();
+            }
+        }
+        private async Task<string> SaveString(string month)
+        {
             string accessUrl = Properties.Settings.Default.acessUrl;
             string token = Properties.Settings.Default.Token;
-            var respone = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/monthly-subject-result?month=" + month + "&subject_id=" + SubjectId, token);
-            Properties.Settings.Default.monthofTheAcademyYear = respone;
-            Properties.Settings.Default.Save();
+            var respone = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/monthly-subject-result?month=" + month + "&subject_id=" + SubjectId+ "&type=1&term="+term, token);
+            using (StreamWriter writer = new StreamWriter(filePath + "\\" + classId + " " + month + " " + SubjectId + ".txt"))
+            {
+                writer.WriteLine(respone);
+            }
+            return respone;
+        }
 
-            var obj = JObject.Parse(respone).ToObject<InputScore>().data;
-            NumberList(obj);
+        private void isCheck_Click(object sender, RoutedEventArgs e)
+        {
+            string JsonString = JsonConvert.SerializeObject(obj);
+            saveLocalString(months, JsonString, false);
+            var item = DGScoreMonth.SelectedItem as StudentInformation;
+            item.visible = "Collapsed";
             DGScoreMonth.ItemsSource = null;
-            DGScoreMonth.ItemsSource = obj;
-            loading.Close();
+            DGScoreMonth.ItemsSource = obj.data;
+        }
+
+        private async void btnPost_Click(object sender, RoutedEventArgs e)
+        {
+            string accessUrl = Properties.Settings.Default.acessUrl;
+            string token = Properties.Settings.Default.Token;
+            MessageBoxControl message = new MessageBoxControl();
+            if(Teacher.InternetChecker()==true&&internet)
+            {
+                message.title = "ត្រួតពិនិត្យអ៊ីនធឺណែត";
+                message.discription = "ល្បឿនអ៊ីនរបស់អ្នក "+txtPing.Text+"\n"+"តើអ្នកចង់បញ្ចូនទិន្នន័យពេលនេះទេ?";
+                if(message.result==1)
+                {
+                    using (HttpClient client = new HttpClient())
+                    {
+                        client.DefaultRequestHeaders.Accept.Add(
+                       new MediaTypeWithQualityHeaderValue("application/json"));
+                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                        using (HttpResponseMessage res = client.PostAsJsonAsync(accessUrl + "/academic/" + classId + "/monthly-subject-result", new InputScore { month = months, subject_id = SubjectId, term = term, type = "1", data = obj.data }).Result)
+                        {
+                            using (HttpContent content = res.Content)
+                            {
+                                string datas = await content.ReadAsStringAsync();
+                                var obj = JObject.Parse(datas).ToObject<InputScore>();
+                                message.title = "ការបញ្ចូនទិន្នន័យ";
+                                if (obj.message.Equals("data error"))
+                                    message.discription = "ទិន្នន័យរបស់អ្នកមាន​បញ្ហា សូមត្រួតពិនិត្យឡើងវិញ";
+                                else if (obj.message.Equals("true"))
+                                {
+                                    File.Delete(filePath + "\\" + classId + " " + months + " " + SubjectId + ".txt");
+                                    message.discription = "ការបញ្ជូនទិន្នន័យបានជោគជ័យ";
+                                    DGScoreMonth.ItemsSource = null;
+                                }
+                                else if (obj.message.Equals("false"))
+                                    message.discription = "ការបញ្ជូនទិន្នន័យមិនបានជោគជ័យ";
+                                message.buttonType = 2;
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                message.title = "អ៊ីនធឺណែត";
+                message.discription = "មិនមានការតភ្ជាប់អ៊ីនធឺណែត";
+                message.buttonType = 2;
+            }
+           
+            message.Owner = this;
             this.Opacity = 0.5;
             message.ShowDialog();
             this.Opacity = 1;
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            string JsonString = JsonConvert.SerializeObject(obj);
+            saveLocalString(months, JsonString,true);
+            //Console.WriteLine(JsonString);
+        }
+
+        private void btnDelect_Click(object sender, RoutedEventArgs e)
+        {
+            this.Opacity = 0.5;
+            MessageBoxControl message = new MessageBoxControl();
+            message.title = "ការលុបទិន្នន៏យ";
+            message.discription = "តើអ្នកចង់លុបទិន្នន័យនេះមែនទេ?";
+            message.ShowDialog();
+            if(message.result==1)
+            {
+                var button = DGScoreMonth.SelectedItem as StudentInformation;
+
+                button.absent_exam = false;
+                button.score = null;
+                button.teacher_comment = null;
+
+                DGScoreMonth.ItemsSource = null;
+                DGScoreMonth.ItemsSource = obj.data;
+            }
+            this.Opacity = 1;
+        }
+
+        private void btnDeleteAll_Click(object sender, RoutedEventArgs e)
+        {
+            this.Opacity = 0.5;
+            MessageBoxControl message = new MessageBoxControl();
+            message.title = "ការលុបទិន្នន៏យ";
+            message.discription = "តើអ្នកចង់លុបទិន្នន័យទាំងអស់មែនទេ?";
+            message.ShowDialog();
+            if(message.result == 1)
+            {
+                foreach (var item in obj.data)
+                {
+                    item.absent_exam = false;
+                    item.score = null;
+                    item.teacher_comment = null;
+                }
+                if(btnCheckAutoSave.IsChecked==true)
+                {
+                    string JsonString = JsonConvert.SerializeObject(obj);
+                    saveLocalString(months, JsonString, true);
+                }
+                DGScoreMonth.ItemsSource = null;
+                DGScoreMonth.ItemsSource = obj.data;
+            }
+            this.Opacity = 1;
+        }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var item = DGScoreMonth.SelectedItem as StudentInformation;
+                if (int.Parse(item.score) > int.Parse(item.subject_score_max) || int.Parse(item.score) < int.Parse(item.subject_score_min))
+                    item.visible = "Visible";
+                else
+                    item.visible = "Collapsed";
+                if(btnCheckAutoSave.IsChecked==true)
+                {
+                    string JsonString = JsonConvert.SerializeObject(obj);
+                    saveLocalString(months, JsonString,false);
+                }
+                DGScoreMonth.ItemsSource = null;
+                DGScoreMonth.ItemsSource = obj.data;
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void btnCheckAutoSave_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private bool CheckFileExist(string month)
+        {
+            MessageBoxControl message = new MessageBoxControl();
+            message.title = "ការទាញទិន្នន័យ";
+            message.discription = "មិនមានទិន្នន័យរក្សាទុក សូមប្រើប្រាស់អ៊ីនធឺណេតដើម្បីទាញទិន្នន័យថ្មី";
+            message.buttonType = 2;
+            if (File.Exists(filePath + "\\" + classId + " " + month + " " + SubjectId + ".txt"))
+            {
+                
+                return true;
+            }
+                
+            else
+            {
+                this.Opacity = 0.5;
+                message.ShowDialog();
+                this.Opacity = 1;
+                return false;
+            }
+               
+        }
+        private void saveLocalString(string month, string respone,bool checkAutosave)
+        {
+            MessageBoxControl message = new MessageBoxControl();
+            try
+            {
+                
+                using (StreamWriter writer = new StreamWriter(filePath + "\\" + classId + " " + month + " " + SubjectId + ".txt"))
+                {
+                    writer.WriteLine(respone);
+                }
+               if(checkAutosave)
+                {
+                    this.Opacity = 0.5;
+                    message.title = "ដំណឹង";
+                    message.discription = "ការរក្សាទុកបានជោគជ័យ";
+                    message.buttonType = 2;
+                    message.ShowDialog();
+                    this.Opacity = 1;
+                }
+            }
+            catch
+            {
+                this.Opacity = 0.5;
+                message.title = "ដំណឹង";
+                message.discription = "ការរក្សាទុកមិនបានជោគជ័យ";
+                message.buttonType = 1;
+                message.ShowDialog();
+                this.Opacity = 1;
+            }
         }
         private void NumberList(List<StudentInformation> obj)
         {
