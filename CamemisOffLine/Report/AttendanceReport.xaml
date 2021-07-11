@@ -1,0 +1,319 @@
+﻿<Window x:Class="CamemisOffLine.Report.AttendanceReport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CamemisOffLine.Report"
+        mc:Ignorable="d"
+        Title="MonthlyResult" Height="25cm" MinWidth="38cm" Width="39cm" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Loaded="Window_Loaded">
+    <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Hidden">
+        <StackPanel Orientation="Vertical" Name="Grid" HorizontalAlignment="Center" MaxWidth="40cm" Width="38cm">
+            <Grid Name="Header" Margin="0 10 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="0">
+                    <TextBlock Name="txtSchoolName" Text="វិទ្យាល័យ.........................." FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light"/>
+                    <TextBlock Name="txtClass" Text=" ថ្នាក់ទី.........................." Margin="10 0 0 0"/>
+                    <TextBlock Name="txtMonthName" Text="ខែ.........................." Margin="50 0 0 0"/>
+                    <TextBlock Name="txtYear" Text="ឆ្នាំ២០.........................."/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 10 10">
+                    <Border BorderThickness="1 1 1 1" BorderBrush="Black" Height="30" Width="60">
+                        <TextBlock Text="ប្រុស" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border BorderThickness="0 1 1 1" BorderBrush="Black" Height="30" Width="60">
+                        <TextBlock Name="txtMan" Text="" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border BorderThickness="0 1 1 1" BorderBrush="Black" Height="30" Width="60">
+                        <TextBlock Text="ស្រី" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border BorderThickness="0 1 0 1" BorderBrush="Black" Height="30" Width="60">
+                        <TextBlock Name="txtWoman" Text="" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border BorderThickness="1 1 0 1" BorderBrush="Black" Height="30" Width="60">
+                        <TextBlock Text="សរុប" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border BorderThickness="0.5" BorderBrush="Black" Height="30" Width="60">
+                        <TextBlock Name="txtTotal" Text="" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </StackPanel>
+            </Grid>
+            <StackPanel>
+                <Grid Height="60" Width="{Binding Width,ElementName=Data}" Margin="10 0 10 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border BorderBrush="Black" BorderThickness="1 1 1 0" Grid.RowSpan="2" >
+                        <TextBlock Text="លេខរៀង" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock.LayoutTransform>
+                                <RotateTransform Angle="270"/>
+                            </TextBlock.LayoutTransform>
+                        </TextBlock>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="1" Grid.RowSpan="2">
+                        <TextBlock Text="អត្តលេខ" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="2" Grid.RowSpan="2">
+                        <TextBlock Text="គោត្តនាម និងនាម" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="3" Grid.RowSpan="2">
+                        <TextBlock Text="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="4" Grid.RowSpan="2">
+                        <TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="5" Grid.RowSpan="2">
+                        <TextBlock Text="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="6" Grid.RowSpan="2">
+                        <TextBlock Text="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="7" Grid.RowSpan="2">
+                        <TextBlock Text="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="8" Grid.RowSpan="2">
+                        <TextBlock Text="6" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="9" Grid.RowSpan="2">
+                        <TextBlock Text="7" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="10" Grid.RowSpan="2">
+                        <TextBlock Text="8" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="11" Grid.RowSpan="2">
+                        <TextBlock Text="9" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="12" Grid.RowSpan="2">
+                        <TextBlock Text="10" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="13" Grid.RowSpan="2">
+                        <TextBlock Text="11" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="14" Grid.RowSpan="2">
+                        <TextBlock Text="12" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="15" Grid.RowSpan="2">
+                        <TextBlock Text="13" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="16" Grid.RowSpan="2">
+                        <TextBlock Text="14" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="17" Grid.RowSpan="2">
+                        <TextBlock Text="15" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="18" Grid.RowSpan="2">
+                        <TextBlock Text="16" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="19" Grid.RowSpan="2">
+                        <TextBlock Text="17" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="20" Grid.RowSpan="2">
+                        <TextBlock Text="18" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="21" Grid.RowSpan="2">
+                        <TextBlock Text="19" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="22" Grid.RowSpan="2">
+                        <TextBlock Text="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="23" Grid.RowSpan="2">
+                        <TextBlock Text="21" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="24" Grid.RowSpan="2">
+                        <TextBlock Text="22" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="25" Grid.RowSpan="2">
+                        <TextBlock Text="23" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="26" Grid.RowSpan="2">
+                        <TextBlock Text="24" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="27" Grid.RowSpan="2">
+                        <TextBlock Text="25" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="28" Grid.RowSpan="2">
+                        <TextBlock Text="26" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="29" Grid.RowSpan="2">
+                        <TextBlock Text="27" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="30" Grid.RowSpan="2">
+                        <TextBlock Text="28" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="31" Grid.RowSpan="2">
+                        <TextBlock Text="29" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="32" Grid.RowSpan="2">
+                        <TextBlock Text="30" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Column="33" Grid.RowSpan="2">
+                        <TextBlock Text="31" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                    <Grid Grid.Column="34" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.RowSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Column="0" BorderBrush="Black" BorderThickness="0 1 0 0" Grid.ColumnSpan="3" Grid.Row="0">
+                            <TextBlock Text="ចំនួនអវត្តមានសិស្ស" HorizontalAlignment="Center" FontWeight="Thin"/>
+                        </Border>
+                        <Border Grid.Column="0" BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Row="1">
+                            <TextBlock Text="ច្ប" HorizontalAlignment="Center" FontWeight="Thin"/>
+                        </Border>
+                        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="0 1 1 0" Grid.Row="1">
+                            <TextBlock Text="អច្ប" HorizontalAlignment="Center" FontWeight="Thin"/>
+                        </Border>
+                        <Border Grid.Column="2" BorderBrush="Black" BorderThickness="0 1 0 0" Grid.Row="1">
+                            <TextBlock Text="សរុប" HorizontalAlignment="Center" FontWeight="Thin"/>
+                        </Border>
+                    </Grid>
+                    <Border Grid.Column="35" BorderBrush="Black" BorderThickness="1 1 1 0" Grid.RowSpan="2">
+                        <TextBlock Text="សេចក្តីផ្សេងៗ" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Thin"/>
+                    </Border>
+                </Grid>
+                <DataGrid Name="Data" AutoGenerateColumns="False" CanUserAddRows="False" HeadersVisibility="Column" BorderBrush="Black" BorderThickness="1 1 1 0" Margin="10 -2 10 0" FontSize="14" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+                    <DataGrid.Resources>
+                        <Style BasedOn="{StaticResource {x:Type DataGridRowHeader}}" TargetType="{x:Type DataGridRowHeader}">
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="Width" Value="0"/>
+                            <Setter Property="Height" Value="0"></Setter>
+                        </Style>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="White" />
+                            <Setter Property="FontFamily" Value="/CamemisOffLine;component/FontStyle/#Khmer OS Siemreap"/>
+                            <Setter Property="BorderThickness" Value="1"></Setter>
+                            <Setter Property="Margin" Value="-1 -1 -1 0"></Setter>
+                            <Setter Property="BorderBrush" Value="Gray"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="Height" Value="30"/>
+                            <Setter Property="FontWeight" Value="Bold"></Setter>
+                            <Setter Property="VerticalContentAlignment" Value="Bottom"></Setter>
+                        </Style>
+                    </DataGrid.Resources>
+                    <!--<DataGrid.Columns>
+                        <DataGridTextColumn Header="1" Width="0.4*"/>
+                        <DataGridTextColumn Header="1" Width="*"/>
+                        <DataGridTextColumn Header="1" Width="2*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="0.3*"/>
+                        <DataGridTextColumn Header="1" Width="2*"/>
+                        <DataGridTextColumn Header="1" Width="2*"/>
+                    </DataGrid.Columns>-->
+                </DataGrid>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Name="Footer" Margin="0 10 0 0">
+                <Grid Height="100">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="10 0 10 0">
+                        <TextBlock Text="-ចំនួនសិស្សដែរមករៀន.......................នាក់"  FontSize="16" Margin="10 0 10 0"/>
+                        <TextBlock Text="ចំនួនពេលដែរសិស្សត្រូវមករៀន.............."  FontSize="16" Margin="10 0 10 0"/>
+                        <TextBlock Text="ចំនួនពេលអត្តមាន.............."  FontSize="16" Margin="10 0 10 0"/>
+                        <TextBlock Text="ភាគរយនៃអវត្តមាន=" FontSize="16" Margin="10 0 10 0"/>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="x100"  HorizontalAlignment="Right" Margin="0 -10 0 0"/>
+                            <Separator Width="80" Height="2" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="Black" />
+                        </StackPanel>
+                        <TextBlock Name="txtPercent" Text=" =.............%" FontSize="16"/>
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Horizontal" Grid.Row="1">
+                        <TextBlock Text="-បញ្ឈប់បញ្ចីក្នុងខែនេះនូវចំនួន...............នាក់" FontSize="16" Margin="10 0 10 0"/>
+                    </StackPanel>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="100 0 0 0">
+                        <TextBlock Text="បានឃើញ និងឯកភាព" HorizontalAlignment="Center"/>
+                        <TextBlock Name="txtDate" Text="ថ្ងៃទី..........ខែ.........ឆ្នាំ២០........" HorizontalAlignment="Center"/>
+                        <TextBlock Text="នាយក" HorizontalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="0 25 100 0" Grid.Column="1">
+                        <TextBlock Text="{Binding Text,ElementName=txtDate}" HorizontalAlignment="Center"/>
+                        <TextBlock Text="គ្រូទទួលបន្ទុកថ្នាក់" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Window>
