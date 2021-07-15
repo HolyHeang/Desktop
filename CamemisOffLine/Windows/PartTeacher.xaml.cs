@@ -116,17 +116,19 @@ namespace CamemisOffLine.Windows
 
             //..................Show defual index................
             tabcontrolMenu.SelectedIndex = 0;
-            tabcontrolResult.SelectedIndex = 1;
+            tabcontrolResult.SelectedIndex = 0;
             tabcontrolResulandInput.SelectedIndex = 0;
             tabcontrolScore.SelectedIndex = 1;
+            DockMonth.Visibility = Visibility.Collapsed;
             btnInputScore.Background = Brushes.White;
             lblTitle.Content = Properties.Langs.Lang.score;
+            stacButtonTop.Visibility = Visibility.Collapsed;
 
             //.............Slide Left..............
             slidLeft.Width = 45;
             gridAcc.Visibility = Visibility.Collapsed;
             lblnameCompany.Visibility = Visibility.Collapsed;
-            titleSchool.Visibility = Visibility.Collapsed;
+           
 
 
             //btnHome.IsEnabled = false;
@@ -243,7 +245,6 @@ namespace CamemisOffLine.Windows
             btnLearningResult.Background = Brushes.White;  
             btnInputScore.Background = (Brush)bc.ConvertFrom("#66D3D3D3");
             tabcontrolResulandInput.SelectedIndex = 1;
-            tabcontrolScore.SelectedIndex = 0;
         }
 
         private void btnInputScore_Click(object sender, RoutedEventArgs e)
@@ -252,7 +253,7 @@ namespace CamemisOffLine.Windows
             btnLearningResult.Background = (Brush)bc.ConvertFrom("#66D3D3D3");
             btnInputScore.Background = Brushes.White;
             tabcontrolResulandInput.SelectedIndex = 0;
-            tabcontrolLearn1.SelectedIndex = 1;
+            
         }
 
         //......................Hover Slide Left......................
@@ -261,7 +262,7 @@ namespace CamemisOffLine.Windows
             slidLeft.Width = 320;
             gridAcc.Visibility = Visibility.Visible;
             lblnameCompany.Visibility = Visibility.Visible;
-            titleSchool.Visibility = Visibility.Visible;
+            
             MateriaSettingDrop.Visibility = Visibility.Visible;
             //btnHome.IsEnabled = true;
             MateriaLangDrop.Visibility = Visibility.Visible;
@@ -272,7 +273,7 @@ namespace CamemisOffLine.Windows
         {
             slidLeft.Width = 45;
            
-            titleSchool.Visibility = Visibility.Collapsed;
+        
             gridAcc.Visibility = Visibility.Collapsed;
             lblnameCompany.Visibility = Visibility.Collapsed;
            
@@ -319,6 +320,8 @@ namespace CamemisOffLine.Windows
                 tvAcademy.ItemsSource = obj;
                 changeAcademyYear = true;
                 year = cb.ToString();
+                LabelTitle.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title;
+                tvAcademy.Visibility = Visibility.Visible;
             }
             catch
             {
@@ -457,6 +460,7 @@ namespace CamemisOffLine.Windows
 
         private async void tvAcademy_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
+           
             try
             {
                
@@ -465,7 +469,8 @@ namespace CamemisOffLine.Windows
                 //treeViewItemChange(item.id);
                 classId = item.id;
                 LabelTitle.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title_select_month;
-                
+                tabcontrolScore.SelectedIndex = 1;
+
                 if (Teacher.InternetChecker()==true&&internet)
                 {
                     
@@ -476,27 +481,51 @@ namespace CamemisOffLine.Windows
                     Properties.Settings.Default.Save();
                     var obj = JObject.Parse(respone).ToObject<GetTeachingSubjectClass>().data;
                     treeViewItemChange(item.id);
-                   
+
+                    var respone1 = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/grade-time-shift", token);
+                    Properties.Settings.Default.monthofTheAcademyYear = respone1;                 
+                    Properties.Settings.Default.Save();
+                    var obj1 = JObject.Parse(respone1).ToObject<TimesButton>().data;
+
+                    lButton1.ItemsSource = obj1;
+
                     cbSelectSubject.ItemsSource = obj;
                     cbSelectSubject.DisplayMemberPath = "name";
                     cbSelectSubject.SelectedValuePath = "id";
                     //Task<string> task = GetMonthlyResultFormApiAsync();
+                    DockTree.Visibility = Visibility.Collapsed;
+                    tabcontrolResult.SelectedIndex = 1;
+                    tabcontrolScore.SelectedIndex = 1;
+
                 }
+
                 else
                 {
                     string respone = Properties.Settings.Default.teachingSubject;
                     var obj = JObject.Parse(respone).ToObject<GetTeachingSubjectClass>().data;
                     treeViewItemChange(item.id);
 
+                    string respone1 = Properties.Settings.Default.monthofTheAcademyYear;
+                    Properties.Settings.Default.monthofTheAcademyYear = respone1;
+                    Properties.Settings.Default.Save();
+                    var obj1 = JObject.Parse(respone).ToObject<TimesButton>().data;
+
+                    lButton1.ItemsSource = obj1;
+
                     cbSelectSubject.ItemsSource = obj;
                     cbSelectSubject.DisplayMemberPath = "name";
                     cbSelectSubject.SelectedValuePath = "id";
+                    DockTree.Visibility = Visibility.Collapsed;
+                    tabcontrolResult.SelectedIndex = 1;
+                    tabcontrolScore.SelectedIndex = 1;
+                    
                 }
             }
             catch
             {
                 //checkMonthButton = false;
                 LabelTitle.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title;
+               
             }
         }
 
@@ -536,6 +565,9 @@ namespace CamemisOffLine.Windows
             {
                 var subject = cbSelectSubject.SelectedItem as TeachingSubject;
                 SubjectId = subject.id;
+                DockMonth.Visibility = Visibility.Visible;
+                tabcontrolScore.SelectedIndex = 1;
+                TilteSelection.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title_select_month;
                 if (Teacher.InternetChecker()&&internet)
                 {
                     
@@ -546,18 +578,27 @@ namespace CamemisOffLine.Windows
                     Properties.Settings.Default.Save();
                     var obj = JObject.Parse(respone).ToObject<TimesButton>().data;
                     lButton.ItemsSource = obj;
-                    lButton1.ItemsSource = obj;
+                    
+                    
                     btnResultofTheYear.Visibility = Visibility.Visible;
                     btnResultofTheYear1.Visibility = Visibility.Visible;
+                    DockMonth.Visibility = Visibility.Visible;
+                    tabcontrolScore.SelectedIndex = 1;
+                    TilteSelection.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title_select_month;
+
                 }
                 else
                 {
                     string respone = Properties.Settings.Default.monthofTheAcademyYear;
                     var obj = JObject.Parse(respone).ToObject<TimesButton>().data;
                     lButton.ItemsSource = obj;
-                    lButton1.ItemsSource = obj;
+                    
+
                     btnResultofTheYear.Visibility = Visibility.Visible;
                     btnResultofTheYear1.Visibility = Visibility.Visible;
+                    DockMonth.Visibility = Visibility.Visible;
+                    tabcontrolScore.SelectedIndex = 1;
+                    TilteSelection.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title_select_month;
                 }
             }
             catch { }
@@ -627,10 +668,14 @@ namespace CamemisOffLine.Windows
         string months = "";
         private async void btnMonths_Click(object sender, RoutedEventArgs e)
         {
+ 
             MessageBoxControl message = new MessageBoxControl();
             Loading loading = new Loading();
+            tabcontrolScore.SelectedIndex = 0;
+            stacButtonTop.Visibility = Visibility.Visible;
             try
             {
+                
                 string respone = "";
                 var button = sender as Button;
                 var month = DateChange.checkMonthString(button.Content.ToString());
@@ -640,12 +685,15 @@ namespace CamemisOffLine.Windows
                 message.discription = "ទាញទិន្នន័យបានជោគជ័យ";
                 message.buttonType = 2;
                 loading.Show();
+                stacButtonTop.Visibility = Visibility.Visible;
 
                 if (CheckFileExist(months) == false)
                 {
                     if (Teacher.InternetChecker() && internet)
                     {
                         respone = await SaveString(months);
+                        tabcontrolScore.SelectedIndex = 0;
+                        stacButtonTop.Visibility = Visibility.Visible;
                     }
                 }
                 else
@@ -664,6 +712,10 @@ namespace CamemisOffLine.Windows
             catch {
                 DGScoreMonth.ItemsSource = null;
                 loading.Close();
+
+                stacButtonTop.Visibility = Visibility.Collapsed;
+                tabcontrolScore.SelectedIndex = 1;
+                TilteSelection.Content = Properties.Langs.Lang.noresultdata;
             }
         }
         private async Task<string> SaveString(string month)
@@ -826,6 +878,23 @@ namespace CamemisOffLine.Windows
 
         }
 
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            DockTree.Visibility = Visibility.Visible;
+            tabcontrolMenu.SelectedIndex = 0;
+            tabcontrolResult.SelectedIndex = 0;
+            tabcontrolResulandInput.SelectedIndex = 0;
+            tabcontrolScore.SelectedIndex = 1;
+            LabelTitle.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title_select_year;
+            DockMonth.Visibility = Visibility.Collapsed;
+            tabcontrolScore.SelectedIndex = 1;
+            TilteSelection.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title_select_Subject;
+            tvAcademy.Visibility = Visibility.Collapsed;
+            cbAcademyYear.Text = "សូមជ្រើសរើស";
+            cbSelectSubject.Text = "សូមជ្រើសរើស";
+            stacButtonTop.Visibility = Visibility.Collapsed;
+        }
+
         private bool CheckFileExist(string month)
         {
             MessageBoxControl message = new MessageBoxControl();
@@ -847,6 +916,142 @@ namespace CamemisOffLine.Windows
             }
                
         }
+
+        //..........................Control Text Input Score........................
+        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {          
+            var item = DGScoreMonth.SelectedItem as StudentInformation;
+            e.Handled = !IsValid(((TextBox)sender).Text + e.Text,item);
+        }
+
+        public static bool IsValid(string str, StudentInformation item)
+        {
+            int i;
+            return int.TryParse(str, out i) && i >= int.Parse(item.subject_score_min) && i <= int.Parse(item.subject_score_max);
+        }
+
+       
+        //................................End.......................................
+
+
+        //......................Button Sum in Textbox Score.....................
+         private void btnSum_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            var item = DGScoreMonth.SelectedItem as StudentInformation;
+
+            if (int.Parse(item.score) > int.Parse(item.subject_score_max) - 1)
+            {
+                item.score = item.subject_score_max;
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(item.score))
+                {
+                    item.score = 0.ToString();
+                }
+                bool success = Int32.TryParse(item.score, out var number);
+                if (!success)
+                {
+                    // show error
+                    return;
+                }
+
+                item.score = btn.Name == "UpBtn" ? (++number).ToString() : (++number).ToString();
+            }
+           
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+           
+
+            var btn = sender as Button;
+            var item = DGScoreMonth.SelectedItem as StudentInformation;
+
+
+            if(int.Parse(item.score) < int.Parse(item.subject_score_min)+ 1)
+            {
+                if( item.score == null)
+                {
+                    item.score = "0";
+                }
+                else
+                {
+                    item.score = item.subject_score_min;
+                }
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(item.score.Trim()))
+                {
+                    item.score = 0.ToString();
+                }
+                bool success = Int32.TryParse(item.score, out var number);
+                if (!success)
+                {
+                    // show error
+                    return;
+                }
+
+                item.score = btn.Name == "DownBtn" ? (--number).ToString() : (--number).ToString();
+            }
+           
+        }
+
+        private async void btnMonthsResult_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxControl message = new MessageBoxControl();
+            Loading loading = new Loading();
+            tabcontrolScore.SelectedIndex = 0;
+            
+            try
+            {
+                
+                string respone = "";
+                var button = sender as Button;
+                var month = DateChange.checkMonthString(button.Content.ToString());
+                term = button.Tag.ToString();
+                months = month.ToString();
+                message.title = "ដំណឹង";
+                message.discription = "ទាញទិន្នន័យបានជោគជ័យ";
+                message.buttonType = 2;
+                loading.Show();
+                
+
+                if (CheckFileExist(months) == false)
+                {
+                    if (Teacher.InternetChecker() && internet)
+                    {
+                        respone = await SaveString(months);
+                        tabcontrolLearn1.SelectedIndex = 1;
+                     
+                    }
+                }
+                else
+                {
+                    respone = File.ReadAllText(filePath + "\\" + classId + " " + month + " " + SubjectId + ".txt");
+                }
+                obj = JObject.Parse(respone).ToObject<InputScore>();
+                NumberList(obj.data);
+                DGMonthlyResult.ItemsSource = null;
+                DGMonthlyResult.ItemsSource = obj.data;
+                loading.Close();
+                this.Opacity = 0.5;
+                message.ShowDialog();
+                this.Opacity = 1;
+            }
+            catch
+            {
+                DGMonthlyResult.ItemsSource = null;
+                loading.Close();
+                tabcontrolLearn1.SelectedIndex = 0;
+
+                lblErrandSelect.Content = Properties.Langs.Lang.noresultdata;
+            }
+        }
+
+        //............................End..................................................
         private void saveLocalString(string month, string respone,bool checkAutosave)
         {
             MessageBoxControl message = new MessageBoxControl();
@@ -891,5 +1096,37 @@ namespace CamemisOffLine.Windows
             }
         }
         //--------------------------------------------------------
+
+        //---------------button focus--------------
+        private void buttonSelecte(string name)
+        {
+            var reponse = Properties.Settings.Default.monthofTheAcademyYear;
+            var obj = JObject.Parse(reponse).ToObject<TimesButton>().data;
+
+            foreach (var item in obj)
+            {
+                if (item.name == name)
+                {
+                    item.colors = "White";
+                }
+                else
+                {
+                    item.colors = "WhiteSmoke";
+                }
+                foreach (var i in item.months)
+                {
+                    if (i.displayMonth == name)
+                    {
+                        i.color = "White";
+                    }
+                    else
+                    {
+                        i.color = "WhiteSmoke";
+                    }
+                }
+            }
+            lButton.ItemsSource = null;
+            lButton.ItemsSource = obj;
+        }
     }
 }

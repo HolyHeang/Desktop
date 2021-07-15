@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CamemisOffLine.exe" size="4175872">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CamemisOffLine.exe" size="4207616">
       <assemblyIdentity name="CamemisOffLine" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>f7nSlYNo3PRC9adUNeNqAG7n08WJ2i+iIc3i1zPok1A=</dsig:DigestValue>
+        <dsig:DigestValue>Fh63SuSu4ejCc8wc+YbzaYtJaD71GKymfJMPcZ051TU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,7 +74,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>kD9HOvFvVETQKjanEc6PmydjJAFh91ebGFqmoAyhLqA=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>nKbo6gZTP8PiB/Grsh9A9g6K0FIBr8wmW4CMIdIf0gg=</dsig:DigestValue>
+>>>>>>> Holy
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +90,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>4PuMNvneJkKuXqd4xAfw4f0T6MjvGnwXXD3vCuA7wOs=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>dAyx++abPwnYePPUgqQ5igZ0v4g9PtF6gRsMZ0vqN4s=</dsig:DigestValue>
+>>>>>>> Holy
       </hash>
     </dependentAssembly>
   </dependency>
@@ -98,7 +106,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>Rds0IYWYPJfYkEVtdiTl2nClvMSGhttGu/NzgOzfAZs=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>DPEk63SWiBmngZMFeNhJaSFRrcA5BUp5pD3k0TKd2pI=</dsig:DigestValue>
+>>>>>>> Holy
       </hash>
     </dependentAssembly>
   </dependency>
@@ -362,7 +374,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4upqmo9OTi1KAN+jjOYO7BWQLYOnqJidd9KszR3iJy4=</dsig:DigestValue>
+        <dsig:DigestValue>oou0nxuifZu1mEFdN0DWC91wN2eEEB9oi1mn/CCnA5M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -530,7 +542,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2nbLf/RLhWBUej5XjBjxWPu6uxm4KuQbKC9HgBJ370k=</dsig:DigestValue>
+        <dsig:DigestValue>w+WKWN8hrnAPMBVWrF/2DJ15GS7h6GEY4Dbbbs02KsQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
