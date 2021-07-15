@@ -27,5 +27,9 @@ namespace Library
         public string come_from_class { get; set; }
         public string come_from_school { get; set; }
         public string current_class { get; set; }
+        public string current_class_id { get; set; }
+        public string level { get; set; }
+        public string grade { get; set; }
+        public string grade_id { get; set; }
     }
 }

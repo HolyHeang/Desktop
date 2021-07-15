@@ -30,22 +30,44 @@ namespace CamemisOffLine.Report
     public partial class StudentList : Window
     {
         public string schoolYearId { get; set; }
-        public StudentList()
+        public string classId { get; set; }
+        public string gradeId { get; set; }
+        public string level { get; set; }
+        public StudentList(int ping,int type)
         {
             InitializeComponent();
+            pings = ping;
+            this.type = type;
         }
 
         public string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
         string encryptionString = "";
+        int pings,type;
 
-        private void print()
+        private void print(string stringRespone,List<StuedntofTheYear> datas)
         {
             List<string> fileArray = new List<string>();
             try
             {
-                var reponse = GetString(schoolYearId);
-
-                var data = JObject.Parse(reponse).ToObject<AllStudentList>().data;
+                var reponse = "";
+                List<StuedntofTheYear> data = new List<StuedntofTheYear>();
+                if (stringRespone==null)
+                {
+                   reponse = GetString(schoolYearId);
+                }
+                else
+                {
+                    reponse = stringRespone;
+                }
+                if(datas==null)
+                {
+                   data  = JObject.Parse(reponse).ToObject<AllStudentList>().data;
+                }
+                else
+                {
+                    data = datas; ;
+                }
+                
                 List<StuedntofTheYear> copyResult = new List<StuedntofTheYear>();
                 NumberList(data);
                 bool footerAvaliable = false;
@@ -61,7 +83,15 @@ namespace CamemisOffLine.Report
                     PdfWriter.GetInstance(document, new System.IO.FileStream(filePath + "\\" + "សិស្ស" + j + ".pdf", FileMode.Create));
                     document.Open();
                     GC.Collect();
-                    var obj = data.GetRange(total, itemCount);
+                    var obj = new List<StuedntofTheYear>();
+                    if (data.Count >= 469)
+                    {
+                        obj = data.GetRange(total, itemCount);
+                    }
+                    else
+                    {
+                        obj = data;
+                    }
                     if (j > 0)
                     {
                         startIndex = 0;
@@ -200,20 +230,61 @@ namespace CamemisOffLine.Report
             this.Hide();
             Loading loading = new Loading();
             loading.Show();
-            if (!checkFile(schoolYearId) && Teacher.InternetChecker())
+            var respone = "";
+            var obj = new List<StuedntofTheYear>();
+            if (pings<=150 && Teacher.InternetChecker())
             {
                 string accessUrl = Properties.Settings.Default.acessUrl;
                 string token = Properties.Settings.Default.Token;
-                var respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId, token);
-                var obj = JObject.Parse(respone).ToObject<AllStudentList>().data.Take(500);
-                encryptionString = Teacher.EncodeTo64(respone);
-                SaveString(schoolYearId);
+               
+                if(type==1)
+                {
+                    respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId, token);
+                    encryptionString = Teacher.EncodeTo64(respone);
+                    SaveString(schoolYearId);
+                }
+                else if(type==2)
+                {
+                    respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId+ "?classId="+classId, token);
+                }
+                else if(type==3)
+                {
+                    respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId + "?gradeId=" + gradeId, token);
+                }
+                else if (type == 4)
+                {
+                    respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId + "?level=" + level, token);
+                }
+                obj = null;
+            }
+            else
+            {
+                respone = GetString(schoolYearId);
+                var data = JObject.Parse(respone).ToObject<AllStudentList>().data;
+
+                if(type==1)
+                {
+                    obj = data;
+                }
+                else if(type==2)
+                {
+                    obj = data.Where(s => s.current_class_id == classId).ToList();
+                }
+                else if(type==3)
+                {
+                    obj = data.Where(s => s.grade_id == gradeId).ToList();
+                }
+                else if(type==4)
+                {
+                    obj = data.Where(s => s.level == level).ToList();
+                }
+                respone = null;
             }
             MessageBoxControl message = new MessageBoxControl();
             message.title = "ដំណឹង";
             message.discription = "ការបោះពុម្ភបានជោគជ័យ";
             message.buttonType = 1;
-            print();
+            print(respone,obj);
             loading.Close();
         }
         private void SaveString(string schoolId)

@@ -2736,7 +2736,7 @@
                                                         <ColumnDefinition Width="270"/>
                                                         <ColumnDefinition Width="270"/>
                                                         <ColumnDefinition Width="270"/>
-                                                        <ColumnDefinition Width="310"/>
+                                                        <ColumnDefinition Width="270"/>
                                                     </Grid.ColumnDefinitions>
                                                     <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
                                                         <TextBlock Text="ឆ្នាំសិក្សា" FontSize="14" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 0 0 0" VerticalAlignment="Center"/>
@@ -2744,28 +2744,36 @@
                                                                           BorderThickness="1 2 1 1" BorderBrush="Black" materialDesign:HintAssist.Hint=" ជ្រើសរើស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"
                                                                           FontSize="14" SelectionChanged="cmbAcademicYearStudentListPrint_SelectionChanged" ItemsSource="{Binding ItemsSource,ElementName=cmbAcademicYearResultPrint}"/>
                                                     </StackPanel>
-                                                    <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                                                    <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" Name="st3" Visibility="Collapsed">
                                                         <TextBlock Text="កម្រិត" FontSize="14" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 0 0 0" VerticalAlignment="Center"/>
-                                                        <ComboBox Name="cmbGradeStudentListPrint" Style="{StaticResource combobox}" Height="40" HorizontalAlignment="Left" Width="200" Margin="10 0 0 0"  VerticalAlignment="Center" Padding="5 10 0 0"
-                                                                          BorderThickness="1 2 1 1" BorderBrush="Black" materialDesign:HintAssist.Hint=" ជ្រើសរើស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ItemsSource="{Binding ItemsSource,ElementName=cmbGradeResultPrint}"
-                                                                          FontSize="14" SelectionChanged="cmbGradeResultPrint_SelectionChanged"/>
+                                                        <ComboBox Name="cmbLevelStudentListPrint" Style="{StaticResource combobox}" Height="40" HorizontalAlignment="Left" Width="200" Margin="10 0 0 0"  VerticalAlignment="Center" Padding="5 10 0 0"
+                                                                          BorderThickness="1 2 1 1" BorderBrush="Black" materialDesign:HintAssist.Hint=" ជ្រើសរើស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"
+                                                                          FontSize="14" SelectionChanged="cmbLevelStudentListPrint_SelectionChanged" >
+                                                            <ComboBoxItem>1</ComboBoxItem>
+                                                            <ComboBoxItem>2</ComboBoxItem>
+                                                            <ComboBoxItem>3</ComboBoxItem>
+                                                            <ComboBoxItem>4</ComboBoxItem>
+                                                            <ComboBoxItem>5</ComboBoxItem>
+                                                            <ComboBoxItem>6</ComboBoxItem>
+                                                            <ComboBoxItem>7</ComboBoxItem>
+                                                            <ComboBoxItem>8</ComboBoxItem>
+                                                            <ComboBoxItem>9</ComboBoxItem>
+                                                            <ComboBoxItem>10</ComboBoxItem>
+                                                            <ComboBoxItem>11</ComboBoxItem>
+                                                            <ComboBoxItem>12</ComboBoxItem>
+                                                        </ComboBox>
                                                     </StackPanel>
-                                                    <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                                                    <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" Visibility="Collapsed" Name="st1">
+                                                        <TextBlock Text="ក្រុម" FontSize="14" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 0 0 0" VerticalAlignment="Center"/>
+                                                        <ComboBox Name="cmbGradeStudentListPrint" Style="{StaticResource combobox}" Height="40" HorizontalAlignment="Left" Width="200" Margin="10 0 0 0"  VerticalAlignment="Center" Padding="5 10 0 0"
+                                                                          BorderThickness="1 2 1 1" BorderBrush="Black" materialDesign:HintAssist.Hint=" ជ្រើសរើស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" 
+                                                                          FontSize="14" SelectionChanged="cmbGradeStudentListPrint_SelectionChanged" />
+                                                    </StackPanel>
+                                                    <StackPanel Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center" Visibility="Collapsed" Name="st2">
                                                         <TextBlock Text="ថ្នាក់" FontSize="14" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 0 0 0" VerticalAlignment="Center"/>
                                                         <ComboBox Name="cmbClassStudentListPrint" Style="{StaticResource combobox}" Height="40" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Width="200" VerticalAlignment="Center"  Margin="10 0 0 0" Padding="5 10 0 0"
-                                                                          BorderThickness="1 2 1 1" BorderBrush="Black" materialDesign:HintAssist.Hint=" ជ្រើសរើស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="14" ItemsSource="{Binding ItemsSource,ElementName=cmbClassResultPrint}"
+                                                                          BorderThickness="1 2 1 1" BorderBrush="Black" materialDesign:HintAssist.Hint=" ជ្រើសរើស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="14" DisplayMemberPath="Value"
                                                               SelectionChanged="cmbClassResultPrint_SelectionChanged"/>
-                                                    </StackPanel>
-                                                    <StackPanel Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center">
-                                                        <TextBlock Text="ប្រភេទសិស្ស" FontSize="14" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 0 0 0" VerticalAlignment="Center"/>
-                                                        <ComboBox Name="cmbOptionStudentListPrint" Style="{StaticResource combobox}" Height="40" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Width="200" VerticalAlignment="Center"  Margin="10 0 0 0" Padding="5 10 0 0"
-                                                                          BorderThickness="1 2 1 1" BorderBrush="Black" materialDesign:HintAssist.Hint=" ជ្រើសរើស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="14"
-                                                              SelectionChanged="cmbClassResultPrint_SelectionChanged">
-                                                            <ComboBoxItem IsSelected="True" Tag="0">ទាំងអស់</ComboBoxItem>
-                                                            <ComboBoxItem Tag="1">ប្រឡងឡើងថ្នាក់</ComboBoxItem>
-                                                            <ComboBoxItem Tag="2">ត្រួតថ្នាក់</ComboBoxItem>
-                                                            <ComboBoxItem Tag="3">បោះបង់ការសិក្សា</ComboBoxItem>
-                                                        </ComboBox>
                                                     </StackPanel>
                                                 </Grid>
                                                 <ItemsControl Name="StudentListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1500">

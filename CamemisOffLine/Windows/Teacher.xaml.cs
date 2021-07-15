@@ -58,12 +58,10 @@ namespace CamemisOffLine
             Internet.Start();
 
         }
-
+        Ping myPing = new Ping();
+        int ping = 0;
         private void Internet_Tick(object sender, EventArgs e)
         {
-
-            Ping myPing = new Ping();
-            int ping = 0;
             try
             {
                PingReply reply = myPing.Send(@"Google.com", 1000);
@@ -79,13 +77,6 @@ namespace CamemisOffLine
                         else
                         {
                             wifiIcon.Foreground = Brushes.Red;
-                            this.Opacity = 0.5;
-                            MessageBoxControl message = new MessageBoxControl();
-                            message.title = "ដំណឹង";
-                            message.discription = "សេវាអ៊ីនធឺណែតខ្សោយ!! សូមត្រួតពីនិត្យអ៊ីនធឺណែតរបស់អ្នកម្តងទៀត";
-                            message.buttonType = 2;
-                            message.ShowDialog();
-                            this.Opacity = 1;
                         }
                         txtPing.Text = "Ping :" + (ping) + "ms";
                     }
@@ -3802,7 +3793,7 @@ namespace CamemisOffLine
             var item = button.DataContext as CardPrint;
             MessageBoxControl message = new MessageBoxControl();
             message.Owner = this;
-            if(item.id>=1&&item.id<=4)
+            if(item.id>=1&&item.id<=5)
             {
                 this.Opacity = 0.5;
                 message.title = "បោះពុម្ភ";
@@ -3812,20 +3803,43 @@ namespace CamemisOffLine
                 if (message.result == 1&&item.id==1)
                 {
                     
-                    StudentList student = new StudentList();
+                    StudentList student = new StudentList(ping,1);
                     student.schoolYearId = schoolYearId;
                     student.Show();
                 }
+                else if(message.result == 1 && item.id == 2)
+                {
+                    StudentList student = new StudentList(ping, 2);
+                    student.classId = studentClass;
+                    student.schoolYearId = schoolYearId;
+                    student.Show();
+                }
+                else if (message.result == 1 && item.id == 3)
+                {
+                    StudentList student = new StudentList(ping, 3);
+                    student.gradeId = gradeId;
+                    student.schoolYearId = schoolYearId;
+                    student.Show();
+                }
+                else if (message.result == 1 && item.id == 4)
+                {
+                    StudentList student = new StudentList(ping, 4);
+                    student.schoolYearId = schoolYearId;
+                    student.level = level;
+                    student.Show();
+                }
+                
+
             }
-            else if(item.id==6)
+            else if(item.id==8)
             {
                 StudenPrintMonthlySemesterResult();
             }
-            else if(item.id==7)
+            else if(item.id==9)
             {
                 StudentPrintMonthlySemesterTranscrip();
             }
-            else if(item.id==8)
+            else if(item.id==10)
             {
                 StudentPrintHonoraryList();
             }
@@ -3902,17 +3916,16 @@ namespace CamemisOffLine
             }
             if (title == "semester")
             {
-
                 string[] allRespone = respone.Split('|');
                 if (semester == "ឆមាសទី១")
                 {
                     var obj = JObject.Parse(allRespone[0].ToString()).ToObject<StudentMonthlyResultData>().data;
-                    return obj;
+                    return obj.OrderBy(s=>s.result_semester.rank).ToList();
                 }
                 else if (semester == "ឆមាសទី២")
                 {
                     var obj = JObject.Parse(allRespone[1].ToString()).ToObject<StudentMonthlyResultData>().data;
-                    return obj;
+                    return obj.OrderBy(s => s.result_semester.rank).ToList();
                 }
             }
             else if (title == "Year")
@@ -3932,7 +3945,7 @@ namespace CamemisOffLine
                         var obj = JObject.Parse(allMonth[1].ToString()).ToObject<StudentMonthlyResultData>().data;
                         Properties.Settings.Default.studentMonthlyResult = allMonth[1];
                         Properties.Settings.Default.Save();
-                        return obj;
+                        return obj.OrderBy(s => s.result_monthly.rank).ToList();
                     }
                 }
             }
@@ -4000,8 +4013,6 @@ namespace CamemisOffLine
                         }
                     }
                 }
-
-                cmbClassResultPrint.IsEnabled = true;
                 cmbClassResultPrint.ItemsSource = _class;
             }
             catch { }
@@ -4011,8 +4022,9 @@ namespace CamemisOffLine
             try
             {
                 var items = sender as ComboBox;
-                var selection = items.SelectedItem;
+                var selection = items.SelectedValue;
                 studentClass = selection.ToString();
+
                 List<string> button = new List<string>();
                 var obj = JObject.Parse(Properties.Settings.Default.monthofTheAcademyYear).ToObject<TimesButton>().data;
                 foreach (var item in obj)
@@ -4186,13 +4198,27 @@ namespace CamemisOffLine
         private void cmbAcademicYearStudentListPrint_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             List<string> grade = new List<string>();
+            var list = new List<KeyValuePair<string, string>>();
             var item = sender as ComboBox;
             var selection = item.SelectedItem;
+            YearSelection = selection.ToString();
             var obj = JObject.Parse(Properties.Settings.Default.schoolAcademyYear).ToObject<YearofAcademy>().data.Where(y => y.name.Equals(selection.ToString()));
-            foreach(var items in obj)
+            foreach (var items in obj)
             {
                 schoolYearId = items.id;
+                foreach (var grades in items.school_system)
+                {
+                    foreach (var gradeName in grades.grade)
+                    {
+                        list.Add(new KeyValuePair<string, string>(gradeName.name, gradeName.id));
+                    }
+                }
             }
+            cmbGradeStudentListPrint.ItemsSource = list;
+            cmbGradeStudentListPrint.DisplayMemberPath = "Key";
+            cmbGradeStudentListPrint.SelectedValuePath = "Value";
+            st1.Visibility = Visibility.Visible;
+            st3.Visibility = Visibility.Visible;
         }
         //---------------Turn on turn off internet------------------
         bool internet = true;
@@ -4227,6 +4253,52 @@ namespace CamemisOffLine
                 this.Opacity = 1;
             }
         }
+        string gradeId = "";
+        private void cmbGradeStudentListPrint_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                
+                var list = new List<KeyValuePair<string, string>>();
+                var item = sender as ComboBox;
+                gradeId = item.SelectedValue.ToString();
+                var obj = JObject.Parse(Properties.Settings.Default.schoolAcademyYear).ToObject<YearofAcademy>().data.Where(y => y.name.Equals(YearSelection));
+                foreach (var items in obj)
+                {
+                    foreach (var grades in items.school_system)
+                    {
+                        foreach (var gradeName in grades.grade)
+                        {
+                            if (gradeName.id.Equals(gradeId))
+                            {
+                                foreach (var className in gradeName.children)
+                                {
+                                    list.Add(new KeyValuePair<string, string>(className.name, className.id.ToString()));
+                                }
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                st2.Visibility = Visibility.Visible;
+                cmbClassStudentListPrint.ItemsSource = list;
+                cmbClassStudentListPrint.DisplayMemberPath = "Key";
+                cmbClassStudentListPrint.SelectedValuePath = "Value";
+
+            }
+            catch(Exception ex) 
+            {
+                Console.WriteLine("=---------------------------------------"+ex);
+            }
+        }
+        string level = "";
+        private void cmbLevelStudentListPrint_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var item = cmbLevelStudentListPrint.SelectedItem as ComboBoxItem;
+            level = item.Content.ToString();
+        }
+
         //-----------------------------------------------------------
         //---------------------------------------------------------------------------
         string studentMonth = "";
@@ -4235,10 +4307,21 @@ namespace CamemisOffLine
         {
             try
             {
-                var data = GetDataForPrint().OrderByDescending(s => s.result_monthly.avg_score).ToList();
-                if (data != null)
+                string title = "";
+                var select = studentMonth;
+
+                if (select.Equals("ឆមាសទី១") || select.Equals("ឆមាសទី២"))
                 {
-                    MonthlyResult monthlyResult = new MonthlyResult(data, "month");
+                    title = "semester";
+                    var data = GetDataForPrint();
+                    MonthlyResult monthlyResult = new MonthlyResult(data, title);
+                    monthlyResult.Show();
+                }
+                else
+                {
+                    title = "month";
+                    var data = GetDataForPrint();
+                    MonthlyResult monthlyResult = new MonthlyResult(data, title);
                     monthlyResult.Show();
                 }
             }
@@ -4258,11 +4341,22 @@ namespace CamemisOffLine
         {
             try
             {
+                string title="";
                 var data = GetDataForPrint();
+                var select = studentMonth;
+
+                if(select.Equals("ឆមាសទី១") || select.Equals("ឆមាសទី២"))
+                {
+                    title = "semester";
+                }
+                else
+                {
+                    title = "month";
+                }
 
                 if (data != null)
                 {
-                    ShowListStudentToPrint show = new ShowListStudentToPrint(data, "month");
+                    ShowListStudentToPrint show = new ShowListStudentToPrint(data,title);
                     show.Owner = this;
                     show.ShowDialog();
                 }
@@ -4287,14 +4381,30 @@ namespace CamemisOffLine
                 string schoolName = Properties.Settings.Default.schoolName;
                 string teacher = "", title = "";
                 var data = GetDataForPrint();
+                
                 if (data != null)
                 {
-                    foreach (var item in data.OrderByDescending(r => r.result_monthly.avg_score).Take(5))
+                    var select = studentMonth;
+
+                    if (select.Equals("ឆមាសទី១") || select.Equals("ឆមាសទី២"))
                     {
-                        teacher = item.instructor.name;
-                        topStudent.Add(item);
+                        foreach (var item in data.OrderByDescending(r => r.result_semester.avg_score).Take(5))
+                        {
+                            teacher = item.instructor.name;
+                            topStudent.Add(item);
+                        }
+                        title = "semester";
                     }
-                    title = "month";
+                    else
+                    {
+                        foreach (var item in data.OrderByDescending(r => r.result_monthly.avg_score).Take(5))
+                        {
+                            teacher = item.instructor.name;
+                            topStudent.Add(item);
+                        }
+                        title = "month";
+                    }
+                    
                     HonoraryList honorary = new HonoraryList(topStudent, schoolName, teacher, title);
                     honorary.Owner = this;
                     honorary.ShowDialog();
@@ -4314,10 +4424,22 @@ namespace CamemisOffLine
         }
         private List<StudentMonthlyResult> GetDataForPrint()
         {
-            studentMonth = DateChange.checkMonthString(studentMonth).ToString();
+            string title = "";
+            if(studentMonth== "ឆមាសទី១"||studentMonth== "ឆមាសទី២"||studentMonth=="លទ្ធផលប្រចាំឆ្នាំ")
+            {
+                month = "";
+                title = "semester";
+            }
+            else
+            {
+                studentMonth = DateChange.checkMonthString(studentMonth).ToString();
+                month = studentMonth;
+                title = "";
+                studentMonth = "";
+            }
 
             List<StudentMonthlyResult> list = new List<StudentMonthlyResult>();
-            month = studentMonth;
+            
             id = studentClass;
             yearPrint = studentYear;
             if (cmbMonthResultPrint.SelectedIndex < 0)
@@ -4343,7 +4465,7 @@ namespace CamemisOffLine
                     }
                 }
             }
-            studentMonthlyResults = GetData(month, id: id);
+            studentMonthlyResults = GetData(month, id: id,title:title,semester:studentMonth);
             if (studentMonthlyResults != null)
             {
                 list = studentMonthlyResults;
