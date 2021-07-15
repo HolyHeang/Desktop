@@ -218,6 +218,7 @@ namespace CamemisOffLine.Windows
             }
             else if(title== "semester")
             {
+                obj.OrderBy(s => s.result_semester_exam.total_score);
                 //--------------------L1-----------------------------------
                 for (int i = startIndex; i < (obj.Count() / 2); i++)
                 {

@@ -693,11 +693,15 @@ namespace CamemisOffLine.Windows
             string accessUrl = Properties.Settings.Default.acessUrl;
             string token = Properties.Settings.Default.Token;
             MessageBoxControl message = new MessageBoxControl();
+            MessageBoxControl message1 = new MessageBoxControl();
             if(Teacher.InternetChecker()==true&&internet)
             {
                 message.title = "ត្រួតពិនិត្យអ៊ីនធឺណែត";
                 message.discription = "ល្បឿនអ៊ីនរបស់អ្នក "+txtPing.Text+"\n"+"តើអ្នកចង់បញ្ចូនទិន្នន័យពេលនេះទេ?";
-                if(message.result==1)
+                this.Opacity = 0.5;
+                message.ShowDialog();
+                this.Opacity = 1;
+                if (message.result==1)
                 {
                     using (HttpClient client = new HttpClient())
                     {
@@ -710,18 +714,18 @@ namespace CamemisOffLine.Windows
                             {
                                 string datas = await content.ReadAsStringAsync();
                                 var obj = JObject.Parse(datas).ToObject<InputScore>();
-                                message.title = "ការបញ្ចូនទិន្នន័យ";
+                                message1.title = "ការបញ្ចូនទិន្នន័យ";
                                 if (obj.message.Equals("data error"))
-                                    message.discription = "ទិន្នន័យរបស់អ្នកមាន​បញ្ហា សូមត្រួតពិនិត្យឡើងវិញ";
+                                    message1.discription = "ទិន្នន័យរបស់អ្នកមាន​បញ្ហា សូមត្រួតពិនិត្យឡើងវិញ";
                                 else if (obj.message.Equals("true"))
                                 {
                                     File.Delete(filePath + "\\" + classId + " " + months + " " + SubjectId + ".txt");
-                                    message.discription = "ការបញ្ជូនទិន្នន័យបានជោគជ័យ";
+                                    message1.discription = "ការបញ្ជូនទិន្នន័យបានជោគជ័យ";
                                     DGScoreMonth.ItemsSource = null;
                                 }
                                 else if (obj.message.Equals("false"))
-                                    message.discription = "ការបញ្ជូនទិន្នន័យមិនបានជោគជ័យ";
-                                message.buttonType = 2;
+                                    message1.discription = "ការបញ្ជូនទិន្នន័យមិនបានជោគជ័យ";
+                                message1.buttonType = 2;
                             }
                         }
                     }
@@ -729,14 +733,14 @@ namespace CamemisOffLine.Windows
             }
             else
             {
-                message.title = "អ៊ីនធឺណែត";
-                message.discription = "មិនមានការតភ្ជាប់អ៊ីនធឺណែត";
-                message.buttonType = 2;
+                message1.title = "អ៊ីនធឺណែត";
+                message1.discription = "មិនមានការតភ្ជាប់អ៊ីនធឺណែត";
+                message1.buttonType = 2;
             }
            
-            message.Owner = this;
+            message1.Owner = this;
             this.Opacity = 0.5;
-            message.ShowDialog();
+            message1.ShowDialog();
             this.Opacity = 1;
         }
 

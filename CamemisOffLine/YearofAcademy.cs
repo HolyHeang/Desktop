@@ -49,6 +49,7 @@ namespace CamemisOffLine
     }
     public class Grade
     {
+        public string id { get; set; }
         [JsonProperty("name")]
         public string name { get; set; }
         [JsonProperty("name_en")]
