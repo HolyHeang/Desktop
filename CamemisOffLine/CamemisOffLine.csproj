@@ -190,6 +190,9 @@
     <Compile Include="Report\AttendanceReport.xaml.cs">
       <DependentUpon>AttendanceReport.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Report\Classification.xaml.cs">
+      <DependentUpon>Classification.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Report\DistributionLetter.xaml.cs">
       <DependentUpon>DistributionLetter.xaml</DependentUpon>
     </Compile>
@@ -207,6 +210,9 @@
     </Compile>
     <Compile Include="Report\Semi-classification.xaml.cs">
       <DependentUpon>Semi-classification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report\StatisticGrade12.xaml.cs">
+      <DependentUpon>StatisticGrade12.xaml</DependentUpon>
     </Compile>
     <Compile Include="Report\StudentList.xaml.cs">
       <DependentUpon>StudentList.xaml</DependentUpon>
@@ -307,6 +313,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Report\Classification.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Report\DistributionLetter.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -328,6 +338,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Report\Semi-classification.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Report\StatisticGrade12.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -150,6 +150,12 @@
   <data name="daily" xml:space="preserve">
     <value>hằng ngày</value>
   </data>
+  <data name="delect" xml:space="preserve">
+    <value>ngon miệng</value>
+  </data>
+  <data name="delectall" xml:space="preserve">
+    <value>Chọn tất cả</value>
+  </data>
   <data name="Differentfile" xml:space="preserve">
     <value>Gửi một tệp khác</value>
   </data>
@@ -174,6 +180,9 @@
   <data name="Information" xml:space="preserve">
     <value>Thông tin</value>
   </data>
+  <data name="inputscore" xml:space="preserve">
+    <value>điểm đầu vào</value>
+  </data>
   <data name="kh" xml:space="preserve">
     <value>Tiếng Khmer</value>
   </data>
@@ -197,6 +206,9 @@
   </data>
   <data name="Message Box Stu Result Title select month" xml:space="preserve">
     <value>Vui lòng chọn Tháng / Học kỳ / Năm</value>
+  </data>
+  <data name="Message Box Stu Result Title select Subject" xml:space="preserve">
+    <value>Vui lòng chọn Chủ đề!</value>
   </data>
   <data name="Message Box Stu Result Title select year" xml:space="preserve">
     <value>Vui lòng chọn năm học</value>

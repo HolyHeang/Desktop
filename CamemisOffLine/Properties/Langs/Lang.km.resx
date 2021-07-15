@@ -150,6 +150,12 @@
   <data name="daily" xml:space="preserve">
     <value>ប្រចាំថ្ងៃ</value>
   </data>
+  <data name="delect" xml:space="preserve">
+    <value>លុប</value>
+  </data>
+  <data name="delectall" xml:space="preserve">
+    <value>លុបទាំងអស់</value>
+  </data>
   <data name="Differentfile" xml:space="preserve">
     <value>ដាក់ឯកសារផ្សេងគ្នា</value>
   </data>
@@ -174,6 +180,9 @@
   <data name="Information" xml:space="preserve">
     <value>ព័ត៌មាន</value>
   </data>
+  <data name="inputscore" xml:space="preserve">
+    <value>បញ្ជូលពិន្ទុ</value>
+  </data>
   <data name="kh" xml:space="preserve">
     <value>ខ្មែរ</value>
   </data>
@@ -197,6 +206,9 @@
   </data>
   <data name="Message Box Stu Result Title select month" xml:space="preserve">
     <value>សូមជ្រើសរើស យកលទ្ធផលសិក្សាប្រចាំ ខែឬ ឆមាស/ឆ្នាំ</value>
+  </data>
+  <data name="Message Box Stu Result Title select Subject" xml:space="preserve">
+    <value>សូមជ្រើសរើស មុខវិជ្ជា!</value>
   </data>
   <data name="Message Box Stu Result Title select year" xml:space="preserve">
     <value>សូមជ្រើសរើស ឆ្នាំសិក្សា</value>

@@ -4805,7 +4805,6 @@ C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\bin\Debug\System.Data.SQLit
 C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\bin\Debug\System.Net.Http.Formatting.xml
 C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\bin\Debug\WpfAnimatedGif.pdb
 C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\bin\Debug\WpfAnimatedGif.xml
-C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\bin\Debug\WPFToolkit.pdb
 C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\bin\Debug\de\PdfSharp.resources.dll
 C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\bin\Debug\de\PdfSharp.Charting.resources.dll
 C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\CamemisOffLine.csprojAssemblyReference.cache
@@ -4885,3 +4884,7 @@ C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\CamemisOffLine.ap
 C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\CamemisOffLine.csproj.CopyComplete
 C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\CamemisOffLine.exe
 C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\CamemisOffLine.pdb
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\Classification.g.cs
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\StatisticGrade12.g.cs
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\Classification.baml
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\StatisticGrade12.baml

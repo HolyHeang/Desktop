@@ -160,6 +160,24 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delect.
+        /// </summary>
+        public static string delect {
+            get {
+                return ResourceManager.GetString("delect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delect all.
+        /// </summary>
+        public static string delectall {
+            get {
+                return ResourceManager.GetString("delectall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Different file.
         /// </summary>
         public static string Differentfile {
@@ -232,6 +250,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Input score.
+        /// </summary>
+        public static string inputscore {
+            get {
+                return ResourceManager.GetString("inputscore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Khmer.
         /// </summary>
         public static string kh {
@@ -300,6 +327,15 @@ namespace CamemisOffLine.Properties.Langs {
         public static string Message_Box_Stu_Result_Title_select_month {
             get {
                 return ResourceManager.GetString("Message Box Stu Result Title select month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please select Subject!.
+        /// </summary>
+        public static string Message_Box_Stu_Result_Title_select_Subject {
+            get {
+                return ResourceManager.GetString("Message Box Stu Result Title select Subject", resourceCulture);
             }
         }
         

@@ -10,38 +10,76 @@
          xmlns:language="clr-namespace:CamemisOffLine.Properties.Langs"
         Title="PartTeacher" Height="1080" Width="1920" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" WindowState="Maximized" WindowStyle="None">
     <Grid>
-        <DockPanel LastChildFill="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
 
+        <Grid Grid.Row="0" >
+            
+            <Grid HorizontalAlignment="Left" Margin="20 0 0 0">
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+
+                    <!--<Grid Name="gridMenu" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <materialDesign:PackIcon Kind="Menu" Foreground="White" Height="35" Width="35" Cursor="Hand"  MouseDown="gridMenu_MouseDown" ToolTip="{x:Static language:Lang.Tooltip_top_bar_Menu}" HorizontalAlignment="Right" Margin="-11,0,2,0"/>
+                            </Grid>-->
+
+                </Grid>
+                <Grid Grid.Column="0" Name="titleSchool">
+                    <Grid>
+                        <TextBlock Text="បុរី១០០ខ្នង" Name="TitleSchool" Style="{DynamicResource Muol}" FontSize="12" Foreground="Black" HorizontalAlignment="Center" Margin="0 0 0 0" VerticalAlignment="Center"></TextBlock>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid  VerticalAlignment="Center" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+                <Label Name="lblTitle" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Title" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="15"></Label>
+            </Grid>
+            <Border BorderBrush="Black" BorderThickness="0 0 0 1"></Border>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <materialDesign:PackIcon Name="wifiIcon" Kind="Wifi" Foreground="Green" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 10 0"/>
+                <TextBlock Name="txtPing" Text="Ping: 22ms" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                <Grid HorizontalAlignment="Right" Width="150" Height="40" Margin="0,0,0,0" VerticalAlignment="Center">
+                    <Label Name="txtxCheckinternet" HorizontalAlignment="Left" Content="Online"  VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Width="80" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
+                    <ToggleButton Name="btnCheck" Foreground="Black" TextBlock.FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Background="Blue" Height="20" Width="70" HorizontalAlignment="Right" VerticalAlignment="Center" Click="btnCheck_Click">
+                        <materialDesign:ToggleButtonAssist.SwitchTrackOffBackground>
+                            <SolidColorBrush Color="Black" TextOptions.TextHintingMode="Animated"></SolidColorBrush>
+                        </materialDesign:ToggleButtonAssist.SwitchTrackOffBackground>
+                        <materialDesign:ToggleButtonAssist.SwitchTrackOnBackground>
+                            <SolidColorBrush Color="Blue" TextOptions.TextHintingMode="Animated"></SolidColorBrush>
+                        </materialDesign:ToggleButtonAssist.SwitchTrackOnBackground>
+                    </ToggleButton>
+                </Grid>
+                <Grid Name="gridMin" HorizontalAlignment="Center" Height="35" Width="35" Cursor="Hand" MouseDown="gridMin_MouseDown" MouseEnter="gridMin_MouseEnter" MouseLeave="gridMin_MouseLeave">
+                    <materialDesign:PackIcon Name="materiaMin" VerticalAlignment="Center" HorizontalAlignment="Center" Kind="WindowMinimize" Height="15" Width="15"/>
+                </Grid>
+                <Grid Name="gridMax" HorizontalAlignment="Center" Height="35" Width="35" Cursor="Hand" MouseDown="gridMax_MouseDown" MouseEnter="gridMax_MouseEnter" MouseLeave="gridMax_MouseLeave">
+                    <materialDesign:PackIcon Name="materiaMax" VerticalAlignment="Center" HorizontalAlignment="Center" Kind="WindowMaximize" Height="15" Width="15"/>
+                </Grid>
+                <Grid Name="gridClose" HorizontalAlignment="Center" Height="35" Cursor="Hand" Width="35" MouseDown="gridClose_MouseDown" MouseEnter="gridClose_MouseEnter" MouseLeave="gridClose_MouseLeave">
+                    <materialDesign:PackIcon Name="materiaExit" VerticalAlignment="Center" HorizontalAlignment="Center" Kind="WindowClose" Height="15" Width="15"/>
+                </Grid>
+            </StackPanel>
+        </Grid>
+
+
+        <DockPanel LastChildFill="True" Grid.Row="1">
+            
             <DockPanel DockPanel.Dock="Left" Background="#1183CA" Width="320" Height="auto" Name="slidLeft" MouseEnter="slidLeft_MouseEnter" MouseLeave="slidLeft_MouseLeave">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="35"></RowDefinition>
                         <RowDefinition Height="75"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="35"></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <Grid Grid.Row="0">
-                        <Grid.ColumnDefinitions>
-
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-
-                        <Grid Grid.Column="0">
-
-                            <!--<Grid Name="gridMenu" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                <materialDesign:PackIcon Kind="Menu" Foreground="White" Height="35" Width="35" Cursor="Hand"  MouseDown="gridMenu_MouseDown" ToolTip="{x:Static language:Lang.Tooltip_top_bar_Menu}" HorizontalAlignment="Right" Margin="-11,0,2,0"/>
-                            </Grid>-->
-
-                        </Grid>
-                        <Grid Grid.Column="0" Name="titleSchool">
-                            <Grid>
-                                <TextBlock Text="បុរី១០០ខ្នង" Name="TitleSchool" Style="{DynamicResource Muol}" FontSize="12" Foreground="White" HorizontalAlignment="Center" Margin="0 0 0 0" VerticalAlignment="Center"></TextBlock>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                    <Grid x:Name="gridAcc" Margin="0 0 0 0" Grid.Row="1" Background="#1183CA" DataContext="{x:Static properties:Settings.Default}">
-                        <Grid Margin="5 0 5 5" Background="#66111111">
+                    
+                    <Grid x:Name="gridAcc" Margin="0 0 0 0" Grid.Row="0" Background="#1183CA" DataContext="{x:Static properties:Settings.Default}">
+                        <Grid Margin="5 5 5 5" Background="#66111111">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"></ColumnDefinition>
@@ -70,7 +108,7 @@
 
                     </Grid>
 
-                    <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
+                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                         <Grid Name="gridfeature">
                             <StackPanel Margin="0,0,0,0">
 
@@ -182,7 +220,7 @@
                             </StackPanel>
                         </Grid>
                     </ScrollViewer>
-                    <StackPanel Grid.Row="3" Margin="0 0 0 0">
+                    <StackPanel Grid.Row="2" Margin="0 0 0 0">
                         <Grid>
                             <Label Name="lblnameCompany" Content="Power by CAMEMIS" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" FontFamily="Segoe UI Semibold"  Foreground="White">
 
@@ -196,57 +234,27 @@
 
                 <Grid >
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="35"/>
+                   
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <Grid Grid.Row="0" >
-                        <Grid  VerticalAlignment="Center" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
-                            <Label Name="lblTitle" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Title" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="15"></Label>
-                        </Grid>
-                        <Border BorderBrush="Black" BorderThickness="0 0 0 1"></Border>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                            <materialDesign:PackIcon Name="wifiIcon" Kind="Wifi" Foreground="Green" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 10 0"/>
-                            <TextBlock Name="txtPing" Text="Ping: 22ms" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
-                            <Grid HorizontalAlignment="Right" Width="150" Height="40" Margin="0,0,102,0" VerticalAlignment="Center">
-                                <Label Name="txtxCheckinternet" HorizontalAlignment="Left" Content="Online"  VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Width="80" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
-                                <ToggleButton Name="btnCheck" Foreground="Black" TextBlock.FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Background="Blue" Height="20" Width="70" HorizontalAlignment="Right" VerticalAlignment="Center" Click="btnCheck_Click">
-                                    <materialDesign:ToggleButtonAssist.SwitchTrackOffBackground>
-                                        <SolidColorBrush Color="Black" TextOptions.TextHintingMode="Animated"></SolidColorBrush>
-                                    </materialDesign:ToggleButtonAssist.SwitchTrackOffBackground>
-                                    <materialDesign:ToggleButtonAssist.SwitchTrackOnBackground>
-                                        <SolidColorBrush Color="Blue" TextOptions.TextHintingMode="Animated"></SolidColorBrush>
-                                    </materialDesign:ToggleButtonAssist.SwitchTrackOnBackground>
-                                </ToggleButton>
-                            </Grid>
-                            <Grid Name="gridMin" HorizontalAlignment="Center" Height="35" Width="35" Cursor="Hand" MouseDown="gridMin_MouseDown" MouseEnter="gridMin_MouseEnter" MouseLeave="gridMin_MouseLeave">
-                                <materialDesign:PackIcon Name="materiaMin" VerticalAlignment="Center" HorizontalAlignment="Center" Kind="WindowMinimize" Height="15" Width="15"/>
-                            </Grid>
-                            <Grid Name="gridMax" HorizontalAlignment="Center" Height="35" Width="35" Cursor="Hand" MouseDown="gridMax_MouseDown" MouseEnter="gridMax_MouseEnter" MouseLeave="gridMax_MouseLeave">
-                                <materialDesign:PackIcon Name="materiaMax" VerticalAlignment="Center" HorizontalAlignment="Center" Kind="WindowMaximize" Height="15" Width="15"/>
-                            </Grid>
-                            <Grid Name="gridClose" HorizontalAlignment="Center" Height="35" Cursor="Hand" Width="35" MouseDown="gridClose_MouseDown" MouseEnter="gridClose_MouseEnter" MouseLeave="gridClose_MouseLeave">
-                                <materialDesign:PackIcon Name="materiaExit" VerticalAlignment="Center" HorizontalAlignment="Center" Kind="WindowClose" Height="15" Width="15"/>
-                            </Grid>
-                        </StackPanel>
-                    </Grid>
-
+                    
                     <Grid Grid.Row="1" Margin="0 0 0 0">
                         <Grid>
                             <TabControl BorderThickness="0" Margin=" 0 0 0 0" Name="tabcontrolMenu">
                                 <TabItem BorderThickness="0"  Name="tabScore">
-                                    <Grid Margin="-2 2 -2 -2" Background="White">
+                                    <Grid Margin="-2 0 -2 -2" Background="White">
                                         <DockPanel LastChildFill="True">
-                                            <DockPanel Name="DockTree" HorizontalAlignment="Left" Width="250">
-                                                <Grid Margin="0 7 0 0" Background="WhiteSmoke">
+                                            <DockPanel Name="DockTree" HorizontalAlignment="Left" Width="250" Margin="7 0 0 0" Background="WhiteSmoke">
+                                                <Grid Margin="0 5 0 0">
                                                     <Grid.RowDefinitions>
                                                         <RowDefinition Height="40"/>
                                                         <RowDefinition Height="*"/>
                                                     </Grid.RowDefinitions>
                                                     <Grid Grid.Row="0">
                                                         <Label Content="ឆ្នាំសិក្សា" Width="74" HorizontalAlignment="Left" FontSize="13" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-                                                        <ComboBox Style="{StaticResource combobox}" Name="cbAcademyYear" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35" Margin="74,3,5,2"
-                                                                  materialDesign:HintAssist.Hint="សូមជ្រើសរើស" BorderThickness="1 2 1 1" BorderBrush="Black" SelectionChanged="cbAcademyYear_SelectionChanged" />
+                                                        <ComboBox Style="{StaticResource combobox}" Name="cbAcademyYear" IsEditable="True" FontSize="14" Foreground="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Text="សូមជ្រើសរើស" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35" Margin="74,3,5,2"
+                                                                 BorderThickness="1 2 1 1" BorderBrush="Black" SelectionChanged="cbAcademyYear_SelectionChanged" />
                                                     </Grid>
                                                     <Grid Grid.Row="1">
                                                         <ScrollViewer VerticalScrollBarVisibility="Auto" BorderThickness="0" Height="Auto" Foreground="WhiteSmoke">
@@ -298,10 +306,10 @@
                                                 </Grid>
                                             </DockPanel>
                                             <DockPanel Name="DockBody" Margin="10 0 10 0">
-                                                <Grid>
-                                                    <TabControl BorderThickness="0" Name="tabcontrolResult">
+                                                <Grid Margin="0 -7 0 0">
+                                                    <TabControl BorderThickness="0 0 0 0" Name="tabcontrolResult">
                                                         <TabItem Name="TabErrorandSelect">
-                                                            <Grid Margin="-2 2 -2 -2"  Background="WhiteSmoke">
+                                                            <Grid Margin="-2 -1 -2 -2"  Background="WhiteSmoke">
                                                                 <Grid Margin="10">
                                                                     <Grid Height="200" Margin="50 50 50 0" VerticalAlignment="Top" Background="White">
                                                                         <Label Name="LabelTitle" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Content="{x:Static language:Lang.Message_Box_Stu_Result_Title_select_year}" Foreground="Black" Style="{DynamicResource Siemreap}" FontSize="18" FontWeight="Bold"/>
@@ -323,7 +331,7 @@
                                                                         <ColumnDefinition Width="110"></ColumnDefinition>
                                                                     </Grid.ColumnDefinitions>
                                                                     <Grid Grid.Column="1">
-                                                                        <Button Name="btnBack" Height="28" Cursor="Hand" Width="90" HorizontalAlignment="Right" Style="{DynamicResource Siemreap}" Background="LightGray" Margin="0,0,10,0">
+                                                                        <Button Name="btnBack" Height="28" Cursor="Hand" Width="90" HorizontalAlignment="Right" Style="{DynamicResource Siemreap}" Background="LightGray" Margin="0,0,10,0" Click="btnBack_Click">
                                                                             <Grid Height="28" Width="90">
                                                                                 <Grid.ColumnDefinitions>
                                                                                     <ColumnDefinition Width="30"></ColumnDefinition>
@@ -360,11 +368,11 @@
                                                                     <Grid>
                                                                         <StackPanel Orientation="Horizontal">
                                                                             <Grid>
-                                                                                <Button Name="btnInputScore" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="12" Foreground="Black" Content="បញ្ចូលពិន្ទុ" Width="120" Background="#66D3D3D3" BorderThickness="0 0 1 0" BorderBrush="WhiteSmoke" Click="btnInputScore_Click" Height="Auto" Margin="0,0,0,-2" materialDesign:ShadowAssist.ShadowDepth="Depth0"></Button>
+                                                                                <Button Name="btnInputScore" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="12" Foreground="Black" Content="{x:Static language:Lang.inputscore}" Width="120" Background="#66D3D3D3" BorderThickness="0 0 1 0" BorderBrush="WhiteSmoke" Click="btnInputScore_Click" Height="Auto" Margin="0,0,0,-2" materialDesign:ShadowAssist.ShadowDepth="Depth0"/>
 
                                                                             </Grid>
                                                                             <Grid>
-                                                                                <Button Name="btnLearningResult" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="12" Foreground="Black" Content="លទ្ធផលសិក្សា" Background="#66D3D3D3" BorderThickness="0 0 0 0" BorderBrush="LightGray" Click="btnLearningResult_Click" Height="Auto" Margin="0,0,0,-2" materialDesign:ShadowAssist.ShadowDepth="Depth0"/>
+                                                                                <Button Name="btnLearningResult" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="12" Foreground="Black" Content="{x:Static language:Lang.Stu_Learn_Result}" Background="#66D3D3D3" BorderThickness="0 0 0 0" BorderBrush="LightGray" Click="btnLearningResult_Click" Height="Auto" Margin="0,0,0,-2" materialDesign:ShadowAssist.ShadowDepth="Depth0"/>
                                                                             </Grid>
                                                                         </StackPanel>
                                                                     </Grid>
@@ -376,7 +384,7 @@
                                                                         <TabControl Name="tabcontrolResulandInput" BorderThickness="0" Background="WhiteSmoke">
 
                                                                             <TabItem Name="tabInputScore">
-                                                                                <Grid Margin="-2 20 -2 -2" Background="WhiteSmoke">
+                                                                                <Grid Margin="-2 5 -2 -2" Background="WhiteSmoke">
                                                                                     <Grid Margin="10 0 10 10" Background="WhiteSmoke">
                                                                                         <Grid.RowDefinitions>
                                                                                             <RowDefinition Height="50"/>
@@ -390,12 +398,50 @@
                                                                                             </Grid.ColumnDefinitions>
 
                                                                                             <Grid Grid.Column="0">
-                                                                                                <ComboBox Style="{StaticResource combobox}" Name="cbSelectSubject" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35"  materialDesign:HintAssist.Hint="សូមជ្រើសរើស" BorderThickness="1" BorderBrush="WhiteSmoke" Margin="0,4,10,11" SelectionChanged="cbSelectSubject_SelectionChanged"/>
+                                                                                                <ComboBox Style="{StaticResource combobox}" Name="cbSelectSubject" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35"  Text="សូមជ្រើសរើស" IsEditable="True" BorderThickness="1" BorderBrush="WhiteSmoke" Margin="0,4,10,11" SelectionChanged="cbSelectSubject_SelectionChanged"/>
 
                                                                                             </Grid>
-                                                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1" Margin="0 0 10 0">
-                                                                                                <Button Name="btnSave" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="12" Foreground="Black" Content="រក្សាទុកលទ្ធផល" Background="#66D3D3D3" BorderThickness="0 0 0 0" BorderBrush="LightGray" Click="btnSave_Click" Height="35" Width="auto" materialDesign:ShadowAssist.ShadowDepth="Depth0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10"/>
-                                                                                                <Button Name="btnPost" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="12" Foreground="Black" Content="បញ្ជូនទិន្នន័យ" Background="#66D3D3D3" BorderThickness="0 0 0 0" BorderBrush="LightGray" Click="btnPost_Click" Height="35" Width="auto" materialDesign:ShadowAssist.ShadowDepth="Depth0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10"/>
+                                                                                            <StackPanel Name="stacButtonTop" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1" Margin="0 0 10 0">
+                                                                                                <Button Name="btnSave" BorderThickness="0 0 0 0" BorderBrush="LightGray" Click="btnSave_Click" Height="35" Width="auto" VerticalAlignment="Center" Margin="0 0 5 0" Style="{DynamicResource Siemreap}">
+
+                                                                                                    <Grid Height="35" Width="auto">
+                                                                                                        <Grid.ColumnDefinitions>
+                                                                                                            <ColumnDefinition Width="30"></ColumnDefinition>
+                                                                                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                                                                                        </Grid.ColumnDefinitions>
+                                                                                                        <Grid Grid.Column="0" Margin="0,0,0,1" Background="#FF1A389C">
+                                                                                                            <Border BorderBrush="Gray" BorderThickness="0 0 1 0"></Border>
+                                                                                                            <materialDesign:PackIcon Kind="ContentSaveOutline" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" Height="20" Width="20"/>
+                                                                                                        </Grid>
+                                                                                                        <Grid Grid.Column="1" Background="#FF1D3678">
+                                                                                                            <Label Content="រក្សាទុក្ខលទ្ធផល" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="5,2,5,4">
+
+                                                                                                            </Label>
+                                                                                                        </Grid>
+
+
+                                                                                                    </Grid>
+
+                                                                                                </Button>
+                                                                                                <Button Name="btnPost" BorderThickness="0 0 0 0" BorderBrush="LightGray" Click="btnPost_Click" VerticalAlignment="Center" Margin="0 0 5 0" Height="35" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}">
+                                                                                                    <Grid Height="35" Width="auto">
+                                                                                                        <Grid.ColumnDefinitions>
+                                                                                                            <ColumnDefinition Width="30"></ColumnDefinition>
+                                                                                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                                                                                        </Grid.ColumnDefinitions>
+                                                                                                        <Grid Grid.Column="0" Margin="0,0,0,1" Background="#FFAE1717">
+                                                                                                            <Border BorderBrush="Gray" BorderThickness="0 0 1 0" Background="#FF1A389C"></Border>
+                                                                                                            <materialDesign:PackIcon Kind="FileUploadOutline" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" Height="20" Width="20"/>
+                                                                                                        </Grid>
+                                                                                                        <Grid Grid.Column="1" Background="#FF1D3678">
+                                                                                                            <Label Content="បញ្ជូនទិន្ន័យ" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="5,2,5,4">
+
+                                                                                                            </Label>
+                                                                                                        </Grid>
+
+
+                                                                                                    </Grid>
+                                                                                                </Button>
                                                                                                 <Button Name="btnDeleteAll" Height="35" BorderThickness="0" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" Background="LightGray" Margin="0" Click="btnDeleteAll_Click" VerticalAlignment="Center">
                                                                                                     <Grid Height="35" Width="auto">
                                                                                                         <Grid.ColumnDefinitions>
@@ -403,11 +449,11 @@
                                                                                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                                                                                         </Grid.ColumnDefinitions>
                                                                                                         <Grid Grid.Column="0" Margin="0,0,0,1" Background="#FFAE1717">
-                                                                                                            <Border BorderBrush="Gray" BorderThickness="0 0 0 0"></Border>
+                                                                                                            <Border BorderBrush="Gray" BorderThickness="0 0 1 0"></Border>
                                                                                                             <materialDesign:PackIcon Kind="TrashCan" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" Height="20" Width="20"/>
                                                                                                         </Grid>
                                                                                                         <Grid Grid.Column="1" Background="#FFE20000">
-                                                                                                            <Label Content="លុបទាំងអស់" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="10,2,0,4">
+                                                                                                            <Label Content="{x:Static language:Lang.delectall}" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="5,2,5,4">
 
                                                                                                             </Label>
                                                                                                         </Grid>
@@ -420,7 +466,7 @@
                                                                                         </Grid>
                                                                                         <Grid Grid.Row="1">
                                                                                             <DockPanel LastChildFill="True">
-                                                                                                <DockPanel Width="170" DockPanel.Dock="Left">
+                                                                                                <DockPanel Width="170" DockPanel.Dock="Left" Name="DockMonth">
                                                                                                     <ScrollViewer Name="gridmonths" VerticalScrollBarVisibility="Auto">
                                                                                                         <StackPanel>
                                                                                                             <ListView Name="lButton" Margin="0 10 0 0" ItemsSource="{Binding Data}" Width="170" HorizontalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" Background="WhiteSmoke" BorderThickness="0">
@@ -432,7 +478,7 @@
                                                                                                                                 <ItemsControl.ItemTemplate>
                                                                                                                                     <DataTemplate>
                                                                                                                                         <StackPanel Orientation="Vertical" Margin="0 0 0 5" Background="WhiteSmoke">
-                                                                                                                                            <Button Name="btnMonths" Content="{Binding displayMonth}" Margin="-8 -10 -8 -12" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="170" Height="30" Foreground="Blue" HorizontalAlignment="Center" BorderThickness="0" Background="{Binding color}" Tag="{Binding Text,ElementName=txtSemester}" Click="btnMonths_Click">
+                                                                                                                                            <Button Name="btnMonths" Content="{Binding displayMonth}" Margin="-8 -10 -8 -12" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="170" Height="30" Foreground="Blue" HorizontalAlignment="Center" BorderThickness="0" Tag="{Binding Text,ElementName=txtSemester}" Background="{Binding color}" Click="btnMonths_Click">
 
                                                                                                                                             </Button>
                                                                                                                                         </StackPanel>
@@ -498,7 +544,7 @@
                                                                                                                                             </Style>
                                                                                                                                         </DataGridTextColumn.ElementStyle>
                                                                                                                                     </DataGridTextColumn>
-                                                                                                                                    <DataGridTextColumn Width="70" Header="អត្តលេខ" CanUserResize="False" Binding="{Binding student_id}">
+                                                                                                                                    <DataGridTextColumn Width="150" Header="អត្តលេខ" CanUserResize="False" Binding="{Binding student_id}">
                                                                                                                                         <DataGridTextColumn.ElementStyle>
                                                                                                                                             <Style TargetType="TextBlock">
                                                                                                                                                 <Setter Property="HorizontalAlignment" Value="Center" />
@@ -534,7 +580,7 @@
                                                                                                                                                         </Grid.ColumnDefinitions>
                                                                                                                                                         <Grid Grid.Column="0">
 
-                                                                                                                                                            <Button BorderThickness="0" Background="Transparent" Style="{DynamicResource Siemreap}" Content="-">
+                                                                                                                                                            <Button BorderThickness="0" Background="Transparent" Style="{DynamicResource Siemreap}" Content="-" Click="Button_Click">
 
                                                                                                                                                             </Button>
 
@@ -542,12 +588,12 @@
                                                                                                                                                         </Grid>
                                                                                                                                                         <StackPanel Orientation="Vertical" Grid.Column="1">
                                                                                                                                                             <TextBlock Name="txtError" Text="{Binding error}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" Visibility="{Binding visible}"/>
-                                                                                                                                                            <TextBox Padding="2 -1 0 0" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="White" Text="{Binding Path=score,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding check}" LostFocus="TextBox_LostFocus">
-
-                                                                                                                                                            </TextBox>
+                                                                                                                                                            <TextBox x:Name="TextinputScore" Padding="2 -1 0 0" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="White" Text="{Binding Path=score,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding check}" LostFocus="TextBox_LostFocus" PreviewTextInput="TextBox_PreviewTextInput"/>
                                                                                                                                                         </StackPanel>
                                                                                                                                                         <Grid Grid.Column="2">
-                                                                                                                                                            <Button BorderThickness="0" Background="Transparent" Style="{DynamicResource Siemreap}" Content="+" ></Button>
+                                                                                                                                                            <Button BorderThickness="0" Name="btnSum" Background="Transparent" Style="{DynamicResource Siemreap}" Content="+" Click="btnSum_Click">
+                                                                                                                                                                
+                                                                                                                                                            </Button>
                                                                                                                                                         </Grid>
                                                                                                                                                     </Grid>
                                                                                                                                                 </StackPanel>
@@ -588,7 +634,7 @@
                                                                                                                                                                 <materialDesign:PackIcon Kind="TrashCan" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" Height="20" Width="20"/>
                                                                                                                                                             </Grid>
                                                                                                                                                             <Grid Grid.Column="1" Background="#FFE20000">
-                                                                                                                                                                <Label Content="លុប" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="10,2,0,4">
+                                                                                                                                                                <Label Content="{x:Static language:Lang.delect}" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="10,2,0,4">
 
                                                                                                                                                                 </Label>
                                                                                                                                                             </Grid>
@@ -609,319 +655,12 @@
                                                                                                                     </ScrollViewer>
                                                                                                                 </Grid>
                                                                                                             </TabItem>
-                                                                                                            <TabItem Name="tabScoreSemester">
-                                                                                                                <Grid Background="WhiteSmoke" Margin="9 0 9 9">
-                                                                                                                    <Grid.ColumnDefinitions>
-                                                                                                                        <ColumnDefinition Width="*"/>
-                                                                                                                    </Grid.ColumnDefinitions>
 
-                                                                                                                    <ScrollViewer x:Name="scrolScoreSemester" Margin="0 5 0 0" VerticalScrollBarVisibility="Auto" Grid.RowSpan="2">
-                                                                                                                        <StackPanel>
-                                                                                                                            <DataGrid BorderThickness="1 0 1 1" BorderBrush="#7F808080" Background="WhiteSmoke" RowHeight="45" Margin="0 0 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Name="DGScoreSemester" FontSize="13" AutoGenerateColumns="False" GridLinesVisibility="All" AlternatingRowBackground="#339FDADA" AlternationCount="1" IsReadOnly="True" CanUserSortColumns="False" SelectionMode="Extended" SelectionUnit="FullRow" VirtualizingPanel.ScrollUnit="Pixel">
-                                                                                                                                <DataGrid.Resources>
-                                                                                                                                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
-                                                                                                                                        <Setter Property="Background" Value="WhiteSmoke" />
-                                                                                                                                        <Setter Property="Height" Value="45"/>
-                                                                                                                                        <Setter Property="FontFamily" Value="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
-                                                                                                                                        <Setter Property="BorderThickness" Value="1"/>
-                                                                                                                                        <Setter Property="Margin" Value="-1 0 -1 0"/>
-                                                                                                                                        <Setter Property="BorderBrush" Value="#7F808080"/>
-                                                                                                                                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                                                                                                                                        <Setter Property="FontWeight" Value="Bold"/>
-                                                                                                                                    </Style>
-                                                                                                                                    <Style BasedOn="{StaticResource {x:Type DataGridRowHeader}}" TargetType="{x:Type DataGridRowHeader}">
-                                                                                                                                        <Setter Property="Width" Value="auto"/>
-                                                                                                                                        <Setter Property="Height" Value="auto"/>
-                                                                                                                                        <Setter Property="BorderBrush" Value="#7F808080"/>
-                                                                                                                                        <Setter Property="BorderThickness" Value="0"/>
-                                                                                                                                    </Style>
-                                                                                                                                    <Style TargetType="DataGridRow">
-                                                                                                                                        <Setter Property="Background" Value="#4C9CA8AC"/>
-                                                                                                                                        <Setter Property="Height" Value="auto"/>
-                                                                                                                                        <Setter Property="BorderBrush" Value="#7F808080"/>
-                                                                                                                                        <Setter Property="BorderThickness" Value="0"/>
-                                                                                                                                    </Style>
-                                                                                                                                </DataGrid.Resources>
-
-                                                                                                                                <DataGrid.Columns>
-                                                                                                                                    <DataGridTextColumn Width="50" Header="#" CanUserResize="False" Binding="{Binding id}">
-                                                                                                                                        <DataGridTextColumn.ElementStyle>
-                                                                                                                                            <Style TargetType="TextBlock">
-                                                                                                                                                <Setter Property="HorizontalAlignment" Value="Center" />
-                                                                                                                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                                                                                                                            </Style>
-                                                                                                                                        </DataGridTextColumn.ElementStyle>
-                                                                                                                                    </DataGridTextColumn>
-                                                                                                                                    <DataGridTextColumn Width="70" Header="សិស្ស" CanUserResize="False">
-                                                                                                                                        <DataGridTextColumn.ElementStyle>
-                                                                                                                                            <Style TargetType="TextBlock">
-                                                                                                                                                <Setter Property="HorizontalAlignment" Value="Center" />
-                                                                                                                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                                                                                                                            </Style>
-                                                                                                                                        </DataGridTextColumn.ElementStyle>
-                                                                                                                                    </DataGridTextColumn>
-                                                                                                                                    <DataGridTextColumn Width="200" Header="គោត្តនាម នាម" CanUserResize="False" Binding="{Binding name}">
-                                                                                                                                        <DataGridTextColumn.ElementStyle>
-                                                                                                                                            <Style TargetType="TextBlock">
-                                                                                                                                                <Setter Property="HorizontalAlignment" Value="Left" />
-                                                                                                                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                                                                                                                            </Style>
-                                                                                                                                        </DataGridTextColumn.ElementStyle>
-                                                                                                                                    </DataGridTextColumn>
-                                                                                                                                    <DataGridTextColumn Width="60" Header="ភេទ" CanUserResize="False" Binding="{Binding sex}">
-                                                                                                                                        <DataGridTextColumn.ElementStyle>
-                                                                                                                                            <Style TargetType="TextBlock">
-                                                                                                                                                <Setter Property="HorizontalAlignment" Value="Center" />
-                                                                                                                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                                                                                                                            </Style>
-                                                                                                                                        </DataGridTextColumn.ElementStyle>
-                                                                                                                                    </DataGridTextColumn>
-                                                                                                                                    <DataGridTemplateColumn Width="150" Header="ពិន្ទុ" CanUserResize="False">
-                                                                                                                                        <DataGridTemplateColumn.CellTemplate>
-                                                                                                                                            <DataTemplate>
-                                                                                                                                                <StackPanel Margin="0">
-                                                                                                                                                    <Grid>
-                                                                                                                                                        <Grid.ColumnDefinitions>
-                                                                                                                                                            <ColumnDefinition Width="25"/>
-                                                                                                                                                            <ColumnDefinition Width="*"/>
-                                                                                                                                                            <ColumnDefinition Width="25"/>
-                                                                                                                                                        </Grid.ColumnDefinitions>
-                                                                                                                                                        <Grid Grid.Column="0">
-
-                                                                                                                                                            <Button BorderThickness="0" Background="Transparent" Style="{DynamicResource Siemreap}" Content="--">
-
-                                                                                                                                                            </Button>
-
-
-                                                                                                                                                        </Grid>
-                                                                                                                                                        <Grid Grid.Column="1">
-                                                                                                                                                            <TextBox Padding="2 -1 0 0" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="White">
-
-                                                                                                                                                            </TextBox>
-                                                                                                                                                        </Grid>
-                                                                                                                                                        <Grid Grid.Column="2">
-                                                                                                                                                            <Button BorderThickness="0" Background="Transparent" Style="{DynamicResource Siemreap}" Content="+"></Button>
-                                                                                                                                                        </Grid>
-                                                                                                                                                    </Grid>
-
-                                                                                                                                                </StackPanel>
-                                                                                                                                            </DataTemplate>
-                                                                                                                                        </DataGridTemplateColumn.CellTemplate>
-                                                                                                                                    </DataGridTemplateColumn>
-                                                                                                                                    <DataGridTemplateColumn Width="100" Header="អវត្តមាន" CanUserResize="False">
-                                                                                                                                        <DataGridTemplateColumn.CellTemplate>
-                                                                                                                                            <DataTemplate>
-                                                                                                                                                <CheckBox Height="30" Width="30">A</CheckBox>
-                                                                                                                                            </DataTemplate>
-                                                                                                                                        </DataGridTemplateColumn.CellTemplate>
-                                                                                                                                    </DataGridTemplateColumn>
-                                                                                                                                    <DataGridTemplateColumn Width="3*" Header="មូលវិចារណ៏គ្រូ" CanUserResize="False">
-                                                                                                                                        <DataGridTemplateColumn.CellTemplate>
-                                                                                                                                            <DataTemplate>
-                                                                                                                                                <StackPanel Margin="0">
-                                                                                                                                                    <TextBox Padding="2 -1 0 0" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="White">
-
-                                                                                                                                                    </TextBox>
-                                                                                                                                                </StackPanel>
-                                                                                                                                            </DataTemplate>
-                                                                                                                                        </DataGridTemplateColumn.CellTemplate>
-                                                                                                                                    </DataGridTemplateColumn>
-
-                                                                                                                                    <DataGridTemplateColumn Width="100">
-                                                                                                                                        <DataGridTemplateColumn.CellTemplate>
-                                                                                                                                            <DataTemplate>
-                                                                                                                                                <StackPanel Margin="-12" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                                                                                                                                    <Button Name="btnDelect" Height="28" BorderThickness="0" Cursor="Hand" Width="90" HorizontalAlignment="Right" Style="{DynamicResource Siemreap}" Background="LightGray" Margin="0">
-                                                                                                                                                        <Grid Height="28" Width="90">
-                                                                                                                                                            <Grid.ColumnDefinitions>
-                                                                                                                                                                <ColumnDefinition Width="30"></ColumnDefinition>
-                                                                                                                                                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                                                                                                                                            </Grid.ColumnDefinitions>
-                                                                                                                                                            <Grid Grid.Column="0" Margin="0,0,0,1" Background="#FFAE1717">
-                                                                                                                                                                <Border BorderBrush="Gray" BorderThickness="0 0 0 0"></Border>
-                                                                                                                                                                <materialDesign:PackIcon Kind="TrashCan" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" Height="20" Width="20"/>
-                                                                                                                                                            </Grid>
-                                                                                                                                                            <Grid Grid.Column="1" Background="#FFE20000">
-                                                                                                                                                                <Label Content="{x:Static language:Lang.back}" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="10,2,0,4">
-
-                                                                                                                                                                </Label>
-                                                                                                                                                            </Grid>
-
-
-                                                                                                                                                        </Grid>
-                                                                                                                                                    </Button>
-
-                                                                                                                                                </StackPanel>
-                                                                                                                                            </DataTemplate>
-                                                                                                                                        </DataGridTemplateColumn.CellTemplate>
-                                                                                                                                    </DataGridTemplateColumn>
-
-
-                                                                                                                                </DataGrid.Columns>
-                                                                                                                            </DataGrid>
-                                                                                                                        </StackPanel>
-                                                                                                                    </ScrollViewer>
-                                                                                                                </Grid>
-                                                                                                            </TabItem>
-                                                                                                            <TabItem Name="tabScoreYear">
-                                                                                                                <Grid Background="WhiteSmoke" Margin="9 0 9 9">
-                                                                                                                    <Grid.ColumnDefinitions>
-                                                                                                                        <ColumnDefinition Width="*"/>
-                                                                                                                    </Grid.ColumnDefinitions>
-
-                                                                                                                    <ScrollViewer x:Name="scrolScoreYear" Margin="0 5 0 0" VerticalScrollBarVisibility="Auto" Grid.RowSpan="2">
-                                                                                                                        <StackPanel>
-                                                                                                                            <DataGrid BorderThickness="1 0 1 1" BorderBrush="#7F808080" Background="WhiteSmoke" RowHeight="45" Margin="0 0 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Name="DGScoreYear" FontSize="13" AutoGenerateColumns="False" GridLinesVisibility="All" AlternatingRowBackground="#339FDADA" AlternationCount="1" IsReadOnly="True" CanUserSortColumns="False" SelectionMode="Extended" SelectionUnit="FullRow" VirtualizingPanel.ScrollUnit="Pixel">
-                                                                                                                                <DataGrid.Resources>
-                                                                                                                                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
-                                                                                                                                        <Setter Property="Background" Value="WhiteSmoke" />
-                                                                                                                                        <Setter Property="Height" Value="45"/>
-                                                                                                                                        <Setter Property="FontFamily" Value="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
-                                                                                                                                        <Setter Property="BorderThickness" Value="1"/>
-                                                                                                                                        <Setter Property="Margin" Value="-1 0 -1 0"/>
-                                                                                                                                        <Setter Property="BorderBrush" Value="#7F808080"/>
-                                                                                                                                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                                                                                                                                        <Setter Property="FontWeight" Value="Bold"/>
-                                                                                                                                    </Style>
-                                                                                                                                    <Style BasedOn="{StaticResource {x:Type DataGridRowHeader}}" TargetType="{x:Type DataGridRowHeader}">
-                                                                                                                                        <Setter Property="Width" Value="auto"/>
-                                                                                                                                        <Setter Property="Height" Value="auto"/>
-                                                                                                                                        <Setter Property="BorderBrush" Value="#7F808080"/>
-                                                                                                                                        <Setter Property="BorderThickness" Value="0"/>
-                                                                                                                                    </Style>
-                                                                                                                                    <Style TargetType="DataGridRow">
-                                                                                                                                        <Setter Property="Background" Value="#4C9CA8AC"/>
-                                                                                                                                        <Setter Property="Height" Value="auto"/>
-                                                                                                                                        <Setter Property="BorderBrush" Value="#7F808080"/>
-                                                                                                                                        <Setter Property="BorderThickness" Value="0"/>
-                                                                                                                                    </Style>
-                                                                                                                                </DataGrid.Resources>
-
-                                                                                                                                <DataGrid.Columns>
-                                                                                                                                    <DataGridTextColumn Width="50" Header="#" CanUserResize="False" Binding="{Binding id}">
-                                                                                                                                        <DataGridTextColumn.ElementStyle>
-                                                                                                                                            <Style TargetType="TextBlock">
-                                                                                                                                                <Setter Property="HorizontalAlignment" Value="Center" />
-                                                                                                                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                                                                                                                            </Style>
-                                                                                                                                        </DataGridTextColumn.ElementStyle>
-                                                                                                                                    </DataGridTextColumn>
-                                                                                                                                    <DataGridTextColumn Width="70" Header="សិស្ស" CanUserResize="False">
-                                                                                                                                        <DataGridTextColumn.ElementStyle>
-                                                                                                                                            <Style TargetType="TextBlock">
-                                                                                                                                                <Setter Property="HorizontalAlignment" Value="Center" />
-                                                                                                                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                                                                                                                            </Style>
-                                                                                                                                        </DataGridTextColumn.ElementStyle>
-                                                                                                                                    </DataGridTextColumn>
-                                                                                                                                    <DataGridTextColumn Width="200" Header="គោត្តនាម នាម" CanUserResize="False" Binding="{Binding name}">
-                                                                                                                                        <DataGridTextColumn.ElementStyle>
-                                                                                                                                            <Style TargetType="TextBlock">
-                                                                                                                                                <Setter Property="HorizontalAlignment" Value="Left" />
-                                                                                                                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                                                                                                                            </Style>
-                                                                                                                                        </DataGridTextColumn.ElementStyle>
-                                                                                                                                    </DataGridTextColumn>
-                                                                                                                                    <DataGridTextColumn Width="60" Header="ភេទ" CanUserResize="False" Binding="{Binding sex}">
-                                                                                                                                        <DataGridTextColumn.ElementStyle>
-                                                                                                                                            <Style TargetType="TextBlock">
-                                                                                                                                                <Setter Property="HorizontalAlignment" Value="Center" />
-                                                                                                                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                                                                                                                            </Style>
-                                                                                                                                        </DataGridTextColumn.ElementStyle>
-                                                                                                                                    </DataGridTextColumn>
-                                                                                                                                    <DataGridTemplateColumn Width="150" Header="ពិន្ទុ" CanUserResize="False">
-                                                                                                                                        <DataGridTemplateColumn.CellTemplate>
-                                                                                                                                            <DataTemplate>
-                                                                                                                                                <StackPanel Margin="0">
-                                                                                                                                                    <Grid>
-                                                                                                                                                        <Grid.ColumnDefinitions>
-                                                                                                                                                            <ColumnDefinition Width="25"/>
-                                                                                                                                                            <ColumnDefinition Width="*"/>
-                                                                                                                                                            <ColumnDefinition Width="25"/>
-                                                                                                                                                        </Grid.ColumnDefinitions>
-                                                                                                                                                        <Grid Grid.Column="0">
-
-                                                                                                                                                            <Button BorderThickness="0" Background="Transparent" Style="{DynamicResource Siemreap}" Content="--">
-
-                                                                                                                                                            </Button>
-
-
-                                                                                                                                                        </Grid>
-                                                                                                                                                        <Grid Grid.Column="1">
-                                                                                                                                                            <TextBox Padding="2 -1 0 0" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="White">
-
-                                                                                                                                                            </TextBox>
-                                                                                                                                                        </Grid>
-                                                                                                                                                        <Grid Grid.Column="2">
-                                                                                                                                                            <Button BorderThickness="0" Background="Transparent" Style="{DynamicResource Siemreap}" Content="+"></Button>
-                                                                                                                                                        </Grid>
-                                                                                                                                                    </Grid>
-
-                                                                                                                                                </StackPanel>
-                                                                                                                                            </DataTemplate>
-                                                                                                                                        </DataGridTemplateColumn.CellTemplate>
-                                                                                                                                    </DataGridTemplateColumn>
-                                                                                                                                    <DataGridTemplateColumn Width="100" Header="អវត្តមាន" CanUserResize="False">
-                                                                                                                                        <DataGridTemplateColumn.CellTemplate>
-                                                                                                                                            <DataTemplate>
-                                                                                                                                                <CheckBox Height="30" Width="30">A</CheckBox>
-                                                                                                                                            </DataTemplate>
-                                                                                                                                        </DataGridTemplateColumn.CellTemplate>
-                                                                                                                                    </DataGridTemplateColumn>
-                                                                                                                                    <DataGridTemplateColumn Width="3*" Header="មូលវិចារណ៏គ្រូ" CanUserResize="False">
-                                                                                                                                        <DataGridTemplateColumn.CellTemplate>
-                                                                                                                                            <DataTemplate>
-                                                                                                                                                <StackPanel Margin="0">
-                                                                                                                                                    <TextBox Padding="2 -1 0 0" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="White">
-
-                                                                                                                                                    </TextBox>
-                                                                                                                                                </StackPanel>
-                                                                                                                                            </DataTemplate>
-                                                                                                                                        </DataGridTemplateColumn.CellTemplate>
-                                                                                                                                    </DataGridTemplateColumn>
-
-                                                                                                                                    <DataGridTemplateColumn Width="100">
-                                                                                                                                        <DataGridTemplateColumn.CellTemplate>
-                                                                                                                                            <DataTemplate>
-                                                                                                                                                <StackPanel Margin="-12" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                                                                                                                                    <Button Name="btnDelect" Height="28" BorderThickness="0" Cursor="Hand" Width="90" HorizontalAlignment="Right" Style="{DynamicResource Siemreap}" Background="LightGray" Margin="0">
-                                                                                                                                                        <Grid Height="28" Width="90">
-                                                                                                                                                            <Grid.ColumnDefinitions>
-                                                                                                                                                                <ColumnDefinition Width="30"></ColumnDefinition>
-                                                                                                                                                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                                                                                                                                            </Grid.ColumnDefinitions>
-                                                                                                                                                            <Grid Grid.Column="0" Margin="0,0,0,1" Background="#FFAE1717">
-                                                                                                                                                                <Border BorderBrush="Gray" BorderThickness="0 0 0 0"></Border>
-                                                                                                                                                                <materialDesign:PackIcon Kind="TrashCan" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" Height="20" Width="20"/>
-                                                                                                                                                            </Grid>
-                                                                                                                                                            <Grid Grid.Column="1" Background="#FFE20000">
-                                                                                                                                                                <Label Content="{x:Static language:Lang.back}" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="10,2,0,4">
-
-                                                                                                                                                                </Label>
-                                                                                                                                                            </Grid>
-
-
-                                                                                                                                                        </Grid>
-                                                                                                                                                    </Button>
-
-                                                                                                                                                </StackPanel>
-                                                                                                                                            </DataTemplate>
-                                                                                                                                        </DataGridTemplateColumn.CellTemplate>
-                                                                                                                                    </DataGridTemplateColumn>
-
-
-                                                                                                                                </DataGrid.Columns>
-                                                                                                                            </DataGrid>
-                                                                                                                        </StackPanel>
-                                                                                                                    </ScrollViewer>
-                                                                                                                </Grid>
-                                                                                                            </TabItem>
                                                                                                             <TabItem>
                                                                                                                 <Grid Background="White">
                                                                                                                     <Grid Margin="10 5 10 10" Background="WhiteSmoke">
                                                                                                                         <Grid Margin="50 50 50 0" Height="150" VerticalAlignment="Top" Background="White">
-                                                                                                                            <Label Content="{x:Static language:Lang.noresultdata}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18"/>
+                                                                                                                            <Label Name="TilteSelection" Content="{x:Static language:Lang.Message_Box_Stu_Result_Title_select_Subject}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18"/>
                                                                                                                         </Grid>
                                                                                                                     </Grid>
                                                                                                                 </Grid>
@@ -940,48 +679,64 @@
                                                                             </TabItem>
 
                                                                             <TabItem Name="tabcontrolLearn">
-                                                                                <Grid Margin="-2 20 -2 -2" Background="WhiteSmoke">
-                                                                                    <Grid Margin="10 0 10 10" Background="White">
+                                                                                <Grid Margin="-2 10 -2 -2" Background="WhiteSmoke">
+                                                                                    <Grid.RowDefinitions>
+                                                                                       
+                                                                                        <RowDefinition Height="*"/>
+                                                                                    </Grid.RowDefinitions>
+
+                                                                                    <Grid Margin="10 0 10 10" Background="White" Grid.Row="0">
                                                                                         <Grid.ColumnDefinitions>
                                                                                             <ColumnDefinition Width="170"/>
                                                                                             <ColumnDefinition Width="*"/>
                                                                                         </Grid.ColumnDefinitions>
                                                                                         <Grid Grid.Column="0" Background="WhiteSmoke">
-                                                                                            <ScrollViewer Name="gridmonths1" VerticalScrollBarVisibility="Auto">
-                                                                                                <StackPanel>
-                                                                                                    <ListView Name="lButton1" Margin="0 10 0 0" ItemsSource="{Binding Data}" Width="270" HorizontalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" Background="White" BorderThickness="0">
-                                                                                                        <ItemsControl.ItemTemplate>
-                                                                                                            <DataTemplate>
-                                                                                                                <StackPanel HorizontalAlignment="Center">
-                                                                                                                    <TextBlock Name="txtSemester" Text="{Binding semester}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Visibility="Collapsed"></TextBlock>
-                                                                                                                    <ListView Name="ListMonth" ItemsSource="{Binding months}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" BorderBrush="White" BorderThickness="0 0 0 0" Margin="0 -5 0 0" HorizontalAlignment="Center">
-                                                                                                                        <ItemsControl.ItemTemplate>
-                                                                                                                            <DataTemplate>
-                                                                                                                                <StackPanel Orientation="Vertical" Margin="0 0 0 5">
-                                                                                                                                    <Button Name="btnMonths" Content="{Binding displayMonth}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="230" Height="30" Foreground="Blue" HorizontalAlignment="Center" BorderThickness="0" Background="{Binding color}" Tag="{Binding Text,ElementName=txtSemester}" >
+                                                                                            <DockPanel Width="170" DockPanel.Dock="Left" Name="DockMonth1">
+                                                                                                <ScrollViewer Name="gridmonths1" VerticalScrollBarVisibility="Auto">
+                                                                                                    <StackPanel>
+                                                                                                        <ListView Name="lButton1" Margin="0 0 0 0" ItemsSource="{Binding Data}" Width="170" HorizontalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" Background="WhiteSmoke" BorderThickness="0">
+                                                                                                            <ItemsControl.ItemTemplate>
+                                                                                                                <DataTemplate>
+                                                                                                                    <StackPanel HorizontalAlignment="Center" Background="WhiteSmoke">
+                                                                                                                        <TextBlock Name="txtSemester" Text="{Binding semester}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Visibility="Collapsed"></TextBlock>
+                                                                                                                        <ListView Name="ListMonth1" ItemsSource="{Binding months}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Background="WhiteSmoke" BorderBrush="White" BorderThickness="0 0 0 0" Margin="-10" HorizontalAlignment="Center">
+                                                                                                                            <ItemsControl.ItemTemplate>
+                                                                                                                                <DataTemplate>
+                                                                                                                                    <StackPanel Orientation="Vertical" Margin="0 0 0 5" Background="WhiteSmoke">
+                                                                                                                                        <Button Name="btnMonthsResult" Click="btnMonthsResult_Click" Content="{Binding displayMonth}" Margin="-8 -10 -8 -12" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="170" Height="30" Foreground="Blue" HorizontalAlignment="Center" BorderThickness="0" Tag="{Binding Text,ElementName=txtSemester}" Background="{Binding color}">
 
-                                                                                                                                    </Button>
-                                                                                                                                </StackPanel>
-                                                                                                                            </DataTemplate>
-                                                                                                                        </ItemsControl.ItemTemplate>
-                                                                                                                    </ListView>
-                                                                                                                    <Button Content="{Binding name}" FontWeight="Bold" Width="230" Height="30" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="12" Foreground="Black" Margin="0 10 0 0" BorderThickness="0" HorizontalAlignment="Center" Background="{Binding colors}" Tag="{Binding Text,ElementName=txtSemester}">
+                                                                                                                                        </Button>
+                                                                                                                                    </StackPanel>
+                                                                                                                                </DataTemplate>
+                                                                                                                            </ItemsControl.ItemTemplate>
+                                                                                                                        </ListView>
+                                                                                                                        <Button Content="{Binding name}" FontWeight="Bold" Width="172" Margin="-17 10 -17 -7" Height="30" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="12" Foreground="Black" BorderThickness="0" HorizontalAlignment="Center" Background="{Binding colors}" Tag="{Binding Text,ElementName=txtSemester}">
 
-                                                                                                                    </Button>
-                                                                                                                </StackPanel>
-                                                                                                            </DataTemplate>
-                                                                                                        </ItemsControl.ItemTemplate>
-                                                                                                    </ListView>
-                                                                                                    <Button Name="btnResultofTheYear1" Content="លទ្ធផលប្រចាំឆ្នាំ" Width="230" Height="30" Foreground="Red" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="12" FontWeight="Bold" Margin="0 10 0 0" Visibility="Collapsed" HorizontalAlignment="Center" BorderBrush="Gray" BorderThickness="0"  Background="WhiteSmoke" Tag="{Binding Text,ElementName=txtSemester}">
-                                                                                                    </Button>
-                                                                                                </StackPanel>
-                                                                                            </ScrollViewer>
+                                                                                                                        </Button>
+                                                                                                                    </StackPanel>
+                                                                                                                </DataTemplate>
+                                                                                                            </ItemsControl.ItemTemplate>
+                                                                                                        </ListView>
+                                                                                                        <Button Name="btnResultofTheYear1" Content="លទ្ធផលប្រចាំឆ្នាំ" Width="230" Height="30" Foreground="Red" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="12" FontWeight="Bold" Margin="0 -1 0 0" Visibility="Collapsed" HorizontalAlignment="Center" BorderBrush="#66D3D3D3" BorderThickness="0 1 0 1"  Background="WhiteSmoke" Tag="{Binding Text,ElementName=txtSemester}">
+                                                                                                        </Button>
+                                                                                                    </StackPanel>
+                                                                                                </ScrollViewer>
+                                                                                            </DockPanel>
 
                                                                                         </Grid>
 
                                                                                         <Grid Grid.Column="1">
                                                                                             <Grid>
                                                                                                 <TabControl BorderThickness="0" x:Name="tabcontrolLearn1">
+                                                                                                    <TabItem>
+                                                                                                        <Grid Background="White">
+                                                                                                            <Grid Margin="10 5 10 10" Background="WhiteSmoke">
+                                                                                                                <Grid Margin="50 50 50 0" Height="150" VerticalAlignment="Top" Background="White">
+                                                                                                                    <Label Name="lblErrandSelect" Content="{x:Static language:Lang.Message_Box_Stu_Result_Title_select_month}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18"/>
+                                                                                                                </Grid>
+                                                                                                            </Grid>
+                                                                                                        </Grid>
+                                                                                                    </TabItem>
                                                                                                     <TabItem Name="tabMonth">
                                                                                                         <Grid Background="White">
 
@@ -1041,7 +796,7 @@
                                                                                                                             <DataGrid.Columns>
 
 
-                                                                                                                                <DataGridTextColumn Header="ល.រ" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MinWidth="60" Width="0.6*" Binding="{Binding numbers}">
+                                                                                                                                <DataGridTextColumn Header="ល.រ" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MinWidth="60" Width="0.6*" Binding="{Binding number}">
                                                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -1054,7 +809,7 @@
                                                                                                                                         </Style>
                                                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                                                 </DataGridTextColumn>
-                                                                                                                                <DataGridTextColumn Header="អត្តលេខសិស្ស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MinWidth="110" Width="1.1*" Binding="{Binding student_schoolyear_id}">
+                                                                                                                                <DataGridTextColumn Header="អត្តលេខសិស្ស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MinWidth="110" Width="1.1*" Binding="{Binding student_id}">
                                                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -1520,15 +1275,7 @@
                                                                                                         </Grid>
                                                                                                     </TabItem>
 
-                                                                                                    <TabItem>
-                                                                                                        <Grid Background="White">
-                                                                                                            <Grid Margin="10 5 10 10" Background="WhiteSmoke">
-                                                                                                                <Grid Margin="50 50 50 0" Height="150" VerticalAlignment="Top" Background="White">
-                                                                                                                    <Label Content="{x:Static language:Lang.noresultdata}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18"/>
-                                                                                                                </Grid>
-                                                                                                            </Grid>
-                                                                                                        </Grid>
-                                                                                                    </TabItem>
+                                                                                                    
                                                                                                 </TabControl>
                                                                                                 <Rectangle Height="10" VerticalAlignment="Top" Margin="0 0 0 0" Fill="White"></Rectangle>
 
@@ -1538,7 +1285,7 @@
                                                                                 </Grid>
                                                                             </TabItem>
                                                                         </TabControl>
-                                                                        <Rectangle Height="20" VerticalAlignment="Top" Margin="0 0 0 0" Fill="White"></Rectangle>
+                                                                        <Rectangle Height="10" VerticalAlignment="Top" Margin="0 0 0 0" Fill="White"></Rectangle>
                                                                     </Grid>
 
                                                                 </Grid>
@@ -1546,7 +1293,7 @@
                                                             </Grid>
                                                         </TabItem>
                                                     </TabControl>
-                                                    <Rectangle Height="7" VerticalAlignment="Top" Margin="0 0 0 0" Fill="White"></Rectangle>
+                                                    <Rectangle Height="7" VerticalAlignment="Top" Fill="White"/>
                                                 </Grid>
                                             </DockPanel>
                                         </DockPanel>

@@ -150,6 +150,12 @@
   <data name="daily" xml:space="preserve">
     <value>日常</value>
   </data>
+  <data name="delect" xml:space="preserve">
+    <value>选择</value>
+  </data>
+  <data name="delectall" xml:space="preserve">
+    <value>全选</value>
+  </data>
   <data name="Differentfile" xml:space="preserve">
     <value>归档其他文件</value>
   </data>
@@ -174,6 +180,9 @@
   <data name="Information" xml:space="preserve">
     <value>信息</value>
   </data>
+  <data name="inputscore" xml:space="preserve">
+    <value>输入分数</value>
+  </data>
   <data name="kh" xml:space="preserve">
     <value>高棉语</value>
   </data>
@@ -197,6 +206,9 @@
   </data>
   <data name="Message Box Stu Result Title select month" xml:space="preserve">
     <value>请选择月/学期/年</value>
+  </data>
+  <data name="Message Box Stu Result Title select Subject" xml:space="preserve">
+    <value>请选择主题！</value>
   </data>
   <data name="Message Box Stu Result Title select year" xml:space="preserve">
     <value>请选择学年</value>
