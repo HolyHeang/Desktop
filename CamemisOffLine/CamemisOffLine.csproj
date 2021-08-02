@@ -216,6 +216,9 @@
     <Compile Include="Report\ListStudentCencel.xaml.cs">
       <DependentUpon>ListStudentCencel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Report\MonthlySubjectResult.xaml.cs">
+      <DependentUpon>MonthlySubjectResult.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Report\Semi-classification.xaml.cs">
       <DependentUpon>Semi-classification.xaml</DependentUpon>
     </Compile>
@@ -360,6 +363,10 @@
     <Page Include="Report\ListStudentCencel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Report\MonthlySubjectResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Report\Semi-classification.xaml">
       <Generator>MSBuild:Compile</Generator>

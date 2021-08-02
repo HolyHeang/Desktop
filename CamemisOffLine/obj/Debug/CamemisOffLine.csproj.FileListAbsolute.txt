@@ -5050,3 +5050,15 @@ D:\Clone\09-07-2021\CamemisOffLine\bin\Debug\de\PdfSharp.Charting.resources.dll
 D:\Clone\09-07-2021\CamemisOffLine\obj\Debug\CamemisOffLine.application
 D:\Clone\09-07-2021\CamemisOffLine\obj\Debug\CamemisOffLine.csproj.CopyComplete
 >>>>>>> 003d4d93333c049b7822aed31f10c3ce0790c28a
+D:\Clone\09-07-2021\CamemisOffLine\obj\Debug\Report\AtendentAcademy.g.cs
+D:\Clone\09-07-2021\CamemisOffLine\obj\Debug\Report\StatisticGrade9.g.cs
+D:\Clone\09-07-2021\CamemisOffLine\obj\Debug\Report\Student_Attendance_Year.g.cs
+D:\Clone\09-07-2021\CamemisOffLine\obj\Debug\Report\Summary_of_Students.g.cs
+D:\Clone\09-07-2021\CamemisOffLine\obj\Debug\Windows\HomePage.g.cs
+D:\Clone\09-07-2021\CamemisOffLine\obj\Debug\Report\AtendentAcademy.baml
+D:\Clone\09-07-2021\CamemisOffLine\obj\Debug\Report\StatisticGrade9.baml
+D:\Clone\09-07-2021\CamemisOffLine\obj\Debug\Report\Student_Attendance_Year.baml
+D:\Clone\09-07-2021\CamemisOffLine\obj\Debug\Report\Summary_of_Students.baml
+D:\Clone\09-07-2021\CamemisOffLine\obj\Debug\Windows\HomePage.baml
+D:\Clone\09-07-2021\CamemisOffLine\obj\Debug\Report\MonthlySubjectResult.g.cs
+D:\Clone\09-07-2021\CamemisOffLine\obj\Debug\Report\MonthlySubjectResult.baml

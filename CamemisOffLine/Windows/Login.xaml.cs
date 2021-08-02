@@ -319,6 +319,7 @@ namespace CamemisOffLine
                                 Properties.Settings.Default.schoolName_en = d.data.schoolSettings.LOGO_LEFT_SLOGAN_EN;
                                 Properties.Settings.Default.schoolData = datas;
                                 Properties.Settings.Default.schoolCode = txtCode.Text;
+                                Properties.Settings.Default.logoNameLeft = d.data.schoolSettings.LOGO_LEFT_NAME;
                                 Properties.Settings.Default.Save();
                                 btnNext.Visibility = Visibility.Collapsed;
                                 btnPassCode.Visibility = Visibility.Collapsed;

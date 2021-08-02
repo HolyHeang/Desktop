@@ -50,7 +50,7 @@ namespace CamemisOffLine
             InitializeComponent();
             DispatcherTimer timer = new DispatcherTimer();
             timer.Tick += new EventHandler(UpdateTimer_Tick);
-            timer.Interval = new TimeSpan(0, 0, 30);
+            timer.Interval = new TimeSpan(0, 0, 50);
             timer.Start();
             DispatcherTimer Internet = new DispatcherTimer();
             Internet.Tick += Internet_Tick;
@@ -96,6 +96,7 @@ namespace CamemisOffLine
                 txtPing.Text = "Ping :" + (ping) + "ms";
                 wifiIcon.Kind = MaterialDesignThemes.Wpf.PackIconKind.WifiOff;
             }
+            GC.Collect();
         }
 
         string todayDate = "";
@@ -2470,6 +2471,7 @@ namespace CamemisOffLine
                         string token = Properties.Settings.Default.Token;
                         var respone = await RESTApiHelper.GetAll(accessUrl, "/academic/" + item.id + "/grade-time-shift", token);
                         DataButton = JObject.Parse(respone).ToObject<TimesButton>().data;
+                        SaveAcademyMonth(respone,schoolYearId);
                         Properties.Settings.Default.monthofTheAcademyYear = respone;
                         Properties.Settings.Default.Save();
                         getAllData = true;
@@ -2496,7 +2498,7 @@ namespace CamemisOffLine
                     else
                     {
                         getAllData = true;
-                        DataButton = JObject.Parse(Properties.Settings.Default.monthofTheAcademyYear).ToObject<TimesButton>().data;
+                        DataButton = GetAcademyFromLocal(schoolYearId).data;
 
                     }
                     if (changeAcademyYear)
@@ -2932,6 +2934,10 @@ namespace CamemisOffLine
                 Month.Visibility = Visibility.Collapsed;
                 lbltitleGrade.Content = "ឆ្នាំសិក្សា" + cbAcademyYear.SelectedValue.ToString();
                 changeAcademyYear = true;
+                foreach(var item in obj)
+                {
+                    schoolYearId = item.id;
+                }
                 year = cb.ToString();
             }
             catch
@@ -3683,6 +3689,7 @@ namespace CamemisOffLine
         private async Task<string> GetMonthlyResultFormApiAsync(string use = "use")
         {
             Loading loading = new Loading();
+            loading.Owner = this;
             this.IsEnabled = false;
             //----------------AccessUrl and Token---------------------------
             string accessUrl = Properties.Settings.Default.acessUrl;
@@ -4090,6 +4097,9 @@ namespace CamemisOffLine
 
             try
             {
+                cmbGradeResultPrint.ItemsSource = null;
+                cmbClassResultPrint.ItemsSource = null;
+                cmbMonthResultPrint.ItemsSource = null;
                 List<string> grade = new List<string>();
                 var item = sender as ComboBox;
                 var selection = item.SelectedItem;
@@ -4098,6 +4108,7 @@ namespace CamemisOffLine
                 var obj = JObject.Parse(Properties.Settings.Default.schoolAcademyYear).ToObject<YearofAcademy>().data.Where(y => y.name.Equals(selection.ToString()));
                 foreach (var items in obj)
                 {
+                    schoolYearId = items.id;
                     foreach (var grades in items.school_system)
                     {
                         foreach (var gradeName in grades.grade)
@@ -4108,6 +4119,7 @@ namespace CamemisOffLine
                 }
                 cmbGradeResultPrint.IsEnabled = true;
                 cmbGradeResultPrint.ItemsSource = grade;
+
             }
             catch { }
         }
@@ -4115,6 +4127,8 @@ namespace CamemisOffLine
         {
             try
             {
+                cmbClassResultPrint.ItemsSource = null;
+                cmbMonthResultPrint.ItemsSource = null;
                 List<KeyValuePair<string, string>> ClassAndId = new List<KeyValuePair<string, string>>();
                 var item = sender as ComboBox;
                 var selection = item.SelectedItem;
@@ -4142,17 +4156,29 @@ namespace CamemisOffLine
             }
             catch { }
         }
-        private void cmbClassResultPrint_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void cmbClassResultPrint_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
             {
+                cmbMonthResultPrint.ItemsSource = null;
+                string accessUrl = Properties.Settings.Default.acessUrl;
+                TimesButton timesButton = new TimesButton();
                 var items = sender as ComboBox;
                 var selection = (KeyValuePair<string,string>) items.SelectedItem;
                 studentClass = selection.Key;
                 classId = selection.Value;
                 List<KeyValuePair<string, string>> button = new List<KeyValuePair<string, string>>();
-                var obj = JObject.Parse(Properties.Settings.Default.monthofTheAcademyYear).ToObject<TimesButton>().data;
-                foreach (var item in obj)
+                if(internet&&InternetChecker())
+                {
+                    var respone1 = await RESTApiHelper.GetAll(accessUrl, "/academic/" + selection.Value + "/grade-time-shift", token);
+                    timesButton = JObject.Parse(respone1).ToObject<TimesButton>();
+                    SaveAcademyMonth(respone1, schoolYearId);
+                }
+                else
+                {
+                    timesButton = GetAcademyFromLocal(schoolYearId);
+                }
+                foreach (var item in timesButton.data)
                 {
                     foreach (var month in item.months)
                     {
@@ -4677,7 +4703,30 @@ namespace CamemisOffLine
             return list;
         }
         //-----------------------------------------------------------------
-         ///////////////////
+        //-----------Get and Save Academy month----------------------------
+        private void SaveAcademyMonth(string respone, string year)
+        {
+            string saveString = respone;
+            using (StreamWriter writer = new StreamWriter(filePath + "\\" + "academyYear " + year + ".txt"))
+            {
+                writer.WriteLine(saveString);
+            }
+        }
+        TimesButton GetAcademyFromLocal(string year)
+        {
+            try
+            {
+                string returnString = File.ReadAllText(filePath + "\\" + "academyYear " + year + ".txt");
+                var obj = JObject.Parse(returnString).ToObject<TimesButton>();
+                return obj;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        //----------------------------------------------------------------
+        ///////////////////
     }
 
 }

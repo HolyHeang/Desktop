@@ -24,7 +24,14 @@ namespace CamemisOffLine.Windows
             this.obj = obj;
             this.title = title;
         }
-        string title = "";
+        public MonthlyResult(List<StudentMonthlyResult> obj, string title,string year)
+        {
+            InitializeComponent();
+            this.obj = obj;
+            this.title = title;
+            this.year = year;
+        }
+        string title = "",year="";
         List<StudentMonthlyResult> obj = new List<StudentMonthlyResult>();
         string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -157,6 +164,8 @@ namespace CamemisOffLine.Windows
             List<StudentResultForCrystalReport> L1 = new List<StudentResultForCrystalReport>();
             List<StudentResultForCrystalReport> L2 = new List<StudentResultForCrystalReport>();
             lblSchoolName.Content = Properties.Settings.Default.schoolName;
+            lblLogoleft.Content = Properties.Settings.Default.logoNameLeft;
+            
             int startIndex = 0;
             string avg = "", colors = "";
 
@@ -167,6 +176,7 @@ namespace CamemisOffLine.Windows
                 {
                     num++;
                     lblTeacherName.Content = obj[i].instructor.name;
+                    lblclass.Text = "ថ្នាក់ទី " + obj[i].class_name+" ("+year+")";
                     lblMonth.Text = "លទ្ធផលប្រចាំ " + DateChange.checkMonth(int.Parse(obj[i].result_monthly.month));
                     if (obj[i].result_monthly.absence_exam.Equals(1))
                     {

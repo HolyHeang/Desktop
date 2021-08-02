@@ -310,5 +310,17 @@ namespace CamemisOffLine.Properties {
                 this["teacherId"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string logoNameLeft {
+            get {
+                return ((string)(this["logoNameLeft"]));
+            }
+            set {
+                this["logoNameLeft"] = value;
+            }
+        }
     }
 }

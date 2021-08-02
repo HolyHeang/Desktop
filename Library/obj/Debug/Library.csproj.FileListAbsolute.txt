@@ -528,7 +528,6 @@ D:\Clone\09-07-2021\Library\bin\Debug\Dapper.dll
 D:\Clone\09-07-2021\Library\bin\Debug\Newtonsoft.Json.dll
 D:\Clone\09-07-2021\Library\bin\Debug\System.Data.SQLite.dll
 D:\Clone\09-07-2021\Library\bin\Debug\System.Net.Http.Formatting.dll
-D:\Clone\09-07-2021\Library\obj\Debug\Library.csproj.AssemblyReference.cache
 D:\Clone\09-07-2021\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
 D:\Clone\09-07-2021\Library\obj\Debug\Library.csproj.CopyComplete
 D:\Clone\09-07-2021\Library\obj\Debug\Library.dll

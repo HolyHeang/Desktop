@@ -18,7 +18,7 @@
                     <Grid>
                         <StackPanel Orientation="Vertical" Margin="0,25,0,0">
                             <Image Source="/CamemisOffLine;component/Image/MoEYS.png" Height="80" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
-                            <Label Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" Style="{DynamicResource Muol}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Bottom"></Label>
+                            <Label Name="lblLogoleft" Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" Style="{DynamicResource Muol}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Bottom"></Label>
                             <Grid Margin="0,-12,0,0">
                                 <Label Name="lblSchoolName" Content="វិទ្យាល័យ ហ៊ុន សែន បូរី១០០ខ្នង" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="14" VerticalAlignment="Bottom"></Label>
                             </Grid>
@@ -34,8 +34,9 @@
                             <Grid Margin="0 -8 0 0">
                                 <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Margin="0 -5 0 0"></Label>
                             </Grid>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 50 0 0">
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0 50 0 0">
                                 <TextBlock Name="lblMonth" Text="លទ្ធផលប្រចាំ ខែ--" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="14" Foreground="Blue" Margin="0 0 0 0" TextDecorations="Underline"></TextBlock>
+                                <TextBlock Name="lblclass" Text="ថ្នាក់ទី ១១ខ (២០១៩-២០២០)" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="14" Foreground="Blue" Margin="0 0 0 0" TextDecorations="Underline"></TextBlock>
                             </StackPanel>
                         </StackPanel>
                     </Grid>

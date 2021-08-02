@@ -1,4 +1,5 @@
 ﻿using CamemisOffLine.Component;
+using CamemisOffLine.Report;
 using Library;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -315,6 +316,7 @@ namespace CamemisOffLine.Windows
         string year = "";
         private void cbAcademyYear_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            clearAllSelection();
             TilteSelection.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title;
             cbSelectClass.Visibility = Visibility.Visible;
             List<KeyValuePair<string, string>> data = new List<KeyValuePair<string, string>>();
@@ -343,19 +345,20 @@ namespace CamemisOffLine.Windows
                 foreach(var item in obj)
                 {
                     schoolYearId = item.schoolyear;
+                    titleYear = item.name;
                     foreach(var i in item.teaching_classes)
                     {
                         data.Add(new KeyValuePair<string, string>(i.name,i.id));
                     }
                 }
-                tvAcademy.ItemsSource = obj;
+                //tvAcademy.ItemsSource = obj;
                 cbSelectClass.ItemsSource = data;
                 cbSelectClass.DisplayMemberPath = "Key";
                 cbSelectClass.SelectedValuePath = "Value";
                 changeAcademyYear = true;
                 year = cb.ToString();
                 LabelTitle.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title;
-                tvAcademy.Visibility = Visibility.Visible;
+                //tvAcademy.Visibility = Visibility.Visible;
                 DockTree.Visibility = Visibility.Collapsed;
                 tabcontrolResult.SelectedIndex = 1;
                 tabcontrolScore.SelectedIndex = 1;
@@ -496,7 +499,7 @@ namespace CamemisOffLine.Windows
             Application.Current.Shutdown();
         }
         string schoolYearId = "";
-        private async void tvAcademy_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+       /* private async void tvAcademy_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
            
             try
@@ -619,7 +622,7 @@ namespace CamemisOffLine.Windows
                 LabelTitle.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title;
                
             }
-        }
+        }*/
 
         private void Vietnam_Click(object sender, RoutedEventArgs e)
         {
@@ -755,8 +758,8 @@ namespace CamemisOffLine.Windows
                     }
                 }
             }
-            tvAcademy.ItemsSource = null;
-            tvAcademy.ItemsSource = obj.Where(y => y.name.Equals(year));
+           /* tvAcademy.ItemsSource = null;
+            tvAcademy.ItemsSource = obj.Where(y => y.name.Equals(year));*/
         }
         bool internet = true;
         private void btnCheck_Click(object sender, RoutedEventArgs e)
@@ -1131,11 +1134,16 @@ namespace CamemisOffLine.Windows
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-
-            //.....................................
-
-            btnLearningResult.IsEnabled = false;
+            clearAllSelection();
             cbAcademyYear.Text = "សូមជ្រើសរើសឆ្នាំសិក្សា";
+        }
+
+        void clearAllSelection()
+        {
+            btnLearningResult.IsEnabled = false;
+            cbSelectClass.ItemsSource = null;
+            cbSelectMonth.ItemsSource = null;
+            cbSelectSubject.ItemsSource = null;
             cbSelectClass.Text = "សូមជ្រើសរើសថ្នាក់";
             cbSelectMonth.Text = "សូមជ្រើសរើសឆ្នាំខែ/ឆមាស";
             cbSelectSubject.Text = "សូមជ្រើសរើសមុខវិជ្ជា";
@@ -1166,7 +1174,6 @@ namespace CamemisOffLine.Windows
             btnDeleteAll.Visibility = Visibility.Collapsed;
             btnPrint.Visibility = Visibility.Collapsed;
             btnLearningResult.IsEnabled = false;
-
         }
 
         private bool CheckFileExist(string month)
@@ -2083,16 +2090,19 @@ namespace CamemisOffLine.Windows
                 }
             }
         }
-
+        string title = "",label="",titleYear="";
         private async void cbSelectMonth_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
             {
                 var item = sender as ComboBox;
                 var selection = (KeyValuePair<string, string>)item.SelectedItem;
+                label = selection.Key;
                 DGScoreMonth.ItemsSource = null;
+               
                 if (selection.Key.Equals("ឆមាសទី១") || selection.Key.Equals("ឆមាសទី២"))
                 {
+                    title = "semester";
                     MessageBoxControl message = new MessageBoxControl();
                     Loading loading = new Loading();
                     tabcontrolScore.SelectedIndex = 0;
@@ -2179,6 +2189,7 @@ namespace CamemisOffLine.Windows
                 }
                 else
                 {
+                    title = "month";
                     MessageBoxControl message = new MessageBoxControl();
                     Loading loading = new Loading();
                     tabcontrolScore.SelectedIndex = 0;
@@ -2323,10 +2334,11 @@ namespace CamemisOffLine.Windows
                                 File.Delete(filePath + "\\" + classId + " " + month + " " + SubjectId + ".txt");
                             }
                         }
-                        
-
                         DGScoreMonth.ItemsSource = null;
                         DGScoreMonth.ItemsSource = obj.data;
+                        File.Delete(filePath + "\\" + classId + " " + month + " " + SubjectId + ".txt");
+                        btnPrint.Visibility = Visibility.Visible;
+                        btnSave.Visibility = Visibility.Visible;
                         loading.Close();
                         this.Opacity = 0.5;
                         message.ShowDialog();
@@ -2354,6 +2366,7 @@ namespace CamemisOffLine.Windows
         {
             try
             {
+
                 this.IsEnabled = false;
                 btnLearningResult.IsEnabled = true;
                 cbSelectSubject.Text = "សូមជ្រើរើសមុខវិជ្ជា";
@@ -2390,8 +2403,6 @@ namespace CamemisOffLine.Windows
 
                     var respone1 = await RESTApiHelper.GetAll(accessUrl, "/academic/" + selection.Value + "/grade-time-shift", token);
                     var obj1 = JObject.Parse(respone1).ToObject<TimesButton>();
-                    obj1.classId = selection.Value;
-
                     foreach (var item1 in obj1.data)
                     {
                         foreach (var month in item1.months)
@@ -2422,7 +2433,7 @@ namespace CamemisOffLine.Windows
                     cbSelectSubject.SelectedValuePath = "id";
                     //Task<string> task = GetMonthlyResultFormApiAsync();
                     SaveLocalSubject(JsonConvert.SerializeObject(obj), selection.Value);
-                    SaveAcademyMonth(JsonConvert.SerializeObject(obj1), selection.Value,year);
+                    SaveAcademyMonth(JsonConvert.SerializeObject(obj1),schoolYearId);
                     DockTree.Visibility = Visibility.Collapsed;
                     tabcontrolResult.SelectedIndex = 1;
                     tabcontrolScore.SelectedIndex = 1;
@@ -2441,7 +2452,7 @@ namespace CamemisOffLine.Windows
                 {
                     try
                     {
-                        var obj1 = GetAcademyFromLocal(selection.Value,year);
+                        var obj1 = GetAcademyFromLocal(schoolYearId);
 
                         foreach (var item1 in obj1.data)
                         {
@@ -2525,6 +2536,7 @@ namespace CamemisOffLine.Windows
             }
         }
         string monthName = "";
+        List<StudentMonthlyResult> resultData = new List<StudentMonthlyResult>();
         private void cbSelectResultMonth_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
@@ -2535,6 +2547,7 @@ namespace CamemisOffLine.Windows
                 monthName = selection.Key;
                 if (selection.Key.Equals("ឆមាសទី១") || selection.Key.Equals("ឆមាសទី២"))
                 {
+                    title = "semester";
                     txtTitleMonth.Text = "លទ្ធផលប្រចាំ​ "+selection.Key;
                     btnSaveSemester.Visibility = Visibility.Collapsed;
                     btnPostSemester.Visibility = Visibility.Collapsed;
@@ -2542,7 +2555,7 @@ namespace CamemisOffLine.Windows
                     Loading loading = new Loading();
                     tabcontrolLearn1.SelectedIndex = 2;
                     Selectresult.Visibility = Visibility.Collapsed;
-                    var obj = new List<StudentMonthlyResult>();
+                    resultData = new List<StudentMonthlyResult>();
                     try
                     {
                         List<Morality> moralities1 = new List<Morality>();
@@ -2556,9 +2569,9 @@ namespace CamemisOffLine.Windows
                         Selectresult.Visibility = Visibility.Collapsed;
                         tabcontrolLearn1.SelectedIndex = 1;
 
-                        obj = GetData("", "semester", selection.Key);
-                        NumberList(obj, "2");
-                        foreach(var item1 in obj)
+                        resultData = GetData("", "semester", selection.Key);
+                        NumberList(resultData, "2");
+                        foreach(var item1 in resultData)
                         {
                             if (item1.profileMedia.id == null)
                                 id = item1.student_id;
@@ -2568,7 +2581,7 @@ namespace CamemisOffLine.Windows
                         }
                         if (!File.Exists(filePath + "\\" + classId + " " + nameSemester + ".txt"))
                         {
-                            foreach (var item1 in obj)
+                            foreach (var item1 in resultData)
                             {
                                 item1.localProfileLink = filePath + "\\" + item1.profileMedia.id + ".jpg";
                                 moralities1.Add(new Morality
@@ -2599,8 +2612,8 @@ namespace CamemisOffLine.Windows
                         DGSemester.ItemsSource = null;
                         DGSemesterExam.ItemsSource = null;
                         DGSemesterClass.ItemsSource = null;
-                        DGSemester.ItemsSource = obj;
-                        DGSemesterExam.ItemsSource = obj;
+                        DGSemester.ItemsSource = resultData;
+                        DGSemesterExam.ItemsSource = resultData;
                         DGSemesterClass.ItemsSource = moralities.OrderBy(s => s.rank);
                         loading.Close();
                         this.Opacity = 0.5;
@@ -2621,6 +2634,7 @@ namespace CamemisOffLine.Windows
                 }
                 else
                 {
+                    title = "month";
                     txtTitleMonth.Text = "លទ្ធផលប្រចាំ​ ខែ" + selection.Key;
                     btnSaveSemester.Visibility = Visibility.Collapsed;
                     btnPostSemester.Visibility = Visibility.Collapsed;
@@ -2628,7 +2642,7 @@ namespace CamemisOffLine.Windows
                     Loading loading = new Loading();
                     tabcontrolLearn1.SelectedIndex = 0;
                     Selectresult.Visibility = Visibility.Collapsed;
-                    var obj = new List<StudentMonthlyResult>();
+                    resultData = new List<StudentMonthlyResult>();
                     try
                     {
 
@@ -2644,15 +2658,15 @@ namespace CamemisOffLine.Windows
                         Selectresult.Visibility = Visibility.Collapsed;
                         tabcontrolLearn1.SelectedIndex = 1;
 
-                        obj = GetData(month.ToString());
+                        resultData = GetData(month.ToString());
 
-                        foreach (var item1 in obj)
+                        foreach (var item1 in resultData)
                         {
                             item1.localProfileLink = filePath + "\\" + item1.profileMedia.id + ".jpg";
                         }
 
-                        NumberList(obj, "1");
-                        foreach (var item1 in obj)
+                        NumberList(resultData, "1");
+                        foreach (var item1 in resultData)
                         {
                             if (item1.profileMedia.id == null)
                                 id = item1.student_id;
@@ -2661,7 +2675,7 @@ namespace CamemisOffLine.Windows
                             item1.localProfileLink = filePath + "\\" + id + ".jpg";
                         }
                         DGMonthlyResult.ItemsSource = null;
-                        DGMonthlyResult.ItemsSource = obj;
+                        DGMonthlyResult.ItemsSource = resultData;
                         loading.Close();
                         this.Opacity = 0.5;
                         message.ShowDialog();
@@ -2891,6 +2905,13 @@ namespace CamemisOffLine.Windows
             }
             return null;
         }
+
+        private void btnPrintResult_Click(object sender, RoutedEventArgs e)
+        {
+            MonthlyResult monthly = new MonthlyResult(resultData,title,titleYear);
+            monthly.Show();
+        }
+
         //----------------------------------------------------------------
 
         //-------------------Save Subject in Local------------------------
@@ -2934,44 +2955,29 @@ namespace CamemisOffLine.Windows
             } 
         }
 
+        private void btnPrint_Click(object sender, RoutedEventArgs e)
+        {
+            List<StudentInformation> obejct = new List<StudentInformation>();
+            try
+            {
+                obejct = obj.data.OrderBy(s => int.Parse(s.rank)).ToList();
+            }catch
+            {
+                obejct = obj.data.ToList();
+            }
+            NumberList(obejct);
+            MonthlySubjectResult monthlySubject = new MonthlySubjectResult(obejct, title,label,titleYear);
+            monthlySubject.Show();
+        }
+
         //----------------------------------------------------------------
         //----------------------Get Academy Month from Local--------------
-        private void SaveAcademyMonth(string respone, string classId,string year)
+        private void SaveAcademyMonth(string respone, string year)
         {
             string saveString = respone;
-            if (!File.Exists(filePath + "\\" + "academyYear " + year + ".txt"))
+            using (StreamWriter writer = new StreamWriter(filePath + "\\" + "academyYear " + year + ".txt"))
             {
-                using (StreamWriter writer = new StreamWriter(filePath + "\\" + "academyYear " + year + ".txt"))
-                {
-                    writer.WriteLine(saveString + "|");
-                }
-            }
-            else
-            {
-                string returnString = File.ReadAllText(filePath + "\\" + "academyYear " + year + ".txt");
-                string[] data = returnString.Split('|');
-                bool save = false;
-                for (int i = 0; i < data.Length - 1; i++)
-                {
-                    var obj = JObject.Parse(data[i]).ToObject<TimesButton>();
-                    if (obj.classId == classId)
-                    {
-                        save = false;
-                        break;
-                    }
-                    else
-                    {
-                        save = true;
-                    }
-                }
-                if (save == true)
-                {
-                    using (StreamWriter writer = new StreamWriter(filePath + "\\" + "academyYear " + year + ".txt"))
-                    {
-                        writer.WriteLine(saveString + "|" + returnString);
-                    }
-                    return;
-                }
+                writer.WriteLine(saveString);
             }
         }
         //----------------------------------------------------------------
@@ -3001,22 +3007,13 @@ namespace CamemisOffLine.Windows
         }
         //----------------------------------------------------------------
         //----------------------Get Academy month from local--------------
-        TimesButton GetAcademyFromLocal(string classId,string year)
+        TimesButton GetAcademyFromLocal(string year)
         {
             try
             {
                 string returnString = File.ReadAllText(filePath + "\\" + "academyYear " + year + ".txt");
-                string[] data = returnString.Split('|');
-
-                for (int i = 0; i < data.Length - 1; i++)
-                {
-                    var obj = JObject.Parse(data[i]).ToObject<TimesButton>();
-                    if (obj.classId == classId)
-                    {
-                        return obj;
-                    }
-                }
-                return null;
+                var obj = JObject.Parse(returnString).ToObject<TimesButton>();
+                return obj;
             }
             catch
             {
