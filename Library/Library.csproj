@@ -56,8 +56,11 @@
     <Compile Include="GradeTime.cs" />
     <Compile Include="InputScore.cs" />
     <Compile Include="Instructor.cs" />
+    <Compile Include="MonthlyScoreExpire.cs" />
+    <Compile Include="Morality.cs" />
     <Compile Include="PersonalDataLogin.cs" />
     <Compile Include="PersonalLogin.cs" />
+    <Compile Include="ProfileStudent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RESTApiHelper.cs" />
     <Compile Include="School.cs" />

@@ -12,9 +12,9 @@ DEBUG;TRACE
 D:\Clone\09-07-2021\CamemisOffLine\App.xaml
 28-1873447186
 3-1125448426
-44775613929
+45-66745438
 49-511845643
 Component\MessageBoxControl.xaml;Component\PrintCardStyle.xaml;PopupUserControl.xaml;Report\AdministratorReport.xaml;Report\AttendanceReport.xaml;Report\Classification.xaml;Report\DistributionLetter.xaml;Report\DistributionStaffAcademy.xaml;Report\DistributionTeacher.xaml;Report\Education_Staff_Information_Sheet.xaml;Report\ListStudentCencel.xaml;Report\Semi-classification.xaml;Report\StatisticGrade12.xaml;Report\StudentList.xaml;Windows\About.xaml;Windows\Account.xaml;Windows\AllSubMonthlyResult.xaml;Windows\HonoraryList.xaml;Windows\Loading.xaml;Windows\Login.xaml;Windows\MainWindow.xaml;Windows\MonthlyResult.xaml;Windows\MonthlyStatisticResult.xaml;Windows\PartTeacher.xaml;Windows\ShowListStudentToPrint.xaml;Windows\StudentResultDetail.xaml;Windows\Teacher.xaml;Windows\Transcript.xaml;
 
-False
+True
 

@@ -80,7 +80,7 @@
 
 
                                 <StackPanel Orientation="Vertical" Name="adminPart" HorizontalAlignment="Stretch"  Height="auto" >
-                                    <Button Name="btnStaffAttendanceReport" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="35" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" Margin="5,10,5,5" Click="btnStaffAttendanceReport_Click" MouseEnter="btnStaffAttendanceReport_MouseEnter" MouseLeave="btnStaffAttendanceReport_MouseLeave">
+                                    <Button Name="btnStaffAttendanceReport" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="35" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" Margin="5,10,5,5" Click="btnStaffAttendanceReport_Click" MouseEnter="btnStaffAttendanceReport_MouseEnter" MouseLeave="btnStaffAttendanceReport_MouseLeave" Visibility="Collapsed">
 
                                         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="-10 0" Width="272" Height="25">
 
@@ -88,7 +88,7 @@
                                             <Label Name="lblStaffAtt" Content="{x:Static language:Lang.Staff_Att_Re}" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" VerticalContentAlignment="Center" Height="34" Width="240" Foreground="White" Margin="0,-4,1,0" Style="{DynamicResource Siemreap}" FontWeight="Bold"/>
                                         </Grid>
                                     </Button>
-                                    <Button Name="btnStudentAttendanceReport" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="35" HorizontalAlignment="Stretch"  Background="Transparent" BorderThickness="0" Margin="5,-3,5,5" Click="btnStudentAttendanceReport_Click_1" MouseEnter="btnStudentAttendanceReport_MouseEnter_1" MouseLeave="btnStudentAttendanceReport_MouseLeave_1">
+                                    <Button Name="btnStudentAttendanceReport" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="35" HorizontalAlignment="Stretch"  Background="Transparent" BorderThickness="0" Margin="5,-3,5,5" Click="btnStudentAttendanceReport_Click_1" MouseEnter="btnStudentAttendanceReport_MouseEnter_1" MouseLeave="btnStudentAttendanceReport_MouseLeave_1" Visibility="Collapsed">
                                         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="-10 0" Width="272" Height="25">
 
                                             <materialDesign:PackIcon Name="MateriaStuAtt" Foreground="White" Kind="TextBoxCheckOutline" VerticalAlignment="Center" HorizontalAlignment="Left" Height="24" Width="24" Margin="0,0,0,0"></materialDesign:PackIcon>
@@ -102,26 +102,26 @@
                                         </Grid>
                                     </Button>
 
-                                    <Button Name="btnClassSchedule" Height="35" materialDesign:ShadowAssist.ShadowDepth="Depth0" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" FontSize="15" Margin="5,-3,5,5" Click="btnClassSchedule_Click" MouseEnter="btnClassSchedule_MouseEnter" MouseLeave="btnClassSchedule_MouseLeave">
+                                    <Button Name="btnClassSchedule" Height="35" materialDesign:ShadowAssist.ShadowDepth="Depth0" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" FontSize="15" Margin="5,-3,5,5" Click="btnClassSchedule_Click" MouseEnter="btnClassSchedule_MouseEnter" MouseLeave="btnClassSchedule_MouseLeave" Visibility="Collapsed">
                                         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="-10 0" Width="272" Height="25">
                                             <materialDesign:PackIcon Name="MateriaClassSche" Kind="CalendarClock" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Height="24" Width="24" Margin="0,0,0,0" ></materialDesign:PackIcon>
                                             <Label Name="lblClassSched" FontWeight="Bold" Content="{x:Static language:Lang.Cl_Sch}" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" VerticalContentAlignment="Center" Height="34" Width="247" Foreground="White" Margin="0,-3,-6,-1" Style="{DynamicResource Siemreap}"></Label>
                                         </Grid>
                                     </Button>
-                                    <Button Name="btnTeacherSchedule" Height="35" materialDesign:ShadowAssist.ShadowDepth="Depth0" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" FontSize="15" Margin="5,-3,5,5" Click="btnTeacherSchedule_Click" MouseEnter="btnTeacherSchedule_MouseEnter" MouseLeave="btnTeacherSchedule_MouseLeave">
+                                    <Button Name="btnTeacherSchedule" Height="35" materialDesign:ShadowAssist.ShadowDepth="Depth0" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" FontSize="15" Margin="5,-3,5,5" Click="btnTeacherSchedule_Click" MouseEnter="btnTeacherSchedule_MouseEnter" MouseLeave="btnTeacherSchedule_MouseLeave" Visibility="Collapsed">
                                         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="-10 0" Width="272" Height="25">
 
                                             <materialDesign:PackIcon Name="MateriaTeacherSche" Foreground="White" Kind="CalendarRangeOutline" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,0" Height="24" Width="24" ></materialDesign:PackIcon>
                                             <Label Name="lblTeacherSche" FontWeight="Bold" Content="{x:Static language:Lang.Tea_Sche}" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" VerticalContentAlignment="Center" Height="36" Width="247" Foreground="White" Margin="0,-6,-5,0" Style="{DynamicResource Siemreap}"/>
                                         </Grid>
                                     </Button>
-                                    <Button Name="btnStudentList" Height="35" materialDesign:ShadowAssist.ShadowDepth="Depth0" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" FontSize="15" Margin="5,-3,5,5" Click="btnStudentList_Click" MouseEnter="btnStudentList_MouseEnter" MouseLeave="btnStudentList_MouseLeave">
+                                    <Button Name="btnStudentList" Height="35" materialDesign:ShadowAssist.ShadowDepth="Depth0" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" FontSize="15" Margin="5,-3,5,5" Click="btnStudentList_Click" MouseEnter="btnStudentList_MouseEnter" MouseLeave="btnStudentList_MouseLeave" Visibility="Collapsed">
                                         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="-10 0" Width="272" Height="25">
                                             <materialDesign:PackIcon Name="MateriaStu" Kind="TextBoxOutline" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Height="24" Margin="0,0,0,0" Width="24" ></materialDesign:PackIcon>
                                             <Label Name="lblStuList" FontWeight="Bold" Content="{x:Static language:Lang.Stu_List}" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" VerticalContentAlignment="Center" Height="35" Width="245" Foreground="White" Margin="0,-3,-5,-2" Style="{DynamicResource Siemreap}"></Label>
                                         </Grid>
                                     </Button>
-                                    <Button Name="btnSubJectList" Height="35" Click="btnSubJectList_Click" materialDesign:ShadowAssist.ShadowDepth="Depth0" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" FontSize="15" Margin="5,-3,5,5" MouseEnter="btnSubJectList_MouseEnter_1" MouseLeave="btnSubJectList_MouseLeave">
+                                    <Button Name="btnSubJectList" Height="35" Click="btnSubJectList_Click" materialDesign:ShadowAssist.ShadowDepth="Depth0" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" FontSize="15" Margin="5,-3,5,5" MouseEnter="btnSubJectList_MouseEnter_1" MouseLeave="btnSubJectList_MouseLeave" Visibility="Collapsed">
                                         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="-10 0" Width="272" Height="25">
                                             <materialDesign:PackIcon Name="MateriaSubj" Kind="ViewListOutline" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Height="24" Margin="0,0,0,0" Width="24" ></materialDesign:PackIcon>
                                             <Label Name="lblSubject" FontWeight="Bold" Content="{x:Static language:Lang.Sub_List}" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" VerticalContentAlignment="Center" Height="33" Width="246" Foreground="White" Margin="0,-3,-6,0" Style="{DynamicResource Siemreap}"></Label>
@@ -1528,7 +1528,7 @@
                                                                     <TabItem>
                                                                         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                                                             <Grid>
-                                                                                <Image Source="/CamemisOffLine;component/Image/undraw_date_picker_gorr.png" Cursor="Hand" MouseDown="Image_MouseDown" Height="295" Width="339"></Image>
+                                                                                <Image Source="/CamemisOffLine;component/Image/undraw_date_picker_gorr.png" Height="295" Width="339"></Image>
 
                                                                             </Grid>
                                                                             <Grid  Name="MessageblockStuAtt" Background="White" Margin="0">
@@ -1721,7 +1721,7 @@
                                                         <Grid Grid.Row="0" Margin="0 0 0 0">
                                                             <StackPanel Orientation="Horizontal">
                                                                 <Grid Name="Grade">
-                                                                    <StackPanel Name="staGrade" Orientation="Horizontal" Margin="0 0 0 0" Width="250" VerticalAlignment="Center" Background="WhiteSmoke" Height="45">
+                                                                    <StackPanel Name="staGrade" Orientation="Horizontal" Margin="0 0 0 0" Width="250" VerticalAlignment="Center" Background="WhiteSmoke" Height="40">
 
 
                                                                         <Button Uid="0" BorderThickness="1.5" FontSize="15" Name="btnGrade" Width="250" Content="{x:Static language:Lang.Grade}" Style="{DynamicResource Muol}" Height="Auto" HorizontalContentAlignment="Center" Background="#1183CA" BorderBrush="LightGray" Foreground="White" Click="btnGrade_Click"/>
@@ -2000,7 +2000,7 @@
                                                             <Grid Grid.Column="1">
                                                                 <StackPanel Orientation="Horizontal">
                                                                     <TextBlock Text="តម្រៀប :" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" Margin="10 0 0 0"/>
-                                                                    <ComboBox Name="cmbSort" Width="130" Height="33" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Background="White" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Padding="5 0 0 0" BorderBrush="LightGray" Margin="10,0,0,0" Foreground="Gray" SelectionChanged="cmbSort_SelectionChanged">
+                                                                    <ComboBox Name="cmbSort" Style="{StaticResource combobox}" Width="130" Height="33" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Background="White" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Padding="5 0 0 0" BorderBrush="LightGray" Margin="10,0,0,0" Foreground="Gray" SelectionChanged="cmbSort_SelectionChanged">
                                                                         <ComboBox.ItemContainerStyle>
                                                                             <Style TargetType="{x:Type ComboBoxItem}">
                                                                                 <Style.Triggers>
@@ -2029,7 +2029,7 @@
                                                             <Grid Grid.Column="3">
                                                                 <StackPanel Orientation="Horizontal">
                                                                     <TextBlock  Name="txtResult" Text="លទ្ធផល :" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" Margin="10 0 0 0"/>
-                                                                    <ComboBox Name="cmbResult" Width="130" Height="33" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Left" VerticalAlignment="Center" Background="White" VerticalContentAlignment="Center" BorderThickness="1" Padding="5 0 0 0" BorderBrush="LightGray" Margin="10,0,0,0" Foreground="Gray" SelectionChanged="cmbResult_SelectionChanged">
+                                                                    <ComboBox Name="cmbResult" Style="{StaticResource combobox}" Width="130" Height="33" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Left" VerticalAlignment="Center" Background="White" VerticalContentAlignment="Center" BorderThickness="1" Padding="5 0 0 0" BorderBrush="LightGray" Margin="10,0,0,0" Foreground="Gray" SelectionChanged="cmbResult_SelectionChanged">
                                                                         <ComboBoxItem Tag="1">លទ្ធផលប្រឡងឆមាស</ComboBoxItem>
                                                                         <ComboBoxItem Tag="2" IsSelected="True">លទ្ធផលប្រចាំឆមាស</ComboBoxItem>
                                                                     </ComboBox>
@@ -2064,7 +2064,7 @@
                                                                         <Grid  Name="MessageblockStuRes" Background="White" Margin="0">
                                                                             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                                                                                 <Grid>
-                                                                                    <Image Source="/CamemisOffLine;component/Image/undraw_date_picker_gorr.png" Cursor="Hand" MouseDown="Image_MouseDown" Height="295" Width="339"></Image>
+                                                                                    <Image Source="/CamemisOffLine;component/Image/undraw_date_picker_gorr.png" Height="295" Width="339"></Image>
 
                                                                                 </Grid>
                                                                                 <Grid>
@@ -2084,7 +2084,7 @@
                                                                                         <ColumnDefinition Width="*"/>
                                                                                     </Grid.ColumnDefinitions>
                                                                                     <Grid Grid.Column="0" Name="dataStudentLearning" Margin="0 3 0 0">
-                                                                                        <DataGrid BorderThickness="1 0 1 1" BorderBrush="#7F808080" Background="White" RowHeight="35" Margin="0 0 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Name="DGMonthlyResult" FontSize="13" AutoGenerateColumns="False" GridLinesVisibility="All" AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" MouseDoubleClick="DGMonthlyResult_MouseDoubleClick" IsReadOnly="True" CanUserSortColumns="False" SelectionMode="Extended" SelectionUnit="FullRow" SelectionChanged="DGMonthlyResult_SelectionChanged" VirtualizingPanel.ScrollUnit="Pixel">
+                                                                                        <DataGrid BorderThickness="1 0 1 1" BorderBrush="#7F808080" Background="White" RowHeight="60" Margin="0 0 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Name="DGMonthlyResult" FontSize="13" AutoGenerateColumns="False" GridLinesVisibility="All" AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" MouseDoubleClick="DGMonthlyResult_MouseDoubleClick" IsReadOnly="True" CanUserSortColumns="False" SelectionMode="Extended" SelectionUnit="FullRow" SelectionChanged="DGMonthlyResult_SelectionChanged" VirtualizingPanel.ScrollUnit="Pixel">
                                                                                             <DataGrid.RowStyle>
                                                                                                 <Style TargetType="DataGridRow">
                                                                                                     <Setter Property="ToolTip">
@@ -2097,7 +2097,7 @@
                                                                                                                 <Image Source="{Binding localProfileLink}" Height="100" Width="100" Stretch="Fill" Grid.Column="0" Margin="10"/>
                                                                                                                 <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10">
                                                                                                                     <TextBlock Text="ព័ត៌មានអំពីសិស្ស" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" TextDecorations="Underline" HorizontalAlignment="Center" FontWeight="Bold"/>
-                                                                                                                    <TextBlock Text="{Binding student_schoolyear_id}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
+                                                                                                                    <TextBlock Text="{Binding student_school_id}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
                                                                                                                     <TextBlock Text="{Binding name}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
                                                                                                                     <TextBlock Text="{Binding gender}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
                                                                                                                     <TextBlock Text="{Binding date_of_birth}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
@@ -2157,17 +2157,17 @@
                                                                                                         </Style>
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
-                                                                                                <DataGridTextColumn Header="អត្តលេខសិស្ស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MinWidth="110" Width="1.1*" Binding="{Binding student_schoolyear_id}">
-                                                                                                    <DataGridTextColumn.ElementStyle>
-                                                                                                        <Style TargetType="{x:Type TextBlock}">
-                                                                                                            <Setter Property="HorizontalAlignment" Value="Center" />
-                                                                                                            <Setter Property="VerticalAlignment" Value="Center"></Setter>
-                                                                                                            <Setter Property="ScrollViewer.CanContentScroll" Value="False"/>
-                                                                                                            <Setter Property="FontWeight" Value="Regular"/>
-                                                                                                            <Setter Property="Foreground" Value="Black"/>
-                                                                                                        </Style>
-                                                                                                    </DataGridTextColumn.ElementStyle>
-                                                                                                </DataGridTextColumn>
+                                                                                                <DataGridTemplateColumn Width="*" MinWidth="180" Header="សិស្ស" CanUserResize="False">
+                                                                                                    <DataGridTemplateColumn.CellTemplate>
+                                                                                                        <DataTemplate>
+                                                                                                            <Ellipse Height="40" Width="40">
+                                                                                                                <Ellipse.Fill>
+                                                                                                                    <ImageBrush ImageSource="{Binding localProfileLink}"/>
+                                                                                                                </Ellipse.Fill>
+                                                                                                            </Ellipse>
+                                                                                                        </DataTemplate>
+                                                                                                    </DataGridTemplateColumn.CellTemplate>
+                                                                                                </DataGridTemplateColumn>
                                                                                                 <DataGridTextColumn Header="គោត្តនាម និងនាម" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MinWidth="200" Width="2*" Binding="{Binding name}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
@@ -2272,7 +2272,7 @@
                                                                                                         </Style>
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>-->
-                                                                                                <DataGridTemplateColumn Header="ផ្សេងៗ" Width="12.5*" MinWidth="230" MaxWidth="290">
+                                                                                                <DataGridTemplateColumn Header="ផ្សេងៗ" Width="3*" MinWidth="350">
                                                                                                     <DataGridTemplateColumn.CellTemplate>
                                                                                                         <DataTemplate>
                                                                                                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -2301,7 +2301,29 @@
 
                                                                                             </ColumnDefinition>
                                                                                         </Grid.ColumnDefinitions>
-                                                                                        <DataGrid Name="DGSemester" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" BorderThickness="1 0 1 1" RowHeight="35" BorderBrush="#7F808080" Grid.Column="0" FontSize="13" GridLinesVisibility="All" SelectionUnit="FullRow" SelectionMode="Extended" AutoGenerateColumns="False" Background="#7FFFFFFF" CanUserSortColumns="False" AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" SelectionChanged="DGMonthlyResult_SelectionChanged" VirtualizingPanel.ScrollUnit="Pixel" IsReadOnly="True" MouseDoubleClick="DGSemester_MouseDoubleClick">
+                                                                                        <DataGrid Name="DGSemester" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" BorderThickness="1 0 1 1" RowHeight="60" BorderBrush="#7F808080" Grid.Column="0" FontSize="13" GridLinesVisibility="All" SelectionUnit="FullRow" SelectionMode="Extended" AutoGenerateColumns="False" Background="#7FFFFFFF" CanUserSortColumns="False" AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" SelectionChanged="DGMonthlyResult_SelectionChanged" VirtualizingPanel.ScrollUnit="Pixel" IsReadOnly="True" MouseDoubleClick="DGSemester_MouseDoubleClick">
+                                                                                            <DataGrid.RowStyle>
+                                                                                                <Style TargetType="DataGridRow">
+                                                                                                    <Setter Property="ToolTip">
+                                                                                                        <Setter.Value>
+                                                                                                            <Grid>
+                                                                                                                <Grid.ColumnDefinitions>
+                                                                                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                                                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                                                                                </Grid.ColumnDefinitions>
+                                                                                                                <Image Source="{Binding localProfileLink}" Height="100" Width="100" Stretch="Fill" Grid.Column="0" Margin="10"/>
+                                                                                                                <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10">
+                                                                                                                    <TextBlock Text="ព័ត៌មានអំពីសិស្ស" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" TextDecorations="Underline" HorizontalAlignment="Center" FontWeight="Bold"/>
+                                                                                                                    <TextBlock Text="{Binding student_schoolyear_id}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
+                                                                                                                    <TextBlock Text="{Binding name}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
+                                                                                                                    <TextBlock Text="{Binding gender}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
+                                                                                                                    <TextBlock Text="{Binding date_of_birth}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
+                                                                                                                </StackPanel>
+                                                                                                            </Grid>
+                                                                                                        </Setter.Value>
+                                                                                                    </Setter>
+                                                                                                </Style>
+                                                                                            </DataGrid.RowStyle>
                                                                                             <DataGrid.Resources>
                                                                                                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                                                                                                     <Setter Property="Background" Value="White" />
@@ -2323,7 +2345,7 @@
                                                                                                 </Style>
                                                                                             </DataGrid.Resources>
                                                                                             <DataGrid.Columns>
-                                                                                                <DataGridTextColumn Header="ល.រ" CellStyle="{DynamicResource Siemreap}" Width="60"  Binding="{Binding numbers}">
+                                                                                                <DataGridTextColumn Header="ល.រ" CellStyle="{DynamicResource Siemreap}" MinWidth="60" Width="0.6*"  Binding="{Binding numbers}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -2335,20 +2357,18 @@
                                                                                                         </Style>
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
-                                                                                                <DataGridTextColumn Header="អត្តលេខសិស្ស" CellStyle="{DynamicResource Siemreap}" Width="150" Binding="{Binding student_schoolyear_id}">
-                                                                                                    <DataGridTextColumn.ElementStyle>
-                                                                                                        <Style TargetType="{x:Type TextBlock}">
-                                                                                                            <Setter Property="HorizontalAlignment" Value="Center" />
-                                                                                                            <Setter Property="VerticalAlignment" Value="Center" />
-                                                                                                            <Setter Property="ScrollViewer.CanContentScroll" Value="False"/>
-
-
-                                                                                                            <Setter Property="FontWeight" Value="Regular"/>
-                                                                                                            <Setter Property="Foreground" Value="Black"/>
-                                                                                                        </Style>
-                                                                                                    </DataGridTextColumn.ElementStyle>
-                                                                                                </DataGridTextColumn>
-                                                                                                <DataGridTextColumn Header="គោត្តនាម និងនាម" CellStyle="{DynamicResource Siemreap}" Width="200" Binding="{Binding name}">
+                                                                                                <DataGridTemplateColumn Width="*" MinWidth="180" Header="សិស្ស" CanUserResize="False">
+                                                                                                    <DataGridTemplateColumn.CellTemplate>
+                                                                                                        <DataTemplate>
+                                                                                                            <Ellipse Height="40" Width="40">
+                                                                                                                <Ellipse.Fill>
+                                                                                                                    <ImageBrush ImageSource="{Binding localProfileLink}"/>
+                                                                                                                </Ellipse.Fill>
+                                                                                                            </Ellipse>
+                                                                                                        </DataTemplate>
+                                                                                                    </DataGridTemplateColumn.CellTemplate>
+                                                                                                </DataGridTemplateColumn>
+                                                                                                <DataGridTextColumn Header="គោត្តនាម និងនាម" CellStyle="{DynamicResource Siemreap}" Width="2*" MinWidth="200" Binding="{Binding name}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Left" />
@@ -2360,7 +2380,7 @@
                                                                                                         </Style>
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
-                                                                                                <DataGridTextColumn Header="ភេទ" CellStyle="{DynamicResource Siemreap}" Width="100" Binding="{Binding gender}">
+                                                                                                <DataGridTextColumn Header="ភេទ" CellStyle="{DynamicResource Siemreap}" MinWidth="100" Width="*" Binding="{Binding gender}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -2370,7 +2390,7 @@
                                                                                                         </Style>
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
-                                                                                                <DataGridTextColumn Header="ថ្ងៃខែឆ្នាំកំណើត" CellStyle="{DynamicResource Siemreap}" Width="150" Binding="{Binding date_of_birth}">
+                                                                                                <DataGridTextColumn Header="ថ្ងៃខែឆ្នាំកំណើត" CellStyle="{DynamicResource Siemreap}" MinWidth="150" Width="1.5*" Binding="{Binding date_of_birth}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -2382,7 +2402,7 @@
                                                                                                         </Style>
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
-                                                                                                <DataGridTextColumn Header="មធ្យមភាគសរុបប្រចាំខែ" CellStyle="{DynamicResource Siemreap}" Width="170" Binding="{Binding result_semester.month_avg}">
+                                                                                                <DataGridTextColumn Header="មធ្យមភាគសរុបប្រចាំខែ" CellStyle="{DynamicResource Siemreap}" MinWidth="170" Width="1.7*" Binding="{Binding result_semester.month_avg}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -2394,7 +2414,7 @@
                                                                                                         </Style>
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
-                                                                                                <DataGridTextColumn Header="ពិន្ទុប្រឡង" CellStyle="{DynamicResource Siemreap}" Width="100" Binding="{Binding result_semester_exam.total_score}">
+                                                                                                <DataGridTextColumn Header="ពិន្ទុប្រឡង" CellStyle="{DynamicResource Siemreap}" MinWidth="100" Width="*" Binding="{Binding result_semester_exam.total_score}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -2405,7 +2425,7 @@
                                                                                                         </Style>
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
-                                                                                                <DataGridTextColumn Header="ពិន្ទុមធ្យមភាគប្រឡងឆមាស" CellStyle="{DynamicResource Siemreap}" Width="180" Binding="{Binding result_semester.exam_avg}">
+                                                                                                <DataGridTextColumn Header="ពិន្ទុមធ្យមភាគប្រឡងឆមាស" CellStyle="{DynamicResource Siemreap}" MinWidth="180" Width="1.8*" Binding="{Binding result_semester.exam_avg}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -2415,7 +2435,7 @@
                                                                                                         </Style>
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
-                                                                                                <DataGridTextColumn Header="មធ្យមភាគ" CellStyle="{DynamicResource Siemreap}" Width="100" Binding="{Binding result_semester.avg_score}">
+                                                                                                <DataGridTextColumn Header="មធ្យមភាគ" CellStyle="{DynamicResource Siemreap}" MinWidth="100" Width="*" Binding="{Binding result_semester.avg_score}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -2425,7 +2445,7 @@
                                                                                                         </Style>
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
-                                                                                                <DataGridTextColumn Header="ឥតច្បាប់" CellStyle="{DynamicResource Siemreap}" Width="100" Binding="{Binding result_semester.absence_without_permission}">
+                                                                                                <DataGridTextColumn Header="ឥតច្បាប់" CellStyle="{DynamicResource Siemreap}" Width="*" MinWidth="100" Binding="{Binding result_semester.absence_without_permission}">
                                                                                                     <DataGridTextColumn.ElementStyle>
 
 
@@ -2436,7 +2456,7 @@
                                                                                                         </Style>
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
-                                                                                                <DataGridTextColumn Header="មានច្បាប់" CellStyle="{DynamicResource Siemreap}" Width="100" Binding="{Binding result_semester.absence_with_permission}">
+                                                                                                <DataGridTextColumn Header="មានច្បាប់" CellStyle="{DynamicResource Siemreap}" Width="*" MinWidth="100" Binding="{Binding result_semester.absence_with_permission}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -2446,7 +2466,7 @@
                                                                                                         </Style>
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
-                                                                                                <DataGridTextColumn Header="ចំណាត់ថ្នាក់" CellStyle="{DynamicResource Siemreap}" Width="100" Binding="{Binding result_semester.rank}">
+                                                                                                <DataGridTextColumn Header="ចំណាត់ថ្នាក់" CellStyle="{DynamicResource Siemreap}" Width="*" MinWidth="100" Binding="{Binding result_semester.rank}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -2456,7 +2476,7 @@
                                                                                                         </Style>
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
-                                                                                                <DataGridTextColumn Header="និទ្ទេស" CellStyle="{DynamicResource Siemreap}" Width="100" Binding="{Binding result_semester.grading}">
+                                                                                                <DataGridTextColumn Header="និទ្ទេស" CellStyle="{DynamicResource Siemreap}" Width="*" MinWidth="100" Binding="{Binding result_semester.grading}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -2466,7 +2486,7 @@
                                                                                                         </Style>
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
-                                                                                                <DataGridTextColumn Header="លទ្ធផល" CellStyle="{DynamicResource Siemreap}" Width="100" Binding="{Binding result_semester.is_fail}">
+                                                                                                <DataGridTextColumn Header="លទ្ធផល" CellStyle="{DynamicResource Siemreap}" Width="*" MinWidth="100" Binding="{Binding result_semester.is_fail}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -2476,7 +2496,7 @@
                                                                                                         </Style>
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
-                                                                                                <DataGridTextColumn Header="និន្ទេសជាអក្សរ" CellStyle="{DynamicResource Siemreap}" Width="200" Binding="{Binding result_semester.letter_grade}">
+                                                                                                <DataGridTextColumn Header="និន្ទេសជាអក្សរ" CellStyle="{DynamicResource Siemreap}" Width="2*" MinWidth="200" Binding="{Binding result_semester.letter_grade}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -2723,7 +2743,7 @@
                                             </StackPanel>
                                         </StackPanel>
                                     </Grid>
-                                    <ScrollViewer Grid.Row="1" Margin="10 0 10 0">
+                                    <ScrollViewer Grid.Row="1" Margin="10 0 10 0" CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto">
                                         <StackPanel Name="ListPrintStudent" Orientation="Vertical" Background="WhiteSmoke" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 
 
@@ -3603,7 +3623,7 @@
                                                 <ItemsControl Name="AdminReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1500">
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
-                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintList_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                                                            <Button BorderThickness="0" Name="btnPrintListAdmin" Height="90" Width="450" Click="btnPrintListAdmin_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
                                                                     FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 20 20 10" Foreground="Black">
                                                                 <Button.Background>
                                                                     <LinearGradientBrush EndPoint="0.6,2.4" StartPoint="-0.2,0">
@@ -3643,7 +3663,7 @@
                                                 <ItemsControl Name="AcademicReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1500">
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
-                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintList_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintListAdmin_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
                                                                     FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 20 20 10" Foreground="Black">
                                                                 <Button.Background>
                                                                     <LinearGradientBrush EndPoint="0.6,2.4" StartPoint="-0.2,0">
@@ -3697,7 +3717,7 @@
                                                 <ItemsControl Name="PositionReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1500">
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
-                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintList_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintListAdmin_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
                                                                     FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 20 20 10" Foreground="Black">
                                                                 <Button.Background>
                                                                     <LinearGradientBrush EndPoint="0.6,2.4" StartPoint="-0.2,0">
@@ -3726,7 +3746,7 @@
                                                 <ItemsControl Name="SchoolInformationReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1500">
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
-                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintList_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintListAdmin_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
                                                                     FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 20 20 10" Foreground="Black">
                                                                 <Button.Background>
                                                                     <LinearGradientBrush EndPoint="0.6,2.4" StartPoint="-0.2,0">
@@ -3755,7 +3775,7 @@
                                                 <ItemsControl Name="StatisticReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1500">
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
-                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintList_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintListAdmin_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
                                                                     FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 20 20 10" Foreground="Black">
                                                                 <Button.Background>
                                                                     <LinearGradientBrush EndPoint="0.6,2.4" StartPoint="-0.2,0">
@@ -3816,7 +3836,7 @@
                                                 <ItemsControl Name="TeacherShecduleReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1500">
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
-                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintList_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintListAdmin_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
                                                                     FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 20 20 10" Foreground="Black">
                                                                 <Button.Background>
                                                                     <LinearGradientBrush EndPoint="0.6,2.4" StartPoint="-0.2,0">
@@ -3871,7 +3891,7 @@
                                                 <ItemsControl Name="TeacherAttReportReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1500">
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
-                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintList_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintListAdmin_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
                                                                     FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 20 20 10" Foreground="Black">
                                                                 <Button.Background>
                                                                     <LinearGradientBrush EndPoint="0.6,2.4" StartPoint="-0.2,0">

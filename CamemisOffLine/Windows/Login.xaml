@@ -108,27 +108,27 @@
                             </Grid>
                         </Grid>
                         <Grid Grid.Column="1" Margin="0,0,-20,0">
-                                <Label Content="Sign in" Foreground="White" FontSize="15" Margin="0,-8,-14,0"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
+                                <Label Content="Sign in" Foreground="White" FontSize="15" Margin="0,-10,-14,0"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
                         </Grid>
                     </Grid>
 
                 </Button>
-                    <Button Name="btnNext" Height="40" Background="Transparent" Click="btnNext_Click" MouseEnter="btnLogin_MouseEnter" MouseLeave="btnLogin_MouseLeave" BorderThickness="0" IsDefault="True">
-                        <Grid Height="19" Width="62">
+                    <Button Name="btnNext" Height="50" Background="Transparent" Width="100" Click="btnNext_Click" MouseEnter="btnLogin_MouseEnter" MouseLeave="btnLogin_MouseLeave" BorderThickness="0" IsDefault="True">
+                        <Grid Height="19" Width="62" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 5 0 0">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="12*"/>
-                                <ColumnDefinition Width="31*"/>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="*"/>
 
 
                             </Grid.ColumnDefinitions>
 
                             <Grid Grid.Column="0">
                                 <Grid Margin="0,-10,0,-11">
-                                    <materialDesign:PackIcon Kind="SkipNext" Height="27" Width="17" Margin="0,3,0,0"></materialDesign:PackIcon>
+                                    <materialDesign:PackIcon Kind="SkipNext" Height="27" Width="17" Margin="0,2,0,0"></materialDesign:PackIcon>
                                 </Grid>
                             </Grid>
-                            <Grid Grid.Column="1" Margin="0,0,-20,0">
-                                <Label Content="Next" Foreground="White" FontSize="15" Margin="0,-8,-14,0"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
+                            <Grid Grid.Column="1" Margin="0,0,-25,0">
+                                <Label Content="Next" Foreground="White" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-20 -12 0 0"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
                             </Grid>
                         </Grid>
 

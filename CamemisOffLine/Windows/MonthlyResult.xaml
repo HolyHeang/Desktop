@@ -83,7 +83,7 @@
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
 
-                                <DataGridTextColumn Header="អត្តលេខសិស្ស" Width="0.8*" Binding="{Binding studentId}" MinWidth="90" FontSize="14">
+                                <DataGridTextColumn Header="អត្តលេខសិស្ស" Width="0.8*" Binding="{Binding student_school_id}" MinWidth="90" FontSize="14">
                                     <DataGridTextColumn.ElementStyle>
                                         <Style TargetType="TextBlock">
                                             <Setter Property="Foreground" Value="Black"></Setter>
@@ -171,7 +171,7 @@
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
 
-                                <DataGridTextColumn Header="អត្តលេខសិស្ស" Width="0.8*" Binding="{Binding studentId}" MinWidth="90" FontSize="14">
+                                <DataGridTextColumn Header="អត្តលេខសិស្ស" Width="0.8*" Binding="{Binding student_school_id}" MinWidth="90" FontSize="14">
                                     <DataGridTextColumn.ElementStyle>
                                         <Style TargetType="TextBlock">
                                             <Setter Property="Foreground" Value="Black"></Setter>
@@ -253,13 +253,13 @@
                             </Label>
                             <Label HorizontalAlignment="Center" Margin="0 10 0 0" FontSize="10">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="ធ្វើនៅរាជធានីភ្នំពេញ " FontSize="10"  Style="{DynamicResource Siemreap}"></TextBlock>
-                                    <TextBlock Text="ថ្ងៃទី" FontSize="10"  FontFamily="Khmer OS Siemreap"></TextBlock>
-                                    <TextBlock Text="{Binding Text,ElementName=lblDay}" FontSize="10" Style="{DynamicResource Siemreap}"></TextBlock>
-                                    <TextBlock Text="ខែ" FontSize="10"  FontFamily="Khmer OS Siemreap"></TextBlock>
-                                    <TextBlock Text="{Binding Text,ElementName=lblMonths}" FontSize="10" Style="{DynamicResource Siemreap}"></TextBlock>
-                                    <TextBlock Text="ឆ្នាំ" FontSize="10"  FontFamily="Khmer OS Siemreap"></TextBlock>
-                                    <TextBlock Text="{Binding Text,ElementName=lblMonths}" FontSize="10" Style="{DynamicResource Siemreap}"></TextBlock>
+                                    <TextBlock Text="ធ្វើនៅរាជធានីភ្នំពេញ " FontSize="14"  Style="{DynamicResource Siemreap}"></TextBlock>
+                                    <TextBlock Text="ថ្ងៃទី" FontSize="14"  FontFamily="Khmer OS Siemreap"></TextBlock>
+                                    <TextBlock Text="{Binding Text,ElementName=lblDay}" FontSize="14" Style="{DynamicResource Siemreap}"></TextBlock>
+                                    <TextBlock Text="ខែ" FontSize="14"  FontFamily="Khmer OS Siemreap"></TextBlock>
+                                    <TextBlock Text="{Binding Text,ElementName=lblMonths}" FontSize="14" Style="{DynamicResource Siemreap}"></TextBlock>
+                                    <TextBlock Text="ឆ្នាំ" FontSize="14"  FontFamily="Khmer OS Siemreap"></TextBlock>
+                                    <TextBlock Text="{Binding Text,ElementName=lblMonths}" FontSize="14" Style="{DynamicResource Siemreap}"></TextBlock>
                                 </StackPanel>
                             </Label>
                             <Label Content="គ្រូប្រចាំថ្នាក់" HorizontalAlignment="Center" Margin=" 0 5 0 0" Style="{DynamicResource Muol}" FontWeight="Bold" FontSize="14"></Label>

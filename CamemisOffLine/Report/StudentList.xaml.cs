@@ -237,23 +237,27 @@ namespace CamemisOffLine.Report
                 string accessUrl = Properties.Settings.Default.acessUrl;
                 string token = Properties.Settings.Default.Token;
                
-                if(type==1)
+                if(type==1&&schoolYearId!="")
                 {
                     respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId, token);
                     encryptionString = Teacher.EncodeTo64(respone);
                     SaveString(schoolYearId);
                 }
-                else if(type==2)
+                else if(type==2&&classId!="")
                 {
                     respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId+ "?classId="+classId, token);
                 }
-                else if(type==3)
+                else if(type==3&&gradeId!="")
                 {
                     respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId + "?gradeId=" + gradeId, token);
                 }
-                else if (type == 4)
+                else if (type == 4&&level!="")
                 {
                     respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId + "?level=" + level, token);
+                }
+                else
+                {
+                    loading.Close();
                 }
                 obj = null;
             }

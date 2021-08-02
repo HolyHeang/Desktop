@@ -8,6 +8,9 @@ namespace Library
 {
     public class GetTeachingSubjectClass
     {
+        public string teahcerName { get; set; }
+        public string teacherId { get; set; }
+        public string classId { get; set; }
         public List<TeachingSubject> data { get; set; }
     }
     public class TeachingSubject

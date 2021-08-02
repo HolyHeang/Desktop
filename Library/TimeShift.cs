@@ -10,6 +10,8 @@ namespace Library
 {
     public class TimesButton
     {
+        public string classId { get; set; }
+        public string year { get; set; }
         public ObservableCollection<GradeTimeButton> data { get; set; }
     }
     public class GradeTimeButton
