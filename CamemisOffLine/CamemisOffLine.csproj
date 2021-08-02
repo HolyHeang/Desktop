@@ -192,6 +192,9 @@
     <Compile Include="Report\AdministratorReport.xaml.cs">
       <DependentUpon>AdministratorReport.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Report\AtendentAcademy.xaml.cs">
+      <DependentUpon>AtendentAcademy.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Report\AttendanceReport.xaml.cs">
       <DependentUpon>AttendanceReport.xaml</DependentUpon>
     </Compile>
@@ -219,12 +222,24 @@
     <Compile Include="Report\StatisticGrade12.xaml.cs">
       <DependentUpon>StatisticGrade12.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Report\StatisticGrade9.xaml.cs">
+      <DependentUpon>StatisticGrade9.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Report\StudentList.xaml.cs">
       <DependentUpon>StudentList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Student_Attendance_Year.xaml.cs">
+      <DependentUpon>Student_Attendance_Year.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Summary_of_Students.xaml.cs">
+      <DependentUpon>Summary_of_Students.xaml</DependentUpon>
     </Compile>
     <Compile Include="StudentSubjectMonthlyResultCR.cs" />
     <Compile Include="Windows\AllSubMonthlyResult.xaml.cs">
       <DependentUpon>AllSubMonthlyResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\HonoraryList.xaml.cs">
       <DependentUpon>HonoraryList.xaml</DependentUpon>
@@ -314,6 +329,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Report\AtendentAcademy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Report\AttendanceReport.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -350,9 +369,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Report\StatisticGrade9.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Report\StudentList.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Report\Student_Attendance_Year.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Report\Summary_of_Students.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\About.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -363,6 +394,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Windows\AllSubMonthlyResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -445,6 +480,7 @@
     <Resource Include="Image\statistics.png" />
     <Resource Include="Image\undraw_under_construction_46pa.png" />
     <Resource Include="Image\PrintIcon.png" />
+    <Resource Include="Image\Online.png" />
     <Content Include="x64\SQLite.Interop.dll" />
     <Content Include="x86\SQLite.Interop.dll" />
     <EmbeddedResource Include="Properties\Langs\Lang.resx">
