@@ -4,6 +4,7 @@ FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Component\MessageBoxContro
 FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Component\PrintCardStyle.xaml;;
 FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\PopupUserControl.xaml;;
 FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Report\AdministratorReport.xaml;;
+FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Report\AtendentAcademy.xaml;;
 FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Report\AttendanceReport.xaml;;
 FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Report\Classification.xaml;;
 FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Report\DistributionLetter.xaml;;
@@ -13,10 +14,14 @@ FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Report\Education_Staff_Inf
 FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Report\ListStudentCencel.xaml;;
 FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Report\Semi-classification.xaml;;
 FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Report\StatisticGrade12.xaml;;
+FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Report\StatisticGrade9.xaml;;
 FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Report\StudentList.xaml;;
+FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Report\Student_Attendance_Year.xaml;;
+FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Report\Summary_of_Students.xaml;;
 FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Windows\About.xaml;;
 FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Windows\Account.xaml;;
 FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Windows\AllSubMonthlyResult.xaml;;
+FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Windows\HomePage.xaml;;
 FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Windows\HonoraryList.xaml;;
 FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Windows\Loading.xaml;;
 FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Windows\Login.xaml;;

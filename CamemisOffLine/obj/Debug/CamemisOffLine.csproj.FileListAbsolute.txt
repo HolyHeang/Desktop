@@ -4888,3 +4888,13 @@ C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\Classifica
 C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\StatisticGrade12.g.cs
 C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\Classification.baml
 C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\StatisticGrade12.baml
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\Summary_of_Students.g.cs
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\Summary_of_Students.baml
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Windows\HomePage.g.cs
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Windows\HomePage.baml
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\StatisticGrade9.g.cs
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\StatisticGrade9.baml
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\AtendentAcademy.g.cs
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\AtendentAcademy.baml
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\Student_Attendance_Year.g.cs
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\Student_Attendance_Year.baml
