@@ -58,7 +58,7 @@
                     <Border BorderThickness="2" BorderBrush="Black" Height="4cm" Width="113" Margin="5,0,0,0.2">
                         <Image Name="imgProfile" Source="profile (1).png" Stretch="Fill"></Image>
                     </Border>
-                    <StackPanel Orientation="Vertical" Margin="15 10 0 0" HorizontalAlignment="Stretch">
+                    <StackPanel Orientation="Vertical" Margin="15 50 0 0" HorizontalAlignment="Stretch">
                         <TextBlock Name="txtStudentId" Text="អត្តលេខសិស្ស : 17877" Style="{DynamicResource Siemreap}" Foreground="Blue" FontWeight="Bold"></TextBlock>
                         <TextBlock Name="txtName" Text="ឈ្មោះ : សាមជឹម ជួនសុហ្រឹទសិរី" Style="{DynamicResource Siemreap}" Foreground="Blue" FontWeight="Bold" Margin="0 10 0 0" HorizontalAlignment="Stretch" Width="200"></TextBlock>
                         <TextBlock Name="txtGender" Text="ភេទ : ប្រុស" Style="{DynamicResource Siemreap}" Foreground="Blue" FontWeight="Bold" Margin="0 10 0 0"></TextBlock>
@@ -66,10 +66,10 @@
                 </StackPanel>
                 <Grid Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 10 0 0">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Label Content="ថ្នាក់ទី" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="14" Foreground="Blue" Margin="-200,-8,0,41"></Label>
-                        <Label Name="lblClass" Content="--" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="14" Foreground="Blue" Margin="-120,-8,0,41"/>
+                        <Label Content="ថ្នាក់ទី" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="14" Foreground="Blue" Margin="-200,-40,0,41"></Label>
+                        <Label Name="lblClass" Content="--" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="14" Foreground="Blue" Margin="-120,-40,0,41"/>
                     </StackPanel>
-                    <Label Content="(2020-2021)" HorizontalAlignment="Center"  Style="{DynamicResource Muol}" FontSize="14" Foreground="Blue" Margin="-126,23,33.8,7"></Label>
+                    <Label Content="(2020-2021)" HorizontalAlignment="Center"  Style="{DynamicResource Muol}" FontSize="14" Foreground="Blue" Margin="-126,-20,33.8,7"></Label>
                 </Grid>
             </Grid>
             <Grid Margin="10 10 10 0">

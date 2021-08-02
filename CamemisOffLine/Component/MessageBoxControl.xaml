@@ -22,10 +22,10 @@
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"  Margin="0 0 24 24">
-                <Button Name="btnYes" Background="#1183CA" BorderBrush="Transparent" BorderThickness="0" Height="30" Width="80" Content="បាទ/ចាស" FontSize="12" 
+                <Button Name="btnYes" Background="#1183CA" BorderBrush="Transparent" BorderThickness="0" Height="30" Width="auto" Content="បាទ/ចាស" FontSize="12" 
                 VerticalContentAlignment="Bottom" HorizontalAlignment="Right" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"
                 FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="0 0 10 0" Click="btnYes_Click"/>
-                <Button Name="btnNo" Background="#D83A56" BorderBrush="Transparent" BorderThickness="0" Height="30" Width="80" Content="បោះបង់" FontSize="12" 
+                <Button Name="btnNo" Background="#D83A56" BorderBrush="Transparent" BorderThickness="0" Height="30" Width="auto" Content="បោះបង់" FontSize="12" 
                 VerticalContentAlignment="Bottom" HorizontalAlignment="Right" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"
                 FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Click="btnNo_Click"/>
             </StackPanel>

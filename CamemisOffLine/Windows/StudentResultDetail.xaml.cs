@@ -151,7 +151,7 @@ namespace CamemisOffLine.Windows
                     DGMonthlyResultDetail.ItemsSource = result.all_subject_result;
                     items = result;
 
-                    imgProfile.Source = new BitmapImage(new Uri(filePath + "\\" + items.student_schoolyear_id + ".jpg"));
+                    imgProfile.Source = new BitmapImage(new Uri(result.localProfileLink));
                 }
                 else if(title== "semester")
                 {
@@ -209,7 +209,7 @@ namespace CamemisOffLine.Windows
                     DGMonthlyResultDetail.ItemsSource = result.all_subject_semester_exam_result;
                     items = result;
 
-                    imgProfile.Source = new BitmapImage(new Uri(filePath + "\\" + items.student_schoolyear_id + ".jpg"));
+                    imgProfile.Source = new BitmapImage(new Uri(result.localProfileLink));
                 }
                
             }
@@ -288,7 +288,7 @@ namespace CamemisOffLine.Windows
                     DGMonthlyResultDetail.ItemsSource = result.all_subject_result;
                     items = result;
 
-                    imgProfile.Source = new BitmapImage(new Uri(filePath + "\\" + items.student_schoolyear_id + ".jpg"));
+                    imgProfile.Source = new BitmapImage(new Uri(result.localProfileLink));
                     state = result.result_monthly.rank;
                 }
                 else if (title == "semester")
@@ -339,7 +339,7 @@ namespace CamemisOffLine.Windows
                     DGMonthlyResultDetail.ItemsSource = result.all_subject_semester_exam_result;
                     items = result;
 
-                    imgProfile.Source = new BitmapImage(new Uri(filePath + "\\" + items.student_schoolyear_id + ".jpg"));
+                    imgProfile.Source = new BitmapImage(new Uri(result.localProfileLink));
                     state = result.result_semester.rank;
                 }
                 state = result.result_monthly.rank;

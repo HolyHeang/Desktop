@@ -68,6 +68,21 @@ namespace CamemisOffLine
             }
             lblError.Visibility = Visibility.Collapsed;
             Init_data();
+            if(Properties.Settings.Default.checkLoginOrLogut== "login")
+            {
+                if (Properties.Settings.Default.role == "1")
+                {
+                    Teacher teacher = new Teacher();
+                    teacher.Show();
+                }
+                else if (Properties.Settings.Default.role=="2"|| Properties.Settings.Default.role == "3")
+                {
+                    PartTeacher partTeacher = new PartTeacher();
+                    partTeacher.Show();
+                }
+                
+                this.Close();
+            }
         }
         //end start window
         private void txtUser_GotFocus(object sender, RoutedEventArgs e)
@@ -189,6 +204,7 @@ namespace CamemisOffLine
                                     if (d.success)
                                     {
                                         Properties.Settings.Default.checkLoginOrLogut = "login";
+                                        Properties.Settings.Default.teacherId = d.data.ID;
                                         Properties.Settings.Default.Token = d.laravel_token_data.access_token;
                                         Properties.Settings.Default.acessUrl = d.laravel_token_data.access_url;
                                         Properties.Settings.Default.profileName = d.data.NAME;
@@ -375,7 +391,7 @@ namespace CamemisOffLine
             try
             {
                 using (var client = new WebClient())
-                using (var stream = client.OpenRead("http://www.google.com"))
+                using (var stream = client.OpenRead("http://www.youtube.com"))
                 {
                     return true;
                 }

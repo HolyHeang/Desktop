@@ -12,7 +12,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Language" Type="System.String" Scope="User">
-      <Value Profile="(Default)">en-US</Value>
+      <Value Profile="(Default)">km-KH</Value>
     </Setting>
     <Setting Name="cboCollection" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -66,6 +66,12 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="teachingSubject" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ExpireDate" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="teacherId" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

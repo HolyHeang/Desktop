@@ -236,7 +236,7 @@ namespace CamemisOffLine.Windows
             {
                 lblMonth.Text = "លទ្ធផលប្រចាំ " + DateChange.checkMonth(int.Parse(result.result_monthly.month));
                 lblSchoolName.Content = Properties.Settings.Default.schoolName;
-                txtStudentId.Text = "អត្តលេខសិស្ស : " + result.student_schoolyear_id;
+                txtStudentId.Text = "អត្តលេខសិស្ស : " + result.student_school_id;
                 txtName.Text = "ឈ្មោះ : " + result.name;
                 txtGender.Text = "ភេទ : " + result.gender;
                 lblClass.Content = result.class_name;
@@ -245,7 +245,7 @@ namespace CamemisOffLine.Windows
                 txtRank.Text = result.result_monthly.rank.ToString();
                 txtGrade.Text = result.result_monthly.grading;
 
-                imgProfile.Source = new BitmapImage(new Uri(filePath + "\\" + result.student_schoolyear_id + ".jpg"));
+                imgProfile.Source = new BitmapImage(new Uri(result.localProfileLink));
 
                 txtTotalAbsent.Text = result.result_monthly.absence_total;
                 txtWithPermission.Text = result.result_monthly.absence_with_permission;
@@ -286,7 +286,7 @@ namespace CamemisOffLine.Windows
                     lblMonth.Text = "លទ្ធផលប្រចាំ ឆមាសទី២";
                 }
                 lblSchoolName.Content = Properties.Settings.Default.schoolName;
-                txtStudentId.Text = "អត្តលេខសិស្ស : " + result.student_schoolyear_id;
+                txtStudentId.Text = "អត្តលេខសិស្ស : " + result.student_school_id;
                 txtName.Text = "ឈ្មោះ : " + result.name;
                 txtGender.Text = "ភេទ : " + result.gender;
                 lblClass.Content = result.class_name;
@@ -295,7 +295,7 @@ namespace CamemisOffLine.Windows
                 txtRank.Text = result.result_semester.rank.ToString();
                 txtGrade.Text = result.result_semester.grading;
 
-                imgProfile.Source = new BitmapImage(new Uri(filePath + "\\" + result.student_schoolyear_id + ".jpg"));
+                imgProfile.Source = new BitmapImage(new Uri(result.localProfileLink));
 
                 txtTotalAbsent.Text = result.result_semester.absence_total;
                 txtWithPermission.Text = result.result_semester.absence_with_permission;

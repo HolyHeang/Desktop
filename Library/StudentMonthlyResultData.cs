@@ -12,12 +12,14 @@ namespace Library
     }
     public class StudentMonthlyResult
     {
+        public string student_id { get; set; }
         public string numbers { get; set; }
         public bool print { get; set; } = false;
         public string print_title { get; set; } = "ព្រឹត្តិប័ត្រពិន្ទុ";
         public string print_font_color { get; set; } = "White";
         public string print_background { get; set; } = "Red";
         public string student_schoolyear_id { get; set; }
+        public string student_school_id { get; set; }
         public string class_id { get; set; }
         public string class_name { get; set; }
         public string schoolyear_id { get; set; }
@@ -71,6 +73,7 @@ namespace Library
     public class resultSemester
     {
         public string id { get; set; }
+        public string color { get; set; } = "Blue";
         public string avg_score { get; set; }
         public string exam_avg { get; set; }
         public string month_avg { get; set; }
@@ -86,9 +89,13 @@ namespace Library
         public string letter_grade { get; set; }
         public string grade_points { get; set; }
         public string is_fail { get; set; }
+        public string morality { get; set; }
+        public string bangkeun_phal { get; set; }
+        public string health { get; set; }
     }
     public class resultSemesterExam
     {
+        public string color { get; set; }
         public string id { get; set; }
         public string avg_score { get; set; }
         public string rank { get; set; }
@@ -110,6 +117,7 @@ namespace Library
     }
     public class Profile
     {
+        public string id { get; set; }
         public string file_show { get; set; }
     }
     public class Instructor

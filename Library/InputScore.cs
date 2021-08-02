@@ -15,8 +15,10 @@ namespace Library
         public string type { get; set; }
         public string term { get; set; }
         public string message { get; set; }
-
+        public string Datadate { get; set; }
         public List<StudentInformation> data { get; set; }
+
+        public ApproveLearningResult approve_learning_result { get; set; }
     }
     public class StudentInformation : INotifyPropertyChanged
     {
@@ -24,10 +26,13 @@ namespace Library
         private bool? Absance_exam;
         private string TeacherRecomment;
         private bool Check;
+        public int tabIndex { get; set; }
+        public bool focus { get; set; }
         public string error { get; set; } = "ទិន្នន័យមិនត្រឺមត្រូវ";
         public string visible { get; set; } = "Collapsed";
         public string number { get; set; }
         public string student_id { get; set; }
+        public Profiles profileMedia { get; set; }
         public string student_schoolyear_id { get; set; }
         public string class_id { get; set; }
         public string class_name { get; set; }
@@ -108,6 +113,25 @@ namespace Library
                 PropertyChanged(this, new PropertyChangedEventArgs(caller));
             }
         }
+    }
+    public class Profiles
+    {
+        public string id { get; set; }
+        public string file_show { get; set; }
+    }
+    public class ApproveLearningResult
+    {
+        public string id { get; set; }
+        public string class_id { get; set; }
+        public string month { get; set; }
+        public string term { get; set; }
+        public string type { get; set; }
+        public string is_approved { get; set; }
+        public string approved_date { get; set; }
+        public string approved_by { get; set; }
+        public string is_submitted { get; set; }
+        public string submitted_date { get; set; }
+        public string submitted_by { get; set; }
     }
 }
 

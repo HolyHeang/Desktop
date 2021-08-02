@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CamemisOffLine.Report"
+        xmlns:local="clr-namespace:CamemisOffLine.Report" xmlns:library="clr-namespace:Library;assembly=Library" d:DataContext="{d:DesignInstance Type=library:StudentInformation}"
         mc:Ignorable="d"
-        Title="classification" Height="32cm" Width="26cm" WindowState="Normal" Loaded="Window_Loaded" ResizeMode="NoResize" MaxWidth="30cm" WindowStartupLocation="Manual">
-    <ScrollViewer VerticalScrollBarVisibility="Hidden">
+        Title="classification" Height="32cm" Width="28cm" WindowState="Normal" Loaded="Window_Loaded" ResizeMode="NoResize" MaxWidth="30cm" WindowStartupLocation="Manual">
+    <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalContentAlignment="Center">
         <Grid HorizontalAlignment="Center">
             <StackPanel Orientation="Vertical" Name="Grid" HorizontalAlignment="Center">
                 <Grid Name="Header" Margin="0 20 0 0">
@@ -46,10 +46,9 @@
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                         <TextBlock Name="lblMonth" Text="ចំណាត់-ថ្នាក់ចំណាត់ប្រភេទប្រចាំឆមាសលើកទី១" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <TextBlock Text="ថ្នាក់ទី១១​ A2 " VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+                            <TextBlock Name="txtClassName" Text="ថ្នាក់ទី១១​ A2 " VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
                             <TextBlock Text="ឆ្នាំសិក្សា" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
-                            <TextBlock Text="២០២០-២០២១" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
-
+                            <TextBlock Name="txtYear" Text="២០២០-២០២១" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
                         </StackPanel>
                     </StackPanel>
                 </Grid>
@@ -60,7 +59,7 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Orientation="Vertical" Grid.Column="0">
                         <Grid>
-                            <DataGrid Margin="10 0 10 0" AutoGenerateColumns="False" RowHeight="40" BorderThickness="1 1 1 0" BorderBrush="Black" Background="White" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="25cm" CanUserAddRows="False" HorizontalScrollBarVisibility="Hidden">
+                            <DataGrid Name="DGResult" Margin="10,20,10.4,-20.2" AutoGenerateColumns="False" RowHeight="45" BorderThickness="1 1 1 0" BorderBrush="Black" Background="White" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="25cm" CanUserAddRows="False" HorizontalScrollBarVisibility="Hidden">
                                 <DataGrid.Resources>
 
                                     <Style TargetType="DataGrid">
@@ -87,7 +86,7 @@
                                 <!--//............................Number............................-->
                                 <DataGrid.Columns>
 
-                                    <DataGridTextColumn Header="ល.រ" Width="60" FontSize="15" Binding="{Binding number}">
+                                    <DataGridTextColumn Header="ល.រ" Width="60" FontSize="14" Binding="{Binding numbers}">
                                         <DataGridTextColumn.ElementStyle>
                                             <Style TargetType="TextBlock">
                                                 <Setter Property="Foreground" Value="Black"></Setter>
@@ -100,7 +99,7 @@
 
 
                                     <!--//............................Name............................-->
-                                    <DataGridTextColumn Width="224" FontSize="15" Binding="{Binding name}">
+                                    <DataGridTextColumn Width="224" FontSize="14" Binding="{Binding name}">
                                         <DataGridTextColumn.ElementStyle>
                                             <Style TargetType="TextBlock">
                                                 <Setter Property="Foreground" Value="Black"></Setter>
@@ -111,14 +110,14 @@
                                         </DataGridTextColumn.ElementStyle>
                                         <DataGridTextColumn.Header>
                                             <StackPanel HorizontalAlignment="Center" Margin="0 0 0 0" VerticalAlignment="Center" Height="33">
-                                                <TextBlock FontSize="15" Text="គោត្តនាម-នាមខ្លួន"  VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Height="32"/>
+                                                <TextBlock FontSize="14" Text="គោត្តនាម-នាមខ្លួន"  VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Height="32"/>
 
                                             </StackPanel>
                                         </DataGridTextColumn.Header>
                                     </DataGridTextColumn>
 
                                     <!--//............................Gender............................-->
-                                    <DataGridTextColumn  Header="ភេទ" Width="60" FontSize="12" Binding="{Binding gender}">
+                                    <DataGridTextColumn  Header="ភេទ" Width="60" FontSize="14" Binding="{Binding gender}">
                                         <DataGridTextColumn.ElementStyle>
                                             <Style TargetType="TextBlock">
                                                 <Setter Property="Foreground" Value="Black"></Setter>
@@ -131,12 +130,12 @@
                                     </DataGridTextColumn>
 
                                     <!--//............................Average............................-->
-                                    <DataGridTextColumn Header="មធ្យមភាគ" Width="90" FontSize="12" Binding="{Binding dob}">
+                                    <DataGridTextColumn Header="មធ្យមភាគ" Width="100" FontSize="14" Binding="{Binding result_semester.avg_score}">
 
                                         <DataGridTextColumn.ElementStyle>
 
                                             <Style TargetType="TextBlock">
-                                                <Setter Property="Foreground" Value="Black"></Setter>
+                                                <Setter Property="Foreground" Value="{Binding result_semester.color}"></Setter>
 
                                                 <Setter Property="FontWeight" Value="Thin"></Setter>
                                                 <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -145,7 +144,7 @@
                                         </DataGridTextColumn.ElementStyle>
                                     </DataGridTextColumn>
                                     <!--//............................Classification............................-->
-                                    <DataGridTextColumn Header="ចំណាត់ថ្នាក់" Width="90" FontSize="12" Binding="{Binding dob}">
+                                    <DataGridTextColumn Header="ចំណាត់ថ្នាក់" Width="90" FontSize="14" Binding="{Binding result_semester.rank}">
 
                                         <DataGridTextColumn.ElementStyle>
 
@@ -161,7 +160,7 @@
 
 
                                     <!--//............................class............................-->
-                                    <DataGridTextColumn Width="80" FontSize="15" Binding="{Binding come_from_class}">
+                                    <DataGridTextColumn Width="80" FontSize="14" Binding="{Binding result_semester.grading}">
 
                                         <DataGridTextColumn.ElementStyle>
 
@@ -177,7 +176,7 @@
                                     </DataGridTextColumn>
 
                                     <!--//............................class............................-->
-                                    <DataGridTextColumn Width="80" FontSize="15" Binding="{Binding come_from_class}">
+                                    <DataGridTextColumn Width="80" FontSize="14" Binding="{Binding result_semester.morality}">
 
                                         <DataGridTextColumn.ElementStyle>
 
@@ -193,7 +192,7 @@
                                     </DataGridTextColumn>
 
                                     <!--//............................class............................-->
-                                    <DataGridTextColumn Width="80" FontSize="15" Binding="{Binding come_from_class}">
+                                    <DataGridTextColumn Width="80" FontSize="14" Binding="{Binding result_semester.bangkeun_phal}">
 
                                         <DataGridTextColumn.ElementStyle>
 
@@ -209,7 +208,7 @@
                                     </DataGridTextColumn>
 
                                     <!--//............................class............................-->
-                                    <DataGridTextColumn Width="80" FontSize="15" Binding="{Binding come_from_class}">
+                                    <DataGridTextColumn Width="80" FontSize="14" Binding="{Binding result_semester.health}">
 
                                         <DataGridTextColumn.ElementStyle>
 
@@ -233,23 +232,23 @@
                                                     <StackPanel Orientation="Horizontal">
                                                         <Grid Width="78" Height="39">
                                                             <Border BorderBrush="Black" BorderThickness="0 0 1 0">
-                                                                <Label Content="ការសិក្សា" HorizontalAlignment="Center" FontSize="15" Style="{DynamicResource Siemreap}"></Label>
+                                                                <Label Content="ការសិក្សា" HorizontalAlignment="Center" FontSize="14" Style="{DynamicResource Siemreap}"></Label>
                                                             </Border>
                                                         </Grid>
                                                         <Grid Width="80" Height="39">
                                                             <Border BorderBrush="Black" BorderThickness="0 0 1 0">
-                                                                <Label Content="សិលធម៏" HorizontalAlignment="Center" FontSize="15" Style="{DynamicResource Siemreap}"></Label>
+                                                                <Label Content="សិលធម៏" HorizontalAlignment="Center" FontSize="14" Style="{DynamicResource Siemreap}"></Label>
 
                                                             </Border>
                                                         </Grid>
                                                         <Grid Width="80" Height="39">
                                                             <Border BorderBrush="Black" BorderThickness="0 0 1 0">
-                                                                <Label Content="បង្កើនផល" HorizontalAlignment="Center" FontSize="15" Style="{DynamicResource Siemreap}"></Label>
+                                                                <Label Content="បង្កើនផល" HorizontalAlignment="Center" FontSize="14" Style="{DynamicResource Siemreap}"></Label>
 
                                                             </Border>
                                                         </Grid>
                                                         <Grid Width="80" Height="39">
-                                                            <Label Content="សុខភាព" HorizontalAlignment="Center" FontSize="15" Style="{DynamicResource Siemreap}"></Label>
+                                                            <Label Content="សុខភាព" HorizontalAlignment="Center" FontSize="14" Style="{DynamicResource Siemreap}"></Label>
 
                                                         </Grid>
                                                     </StackPanel>
@@ -259,7 +258,7 @@
                                     </DataGridTextColumn>
 
                                     <!--//............................Kind............................-->
-                                    <DataGridTextColumn Header="ផ្សេងៗ" Width="100" FontSize="12" >
+                                    <DataGridTextColumn Header="ផ្សេងៗ" Width="100" FontSize="14" >
 
                                         <DataGridTextColumn.ElementStyle>
 
@@ -293,7 +292,7 @@
                             </StackPanel>
                         </Grid>
 
-                        <Grid Grid.Column="1" Margin="50 0 0 0">
+                        <Grid Grid.Column="1" Margin="50 30 0 0">
                             <StackPanel Orientation="Vertical">
                                 <Label HorizontalAlignment="Left">
                                     <StackPanel Orientation="Horizontal">

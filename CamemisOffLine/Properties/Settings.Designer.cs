@@ -61,7 +61,7 @@ namespace CamemisOffLine.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("en-US")]
+        [global::System.Configuration.DefaultSettingValueAttribute("km-KH")]
         public string Language {
             get {
                 return ((string)(this["Language"]));
@@ -284,6 +284,30 @@ namespace CamemisOffLine.Properties {
             }
             set {
                 this["teachingSubject"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ExpireDate {
+            get {
+                return ((string)(this["ExpireDate"]));
+            }
+            set {
+                this["ExpireDate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string teacherId {
+            get {
+                return ((string)(this["teacherId"]));
+            }
+            set {
+                this["teacherId"] = value;
             }
         }
     }

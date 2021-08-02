@@ -30,6 +30,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\SiiYaNo\Users\MSI\Desktop\Deploy\</InstallUrl>
     <UpdateUrl>\\SiiYaNo\Users\MSI\Desktop\Deploy\</UpdateUrl>
+    <TargetCulture>en-GB</TargetCulture>
     <ProductName>CAMEMIS Desktop</ProductName>
     <PublisherName>Sean Pairsith</PublisherName>
     <SuiteName>Sean Pairsith</SuiteName>
@@ -84,6 +85,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>CamemisOffLine_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>CamemisOffLine.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
@@ -552,6 +556,11 @@
     <Resource Include="Image\Logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1</ProductName>

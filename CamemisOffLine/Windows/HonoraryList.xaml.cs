@@ -45,31 +45,31 @@ namespace CamemisOffLine.Windows
                     {
                         lblNum1.Content = "លេខ " + DateChange.Num(topStudent[i].result_monthly.rank);
                         lblNameNum1.Content = topStudent[i].name;
-                        imgProfile1.Source = new BitmapImage(new Uri(filePath + "\\" + topStudent[i].student_schoolyear_id + ".jpg"));
+                        imgProfile1.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
                     }
                     else if (i == 1)
                     {
                         lblNum2.Content = "លេខ " + DateChange.Num(topStudent[i].result_monthly.rank);
                         lblNameNum2.Content = topStudent[i].name;
-                        imgProfile2.Source = new BitmapImage(new Uri(filePath + "\\" + topStudent[i].student_schoolyear_id + ".jpg"));
+                        imgProfile2.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
                     }
                     else if (i == 2)
                     {
                         lblNum3.Content = "លេខ " + DateChange.Num(topStudent[i].result_monthly.rank);
                         lblNameNum3.Content = topStudent[i].name;
-                        imgProfile3.Source = new BitmapImage(new Uri(filePath + "\\" + topStudent[i].student_schoolyear_id + ".jpg"));
+                        imgProfile3.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
                     }
                     else if (i == 3)
                     {
                         lblNum4.Content = "លេខ " + DateChange.Num(topStudent[i].result_monthly.rank);
                         lblNameNum4.Content = topStudent[i].name;
-                        imgProfile4.Source = new BitmapImage(new Uri(filePath + "\\" + topStudent[i].student_schoolyear_id + ".jpg"));
+                        imgProfile4.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
                     }
                     else if (i == 4)
                     {
                         lblNum5.Content = "លេខ " + DateChange.Num(topStudent[i].result_monthly.rank);
                         lblNameNum5.Content = topStudent[i].name;
-                        imgProfile5.Source = new BitmapImage(new Uri(filePath + "\\" + topStudent[i].student_schoolyear_id + ".jpg"));
+                        imgProfile5.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
                     }
                 }
                 else if(title=="semester")
@@ -83,31 +83,31 @@ namespace CamemisOffLine.Windows
                     {
                         lblNum1.Content = "លេខ " + DateChange.Num(topStudent[i].result_semester.rank);
                         lblNameNum1.Content = topStudent[i].name;
-                        imgProfile1.Source = new BitmapImage(new Uri(filePath + "\\" + topStudent[i].student_schoolyear_id + ".jpg"));
+                        imgProfile1.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
                     }
                     else if (i == 1)
                     {
                         lblNum2.Content = "លេខ " + DateChange.Num(topStudent[i].result_semester.rank);
                         lblNameNum2.Content = topStudent[i].name;
-                        imgProfile2.Source = new BitmapImage(new Uri(filePath + "\\" + topStudent[i].student_schoolyear_id + ".jpg"));
+                        imgProfile2.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
                     }
                     else if (i == 2)
                     {
                         lblNum3.Content = "លេខ " + DateChange.Num(topStudent[i].result_semester.rank);
                         lblNameNum3.Content = topStudent[i].name;
-                        imgProfile3.Source = new BitmapImage(new Uri(filePath + "\\" + topStudent[i].student_schoolyear_id + ".jpg"));
+                        imgProfile3.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
                     }
                     else if (i == 3)
                     {
                         lblNum4.Content = "លេខ " + DateChange.Num(topStudent[i].result_semester.rank);
                         lblNameNum4.Content = topStudent[i].name;
-                        imgProfile4.Source = new BitmapImage(new Uri(filePath + "\\" + topStudent[i].student_schoolyear_id + ".jpg"));
+                        imgProfile4.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
                     }
                     else if (i == 4)
                     {
                         lblNum5.Content = "លេខ " + DateChange.Num(topStudent[i].result_semester.rank);
                         lblNameNum5.Content = topStudent[i].name;
-                        imgProfile5.Source = new BitmapImage(new Uri(filePath + "\\" + topStudent[i].student_schoolyear_id + ".jpg"));
+                        imgProfile5.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
                     }
                 }
             }

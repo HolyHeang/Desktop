@@ -23,6 +23,8 @@ namespace CamemisOffLine.Component
         public string title { get; set; }
         public string discription { get; set; }
         public int buttonType { get; set; }
+        public string yes { get; set; } = "បាទ/ចាស";
+        public string no { get; set; } = "បោះបង់";
         public MessageBoxControl()
         {
             InitializeComponent();
@@ -49,6 +51,8 @@ namespace CamemisOffLine.Component
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            btnYes.Content = yes;
+            btnNo.Content = no;
             txtDis.Text = this.discription;
             txtTitle.Text = this.title;
             showButton(buttonType);
