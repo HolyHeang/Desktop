@@ -517,7 +517,6 @@ C:\Users\ASUS\Desktop\Camemis\Desktop\Library\bin\Debug\System.Data.SQLite.dll
 C:\Users\ASUS\Desktop\Camemis\Desktop\Library\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
 C:\Users\ASUS\Desktop\Camemis\Desktop\Library\bin\Debug\System.Net.Http.Formatting.dll
 C:\Users\ASUS\Desktop\Camemis\Desktop\Library\bin\Debug\System.Net.Http.Formatting.xml
-C:\Users\ASUS\Desktop\Camemis\Desktop\Library\obj\Debug\Library.csprojAssemblyReference.cache
 C:\Users\ASUS\Desktop\Camemis\Desktop\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\Desktop\Camemis\Desktop\Library\obj\Debug\Library.csproj.CopyComplete
 C:\Users\ASUS\Desktop\Camemis\Desktop\Library\obj\Debug\Library.dll
@@ -533,3 +532,4 @@ D:\Clone\09-07-2021\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
 D:\Clone\09-07-2021\Library\obj\Debug\Library.csproj.CopyComplete
 D:\Clone\09-07-2021\Library\obj\Debug\Library.dll
 D:\Clone\09-07-2021\Library\obj\Debug\Library.pdb
+C:\Users\ASUS\Desktop\Camemis\Desktop\Library\obj\Debug\Library.csprojAssemblyReference.cache
