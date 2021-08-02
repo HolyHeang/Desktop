@@ -37,7 +37,7 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Orientation="Vertical" Grid.Column="0" Margin="5 35 0 50" VerticalAlignment="Bottom">
                     <Image Source="/CamemisOffLine;component/Image/MoEYS.png" Height="100" VerticalAlignment="Top" HorizontalAlignment="Center"></Image>
-                    <Label Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" Style="{DynamicResource Muol}" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Bottom"></Label>
+                    <Label Name="lbllogoLeft" Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" Style="{DynamicResource Muol}" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Bottom"></Label>
                     <Label Name="lblSchoolName" Content="វិទ្យាល័យ ហ៊ុន សែន បូរី១០០ខ្នង" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="12" VerticalAlignment="Bottom"></Label>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Grid.Column="1">

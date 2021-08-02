@@ -20,7 +20,11 @@
                             <Image Source="/CamemisOffLine;component/Image/MoEYS.png" Height="80" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
                             <Label Name="lblLogoNameLeft" Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" Style="{DynamicResource Muol}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Bottom"></Label>
                             <Grid Margin="0,-12,0,0">
-                                <Label Name="lblSchoolName" Content="វិទ្យាល័យ ហ៊ុន សែន បូរី១០០ខ្នង" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="14" VerticalAlignment="Bottom"></Label>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"/>
+                                    <ColumnDefinition Width="22*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Name="lblSchoolName" Content="វិទ្យាល័យ ហ៊ុន សែន បូរី១០០ខ្នង" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="14" VerticalAlignment="Bottom" Grid.Column="1" Margin="15,0,79,0"></Label>
                             </Grid>
                         </StackPanel>
                     </Grid>

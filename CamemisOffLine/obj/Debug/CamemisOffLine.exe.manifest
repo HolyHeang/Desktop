@@ -55,22 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-<<<<<<< HEAD
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CamemisOffLine.exe" size="4732928">
-=======
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CamemisOffLine.exe" size="4733440">
->>>>>>> e1caeae8a616e7aa91bc44d81ca7bcf9519f031f
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CamemisOffLine.exe" size="4748288">
       <assemblyIdentity name="CamemisOffLine" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-<<<<<<< HEAD
-        <dsig:DigestValue>ZGWj2ZU3imotT3pCibyy8EW8JKWLltmI1o3CGN0afHI=</dsig:DigestValue>
-=======
-        <dsig:DigestValue>gkF8+MhweFsKcvp9ba3viiMOT1Z9mLYG8JI1XX32ssg=</dsig:DigestValue>
->>>>>>> e1caeae8a616e7aa91bc44d81ca7bcf9519f031f
+        <dsig:DigestValue>d1gf1D60Ay9bsB4kC/nEpx5igXC+OEqlFU56ICadJk8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

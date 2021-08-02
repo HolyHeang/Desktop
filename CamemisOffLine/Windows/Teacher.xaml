@@ -1972,7 +1972,7 @@
                                                                     </Button>
                                                                 </Grid>
                                                                 <Grid Grid.Column="1">
-                                                                    <Label Name="lbltitleMonth" FontSize="13" Style="{DynamicResource Siemreap}" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="200" Margin="0 0 0 0" HorizontalContentAlignment="Center"></Label>
+                                                                    <Label Name="lbltitleMonth" FontSize="14" Style="{DynamicResource Siemreap}" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="auto" Margin="0 0 0 0" HorizontalContentAlignment="Center"></Label>
 
                                                                 </Grid>
 
@@ -1987,6 +1987,7 @@
                                                                 <ColumnDefinition Width="200"/>
                                                                 <ColumnDefinition Width="*"/>
                                                                 <ColumnDefinition Width="200"/>
+                                                                <ColumnDefinition Width="105"/>
                                                             </Grid.ColumnDefinitions>
                                                             <Grid Grid.Column="0">
                                                                 <StackPanel Orientation="Horizontal">
@@ -2026,16 +2027,33 @@
                                                                     <RadioButton Name="rbBig" FontSize="12" Background="Blue" Margin="10 0 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="rbSmall_Checked">ពីធំទៅតូច</RadioButton>
                                                                 </StackPanel>
                                                             </Grid>
-                                                            <Grid Grid.Column="3">
-                                                                <StackPanel Orientation="Horizontal">
-                                                                    <TextBlock  Name="txtResult" Text="លទ្ធផល :" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" Margin="10 0 0 0"/>
-                                                                    <ComboBox Name="cmbResult" Style="{StaticResource combobox}" Width="130" Height="33" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Left" VerticalAlignment="Center" Background="White" VerticalContentAlignment="Center" BorderThickness="1" Padding="5 0 0 0" BorderBrush="LightGray" Margin="10,0,0,0" Foreground="Gray" SelectionChanged="cmbResult_SelectionChanged">
-                                                                        <ComboBoxItem Tag="1">លទ្ធផលប្រឡងឆមាស</ComboBoxItem>
-                                                                        <ComboBoxItem Tag="2" IsSelected="True">លទ្ធផលប្រចាំឆមាស</ComboBoxItem>
-                                                                    </ComboBox>
-                                                                </StackPanel>
+                                                            <Grid Grid.Column="6" Name="grid_ResultLearning">
+                                                                <Menu Name="Selectresult" DockPanel.Dock="Top" Visibility="Visible" Margin="0 0 5 0" Width="90" Height="35" Background="#1183CA" FontSize="10">
+                                                                    <MenuItem FontSize="12" Foreground="White" Style="{DynamicResource Siemreap}" Height="35" Background="#1183CA" Width="90">
+                                                                        <MenuItem.Icon>
+
+                                                                            <Grid  Margin="57,-6,-69,-6" Height="28" VerticalAlignment="Top">
+                                                                                <Label Foreground="White" Content="លទ្ធផល" Height="28" Margin="-62,0,32,0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                                                <Border BorderBrush="LightGray" BorderThickness="1 0 0 0"></Border>
+                                                                                <materialDesign:PackIcon Kind="ChevronDown" VerticalAlignment="Center" Foreground="White" Width="20" Height="20" Margin="4,5,0,3">
+
+                                                                                </materialDesign:PackIcon>
+                                                                            </Grid>
+                                                                        </MenuItem.Icon>
+                                                                        <MenuItem Header="លទ្ធផលប្រឡងឆមាស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Name="btnExam_Semester" Click="btnExam_Semester_Click" Foreground="Black" Background="#FFEFF3F3">
+
+                                                                        </MenuItem>
+                                                                        <MenuItem Header="ចំណាត់ថ្នាក់-ចំណាត់ប្រភាទ" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Name="btnClassification_Semester" Click="btnClassification_Semester_Click" Foreground="Black" Background="#FFEFF3F3">
+
+                                                                        </MenuItem>
+                                                                        <MenuItem Header="លទ្ធផលប្រចាំឆមាស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Name="btnResultSemester" Click="btnResultSemester_Click" Foreground="Black" Background="#FFEFF3F3">
+
+                                                                        </MenuItem>
+
+                                                                    </MenuItem>
+                                                                </Menu>
                                                             </Grid>
-                                                            <Grid Grid.Column="6">
+                                                            <Grid Grid.Column="5">
                                                                 <StackPanel Orientation="Horizontal">
                                                                     <Label Name="lblTitleTotalStudent" FontSize="13" Style="{DynamicResource Siemreap}" HorizontalAlignment="Right" VerticalAlignment="Center" Height="30" Width="200" HorizontalContentAlignment="Left" Content="Student" Margin="0,3,10,4.4"></Label>
                                                                 </StackPanel>
@@ -2682,7 +2700,7 @@
                                                                                                                     <ColumnDefinition Width="*"></ColumnDefinition>
                                                                                                                     <ColumnDefinition Width="*"></ColumnDefinition>
                                                                                                                 </Grid.ColumnDefinitions>
-                                                                                                                <Image Source="{Binding profile}" Height="100" Width="100" Stretch="Fill" Grid.Column="0" Margin="10"/>
+                                                                                                                <Image Source="{Binding localProfileLink}" Height="100" Width="100" Stretch="Fill" Grid.Column="0" Margin="10"/>
                                                                                                                 <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10">
                                                                                                                     <TextBlock Text="ព័ត៌មានអំពីសិស្ស" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" TextDecorations="Underline" HorizontalAlignment="Center" FontWeight="Bold"/>
                                                                                                                     <TextBlock Text="{Binding student_school_id}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
@@ -2716,7 +2734,7 @@
                                                                                                 </Style>
                                                                                             </DataGrid.Resources>
                                                                                             <DataGrid.Columns>
-                                                                                                <DataGridTextColumn Header="ល.រ" CellStyle="{DynamicResource Siemreap}" Width="100"  Binding="{Binding number}">
+                                                                                                <DataGridTextColumn Header="ល.រ" CellStyle="{DynamicResource Siemreap}" Width="100"  Binding="{Binding numbers}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -2733,7 +2751,7 @@
                                                                                                         <DataTemplate>
                                                                                                             <Ellipse Height="40" Width="40">
                                                                                                                 <Ellipse.Fill>
-                                                                                                                    <ImageBrush ImageSource="{Binding profile}"/>
+                                                                                                                    <ImageBrush ImageSource="{Binding localProfileLink}"/>
                                                                                                                 </Ellipse.Fill>
                                                                                                             </Ellipse>
                                                                                                         </DataTemplate>
@@ -2762,7 +2780,7 @@
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
 
-                                                                                                <DataGridTextColumn Header="មធ្យមភាគ" CellStyle="{DynamicResource Siemreap}" Width="150" Binding="{Binding avg_score}">
+                                                                                                <DataGridTextColumn Header="មធ្យមភាគ" CellStyle="{DynamicResource Siemreap}" Width="150" Binding="{Binding result_semester.avg_score}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -2773,7 +2791,7 @@
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
 
-                                                                                                <DataGridTextColumn CellStyle="{DynamicResource Siemreap}" Width="150" Binding="{Binding rank}">
+                                                                                                <DataGridTextColumn CellStyle="{DynamicResource Siemreap}" Width="150" Binding="{Binding result_semester.rank}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -2788,7 +2806,7 @@
                                                                                                         </Grid>
                                                                                                     </DataGridTextColumn.Header>
                                                                                                 </DataGridTextColumn>
-                                                                                                <DataGridTextColumn Header="ការសិក្សា" CellStyle="{DynamicResource Siemreap}" Width="175" Binding="{Binding grading}">
+                                                                                                <DataGridTextColumn Header="ការសិក្សា" CellStyle="{DynamicResource Siemreap}" Width="175" Binding="{Binding result_semester.grading}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -2798,51 +2816,36 @@
                                                                                                         </Style>
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
-                                                                                                <DataGridTemplateColumn Header="សិលធម៌" CellStyle="{DynamicResource Siemreap}" Width="210">
-                                                                                                    <DataGridTemplateColumn.CellTemplate>
-                                                                                                        <DataTemplate>
-                                                                                                            <StackPanel Margin="0">
-                                                                                                                <ComboBox Style="{StaticResource combobox}" FontSize="14" Text="សូមជ្រើសរើស" SelectedIndex="{Binding morality,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="10 13 10 0" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
-                                                                                                                    <ComboBoxItem>ល្អ</ComboBoxItem>
-                                                                                                                    <ComboBoxItem>ល្អបង្គួរ</ComboBoxItem>
-                                                                                                                    <ComboBoxItem>មធ្យម</ComboBoxItem>
-                                                                                                                    <ComboBoxItem>ខ្សោយ</ComboBoxItem>
-                                                                                                                    <ComboBoxItem>មិនចាត់ថ្នាក់</ComboBoxItem>
-                                                                                                                </ComboBox>
-                                                                                                            </StackPanel>
-                                                                                                        </DataTemplate>
-                                                                                                    </DataGridTemplateColumn.CellTemplate>
-                                                                                                </DataGridTemplateColumn>
-                                                                                                <DataGridTemplateColumn Header="បង្កើនផល" CellStyle="{DynamicResource Siemreap}" Width="210">
-                                                                                                    <DataGridTemplateColumn.CellTemplate>
-                                                                                                        <DataTemplate>
-                                                                                                            <StackPanel Margin="0">
-                                                                                                                <ComboBox Style="{StaticResource combobox}" FontSize="14" Text="សូមជ្រើសរើស" SelectedIndex="{Binding bangkeun_phal,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="10 13 10 0" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
-                                                                                                                    <ComboBoxItem>ល្អ</ComboBoxItem>
-                                                                                                                    <ComboBoxItem>ល្អបង្គួរ</ComboBoxItem>
-                                                                                                                    <ComboBoxItem>មធ្យម</ComboBoxItem>
-                                                                                                                    <ComboBoxItem>ខ្សោយ</ComboBoxItem>
-                                                                                                                    <ComboBoxItem>មិនចាត់ថ្នាក់</ComboBoxItem>
-                                                                                                                </ComboBox>
-                                                                                                            </StackPanel>
-                                                                                                        </DataTemplate>
-                                                                                                    </DataGridTemplateColumn.CellTemplate>
-                                                                                                </DataGridTemplateColumn>
-                                                                                                <DataGridTemplateColumn Header="សុខភាព-អនាម័យ" CellStyle="{DynamicResource Siemreap}" Width="210">
-                                                                                                    <DataGridTemplateColumn.CellTemplate>
-                                                                                                        <DataTemplate>
-                                                                                                            <StackPanel Margin="0">
-                                                                                                                <ComboBox Style="{StaticResource combobox}" FontSize="14" Text="សូមជ្រើសរើស" SelectedIndex="{Binding health,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="10 13 10 0" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
-                                                                                                                    <ComboBoxItem>ល្អ</ComboBoxItem>
-                                                                                                                    <ComboBoxItem>ល្អបង្គួរ</ComboBoxItem>
-                                                                                                                    <ComboBoxItem>មធ្យម</ComboBoxItem>
-                                                                                                                    <ComboBoxItem>ខ្សោយ</ComboBoxItem>
-                                                                                                                    <ComboBoxItem>មិនចាត់ថ្នាក់</ComboBoxItem>
-                                                                                                                </ComboBox>
-                                                                                                            </StackPanel>
-                                                                                                        </DataTemplate>
-                                                                                                    </DataGridTemplateColumn.CellTemplate>
-                                                                                                </DataGridTemplateColumn>
+                                                                                                <DataGridTextColumn Header="សីលធម៌" CellStyle="{DynamicResource Siemreap}" Width="175" Binding="{Binding result_semester.morality}">
+                                                                                                    <DataGridTextColumn.ElementStyle>
+                                                                                                        <Style TargetType="{x:Type TextBlock}">
+                                                                                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                                                                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                                                                                            <Setter Property="FontWeight" Value="Regular"/>
+                                                                                                            <Setter Property="Foreground" Value="Black"/>
+                                                                                                        </Style>
+                                                                                                    </DataGridTextColumn.ElementStyle>
+                                                                                                </DataGridTextColumn>
+                                                                                                <DataGridTextColumn Header="បង្កើនផល" CellStyle="{DynamicResource Siemreap}" Width="175" Binding="{Binding result_semester.bangkeun_phal}">
+                                                                                                    <DataGridTextColumn.ElementStyle>
+                                                                                                        <Style TargetType="{x:Type TextBlock}">
+                                                                                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                                                                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                                                                                            <Setter Property="FontWeight" Value="Regular"/>
+                                                                                                            <Setter Property="Foreground" Value="Black"/>
+                                                                                                        </Style>
+                                                                                                    </DataGridTextColumn.ElementStyle>
+                                                                                                </DataGridTextColumn>
+                                                                                                <DataGridTextColumn Header="សុខភាព-អនាម័យ" CellStyle="{DynamicResource Siemreap}" Width="175" Binding="{Binding result_semester.health}">
+                                                                                                    <DataGridTextColumn.ElementStyle>
+                                                                                                        <Style TargetType="{x:Type TextBlock}">
+                                                                                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                                                                                            <Setter Property="VerticalAlignment" Value="Center" />
+                                                                                                            <Setter Property="FontWeight" Value="Regular"/>
+                                                                                                            <Setter Property="Foreground" Value="Black"/>
+                                                                                                        </Style>
+                                                                                                    </DataGridTextColumn.ElementStyle>
+                                                                                                </DataGridTextColumn>
                                                                                             </DataGrid.Columns>
 
                                                                                         </DataGrid>
@@ -2977,7 +2980,7 @@
                                                                                                         </Style>
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
-                                                                                                <DataGridTextColumn Header="ពិន្ទុមធ្យមភាគប្រឡងឆមាស" CellStyle="{DynamicResource Siemreap}" Width="180" Binding="{Binding result_semester.exam_avg}">
+                                                                                                <DataGridTextColumn Header="ពិន្ទុមធ្យមភាគប្រឡងឆមាស" CellStyle="{DynamicResource Siemreap}" Width="180" Binding="{Binding result_semester_exam.avg_score}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -2988,7 +2991,7 @@
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
 
-                                                                                                <DataGridTextColumn CellStyle="{DynamicResource Siemreap}" Width="130" Binding="{Binding result_semester.rank}">
+                                                                                                <DataGridTextColumn CellStyle="{DynamicResource Siemreap}" Width="130" Binding="{Binding result_semester_exam.rank}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -3003,7 +3006,7 @@
                                                                                                         </Grid>
                                                                                                     </DataGridTextColumn.Header>
                                                                                                 </DataGridTextColumn>
-                                                                                                <DataGridTextColumn Header="និទ្ទេស" CellStyle="{DynamicResource Siemreap}" Width="140" Binding="{Binding result_semester.grading}">
+                                                                                                <DataGridTextColumn Header="និទ្ទេស" CellStyle="{DynamicResource Siemreap}" Width="140" Binding="{Binding result_semester_exam.grading}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -3013,7 +3016,7 @@
                                                                                                         </Style>
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
-                                                                                                <DataGridTextColumn Header="លទ្ធផល" CellStyle="{DynamicResource Siemreap}" Width="115" Binding="{Binding result_semester.is_fail}">
+                                                                                                <DataGridTextColumn Header="លទ្ធផល" CellStyle="{DynamicResource Siemreap}" Width="115" Binding="{Binding result_semester_exam.is_fail}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -3023,7 +3026,7 @@
                                                                                                         </Style>
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
-                                                                                                <DataGridTextColumn Header="និន្ទេសជាអក្សរ" CellStyle="{DynamicResource Siemreap}" Width="200" Binding="{Binding result_semester.letter_grade}">
+                                                                                                <DataGridTextColumn Header="និន្ទេសជាអក្សរ" CellStyle="{DynamicResource Siemreap}" Width="200" Binding="{Binding result_semester_exam.letter_grade}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />

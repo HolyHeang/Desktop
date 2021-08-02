@@ -421,6 +421,7 @@ namespace CamemisOffLine.Windows
         {
             try
             {
+                lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
                 Document document = new Document(PageSize.A4, 10, 20, 10, 10);
                 PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "ព្រឹត្តិប័ត្រពិន្ទុសម្រាប់សិស្សថ្នាក់ទី" + ".pdf", FileMode.Create));
 

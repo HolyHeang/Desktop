@@ -1118,7 +1118,7 @@
                                                                                                                                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                                                                                                                                     <Setter Property="Background" Value="White" />
                                                                                                                                     <Setter Property="Height" Value="45"></Setter>
-                                                                                                                                    <Setter Property="FontFamily" Value="Khmer OS Siemreap"/>
+                                                                                                                                    <Setter Property="FontFamily" Value="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                                                                                     <Setter Property="BorderThickness" Value="1"/>
                                                                                                                                     <Setter Property="Margin" Value="-1 0 -1 0"/>
                                                                                                                                     <Setter Property="BorderBrush" Value="#7F808080"/>
@@ -1485,7 +1485,7 @@
                                                                                                                                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                                                                                                                                     <Setter Property="Background" Value="White" />
                                                                                                                                     <Setter Property="Height" Value="45"></Setter>
-                                                                                                                                    <Setter Property="FontFamily" Value="Khmer OS Siemreap"/>
+                                                                                                                                    <Setter Property="FontFamily" Value="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                                                                                     <Setter Property="BorderThickness" Value="1"/>
                                                                                                                                     <Setter Property="Margin" Value="-1 0 -1 0"/>
                                                                                                                                     <Setter Property="BorderBrush" Value="#7F808080"/>
@@ -1676,7 +1676,7 @@
                                                                                                                                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                                                                                                                                     <Setter Property="Background" Value="White" />
                                                                                                                                     <Setter Property="Height" Value="45"></Setter>
-                                                                                                                                    <Setter Property="FontFamily" Value="Khmer OS Siemreap"/>
+                                                                                                                                    <Setter Property="FontFamily" Value="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                                                                                     <Setter Property="BorderThickness" Value="1"/>
                                                                                                                                     <Setter Property="Margin" Value="-1 0 -1 0"/>
                                                                                                                                     <Setter Property="BorderBrush" Value="#7F808080"/>

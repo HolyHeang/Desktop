@@ -2596,8 +2596,8 @@ namespace CamemisOffLine
         private async void btnSemester_Click(object sender, RoutedEventArgs e)
         {
             txtDataDate.Content = GetDataDate();
-            txtResult.Visibility = Visibility.Visible;
-            cmbResult.Visibility = Visibility.Visible;
+            
+            grid_ResultLearning.Visibility = Visibility.Visible;
             lbltitleMonth.Visibility = Visibility.Visible;
             btnStatistic.Visibility = Visibility.Visible;
             DGMonthlyResult.Visibility = Visibility.Visible;
@@ -2671,16 +2671,36 @@ namespace CamemisOffLine
                 studentName.Add("");
                 cmbStudentName.ItemsSource = studentName;
 
+                foreach(var item in obj)
+                {
+                    if (item.result_semester.avg_score == "0")
+                        item.result_semester.avg_score = "មិនចាត់ថ្នាក់";
+                    if (item.result_semester_exam.avg_score == "0")
+                        item.result_semester_exam.avg_score = "មិនចាត់ថ្នាក់";
+                    if (item.result_semester.morality == null)
+                        item.result_semester.morality = "--";
+                    if (item.result_semester.bangkeun_phal == null)
+                        item.result_semester.bangkeun_phal = "--";
+                    if (item.result_semester.health == null)
+                        item.result_semester.health = "--";
+                }
+                var obj1 = obj;
                 if (startProgram == true)
                 {
                     NumberList(obj.OrderBy(s => s.result_semester.rank).ToList());
+                    NumberList(obj1.OrderBy(s => int.Parse(s.result_semester_exam.rank)).ToList());
                     DGSemester.ItemsSource = null;
                     DGSemester.ItemsSource = obj.OrderBy(s => s.result_semester.rank);
+                    DGSemesterExam.ItemsSource = obj1.OrderBy(s => int.Parse(s.result_semester_exam.rank));
+                    DGSemesterClass.ItemsSource = obj.OrderBy(s => s.result_semester.rank);
                 }
                 else
                 {
                     NumberList(obj.OrderBy(s => s.result_semester.rank).ToList());
+                    NumberList(obj1.OrderBy(s => int.Parse(s.result_semester_exam.rank)).ToList());
                     DGSemester.ItemsSource = obj.OrderBy(s => s.result_semester.rank);
+                    DGSemesterExam.ItemsSource = obj1.OrderBy(s => int.Parse(s.result_semester_exam.rank));
+                    DGSemesterClass.ItemsSource = obj.OrderBy(s => s.result_semester.rank);
                 }
                 report.data = obj.OrderBy(s => s.result_semester_exam.total_score).ToList();
                 lblTitleTotalStudent.Content = "សិស្សសរុប : " + DGSemester.Items.Count.ToString() + " នាក់" + " ស្រី : " + girlTotal.ToString() + " នាក់";
@@ -2734,8 +2754,8 @@ namespace CamemisOffLine
         private async void btnMonths_Click(object sender, RoutedEventArgs e)
         {
             txtDataDate.Content = GetDataDate();
-            txtResult.Visibility = Visibility.Collapsed;
-            cmbResult.Visibility = Visibility.Collapsed;
+
+            grid_ResultLearning.Visibility = Visibility.Collapsed;
             lbltitleMonth.Visibility = Visibility.Visible;
             btnStatistic.Visibility = Visibility.Visible;
             DGMonthlyResult.Visibility = Visibility.Visible;
@@ -3639,33 +3659,7 @@ namespace CamemisOffLine
             monthly.Show();
             this.IsEnabled = true;
         }
-        private void cmbResult_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            try
-            {
-                var value = cmbResult.SelectedItem as ComboBoxItem;
-                if (value.Tag.ToString() == "1")
-                {
-                    lbltitleMonth.Content = value.Content + yearTitle;
-                    DGSemester.Columns[5].Visibility = Visibility.Collapsed;
-                    DGSemester.Columns[8].Visibility = Visibility.Collapsed;
-                    DGSemester.Columns[9].Visibility = Visibility.Collapsed;
-                    DGSemester.Columns[10].Visibility = Visibility.Collapsed;
-                }
-                else
-                {
-                    lbltitleMonth.Content = value.Content + yearTitle;
-                    DGSemester.Columns[5].Visibility = Visibility.Visible;
-                    DGSemester.Columns[8].Visibility = Visibility.Visible;
-                    DGSemester.Columns[9].Visibility = Visibility.Visible;
-                    DGSemester.Columns[10].Visibility = Visibility.Visible;
-                }
-            }
-            catch
-            {
-
-            }
-        }
+       
 
         //private void btnLang_Click(object sender, RoutedEventArgs e)
         //{
@@ -4472,6 +4466,28 @@ namespace CamemisOffLine
         //---------------------------------------------------------------------------
         string studentMonth = "";
         string id = "", month = "", yearPrint = "";
+
+        //.......................................Select Result.................................
+        private void btnResultSemester_Click(object sender, RoutedEventArgs e)
+        {
+            lbltitleMonth.Content = "លទ្ធផលប្រចាំ " + yearTitle;
+            tabStudentResult.SelectedIndex = 2;
+        }
+
+        private void btnClassification_Semester_Click(object sender, RoutedEventArgs e)
+        {
+            lbltitleMonth.Content = "ចំណាត់ថ្នាក់ចំណត់ប្រភេទប្រចាំ​ " + yearTitle;
+            tabStudentResult.SelectedIndex = 4;
+        }
+
+        private void btnExam_Semester_Click(object sender, RoutedEventArgs e)
+        {
+            lbltitleMonth.Content = "លទ្ធផលប្រលង " + yearTitle;
+            tabStudentResult.SelectedIndex = 5;
+        }
+
+        //....................................................................................
+
         private async void StudenPrintMonthlySemesterResult()
         {
             if(classId==""|| studentMonth=="")
