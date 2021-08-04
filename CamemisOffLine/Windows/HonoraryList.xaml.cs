@@ -33,7 +33,8 @@ namespace CamemisOffLine.Windows
         public HonoraryList(List<StudentMonthlyResult> topStudent, string schoolName,string teacherName,string title)
         {
             InitializeComponent();
-            lblSchoolName.Content = schoolName;
+            lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
+            lblSchoolName.Content = Properties.Settings.Default.schoolName;
             lblTeacherName.Content = teacherName;
             for(int i = 0;i<topStudent.Count;i++)
             {

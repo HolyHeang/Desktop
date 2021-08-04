@@ -8,18 +8,20 @@
         Title="StudentMonthlyReport" Height="32cm" Width="25cm" WindowState="Normal" Loaded="Window_Loaded" WindowStartupLocation="Manual" ResizeMode="NoResize" MaxWidth="30cm">
     <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Hidden">
         <StackPanel Orientation="Vertical" Name="Grid" HorizontalAlignment="Center">
-            <Grid Name="Header" Margin="0 10 0 0" Height="120">
+            <Grid Name="Header" Margin="0 10 0 0" Height="auto">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.7*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
                     <Grid Margin="15,0,0,0">
                         <StackPanel Orientation="Vertical" Margin="0,25,0,0">
-                            <Label Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" Style="{DynamicResource Muol}" FontSize="13" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0 15 0 0"></Label>
-                            <Grid Margin="0,-12,0,0">
-                                <Label Name="TitleSchool" Style="{DynamicResource Siemreap}" FontSize="12" Foreground="White" HorizontalAlignment="Left" Margin="0 0 0 0" VerticalAlignment="Center"></Label>
+                            <Image Source="/CamemisOffLine;component/Image/MoEYS.png" Height="100" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="126,0,222,0"></Image>
+
+                            <Label Name="lbllogoLeft" Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" Style="{DynamicResource Muol}" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0 15 0 0"></Label>
+                            <Grid Margin="0,-5,0,0">
+                                <Label Name="TitleSchool" Style="{DynamicResource Siemreap}" FontSize="13" Height="30" Foreground="White" HorizontalAlignment="Left" Margin="0 0 0 0" VerticalAlignment="Center"></Label>
                             </Grid>
                             <Grid Margin="0,-12,0,0">
                                 <Label Content="លេខ៖........................................" HorizontalAlignment="Left" Style="{DynamicResource Siemreap}" FontSize="15" VerticalAlignment="Bottom"></Label>
@@ -27,21 +29,24 @@
                         </StackPanel>
                     </Grid>
                 </Grid>
-                <Grid Grid.Column="1">
+                <Grid Grid.Column="2">
                     <Grid>
                         <StackPanel Orientation="Vertical" Grid.Column="1">
-                            <Grid Margin="0 -5 0 0">
+                            <Grid Margin="0 15 0 0">
                                 <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Margin="0 -0 0 0"></Label>
                             </Grid>
                             <Grid Margin="0 -8 0 0">
                                 <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Margin="0 -5 0 0"></Label>
                             </Grid>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 50 0 0">
-                                <TextBlock Name="lblMonth" Text="លិខិតបង្គាប់ការ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="14" Foreground="Black" Margin="0 -15 0 0" Height="27"></TextBlock>
-                            </StackPanel>
+                           
                         </StackPanel>
                     </Grid>
                 </Grid>
+            </Grid>
+            <Grid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0">
+                    <TextBlock Name="lblMonth" Text="លិខិតបង្គាប់ការ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="14" Foreground="Black" Margin="0 -15 0 0" Height="27"></TextBlock>
+                </StackPanel>
             </Grid>
             <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 10 0 0">
                 <Border BorderBrush="White" BorderThickness="0"></Border>

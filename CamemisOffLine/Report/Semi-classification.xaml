@@ -14,12 +14,14 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Orientation="Vertical" Grid.Column="1">
-                    <TextBlock Text="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="18" ></TextBlock>
-                    <TextBlock Text="ជាតិ​   សាសនា   ព្រះមហាក្សត្រ" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="18"></TextBlock>
+                    <TextBlock Text="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="15" ></TextBlock>
+                    <TextBlock Text="ជាតិ​   សាសនា   ព្រះមហាក្សត្រ" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="15"></TextBlock>
                 </StackPanel>
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 35 0 0">
-                    <TextBlock Text="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="16" HorizontalAlignment="Left"></TextBlock>
-                    <TextBlock Name="lblSchoolName" Text="វិទ្យាល័យ ហ៊ុន សែន បូរី១០០ខ្នង" HorizontalAlignment="Left" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="16"></TextBlock>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 20 0 0">
+                    <Image Source="/CamemisOffLine;component/Image/MoEYS.png" Height="100" VerticalAlignment="Top" HorizontalAlignment="Center"></Image>
+
+                    <TextBlock Name="lbllogoLeft" Text="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="15" HorizontalAlignment="Left"></TextBlock>
+                    <TextBlock Name="lblSchoolName" Text="វិទ្យាល័យ ហ៊ុន សែន បូរី១០០ខ្នង" HorizontalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="15"></TextBlock>
                 </StackPanel>
             </Grid>
             <TextBlock Text="ចំណាត់ថ្នាក់  ចំណាត់ថ្នាក់ប្រភេទប្រចាំឆមាសលើកទី១" HorizontalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" Margin="0 10 0 0"/>

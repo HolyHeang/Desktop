@@ -531,6 +531,7 @@ D:\Clone\09-07-2021\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
 D:\Clone\09-07-2021\Library\obj\Debug\Library.csproj.CopyComplete
 D:\Clone\09-07-2021\Library\obj\Debug\Library.dll
 D:\Clone\09-07-2021\Library\obj\Debug\Library.pdb
+<<<<<<< HEAD
 C:\Users\ASUS\Desktop\Camemis\Desktop\Library\obj\Debug\Library.csprojAssemblyReference.cache
 D:\Clone\7-8-2021\Desktop\Library\bin\Debug\Library.dll
 D:\Clone\7-8-2021\Desktop\Library\bin\Debug\Library.pdb
@@ -543,3 +544,5 @@ D:\Clone\7-8-2021\Desktop\Library\obj\Debug\Library.csproj.CoreCompileInputs.cac
 D:\Clone\7-8-2021\Desktop\Library\obj\Debug\Library.csproj.CopyComplete
 D:\Clone\7-8-2021\Desktop\Library\obj\Debug\Library.dll
 D:\Clone\7-8-2021\Desktop\Library\obj\Debug\Library.pdb
+=======
+>>>>>>> 5dd83a597a6f9bf5f8c7404736045aa0784818c0

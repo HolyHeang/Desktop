@@ -35,7 +35,8 @@ namespace CamemisOffLine.Report
         string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
         private void print()
         {
-
+            lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
+            TitleSchool.Content = Properties.Settings.Default.schoolName;
             try
             {
 

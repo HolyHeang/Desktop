@@ -215,10 +215,12 @@ namespace CamemisOffLine.Windows
             if (WindowState == System.Windows.WindowState.Normal)
             {
                 WindowState = System.Windows.WindowState.Maximized;
+                materiaMax.Kind = MaterialDesignThemes.Wpf.PackIconKind.WindowRestore;
             }
             else
             {
                 WindowState = System.Windows.WindowState.Normal;
+                materiaMax.Kind = MaterialDesignThemes.Wpf.PackIconKind.WindowMaximize;
             }
         }
 

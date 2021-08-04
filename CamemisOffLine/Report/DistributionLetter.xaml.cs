@@ -35,7 +35,8 @@ namespace CamemisOffLine.Report
         public DistributionLetter(List<StudentMonthlyResult> topStudent, string schoolName)
         {
             InitializeComponent();
-            TitleSchool.Content = schoolName;
+            lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
+            TitleSchool.Content = Properties.Settings.Default.schoolName;
         }
         string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
 

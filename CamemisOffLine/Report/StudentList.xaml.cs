@@ -46,6 +46,8 @@ namespace CamemisOffLine.Report
 
         private void print(string stringRespone,List<StuedntofTheYear> datas)
         {
+            TitleSchool.Content = Properties.Settings.Default.schoolName;
+            lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
             List<string> fileArray = new List<string>();
             try
             {

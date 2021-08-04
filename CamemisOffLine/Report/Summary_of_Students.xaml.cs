@@ -32,6 +32,8 @@ namespace CamemisOffLine.Report
 
         private void print()
         {
+            lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
+            TitleSchool.Content = Properties.Settings.Default.schoolName;
 
             try
             {

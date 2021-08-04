@@ -31,6 +31,10 @@ namespace CamemisOffLine.Report
         public Classification(string classId,string term,string year,int ping)
         {
             InitializeComponent();
+
+            lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
+            TitleSchool.Content = Properties.Settings.Default.schoolName;
+
             txtYear.Text = year;
             this.ping = ping;
             this.term = term;
