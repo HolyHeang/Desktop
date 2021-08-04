@@ -271,11 +271,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Clone\\09-07-2021\\Library\\Library.csproj",
+      "projectUniqueName": "D:\\Clone\\7-8-2021\\Desktop\\Library\\Library.csproj",
       "projectName": "Library",
-      "projectPath": "D:\\Clone\\09-07-2021\\Library\\Library.csproj",
+      "projectPath": "D:\\Clone\\7-8-2021\\Desktop\\Library\\Library.csproj",
       "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
-      "outputPath": "D:\\Clone\\09-07-2021\\Library\\obj\\",
+      "outputPath": "D:\\Clone\\7-8-2021\\Desktop\\Library\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
