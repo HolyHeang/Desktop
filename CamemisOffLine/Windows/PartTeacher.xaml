@@ -490,8 +490,6 @@
 
                                                                                                             </Label>
                                                                                                         </Grid>
-
-
                                                                                                     </Grid>
                                                                                                 </Button>
                                                                                             </StackPanel>
@@ -619,7 +617,7 @@
                                                                                                                                             <DataTemplate>
                                                                                                                                                 <StackPanel Margin="0" Orientation="Vertical">
                                                                                                                                                     <Grid>
-                                                                                                                                                        <TextBlock Name="txtError" Text="{Binding error}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" Visibility="{Binding visible}"/>
+                                                                                                                                                        <TextBlock Name="txtError" Text="{Binding error}" Foreground="Red" FontSize="14" HorizontalAlignment="Center" Visibility="{Binding visible}"/>
 
                                                                                                                                                     </Grid>
                                                                                                                                                     <Grid Margin="0 5 0 0">
@@ -639,7 +637,7 @@
 
                                                                                                                                                         </Grid>
                                                                                                                                                         <StackPanel Orientation="Vertical" Grid.Column="1">
-                                                                                                                                                            <TextBox x:Name="TextinputScore" Padding="2 -1 0 0" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="White" Text="{Binding Path=score,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding check}" LostFocus="TextBox_LostFocus" PreviewTextInput="TextBox_PreviewTextInput"/>
+                                                                                                                                                            <TextBox x:Name="TextinputScore" Padding="2 -1 0 0" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="White" Text="{Binding Path=score,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding check}" LostFocus="TextBox_LostFocus" PreviewTextInput="TextBox_PreviewTextInput" BorderThickness="1" BorderBrush="{Binding color}"/>
                                                                                                                                                         </StackPanel>
                                                                                                                                                         <Grid Grid.Column="2">
                                                                                                                                                             <Button BorderThickness="0" Name="btnSum" Background="LightGray" FontWeight="Bold" Foreground="Black" Style="{DynamicResource Siemreap}" Click="btnSum_Click">
@@ -656,7 +654,9 @@
                                                                                                                                     <DataGridTemplateColumn Width="100" Header="អវត្តមាន" CanUserResize="False">
                                                                                                                                         <DataGridTemplateColumn.CellTemplate>
                                                                                                                                             <DataTemplate>
-                                                                                                                                                <CheckBox Name="isCheck" Height="30" Width="30" IsChecked="{Binding absent_exam,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Click="isCheck_Click">A</CheckBox>
+                                                                                                                                                <Grid Background="{Binding checkBoxColor}">
+                                                                                                                                                    <CheckBox Name="isCheck" Height="30" Width="30" Foreground="White" Background="White" IsChecked="{Binding absent_exam,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Click="isCheck_Click">A</CheckBox>
+                                                                                                                                                </Grid>
                                                                                                                                             </DataTemplate>
                                                                                                                                         </DataGridTemplateColumn.CellTemplate>
                                                                                                                                     </DataGridTemplateColumn>

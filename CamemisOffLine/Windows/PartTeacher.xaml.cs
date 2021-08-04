@@ -977,8 +977,11 @@ namespace CamemisOffLine.Windows
 
         private void isCheck_Click(object sender, RoutedEventArgs e)
         {
-            string JsonString = JsonConvert.SerializeObject(obj);
-            saveLocalString(months, JsonString, false);
+            if (btnCheckAutoSave.IsChecked == true)
+            {
+                string JsonString = JsonConvert.SerializeObject(obj);
+                saveLocalString(months, JsonString, true);
+            }
             var item = DGScoreMonth.SelectedItem as StudentInformation;
             item.visible = "Collapsed";
             DGScoreMonth.ItemsSource = null;
@@ -1024,6 +1027,8 @@ namespace CamemisOffLine.Windows
                                     DGScoreMonth.ItemsSource = null;
                                 }
                                 else if (obj.message.Equals("false"))
+                                    message1.discription = "ការបញ្ជូនទិន្នន័យមិនបានជោគជ័យ";
+                                else if (obj.message.Equals("fail"))
                                     message1.discription = "ការបញ្ជូនទិន្នន័យមិនបានជោគជ័យ";
                                 message1.buttonType = 2;
                             }
@@ -1077,6 +1082,7 @@ namespace CamemisOffLine.Windows
                 DGScoreMonth.ItemsSource = obj.data;
             }
             this.Opacity = 1;
+            GC.Collect();
         }
 
         private void btnDeleteAll_Click(object sender, RoutedEventArgs e)
@@ -1103,6 +1109,7 @@ namespace CamemisOffLine.Windows
                 DGScoreMonth.ItemsSource = obj.data;
             }
             this.Opacity = 1;
+            GC.Collect();
         }
 
         private void TextBox_LostFocus(object sender, RoutedEventArgs e)
@@ -1117,9 +1124,16 @@ namespace CamemisOffLine.Windows
                 else
                 {
                     if (int.Parse(item.score) > int.Parse(item.subject_score_max) || int.Parse(item.score) < int.Parse(item.subject_score_min))
+                    {
                         item.visible = "Visible";
+                        item.color = "Red";
+                    }
                     else
+                    {
                         item.visible = "Collapsed";
+                        item.color = "Blue";
+                    }
+                        
                 }
                 if (btnCheckAutoSave.IsChecked == true)
                 {
@@ -1133,6 +1147,7 @@ namespace CamemisOffLine.Windows
             {
 
             }
+            GC.Collect();
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
@@ -1204,16 +1219,9 @@ namespace CamemisOffLine.Windows
         private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {          
             var item = DGScoreMonth.SelectedItem as StudentInformation;
-            e.Handled = !IsValid(((TextBox)sender).Text + e.Text,item);
+            int r;
+            e.Handled = !int.TryParse(e.Text,out r);
         }
-
-        public static bool IsValid(string str, StudentInformation item)
-        {
-            int i;
-            return int.TryParse(str, out i) && i >= int.Parse(item.subject_score_min) && i <= int.Parse(item.subject_score_max);
-        }
-
-       
         //................................End.......................................
 
 
@@ -1260,31 +1268,38 @@ namespace CamemisOffLine.Windows
             var item = DGScoreMonth.SelectedItem as StudentInformation;
 
 
-            if(int.Parse(item.score) < int.Parse(item.subject_score_min)+ 1)
+            try
             {
-                if( item.score == null)
+                if (int.Parse(item.score) < int.Parse(item.subject_score_min) + 1)
                 {
-                    item.score = "0";
+                    if (item.score == null)
+                    {
+                        item.score = "0";
+                    }
+                    else
+                    {
+                        item.score = item.subject_score_min;
+                    }
                 }
                 else
                 {
-                    item.score = item.subject_score_min;
+                    if (string.IsNullOrEmpty(item.score.Trim()))
+                    {
+                        item.score = 0.ToString();
+                    }
+                    bool success = Int32.TryParse(item.score, out var number);
+                    if (!success)
+                    {
+                        // show error
+                        return;
+                    }
+
+                    item.score = btn.Name == "DownBtn" ? (--number).ToString() : (--number).ToString();
                 }
             }
-            else
+            catch
             {
-                if (string.IsNullOrEmpty(item.score.Trim()))
-                {
-                    item.score = 0.ToString();
-                }
-                bool success = Int32.TryParse(item.score, out var number);
-                if (!success)
-                {
-                    // show error
-                    return;
-                }
-
-                item.score = btn.Name == "DownBtn" ? (--number).ToString() : (--number).ToString();
+                item.score = " ";
             }
            
         }
@@ -2141,12 +2156,13 @@ namespace CamemisOffLine.Windows
                         txtDataDate.Text = "កាលបរិច្ឆេទរបស់ទិន្នន័យ : " + obj.Datadate;
                         foreach (var item1 in obj.data)
                         {
-                            if (item1.score == null)
+                            if (item1.score == null|| item1.score == "0")
                             {
-                                item1.score = "0";
+                                item1.score = "";
                             }
                             item1.subject_score_max = maxScore;
                             item1.subject_score_min = "0";
+                            item1.error = "ពិន្ទុអតិបរិមា: " + maxScore;
                         }
                         NumberList(obj.data);
                         try
@@ -2232,12 +2248,13 @@ namespace CamemisOffLine.Windows
                         txtDataDate.Text = "កាលបរិច្ឆេទរបស់ទិន្នន័យ : " + obj.Datadate;
                         foreach (var item1 in obj.data)
                         {
-                            if (item1.score == null)
+                            if (item1.score == null||item1.score == "0")
                             {
-                                item1.score = "0";
+                                item1.score = "";
                             }
                             item1.subject_score_max = maxScore;
                             item1.subject_score_min = "0";
+                            item1.error = "ពិន្ទុអតិបរិមា: "+maxScore;
                         }
                         try
                         {

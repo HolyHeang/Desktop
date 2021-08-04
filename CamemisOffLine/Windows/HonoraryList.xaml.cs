@@ -30,7 +30,7 @@ namespace CamemisOffLine.Windows
             InitializeComponent();
         }
         string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
-        public HonoraryList(List<StudentMonthlyResult> topStudent, string schoolName,string teacherName,string title)
+        public HonoraryList(List<StudentMonthlyResult> topStudent, string schoolName,string teacherName,string title,string yearTitle)
         {
             InitializeComponent();
             lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
@@ -38,8 +38,15 @@ namespace CamemisOffLine.Windows
             lblTeacherName.Content = teacherName;
             for(int i = 0;i<topStudent.Count;i++)
             {
-                lblClass.Content = topStudent[0].class_name;
-                if(title=="month")
+                lblClass.Content = topStudent[0].class_name+"("+ yearTitle + ")";
+               
+                string id = "";
+                if (topStudent[i].profileMedia.id == null)
+                    id = topStudent[i].student_id;
+                else
+                    id = topStudent[i].profileMedia.id;
+                topStudent[i].localProfileLink = filePath + "\\" + id + ".jpg";
+                if (title=="month")
                 {
                     lblMonth.Content = DateChange.checkMonth(int.Parse(topStudent[0].all_subject_result[0].month));
                     if (i == 0)

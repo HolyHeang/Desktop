@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\MSI\Desktop\Desktop\Desktop\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
 C:\Users\MSI\Desktop\Desktop\Desktop\Library\bin\Debug\Library.dll
 C:\Users\MSI\Desktop\Desktop\Desktop\Library\bin\Debug\Library.pdb
@@ -532,3 +533,16 @@ D:\Clone\09-07-2021\Library\obj\Debug\Library.csproj.CopyComplete
 D:\Clone\09-07-2021\Library\obj\Debug\Library.dll
 D:\Clone\09-07-2021\Library\obj\Debug\Library.pdb
 C:\Users\ASUS\Desktop\Camemis\Desktop\Library\obj\Debug\Library.csprojAssemblyReference.cache
+=======
+D:\Clone\7-8-2021\Desktop\Library\bin\Debug\Library.dll
+D:\Clone\7-8-2021\Desktop\Library\bin\Debug\Library.pdb
+D:\Clone\7-8-2021\Desktop\Library\bin\Debug\Dapper.dll
+D:\Clone\7-8-2021\Desktop\Library\bin\Debug\Newtonsoft.Json.dll
+D:\Clone\7-8-2021\Desktop\Library\bin\Debug\System.Data.SQLite.dll
+D:\Clone\7-8-2021\Desktop\Library\bin\Debug\System.Net.Http.Formatting.dll
+D:\Clone\7-8-2021\Desktop\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+D:\Clone\7-8-2021\Desktop\Library\obj\Debug\Library.csproj.CopyComplete
+D:\Clone\7-8-2021\Desktop\Library\obj\Debug\Library.dll
+D:\Clone\7-8-2021\Desktop\Library\obj\Debug\Library.pdb
+D:\Clone\7-8-2021\Desktop\Library\obj\Debug\Library.csproj.AssemblyReference.cache
+>>>>>>> d0dcaa4d3212141da9d9c1a385bef71286aa5722

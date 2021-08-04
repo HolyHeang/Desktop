@@ -24,11 +24,25 @@ namespace Library
     {
         private string Score;
         private bool? Absance_exam;
-        private string TeacherRecomment;
+        private string TeacherRecomment,Color="";
         private bool Check;
         public int tabIndex { get; set; }
+        public string color { get; set; } = "Blue";
+        public string checkBoxColor 
+        {
+
+            get
+            {
+                return ((bool)absent_exam) ? "#F54928" : "#579DDB";
+            }
+            set
+            {
+                Color = value;
+                OnpropertyChange();
+            }
+        }
         public bool focus { get; set; }
-        public string error { get; set; } = "ទិន្នន័យមិនត្រឺមត្រូវ";
+        public string error { get; set; }
         public string visible { get; set; } = "Collapsed";
         public string number { get; set; }
         public string student_id { get; set; }

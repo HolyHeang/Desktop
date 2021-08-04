@@ -452,7 +452,7 @@ namespace Library
                     return 9;
                 case "តុលា":
                     return 10;
-                case "វិច្អិកា":
+                case "វិច្ឆិកា":
                     return 11;
                 case "ធ្នូ":
                     return 12;

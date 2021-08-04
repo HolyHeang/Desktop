@@ -22,16 +22,17 @@ namespace CamemisOffLine.Windows
     public partial class ShowListStudentToPrint : Window
     {
         List<StudentMonthlyResult> obj = new List<StudentMonthlyResult>();
-        string title = "";
+        string title = "",yearTitle;
         public ShowListStudentToPrint()
         {
             InitializeComponent();
         }
-        public ShowListStudentToPrint(List<StudentMonthlyResult> obj,string title)
+        public ShowListStudentToPrint(List<StudentMonthlyResult> obj,string title,string yearTitle)
         {
             InitializeComponent();
             this.obj = obj;
             this.title = title;
+            this.yearTitle = yearTitle;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -75,7 +76,7 @@ namespace CamemisOffLine.Windows
                 }
                 if (student.Count>0)
                 {
-                    Transcript transcript = new Transcript(null, student, false, false, "", "", true,title:title);
+                    Transcript transcript = new Transcript(null, student, false, false, "", "", true,title:title, yearTitle: yearTitle);
                     transcript.Show();
                     Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
                     if(transcript.printOrNot=='1')
@@ -90,12 +91,14 @@ namespace CamemisOffLine.Windows
                 else
                 {
                     MessageBox.Show("សូមធ្វើការជ្រើសរើសសិស្សជាមុនសិន", "សារបញ្ចាក់", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
                     DGStudentName.ItemsSource = obj;
                 }
             }
             catch
             {
                 MessageBox.Show("សូមធ្វើការជ្រើសរើសសិស្សជាមុនសិន", "សារបញ្ចាក់", MessageBoxButton.OK, MessageBoxImage.Error);
+                Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
                 DGStudentName.ItemsSource = obj;
             }
             

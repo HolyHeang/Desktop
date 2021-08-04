@@ -23,7 +23,7 @@ namespace CamemisOffLine.Windows
     public partial class Transcript : Window
     {
         //-----------Gobal Veriable----------------
-        string month = "", _class = "";
+        string month = "", _class = "", yearTitle="";
         string pathName = "";
         string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates),title="";
         bool printAll, saveInOne,printCheck;
@@ -39,9 +39,10 @@ namespace CamemisOffLine.Windows
             InitializeComponent();
         }
 
-        public Transcript(StudentMonthlyResult result, List<StudentMonthlyResult> results = null, bool printAll = false, bool saveInOne = false, string month = "", string _class = "",bool print=false,string title="")
+        public Transcript(StudentMonthlyResult result, List<StudentMonthlyResult> results = null, bool printAll = false, bool saveInOne = false, string month = "", string _class = "",bool print=false,string title="",string yearTitle="")
         {
             InitializeComponent();
+            
             this.printAll = printAll;
             this.result = result;
             this.saveInOne = saveInOne;
@@ -50,6 +51,7 @@ namespace CamemisOffLine.Windows
             this.results = results;
             this.printCheck = print;
             this.title = title;
+            this.yearTitle = yearTitle;
         }
 
         //----------- end Constructor------------------------
@@ -232,10 +234,18 @@ namespace CamemisOffLine.Windows
         void showData(object obj)
         {
             StudentMonthlyResult result = obj as StudentMonthlyResult;
+            lblYearTitle.Content = "ឆ្នាំសិក្សា​ (" + yearTitle + ")";
+            string id = "";
+            if (result.profileMedia.id == null)
+                id = result.student_id;
+            else
+                id = result.profileMedia.id;
+            result.localProfileLink = filePath + "\\" + id + ".jpg";
             if (title=="month")
             {
                 lblMonth.Text = "លទ្ធផលប្រចាំ " + DateChange.checkMonth(int.Parse(result.result_monthly.month));
                 lblSchoolName.Content = Properties.Settings.Default.schoolName;
+                lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
                 txtStudentId.Text = "អត្តលេខសិស្ស : " + result.student_school_id;
                 txtName.Text = "ឈ្មោះ : " + result.name;
                 txtGender.Text = "ភេទ : " + result.gender;
@@ -245,7 +255,11 @@ namespace CamemisOffLine.Windows
                 txtRank.Text = result.result_monthly.rank.ToString();
                 txtGrade.Text = result.result_monthly.grading;
 
-                imgProfile.Source = new BitmapImage(new Uri(result.localProfileLink));
+                try
+                {
+                    imgProfile.Source = new BitmapImage(new Uri(result.localProfileLink));
+                }
+                catch { }
 
                 txtTotalAbsent.Text = result.result_monthly.absence_total;
                 txtWithPermission.Text = result.result_monthly.absence_with_permission;
@@ -421,6 +435,7 @@ namespace CamemisOffLine.Windows
         {
             try
             {
+                lblYearTitle.Content = "ឆ្នាំសិក្សា​ (" + yearTitle + ")";
                 lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
                 Document document = new Document(PageSize.A4, 10, 20, 10, 10);
                 PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "ព្រឹត្តិប័ត្រពិន្ទុសម្រាប់សិស្សថ្នាក់ទី" + ".pdf", FileMode.Create));

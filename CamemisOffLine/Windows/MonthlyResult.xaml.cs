@@ -169,14 +169,14 @@ namespace CamemisOffLine.Windows
             int startIndex = 0;
             string avg = "", colors = "";
 
-            if(title== "month")
+            if (title == "month")
             {
                 //--------------------L1-----------------------------------
                 for (int i = startIndex; i < (obj.Count() / 2); i++)
                 {
                     num++;
                     lblTeacherName.Content = obj[i].instructor.name;
-                    lblclass.Text = "ថ្នាក់ទី " + obj[i].class_name+" ("+year+")";
+                    lblclass.Text = "ថ្នាក់ទី " + obj[i].class_name + " (" + year + ")";
                     lblMonth.Text = "លទ្ធផលប្រចាំ " + DateChange.checkMonth(int.Parse(obj[i].result_monthly.month));
                     if (obj[i].result_monthly.absence_exam.Equals(1))
                     {
@@ -197,7 +197,7 @@ namespace CamemisOffLine.Windows
                         rank = obj[i].result_monthly.rank,
                         color = colors,
                         totalScore = obj[i].result_monthly.total_score.ToString(),
-                        studentId = obj[i].student_schoolyear_id,
+                        studentId = obj[i].student_school_id,
                         studentName = obj[i].name
 
                     });
@@ -227,20 +227,22 @@ namespace CamemisOffLine.Windows
                         rank = obj[i].result_monthly.rank,
                         color = colors,
                         totalScore = obj[i].result_monthly.total_score.ToString(),
-                        studentId = obj[i].student_schoolyear_id,
+                        studentId = obj[i].student_school_id,
                         studentName = obj[i].name
                     });
                 }
                 //--------------------end L2-----------------------------------
             }
-            else if(title== "semester")
+            else if (title == "semester")
             {
                 obj.OrderBy(s => s.result_semester_exam.total_score);
+                
                 //--------------------L1-----------------------------------
                 for (int i = startIndex; i < (obj.Count() / 2); i++)
                 {
+                    lblclass.Text = "ថ្នាក់ទី " + obj[i].class_name + " (" + year + ")";
                     num++;
-                    if(num==2)
+                    if (num == 2)
                     {
                         lblTeacherName.Content = obj[i].instructor.name;
 
@@ -260,7 +262,7 @@ namespace CamemisOffLine.Windows
                         rank = obj[i].result_semester.rank,
                         color = colors,
                         totalScore = obj[i].result_semester_exam.total_score.ToString(),
-                        studentId = obj[i].student_schoolyear_id,
+                        studentId = obj[i].student_school_id,
                         studentName = obj[i].name
 
                     });
@@ -268,21 +270,68 @@ namespace CamemisOffLine.Windows
                 //-------------------- end L1---------------------
 
                 //--------------------L2-----------------------------------
+                    for (int i = (obj.Count() / 2); i < obj.Count(); i++)
+                    {
+                        num++;
+                        L2.Add(new StudentResultForCrystalReport
+                        {
+                            number = DateChange.Num(num),
+                            avg = obj[i].result_semester.avg_score,
+                            rank = obj[i].result_semester.rank,
+                            color = colors,
+                            totalScore = obj[i].result_semester_exam.total_score.ToString(),
+                            studentId = obj[i].student_school_id,
+                            studentName = obj[i].name
+                        });
+                    }
+                //--------------------end L2-----------------------------------
+            }
+            else if (title == "exam")
+            {
+                obj.OrderBy(s => s.result_semester_exam.total_score);
+                for (int i = startIndex; i < (obj.Count() / 2); i++)
+                {
+                    lblclass.Text = "ថ្នាក់ទី " + obj[i].class_name + " (" + year + ")";
+                    num++;
+                    if (num == 2)
+                    {
+                        lblTeacherName.Content = obj[i].instructor.name;
+
+                        if (obj[i].result_semester_exam.term == "FIRST_SEMESTER")
+                        {
+                            lblMonth.Text = "លទ្ធផលប្រឡង ឆមាសទី១";
+                        }
+                        else
+                        {
+                            lblMonth.Text = "លទ្ធផលប្រឡង ឆមាសទី២";
+                        }
+                    }
+                    L1.Add(new StudentResultForCrystalReport
+                    {
+                        number = DateChange.Num(num),
+                        avg = obj[i].result_semester_exam.avg_score,
+                        rank = int.Parse(obj[i].result_semester_exam.rank),
+                        color = colors,
+                        totalScore = obj[i].result_semester_exam.total_score.ToString(),
+                        studentId = obj[i].student_school_id,
+                        studentName = obj[i].name
+
+                    });
+                }
                 for (int i = (obj.Count() / 2); i < obj.Count(); i++)
                 {
                     num++;
                     L2.Add(new StudentResultForCrystalReport
                     {
                         number = DateChange.Num(num),
-                        avg = obj[i].result_semester.avg_score,
-                        rank = obj[i].result_semester.rank,
+                        avg = obj[i].result_semester_exam.avg_score,
+                        rank = int.Parse(obj[i].result_semester_exam.rank),
                         color = colors,
                         totalScore = obj[i].result_semester_exam.total_score.ToString(),
-                        studentId = obj[i].student_schoolyear_id,
+                        studentId = obj[i].student_school_id,
                         studentName = obj[i].name
                     });
                 }
-                //--------------------end L2-----------------------------------
             }
             DatagridResult.ItemsSource = L1.OrderBy(r=>r.rank);
             DatagridResult1.ItemsSource = L2.OrderBy(r => r.rank);
