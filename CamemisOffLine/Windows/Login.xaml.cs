@@ -40,25 +40,25 @@ namespace CamemisOffLine
         public Login()
         {
             InitializeComponent();
+
             name = Properties.Settings.Default.username;
             pass = Properties.Settings.Default.password;
-           
         }
 
-        private void PackIcon_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
+       
         //-----------------------------Login
        
         //-----------------------------end login
         //start window
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+           
+
             btnLogin.Visibility = Visibility.Collapsed;
             btnPass.Visibility = Visibility.Collapsed;
             btnUser.Visibility = Visibility.Collapsed;
             btnNext.Margin = btnLogin.Margin;
+            gridBack.Visibility = Visibility.Collapsed;
             gridLogin.Width = 380;
             gridLogin.Height = 300;
 
@@ -272,18 +272,6 @@ namespace CamemisOffLine
         }
         //mouse over exit button........
 
-        private void grideExit_MouseEnter(object sender, MouseEventArgs e)
-        {
-            Grid g = (Grid)sender;
-            g.Background = Brushes.LightGray;
-        }
-
-        private void grideExit_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Grid g = (Grid)sender;
-            g.Background = Brushes.Transparent;
-        }
-
         private void btnLogin_MouseEnter(object sender, MouseEventArgs e)
         {
             Button btn = (Button)sender;
@@ -326,6 +314,8 @@ namespace CamemisOffLine
                                 btnUser.Visibility = Visibility.Visible;
                                 btnPass.Visibility = Visibility.Visible;
                                 btnLogin.Visibility = Visibility.Visible;
+                                gridBack.Visibility = Visibility.Visible;
+                                
                                 gridLogin.Width = 380;
                                 gridLogin.Height = 400;
                             }
@@ -386,6 +376,93 @@ namespace CamemisOffLine
             client.Dispose();
         }
 
+        //...................................Buttom Bar Top....................................
+        private void gridExit_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void gridExit_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Grid g = (Grid)sender;
+            g.Background = Brushes.Red;
+        }
+
+        private void gridExit_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Grid g = (Grid)sender;
+            g.Background = Brushes.Transparent;
+        }
+
+        private void gridmax_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (WindowState == System.Windows.WindowState.Normal)
+            {
+                WindowState = System.Windows.WindowState.Maximized;
+                maximized.Kind = MaterialDesignThemes.Wpf.PackIconKind.WindowRestore;
+            }
+            else
+            {
+                WindowState = System.Windows.WindowState.Normal;
+                maximized.Kind = MaterialDesignThemes.Wpf.PackIconKind.WindowMaximize;
+            }
+        }
+
+        private void gridmax_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Grid g = (Grid)sender;
+            g.Background = Brushes.Gray;
+        }
+
+        private void gridmax_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Grid g = (Grid)sender;
+            g.Background = Brushes.Transparent;
+        }
+
+        private void gridmini_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            WindowState = System.Windows.WindowState.Minimized;
+        }
+
+        private void gridmini_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Grid g = (Grid)sender;
+            g.Background = Brushes.Gray;
+        }
+
+        private void gridmini_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Grid g = (Grid)sender;
+            g.Background = Brushes.Transparent;
+        }
+
+        private void gridBack_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            btnLogin.Visibility = Visibility.Collapsed;
+            btnPass.Visibility = Visibility.Collapsed;
+            btnUser.Visibility = Visibility.Collapsed;
+            btnPassCode.Visibility = Visibility.Visible;
+            btnNext.Visibility = Visibility.Visible;
+            gridBack.Visibility = Visibility.Collapsed;
+            btnNext.Margin = btnLogin.Margin;
+            gridLogin.Width = 380;
+            gridLogin.Height = 300;
+        }
+
+        private void gridBack_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Grid g = (Grid)sender;
+            g.Background = Brushes.Blue;
+        }
+
+        private void gridBack_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Grid g = (Grid)sender;
+            g.Background = Brushes.Transparent;
+        }
+
+        //..................................End................................
         //Internte Checker
         public bool InternetChecker()
         {

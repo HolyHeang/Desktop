@@ -5,14 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:CamemisOffLine"
+         xmlns:language="clr-namespace:CamemisOffLine.Properties.Langs"
         mc:Ignorable="d"
-        Title="Login" Height="600" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None" WindowState="Maximized" Loaded="Window_Loaded">
+        Title="Login" Height="600" Width="1080" WindowStyle="None" WindowState="Maximized" Loaded="Window_Loaded">
     <Grid>
-
+       
         <Grid>
             <Image Source="/CamemisOffLine;component/Image/Nature3.jpg" Stretch="UniformToFill" Name="backgroundImg" Opacity="1"/>
         </Grid>
-
+        <Grid Name="gridmax" Width="35" HorizontalAlignment="Right" Height="35" Cursor="Hand" ToolTip="{x:Static language:Lang.Tooltip_top_bar_Max}"  Margin="0,0,35,0" VerticalAlignment="Top" MouseDown="gridmax_MouseDown" MouseEnter="gridmax_MouseEnter" MouseLeave="gridmax_MouseLeave">
+            <materialDesign:PackIcon Name="maximized" Kind="WindowRestore" FontSize="15" Height="20" Width="20" Foreground="White" Margin="7,8,0,0"/>
+        </Grid>
+        <Grid x:Name="gridmini" Width="35" Height="35" Cursor="Hand" HorizontalAlignment="Right" ToolTip="{x:Static language:Lang.Tooltip_top_bar_Min}" Margin="0,0,70,0" VerticalAlignment="Top" MouseDown="gridmini_MouseDown" MouseEnter="gridmini_MouseEnter" MouseLeave="gridmini_MouseLeave">
+            <materialDesign:PackIcon Kind="WindowMinimize" FontSize="15" Height="20" Width="20"  Foreground="White" Margin="8,8,0,0"/>
+        </Grid>
+        <Grid Name="gridExit" Width="35" Cursor="Hand" Height="35"  HorizontalAlignment="Right" ToolTip="{x:Static language:Lang.Tooltip_top_bar_Close}" VerticalAlignment="Top" MouseDown="gridExit_MouseDown" MouseEnter="gridExit_MouseEnter" MouseLeave="gridExit_MouseLeave">
+            <materialDesign:PackIcon Kind="Close" FontSize="15" Height="20" Width="20" Foreground="White" VerticalAlignment="Stretch" Margin="8,8,0,7"/>
+        </Grid>
         <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="70" Margin="0,272,22,270" Click="Button_Click_3" Height="50">
             <Button.Background>
                 <ImageBrush ImageSource="/CamemisOffLine;component/Image/Nature3.jpg" Opacity="0.9"/>
@@ -136,8 +145,8 @@
 
                 </StackPanel>
             </StackPanel>
-            <Grid Name="grideExit" MouseEnter="grideExit_MouseEnter" MouseLeave="grideExit_MouseLeave"  VerticalAlignment="Top" HorizontalAlignment="Right">
-                <materialDesign:PackIcon Kind="Close" Cursor="Hand" MouseDown="PackIcon_MouseDown" Height="21" Width="22" ></materialDesign:PackIcon>
+            <Grid Name="gridBack" VerticalAlignment="Top" Margin="0 0 0 0" HorizontalAlignment="Left" MouseDown="gridBack_MouseDown" MouseEnter="gridBack_MouseEnter" MouseLeave="gridBack_MouseLeave">
+                <materialDesign:PackIcon Kind="ArrowLeftThick" Cursor="Hand" Height="21" Width="22" ></materialDesign:PackIcon>
 
             </Grid>
         </Grid>

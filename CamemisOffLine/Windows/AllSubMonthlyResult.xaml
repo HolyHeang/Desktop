@@ -16,7 +16,7 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Orientation="Vertical" Grid.Column="0" Margin="5 40 0 0">
                     <Image Source="/CamemisOffLine;component/Image/MoEYS.png" Height="100"></Image>
-                    <Label Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="14" HorizontalAlignment="Center"></Label>
+                    <Label Name="lbllogoLeft" Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="14" HorizontalAlignment="Center"></Label>
                     <Label Name="lblSchoolName" Content="វិទ្យាល័យ ហ៊ុន សែន បូរី១០០ខ្នង" HorizontalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="14"></Label>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Grid.Column="1">

@@ -30,6 +30,8 @@ namespace CamemisOffLine.Report
         string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            lbllogoLeft.Text = Properties.Settings.Default.logoNameLeft;
+            lblSchoolName.Text = Properties.Settings.Default.schoolName;
             this.Hide();
             Document document = new Document(PageSize.A4, 0, 0, 0, 0);
             PdfWriter.GetInstance(document, new System.IO.FileStream(filePath + "\\" + "HonoraryList" + ".pdf", FileMode.Create));

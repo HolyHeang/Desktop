@@ -22,6 +22,9 @@ namespace CamemisOffLine.Report
         public Student_Attendance_Year()
         {
             InitializeComponent();
+
+            lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
+            TitleSchool.Content = Properties.Settings.Default.schoolName;
         }
     }
 }

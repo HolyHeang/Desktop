@@ -18,9 +18,9 @@
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\SiiYaNo\Users\MSI\Desktop\Deploy\</PublishUrl>
+    <PublishUrl>C:\Users\ASUS\Desktop\file Setup\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Unc</InstallFrom>
+    <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -28,14 +28,13 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\SiiYaNo\Users\MSI\Desktop\Deploy\</InstallUrl>
     <UpdateUrl>\\SiiYaNo\Users\MSI\Desktop\Deploy\</UpdateUrl>
-    <TargetCulture>en-GB</TargetCulture>
     <ProductName>CAMEMIS Desktop</ProductName>
-    <PublisherName>Sean Pairsith</PublisherName>
-    <SuiteName>Sean Pairsith</SuiteName>
+    <PublisherName>Heang Holy</PublisherName>
+    <SuiteName>Heang Holy</SuiteName>
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
-    <ApplicationRevision>0</ApplicationRevision>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

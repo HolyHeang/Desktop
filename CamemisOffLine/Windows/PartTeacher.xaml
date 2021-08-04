@@ -58,7 +58,7 @@
                     <materialDesign:PackIcon Name="materiaMin" VerticalAlignment="Center" HorizontalAlignment="Center" Kind="WindowMinimize" Height="15" Width="15"/>
                 </Grid>
                 <Grid Name="gridMax" HorizontalAlignment="Center" Height="35" Width="35" Cursor="Hand" MouseDown="gridMax_MouseDown" MouseEnter="gridMax_MouseEnter" MouseLeave="gridMax_MouseLeave">
-                    <materialDesign:PackIcon Name="materiaMax" VerticalAlignment="Center" HorizontalAlignment="Center" Kind="WindowMaximize" Height="15" Width="15"/>
+                    <materialDesign:PackIcon Name="materiaMax" VerticalAlignment="Center" HorizontalAlignment="Center" Kind="WindowRestore" Height="15" Width="15"/>
                 </Grid>
                 <Grid Name="gridClose" HorizontalAlignment="Center" Height="35" Cursor="Hand" Width="35" MouseDown="gridClose_MouseDown" MouseEnter="gridClose_MouseEnter" MouseLeave="gridClose_MouseLeave">
                     <materialDesign:PackIcon Name="materiaExit" VerticalAlignment="Center" HorizontalAlignment="Center" Kind="WindowClose" Height="15" Width="15"/>
@@ -619,6 +619,10 @@
                                                                                                                                             <DataTemplate>
                                                                                                                                                 <StackPanel Margin="0" Orientation="Vertical">
                                                                                                                                                     <Grid>
+                                                                                                                                                        <TextBlock Name="txtError" Text="{Binding error}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" Visibility="{Binding visible}"/>
+
+                                                                                                                                                    </Grid>
+                                                                                                                                                    <Grid Margin="0 5 0 0">
                                                                                                                                                         <Grid.ColumnDefinitions>
                                                                                                                                                             <ColumnDefinition Width="25"/>
                                                                                                                                                             <ColumnDefinition Width="*"/>
@@ -626,19 +630,22 @@
                                                                                                                                                         </Grid.ColumnDefinitions>
                                                                                                                                                         <Grid Grid.Column="0">
 
-                                                                                                                                                            <Button BorderThickness="0" Background="Transparent" Style="{DynamicResource Siemreap}" Content="-" Click="Button_Click">
-
+                                                                                                                                                            <Button BorderThickness="0" Background="LightGray" Foreground="Black" Style="{DynamicResource Siemreap}" FontWeight="Bold" Click="Button_Click">
+                                                                                                                                                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                                                                                                                                    <materialDesign:PackIcon Kind="WindowMinimize" FontSize="20" Foreground="#99000000"/>
+                                                                                                                                                                </Grid>
                                                                                                                                                             </Button>
 
 
                                                                                                                                                         </Grid>
                                                                                                                                                         <StackPanel Orientation="Vertical" Grid.Column="1">
-                                                                                                                                                            <TextBlock Name="txtError" Text="{Binding error}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" Visibility="{Binding visible}"/>
                                                                                                                                                             <TextBox x:Name="TextinputScore" Padding="2 -1 0 0" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="White" Text="{Binding Path=score,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding check}" LostFocus="TextBox_LostFocus" PreviewTextInput="TextBox_PreviewTextInput"/>
                                                                                                                                                         </StackPanel>
                                                                                                                                                         <Grid Grid.Column="2">
-                                                                                                                                                            <Button BorderThickness="0" Name="btnSum" Background="Transparent" Style="{DynamicResource Siemreap}" Content="+" Click="btnSum_Click">
-
+                                                                                                                                                            <Button BorderThickness="0" Name="btnSum" Background="LightGray" FontWeight="Bold" Foreground="Black" Style="{DynamicResource Siemreap}" Click="btnSum_Click">
+                                                                                                                                                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                                                                                                                                    <materialDesign:PackIcon Kind="PlusThick" FontSize="18" Foreground="#99000000"/>
+                                                                                                                                                                </Grid>
                                                                                                                                                             </Button>
                                                                                                                                                         </Grid>
                                                                                                                                                     </Grid>
@@ -740,7 +747,7 @@
                                                                                         <StackPanel Grid.Column="0" Orientation="Horizontal">
                                                                                             <ComboBox Style="{StaticResource combobox}" Name="cbSelectResultMonth" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35" Width="200"  Text="សូមជ្រើសរើសខែ/ឆមាស" IsEditable="True" BorderThickness="1" BorderBrush="WhiteSmoke" Margin="0,4,10,11" SelectionChanged="cbSelectResultMonth_SelectionChanged"/>
                                                                                         </StackPanel>
-                                                                                        <TextBlock Name="txtTitleMonth" Text="លទ្ធផលប្រចាំ​ : " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="16" Margin="300 0 0 0"/>
+                                                                                        <TextBlock Name="txtTitleMonth" Text="លទ្ធផលប្រចាំ​ : " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="16" Height="40" Margin="300 7 0 0"/>
                                                                                         <StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Right" Margin="0 0 5 0">
                                                                                             <TextBlock Name="txtDate" Text="កាលបរិច្ឆេទ​ : 26/07/2021" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Margin="0 0 10 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                                             <Button Name="btnPrintResult" BorderThickness="0 0 0 0" BorderBrush="LightGray" VerticalAlignment="Center" Margin="5 0 5 0" Height="35" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" Click="btnPrintResult_Click">

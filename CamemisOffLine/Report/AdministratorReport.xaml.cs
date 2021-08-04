@@ -31,6 +31,9 @@ namespace CamemisOffLine.Report
         string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            lbllogoLeft.Text = Properties.Settings.Default.logoNameLeft;
+            txtSchoolname.Text = Properties.Settings.Default.schoolName;
+
             this.Hide();
             var Date = DateTime.Now.ToShortDateString();
             string[] split = Date.Split('/');

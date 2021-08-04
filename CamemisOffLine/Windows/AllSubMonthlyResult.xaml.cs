@@ -227,8 +227,8 @@ namespace CamemisOffLine.Windows
             int i = 1, y = 1, itemCount = 1;
 
             lblSchoolName.Content = Properties.Settings.Default.schoolName;
-
-            if(title== "month")
+            lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
+            if (title== "month")
             {
                 foreach (var item in obj)
                 {

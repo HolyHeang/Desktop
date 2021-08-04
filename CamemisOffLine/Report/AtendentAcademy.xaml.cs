@@ -26,6 +26,8 @@ namespace CamemisOffLine.Report
         public AtendentAcademy()
         {
             InitializeComponent();
+            lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
+            TitleSchool.Content = Properties.Settings.Default.schoolName;
         }
 
         string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);

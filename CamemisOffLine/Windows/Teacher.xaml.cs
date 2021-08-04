@@ -225,7 +225,7 @@ namespace CamemisOffLine
                     Properties.Settings.Default.checkLoginOrLogut = "login";
                     Properties.Settings.Default.Save();
 
-                    this.FontFamily = new FontFamily("Khmer OS Siemreab");
+                    this.FontFamily = new FontFamily("/CamemisOffLine;component/FontStyle/#Khmer OS Battambang");
 
                     //.............Slide Left..............
                     slideLeft.Width = 45;
@@ -2116,10 +2116,12 @@ namespace CamemisOffLine
             if (WindowState == System.Windows.WindowState.Normal)
             {
                 WindowState = System.Windows.WindowState.Maximized;
+                maximized.Kind = MaterialDesignThemes.Wpf.PackIconKind.WindowRestore;
             }
             else
             {
                 WindowState = System.Windows.WindowState.Normal;
+                maximized.Kind = MaterialDesignThemes.Wpf.PackIconKind.WindowMaximize;
             }
         }
         private void gridExit_MouseDown(object sender, MouseButtonEventArgs e)
@@ -3155,6 +3157,7 @@ namespace CamemisOffLine
         bool checkVisibleMenu = false;
         private void menuResult_MouseDown(object sender, MouseButtonEventArgs e)
         {
+           
             if (checkVisibleMenu)
             {
                 ArroBackStuRes.Kind = MaterialDesignThemes.Wpf.PackIconKind.FormatIndentDecrease;

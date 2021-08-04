@@ -38,6 +38,9 @@ namespace CamemisOffLine.Report
         string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            lblSchoolName.Content = Properties.Settings.Default.schoolName;
+            lblLogoNameLeft.Content = Properties.Settings.Default.logoNameLeft;
+
             try
             {
                 Loading loading = new Loading();

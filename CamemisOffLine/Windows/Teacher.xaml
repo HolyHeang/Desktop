@@ -95,7 +95,7 @@
                                             <Label Name="lblStuAtt" FontWeight="Bold" Content="{x:Static language:Lang.Stu_Att_Re}" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" VerticalContentAlignment="Center" Height="34" Width="240" Foreground="White" Margin="0,-4,1,0" Style="{DynamicResource Siemreap}"/>
                                         </Grid>
                                     </Button>
-                                    <Button Name="btnStudentLearningRsult" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="35" HorizontalAlignment="Stretch"  Background="Transparent" BorderThickness="0" FontSize="15" Margin="5,-3,5,5" Click="btnStudentLearningRsult_Click" MouseEnter="btnStudentLearningRsult_MouseEnter" MouseLeave="btnStudentLearningRsult_MouseLeave">
+                                    <Button Name="btnStudentLearningRsult" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="35" HorizontalAlignment="Stretch"  Background="Transparent" BorderThickness="0" FontSize="15" Margin="5,5,5,5" Click="btnStudentLearningRsult_Click" MouseEnter="btnStudentLearningRsult_MouseEnter" MouseLeave="btnStudentLearningRsult_MouseLeave">
                                         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="-10 0" Width="272" Height="25">
                                             <materialDesign:PackIcon Name="MateriaStuLearn" Foreground="White" Kind="ClipboardTextOutline" VerticalAlignment="Center" HorizontalAlignment="Left" Height="24" Width="24" Margin="0,0,0,0" ></materialDesign:PackIcon>
                                             <Label Name="lblStuLearn" FontWeight="Bold" Content="{x:Static language:Lang.Stu_Learn_Result}" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" VerticalContentAlignment="Center" Height="34" Width="244" Style="{DynamicResource Siemreap}" Foreground="White" Margin="0,0,-4,0"></Label>
@@ -284,7 +284,7 @@
                                 </ToggleButton>
                             </Grid>
                             <Grid Name="gridmax" Width="35" HorizontalAlignment="Right" Height="35" Cursor="Hand" ToolTip="{x:Static language:Lang.Tooltip_top_bar_Max}" MouseDown="gridmax_MouseDown" MouseEnter="gridmini_MouseEnter" MouseLeave="gridmini_MouseLeave" Margin="0,0,35,0">
-                                <materialDesign:PackIcon Kind="WindowMaximize" FontSize="15" Height="20" Width="20" Foreground="Gray" Margin="7,8,0,0"/>
+                                <materialDesign:PackIcon Name="maximized" Kind="WindowRestore" FontSize="15" Height="20" Width="20" Foreground="Gray" Margin="7,8,0,0"/>
                             </Grid>
                             <Grid x:Name="gridmini" Width="35" Height="35" Cursor="Hand" HorizontalAlignment="Right" ToolTip="{x:Static language:Lang.Tooltip_top_bar_Min}" MouseDown="gridmini_MouseDown" MouseEnter="gridmini_MouseEnter" MouseLeave="gridmini_MouseLeave" Margin="0,0,70,0">
                                 <materialDesign:PackIcon Kind="WindowMinimize" FontSize="15" Height="20" Width="20"  Foreground="Gray" Margin="8,8,0,0"/>
@@ -1694,7 +1694,7 @@
                                                                         <Image Source="/CamemisOffLine;component/Image/iconfinder_excel_272697.png"/>
                                                                     </MenuItem.Icon>
                                                                 </MenuItem>
-                                                                <MenuItem Header="{x:Static language:Lang.telegram}" FontFamily="/CamemisOffLine;component/FontStyle/#v" Click="MenuItem_Click" Foreground="Black" Background="#FFEFF3F3">
+                                                                <MenuItem Header="{x:Static language:Lang.telegram}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Click="MenuItem_Click" Foreground="Black" Background="#FFEFF3F3">
                                                                     <MenuItem.Icon>
                                                                         <Image Source="/CamemisOffLine;component/Image/telegram.png"/>
                                                                     </MenuItem.Icon>
@@ -1972,7 +1972,7 @@
                                                                     </Button>
                                                                 </Grid>
                                                                 <Grid Grid.Column="1">
-                                                                    <Label Name="lbltitleMonth" FontSize="14" Style="{DynamicResource Siemreap}" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="auto" Margin="0 0 0 0" HorizontalContentAlignment="Center"></Label>
+                                                                    <Label Name="lbltitleMonth" FontSize="14" Style="{DynamicResource Siemreap}" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="auto" Margin="0 0 0 0" HorizontalContentAlignment="Center"></Label>
 
                                                                 </Grid>
 
@@ -1983,8 +1983,8 @@
                                                             <Grid.ColumnDefinitions>
                                                                 <ColumnDefinition Width="225"/>
                                                                 <ColumnDefinition Width="198"/>
-                                                                <ColumnDefinition Width="200"/>
-                                                                <ColumnDefinition Width="200"/>
+                                                                <ColumnDefinition Width="170"/>
+                                                                <ColumnDefinition Width="*"/>
                                                                 <ColumnDefinition Width="*"/>
                                                                 <ColumnDefinition Width="200"/>
                                                                 <ColumnDefinition Width="105"/>
