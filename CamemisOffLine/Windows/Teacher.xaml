@@ -1608,14 +1608,14 @@
 
                                             </Grid>
 
-                                            <Grid HorizontalAlignment="Right">
+                                            <Grid HorizontalAlignment="Right" VerticalAlignment="Center" >
                                                 <StackPanel Orientation="Horizontal">
-                                                    <Grid>
-                                                        <Label Content="បច្ចប្បន្នភាពទិន្នន័យ" HorizontalAlignment="Right" HorizontalContentAlignment="Right"  Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Margin="0,0,0,0" Height="28" Foreground="Black" Visibility="Visible"></Label>
+                                                    <Grid Margin="0 0 10 0">
+                                                        <Label Content="បច្ចុប្បន្នភាពទិន្នន័យ :" HorizontalAlignment="Right" HorizontalContentAlignment="Right"  Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Margin="0,10,0,0" Height="44" Foreground="Black" Visibility="Visible"></Label>
 
                                                     </Grid>
-                                                    <Grid>
-                                                        <Label Name="txtDataDate" Content="DataDate" HorizontalAlignment="Right" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Margin="0 0 0 0"></Label>
+                                                    <Grid Margin="0 0 10 0">
+                                                        <Label Name="txtDataDate" Content="DataDate" HorizontalAlignment="Right" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Margin="0 0 0 4" Padding="0 2 0 0"></Label>
 
                                                     </Grid>
                                                     <Grid>
@@ -1653,6 +1653,11 @@
                                                                     </MenuItem.Icon>
                                                                 </MenuItem>
                                                                 <MenuItem Header="{x:Static language:Lang.Print_Score_Choice_Bulletin}" Name="printTranscriptByStudentInOne" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black" Background="#FFEFF3F3" HorizontalContentAlignment="Left" Click="printTranscriptByStudentInOne_Click">
+                                                                    <MenuItem.Icon>
+                                                                        <Image Source="/CamemisOffLine;component/Image/printer.png"/>
+                                                                    </MenuItem.Icon>
+                                                                </MenuItem>
+                                                                <MenuItem Header="បោះពុម្ភចំណាត់ថ្នាក់ចំណាត់ប្រភេទ" Name="printClasscify" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black" Background="#FFEFF3F3" HorizontalContentAlignment="Left" Click="printClasscify_Click">
                                                                     <MenuItem.Icon>
                                                                         <Image Source="/CamemisOffLine;component/Image/printer.png"/>
                                                                     </MenuItem.Icon>
@@ -2534,7 +2539,7 @@
                                                                             </ScrollViewer>
                                                                         </Grid>
                                                                     </TabItem>
-                                                                    
+
                                                                     <TabItem Name="tabYear">
                                                                         <Grid>
                                                                             <ScrollViewer Margin="5" HorizontalScrollBarVisibility="Auto">
@@ -2677,7 +2682,7 @@
                                                                             </ScrollViewer>
                                                                         </Grid>
                                                                     </TabItem>
-                                                                    
+
                                                                     <!--..........................Result Semester Exam And Classificate................-->
 
                                                                     <TabItem Name="Result_Semester_Classificate">
@@ -3046,7 +3051,7 @@
                                                                             </ScrollViewer>
                                                                         </Grid>
                                                                     </TabItem>
-                                                                  
+
                                                                 </TabControl>
                                                                 <Rectangle VerticalAlignment="Top" Height="9" Margin="0 0 0 0" Fill="White"/>
                                                             </Grid>

@@ -69,7 +69,7 @@
                         <Label Content="ថ្នាក់ទី" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="14" Foreground="Blue" Margin="-200,-40,0,41"></Label>
                         <Label Name="lblClass" Content="--" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="14" Foreground="Blue" Margin="-120,-40,0,41"/>
                     </StackPanel>
-                    <Label Content="(2020-2021)" HorizontalAlignment="Center"  Style="{DynamicResource Muol}" FontSize="14" Foreground="Blue" Margin="-126,-20,33.8,7"></Label>
+                    <Label Name="lblYearTitle" Content="(2019-2020)" HorizontalAlignment="Center"  Style="{DynamicResource Muol}" FontSize="14" Foreground="Blue" Margin="-126,-20,33.8,7"></Label>
                 </Grid>
             </Grid>
             <Grid Margin="10 10 10 0">

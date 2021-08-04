@@ -124,7 +124,6 @@ namespace CamemisOffLine
            
 
             OptionStaffAtt.Visibility = Visibility.Collapsed;
-
             ///.................Part Setting...................
             btnAbout.Visibility = Visibility.Collapsed;
             btnColor.Visibility = Visibility.Collapsed;
@@ -2282,7 +2281,7 @@ namespace CamemisOffLine
             if (tabStudentResult.SelectedIndex == 1)
             {
                 title = "month";
-                AllSubMonthlyResult result = new AllSubMonthlyResult(true, report.data, title);
+                AllSubMonthlyResult result = new AllSubMonthlyResult(true, report.data, title,yearTitle);
                 loading.Show();
                 this.IsEnabled = false;
                 result.Show();
@@ -2293,7 +2292,7 @@ namespace CamemisOffLine
             else if (tabStudentResult.SelectedIndex == 2)
             {
                 title = "semester";
-                AllSubMonthlyResult result = new AllSubMonthlyResult(true, report.data.OrderBy(r => r.result_semester.rank).ToList(), title);
+                AllSubMonthlyResult result = new AllSubMonthlyResult(true, report.data.OrderBy(r => r.result_semester.rank).ToList(), title,yearTitle);
                 loading.Show();
                 this.IsEnabled = false;
                 result.Show();
@@ -2325,7 +2324,9 @@ namespace CamemisOffLine
                     title = "month";
                 else if (tabStudentResult.SelectedIndex == 2)
                     title = "semester";
-                MonthlyResult monthlyResult = new MonthlyResult(results, title);
+                else if (tabStudentResult.SelectedIndex == 5)
+                    title = "exam";
+                MonthlyResult monthlyResult = new MonthlyResult(results, title,yearTitle);
                 monthlyResult.Show();
             }
             catch
@@ -2449,6 +2450,7 @@ namespace CamemisOffLine
                 {
                     var item = tvAcademy.SelectedItem as Children;
                     treeViewItemChange(item.name);
+                    this.classId = item.id.ToString();
                     /*OptionMenu.Visibility = Visibility.Collapsed;*/
                     btnMonth.Visibility = Visibility.Visible;
                     Month.Visibility = Visibility.Visible;
@@ -2598,7 +2600,6 @@ namespace CamemisOffLine
         private async void btnSemester_Click(object sender, RoutedEventArgs e)
         {
             txtDataDate.Content = GetDataDate();
-            
             grid_ResultLearning.Visibility = Visibility.Visible;
             lbltitleMonth.Visibility = Visibility.Visible;
             btnStatistic.Visibility = Visibility.Visible;
@@ -2610,7 +2611,7 @@ namespace CamemisOffLine
             var _tag = e.Source as Button;
             var button = sender as Button;
             string term = _tag.Tag.ToString(), monthName = button.Content.ToString(),profileId="";
-            yearTitle = monthName;
+            this.term = term;
             var month = DateChange.checkMonthString(button.Content.ToString());
             string accessUrl = Properties.Settings.Default.acessUrl;
             string token = Properties.Settings.Default.Token;
@@ -2704,6 +2705,7 @@ namespace CamemisOffLine
                     DGSemesterExam.ItemsSource = obj1.OrderBy(s => int.Parse(s.result_semester_exam.rank));
                     DGSemesterClass.ItemsSource = obj.OrderBy(s => s.result_semester.rank);
                 }
+                students = obj1.OrderBy(s => int.Parse(s.result_semester_exam.rank)).ToList();
                 report.data = obj.OrderBy(s => s.result_semester_exam.total_score).ToList();
                 lblTitleTotalStudent.Content = "សិស្សសរុប : " + DGSemester.Items.Count.ToString() + " នាក់" + " ស្រី : " + girlTotal.ToString() + " នាក់";
                 gridMonth.Visibility = Visibility.Collapsed;
@@ -2756,7 +2758,6 @@ namespace CamemisOffLine
         private async void btnMonths_Click(object sender, RoutedEventArgs e)
         {
             txtDataDate.Content = GetDataDate();
-
             grid_ResultLearning.Visibility = Visibility.Collapsed;
             lbltitleMonth.Visibility = Visibility.Visible;
             btnStatistic.Visibility = Visibility.Visible;
@@ -2955,6 +2956,8 @@ namespace CamemisOffLine
                 tvAcademy.ItemsSource = obj;
                 Month.Visibility = Visibility.Collapsed;
                 lbltitleGrade.Content = "ឆ្នាំសិក្សា" + cbAcademyYear.SelectedValue.ToString();
+                yearTitle = cbAcademyYear.SelectedValue.ToString(); 
+                YearSelection = cbAcademyYear.SelectedValue.ToString();
                 changeAcademyYear = true;
                 foreach(var item in obj)
                 {
@@ -3077,7 +3080,7 @@ namespace CamemisOffLine
 
         private void printAllTranscript_Click(object sender, RoutedEventArgs e)
         {
-            Transcript transcript = new Transcript(null, null, true, true);
+            Transcript transcript = new Transcript(null, null, true, true, yearTitle: yearTitle);
             transcript.ShowDialog();
         }
 
@@ -3129,7 +3132,7 @@ namespace CamemisOffLine
                 }
                 title = "semester";
             }
-            HonoraryList honorary = new HonoraryList(topStudent, schoolName, teacher, title);
+            HonoraryList honorary = new HonoraryList(topStudent, schoolName, teacher, title,yearTitle);
             honorary.Owner = this;
             honorary.ShowDialog();
         }
@@ -3149,7 +3152,7 @@ namespace CamemisOffLine
             this.Opacity = 0.5;
             this.IsEnabled = false;
             var student = DGMonthlyResult.SelectedItem as StudentMonthlyResult;
-            Transcript transcript = new Transcript(student,title:title);
+            Transcript transcript = new Transcript(student,title:title, yearTitle: yearTitle);
             transcript.ShowDialog();
             this.Opacity = 1;
             this.IsEnabled = true;
@@ -3324,7 +3327,7 @@ namespace CamemisOffLine
                 title = "month";
             else if (tabStudentResult.SelectedIndex == 2)
                 title = "semester";
-            Transcript transcript = new Transcript(null, report.data.ToList(), true, true, monthName, className, title: title);
+            Transcript transcript = new Transcript(null, report.data.ToList(), true, true, monthName, className, title: title, yearTitle: yearTitle);
             transcript.Show();
             Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
         }
@@ -3336,7 +3339,7 @@ namespace CamemisOffLine
                 title = "month";
             else if (tabStudentResult.SelectedIndex == 2)
                 title = "semester";
-            Transcript transcript = new Transcript(null, report.data.ToList(), true, false, title: title);
+            Transcript transcript = new Transcript(null, report.data.ToList(), true, false, title: title, yearTitle: yearTitle);
             transcript.Show();
             Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
         }
@@ -3349,7 +3352,7 @@ namespace CamemisOffLine
             else if (tabStudentResult.SelectedIndex == 2)
                 title = "semester";
             this.Opacity = 0.5;
-            ShowListStudentToPrint show = new ShowListStudentToPrint(report.data.ToList(), title);
+            ShowListStudentToPrint show = new ShowListStudentToPrint(report.data.ToList(), title, yearTitle: yearTitle);
             show.Owner = this;
             show.ShowDialog();
             this.Opacity = 1;
@@ -3380,7 +3383,7 @@ namespace CamemisOffLine
                 title = "month";
             else if (tabStudentResult.SelectedIndex == 2)
                 title = "semester";
-            Transcript transcript = new Transcript(null, report.data.ToList(), false, false, "", "", true, title: title);
+            Transcript transcript = new Transcript(null, report.data.ToList(), false, false, "", "", true, title: title,yearTitle:yearTitle);
             transcript.Show();
             this.Opacity = 1;
             Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
@@ -3710,7 +3713,7 @@ namespace CamemisOffLine
                         if (time == 1)
                         {
                             reponseSemester = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/semester-result?term=" + "FIRST_SEMESTER", token);
-                            reponseYear = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/yearly-result", token) + "|" + DateTime.Now.ToString();
+                            reponseYear = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/yearly-result", token) + "|" + DateTime.Now.ToString("dd/MM/yyyy hh:mm");
                             photos = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/monthly-result?month=" + month.month + "&term=" + item.semester, token);
                             time++;
                         }
@@ -4102,6 +4105,7 @@ namespace CamemisOffLine
                 var selection = item.SelectedItem;
                 YearSelection = selection.ToString();
                 studentYear = selection.ToString();
+                yearTitle = selection.ToString();
                 var obj = JObject.Parse(Properties.Settings.Default.schoolAcademyYear).ToObject<YearofAcademy>().data.Where(y => y.name.Equals(selection.ToString()));
                 foreach (var items in obj)
                 {
@@ -4483,9 +4487,20 @@ namespace CamemisOffLine
             tabStudentResult.SelectedIndex = 4;
         }
 
+        private void printClasscify_Click(object sender, RoutedEventArgs e)
+        {
+            this.IsEnabled = false;
+            Classification classification = new Classification(classId, term, YearSelection, ping);
+            classification.Show();
+            this.IsEnabled = true;
+        }
+
+        List<StudentMonthlyResult> students = new List<StudentMonthlyResult>();
         private void btnExam_Semester_Click(object sender, RoutedEventArgs e)
         {
             lbltitleMonth.Content = "លទ្ធផលប្រលង " + yearTitle;
+            report.data = students;
+            startProgram = false;
             tabStudentResult.SelectedIndex = 5;
         }
 
@@ -4517,15 +4532,22 @@ namespace CamemisOffLine
                     {
                         title = "semester";
                         var data = GetDataForPrint();
-                        MonthlyResult monthlyResult = new MonthlyResult(data, title);
+                        MonthlyResult monthlyResult = new MonthlyResult(data, title,yearTitle);
                         monthlyResult.Show();
                     }
                     else
                     {
                         title = "month";
                         var data = GetDataForPrint();
-                        MonthlyResult monthlyResult = new MonthlyResult(data, title);
-                        monthlyResult.Show();
+                        if(data==null)
+                        {
+
+                        }
+                        else
+                        {
+                            MonthlyResult monthlyResult = new MonthlyResult(data, title, yearTitle);
+                            monthlyResult.Show();
+                        }
                     }
                 }
                 catch
@@ -4533,7 +4555,7 @@ namespace CamemisOffLine
                     MessageBoxControl messageBox = new MessageBoxControl();
                     messageBox.Owner = this;
                     messageBox.title = "បោះពុម្ភ";
-                    messageBox.discription = "មិនមានទិន្នន័យ";
+                    messageBox.discription = "បោះពុម្ភមិនបានជោគជ័យ";
                     messageBox.buttonType = 1;
                     this.Opacity = 0.5;
                     messageBox.ShowDialog();
@@ -4575,7 +4597,7 @@ namespace CamemisOffLine
 
                     if (data != null)
                     {
-                        ShowListStudentToPrint show = new ShowListStudentToPrint(data, title);
+                        ShowListStudentToPrint show = new ShowListStudentToPrint(data, title, yearTitle: yearTitle);
                         show.Owner = this;
                         show.ShowDialog();
                     }
@@ -4640,7 +4662,7 @@ namespace CamemisOffLine
                             title = "month";
                         }
 
-                        HonoraryList honorary = new HonoraryList(topStudent, schoolName, teacher, title);
+                        HonoraryList honorary = new HonoraryList(topStudent, schoolName, teacher, title,yearTitle);
                         honorary.Owner = this;
                         honorary.ShowDialog();
                     }

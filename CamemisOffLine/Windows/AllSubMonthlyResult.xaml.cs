@@ -11,7 +11,6 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-
 using Excel = Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Interop.Excel;
 using CamemisOffLine.Component;
@@ -24,13 +23,14 @@ namespace CamemisOffLine.Windows
     public partial class AllSubMonthlyResult : Microsoft.Office.Interop.Excel.Window
     {
         List<StudentMonthlyResult> obj = new List<StudentMonthlyResult>();
-        string title = "";
-        public AllSubMonthlyResult(bool print, List<StudentMonthlyResult> obj, string title = "")
+        string title = "",yearTitle="";
+        public AllSubMonthlyResult(bool print, List<StudentMonthlyResult> obj, string title = "",string yearTitle="")
         {
             InitializeComponent();
             this.print = print;
             this.obj = obj;
             this.title = title;
+            this.yearTitle = yearTitle;
         }
         public AllSubMonthlyResult()
         {
@@ -224,6 +224,7 @@ namespace CamemisOffLine.Windows
         private void showData(List<StudentMonthlyResult> obj)
         {
             var result = new List<DIYSubject>();
+            var result1 = new List<DIYSubject>();
             int i = 1, y = 1, itemCount = 1;
 
             lblSchoolName.Content = Properties.Settings.Default.schoolName;
@@ -232,12 +233,12 @@ namespace CamemisOffLine.Windows
             {
                 foreach (var item in obj)
                 {
-                    lblClass.Content = item.class_name;
+                    lblClass.Content = item.class_name+" ("+ yearTitle +")";
                     lblTeacherName.Content = item.instructor.name;
                     lblMonth.Content = DateChange.checkMonth(int.Parse(item.all_subject_result[0].month));
                     result.Add(new DIYSubject
                     {
-                        id = item.student_schoolyear_id,
+                        id = item.student_school_id,
                         number = i.ToString(),
                         name = item.name,
                         avg_score = item.result_monthly.avg_score,
@@ -247,9 +248,9 @@ namespace CamemisOffLine.Windows
                         rank = item.result_monthly.rank,
                         color = item.result_monthly.color,
                         total_score = item.result_monthly.total_score,
-                        student_schoolyear_id = item.student_schoolyear_id
+                        student_schoolyear_id = item.student_school_id
                     });
-                    var value = result.FirstOrDefault(s => s.id == item.student_schoolyear_id);
+                    var value = result.FirstOrDefault(s => s.id == item.student_school_id);
                     foreach (var k in item.all_subject_result)
                     {
                         if (y == 1)
@@ -378,6 +379,7 @@ namespace CamemisOffLine.Windows
                     itemCount = y;
                     y = 1;
                 }
+
             }
             else if(title== "semester")
             {
@@ -395,7 +397,7 @@ namespace CamemisOffLine.Windows
                     }
                     result.Add(new DIYSubject
                     {
-                        id = item.student_schoolyear_id,
+                        id = item.student_school_id,
                         color="Blue",
                         number = i.ToString(),
                         name = item.name,
@@ -405,9 +407,9 @@ namespace CamemisOffLine.Windows
                         grading = item.result_semester.grading,
                         rank = item.result_semester.rank,
                         total_score = item.result_semester_exam.total_score,
-                        student_schoolyear_id = item.student_schoolyear_id
+                        student_schoolyear_id = item.student_school_id
                     });
-                    var value = result.FirstOrDefault(s => s.id == item.student_schoolyear_id);
+                    var value = result.FirstOrDefault(s => s.id == item.student_school_id);
                     foreach (var k in item.all_subject_semester_exam_result)
                     {
                         if (y == 1)
@@ -541,8 +543,8 @@ namespace CamemisOffLine.Windows
             {
                 Data.Columns[l].Visibility = Visibility.Collapsed;
             }
-            Data.Columns[1].Visibility = Visibility.Collapsed;
-            NumberList(startIndex, result.OrderBy(r => r.rank).ToList());
+           
+            NumberList(startIndex,result.OrderBy(r => r.rank).ToList());
             Data.ItemsSource = result.OrderBy(r => r.rank);
         }
 

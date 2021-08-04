@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:CamemisOffLine"
          xmlns:language="clr-namespace:CamemisOffLine.Properties.Langs"
         mc:Ignorable="d"
-        Title="Login" Height="600" Width="1080" WindowStyle="None" WindowState="Maximized" Loaded="Window_Loaded">
+        Title="Login" Height="1080" Width="1920" WindowStyle="None" WindowState="Normal" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
     <Grid>
        
         <Grid>

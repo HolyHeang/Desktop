@@ -84,7 +84,7 @@
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
 
-                                <DataGridTextColumn Header="អត្តលេខសិស្ស" Width="0.8*" Binding="{Binding student_school_id}" MinWidth="90" FontSize="14">
+                                <DataGridTextColumn Header="អត្តលេខសិស្ស" Width="0.8*" Binding="{Binding studentId}" MinWidth="90" FontSize="14">
                                     <DataGridTextColumn.ElementStyle>
                                         <Style TargetType="TextBlock">
                                             <Setter Property="Foreground" Value="Black"></Setter>
@@ -172,7 +172,7 @@
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
 
-                                <DataGridTextColumn Header="អត្តលេខសិស្ស" Width="0.8*" Binding="{Binding student_school_id}" MinWidth="90" FontSize="14">
+                                <DataGridTextColumn Header="អត្តលេខសិស្ស" Width="0.8*" Binding="{Binding studentId}" MinWidth="90" FontSize="14">
                                     <DataGridTextColumn.ElementStyle>
                                         <Style TargetType="TextBlock">
                                             <Setter Property="Foreground" Value="Black"></Setter>
