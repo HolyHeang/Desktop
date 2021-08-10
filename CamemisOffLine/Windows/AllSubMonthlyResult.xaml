@@ -212,7 +212,7 @@
                         </Label>
                     </Grid>
                     <Grid Grid.Column="1">
-                        <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="0 0 50 0">
                             <Label HorizontalAlignment="Center">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="ថ្ងៃ" FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>

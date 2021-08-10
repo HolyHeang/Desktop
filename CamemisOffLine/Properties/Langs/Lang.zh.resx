@@ -306,6 +306,9 @@
   <data name="telegram" xml:space="preserve">
     <value>电报</value>
   </data>
+  <data name="Tooltip full screen" xml:space="preserve">
+    <value>全屏</value>
+  </data>
   <data name="Tooltip top bar Close" xml:space="preserve">
     <value>关闭</value>
   </data>

@@ -240,6 +240,7 @@
     <Compile Include="Windows\AllSubMonthlyResult.xaml.cs">
       <DependentUpon>AllSubMonthlyResult.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ControlMaximize.cs" />
     <Compile Include="Windows\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>

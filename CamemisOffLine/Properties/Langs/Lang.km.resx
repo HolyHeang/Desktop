@@ -277,10 +277,10 @@
     <value>របាយការណ៍វត្តមានបុគ្គលិក</value>
   </data>
   <data name="staffacademy" xml:space="preserve">
-    <value>បុគ្គលិកអប់រំ</value>
+    <value>ផ្នែកអប់រំ</value>
   </data>
   <data name="staffadmin" xml:space="preserve">
-    <value>បុគ្គលិកការិយាល័យ</value>
+    <value>ផ្នែកបុគ្គលិក</value>
   </data>
   <data name="Stu Att" xml:space="preserve">
     <value>បញ្ជីសម្រង់វត្តមានសិស្ស</value>
@@ -308,6 +308,9 @@
   </data>
   <data name="telegram" xml:space="preserve">
     <value>តេឡេក្រាម</value>
+  </data>
+  <data name="Tooltip full screen" xml:space="preserve">
+    <value>ពេញអេក្រង់</value>
   </data>
   <data name="Tooltip top bar Close" xml:space="preserve">
     <value>បិទ</value>
