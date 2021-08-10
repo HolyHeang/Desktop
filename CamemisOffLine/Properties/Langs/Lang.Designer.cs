@@ -637,6 +637,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Full screen.
+        /// </summary>
+        public static string Tooltip_full_screen {
+            get {
+                return ResourceManager.GetString("Tooltip full screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Close.
         /// </summary>
         public static string Tooltip_top_bar_Close {

@@ -291,7 +291,7 @@
                                         <TextBlock Name="lblKhmerYear" Text="..................." FontSize="12"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                     </StackPanel>
                                 </Label>
-                                <Label HorizontalAlignment="Left" Margin="40 5 0 0" FontSize="10">
+                                <Label HorizontalAlignment="Right" Margin="0 5 85 0" FontSize="10">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="ថ្ងៃទី" FontSize="10"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                         <TextBlock Text="{Binding Text,ElementName=lblDay}" FontSize="10"  FontFamily="Khmer OS Siemreap"></TextBlock>

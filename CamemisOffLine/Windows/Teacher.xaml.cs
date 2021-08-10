@@ -48,13 +48,16 @@ namespace CamemisOffLine
 
 
             InitializeComponent();
+
+            
+            WindowState = System.Windows.WindowState.Maximized;
             DispatcherTimer timer = new DispatcherTimer();
             timer.Tick += new EventHandler(UpdateTimer_Tick);
             timer.Interval = new TimeSpan(0, 0, 50);
             timer.Start();
             DispatcherTimer Internet = new DispatcherTimer();
             Internet.Tick += Internet_Tick;
-            Internet.Interval = TimeSpan.FromSeconds(1);
+            Internet.Interval = TimeSpan.FromSeconds(40);
             Internet.Start();
 
         }
@@ -2112,14 +2115,17 @@ namespace CamemisOffLine
 
         private void gridmax_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (WindowState == System.Windows.WindowState.Normal)
+            if (maximized.Kind == MaterialDesignThemes.Wpf.PackIconKind.WindowMaximize)
             {
+
                 WindowState = System.Windows.WindowState.Maximized;
+                GridForm.Margin = new Thickness(0);
                 maximized.Kind = MaterialDesignThemes.Wpf.PackIconKind.WindowRestore;
             }
             else
             {
-                WindowState = System.Windows.WindowState.Normal;
+                ControlMaximize.DoMaximize(this);
+                GridForm.Margin = new Thickness(0);
                 maximized.Kind = MaterialDesignThemes.Wpf.PackIconKind.WindowMaximize;
             }
         }

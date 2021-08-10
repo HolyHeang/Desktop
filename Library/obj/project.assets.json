@@ -265,25 +265,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MSI\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "D:\\Clone\\10-08-2021\\Desktop\\Library\\Library.csproj",
       "projectName": "Library",
       "projectPath": "D:\\Clone\\10-08-2021\\Desktop\\Library\\Library.csproj",
       "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
       "outputPath": "D:\\Clone\\10-08-2021\\Desktop\\Library\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\Camemis\\Desktop\\Library\\Library.csproj",
+      "projectName": "Library",
+      "projectPath": "C:\\Users\\ASUS\\Desktop\\Camemis\\Desktop\\Library\\Library.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ASUS\\Desktop\\Camemis\\Desktop\\Library\\obj\\",
+>>>>>>> 6a8ccc2c5d6287077e3c3ebe95aa0206bbb0c233
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\MSI\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

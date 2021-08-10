@@ -41,6 +41,8 @@ namespace CamemisOffLine
         {
             InitializeComponent();
 
+            WindowState = System.Windows.WindowState.Maximized;
+
             name = Properties.Settings.Default.username;
             pass = Properties.Settings.Default.password;
         }
@@ -396,15 +398,21 @@ namespace CamemisOffLine
 
         private void gridmax_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (WindowState == System.Windows.WindowState.Normal)
+
+
+            if (maximized.Kind == MaterialDesignThemes.Wpf.PackIconKind.WindowMaximize)
             {
+
                 WindowState = System.Windows.WindowState.Maximized;
+                GridForm.Margin=new Thickness(0);
                 maximized.Kind = MaterialDesignThemes.Wpf.PackIconKind.WindowRestore;
             }
             else
             {
-                WindowState = System.Windows.WindowState.Normal;
-                maximized.Kind = MaterialDesignThemes.Wpf.PackIconKind.WindowMaximize;
+                
+                ControlMaximize.DoMaximize(this);
+                GridForm.Margin = new Thickness(0);
+                maximized.Kind = MaterialDesignThemes.Wpf.PackIconKind.WindowMaximize;               
             }
         }
 

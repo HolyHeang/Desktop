@@ -42,9 +42,13 @@ namespace CamemisOffLine.Windows
         public PartTeacher()
         {
             InitializeComponent();
+
+
+            WindowState = System.Windows.WindowState.Maximized;
+
             DispatcherTimer Internet = new DispatcherTimer();
             Internet.Tick += Internet_Tick;
-            Internet.Interval = TimeSpan.FromSeconds(30);
+            Internet.Interval = TimeSpan.FromSeconds(40);
             Internet.Start();
         }
             int ping = 0;
@@ -110,7 +114,7 @@ namespace CamemisOffLine.Windows
             tabcontrolScore.SelectedIndex = 1;
             TilteSelection.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title_select_year;
             TitleSchool.Text = Properties.Settings.Default.schoolName;
-            txtTitleClassName.Visibility = Visibility.Collapsed;
+           
             btnLearningResult.IsEnabled = false;
 
             if (Teacher.InternetChecker())
@@ -212,14 +216,17 @@ namespace CamemisOffLine.Windows
         //..............Max..............
         private void gridMax_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (WindowState == System.Windows.WindowState.Normal)
+            if (materiaMax.Kind == MaterialDesignThemes.Wpf.PackIconKind.WindowMaximize)
             {
+
                 WindowState = System.Windows.WindowState.Maximized;
+                GridForm.Margin = new Thickness(0);
                 materiaMax.Kind = MaterialDesignThemes.Wpf.PackIconKind.WindowRestore;
             }
             else
             {
-                WindowState = System.Windows.WindowState.Normal;
+                ControlMaximize.DoMaximize(this);
+                GridForm.Margin = new Thickness(0);
                 materiaMax.Kind = MaterialDesignThemes.Wpf.PackIconKind.WindowMaximize;
             }
         }
@@ -319,8 +326,8 @@ namespace CamemisOffLine.Windows
         private void cbAcademyYear_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             clearAllSelection();
-            TilteSelection.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title;
-            cbSelectClass.Visibility = Visibility.Visible;
+            
+            
             List<KeyValuePair<string, string>> data = new List<KeyValuePair<string, string>>();
             try
             {
@@ -351,6 +358,8 @@ namespace CamemisOffLine.Windows
                     foreach(var i in item.teaching_classes)
                     {
                         data.Add(new KeyValuePair<string, string>(i.name,i.id));
+                        cbSelectClass.Visibility = Visibility.Visible;
+                        TilteSelection.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title;
                     }
                 }
                 //tvAcademy.ItemsSource = obj;
@@ -360,6 +369,7 @@ namespace CamemisOffLine.Windows
                 changeAcademyYear = true;
                 year = cb.ToString();
                 LabelTitle.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title;
+                cbSelectClass.Visibility = Visibility.Visible;
                 //tvAcademy.Visibility = Visibility.Visible;
                 DockTree.Visibility = Visibility.Collapsed;
                 tabcontrolResult.SelectedIndex = 1;
@@ -1119,7 +1129,7 @@ namespace CamemisOffLine.Windows
             {
                 if (item.score == "")
                 {
-                    item.visible = "Visible";
+                    item.visible = "Collapsed";
                 }
                 else
                 {
@@ -1153,6 +1163,7 @@ namespace CamemisOffLine.Windows
         {
             clearAllSelection();
             cbAcademyYear.Text = "សូមជ្រើសរើសឆ្នាំសិក្សា";
+            
         }
 
         void clearAllSelection()
@@ -1164,9 +1175,11 @@ namespace CamemisOffLine.Windows
             cbSelectClass.Text = "សូមជ្រើសរើសថ្នាក់";
             cbSelectMonth.Text = "សូមជ្រើសរើសឆ្នាំខែ/ឆមាស";
             cbSelectSubject.Text = "សូមជ្រើសរើសមុខវិជ្ជា";
+            cbSelectResultMonth.ItemsSource = null;
+            cbSelectResultMonth.Text = "សូមជ្រើសរើសឆ្នាំខែ/ឆមាស";
 
             Selectresult.Visibility = Visibility.Collapsed;
-            cbSelectClass.Visibility = Visibility.Collapsed;
+           
             cbSelectMonth.Visibility = Visibility.Collapsed;
             cbSelectSubject.Visibility = Visibility.Collapsed;
 
@@ -1174,6 +1187,7 @@ namespace CamemisOffLine.Windows
             tabcontrolResult.SelectedIndex = 1;
             tabcontrolScore.SelectedIndex = 1;
             TilteSelection.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title_select_year;
+            
 
             var bc = new BrushConverter();
             btnLearningResult.Background = (Brush)bc.ConvertFrom("#66D3D3D3");
@@ -1191,6 +1205,10 @@ namespace CamemisOffLine.Windows
             btnDeleteAll.Visibility = Visibility.Collapsed;
             btnPrint.Visibility = Visibility.Collapsed;
             btnLearningResult.IsEnabled = false;
+
+            tabcontrolLearn1.SelectedIndex = 0;
+           
+            cbSelectClass.Visibility = Visibility.Collapsed;
         }
 
         private bool CheckFileExist(string month)
@@ -1272,6 +1290,8 @@ namespace CamemisOffLine.Windows
             {
                 if (int.Parse(item.score) < int.Parse(item.subject_score_min) + 1)
                 {
+                    item.checkBoxColor = "Blue";
+                    item.visible = "Collapsed";
                     if (item.score == null)
                     {
                         item.score = "0";
@@ -1283,6 +1303,16 @@ namespace CamemisOffLine.Windows
                 }
                 else
                 {
+                    if(int.Parse(item.score) <= int.Parse(item.subject_score_max)+1)
+                    {
+                        item.color = "Blue";
+                        item.visible = "Collapsed";
+                    }
+                    else
+                    {
+                        item.color = "Red";
+                        item.visible = "Visible";
+                    }
                     if (string.IsNullOrEmpty(item.score.Trim()))
                     {
                         item.score = 0.ToString();
@@ -1295,6 +1325,8 @@ namespace CamemisOffLine.Windows
                     }
 
                     item.score = btn.Name == "DownBtn" ? (--number).ToString() : (--number).ToString();
+                    DGScoreMonth.ItemsSource = null;
+                    DGScoreMonth.ItemsSource = obj.data;
                 }
             }
             catch
@@ -2110,6 +2142,7 @@ namespace CamemisOffLine.Windows
         string title = "",label="",titleYear="";
         private async void cbSelectMonth_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            var bc = new BrushConverter();
             try
             {
                 var item = sender as ComboBox;
@@ -2171,17 +2204,21 @@ namespace CamemisOffLine.Windows
                             txtExpireDate.Text = "ការកំណត់ថ្ងៃសុពលភាពនៃការបញ្ចូលពិន្ទុ : " + expireDate.expired_at;
                             if (expireDate.is_expired == "True")
                             {
+                                
                                 DGScoreMonth.IsEnabled = false;
                                 btnPost.Visibility = Visibility.Collapsed;
                                 btnDeleteAll.Visibility = Visibility.Collapsed;
                                 btnSave.Visibility = Visibility.Collapsed;
+                               
                             }
                             else
                             {
+                                
                                 DGScoreMonth.IsEnabled = true;
                                 btnPost.Visibility = Visibility.Visible;
                                 btnDeleteAll.Visibility = Visibility.Visible;
                                 btnSave.Visibility = Visibility.Visible;
+                              
                             }
                         }
                         catch
@@ -2397,7 +2434,7 @@ namespace CamemisOffLine.Windows
                 DGSemesterClass.ItemsSource = null;
                 DGSemesterExam.ItemsSource = null;
                 List<KeyValuePair<string, string>> data = new List<KeyValuePair<string, string>>();
-                txtTitleClassName.Visibility = Visibility.Visible;
+               
                 //checkMonthButton = true;
                 TilteSelection.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title_select_Subject;
                 cbSelectSubject.Visibility = Visibility.Visible;
@@ -2405,7 +2442,7 @@ namespace CamemisOffLine.Windows
                 var selection = (KeyValuePair<string, string>)item.SelectedItem;
                 //treeViewItemChange(item.id);
                 classId = selection.Value;
-                txtTitleClassName.Text = "ថ្នាក់ទី" + selection.Key;
+               
                 LabelTitle.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title_select_month;
                 tabcontrolScore.SelectedIndex = 1;
 

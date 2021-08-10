@@ -169,7 +169,7 @@ namespace CamemisOffLine.Windows
 
         private void txtStudentName_GotFocus(object sender, RoutedEventArgs e)
         {
-            txtStudentName.BorderBrush = Brushes.LightBlue;
+            txtStudentName.BorderBrush = Brushes.Black;
         }
 
         private void txtStudentName_LostFocus(object sender, RoutedEventArgs e)
@@ -181,6 +181,24 @@ namespace CamemisOffLine.Windows
         {
             txtStudentName.Clear();
             iconClose.Visibility = Visibility.Collapsed;
+        }
+
+        private void gridExit_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+            
+        }
+
+        private void gridExit_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Grid g = (Grid)sender;
+            g.Background = Brushes.Red;
+        }
+
+        private void gridExit_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Grid g = (Grid)sender;
+            g.Background = Brushes.Transparent;
         }
 
         private void txtStudentName_MouseDown(object sender, MouseButtonEventArgs e)

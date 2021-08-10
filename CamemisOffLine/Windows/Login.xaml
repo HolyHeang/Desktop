@@ -7,8 +7,8 @@
         xmlns:local="clr-namespace:CamemisOffLine"
          xmlns:language="clr-namespace:CamemisOffLine.Properties.Langs"
         mc:Ignorable="d"
-        Title="Login" Height="1080" Width="1920" WindowStyle="None" WindowState="Normal" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
-    <Grid>
+        Title="Login" Height="1080" Width="1920" WindowStyle="None" AllowsTransparency="False" ResizeMode="CanResizeWithGrip" Loaded="Window_Loaded">
+    <Grid Name="GridForm">
        
         <Grid>
             <Image Source="/CamemisOffLine;component/Image/Nature3.jpg" Stretch="UniformToFill" Name="backgroundImg" Opacity="1"/>
@@ -98,7 +98,23 @@
                 </StackPanel>
                 <StackPanel Margin="50,5">
                     <Label Name="lblError" Foreground="Red" FontSize="10" Margin="10" Content="Incorrect Username or Password" VerticalAlignment="Center" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
-                    <CheckBox Name="cbRememberMe" Content="Remeber me" FontSize="15" HorizontalAlignment="Center" Foreground="White"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></CheckBox>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <CheckBox Name="cbRememberMe" FontSize="15" HorizontalAlignment="Center" Foreground="White"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang">
+                        <CheckBox.Resources>
+
+                            <!--Unchecked state-->
+                            <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
+                            <!--Checked state-->
+                            <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#1183CA"/>
+
+                        </CheckBox.Resources>
+
+                        <CheckBox.LayoutTransform>
+                            <ScaleTransform ScaleX="1.3" ScaleY="1.3" />
+                        </CheckBox.LayoutTransform>
+                    </CheckBox>
+                    <Label Content="Remenber me" Foreground="White" FontSize="13"/>
+                    </StackPanel>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">

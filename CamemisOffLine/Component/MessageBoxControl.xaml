@@ -11,13 +11,13 @@
         <Grid>
             <StackPanel Orientation="Vertical">
                 <TextBlock Name="txtTitle" FontSize="16" Text="បោះពុម្ភ" HorizontalAlignment="Left" VerticalAlignment="Top" 
-                       Margin="10 10 10 0" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontWeight="Bold"/>
-                <Separator Margin="10 0 10 0"/>
-                <StackPanel Orientation="Horizontal"  Margin="10 10 10 0" Height="auto">
+                       Margin="20 10 10 0" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontWeight="Bold"/>
+                <Separator Margin="20 0 20 0"/>
+                <StackPanel Orientation="Horizontal"  Margin="30 10 10 0" Height="auto">
                     <!--<Grid Width="30" Height="auto" VerticalAlignment="Top">
                         <materialDesign:PackIcon Kind="Alert" VerticalAlignment="Top" Foreground="#fec30f" Margin="0,0,0,0" Width="24" Height="30" HorizontalAlignment="Center"/>
                     </Grid>-->
-                    <TextBlock Name="txtDis" FontSize="12" Text="កំពុងសាងសង់" HorizontalAlignment="Left" VerticalAlignment="Top" Width="350" Height="auto"
+                    <TextBlock Name="txtDis" FontSize="12" Text="កំពុងសាងសង់" HorizontalAlignment="Left" VerticalAlignment="Top"
                        TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontWeight="Thin" Opacity="0.8" ScrollViewer.CanContentScroll="True"/>
                 </StackPanel>
             </StackPanel>
