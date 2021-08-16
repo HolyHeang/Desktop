@@ -12,6 +12,7 @@ namespace Library
     {
         public string month { get; set; }
         public string subject_id { get; set; }
+        public string student_school_id { get; set; }
         public string type { get; set; }
         public string term { get; set; }
         public string message { get; set; }
@@ -46,6 +47,7 @@ namespace Library
         public string visible { get; set; } = "Collapsed";
         public string number { get; set; }
         public string student_id { get; set; }
+        public string student_school_id { get; set; }
         public Profiles profileMedia { get; set; }
         public string student_schoolyear_id { get; set; }
         public string class_id { get; set; }

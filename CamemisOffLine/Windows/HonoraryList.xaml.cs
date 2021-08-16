@@ -118,6 +118,41 @@ namespace CamemisOffLine.Windows
                         imgProfile5.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
                     }
                 }
+                else if (title == "year")
+                {
+                    lblMonth.Content = "ប្រចាំឆ្នាំ";
+
+                    if (i == 0)
+                    {
+                        lblNum1.Content = "លេខ " + DateChange.Num(topStudent[i].result_yearly.rank);
+                        lblNameNum1.Content = topStudent[i].name;
+                        imgProfile1.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
+                    }
+                    else if (i == 1)
+                    {
+                        lblNum2.Content = "លេខ " + DateChange.Num(topStudent[i].result_yearly.rank);
+                        lblNameNum2.Content = topStudent[i].name;
+                        imgProfile2.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
+                    }
+                    else if (i == 2)
+                    {
+                        lblNum3.Content = "លេខ " + DateChange.Num(topStudent[i].result_yearly.rank);
+                        lblNameNum3.Content = topStudent[i].name;
+                        imgProfile3.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
+                    }
+                    else if (i == 3)
+                    {
+                        lblNum4.Content = "លេខ " + DateChange.Num(topStudent[i].result_yearly.rank);
+                        lblNameNum4.Content = topStudent[i].name;
+                        imgProfile4.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
+                    }
+                    else if (i == 4)
+                    {
+                        lblNum5.Content = "លេខ " + DateChange.Num(topStudent[i].result_yearly.rank);
+                        lblNameNum5.Content = topStudent[i].name;
+                        imgProfile5.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
+                    }
+                }
             }
         }
         private void print()

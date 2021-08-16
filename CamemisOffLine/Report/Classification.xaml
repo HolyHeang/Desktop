@@ -86,7 +86,7 @@
                                 <!--//............................Number............................-->
                                 <DataGrid.Columns>
 
-                                    <DataGridTextColumn Header="ល.រ" Width="60" FontSize="14" Binding="{Binding numbers}">
+                                    <DataGridTextColumn Header="ល.រ" Width="60" FontSize="14" Binding="{Binding number}">
                                         <DataGridTextColumn.ElementStyle>
                                             <Style TargetType="TextBlock">
                                                 <Setter Property="Foreground" Value="Black"></Setter>
@@ -130,7 +130,7 @@
                                     </DataGridTextColumn>
 
                                     <!--//............................Average............................-->
-                                    <DataGridTextColumn Header="មធ្យមភាគ" Width="100" FontSize="14" Binding="{Binding result_semester.avg_score}">
+                                    <DataGridTextColumn Header="មធ្យមភាគ" Width="100" FontSize="14" Binding="{Binding avg_score}">
 
                                         <DataGridTextColumn.ElementStyle>
 
@@ -144,7 +144,7 @@
                                         </DataGridTextColumn.ElementStyle>
                                     </DataGridTextColumn>
                                     <!--//............................Classification............................-->
-                                    <DataGridTextColumn Header="ចំណាត់ថ្នាក់" Width="90" FontSize="14" Binding="{Binding result_semester.rank}">
+                                    <DataGridTextColumn Header="ចំណាត់ថ្នាក់" Width="90" FontSize="14" Binding="{Binding rank}">
 
                                         <DataGridTextColumn.ElementStyle>
 
@@ -160,7 +160,7 @@
 
 
                                     <!--//............................class............................-->
-                                    <DataGridTextColumn Width="80" FontSize="14" Binding="{Binding result_semester.grading}">
+                                    <DataGridTextColumn Width="80" FontSize="14" Binding="{Binding grading}">
 
                                         <DataGridTextColumn.ElementStyle>
 
@@ -176,7 +176,7 @@
                                     </DataGridTextColumn>
 
                                     <!--//............................class............................-->
-                                    <DataGridTextColumn Width="80" FontSize="14" Binding="{Binding result_semester.morality}">
+                                    <DataGridTextColumn Width="80" FontSize="14" Binding="{Binding morality}">
 
                                         <DataGridTextColumn.ElementStyle>
 
@@ -192,7 +192,7 @@
                                     </DataGridTextColumn>
 
                                     <!--//............................class............................-->
-                                    <DataGridTextColumn Width="80" FontSize="14" Binding="{Binding result_semester.bangkeun_phal}">
+                                    <DataGridTextColumn Width="80" FontSize="14" Binding="{Binding bangkeun_phal}">
 
                                         <DataGridTextColumn.ElementStyle>
 
@@ -208,7 +208,7 @@
                                     </DataGridTextColumn>
 
                                     <!--//............................class............................-->
-                                    <DataGridTextColumn Width="80" FontSize="14" Binding="{Binding result_semester.health}">
+                                    <DataGridTextColumn Width="80" FontSize="14" Binding="{Binding health}">
 
                                         <DataGridTextColumn.ElementStyle>
 

@@ -1,0 +1,64 @@
+﻿<Window x:Class="CamemisOffLine.Report.TeacherInformationExcel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CamemisOffLine.Report"
+        mc:Ignorable="d"
+        Title="TeacherInformationExcel" Height="1080" Width="1920" Loaded="Window_Loaded">
+    <Grid>
+        <DataGrid BorderThickness="1 0 1 1" BorderBrush="#7F808080" Background="White" Margin="10" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Name="Data" FontSize="13" AutoGenerateColumns="False" GridLinesVisibility="All" AlternatingRowBackground="#339FDADA" AlternationCount="1" IsReadOnly="True" CanUserSortColumns="False" SelectionMode="Extended" SelectionUnit="FullRow" VirtualizingPanel.ScrollUnit="Pixel" TabIndex="0" ScrollViewer.CanContentScroll="True">
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="White" />
+                    <Setter Property="Height" Value="45"/>
+                    <Setter Property="FontFamily" Value="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Margin" Value="-1 0 -1 0"/>
+                    <Setter Property="BorderBrush" Value="#7F808080"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Style>
+                <Style BasedOn="{StaticResource {x:Type DataGridRowHeader}}" TargetType="{x:Type DataGridRowHeader}">
+                    <Setter Property="Width" Value="auto"/>
+                    <Setter Property="Height" Value="auto"/>
+                    <Setter Property="BorderBrush" Value="#7F808080"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="Background" Value="#4CB8C2C5"/>
+                    <Setter Property="Height" Value="auto"/>
+                    <Setter Property="BorderBrush" Value="#7F808080"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="ID" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Name" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Sex" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Bith of Date" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Date of Birth" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Qualification" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Framework" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Non-Full date" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Full Date" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Last Status" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Last Date" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Prokas" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="B-date" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Now" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Age" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Spacisalize" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="W-date" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Working period" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Working period" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Name" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Sex" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Work Period" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Age" Width="0.5*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Retired Period" Width="0.5*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
