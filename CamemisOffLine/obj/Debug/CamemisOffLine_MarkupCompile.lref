@@ -1,4 +1,4 @@
-﻿
+﻿D:\Clone\10-08-2021\Desktop\CamemisOffLine\obj\Debug\GeneratedInternalTypeHelper.g.cs
 FD:\Clone\10-08-2021\Desktop\CamemisOffLine\App.xaml;;
 FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Component\MessageBoxControl.xaml;;
 FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Component\PrintCardStyle.xaml;;
@@ -19,6 +19,7 @@ FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\StatisticGrade9.xaml;;
 FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\StudentList.xaml;;
 FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\Student_Attendance_Year.xaml;;
 FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\Summary_of_Students.xaml;;
+FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\TeacherInformationExcel.xaml;;
 FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Windows\About.xaml;;
 FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Windows\Account.xaml;;
 FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Windows\AllSubMonthlyResult.xaml;;
@@ -34,5 +35,4 @@ FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Windows\ShowListStudentToPrint.xaml;
 FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Windows\StudentResultDetail.xaml;;
 FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Windows\Teacher.xaml;;
 FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Windows\Transcript.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\TeacherInformationExcel.xaml;;
 
