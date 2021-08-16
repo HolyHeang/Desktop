@@ -3,25 +3,48 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:CamemisOffLine.Report"
         mc:Ignorable="d"
-        Title="StatisticGrade12" Height="32cm" Width="26cm" WindowState="Normal" Loaded="Window_Loaded" ResizeMode="NoResize" MaxWidth="30cm" WindowStartupLocation="Manual">
+        Title="StatisticGrade12" Height="32cm" Width="26cm" WindowState="Normal" WindowStyle="None" Loaded="Window_Loaded" ResizeMode="NoResize" MaxWidth="30cm" WindowStartupLocation="Manual">
+    
     <ScrollViewer VerticalScrollBarVisibility="Hidden">
         <Grid HorizontalAlignment="Center">
             <StackPanel Orientation="Vertical" Name="Grid" HorizontalAlignment="Center">
-                <Grid Name="Header" Margin="0 20 0 0">
+               
+                <Grid Name="Header" Margin="0 0 0 0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0">
+                    <Grid Grid.Column="0" >
                         <Grid Margin="15,0,0,0">
                             <StackPanel Orientation="Vertical" Margin="0,5,0,0">
-                                <Image Source="/CamemisOffLine;component/Image/MoEYS.png" Height="100" VerticalAlignment="Top" HorizontalAlignment="Center"></Image>
+                                <Grid Name="gridPrint" Height="40" Margin="0 0 0 0">
+                                   
+                                    <Button Name="btnPrint" BorderThickness="0 0 0 0" BorderBrush="LightGray" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10 0 0 0" Height="35" Cursor="Hand" Width="82" Style="{DynamicResource Siemreap}" Click="btnPrint_Click">
+                                        <Grid Height="35" Width="auto">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="30"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid Grid.Column="0" Margin="0,0,0,1" Background="White">
+                                                <Border BorderBrush="Gray" BorderThickness="0 0 1 0" Background="#FF001059" Opacity="0.8"></Border>
+                                                <materialDesign:PackIcon Kind="Printer" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" Height="20" Width="20"/>
+                                            </Grid>
+                                            <Grid Grid.Column="1" Background="#FF283C95">
+                                                <Label Content="បោះពុម្ភ" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="5,2,5,4">
+
+                                                </Label>
+                                            </Grid>
+                                        </Grid>
+                                    </Button>
+                                </Grid>
+                                <Image Name="imageLogo" Source="/CamemisOffLine;component/Image/MoEYS.png" Height="100" VerticalAlignment="Top" HorizontalAlignment="Center"></Image>
 
                                 <Label Name="lbllogoLeft" Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" Style="{DynamicResource Muol}" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0 15 0 0"></Label>
-                                <Grid Margin="0,0,0,0">
+                                <Grid Margin="0,0,0,0" x:Name="gridSchool">
                                     <Label Name="TitleSchool" Style="{DynamicResource Siemreap}" Content="វិទ្យាល័យ ហ៊ុនសែនបូរី១០០ខ្នង" FontSize="15" Foreground="Black" HorizontalAlignment="Left" Margin="0 0 0 0" VerticalAlignment="Center"></Label>
                                 </Grid>
                                 <Grid Margin="0,-12,0,0"/>
@@ -34,10 +57,16 @@
                     <Grid Grid.Column="2">
                         <Grid>
                             <StackPanel>
-                                <Grid Margin="0 -5 0 0">
+                                <Grid Height="40">
+                                    <Grid Name="gridClose" HorizontalAlignment="Right" Height="35" Cursor="Hand" Width="35" VerticalAlignment="Top" MouseDown="gridClose_MouseDown" MouseEnter="gridClose_MouseEnter" MouseLeave="gridClose_MouseLeave">
+                                        <materialDesign:PackIcon Name="materiaExit" VerticalAlignment="Center" HorizontalAlignment="Center" Kind="WindowClose" Height="15" Width="15"/>
+                                    </Grid>
+                                    
+                                </Grid>
+                                <Grid Margin="0 -5 0 0" x:Name="gridKingdom">
                                     <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="179"></Label>
                                 </Grid>
-                                <Grid Margin="0 -8 0 0">
+                                <Grid Margin="0 -8 0 0" x:Name="gridKhmer">
                                     <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="214"></Label>
                                 </Grid>
                             </StackPanel>
@@ -61,7 +90,7 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Orientation="Vertical" Grid.Column="0">
                         <Grid>
-                            <DataGrid Margin="10 0 10 0" AutoGenerateColumns="False" RowHeight="40" BorderThickness="1 1 1 0" BorderBrush="Black" Background="White" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="25cm" CanUserAddRows="False" HorizontalScrollBarVisibility="Hidden">
+                            <DataGrid Name="DGStatistic12" Margin="5 0 20 0" CanUserResizeColumns="False" AutoGenerateColumns="False" RowHeight="40" BorderThickness="1 1 1 0" BorderBrush="Black" Background="White" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="25cm" CanUserAddRows="False" HorizontalScrollBarVisibility="Hidden">
                                 <DataGrid.Resources>
 
                                     <Style TargetType="DataGrid">
@@ -89,131 +118,125 @@
                                 <DataGrid.Columns>
 
                                     
+                                   
                                     <!--//............................Student Total............................-->
-                                    <DataGridTextColumn Width="49" FontSize="15" Binding="{Binding come_from_class}">
+                                    <DataGridTemplateColumn Width="49" CanUserResize="False">
 
-                                        <DataGridTextColumn.ElementStyle>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Margin="-16 -9 -16 -19">
+                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="49" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
 
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Foreground" Value="Black"></Setter>
+                                                    </TextBox>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
 
-                                                <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                <Setter Property="HorizontalAlignment" Value="Center"/>
-                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                            </Style>
-                                        </DataGridTextColumn.ElementStyle>
-
-                                    </DataGridTextColumn>
+                                    </DataGridTemplateColumn>
 
                                     <!--//............................Student Female............................-->
-                                    <DataGridTextColumn Width="49" FontSize="15" Binding="{Binding come_from_class}">
+                                    <DataGridTemplateColumn Width="49" CanUserResize="False">
 
-                                        <DataGridTextColumn.ElementStyle>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Margin="-16 -9 -16 -19">
+                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="49" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
 
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Foreground" Value="Black"></Setter>
-
-                                                <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                <Setter Property="HorizontalAlignment" Value="Center"/>
-                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                            </Style>
-                                        </DataGridTextColumn.ElementStyle>
-
-                                    </DataGridTextColumn>
-
-                                    <!--//............................Student Total............................-->
-                                    <DataGridTextColumn Width="49" FontSize="15" Binding="{Binding come_from_class}">
-
-                                        <DataGridTextColumn.ElementStyle>
-
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Foreground" Value="Black"></Setter>
-
-                                                <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                <Setter Property="HorizontalAlignment" Value="Center"/>
-                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                            </Style>
-                                        </DataGridTextColumn.ElementStyle>
-
-                                    </DataGridTextColumn>
-
-                                    <!--//............................Student Female............................-->
-                                    <DataGridTextColumn Width="49" FontSize="15" Binding="{Binding come_from_class}">
-
-                                        <DataGridTextColumn.ElementStyle>
-
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Foreground" Value="Black"></Setter>
-
-                                                <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                <Setter Property="HorizontalAlignment" Value="Center"/>
-                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                            </Style>
-                                        </DataGridTextColumn.ElementStyle>
-
-                                    </DataGridTextColumn>
+                                                    </TextBox>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                       
+                                    </DataGridTemplateColumn>
 
                                     <!--//............................Student Total............................-->
-                                    <DataGridTextColumn Width="49" FontSize="15" Binding="{Binding come_from_class}">
+                                    <DataGridTemplateColumn Width="49">
 
-                                        <DataGridTextColumn.ElementStyle>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Margin="-16 -9 -16 -19">
+                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="49" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
 
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Foreground" Value="Black"></Setter>
+                                                    </TextBox>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
 
-                                                <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                <Setter Property="HorizontalAlignment" Value="Center"/>
-                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                            </Style>
-                                        </DataGridTextColumn.ElementStyle>
-
-                                    </DataGridTextColumn>
+                                    </DataGridTemplateColumn>
 
                                     <!--//............................Student Female............................-->
-                                    <DataGridTextColumn Width="49" FontSize="15" Binding="{Binding come_from_class}">
+                                    <DataGridTemplateColumn Width="49">
 
-                                        <DataGridTextColumn.ElementStyle>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Margin="-16 -9 -16 -19">
+                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="49" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
 
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Foreground" Value="Black"></Setter>
+                                                    </TextBox>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
 
-                                                <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                <Setter Property="HorizontalAlignment" Value="Center"/>
-                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                            </Style>
-                                        </DataGridTextColumn.ElementStyle>
+                                    </DataGridTemplateColumn>
 
-                                    </DataGridTextColumn>
                                     <!--//............................Student Total............................-->
-                                    <DataGridTextColumn Width="49" FontSize="15" Binding="{Binding come_from_class}">
+                                    <DataGridTemplateColumn Width="49">
 
-                                        <DataGridTextColumn.ElementStyle>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Margin="-16 -9 -16 -19">
+                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="49" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
 
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Foreground" Value="Black"></Setter>
+                                                    </TextBox>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
 
-                                                <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                <Setter Property="HorizontalAlignment" Value="Center"/>
-                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                            </Style>
-                                        </DataGridTextColumn.ElementStyle>
-
-                                    </DataGridTextColumn>
+                                    </DataGridTemplateColumn>
 
                                     <!--//............................Student Female............................-->
-                                    <DataGridTextColumn Width="49" FontSize="15" Binding="{Binding come_from_class}">
+                                    <DataGridTemplateColumn Width="49">
 
-                                        <DataGridTextColumn.ElementStyle>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Margin="-16 -9 -16 -19">
+                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="49" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
 
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Foreground" Value="Black"></Setter>
+                                                    </TextBox>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
 
-                                                <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                <Setter Property="HorizontalAlignment" Value="Center"/>
-                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                            </Style>
-                                        </DataGridTextColumn.ElementStyle>
-                                        <DataGridTextColumn.Header>
+                                    </DataGridTemplateColumn>
+                                    <!--//............................Student Total............................-->
+                                    <DataGridTemplateColumn Width="49">
+
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Margin="-16 -9 -16 -19">
+                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="49" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
+
+                                                    </TextBox>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+
+                                    </DataGridTemplateColumn>
+
+                                    <!--//............................Student Female............................-->
+                                    <DataGridTemplateColumn Width="49">
+
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Margin="-16 -9 -16 -19">
+                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="49" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
+
+                                                    </TextBox>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                        
+                                        <DataGridTemplateColumn.Header>
                                             <Grid Height="138" Width="390" Background="White" Margin="-342 0 0 0">
                                                 <StackPanel Orientation="Vertical">
                                                     <Grid Height="34.5">
@@ -244,7 +267,7 @@
                                                                 <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
                                                                 <Label Style="{DynamicResource Siemreap}" Content="បំ.វិ" HorizontalContentAlignment="Center"/>
                                                             </Grid>
-                                                            <Grid Width="97">
+                                                            <Grid Width="98">
                                                                 <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
                                                                 <Label Style="{DynamicResource Siemreap}" Content="ច.ទ" HorizontalContentAlignment="Center"/>
                                                             </Grid>
@@ -265,12 +288,12 @@
                                                                 <Label HorizontalContentAlignment="Center" Content="ស្រី" FontSize="15" Style="{DynamicResource Siemreap}"/>
 
                                                             </Grid>
-                                                            <Grid Width="48">
+                                                            <Grid Width="49">
                                                                 <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
                                                                 <Label HorizontalContentAlignment="Center" Content="សរុប" FontSize="15" Style="{DynamicResource Siemreap}"/>
 
                                                             </Grid>
-                                                            <Grid Width="50">
+                                                            <Grid Width="49">
                                                                 <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
                                                                 <Label HorizontalContentAlignment="Center" Content="ស្រី" FontSize="15" Style="{DynamicResource Siemreap}"/>
 
@@ -280,7 +303,7 @@
                                                                 <Label HorizontalContentAlignment="Center" Content="សរុប" FontSize="15" Style="{DynamicResource Siemreap}"/>
 
                                                             </Grid>
-                                                            <Grid Width="48">
+                                                            <Grid Width="49">
                                                                 <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
                                                                 <Label HorizontalContentAlignment="Center" Content="ស្រី" FontSize="15" Style="{DynamicResource Siemreap}"/>
 
@@ -299,131 +322,123 @@
                                                     </Grid>
                                                 </StackPanel>
                                             </Grid>
-                                        </DataGridTextColumn.Header>
-                                    </DataGridTextColumn>
+                                        </DataGridTemplateColumn.Header>
+                                    </DataGridTemplateColumn>
                                     <!--//............................Student Total............................-->
-                                    <DataGridTextColumn Width="49" FontSize="15" Binding="{Binding come_from_class}">
+                                    <DataGridTemplateColumn Width="49">
 
-                                        <DataGridTextColumn.ElementStyle>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Margin="-16 -9 -16 -19">
+                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="49" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
 
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Foreground" Value="Black"></Setter>
+                                                    </TextBox>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
 
-                                                <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                <Setter Property="HorizontalAlignment" Value="Center"/>
-                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                            </Style>
-                                        </DataGridTextColumn.ElementStyle>
-
-                                    </DataGridTextColumn>
+                                    </DataGridTemplateColumn>
 
                                     <!--//............................Student Female............................-->
-                                    <DataGridTextColumn Width="49" FontSize="15" Binding="{Binding come_from_class}">
+                                    <DataGridTemplateColumn Width="49">
 
-                                        <DataGridTextColumn.ElementStyle>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Margin="-16 -9 -16 -19">
+                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="49" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
 
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Foreground" Value="Black"></Setter>
+                                                    </TextBox>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
 
-                                                <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                <Setter Property="HorizontalAlignment" Value="Center"/>
-                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                            </Style>
-                                        </DataGridTextColumn.ElementStyle>
-
-                                    </DataGridTextColumn>
+                                    </DataGridTemplateColumn>
                                     <!--//............................Student Total............................-->
-                                    <DataGridTextColumn Width="49" FontSize="15" Binding="{Binding come_from_class}">
+                                    <DataGridTemplateColumn Width="49">
 
-                                        <DataGridTextColumn.ElementStyle>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Margin="-16 -9 -16 -19">
+                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="49" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
 
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Foreground" Value="Black"></Setter>
+                                                    </TextBox>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
 
-                                                <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                <Setter Property="HorizontalAlignment" Value="Center"/>
-                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                            </Style>
-                                        </DataGridTextColumn.ElementStyle>
-
-                                    </DataGridTextColumn>
+                                    </DataGridTemplateColumn>
 
                                     <!--//............................Student Female............................-->
-                                    <DataGridTextColumn Width="49" FontSize="15" Binding="{Binding come_from_class}">
+                                    <DataGridTemplateColumn Width="49">
 
-                                        <DataGridTextColumn.ElementStyle>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Margin="-16 -9 -16 -19">
+                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="49" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
 
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Foreground" Value="Black"></Setter>
+                                                    </TextBox>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
 
-                                                <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                <Setter Property="HorizontalAlignment" Value="Center"/>
-                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                            </Style>
-                                        </DataGridTextColumn.ElementStyle>
-
-                                    </DataGridTextColumn>
+                                    </DataGridTemplateColumn>
                                     <!--//............................Student Total............................-->
-                                    <DataGridTextColumn Width="49" FontSize="15" Binding="{Binding come_from_class}">
+                                    <DataGridTemplateColumn Width="49">
 
-                                        <DataGridTextColumn.ElementStyle>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Margin="-16 -9 -16 -19">
+                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="49" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
 
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Foreground" Value="Black"></Setter>
+                                                    </TextBox>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
 
-                                                <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                <Setter Property="HorizontalAlignment" Value="Center"/>
-                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                            </Style>
-                                        </DataGridTextColumn.ElementStyle>
-
-                                    </DataGridTextColumn>
+                                    </DataGridTemplateColumn>
 
                                     <!--//............................Student Female............................-->
-                                    <DataGridTextColumn Width="49" FontSize="15" Binding="{Binding come_from_class}">
+                                    <DataGridTemplateColumn Width="49">
 
-                                        <DataGridTextColumn.ElementStyle>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Margin="-16 -9 -16 -19">
+                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="49" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
 
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Foreground" Value="Black"></Setter>
+                                                    </TextBox>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
 
-                                                <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                <Setter Property="HorizontalAlignment" Value="Center"/>
-                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                            </Style>
-                                        </DataGridTextColumn.ElementStyle>
-
-                                    </DataGridTextColumn>
+                                    </DataGridTemplateColumn>
                                     <!--//............................Student Total............................-->
-                                    <DataGridTextColumn Width="49" FontSize="15" Binding="{Binding come_from_class}">
+                                    <DataGridTemplateColumn Width="49">
 
-                                        <DataGridTextColumn.ElementStyle>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Margin="-16 -9 -16 -19">
+                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="49" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
 
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Foreground" Value="Black"></Setter>
+                                                    </TextBox>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
 
-                                                <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                <Setter Property="HorizontalAlignment" Value="Center"/>
-                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                            </Style>
-                                        </DataGridTextColumn.ElementStyle>
-
-                                    </DataGridTextColumn>
+                                    </DataGridTemplateColumn>
 
                                     <!--//............................Student Female............................-->
-                                    <DataGridTextColumn Width="49" FontSize="15" Binding="{Binding come_from_class}">
+                                    <DataGridTemplateColumn Width="49">
 
-                                        <DataGridTextColumn.ElementStyle>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Margin="-16 -9 -16 -19">
+                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="49" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
 
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Foreground" Value="Black"></Setter>
-
-                                                <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                <Setter Property="HorizontalAlignment" Value="Center"/>
-                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                            </Style>
-                                        </DataGridTextColumn.ElementStyle>
-                                        <DataGridTextColumn.Header>
+                                                    </TextBox>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                        <DataGridTemplateColumn.Header>
                                             <Grid Height="138" Width="390" Background="White" Margin="-342 0 0 0">
                                                 <StackPanel Orientation="Vertical">
                                                     <Grid Height="34.5">
@@ -454,7 +469,7 @@
                                                                 <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
                                                                 <Label Style="{DynamicResource Siemreap}" Content="បំ.វិ" HorizontalContentAlignment="Center"/>
                                                             </Grid>
-                                                            <Grid Width="97">
+                                                            <Grid Width="98">
                                                                 <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
                                                                 <Label Style="{DynamicResource Siemreap}" Content="ច.ទ" HorizontalContentAlignment="Center"/>
                                                             </Grid>
@@ -475,12 +490,12 @@
                                                                 <Label HorizontalContentAlignment="Center" Content="ស្រី" FontSize="15" Style="{DynamicResource Siemreap}"/>
 
                                                             </Grid>
-                                                            <Grid Width="48">
+                                                            <Grid Width="49">
                                                                 <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
                                                                 <Label HorizontalContentAlignment="Center" Content="សរុប" FontSize="15" Style="{DynamicResource Siemreap}"/>
 
                                                             </Grid>
-                                                            <Grid Width="50">
+                                                            <Grid Width="49">
                                                                 <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
                                                                 <Label HorizontalContentAlignment="Center" Content="ស្រី" FontSize="15" Style="{DynamicResource Siemreap}"/>
 
@@ -490,7 +505,7 @@
                                                                 <Label HorizontalContentAlignment="Center" Content="សរុប" FontSize="15" Style="{DynamicResource Siemreap}"/>
 
                                                             </Grid>
-                                                            <Grid Width="48">
+                                                            <Grid Width="49">
                                                                 <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
                                                                 <Label HorizontalContentAlignment="Center" Content="ស្រី" FontSize="15" Style="{DynamicResource Siemreap}"/>
 
@@ -509,53 +524,49 @@
                                                     </Grid>
                                                 </StackPanel>
                                             </Grid>
-                                        </DataGridTextColumn.Header>
-                                    </DataGridTextColumn>
+                                        </DataGridTemplateColumn.Header>
+                                    </DataGridTemplateColumn>
                                     <!--//............................Student Total............................-->
-                                    <DataGridTextColumn Width="49" Header="សរុប" FontSize="15" Binding="{Binding come_from_class}">
+                                    <DataGridTemplateColumn Width="49" Header="សរុប">
 
-                                        <DataGridTextColumn.ElementStyle>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Margin="-16 -9 -16 -19">
+                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="49" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
 
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Foreground" Value="Black"></Setter>
+                                                    </TextBox>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
 
-                                                <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                <Setter Property="HorizontalAlignment" Value="Center"/>
-                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                            </Style>
-                                        </DataGridTextColumn.ElementStyle>
-
-                                    </DataGridTextColumn>
+                                    </DataGridTemplateColumn>
 
                                     <!--//............................Student Female............................-->
-                                    <DataGridTextColumn Width="49" Header="ស្រី" FontSize="15" Binding="{Binding come_from_class}">
+                                    <DataGridTemplateColumn Width="49" Header="ស្រី">
 
-                                        <DataGridTextColumn.ElementStyle>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Margin="-16 -9 -16 -19">
+                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="49" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
 
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Foreground" Value="Black"></Setter>
-
-                                                <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                <Setter Property="HorizontalAlignment" Value="Center"/>
-                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                            </Style>
-                                        </DataGridTextColumn.ElementStyle>
-
-                                    </DataGridTextColumn>
+                                                    </TextBox>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
                                     <!--//............................Kind............................-->
-                                    <DataGridTextColumn Header="ផ្សេងៗ" Width="62" FontSize="12" >
+                                    <DataGridTemplateColumn Header="ផ្សេងៗ" Width="62">
 
-                                        <DataGridTextColumn.ElementStyle>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Margin="-30 -9 -30 -10">
+                                                    <TextBox HorizontalContentAlignment="Center" FontWeight="Bold" Foreground="Black" Height="40.5" Width="60" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
 
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Foreground" Value="Black"></Setter>
-
-                                                <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                <Setter Property="HorizontalAlignment" Value="Center"/>
-                                                <Setter Property="VerticalAlignment" Value="Center"/>
-                                            </Style>
-                                        </DataGridTextColumn.ElementStyle>
-                                    </DataGridTextColumn>
+                                                    </TextBox>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
 
 
                                 </DataGrid.Columns>
@@ -577,17 +588,17 @@
                             </StackPanel>
                         </Grid>
 
-                        <Grid Grid.Column="1" Margin="50 0 0 0">
+                        <Grid Grid.Column="1" Margin=" 70 0 0 0">
                             <StackPanel Orientation="Vertical">
                                 <Label HorizontalAlignment="Left">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="ថ្ងៃ" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
-                                        <TextBlock Name="lblDay" Text="..................." FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
+                                        <TextBlock Name="lblDay" Text="..........." FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                         <TextBlock Text="ខែ" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
-                                        <TextBlock Name="lblMonths" Text="..................." FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
+                                        <TextBlock Name="lblMonths" Text=".............." FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                         <TextBlock Text="ឆ្នាំ" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                         <TextBlock Name="lblYear" Text="..................." FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
-                                        <TextBlock Text="ព.ស" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
+                                        <TextBlock Text="ឯកស័ក ព.ស" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                         <TextBlock Name="lblKhmerYear" Text="..................." FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                     </StackPanel>
                                 </Label>

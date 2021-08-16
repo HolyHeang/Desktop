@@ -1,4 +1,5 @@
-﻿using iTextSharp.text;
+﻿using CamemisOffLine.Windows;
+using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,8 @@ namespace CamemisOffLine.Report
 
         private void print()
         {
+            btnPrint.Visibility = Visibility.Collapsed;
+            gridClose.Visibility = Visibility.Collapsed;
             lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
             TitleSchool.Content = Properties.Settings.Default.schoolName;
             try
@@ -50,7 +53,7 @@ namespace CamemisOffLine.Report
                 {
 
                     PngBitmapEncoder enc = new PngBitmapEncoder();
-                    var bitmap = new RenderTargetBitmap((int)Grid.ActualWidth * 2, (int)Grid.ActualHeight * 2, 147, 130, PixelFormats.Pbgra32);
+                    var bitmap = new RenderTargetBitmap((int)Grid.ActualWidth * 2, (int)Grid.ActualHeight * 2, 147, 147, PixelFormats.Pbgra32);
                     bitmap.Render(Grid);
                     enc.Frames.Add(BitmapFrame.Create(bitmap));
                     enc.Save(outStream);
@@ -80,7 +83,38 @@ namespace CamemisOffLine.Report
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            List<StaffAttendance> at = new List<StaffAttendance>();
+            for (int i = 1; i <= 1; i++)
+            {
+                at.Add(new StaffAttendance
+                {
+                    id = "",
+
+                });
+            }
+            DGStatistic9.ItemsSource = at;
+        }
+
+        private void btnPrint_Click(object sender, RoutedEventArgs e)
+        {
             print();
+        }
+
+        private void gridClose_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Grid g = (Grid)sender;
+            g.Background = Brushes.Red;
+        }
+
+        private void gridClose_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Grid g = (Grid)sender;
+            g.Background = Brushes.Transparent;
+        }
+
+        private void gridClose_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
         }
     }
 }
