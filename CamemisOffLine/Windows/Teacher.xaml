@@ -4162,10 +4162,10 @@
                                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                                         </Grid.ColumnDefinitions>
                                                         <Grid Grid.Column="0" Margin="0,0,0,2" Background="White">
-                                                            <Border BorderBrush="White" BorderThickness="0 0 1 0" Background="Blue" Opacity="0.7"></Border>
+                                                            <Border BorderBrush="White" BorderThickness="0 0 1 0" Background="YellowGreen" Opacity="0.7"></Border>
                                                             <materialDesign:PackIcon Kind="FileExport" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" Height="20" Width="20"/>
                                                         </Grid>
-                                                        <Grid Grid.Column="1" Background="Blue">
+                                                        <Grid Grid.Column="1" Background="YellowGreen">
                                                             <Label Content="នាំចេញគំរូទិន្នន័យគ្រូទៅ Excecl" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="5,2,5,4">
 
                                                             </Label>
