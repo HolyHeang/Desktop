@@ -236,6 +236,9 @@
     <Compile Include="Report\Summary_of_Students.xaml.cs">
       <DependentUpon>Summary_of_Students.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Report\TeacherInformationExcel.xaml.cs">
+      <DependentUpon>TeacherInformationExcel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StudentSubjectMonthlyResultCR.cs" />
     <Compile Include="Windows\AllSubMonthlyResult.xaml.cs">
       <DependentUpon>AllSubMonthlyResult.xaml</DependentUpon>
@@ -389,6 +392,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Report\Summary_of_Students.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Report\TeacherInformationExcel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

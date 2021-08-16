@@ -43,6 +43,10 @@ namespace CamemisOffLine.Report
             {
                 lblMonth.Text = "ចំណាត់-ថ្នាក់ចំណាត់ប្រភេទប្រចាំឆមាសលើកទី១";
             }
+            else if(term=="")
+            {
+                lblMonth.Text = "ចំណាត់-ថ្នាក់ចំណាត់ប្រភេទប្រចាំឆ្នាំ";
+            }
             else
             {
                 lblMonth.Text = "ចំណាត់-ថ្នាក់ចំណាត់ប្រភេទប្រចាំឆមាសលើកទី២";
@@ -63,43 +67,113 @@ namespace CamemisOffLine.Report
                 string str = "";
                 string[] data;
                 List<StudentMonthlyResult> obj = new List<StudentMonthlyResult>();
+                List<Morality> mol = new List<Morality>();
                 TitleSchool.Content = Properties.Settings.Default.schoolName;
-                if (ping <= 150 && !File.Exists(filePath + "\\" + "semester" + classId + ".txt"))
+                if (term != "")
                 {
-                    str = await DataAsync(classId);
-                    data = str.Split('|');
-                }
-                else
-                {
-                    str = DecodeFrom64(File.ReadAllText(filePath + "\\" + "semester" + classId + ".txt"));
-                    data = str.Split('|');
-                }
-
-                if(term== "FIRST_SEMESTER")
-                {
-                    obj = JObject.Parse(data[0]).ToObject<StudentMonthlyResultData>().data.OrderBy(s => s.result_semester.rank).ToList();
-                }
-                else
-                {
-                    obj = JObject.Parse(data[1]).ToObject<StudentMonthlyResultData>().data.OrderBy(s => s.result_semester.rank).ToList();
-                }
-                foreach (var item in obj)
-                {
-                    txtClassName.Text = "ថ្នាក់ទី " + item.class_name + " ";
-                    if (item.result_semester.avg_score == "0")
+                    if (ping <= 150 && !File.Exists(filePath + "\\" + "semester" + classId + ".txt"))
                     {
-                        item.result_semester.avg_score = "មិនចាត់ថ្នាក់";
-                        item.result_semester.color = "Red";
+                        str = await DataAsync(classId, "1");
+                        data = str.Split('|');
                     }
-                    if (item.result_semester.morality == null)
-                        item.result_semester.morality = "--";
-                    if (item.result_semester.bangkeun_phal == null)
-                        item.result_semester.bangkeun_phal = "--";
-                    if (item.result_semester.health == null)
-                        item.result_semester.health = "--";
+                    else
+                    {
+                        str = DecodeFrom64(File.ReadAllText(filePath + "\\" + "semester" + classId + ".txt"));
+                        data = str.Split('|');
+                    }
+                    if (term == "FIRST_SEMESTER")
+                    {
+                        obj = JObject.Parse(data[0]).ToObject<StudentMonthlyResultData>().data.OrderBy(s => s.result_semester.rank).ToList();
+                    }
+                    else
+                    {
+                        obj = JObject.Parse(data[1]).ToObject<StudentMonthlyResultData>().data.OrderBy(s => s.result_semester.rank).ToList();
+                    }
+                    foreach (var item in obj)
+                    {
+                        txtClassName.Text = "ថ្នាក់ទី " + item.class_name + " ";
+                        if (item.result_semester.avg_score == "0")
+                        {
+                            item.result_semester.avg_score = "មិនចាត់ថ្នាក់";
+                            item.result_semester.color = "Red";
+                        }
+                        if (item.result_semester.morality == null)
+                            item.result_semester.morality = "--";
+                        if (item.result_semester.bangkeun_phal == null)
+                            item.result_semester.bangkeun_phal = "--";
+                        if (item.result_semester.health == null)
+                            item.result_semester.health = "--";
+                    }
+                    NumberList(obj.OrderBy(s => s.result_semester.rank).ToList());
+                    foreach (var item in obj)
+                    {
+                        mol.Add(new Morality
+                        {
+                            avg_score = item.result_semester.avg_score,
+                            bangkeun_phal = item.result_semester.bangkeun_phal,
+                            gender = item.gender,
+                            grading = item.result_semester.grading,
+                            id = item.student_school_id,
+                            health = item.result_semester.health,
+                            morality = item.result_semester.morality,
+                            name = item.name,
+                            number = item.numbers,
+                            profile = item.localProfileLink,
+                            rank = item.result_semester.rank
+                        });
+                    }
+
                 }
-                NumberList(obj.OrderBy(s => s.result_semester.rank).ToList());
-                List<StudentMonthlyResult> copyResult = new List<StudentMonthlyResult>();
+                else
+                {
+                    if (ping <= 150 && !File.Exists(filePath + "\\" + "Year" + classId + ".txt"))
+                    {
+                        str = await DataAsync(classId, "2");
+                        data = str.Split('|');
+                    }
+                    else
+                    {
+                        str = DecodeFrom64(File.ReadAllText(filePath + "\\" + "Year" + classId + ".txt"));
+                        data = str.Split('|');
+                    }
+                    obj = JObject.Parse(data[0]).ToObject<StudentMonthlyResultData>().data.OrderBy(s => s.result_yearly.rank).ToList();
+
+                    foreach (var item in obj)
+                    {
+                        txtClassName.Text = "ថ្នាក់ទី " + item.class_name + " ";
+                        if (item.result_yearly.avg_score == "0")
+                        {
+                            item.result_yearly.avg_score = "មិនចាត់ថ្នាក់";
+                            item.result_yearly.color = "Red";
+                        }
+                        if (item.result_yearly.morality == null)
+                            item.result_yearly.morality = "--";
+                        if (item.result_yearly.bangkeun_phal == null)
+                            item.result_yearly.bangkeun_phal = "--";
+                        if (item.result_yearly.health == null)
+                            item.result_yearly.health = "--";
+                    }
+                    NumberList(obj.OrderBy(s => s.result_yearly.rank).ToList());
+                    foreach (var item in obj)
+                    {
+                        mol.Add(new Morality
+                        {
+                            avg_score = item.result_yearly.avg_score,
+                            bangkeun_phal = item.result_yearly.bangkeun_phal,
+                            gender = item.gender,
+                            grading = item.result_yearly.grading,
+                            id = item.student_school_id,
+                            health = item.result_yearly.health,
+                            morality = item.result_yearly.morality,
+                            name = item.name,
+                            number = item.numbers,
+                            profile = item.localProfileLink,
+                            rank = item.result_yearly.rank
+                        });
+                    }
+                }
+               
+                List<Morality> copyResult = new List<Morality>();
                 int startIndex = 0, endIndex = 26;
                 Document document = new Document(PageSize.A4, 20, 0, 0, 0);
                 PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "ResultTemplate" + ".pdf", FileMode.Create));
@@ -112,7 +186,7 @@ namespace CamemisOffLine.Report
                     {
                         Grid.Dispatcher.Invoke(() =>
                         {
-                            showData(obj);
+                            showData(mol);
                             Grid.UpdateLayout();
                         });
                         PrintList(document);
@@ -126,7 +200,7 @@ namespace CamemisOffLine.Report
                                 Footer.Visibility = Visibility.Collapsed;
                                 Grid.Dispatcher.Invoke(() =>
                                 {
-                                    showData(obj);
+                                    showData(mol);
                                     Grid.UpdateLayout();
                                 });
                                 PrintList(document);
@@ -139,7 +213,7 @@ namespace CamemisOffLine.Report
                                 DGResult.Visibility = Visibility.Collapsed;
                                 Grid.Dispatcher.Invoke(() =>
                                 {
-                                    showData(obj);
+                                    showData(mol);
                                     Grid.UpdateLayout();
                                 });
                                 PrintList(document);
@@ -155,9 +229,9 @@ namespace CamemisOffLine.Report
                         copyResult.Clear();
                         for (int i = startIndex; i < endIndex; i++)
                         {
-                            if (obj[i] != null)
+                            if (mol[i] != null)
                             {
-                                copyResult.Add(obj[i]);
+                                copyResult.Add(mol[i]);
                             }
                         }
                         if (!footerAvaliable)
@@ -224,29 +298,38 @@ namespace CamemisOffLine.Report
                 loading.Close();
             }
         }
-        private async Task<string> DataAsync(string classId)
+        private async Task<string> DataAsync(string classId,string task)
         {
             string accessUrl = Properties.Settings.Default.acessUrl;
             string token = Properties.Settings.Default.Token;
             string respone = "";
-            for (int i = 0; i<2;i++)
+            if(task=="1")
             {
-                if(i==0)
+                for (int i = 0; i < 2; i++)
                 {
-                    respone = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/semester-result?term=FIRST_SEMESTER", token);
+                    if (i == 0)
+                    {
+                        respone = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/semester-result?term=FIRST_SEMESTER", token);
+                    }
+                    else if (i == 1)
+                    {
+                        respone += "|";
+                        respone += await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/semester-result?term=SECOND_SEMESTER", token);
+                    }
                 }
-                else if(i==1)
+
+                using (StreamWriter writer = new StreamWriter(filePath + "\\" + "semester" + classId + ".txt"))
                 {
-                    respone += "|";
-                    respone += await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/semester-result?term=SECOND_SEMESTER", token);
+                    writer.WriteLine(EncodeTo64(respone));
                 }
             }
-
-
-
-            using (StreamWriter writer = new StreamWriter(filePath + "\\" + "semester" + classId + ".txt"))
+            else
             {
-                writer.WriteLine(EncodeTo64(respone));
+                respone = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/yearly-result", token) + "|" + DateTime.Now.ToString("dd/MM/yyyy hh:mm");
+                using (StreamWriter writer = new StreamWriter(filePath + "\\" + "Year" + classId + ".txt"))
+                {
+                    writer.WriteLine(respone);
+                }
             }
 
             return respone;
@@ -280,9 +363,9 @@ namespace CamemisOffLine.Report
                System.Text.ASCIIEncoding.ASCII.GetString(encodedDataAsBytes);
             return returnValue;
         }
-        private void showData(List<StudentMonthlyResult> obj)
+        private void showData(List<Morality> obj)
         {
-            DGResult.ItemsSource = obj.OrderBy(s=>s.result_semester.rank);
+            DGResult.ItemsSource = obj.OrderBy(s => s.rank);
         }
         void PrintList(Document document)
         {

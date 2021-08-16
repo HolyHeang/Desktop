@@ -36,9 +36,9 @@ namespace CamemisOffLine.Windows
         string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            Loading loading = new Loading();
             try
             {
-                Loading loading = new Loading();
                 loading.Show();
                 this.Hide();
 
@@ -155,6 +155,7 @@ namespace CamemisOffLine.Windows
             }
             catch
             {
+                loading.Close();
                 this.Close();
             }
         }
@@ -332,6 +333,47 @@ namespace CamemisOffLine.Windows
                         studentName = obj[i].name
                     });
                 }
+            }
+            else if (title == "year")
+            {
+                obj.OrderBy(s => s.result_yearly.rank);
+                for (int i = startIndex; i < (obj.Count() / 2); i++)
+                {
+                    lblclass.Text = "ថ្នាក់ទី " + obj[i].class_name + " (" + year + ")";
+                    num++;
+                    if (num == 2)
+                    {
+                        lblTeacherName.Content = obj[i].instructor.name;
+
+                        lblMonth.Text = "លទ្ធផលប្រចាំឆ្នាំ";
+                    }
+                    L1.Add(new StudentResultForCrystalReport
+                    {
+                        number = DateChange.Num(num),
+                        avg = obj[i].result_yearly.avg_score,
+                        rank = obj[i].result_yearly.rank,
+                        color = colors,
+                        studentId = obj[i].student_school_id,
+                        studentName = obj[i].name,
+                        
+
+                    });
+                }
+                for (int i = (obj.Count() / 2); i < obj.Count(); i++)
+                {
+                    num++;
+                    L2.Add(new StudentResultForCrystalReport
+                    {
+                        number = DateChange.Num(num),
+                        avg = obj[i].result_yearly.avg_score,
+                        rank = obj[i].result_yearly.rank,
+                        color = colors,
+                        studentId = obj[i].student_school_id,
+                        studentName = obj[i].name
+                    });
+                }
+                DatagridResult.Columns[3].Header = "មធ្យមភាគ";
+                DatagridResult1.Columns[3].Header = "មធ្យមភាគ";
             }
             DatagridResult.ItemsSource = L1.OrderBy(r=>r.rank);
             DatagridResult1.ItemsSource = L2.OrderBy(r => r.rank);

@@ -5,7 +5,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Data;
 using System.Drawing.Imaging;
 using System.IO;
@@ -14,16 +13,13 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.NetworkInformation;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace CamemisOffLine.Windows
@@ -108,6 +104,9 @@ namespace CamemisOffLine.Windows
             cbSelectClass.Visibility = Visibility.Collapsed;
             cbSelectMonth.Visibility = Visibility.Collapsed;
             cbSelectSubject.Visibility = Visibility.Collapsed;
+            btnCalculate.Visibility = Visibility.Collapsed;
+            btnApproved.Visibility = Visibility.Collapsed;
+            btnDeleteApproved.Visibility = Visibility.Collapsed;
             //.....................................
             DockTree.Visibility = Visibility.Collapsed;
             tabcontrolResult.SelectedIndex = 1;
@@ -274,6 +273,7 @@ namespace CamemisOffLine.Windows
             btnLearningResult.Background = Brushes.White;  
             btnInputScore.Background = (Brush)bc.ConvertFrom("#66D3D3D3");
             tabcontrolResulandInput.SelectedIndex = 1;
+            btnPrint.Visibility = Visibility.Collapsed;
         }
 
         private void btnInputScore_Click(object sender, RoutedEventArgs e)
@@ -283,7 +283,7 @@ namespace CamemisOffLine.Windows
             btnLearningResult.Background = (Brush)bc.ConvertFrom("#66D3D3D3");
             btnInputScore.Background = Brushes.White;
             tabcontrolResulandInput.SelectedIndex = 0;
-            
+            //.Visibility = Visibility.Collapsed;
         }
 
         //......................Hover Slide Left......................
@@ -705,10 +705,10 @@ namespace CamemisOffLine.Windows
                         }
                         data.Add(new KeyValuePair<string, string>(item.name, item.semester));
                     }
-
                     cbSelectMonth.ItemsSource = data;
                     cbSelectMonth.DisplayMemberPath = "Key";
                     cbSelectMonth.SelectedValuePath = "Value";
+                    data.Add(new KeyValuePair<string, string>("លទ្ធផលប្រចាំឆ្នាំ", "លទ្ធផលប្រចាំឆ្នាំ"));
                     cbSelectResultMonth.ItemsSource = data;
                     cbSelectResultMonth.DisplayMemberPath = "Key";
                     cbSelectResultMonth.SelectedValuePath = "Value";
@@ -1021,7 +1021,7 @@ namespace CamemisOffLine.Windows
                         client.DefaultRequestHeaders.Accept.Add(
                        new MediaTypeWithQualityHeaderValue("application/json"));
                         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-                        using (HttpResponseMessage res = client.PostAsJsonAsync(accessUrl + "/academic/" + classId + "/monthly-subject-result", new InputScore { month = months, subject_id = SubjectId, term = term, type = "1", data = obj.data }).Result)
+                        using (HttpResponseMessage res = client.PostAsJsonAsync(accessUrl + "/academic/" + classId + "/monthly-subject-result", new InputScore { month = months, subject_id = SubjectId, term = term, type = type, data = obj.data }).Result)
                         {
                             using (HttpContent content = res.Content)
                             {
@@ -1660,7 +1660,7 @@ namespace CamemisOffLine.Windows
         private void NumberList(List<StudentMonthlyResult> obj,string title)
         {
             int i = 1;
-            if(title=="1")
+            if (title == "1")
             {
                 foreach (var item in obj)
                 {
@@ -1682,7 +1682,7 @@ namespace CamemisOffLine.Windows
                     i++;
                 }
             }
-            else if(title=="3")
+            else if (title == "3")
             {
                 foreach (var item in obj)
                 {
@@ -1704,31 +1704,111 @@ namespace CamemisOffLine.Windows
                     i++;
                 }
             }
+
+            else if(title=="4")
+            {
+                foreach (var item in obj)
+                {
+                    try
+                    {
+                        if (item.gender == "1")
+                            item.gender = "ប្រុស";
+                        else
+                            item.gender = "ស្រី";
+                        if (item.result_yearly.avg_score == "0")
+                        {
+                            item.result_yearly.avg_score = "មិនចាត់ថ្នាក់";
+                            item.result_yearly.color = "Red";
+                        }
+                        else
+                        {
+                            item.result_yearly.color = "Blue";
+                        }
+                        if (item.result_yearly.is_fail == "0")
+                            item.result_yearly.is_fail = "ជាប់";
+                        else
+                            item.result_yearly.is_fail = "ធ្លាក់";
+                    }
+                    catch { }
+                    if (item.result_yearly.is_fail == "0")
+                        item.result_yearly.is_fail = "ជាប់";
+                    else
+                        item.result_yearly.is_fail = "ធ្លាក់";
+
+                    if (item.result_yearly.morality == "ល្អ")
+                        item.result_yearly.morality = "0";
+                    else if (item.result_yearly.morality == "ល្អបង្គួរ")
+                        item.result_yearly.morality = "1";
+                    else if (item.result_yearly.morality == "មធ្យម")
+                        item.result_yearly.morality = "2";
+                    else if (item.result_yearly.morality == "ខ្សោយ")
+                        item.result_yearly.morality = "3";
+                    else if (item.result_yearly.morality == "មិនចាត់ថ្នាក់")
+                        item.result_yearly.morality = "4";
+                    else if (item.result_yearly.morality == null)
+                        item.result_yearly.morality = "5";
+
+                    if (item.result_yearly.health == "ល្អ")
+                        item.result_yearly.health = "0";
+                    else if (item.result_yearly.health == "ល្អបង្គួរ")
+                        item.result_yearly.health = "1";
+                    else if (item.result_yearly.health == "មធ្យម")
+                        item.result_yearly.health = "2";
+                    else if (item.result_yearly.health == "ខ្សោយ")
+                        item.result_yearly.health = "3";
+                    else if (item.result_yearly.health == "មិនចាត់ថ្នាក់")
+                        item.result_yearly.health = "4";
+                    else if (item.result_yearly.health == null)
+                        item.result_yearly.health = "5";
+
+                    if (item.result_yearly.bangkeun_phal == "ល្អ")
+                        item.result_yearly.bangkeun_phal = "0";
+                    else if (item.result_yearly.bangkeun_phal == "ល្អបង្គួរ")
+                        item.result_semester.bangkeun_phal = "1";
+                    else if (item.result_yearly.bangkeun_phal == "មធ្យម")
+                        item.result_yearly.bangkeun_phal = "2";
+                    else if (item.result_yearly.bangkeun_phal == "ខ្សោយ")
+                        item.result_yearly.bangkeun_phal = "3";
+                    else if (item.result_yearly.bangkeun_phal == "មិនចាត់ថ្នាក់")
+                        item.result_yearly.bangkeun_phal = "4";
+                    else if (item.result_yearly.bangkeun_phal == null)
+                        item.result_yearly.bangkeun_phal = "5";
+                    item.numbers = DateChange.Num(i);
+                    i++;
+                }
+
+            }
+
             else
-            {
+                {
                 foreach (var item in obj)
                 {
-                    if (item.gender == "1")
-                        item.gender = "ប្រុស";
-                    else
-                        item.gender = "ស្រី";
-                    if (item.result_semester_exam.avg_score == "0")
+                    try
                     {
-                        item.result_semester_exam.avg_score = "មិនចាត់ថ្នាក់";
-                        item.result_semester_exam.color = "Red";
+                        if (item.gender == "1")
+                            item.gender = "ប្រុស";
+                        else
+                            item.gender = "ស្រី";
+                        if (item.result_semester_exam.avg_score == "0")
+                        {
+                            item.result_semester_exam.avg_score = "មិនចាត់ថ្នាក់";
+                            item.result_semester_exam.color = "Red";
+                        }
+                        else
+                        {
+                            item.result_semester_exam.color = "Blue";
+                        }
+                        if (item.result_semester_exam.is_fail == "0")
+                            item.result_semester_exam.is_fail = "ជាប់";
+                        else
+                            item.result_semester_exam.is_fail = "ធ្លាក់";
                     }
-                    else
-                    {
-                        item.result_semester_exam.color = "Blue";
-                    }
+                    catch { }
                     if (item.result_semester.is_fail == "0")
                         item.result_semester.is_fail = "ជាប់";
                     else
                         item.result_semester.is_fail = "ធ្លាក់";
-                    if (item.result_semester_exam.is_fail == "0")
-                        item.result_semester_exam.is_fail = "ជាប់";
-                    else
-                        item.result_semester_exam.is_fail = "ធ្លាក់";
+                    
                     if (item.result_semester.morality == "ល្អ")
                         item.result_semester.morality = "0";
                     else if (item.result_semester.morality == "ល្អបង្គួរ")
@@ -1739,6 +1819,8 @@ namespace CamemisOffLine.Windows
                         item.result_semester.morality = "3";
                     else if (item.result_semester.morality == "មិនចាត់ថ្នាក់")
                         item.result_semester.morality = "4";
+                    else if(item.result_semester.morality == null)
+                        item.result_semester.morality = "5";
 
                     if (item.result_semester.health == "ល្អ")
                         item.result_semester. health = "0";
@@ -1750,6 +1832,8 @@ namespace CamemisOffLine.Windows
                         item.result_semester.health = "3";
                     else if (item.result_semester.health == "មិនចាត់ថ្នាក់")
                         item.result_semester.health = "4";
+                    else if (item.result_semester.health == null)
+                        item.result_semester.health = "5";
 
                     if (item.result_semester.bangkeun_phal == "ល្អ")
                         item.result_semester.bangkeun_phal = "0";
@@ -1761,6 +1845,8 @@ namespace CamemisOffLine.Windows
                         item.result_semester.bangkeun_phal = "3";
                     else if (item.result_semester.bangkeun_phal == "មិនចាត់ថ្នាក់")
                         item.result_semester.bangkeun_phal = "4";
+                    else if (item.result_semester.bangkeun_phal == null)
+                        item.result_semester.bangkeun_phal = "5";
                     item.numbers = DateChange.Num(i);
                     i++;
                 }
@@ -1852,6 +1938,7 @@ namespace CamemisOffLine.Windows
         //......................................Button Result.....................
         private void btnExamSemester_Click(object sender, RoutedEventArgs e)
         {
+            type = "4";
             txtTitleMonth.Text = "លទ្ធផលប្រលង"+monthName;
             tabcontrolLearn1.SelectedIndex = 5;
             btnSaveSemester.Visibility = Visibility.Collapsed;
@@ -1862,6 +1949,16 @@ namespace CamemisOffLine.Windows
         {
             txtTitleMonth.Text = "ចំណាត់ថ្នាក់ចំណាត់ប្រភេទ"+monthName;
             tabcontrolLearn1.SelectedIndex = 4;
+
+            if(type=="2")
+            {
+                tabcontrolLearn1.SelectedIndex = 4;
+            }
+            else if(type=="3")
+            {
+                tabcontrolLearn1.SelectedIndex = 6;
+            }
+
             btnSaveSemester.Visibility = Visibility.Visible;
             btnPostSemester.Visibility = Visibility.Visible;
         }
@@ -1947,9 +2044,13 @@ namespace CamemisOffLine.Windows
                 {
                     item.morality = "ខ្សោយ";
                 }
-                else
+                else if(item.morality=="4")
                 {
                     item.morality = "មិនចាត់ថ្នាក់";
+                }
+                else
+                {
+                    item.morality = null;
                 }
 
                 if (item.health == "0")
@@ -1968,9 +2069,13 @@ namespace CamemisOffLine.Windows
                 {
                     item.health = "ខ្សោយ";
                 }
-                else
+                else if(item.health =="4")
                 {
                     item.health = "មិនចាត់ថ្នាក់";
+                }
+                else
+                {
+                    item.health = null;
                 }
 
                 if (item.bangkeun_phal == "0")
@@ -1989,15 +2094,28 @@ namespace CamemisOffLine.Windows
                 {
                     item.bangkeun_phal = "ខ្សោយ";
                 }
-                else
+                else if(item.bangkeun_phal=="4")
                 {
                     item.bangkeun_phal = "មិនចាត់ថ្នាក់";
                 }
+                else
+                {
+                    item.bangkeun_phal = null;
+                }
             }
+            string url = "";
             string accessUrl = Properties.Settings.Default.acessUrl;
             string token = Properties.Settings.Default.Token;
             MessageBoxControl message = new MessageBoxControl();
             MessageBoxControl message1 = new MessageBoxControl();
+            if(type=="2")
+            {
+                url = accessUrl + "/save-semester-morality/" + classId;
+            }
+            else
+            {
+                url = accessUrl + "/save-yearly-morality/" + classId;
+            }
             if (Teacher.InternetChecker() == true && internet)
             {
                 message.title = "ត្រួតពិនិត្យអ៊ីនធឺណែត";
@@ -2012,7 +2130,7 @@ namespace CamemisOffLine.Windows
                         client.DefaultRequestHeaders.Accept.Add(
                        new MediaTypeWithQualityHeaderValue("application/json"));
                         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-                        using (HttpResponseMessage res = client.PostAsJsonAsync(accessUrl + "/save-semester-morality/"+classId, new ListMorality { data=data }).Result)
+                        using (HttpResponseMessage res = client.PostAsJsonAsync(url, new ListMorality { data=data }).Result)
                         {
                             using (HttpContent content = res.Content)
                             {
@@ -2224,13 +2342,17 @@ namespace CamemisOffLine.Windows
                         catch
                         {
                             txtExpireDate.Text = "ការកំណត់ថ្ងៃសុពលភាពនៃការបញ្ចូលពិន្ទុ : --";
+                            DGScoreMonth.IsEnabled = true;
+                            btnPost.Visibility = Visibility.Visible;
+                            btnDeleteAll.Visibility = Visibility.Visible;
+                            btnSave.Visibility = Visibility.Visible;
                         }
                         DGScoreMonth.ItemsSource = null;
                         DGScoreMonth.ItemsSource = obj.data;
                         loading.Close();
-                        this.Opacity = 0.5;
+                       /* this.Opacity = 0.5;
                         message.ShowDialog();
-                        this.Opacity = 1;
+                        this.Opacity = 1;*/
                     }
                     catch
                     {
@@ -2298,16 +2420,22 @@ namespace CamemisOffLine.Windows
                             if (obj.approve_learning_result.is_approved == "1")
                             {
                                 txtApproveDate.Text = "កាលបរិច្ឆេទដែលបានអនុម័ត :" + obj.approve_learning_result.approved_date;
+                                /*btnCalculate.Visibility = Visibility.Collapsed;
+                                btnApproved.Visibility = Visibility.Collapsed;*/
                                 txtApproveDate.Visibility = Visibility.Visible;
                             }
                             else
                             {
                                 txtApproveDate.Visibility = Visibility.Collapsed;
+                                /*btnCalculate.Visibility = Visibility.Visible;
+                                btnApproved.Visibility = Visibility.Visible;*/
                             }
                         }
                         catch
                         {
                             txtApproveDate.Visibility = Visibility.Collapsed;
+                            /*btnCalculate.Visibility = Visibility.Visible;
+                            btnApproved.Visibility = Visibility.Visible;*/
                         }
                         NumberList(obj.data);
 
@@ -2396,9 +2524,9 @@ namespace CamemisOffLine.Windows
                         btnPrint.Visibility = Visibility.Visible;
                         btnSave.Visibility = Visibility.Visible;
                         loading.Close();
-                        this.Opacity = 0.5;
+                        /*this.Opacity = 0.5;
                         message.ShowDialog();
-                        this.Opacity = 1;
+                        this.Opacity = 1;*/
                     }
                     catch
                     {
@@ -2446,7 +2574,7 @@ namespace CamemisOffLine.Windows
                 LabelTitle.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title_select_month;
                 tabcontrolScore.SelectedIndex = 1;
 
-                if (Teacher.InternetChecker() == true && internet && ping <= 100)
+                if (Teacher.InternetChecker() == true && internet)
                 {
 
                     string accessUrl = Properties.Settings.Default.acessUrl;
@@ -2471,6 +2599,7 @@ namespace CamemisOffLine.Windows
                     cbSelectMonth.ItemsSource = data;
                     cbSelectMonth.DisplayMemberPath = "Key";
                     cbSelectMonth.SelectedValuePath = "Value";
+                    data.Add(new KeyValuePair<string, string>("លទ្ធផលប្រចាំឆ្នាំ", "លទ្ធផលប្រចាំឆ្នាំ"));
                     cbSelectResultMonth.ItemsSource = data;
                     cbSelectResultMonth.DisplayMemberPath = "Key";
                     cbSelectResultMonth.SelectedValuePath = "Value";
@@ -2499,7 +2628,7 @@ namespace CamemisOffLine.Windows
                     else
                         use = "not use";
 
-                    GetMonthlyResultFormApiAsync();
+                    await GetMonthlyResultFormApiAsync();
                     time++;
                     this.IsEnabled = true;
                 }
@@ -2508,7 +2637,7 @@ namespace CamemisOffLine.Windows
                 {
                     try
                     {
-                        var obj1 = GetAcademyFromLocal(schoolYearId);
+                        var obj1 =  GetAcademyFromLocal(schoolYearId);
 
                         foreach (var item1 in obj1.data)
                         {
@@ -2591,19 +2720,37 @@ namespace CamemisOffLine.Windows
                 this.IsEnabled = true;
             }
         }
-        string monthName = "";
+        string monthName = "",requestId="";
         List<StudentMonthlyResult> resultData = new List<StudentMonthlyResult>();
-        private void cbSelectResultMonth_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        object senderCombo;
+        SelectionChangedEventArgs ev;
+        private async void cbSelectResultMonth_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            List<Morality> moralities1 = new List<Morality>();
+            senderCombo = sender;
+            ev = e;
             try
             {
                 var item = sender as ComboBox;
                 string id="";
                 var selection = (KeyValuePair<string, string>)item.SelectedItem;
                 monthName = selection.Key;
+
                 if (selection.Key.Equals("ឆមាសទី១") || selection.Key.Equals("ឆមាសទី២"))
                 {
+                   
+                    btnExamSemester.Visibility = Visibility.Visible;
+                    btnResultSemester.Visibility = Visibility.Visible;
+                    btnResultYear.Visibility = Visibility.Collapsed;
+                    await GetApprovedAsync(classId, "", "2", selection.Value);
+                    if (Properties.Settings.Default.role == "3")
+                    {
+                        btnApproved.Visibility = Visibility.Collapsed;
+                        btnDeleteApproved.Visibility = Visibility.Collapsed;
+                        btnCalculate.Visibility = Visibility.Collapsed;
+                    }
                     title = "semester";
+                    type = "2";
                     txtTitleMonth.Text = "លទ្ធផលប្រចាំ​ "+selection.Key;
                     btnSaveSemester.Visibility = Visibility.Collapsed;
                     btnPostSemester.Visibility = Visibility.Collapsed;
@@ -2614,10 +2761,10 @@ namespace CamemisOffLine.Windows
                     resultData = new List<StudentMonthlyResult>();
                     try
                     {
-                        List<Morality> moralities1 = new List<Morality>();
                         string respone = "", date = "";
 
                         nameSemester = selection.Key;
+                        term = selection.Value;
                         message.title = "ដំណឹង";
                         message.discription = "ទាញទិន្នន័យបានជោគជ័យ";
                         message.buttonType = 2;
@@ -2626,6 +2773,8 @@ namespace CamemisOffLine.Windows
                         tabcontrolLearn1.SelectedIndex = 1;
 
                         resultData = GetData("", "semester", selection.Key);
+
+
                         NumberList(resultData, "2");
                         foreach(var item1 in resultData)
                         {
@@ -2637,26 +2786,30 @@ namespace CamemisOffLine.Windows
                         }
                         if (!File.Exists(filePath + "\\" + classId + " " + nameSemester + ".txt"))
                         {
-                            foreach (var item1 in resultData)
+                            try
                             {
-                                item1.localProfileLink = filePath + "\\" + item1.profileMedia.id + ".jpg";
-                                moralities1.Add(new Morality
+                                foreach (var item1 in resultData)
                                 {
-                                    number = item1.numbers,
-                                    avg_score = item1.result_semester.avg_score,
-                                    gender = item1.gender,
-                                    id = item1.result_semester.id,
-                                    name = item1.name,
-                                    rank = item1.result_semester.rank,
-                                    bangkeun_phal = item1.result_semester.bangkeun_phal,
-                                    morality = item1.result_semester.morality,
-                                    health = item1.result_semester.health,
-                                    grading = item1.result_semester.grading,
-                                    profile = item1.localProfileLink
-                                });
+                                    item1.localProfileLink = filePath + "\\" + item1.profileMedia.id + ".jpg";
+                                    moralities1.Add(new Morality
+                                    {
+                                        number = item1.numbers,
+                                        avg_score = item1.result_semester.avg_score,
+                                        gender = item1.gender,
+                                        id = item1.result_semester.id,
+                                        name = item1.name,
+                                        rank = item1.result_semester.rank,
+                                        bangkeun_phal = item1.result_semester.bangkeun_phal,
+                                        morality = item1.result_semester.morality,
+                                        health = item1.result_semester.health,
+                                        grading = item1.result_semester.grading,
+                                        profile = item1.localProfileLink
+                                    });
+                                }
+                                date = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+                                moralities = moralities1;
                             }
-                            date = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
-                            moralities = moralities1;
+                            catch { }
                         }
                         else
                         {
@@ -2665,6 +2818,7 @@ namespace CamemisOffLine.Windows
                             date = JObject.Parse(responeString).ToObject<ListMorality>().date;
                         }
                         txtDate.Text = "កាលបរិច្ឆេទ​ : " + date;
+                        txtDate.Visibility = Visibility.Visible;
                         DGSemester.ItemsSource = null;
                         DGSemesterExam.ItemsSource = null;
                         DGSemesterClass.ItemsSource = null;
@@ -2672,15 +2826,127 @@ namespace CamemisOffLine.Windows
                         DGSemesterExam.ItemsSource = resultData;
                         DGSemesterClass.ItemsSource = moralities.OrderBy(s => s.rank);
                         loading.Close();
-                        this.Opacity = 0.5;
-                        message.ShowDialog();
-                        this.Opacity = 1;
+                        //this.Opacity = 0.5;
+                        //message.ShowDialog();
+                        //this.Opacity = 1;
                         tabcontrolLearn1.SelectedIndex = 2;
                         Selectresult.Visibility = Visibility.Visible;
                     }
                     catch
                     {
-                        DGMonthlyResult.ItemsSource = null;
+                        DGSemester.ItemsSource = null;
+                        DGSemesterExam.ItemsSource = null;
+                        DGSemesterClass.ItemsSource = null;
+                        btnApproved.Visibility = Visibility.Collapsed;
+                        btnDeleteApproved.Visibility = Visibility.Collapsed;
+                        btnCalculate.Visibility = Visibility.Visible;
+                        loading.Close();
+                        tabcontrolLearn1.SelectedIndex = 0;
+                        Selectresult.Visibility = Visibility.Collapsed;
+                        lblErrandSelect.Content = Properties.Langs.Lang.noresultdata;
+                    }
+                    Selectresult.Visibility = Visibility.Visible;
+                }
+                else if(selection.Key.Equals("លទ្ធផលប្រចាំឆ្នាំ"))
+                {
+                    
+                    btnExamSemester.Visibility = Visibility.Collapsed;
+                    btnResultSemester.Visibility = Visibility.Collapsed;
+                    btnResultYear.Visibility = Visibility.Visible;
+                    await GetApprovedAsync(classId, "", "3", selection.Value);
+                    if(Properties.Settings.Default.role == "3")
+                    {
+                        btnApproved.Visibility = Visibility.Collapsed;
+                        btnDeleteApproved.Visibility = Visibility.Collapsed;
+                        btnCalculate.Visibility = Visibility.Collapsed;
+                    }
+                    title = "year";
+                    type = "3";
+                    txtTitleMonth.Text = selection.Key;
+                    btnSaveSemester.Visibility = Visibility.Collapsed;
+                    btnPostSemester.Visibility = Visibility.Collapsed;
+                    MessageBoxControl message = new MessageBoxControl();
+                    Loading loading = new Loading();
+                    tabcontrolLearn1.SelectedIndex = 2;
+                    Selectresult.Visibility = Visibility.Collapsed;
+                    resultData = new List<StudentMonthlyResult>();
+                    try
+                    {
+                        string respone = "", date = "";
+
+                        nameSemester = selection.Key;
+                        term = "";
+                        message.title = "ដំណឹង";
+                        message.discription = "ទាញទិន្នន័យបានជោគជ័យ";
+                        message.buttonType = 2;
+                        loading.Show();
+                        Selectresult.Visibility = Visibility.Collapsed;
+                        tabcontrolLearn1.SelectedIndex = 1;
+
+                        resultData = GetData("", "Year");
+
+
+                        NumberList(resultData.OrderBy(s=>s.result_yearly.rank).ToList(), "4");
+                        foreach (var item1 in resultData)
+                        {
+                            if (item1.profileMedia.id == null)
+                                id = item1.student_id;
+                            else
+                                id = item1.profileMedia.id;
+                            item1.localProfileLink = filePath + "\\" + id + ".jpg";
+                        }
+                        if (!File.Exists(filePath + "\\" + classId + " " + nameSemester + ".txt"))
+                        {
+                            try
+                            {
+                                foreach (var item1 in resultData)
+                                {
+                                    item1.localProfileLink = filePath + "\\" + item1.profileMedia.id + ".jpg";
+                                    moralities1.Add(new Morality
+                                    {
+                                        number = item1.numbers,
+                                        avg_score = item1.result_yearly.avg_score,
+                                        gender = item1.gender,
+                                        id = item1.result_yearly.id,
+                                        name = item1.name,
+                                        rank = item1.result_yearly.rank,
+                                        bangkeun_phal = item1.result_yearly.bangkeun_phal,
+                                        morality = item1.result_yearly.morality,
+                                        health = item1.result_yearly.health,
+                                        grading = item1.result_yearly.grading,
+                                        profile = item1.localProfileLink
+                                    });
+                                }
+                                date = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+                                moralities = moralities1.OrderBy(s=>s.rank).ToList();
+                            }
+                            catch { }
+                        }
+                        else
+                        {
+                            var responeString = File.ReadAllText(filePath + "\\" + classId + " " + nameSemester + ".txt");
+                            moralities = JObject.Parse(responeString).ToObject<ListMorality>().data;
+                            date = JObject.Parse(responeString).ToObject<ListMorality>().date;
+                        }
+                        txtDate.Text = "កាលបរិច្ឆេទ​ : " + date;
+                        txtDate.Visibility = Visibility.Visible;
+                        DGYear.ItemsSource = null;
+                        DGYearClass.ItemsSource = null;
+                        DGYear.ItemsSource = resultData.OrderBy(s=>s.result_yearly.rank);
+                        DGYearClass.ItemsSource = moralities;
+                        loading.Close();
+                        //this.Opacity = 0.5;
+                        //message.ShowDialog();
+                        //this.Opacity = 1;
+                        tabcontrolLearn1.SelectedIndex = 3;
+                        Selectresult.Visibility = Visibility.Visible;
+                    }
+                    catch
+                    {
+                        DGYear.ItemsSource = null;
+                        btnApproved.Visibility = Visibility.Collapsed;
+                        btnDeleteApproved.Visibility = Visibility.Collapsed;
+                        btnCalculate.Visibility = Visibility.Visible;
                         loading.Close();
                         tabcontrolLearn1.SelectedIndex = 0;
                         Selectresult.Visibility = Visibility.Collapsed;
@@ -2690,7 +2956,15 @@ namespace CamemisOffLine.Windows
                 }
                 else
                 {
+                    await GetApprovedAsync(classId, DateChange.checkMonthString(selection.Key).ToString(), "1", selection.Value);
+                    if (Properties.Settings.Default.role == "3")
+                    {
+                        btnApproved.Visibility = Visibility.Collapsed;
+                        btnDeleteApproved.Visibility = Visibility.Collapsed;
+                        btnCalculate.Visibility = Visibility.Collapsed;
+                    }
                     title = "month";
+                    type = "1";
                     txtTitleMonth.Text = "លទ្ធផលប្រចាំ​ ខែ" + selection.Key;
                     btnSaveSemester.Visibility = Visibility.Collapsed;
                     btnPostSemester.Visibility = Visibility.Collapsed;
@@ -2733,9 +3007,10 @@ namespace CamemisOffLine.Windows
                         DGMonthlyResult.ItemsSource = null;
                         DGMonthlyResult.ItemsSource = resultData;
                         loading.Close();
-                        this.Opacity = 0.5;
-                        message.ShowDialog();
-                        this.Opacity = 1;
+                        //this.Opacity = 0.5;
+                        //message.ShowDialog();
+                        //this.Opacity = 1;
+                        txtDate.Text = "";
                         Selectresult.Visibility = Visibility.Collapsed;
                     }
                     catch
@@ -2745,6 +3020,9 @@ namespace CamemisOffLine.Windows
                         tabcontrolLearn1.SelectedIndex = 0;
                         Selectresult.Visibility = Visibility.Collapsed;
                         lblErrandSelect.Content = Properties.Langs.Lang.noresultdata;
+                        btnApproved.Visibility = Visibility.Collapsed;
+                        btnDeleteApproved.Visibility = Visibility.Collapsed;
+                        btnCalculate.Visibility = Visibility.Visible;
                     }
                 }
             }
@@ -2762,49 +3040,102 @@ namespace CamemisOffLine.Windows
             {
                 bitmap.Save(filePath + "\\" + filename + ".jpg", format);
             }
-
             stream.Flush();
             stream.Close();
             client.Dispose();
-        }
-        //-------------------Save Data in local---------------------------
+        }        //-------------------Save Data in local---------------------------
         private async Task<string> GetMonthlyResultFormApiAsync(string use = "use")
         {
             Loading loading = new Loading();
             //----------------AccessUrl and Token---------------------------
             string accessUrl = Properties.Settings.Default.acessUrl;
             string token = Properties.Settings.Default.Token, id = "";
-
             //---------------------------------------------------------------
             var months = Properties.Settings.Default.monthofTheAcademyYear;
+            List<StudentMonthlyResult> photo = new List<StudentMonthlyResult>();
+            Thread t = new Thread(() => downloadPicture(photo));
             var obj = JObject.Parse(months).ToObject<TimesButton>().data;
             int time = 1;
             string responeMonth = "", reponseSemester = "", reponseYear = "", encryptionString = "", encryptionStringSemester = "", encryptionStringYear = "", photos = "";
             loading.Show();
             if (internet && Teacher.InternetChecker())
             {
-                foreach (var item in obj)
+                Console.WriteLine("Thread:-----------" + Thread.CurrentThread.ManagedThreadId);
+                await Task.Run(async () => 
                 {
-                    foreach (var month in item.months)
+                    foreach (var item in obj)
                     {
-                        responeMonth += month.month + "|";
-                        responeMonth += await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/monthly-result?month=" + month.month + "&term=" + item.semester, token);
-                        responeMonth += "*";
-                        if (time == 1)
+                        foreach (var month in item.months)
                         {
-                            reponseSemester = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/semester-result?term=" + "FIRST_SEMESTER", token);
-                            reponseYear = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/yearly-result", token) + "|" + DateTime.Now.ToString();
-                            photos = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/monthly-result?month=" + month.month + "&term=" + item.semester, token);
-                            time++;
+                            responeMonth += month.month + "|";
+                            responeMonth += await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/monthly-result?month=" + month.month + "&term=" + item.semester, token);
+                            responeMonth += "*";
+                            if (time == 1)
+                            {
+                                reponseSemester = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/semester-result?term=" + "FIRST_SEMESTER", token);
+                                reponseYear = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/yearly-result", token) + "|" + DateTime.Now.ToString();
+                                photos = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/monthly-result?month=" + month.month + "&term=" + item.semester, token);
+                                photo = JObject.Parse(photos).ToObject<StudentMonthlyResultData>().data;
+                                if (t.IsAlive)
+                                {
+                                    
+                                    t.Abort();
+                                    t.IsBackground = true;
+                                    t.Start();
+                                }
+                                else
+                                {
+                                    t.IsBackground = true;
+                                    t.Start();
+                                }
+                                time++;
+                            }
+                            else if (time == 2)
+                            {
+                                reponseSemester += "|";
+                                reponseSemester += await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/semester-result?term=" + "SECOND_SEMESTER", token);
+                                time++;
+                            }
                         }
-                        else if (time == 2)
-                        {
-                            reponseSemester += "|";
-                            reponseSemester += await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/semester-result?term=" + "SECOND_SEMESTER", token);
-                            time++;
-                        }
+                        Console.WriteLine("Done");
                     }
-                }
+                    try
+                    {
+                         //await Task.Run(() => downloadPicture(photo));
+                    }
+                    catch
+                    {
+
+                    }
+                    encryptionString = EncodeTo64(responeMonth);
+                    encryptionStringSemester = EncodeTo64(reponseSemester);
+                    encryptionStringYear = EncodeTo64(reponseYear);
+                    GC.Collect();
+                    using (StreamWriter writer = new StreamWriter(filePath + "\\" + classId + ".txt"))
+                    {
+                        writer.WriteLine(encryptionString);
+                    }
+                    GC.Collect();
+                    using (StreamWriter writer = new StreamWriter(filePath + "\\" + "semester" + classId + ".txt"))
+                    {
+                        writer.WriteLine(encryptionStringSemester);
+                    }
+                    GC.Collect();
+                    using (StreamWriter writer = new StreamWriter(filePath + "\\" + "Year" + classId + ".txt"))
+                    {
+                        writer.WriteLine(encryptionStringYear);
+                    }
+                    GC.Collect();
+
+                    foreach (var i in photo.Take(1))
+                    {
+                        if (i.profileMedia.id == null)
+                            id = i.student_id;
+                        else
+                            id = i.profileMedia.id;
+                    }
+                });
+                
             }
             else
             {
@@ -2812,104 +3143,30 @@ namespace CamemisOffLine.Windows
                 return null;
             }
             time = 1;
-            encryptionString = EncodeTo64(responeMonth);
-            encryptionStringSemester = EncodeTo64(reponseSemester);
-            encryptionStringYear = EncodeTo64(reponseYear);
-            GC.Collect();
-            using (StreamWriter writer = new StreamWriter(filePath + "\\" + classId + ".txt"))
-            {
-                writer.WriteLine(encryptionString);
-            }
-            GC.Collect();
-            using (StreamWriter writer = new StreamWriter(filePath + "\\" + "semester" + classId + ".txt"))
-            {
-                writer.WriteLine(encryptionStringSemester);
-            }
-            GC.Collect();
-            using (StreamWriter writer = new StreamWriter(filePath + "\\" + "Year" + classId + ".txt"))
-            {
-                writer.WriteLine(encryptionStringYear);
-            }
-            GC.Collect();
-            var photo = JObject.Parse(photos).ToObject<StudentMonthlyResultData>().data;
-
-            foreach (var i in photo.Take(1))
-            {
-                if (i.profileMedia.id == null)
-                    id = i.student_id;
-                else
-                    id = i.profileMedia.id;
-            }
-
-            try
-            {
-                if (use == "use")
-                {
-                    if (IsImageHave(id))
-                    {
-                        MessageBoxControl message = new MessageBoxControl();
-                        message.title = "ដំណឹង";
-                        message.discription = "តើចង់កែប្រែរូបដែរមានហើយឬទេ?";
-                        this.Opacity = 0.5;
-                        message.ShowDialog();
-                        this.Opacity = 1;
-                        if (message.result == 1)
-                        {
-                            foreach (var item in photo)
-                            {
-                                if (time == 1)
-                                {
-                                    SaveImage(item.instructor.profileMedia.file_name, ImageFormat.Jpeg, item.instructor.profileMedia.file_show);
-                                    time++;
-                                }
-                                if (item.profileMedia.id == null)
-                                    id = item.student_id;
-                                else
-                                    id = item.profileMedia.id;
-                                SaveImage(id, ImageFormat.Jpeg, item.profileMedia.file_show);
-                                GC.Collect();
-                                item.localProfileLink = filePath + "\\" + id + ".jpg";
-                            }
-                        }
-                        else
-                        {
-                            foreach (var item in photo)
-                            {
-                                if (item.profileMedia.id == null)
-                                    id = item.student_id;
-                                else
-                                    id = item.profileMedia.id;
-                                item.localProfileLink = filePath + "\\" + id + ".jpg";
-                            }
-                        }
-                    }
-                    else
-                    {
-                        foreach (var item in photo)
-                        {
-                            if (time == 1)
-                            {
-                                SaveImage(item.instructor.profileMedia.file_name, ImageFormat.Jpeg, item.instructor.profileMedia.file_show);
-                                time++;
-                            }
-                            if (item.profileMedia.id == null)
-                                id = item.student_id;
-                            else
-                                id = item.profileMedia.id;
-                            SaveImage(id, ImageFormat.Jpeg, item.profileMedia.file_show);
-                            GC.Collect();
-                            item.localProfileLink = filePath + "\\" + id + ".jpg";
-                        }
-                    }
-                }
-            }
-            catch
-            {
-                loading.Close();
-                return encryptionString;
-            }
             loading.Close();
             return encryptionString;
+
+        }
+        private async Task downloadPicture(List<StudentMonthlyResult> photo)
+        {
+            Console.WriteLine("Thread:-----------" + Thread.CurrentThread.ManagedThreadId);
+            string id = "";
+            foreach (var item in photo)
+            {
+                if (time == 1)
+                {
+                    SaveImage(item.instructor.profileMedia.file_name, ImageFormat.Jpeg, item.instructor.profileMedia.file_show);
+                    time++;
+                }
+                if (item.profileMedia.id == null)
+                    id = item.student_id;
+                else
+                    id = item.profileMedia.id;
+                SaveImage(id, ImageFormat.Jpeg, item.profileMedia.file_show);
+                GC.Collect();
+                item.localProfileLink = filePath + "\\" + id + ".jpg";
+            }
+            Console.WriteLine("Done");
         }
         //----------------------------------------------------------------
         //----------------------Get Data from local-----------------------
@@ -3011,18 +3268,357 @@ namespace CamemisOffLine.Windows
             } 
         }
 
+        private async void btnApproved_Click(object sender, RoutedEventArgs e)
+        {
+            Loading load = new Loading();
+            this.IsEnabled = false;
+            load.Show();
+            string accessUrl = Properties.Settings.Default.acessUrl;
+            string token = Properties.Settings.Default.Token;
+            MessageBoxControl message = new MessageBoxControl();
+            if (Teacher.InternetChecker() == true && internet)
+            {
+                message.title = "ដំណឹង";
+                message.discription = "តើអ្នកពិតជាចង់ធ្វើការដាក់ស្នើមែនទេ?";
+                this.Opacity = 0.5;
+                message.ShowDialog();
+                this.Opacity = 1;
+                if (message.result == 1)
+                {
+                    using (HttpClient client = new HttpClient())
+                    {
+                        client.DefaultRequestHeaders.Accept.Add(
+                       new MediaTypeWithQualityHeaderValue("application/json"));
+                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                        using (HttpResponseMessage res = client.PostAsJsonAsync(accessUrl + "/academic/" + classId + "/request-approve-learning", new PostRequestApproved {month = months,term = term,type=type}).Result)
+                        {
+                            using (HttpContent content = res.Content)
+                            {
+                                string datas = await content.ReadAsStringAsync();
+                                var obj = JObject.Parse(datas).ToObject<ApprovedLearningResult>();
+                                if(obj.data.is_submitted=="1")
+                                {
+                                    btnDeleteApproved.Visibility = Visibility.Visible;
+                                    btnApproved.Visibility = Visibility.Collapsed;
+                                }
+                                else
+                                {
+                                    btnDeleteApproved.Visibility = Visibility.Collapsed;
+                                    btnApproved.Visibility = Visibility.Visible;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                message.title = "អ៊ីនធឺណែត";
+                message.discription = "មិនមានការតភ្ជាប់អ៊ីនធឺណែត";
+                message.buttonType = 2;
+                message.Owner = this;
+                this.Opacity = 0.5;
+                message.ShowDialog();
+                this.Opacity = 1;
+            }
+            this.IsEnabled = true;
+            load.Close();
+        }
+
+        private async void btnCalculate_Click(object sender, RoutedEventArgs e)
+        {
+            Loading load = new Loading();
+            this.IsEnabled = false;
+            load.Show();
+            string accessUrl = Properties.Settings.Default.acessUrl;
+            string token = Properties.Settings.Default.Token;
+            string url = "";
+
+            if(type=="1")
+            {
+                url =  accessUrl + "/academic/" + classId + "/generate-montly-result";
+            }
+            else if(type=="2")
+            {
+                url = accessUrl + "/academic/" + classId + "/generate-semester-result";
+               
+            }
+            else if(type=="3")
+            {
+                url = accessUrl + "/academic/" + classId + "/generate-yearly-result";
+            }
+            MessageBoxControl message = new MessageBoxControl();
+            if (Teacher.InternetChecker() == true && internet)
+            {
+                message.title = "ដំណឹង";
+                message.discription = "តើអ្នកពិតជាចង់ធ្វើការគណនាស្មែនទេ?";
+                this.Opacity = 0.5;
+                message.ShowDialog();
+                this.Opacity = 1;
+                if (message.result == 1)
+                {
+                    using (HttpClient client = new HttpClient())
+                    {
+                        client.DefaultRequestHeaders.Accept.Add(
+                       new MediaTypeWithQualityHeaderValue("application/json"));
+                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                        using (HttpResponseMessage res = client.PostAsJsonAsync(url, new PostCalculate { month = months, semester=term }).Result)
+                        {
+                            using (HttpContent content = res.Content)
+                            {
+                                string datas = await content.ReadAsStringAsync();
+                                var obj = JObject.Parse(datas).ToObject<ApprovedLearningResult>();
+                                if(obj.status=="True")
+                                {
+                                    await GetMonthlyResultFormApiAsync();
+                                    cbSelectResultMonth_SelectionChanged(senderCombo, ev);
+                                }
+                                else
+                                {
+                                    message.title = "ដំណឹង";
+                                    message.discription = "ពិន្ទុគណនាមិនបានជោគជ័យ";
+                                    message.buttonType = 2;
+                                    message.Owner = this;
+                                    this.Opacity = 0.5;
+                                    message.ShowDialog();
+                                    this.Opacity = 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                message.title = "អ៊ីនធឺណែត";
+                message.discription = "មិនមានការតភ្ជាប់អ៊ីនធឺណែត";
+                message.buttonType = 2;
+                message.Owner = this;
+                this.Opacity = 0.5;
+                message.ShowDialog();
+                this.Opacity = 1;
+            }
+            this.IsEnabled = true;
+            load.Close();
+        }
+
+        private void btnResultYear_Click(object sender, RoutedEventArgs e)
+        {
+            tabcontrolLearn1.SelectedIndex = 3;
+       }
+
+        private void btnPrintresultStu_Click(object sender, RoutedEventArgs e)
+        {
+            List<StudentMonthlyResult> results = new List<StudentMonthlyResult>();
+            if (type == "1")
+            {
+                results = resultData.OrderBy(r => r.result_monthly.rank).ToList();
+            }
+            else if (type == "2")
+            {
+                results = resultData.OrderBy(r => r.result_semester.rank).ToList();
+            }
+            else if (type == "3")
+            {
+                results = resultData.OrderBy(r => r.result_yearly.rank).ToList();
+            }
+            else if(type=="4")
+            {
+                results = resultData.OrderBy(r => r.result_semester_exam.rank).ToList();
+            }
+            try
+            {
+                string title = "";
+                if (type == "1")
+                    title = "month";
+                else if (type == "2")
+                    title = "semester";
+                else if(type=="4")
+                    title = "exam";
+                else if (type=="3")
+                    title = "year";
+                MonthlyResult monthlyResult = new MonthlyResult(results, title, titleYear);
+                monthlyResult.Show();
+            }
+            catch
+            {
+                MessageBox.Show("ទិន្នន័យមិនគ្រប់គ្រាន់ក្នុងការបោះពុម្ភ", "ប្រុងប្រយ័ត", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        private void btnPrintAllSub_Click(object sender, RoutedEventArgs e)
+        {
+            string title = "";
+            Loading loading = new Loading();
+            if (type=="1")
+            {
+                title = "month";
+                AllSubMonthlyResult result = new AllSubMonthlyResult(true, resultData, title, titleYear);
+                loading.Show();
+                this.IsEnabled = false;
+                result.Show();
+                loading.Close();
+                this.IsEnabled = true;
+            }
+
+            else if (type=="2")
+            {
+                title = "semester";
+                AllSubMonthlyResult result = new AllSubMonthlyResult(true, resultData.OrderBy(r => r.result_semester.rank).ToList(), title, titleYear);
+                loading.Show();
+                this.IsEnabled = false;
+                result.Show();
+                loading.Close();
+                this.IsEnabled = true;
+            }
+        }
+
+        private void btnHonorList_Click(object sender, RoutedEventArgs e)
+        {
+            List<StudentMonthlyResult> topStudent = new List<StudentMonthlyResult>();
+            string schoolName = Properties.Settings.Default.schoolName;
+            string respone = Properties.Settings.Default.studentMonthlyResult;
+            string teacher = "", title = "";
+            if (type=="1")
+            {
+                foreach (var item in resultData.OrderBy(r => r.result_monthly.rank))
+                {
+                    if (item.result_monthly.rank <= 5)
+                    {
+                        topStudent.Add(item);
+                        teacher = item.instructor.name;
+                    }
+                }
+                title = "month";
+            }
+            else if (type=="2")
+            {
+                foreach (var item in resultData.OrderBy(r => r.result_semester.rank))
+                {
+                    if (item.result_semester.rank <= 5)
+                    {
+                        topStudent.Add(item);
+                        teacher = item.instructor.name;
+                    }
+                }
+                title = "semester";
+            }
+            else if (type=="3")
+            {
+                foreach (var item in resultData.OrderBy(r => r.result_yearly.rank))
+                {
+                    if (item.result_yearly.rank <= 5)
+                    {
+                        topStudent.Add(item);
+                        teacher = item.instructor.name;
+                    }
+                }
+                title = "year";
+            }
+            HonoraryList honorary = new HonoraryList(topStudent, schoolName, teacher, title, titleYear);
+            honorary.Owner = this;
+            honorary.ShowDialog();
+        }
+        private void printTranscriptByStudentInOne_Click(object sender, RoutedEventArgs e)
+        {
+            string title = "";
+            if (type=="1")
+                title = "month";
+            else if (type=="2")
+                title = "semester";
+            this.Opacity = 0.5;
+            ShowListStudentToPrint show = new ShowListStudentToPrint(resultData, title, yearTitle: titleYear);
+            show.Owner = this;
+            show.ShowDialog();
+            this.Opacity = 1;
+        }
+
+        private void printClasscify_Click(object sender, RoutedEventArgs e)
+        {
+            this.IsEnabled = false;
+            Classification classification = new Classification(classId, term, YearSelection, ping);
+            classification.Show();
+            this.IsEnabled = true;
+        }
+
+        private async void btnDeleteApproved_Click(object sender, RoutedEventArgs e)
+        {
+            Loading load = new Loading();
+            this.IsEnabled = false;
+            load.Show();
+            string accessUrl = Properties.Settings.Default.acessUrl;
+            string token = Properties.Settings.Default.Token;
+            MessageBoxControl message = new MessageBoxControl();
+            if (Teacher.InternetChecker() == true && internet)
+            {
+                message.title = "ដំណឹង";
+                message.discription = "តើអ្នកពិតជាចង់ធ្វើការលុបដាក់ស្នើមែនទេ?";
+                this.Opacity = 0.5;
+                message.ShowDialog();
+                this.Opacity = 1;
+                if (message.result == 1)
+                {
+                    if(type=="1")
+                    {
+                        await GetApprovedAsync(classId, DateChange.checkMonthString(monthName).ToString(), "1", term);
+                    }
+                    else if(type=="2")
+                    {
+                        await GetApprovedAsync(classId, "", "2", term);
+                    }
+                    using (HttpClient client = new HttpClient())
+                    {
+                        client.DefaultRequestHeaders.Accept.Add(
+                       new MediaTypeWithQualityHeaderValue("application/json"));
+                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                        using (HttpResponseMessage res = client.DeleteAsync(accessUrl + "/academic/"+classId+"/request-approve-learning/"+requestId).Result)
+                        {
+                            using (HttpContent content = res.Content)
+                            {
+                                string datas = await content.ReadAsStringAsync();
+                                var obj = JObject.Parse(datas).ToObject<ApprovedLearningResult>();
+                                if(obj.data.success=="True")
+                                {
+                                    btnDeleteApproved.Visibility = Visibility.Collapsed;
+                                    btnApproved.Visibility = Visibility.Visible;
+                                }
+                                else
+                                {
+                                    btnDeleteApproved.Visibility = Visibility.Visible;
+                                    btnApproved.Visibility = Visibility.Collapsed;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                message.title = "អ៊ីនធឺណែត";
+                message.discription = "មិនមានការតភ្ជាប់អ៊ីនធឺណែត";
+                message.buttonType = 2;
+                message.Owner = this;
+                this.Opacity = 0.5;
+                message.ShowDialog();
+                this.Opacity = 1;
+            }
+            this.IsEnabled = true;
+            load.Close();
+        }
+
         private void btnPrint_Click(object sender, RoutedEventArgs e)
         {
             List<StudentInformation> obejct = new List<StudentInformation>();
             try
             {
                 obejct = obj.data.OrderBy(s => int.Parse(s.rank)).ToList();
-            }catch
+            }
+            catch
             {
                 obejct = obj.data.ToList();
             }
             NumberList(obejct);
-            MonthlySubjectResult monthlySubject = new MonthlySubjectResult(obejct, title,label,titleYear);
+            MonthlySubjectResult monthlySubject = new MonthlySubjectResult(obejct, title, label, titleYear);
             monthlySubject.Show();
         }
 
@@ -3120,6 +3716,62 @@ namespace CamemisOffLine.Windows
             catch
             {
                 return null;
+            }
+        }
+        //----------------------------------------------------------------
+        //---------------------Approved-----------------------------------
+        private async Task GetApprovedAsync(string classId,string month,string type,string term)
+        {
+            string accessUrl = Properties.Settings.Default.acessUrl;
+            string token = Properties.Settings.Default.Token;
+            try
+            {
+                string respone = "";
+                if (internet && Teacher.InternetChecker())
+                {
+                    if (type == "1")
+                    {
+                        respone = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/get-approve-learning?type=" + type + "&month=" + month + "&term=" + term, token);                    
+                    }
+                    else if (type == "2")
+                    {
+                        respone = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/get-approve-learning?type=" + type + "&term=" + term, token);
+                    }
+                    else if(type=="3")
+                    {
+                        respone = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/get-approve-learning?type=" + type, token);
+                    }
+                    var obj = JObject.Parse(respone).ToObject<ApprovedLearningResult>().data;
+                    requestId = obj.id;
+                    if(obj.is_approved=="1")
+                    {
+                        btnCalculate.Visibility = Visibility.Collapsed;
+                        btnApproved.Visibility = Visibility.Collapsed;
+                        btnDeleteApproved.Visibility = Visibility.Collapsed;
+                    }
+                    else
+                    {
+                        btnCalculate.Visibility = Visibility.Visible;
+                        btnApproved.Visibility = Visibility.Visible;
+                        btnDeleteApproved.Visibility = Visibility.Collapsed;
+                        if (obj.is_submitted == "1")
+                        {
+                            btnApproved.Visibility = Visibility.Collapsed;
+                            btnDeleteApproved.Visibility = Visibility.Visible;
+                        }
+                        else
+                        {
+                            btnApproved.Visibility = Visibility.Visible;
+                            btnDeleteApproved.Visibility = Visibility.Collapsed;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                btnCalculate.Visibility = Visibility.Visible;
+                btnApproved.Visibility = Visibility.Visible;
+                btnDeleteApproved.Visibility = Visibility.Collapsed;
             }
         }
         //----------------------------------------------------------------

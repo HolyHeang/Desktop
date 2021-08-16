@@ -36,11 +36,12 @@ namespace Library
         public MonthlyResult result_monthly { get; set; }
         public List<MonthlyResultAllSubjectResult> all_subject_result { get; set; }
         public List<allSubjectSemesterExamResult> all_subject_semester_exam_result { get; set; }
+        public resultYearly result_yearly { get; set; }
     }
     public class resultYearly {
         public string id { get; set; }
         public string avg_score { get; set; }
-        public string rank { get; set; }
+        public int rank { get; set; }
         public string behavior { get; set; }
         public string teacher_comment { get; set; }
         public string recommendation { get; set; }
@@ -52,6 +53,11 @@ namespace Library
         public string letter_grade { get; set; }
         public string grade_points { get; set; }
         public string is_fail { get; set; }
+        public string morality { get; set; }
+        public string bangkeun_phal { get; set; }
+        public string health { get; set; }
+        public string color { get; set; }
+
     }
     public class allSubjectSemesterExamResult
     {
