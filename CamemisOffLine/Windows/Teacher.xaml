@@ -3540,19 +3540,19 @@
                                                             <TextBlock Text="{x:Static language:Lang.Grade}" FontSize="14" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 0 0 0" VerticalAlignment="Center"/>
                                                             <ComboBox Name="cmbGradeAttReportPrint" Text="{x:Static language:Lang.select_grade}" IsEditable="True" Style="{StaticResource combobox}" Height="40" HorizontalAlignment="Left" Width="200" Margin="10 0 0 0"  VerticalAlignment="Center" Padding="5 10 0 0"
                                                                           BorderThickness="1 2 1 1" BorderBrush="Black" materialDesign:HintAssist.Hint=" ជ្រើសរើស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ItemsSource="{Binding ItemsSource,ElementName=cmbGradeResultPrint}"
-                                                                          FontSize="14" SelectionChanged="cmbGradeResultPrint_SelectionChanged"/>
+                                                                          FontSize="14" SelectionChanged="cmbGradeAttReportPrint_SelectionChanged" IsEnabled="False"/>
                                                     </StackPanel>
                                                     <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
                                                             <TextBlock Text="{x:Static language:Lang._class}" FontSize="14" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 0 0 0" VerticalAlignment="Center"/>
                                                             <ComboBox Name="cmbClassAttReportPrint" Text="{x:Static language:Lang.select_class}" IsEditable="True" Style="{StaticResource combobox}" Height="40" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Width="200" VerticalAlignment="Center"  Margin="10 0 0 0" Padding="5 10 0 0"
                                                                           BorderThickness="1 2 1 1" BorderBrush="Black" materialDesign:HintAssist.Hint=" ជ្រើសរើស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="14" ItemsSource="{Binding ItemsSource,ElementName=cmbClassResultPrint}"
-                                                              SelectionChanged="cmbClassResultPrint_SelectionChanged"/>
+                                                              SelectionChanged="cmbClassAttReportPrint_SelectionChanged" IsEnabled="False"/>
                                                     </StackPanel>
                                                     <StackPanel Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center">
                                                         <TextBlock Text="{x:Static language:Lang.absent}" FontSize="14" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 0 0 0" VerticalAlignment="Center"/>
                                                         <ComboBox Name="cmbTypeAttReportPrint" Text="{x:Static language:Lang.please_select}" IsEditable="True" Style="{StaticResource combobox}" Height="40" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Width="200" VerticalAlignment="Center"  Margin="10 0 0 0" Padding="5 10 0 0"
                                                                           BorderThickness="1 2 1 1" BorderBrush="Black" materialDesign:HintAssist.Hint=" ជ្រើសរើស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="14"
-                                                              SelectionChanged="cmbClassResultPrint_SelectionChanged">
+                                                              SelectionChanged="cmbTypeAttReportPrint_SelectionChanged" IsEnabled="False">
                                                         </ComboBox>
                                                     </StackPanel>
                                                     </StackPanel>
@@ -4245,11 +4245,17 @@
                                                         <TextBlock Text="{x:Static language:Lang.school_year}" FontSize="14" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 0 0 0" VerticalAlignment="Center"/>
                                                         <ComboBox Name="cmbAcademicYearPostionPrint" Text="{x:Static language:Lang.Select_school_year}" IsEditable="True" Style="{StaticResource combobox}" Height="40" HorizontalAlignment="Left" Width="200" Margin="10 0 0 0"  VerticalAlignment="Center" Padding="5 10 0 0"
                                                                           BorderThickness="1 2 1 1" BorderBrush="Black" materialDesign:HintAssist.Hint=" ជ្រើសរើស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"
-                                                                          FontSize="14" SelectionChanged="cmbAcademicYearResultPrint_SelectionChanged" ItemsSource="{Binding ItemsSource,ElementName=cmbAcademicYearResultPrint}"/>
+                                                                          FontSize="14" SelectionChanged="cmbAcademicYearPostionPrint_SelectionChanged" ItemsSource="{Binding ItemsSource,ElementName=cmbAcademicYearResultPrint}"/>
                                                     </StackPanel>
+<<<<<<< HEAD
                                                     <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
                                                         <TextBlock Text="{x:Static language:Lang.Grade}" FontSize="14" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 0 0 0" VerticalAlignment="Center"/>
                                                             <ComboBox Name="cmbGradePostionPrint" Text="{x:Static language:Lang.select_grade}" IsEditable="True" Style="{StaticResource combobox}" Height="40" HorizontalAlignment="Left" Width="200" Margin="10 0 0 0"  VerticalAlignment="Center" Padding="5 10 0 0"
+=======
+                                                    <!--<StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                                                        <TextBlock Text="កម្រិត" FontSize="14" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 0 0 0" VerticalAlignment="Center"/>
+                                                        <ComboBox Name="cmbGradePostionPrint" Style="{StaticResource combobox}" Height="40" HorizontalAlignment="Left" Width="200" Margin="10 0 0 0"  VerticalAlignment="Center" Padding="5 10 0 0"
+>>>>>>> 83b37d9f0fe5b89f92191e4f2aadc4b7ff73073e
                                                                           BorderThickness="1 2 1 1" BorderBrush="Black" materialDesign:HintAssist.Hint=" ជ្រើសរើស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ItemsSource="{Binding ItemsSource,ElementName=cmbGradeResultPrint}"
                                                                           FontSize="14" SelectionChanged="cmbGradeResultPrint_SelectionChanged"/>
                                                     </StackPanel>
@@ -4258,8 +4264,12 @@
                                                             <ComboBox Name="cmbClassPostionPrint" Text="{x:Static language:Lang.please_select}" IsEditable="True" Style="{StaticResource combobox}" Height="40" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Width="200" VerticalAlignment="Center"  Margin="10 0 0 0" Padding="5 10 0 0"
                                                                           BorderThickness="1 2 1 1" BorderBrush="Black" materialDesign:HintAssist.Hint=" ជ្រើសរើស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="14"
                                                               SelectionChanged="cmbClassResultPrint_SelectionChanged"/>
+<<<<<<< HEAD
                                                     </StackPanel>
                                                     </StackPanel>
+=======
+                                                    </StackPanel>-->
+>>>>>>> 83b37d9f0fe5b89f92191e4f2aadc4b7ff73073e
                                                 </Grid>
                                                 <ItemsControl Name="PositionReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1500">
                                                     <ItemsControl.ItemTemplate>

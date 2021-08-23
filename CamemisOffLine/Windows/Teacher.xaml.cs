@@ -4138,7 +4138,7 @@ namespace CamemisOffLine
             m.title = Properties.Langs.Lang.Data;
             m.buttonType = 1;
             message.Owner = this;
-            if(item.id>=1&&item.id<=5)
+            if (item.id >= 1 && item.id <= 5)
             {
                 this.Opacity = 0.5;
                 message.title = Properties.Langs.Lang.print;
@@ -4193,7 +4193,7 @@ namespace CamemisOffLine
                 }
                 else if (message.result == 1 && item.id == 4)
                 {
-                    if(schoolYearId==""||level=="")
+                    if (schoolYearId == "" || level == "")
                     {
                         m.discription = Properties.Langs.Lang.Please_select_a_school_year_and_grade;
                         m.ShowDialog();
@@ -4209,32 +4209,45 @@ namespace CamemisOffLine
 
                 this.Opacity = 1;
             }
-            else if(item.id==8)
+            else if (item.id == 8)
             {
                 StudenPrintMonthlySemesterResult();
             }
-            else if(item.id==9)
+            else if (item.id == 9)
             {
                 StudentPrintMonthlySemesterTranscrip();
             }
-            else if(item.id==10)
+            else if (item.id == 10)
             {
                 StudentPrintHonoraryList();
             }
-            else if(item.id==11)
+            else if (item.id == 11)
             {
-                Classification classification = new Classification(classId, term, YearSelection,ping);
+                Classification classification = new Classification(classId, term, YearSelection, ping);
                 classification.Show();
+            }
+            else if (item.id == 16)
+            {
+
+                AttendanceReport attendance = new AttendanceReport(classId, month, yearTitle, studentClass);
+                attendance.Show();
+
             }
             else
             {
                 this.Opacity = 0.5;
+<<<<<<< HEAD
                 message.title = Properties.Langs.Lang.print;
                 message.discription = Properties.Langs.Lang.Function+ item.title +Properties.Langs.Lang.Under_construction;
+=======
+                message.title = "បោះពុម្ភ";
+                message.discription = "មុខងារ" + item.title + "កំពុងសាងសង់";
+>>>>>>> 83b37d9f0fe5b89f92191e4f2aadc4b7ff73073e
                 message.buttonType = 1;
                 message.ShowDialog();
                 this.Opacity = 1;
             }
+            Console.WriteLine(item.id);
         }
 
         private bool IsImageHave(string studentId)
@@ -4374,7 +4387,8 @@ namespace CamemisOffLine
                 }
                 cmbGradeResultPrint.IsEnabled = true;
                 cmbGradeResultPrint.ItemsSource = grade;
-
+                cmbGradeAttReportPrint.IsEnabled = true;
+                cmbGradeAttReportPrint.ItemsSource = grade;
             }
             catch { }
         }
@@ -4484,7 +4498,7 @@ namespace CamemisOffLine
                 year.Add(item.name);
             }
             cmbAcademicYearResultPrint.ItemsSource = year;
-            cmbAcademicYearStudentListPrint.ItemsSource = year;
+            cmbAcademicYearStudentListPrint.ItemsSource = year;           
             TitlePrint titlePrint = new TitlePrint();
             int id = 0;
 
@@ -4534,6 +4548,14 @@ namespace CamemisOffLine
                 }
                 list.Add(cards);
             }
+            var obj = JObject.Parse(Properties.Settings.Default.schoolAcademyYear).ToObject<YearofAcademy>().data;
+            List<string> year = new List<string>();
+            foreach (var item in obj)
+            {
+                year.Add(item.name);
+            }
+            cmbAcademicYearPostionPrint.ItemsSource = year;
+
             AdminReportListPrint.ItemsSource = list[0];
             AcademicReportListPrint.ItemsSource = list[1];
             PositionReportListPrint.ItemsSource = list[2];
@@ -4715,6 +4737,7 @@ namespace CamemisOffLine
             var button = sender as Button;
             var item = button.DataContext as CardPrint;
             MessageBoxControl message = new MessageBoxControl();
+<<<<<<< HEAD
             message.Owner = this;
             this.Opacity = 0.5;
             message.title = Properties.Langs.Lang.print;
@@ -4722,6 +4745,33 @@ namespace CamemisOffLine
             message.buttonType = 1;
             message.ShowDialog();
             this.Opacity = 1;
+=======
+            if(item.id==5)
+            {
+                this.Opacity = 0.5;
+                DistributionTeacher distribution = new DistributionTeacher(yearId,yearName);
+                distribution.Show();
+                this.Opacity = 1;
+            }
+            else if(item.id==3)
+            {
+                this.Opacity = 0.5;
+                DistributionStaffAcademy distribution = new DistributionStaffAcademy(yearId, yearName);
+                distribution.Show();
+                this.Opacity = 1;
+            }
+            else
+            {
+                message.Owner = this;
+                this.Opacity = 0.5;
+                message.title = "បោះពុម្ភ";
+                message.discription = "មុខងារ" + item.title + "កំពុងសាងសង់";
+                message.buttonType = 1;
+                message.ShowDialog();
+                this.Opacity = 1;
+            }
+            Console.WriteLine("Item : "+item.id);
+>>>>>>> 83b37d9f0fe5b89f92191e4f2aadc4b7ff73073e
         }
 
         //-----------------------------------------------------------
@@ -5081,6 +5131,105 @@ namespace CamemisOffLine
         {
             TeacherInformationExcel excel = new TeacherInformationExcel();
             excel.Show();
+        }
+        string yearId = "",yearName="";
+
+        private void cmbGradeAttReportPrint_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                cmbClassAttReportPrint.ItemsSource = null;
+                cmbMonthResultPrint.ItemsSource = null;
+                List<KeyValuePair<string, string>> ClassAndId = new List<KeyValuePair<string, string>>();
+                var item = sender as ComboBox;
+                var selection = item.SelectedItem;
+                var obj = JObject.Parse(Properties.Settings.Default.schoolAcademyYear).ToObject<YearofAcademy>().data.Where(y => y.name.Equals(YearSelection));
+                foreach (var items in obj)
+                {
+                    foreach (var grades in items.school_system)
+                    {
+                        foreach (var gradeName in grades.grade)
+                        {
+                            if (gradeName.name.Equals(selection))
+                            {
+                                foreach (var className in gradeName.children)
+                                {
+                                    ClassAndId.Add(new KeyValuePair<string, string>(className.name, className.id.ToString()));
+                                }
+                            }
+                        }
+                    }
+                }
+                cmbClassAttReportPrint.IsEnabled = true;
+                cmbClassAttReportPrint.ItemsSource = ClassAndId;
+                cmbClassAttReportPrint.DisplayMemberPath = "Key";
+                cmbClassAttReportPrint.SelectedValuePath = "Value";
+            }
+            catch { }
+        }
+
+        private async void cmbClassAttReportPrint_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                cmbTypeAttReportPrint.ItemsSource = null;
+                string accessUrl = Properties.Settings.Default.acessUrl;
+                TimesButton timesButton = new TimesButton();
+                var items = sender as ComboBox;
+                var selection = (KeyValuePair<string, string>)items.SelectedItem;
+                studentClass = selection.Key;
+                classId = selection.Value;
+                List<KeyValuePair<string, string>> button = new List<KeyValuePair<string, string>>();
+                if (internet && InternetChecker())
+                {
+                    var respone1 = await RESTApiHelper.GetAll(accessUrl, "/academic/" + selection.Value + "/grade-time-shift", token);
+                    timesButton = JObject.Parse(respone1).ToObject<TimesButton>();
+                    SaveAcademyMonth(respone1, schoolYearId);
+                }
+                else
+                {
+                    timesButton = GetAcademyFromLocal(schoolYearId);
+                }
+                foreach (var item in timesButton.data)
+                {
+                    foreach (var month in item.months)
+                    {
+                        button.Add(new KeyValuePair<string, string>(month.displayMonth, item.semester));
+                    }
+                }
+                button.Add(new KeyValuePair<string, string>("ប្រចាំឆ្នាំ", ""));
+                cmbTypeAttReportPrint.IsEnabled = true;
+                cmbTypeAttReportPrint.ItemsSource = button;
+                cmbTypeAttReportPrint.DisplayMemberPath = "Key";
+                cmbTypeAttReportPrint.SelectedValuePath = "Value";
+            }
+            catch { }
+        }
+
+        private void cmbTypeAttReportPrint_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                var items = sender as ComboBox;
+
+                var selection = (KeyValuePair<string, string>)items.SelectedItem;
+                studentMonth = selection.Key;
+                month = DateChange.checkMonthString(selection.Key).ToString();
+                items.BorderBrush = Brushes.Black;
+            }
+            catch { }
+        }
+
+        private void cmbAcademicYearPostionPrint_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var item = sender as ComboBox;
+            var selection = item.SelectedItem;
+            var obj = JObject.Parse(Properties.Settings.Default.schoolAcademyYear).ToObject<YearofAcademy>().data.Where(y => y.name.Equals(selection.ToString()));
+            foreach (var items in obj)
+            {
+                yearId = items.id;
+                yearName = items.name;
+            }
         }
 
         private async void StudentPrintHonoraryList()

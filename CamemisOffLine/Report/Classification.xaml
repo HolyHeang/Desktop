@@ -59,7 +59,7 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Orientation="Vertical" Grid.Column="0">
                         <Grid>
-                            <DataGrid Name="DGResult" Margin="10,20,10.4,-20.2" AutoGenerateColumns="False" RowHeight="45" BorderThickness="1 1 1 0" BorderBrush="Black" Background="White" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="25cm" CanUserAddRows="False" HorizontalScrollBarVisibility="Hidden">
+                            <DataGrid Name="DGResult" Margin="10,20,10.4,-20.2" AutoGenerateColumns="False" RowHeight="45" BorderThickness="1 1 1 0" BorderBrush="Black" Background="White" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="25cm" CanUserAddRows="False" HorizontalScrollBarVisibility="Hidden" SelectionChanged="DGResult_SelectionChanged">
                                 <DataGrid.Resources>
 
                                     <Style TargetType="DataGrid">

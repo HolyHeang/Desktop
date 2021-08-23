@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="AllStudentList.cs" />
     <Compile Include="ApprovedLearningResult.cs" />
+    <Compile Include="AttendanceData.cs" />
     <Compile Include="CardPrint.cs" />
     <Compile Include="DateChange.cs" />
     <Compile Include="DIYSubject.cs" />
@@ -57,6 +58,8 @@
     <Compile Include="GradeTime.cs" />
     <Compile Include="InputScore.cs" />
     <Compile Include="Instructor.cs" />
+    <Compile Include="ListMapteacherCode.cs" />
+    <Compile Include="ListTeacher.cs" />
     <Compile Include="MonthlyScoreExpire.cs" />
     <Compile Include="Morality.cs" />
     <Compile Include="PersonalDataLogin.cs" />
@@ -72,6 +75,8 @@
     <Compile Include="StatisticPassFail.cs" />
     <Compile Include="StatisticSubjectsGradingscale.cs" />
     <Compile Include="StudentMonthlyResultData.cs" />
+    <Compile Include="SubAttendanceClass.cs" />
+    <Compile Include="SubClassMapteacher.cs" />
     <Compile Include="Subject.cs" />
     <Compile Include="Teacher.cs" />
     <Compile Include="TimeShift.cs" />

@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CamemisOffLine.Report"
         mc:Ignorable="d"
-        Title="DistributionTeacher" Height="32cm" Width="21cm" Loaded="Window_Loaded" WindowState="Normal" ResizeMode="NoResize" MaxWidth="30cm" WindowStartupLocation="Manual">
-    <Grid>
-        <StackPanel Orientation="Vertical" Name="Grid" HorizontalAlignment="Center">
+        Title="DistributionTeacher" Height="32cm" Width="27cm" Loaded="Window_Loaded" WindowState="Normal" ResizeMode="NoResize" MaxWidth="28cm" WindowStartupLocation="Manual">
+    <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalContentAlignment="Center">
+        <StackPanel Orientation="Vertical" Name="Grid" HorizontalAlignment="Stretch">
             <Grid Name="Header" Margin="0 20 0 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1.5*"></ColumnDefinition>
@@ -20,7 +20,7 @@
                             <Image Source="/CamemisOffLine;component/Image/MoEYS.png" Height="100" VerticalAlignment="Top" HorizontalAlignment="Center"></Image>
 
                             <Label Name="lbllogoLeft" Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានី ភ្នំពេញ" Style="{DynamicResource Muol}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 15 0 0"></Label>
-                            
+
                             <Grid Margin="0,0,0,0">
                                 <Label Name="TitleSchool" Style="{DynamicResource Siemreap}" FontSize="13" Foreground="Black" Height="30" HorizontalAlignment="Center" Margin="0 0 0 0" VerticalAlignment="Center"></Label>
                             </Grid>
@@ -37,7 +37,7 @@
                             <Grid Margin="0 -8 0 0">
                                 <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="14" Margin="0 -5 0 0"></Label>
                             </Grid>
-                            
+
                         </StackPanel>
                     </Grid>
                 </Grid>
@@ -47,21 +47,19 @@
                     <TextBlock Name="lblMonth" Text="បញ្ជីបំណែងចែកគ្រូទទួលបន្ទុកថ្នាក់" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
                 </StackPanel>
             </Grid>
-            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 10 0 0">
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 10 0 0" Name="year">
                 <StackPanel Orientation="Horizontal">
                     <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="15" Content="ឆ្នាំសិក្សា" BorderBrush="White"/>
-                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="15" Content="2020-2021" BorderBrush="White"/>
+                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="15" Content="2020-2021" BorderBrush="White" Name="txtYear"/>
                 </StackPanel>
-                
+
             </Grid>
 
-            <Grid Name="Body" HorizontalAlignment="Center" MinWidth="21cm" Margin="0 5 0 0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0">
-                    <Grid>
-                        <DataGrid Margin="10 0 10 0" AutoGenerateColumns="False" RowHeight="40" BorderThickness="1 1 1 0" BorderBrush="Black" Background="White" FontSize="13" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="21cm" CanUserAddRows="False">
+            <Grid Name="Body" HorizontalAlignment="Center" MinWidth="26cm" Margin="0 5 0 0">
+                <StackPanel Orientation="Vertical" Height="auto">
+                    <Grid HorizontalAlignment="Stretch">
+                        
+                        <DataGrid Name="Data" AutoGenerateColumns="False" RowHeight="45" BorderThickness="1 1 1 0" BorderBrush="Black" Background="White" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="26cm" CanUserAddRows="False" HorizontalScrollBarVisibility="Hidden">
                             <DataGrid.Resources>
 
                                 <Style TargetType="DataGrid">
@@ -75,7 +73,7 @@
                                     <Setter Property="BorderBrush" Value="Black"/>
                                     <Setter Property="BorderThickness" Value="0 0 1 1"/>
                                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                                    <Setter Property="Height" Value="40"/>
+                                    <Setter Property="Height" Value="80"/>
                                     <Setter Property="FontFamily" Value="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                 </Style>
                                 <Style BasedOn="{StaticResource {x:Type DataGridRowHeader}}" TargetType="{x:Type DataGridRowHeader}">
@@ -85,9 +83,10 @@
                                 </Style>
                             </DataGrid.Resources>
 
+                            <!--//............................Number............................-->
                             <DataGrid.Columns>
 
-                                <DataGridTextColumn Header="លេខ" Width="0.5*" MinWidth="50" FontSize="15">
+                                <DataGridTextColumn Header="ល.រ" Width="0.6*" FontSize="15" MinWidth="60" Binding="{Binding number}">
                                     <DataGridTextColumn.ElementStyle>
                                         <Style TargetType="TextBlock">
                                             <Setter Property="Foreground" Value="Black"></Setter>
@@ -98,13 +97,12 @@
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
 
-                                <DataGridTextColumn Width="1.8*" Header="គ្រូទទួលបន្ទុក" MinWidth="180" FontSize="15">
-                                    
-                                    <DataGridTextColumn.ElementStyle>
 
+                                <!--//............................Name............................-->
+                                <DataGridTextColumn Header="គោត្តនាម​ នាម​" Width="1.5*" FontSize="15" MinWidth="150" Binding="{Binding name}">
+                                    <DataGridTextColumn.ElementStyle>
                                         <Style TargetType="TextBlock">
                                             <Setter Property="Foreground" Value="Black"></Setter>
-
                                             <Setter Property="FontWeight" Value="Thin"></Setter>
                                             <Setter Property="HorizontalAlignment" Value="Left"/>
                                             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -112,86 +110,89 @@
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
 
-                                <DataGridTextColumn Width="1*" MinWidth="100" Header="ភារកិច្ច" FontSize="15">
+                                <!--//............................Gender............................-->
+                                <DataGridTextColumn Header="ទទួលបន្ទុកថ្នាក់" Width="*" FontSize="15" MinWidth="100" Binding="{Binding class_name}">
                                     <DataGridTextColumn.ElementStyle>
-                                        <Style TargetType="TextBlock">
-                                            <Setter Property="Foreground" Value="{Binding color}"></Setter>
-                                            <Setter Property="FontWeight" Value="Thin"></Setter>
-                                            <Setter Property="HorizontalAlignment" Value="Center"/>
-                                            <Setter Property="VerticalAlignment" Value="Center"/>
-                                        </Style>
-                                    </DataGridTextColumn.ElementStyle>
-                                   
-                                </DataGridTextColumn>
-                                <DataGridTextColumn  Width="0.5*" Header="ភេទ" MinWidth="50" FontSize="15">
-                                    <DataGridTextColumn.ElementStyle>
-                                        <Style TargetType="TextBlock">
-                                            <Setter Property="Foreground" Value="{Binding color}"></Setter>
-                                            <Setter Property="FontWeight" Value="Thin"></Setter>
-                                            <Setter Property="HorizontalAlignment" Value="Center"/>
-                                            <Setter Property="VerticalAlignment" Value="Center"/>
-                                        </Style>
-                                    </DataGridTextColumn.ElementStyle>
-
-                                </DataGridTextColumn>
-                                <DataGridTextColumn Width="1*" Header="ថ្ងែខែឆ្នាំកំណើត" MinWidth="100" FontSize="15">
-
-                                    <DataGridTextColumn.ElementStyle>
-
                                         <Style TargetType="TextBlock">
                                             <Setter Property="Foreground" Value="Black"></Setter>
-
                                             <Setter Property="FontWeight" Value="Thin"></Setter>
                                             <Setter Property="HorizontalAlignment" Value="Center"/>
                                             <Setter Property="VerticalAlignment" Value="Center"/>
                                         </Style>
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn Width="1.5*" Header="លេខទូរស័ព្ទ" MinWidth="150" FontSize="13">
-
+                                <!--//............................Average............................-->
+                                <DataGridTextColumn Header="ភារកិច្ច" Width="1.2*" FontSize="15" MinWidth="120" Binding="{Binding mapCode}">
                                     <DataGridTextColumn.ElementStyle>
-
                                         <Style TargetType="TextBlock">
                                             <Setter Property="Foreground" Value="Black"></Setter>
-
                                             <Setter Property="FontWeight" Value="Thin"></Setter>
                                             <Setter Property="HorizontalAlignment" Value="Center"/>
                                             <Setter Property="VerticalAlignment" Value="Center"/>
                                         </Style>
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn Width="1.2*" Header="ទទួលបន្ទុក" MinWidth="143" FontSize="13">
-
+                                <!--//............................Classification............................-->
+                                <DataGridTextColumn Header="ភេទ" Width="0.7*" FontSize="15" MinWidth="70" Binding="{Binding gender_name}">
                                     <DataGridTextColumn.ElementStyle>
-
                                         <Style TargetType="TextBlock">
                                             <Setter Property="Foreground" Value="Black"></Setter>
-
                                             <Setter Property="FontWeight" Value="Thin"></Setter>
                                             <Setter Property="HorizontalAlignment" Value="Center"/>
                                             <Setter Property="VerticalAlignment" Value="Center"/>
                                         </Style>
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
-                               
+                                <!--//............................class............................-->
+                                <DataGridTextColumn Header="ថ្ងៃខែឆ្នាំកំណើត" Width="1.2*" FontSize="15" MinWidth="120" Binding="{Binding dob}">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Foreground" Value="Black"></Setter>
+                                            <Setter Property="FontWeight" Value="Thin"></Setter>
+                                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="លេខទូរស័ព្ទ" Width="1.2*" FontSize="15" MinWidth="120" Binding="{Binding phone}">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Foreground" Value="Black"></Setter>
+                                            <Setter Property="FontWeight" Value="Thin"></Setter>
+                                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="អាសយដ្ឋានអ៊ីមែល" Width="2.5*" FontSize="15" MinWidth="250" Binding="{Binding email}">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Foreground" Value="Black"></Setter>
+                                            <Setter Property="FontWeight" Value="Thin"></Setter>
+                                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
                             </DataGrid.Columns>
                         </DataGrid>
                     </Grid>
-                </Grid>
+                </StackPanel>
             </Grid>
             <Grid Name="Footer">
-                <Grid Margin="0 5 0 0">
+                <Grid Margin="0 0 0 0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
                     <Grid Grid.Column="0">
-                        <StackPanel Margin="0 30 0 0">
+                        <StackPanel Margin="0 20 0 0">
 
                             <Label Content="បានឃើញ និងឯកភាព" FontSize="15" HorizontalAlignment="Center" Margin=" 0 5 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
 
-                            <Label Content="នាយកសាលា" FontSize="14" HorizontalAlignment="Center" Margin=" 0 5 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light"></Label>
+                            <Label Content="នាយកសាលា" FontSize="15" HorizontalAlignment="Center" Margin=" 0 5 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light"></Label>
 
                         </StackPanel>
                     </Grid>
@@ -226,5 +227,5 @@
             </Grid>
             <Rectangle Height="100" Fill="Transparent"></Rectangle>
         </StackPanel>
-    </Grid>
+    </ScrollViewer>
 </Window>

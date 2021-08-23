@@ -367,6 +367,12 @@ namespace CamemisOffLine.Report
         {
             DGResult.ItemsSource = obj.OrderBy(s => s.rank);
         }
+
+        private void DGResult_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
         void PrintList(Document document)
         {
             string targetFile = System.IO.Path.GetTempFileName();
