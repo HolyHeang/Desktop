@@ -5,14 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CamemisOffLine.Windows"
         xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        xmlns:language="clr-namespace:CamemisOffLine.Properties.Langs"
         mc:Ignorable="d"
         Title="LoadingWidows" Height="600" Width="800" WindowState="Maximized" WindowStyle="None" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" AllowsTransparency="True" BorderThickness="1" Background="Transparent" IsEnabled="False">
     <Grid >
         <Grid Background="LightGray" Opacity="0.8">
         </Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"   FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black" FontWeight="Bold">កម្មវិធីកំពុងដំណើរការ</TextBlock>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"   FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black">សូមមេត្តារង់ចាំ</TextBlock>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"   FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black" FontWeight="Bold" Text="{x:Static language:Lang.Programs_running}"></TextBlock>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"   FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black" Text="{x:Static language:Lang.Please_wait}"></TextBlock>
             <Image Name="image" HorizontalAlignment="Center" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="/CamemisOffLine;component/Image/animation_640_kmyd9rg2.gif" Source="/CamemisOffLine;component/Image/animation_640_kmyd9rg2.gif" Height="80" VerticalAlignment="Center" Margin="0 20 0 0"></Image>
         </StackPanel>
     </Grid>

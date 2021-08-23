@@ -23,8 +23,8 @@ namespace CamemisOffLine.Component
         public string title { get; set; }
         public string discription { get; set; }
         public int buttonType { get; set; }
-        public string yes { get; set; } = "បាទ/ចាស";
-        public string no { get; set; } = "បោះបង់";
+        public string yes { get; set; } = Properties.Langs.Lang.yes;
+        public string no { get; set; } = Properties.Langs.Lang.cancel;
         public MessageBoxControl()
         {
             InitializeComponent();

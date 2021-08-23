@@ -2010,30 +2010,29 @@ namespace CamemisOffLine
         {
 
             Properties.Settings.Default.Language = "km-KH";
-            Properties.Settings.Default.Save();
-            System.Threading.Thread.CurrentThread.CurrentUICulture =
-            new System.Globalization.CultureInfo("km-KH");
+           
+           
             System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Properties.Settings.Default.Save();
             Application.Current.Shutdown();
         }
 
         private void English_Click_1(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.Language = "en-US";
-            Properties.Settings.Default.Save();
-            System.Threading.Thread.CurrentThread.CurrentUICulture =
-           new System.Globalization.CultureInfo("en-US");
+          
+           
             System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Properties.Settings.Default.Save();
             Application.Current.Shutdown();
         }
 
         private void Chinese_Click_1(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.Language = "zh-Hans";
-            Properties.Settings.Default.Save();
-            System.Threading.Thread.CurrentThread.CurrentUICulture =
-           new System.Globalization.CultureInfo("zh-Hans");
+           
             System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Properties.Settings.Default.Save();
             Application.Current.Shutdown();
 
         }
@@ -2041,10 +2040,10 @@ namespace CamemisOffLine
         private void Vietnam_Click_1(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.Language = "vi-VN";
-            Properties.Settings.Default.Save();
-            System.Threading.Thread.CurrentThread.CurrentUICulture =
-            new System.Globalization.CultureInfo("vi-VN");
+            
+          
             System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Properties.Settings.Default.Save();
             Application.Current.Shutdown();
         }
 
@@ -2178,8 +2177,9 @@ namespace CamemisOffLine
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxControl message = new MessageBoxControl();
-            message.title = "ព័ត៌មាន";
-            message.discription = "តើអ្នកពីតជាចង់ចាក់ចេញពី​ CAMEMIS DESKTOP​ មែនទេ?";
+            message.title = Properties.Langs.Lang.Information;
+            message.discription = Properties.Langs.Lang.Do_you_really_want_to_exit_CAMEMIS_DESKTOP_;
+
             this.IsEnabled = false;
             this.Opacity = 0.5;
             message.ShowDialog();
@@ -2189,7 +2189,7 @@ namespace CamemisOffLine
             if (message.result == 1)
             {
 
-                Properties.Settings.Default.checkLoginOrLogut = "logout";
+                Properties.Settings.Default.checkLoginOrLogut = Properties.Langs.Lang.logout;
                 Properties.Settings.Default.Save();
                 Login login = new Login();
                 this.Close();
@@ -2197,7 +2197,7 @@ namespace CamemisOffLine
             }
             else
             {
-                Properties.Settings.Default.checkLoginOrLogut = "login";
+                Properties.Settings.Default.checkLoginOrLogut = Properties.Langs.Lang.logout;
                 Properties.Settings.Default.Save();
             }
         }
@@ -2501,10 +2501,10 @@ namespace CamemisOffLine
                         else
                         {
                             MessageBoxControl message = new MessageBoxControl();
-                            message.title = "ព័ត៌មាន";
-                            message.discription = "តើអ្នកចង់ប្រើប្រាស់ទិន្នន័យមានសម្រាប់ ឬទិន្នន័យថ្មី?";
-                            message.yes = "ប្រើទិន្នន័យចាស់";
-                            message.no = "ប្រើទិន្នន័យថ្មី";
+                            message.title = Properties.Langs.Lang.Information;
+                            message.discription = Properties.Langs.Lang.Do_you_want_to_use_existing_data_for_or_new_data_;
+                            message.yes = Properties.Langs.Lang.Use_old_data;
+                            message.no = Properties.Langs.Lang.Use_new_data;
                             this.Opacity = 0.5;
                             message.ShowDialog();
                             this.Opacity = 1;
@@ -2600,7 +2600,7 @@ namespace CamemisOffLine
 
 
             tabStudentResult.SelectedIndex = 0;
-            LabelTitle.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title_select_year;
+            LabelTitle.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title;
 
             tvAcademy.ItemsSource = null;
             var cb = cbAcademyYear.SelectedValue;
@@ -2620,6 +2620,8 @@ namespace CamemisOffLine
             lbltitleMonth.Visibility = Visibility.Visible;
             btnStatistic.Visibility = Visibility.Visible;
             DGMonthlyResult.Visibility = Visibility.Visible;
+            Selectresult.Visibility = Visibility.Visible;
+
             checkStart = true;
             title = "semester";
             int girlTotal = 0;
@@ -2989,6 +2991,7 @@ namespace CamemisOffLine
                 lbltitleGrade.Content = "ឆ្នាំសិក្សា" + cbAcademyYear.SelectedValue.ToString();
                 yearTitle = cbAcademyYear.SelectedValue.ToString(); 
                 YearSelection = cbAcademyYear.SelectedValue.ToString();
+                LabelTitle.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title;
                 changeAcademyYear = true;
                 foreach(var item in obj)
                 {
@@ -4132,14 +4135,14 @@ namespace CamemisOffLine
             var item = button.DataContext as CardPrint;
             MessageBoxControl message = new MessageBoxControl();
             MessageBoxControl m = new MessageBoxControl();
-            m.title = "ទិន្នន័យ";
+            m.title = Properties.Langs.Lang.Data;
             m.buttonType = 1;
             message.Owner = this;
             if(item.id>=1&&item.id<=5)
             {
                 this.Opacity = 0.5;
-                message.title = "បោះពុម្ភ";
-                message.discription = "តើអ្នកចង់ប្រើមុខងារបោះពុម្ភ" + item.title + "?";
+                message.title = Properties.Langs.Lang.print;
+                message.discription = Properties.Langs.Lang.Do_you_want_to_use_the_print_function_ + item.title + "?";
                 message.ShowDialog();
                 this.Opacity = 1;
                 if (message.result == 1 && item.id == 1)
@@ -4147,7 +4150,7 @@ namespace CamemisOffLine
                     this.Opacity = 0.5;
                     if (schoolYearId == "")
                     {
-                        m.discription = "សូមជ្រើសរើសឆ្នាំសិក្សា";
+                        m.discription = Properties.Langs.Lang.Select_school_year;
                         m.ShowDialog();
                     }
                     else
@@ -4162,7 +4165,7 @@ namespace CamemisOffLine
                 {
                     if (schoolYearId == "" || classId == "")
                     {
-                        m.discription = "សូមជ្រើសរើសឆ្នាំសិក្សា និងថ្នាក់";
+                        m.discription = Properties.Langs.Lang.Please_select_a_school_year_and_class;
                         m.ShowDialog();
                     }
                     else
@@ -4177,7 +4180,7 @@ namespace CamemisOffLine
                 {
                     if (schoolYearId == "" || gradeId == "")
                     {
-                        m.discription = "សូមជ្រើសរើសឆ្នាំសិក្សា និងក្រុម";
+                        m.discription = Properties.Langs.Lang.Please_select_a_school_year_and_group;
                         m.ShowDialog();
                     }
                     else
@@ -4192,7 +4195,7 @@ namespace CamemisOffLine
                 {
                     if(schoolYearId==""||level=="")
                     {
-                        m.discription = "សូមជ្រើសរើសឆ្នាំសិក្សា និងកកម្រិត";
+                        m.discription = Properties.Langs.Lang.Please_select_a_school_year_and_grade;
                         m.ShowDialog();
                     }
                     else
@@ -4226,8 +4229,8 @@ namespace CamemisOffLine
             else
             {
                 this.Opacity = 0.5;
-                message.title = "បោះពុម្ភ";
-                message.discription = "មុខងារ"+ item.title +"កំពុងសាងសង់";
+                message.title = Properties.Langs.Lang.print;
+                message.discription = Properties.Langs.Lang.Function+ item.title +Properties.Langs.Lang.Under_construction;
                 message.buttonType = 1;
                 message.ShowDialog();
                 this.Opacity = 1;
@@ -4456,6 +4459,7 @@ namespace CamemisOffLine
                 studentMonth = selection.Key;
                 term = selection.Value;
                 items.BorderBrush = Brushes.Black;
+
             }
             catch { }
         }
@@ -4652,8 +4656,8 @@ namespace CamemisOffLine
                 btnCheck.IsChecked = false;
                 this.Opacity = 0.5;
                 MessageBoxControl message = new MessageBoxControl();
-                message.title = "អ៊ិនធឺណែត";
-                message.discription = "មិនមានការភ្ជាប់អ៊ិនធឺណែត";
+                message.title = Properties.Langs.Lang.Internet;
+                message.discription = Properties.Langs.Lang.No_internet_connection;
                 message.buttonType = 2;
                 message.Owner = this;
                 message.ShowDialog();
@@ -4713,8 +4717,8 @@ namespace CamemisOffLine
             MessageBoxControl message = new MessageBoxControl();
             message.Owner = this;
             this.Opacity = 0.5;
-            message.title = "បោះពុម្ភ";
-            message.discription = "មុខងារ" + item.title + "កំពុងសាងសង់";
+            message.title = Properties.Langs.Lang.print;
+            message.discription = Properties.Langs.Lang.Function + item.title + Properties.Langs.Lang.Under_construction;
             message.buttonType = 1;
             message.ShowDialog();
             this.Opacity = 1;
@@ -4765,8 +4769,8 @@ namespace CamemisOffLine
             MessageBoxControl message = new MessageBoxControl();
             if (Teacher.InternetChecker() == true && internet)
             {
-                message.title = "ដំណឹង";
-                message.discription = "តើអ្នកពិតជាចង់ធ្វើការដាក់ស្នើមែនទេ?";
+                message.title = Properties.Langs.Lang.Information;
+                message.discription = Properties.Langs.Lang.Do_you_really_want_to_submit;
                 this.Opacity = 0.5;
                 message.ShowDialog();
                 this.Opacity = 1;
@@ -4802,8 +4806,8 @@ namespace CamemisOffLine
             }
             else
             {
-                message.title = "អ៊ីនធឺណែត";
-                message.discription = "មិនមានការតភ្ជាប់អ៊ីនធឺណែត";
+                message.title = Properties.Langs.Lang.Internet;
+                message.discription = Properties.Langs.Lang.No_internet_connection;
                 message.buttonType = 2;
                 message.Owner = this;
                 this.Opacity = 0.5;
@@ -4839,8 +4843,8 @@ namespace CamemisOffLine
             MessageBoxControl message = new MessageBoxControl();
             if (Teacher.InternetChecker() == true && internet)
             {
-                message.title = "ដំណឹង";
-                message.discription = "តើអ្នកពិតជាចង់ធ្វើការគណនាស្មែនទេ?";
+                message.title = Properties.Langs.Lang.Information;
+                message.discription = Properties.Langs.Lang.Do_you_really_want_to_do_the_calculations;
                 this.Opacity = 0.5;
                 message.ShowDialog();
                 this.Opacity = 1;
@@ -4863,8 +4867,8 @@ namespace CamemisOffLine
                                 }
                                 else
                                 {
-                                    message.title = "ដំណឹង";
-                                    message.discription = "ពិន្ទុគណនាមិនបានជោគជ័យ";
+                                    message.title = Properties.Langs.Lang.Information;
+                                    message.discription = Properties.Langs.Lang.Calculated_scores_not_successful;
                                     message.buttonType = 2;
                                     message.Owner = this;
                                     this.Opacity = 0.5;
@@ -4878,8 +4882,8 @@ namespace CamemisOffLine
             }
             else
             {
-                message.title = "អ៊ីនធឺណែត";
-                message.discription = "មិនមានការតភ្ជាប់អ៊ីនធឺណែត";
+                message.title = Properties.Langs.Lang.Internet;
+                message.discription = Properties.Langs.Lang.No_internet_connection;
                 message.buttonType = 2;
                 message.Owner = this;
                 this.Opacity = 0.5;
@@ -4900,8 +4904,8 @@ namespace CamemisOffLine
             MessageBoxControl message = new MessageBoxControl();
             if (Teacher.InternetChecker() == true && internet)
             {
-                message.title = "ដំណឹង";
-                message.discription = "តើអ្នកពិតជាចង់ធ្វើការដាក់ស្នើមែនទេ?";
+                message.title = Properties.Langs.Lang.Information;
+                message.discription = Properties.Langs.Lang.Do_you_really_want_to_submit;
                 this.Opacity = 0.5;
                 message.ShowDialog();
                 this.Opacity = 1;
@@ -4937,8 +4941,8 @@ namespace CamemisOffLine
             }
             else
             {
-                message.title = "អ៊ីនធឺណែត";
-                message.discription = "មិនមានការតភ្ជាប់អ៊ីនធឺណែត";
+                message.title = Properties.Langs.Lang.Internet;
+                message.discription = Properties.Langs.Lang.No_internet_connection;
                 message.buttonType = 2;
                 message.Owner = this;
                 this.Opacity = 0.5;
@@ -4957,8 +4961,8 @@ namespace CamemisOffLine
             {
                 MessageBoxControl messageBox = new MessageBoxControl();
                 messageBox.Owner = this;
-                messageBox.title = "បោះពុម្ភ";
-                messageBox.discription = "សូមជ្រើសរើសថ្នាក់ និងប្រភេទលទ្ធផល";
+                messageBox.title = Properties.Langs.Lang.print;
+                messageBox.discription = Properties.Langs.Lang.Please_select_a_class_and_result_type;
                 messageBox.buttonType = 1;
                 this.Opacity = 0.5;
                 messageBox.ShowDialog();
@@ -5006,8 +5010,8 @@ namespace CamemisOffLine
                 {
                     MessageBoxControl messageBox = new MessageBoxControl();
                     messageBox.Owner = this;
-                    messageBox.title = "បោះពុម្ភ";
-                    messageBox.discription = "បោះពុម្ភមិនបានជោគជ័យ";
+                    messageBox.title = Properties.Langs.Lang.print;
+                    messageBox.discription = Properties.Langs.Lang.Unsuccessful_printing;
                     messageBox.buttonType = 1;
                     this.Opacity = 0.5;
                     messageBox.ShowDialog();
@@ -5021,8 +5025,8 @@ namespace CamemisOffLine
             {
                 MessageBoxControl messageBox = new MessageBoxControl();
                 messageBox.Owner = this;
-                messageBox.title = "បោះពុម្ភ";
-                messageBox.discription = "សូមជ្រើសរើសថ្នាក់ និងប្រភេទលទ្ធផលសិក្សា";
+                messageBox.title = Properties.Langs.Lang.print;
+                messageBox.discription = Properties.Langs.Lang.Please_select_a_class_and_result_type;
                 messageBox.buttonType = 1;
                 this.Opacity = 0.5;
                 messageBox.ShowDialog();
@@ -5058,8 +5062,8 @@ namespace CamemisOffLine
                 {
                     MessageBoxControl messageBox = new MessageBoxControl();
                     messageBox.Owner = this;
-                    messageBox.title = "បោះពុម្ភ";
-                    messageBox.discription = "មិនមានទិន្នន័យ";
+                    messageBox.title = Properties.Langs.Lang.print;
+                    messageBox.discription = Properties.Langs.Lang.noresultdata;
                     messageBox.buttonType = 1;
                     this.Opacity = 0.5;
                     messageBox.ShowDialog();
@@ -5085,8 +5089,8 @@ namespace CamemisOffLine
             {
                 MessageBoxControl messageBox = new MessageBoxControl();
                 messageBox.Owner = this;
-                messageBox.title = "បោះពុម្ភ";
-                messageBox.discription = "សូមជ្រើសរើសថ្នាក់ និងលទ្ធផលសិក្សា";
+                messageBox.title = Properties.Langs.Lang.print;
+                messageBox.discription = Properties.Langs.Lang.Please_select_a_class_and_result_type;
                 messageBox.buttonType = 1;
                 this.Opacity = 0.5;
                 messageBox.ShowDialog();
@@ -5144,8 +5148,8 @@ namespace CamemisOffLine
                 {
                     MessageBoxControl messageBox = new MessageBoxControl();
                     messageBox.Owner = this;
-                    messageBox.title = "បោះពុម្ភ";
-                    messageBox.discription = "មិនមានទិន្នន័យ";
+                    messageBox.title = Properties.Langs.Lang.print;
+                    messageBox.discription = Properties.Langs.Lang.noresultdata;
                     messageBox.buttonType = 1;
                     this.Opacity = 0.5;
                     messageBox.ShowDialog();
@@ -5210,8 +5214,8 @@ namespace CamemisOffLine
             {
                 MessageBoxControl messageBox = new MessageBoxControl();
                 messageBox.Owner = this;
-                messageBox.title = "ទាញទិន្នន័យ";
-                messageBox.discription = "មិនមានទិន្នន័យ";
+                messageBox.title = Properties.Langs.Lang.Download_data;
+                messageBox.discription = Properties.Langs.Lang.noresultdata;
                 messageBox.buttonType = 1;
                 this.Opacity = 0.5;
                 messageBox.ShowDialog();
@@ -5319,7 +5323,7 @@ namespace CamemisOffLine
                 GC.Collect();
                 item.localProfileLink = filePath + "\\" + id + ".jpg";
             }
-            Console.WriteLine("Download image done");
+            Console.WriteLine(Properties.Langs.Lang.Download_image_done);
         }
         //----------------------------------------------------------------
         ///////////////////

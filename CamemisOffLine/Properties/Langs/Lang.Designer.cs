@@ -61,11 +61,38 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Class.
+        /// </summary>
+        public static string _class {
+            get {
+                return ResourceManager.GetString("class", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
         public static string about {
             get {
                 return ResourceManager.GetString("about", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Absence.
+        /// </summary>
+        public static string absence {
+            get {
+                return ResourceManager.GetString("absence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Absent.
+        /// </summary>
+        public static string absent {
+            get {
+                return ResourceManager.GetString("absent", resourceCulture);
             }
         }
         
@@ -88,6 +115,33 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Administrative Certificate.
+        /// </summary>
+        public static string Administrative_Certificate {
+            get {
+                return ResourceManager.GetString("Administrative Certificate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allow score.
+        /// </summary>
+        public static string allow_score_correction {
+            get {
+                return ResourceManager.GetString("allow score correction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Approve.
+        /// </summary>
+        public static string approve {
+            get {
+                return ResourceManager.GetString("approve", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string back {
@@ -97,11 +151,65 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to By name.
+        /// </summary>
+        public static string by_name {
+            get {
+                return ResourceManager.GetString("by name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to By rating.
+        /// </summary>
+        public static string by_rating {
+            get {
+                return ResourceManager.GetString("by rating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to By score.
+        /// </summary>
+        public static string by_score {
+            get {
+                return ResourceManager.GetString("by score", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Calculate.
+        /// </summary>
+        public static string calculate {
+            get {
+                return ResourceManager.GetString("calculate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Calculated scores not successful.
+        /// </summary>
+        public static string Calculated_scores_not_successful {
+            get {
+                return ResourceManager.GetString("Calculated scores not successful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CAMEMIS MENU.
         /// </summary>
         public static string Camemis_Menu {
             get {
                 return ResourceManager.GetString("Camemis Menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string cancel {
+            get {
+                return ResourceManager.GetString("cancel", resourceCulture);
             }
         }
         
@@ -133,6 +241,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Classes.
+        /// </summary>
+        public static string Classes {
+            get {
+                return ResourceManager.GetString("Classes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Color.
         /// </summary>
         public static string color {
@@ -156,6 +273,24 @@ namespace CamemisOffLine.Properties.Langs {
         public static string daily {
             get {
                 return ResourceManager.GetString("daily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data.
+        /// </summary>
+        public static string Data {
+            get {
+                return ResourceManager.GetString("Data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data update:.
+        /// </summary>
+        public static string data_update {
+            get {
+                return ResourceManager.GetString("data update", resourceCulture);
             }
         }
         
@@ -187,6 +322,96 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Distribution.
+        /// </summary>
+        public static string distribution {
+            get {
+                return ResourceManager.GetString("distribution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you really want to do the calculations?.
+        /// </summary>
+        public static string Do_you_really_want_to_do_the_calculations {
+            get {
+                return ResourceManager.GetString("Do you really want to do the calculations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you really want to exit CAMEMIS DESKTOP?.
+        /// </summary>
+        public static string Do_you_really_want_to_exit_CAMEMIS_DESKTOP_ {
+            get {
+                return ResourceManager.GetString("Do you really want to exit CAMEMIS DESKTOP?", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you really want to submit?.
+        /// </summary>
+        public static string Do_you_really_want_to_submit {
+            get {
+                return ResourceManager.GetString("Do you really want to submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to use existing data for or new data?.
+        /// </summary>
+        public static string Do_you_want_to_use_existing_data_for_or_new_data_ {
+            get {
+                return ResourceManager.GetString("Do you want to use existing data for or new data?", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to use the print function.
+        /// </summary>
+        public static string Do_you_want_to_use_the_print_function_ {
+            get {
+                return ResourceManager.GetString("Do you want to use the print function?", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download data.
+        /// </summary>
+        public static string Download_data {
+            get {
+                return ResourceManager.GetString("Download data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download image done.
+        /// </summary>
+        public static string Download_image_done {
+            get {
+                return ResourceManager.GetString("Download image done", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download new data.
+        /// </summary>
+        public static string download_new_data {
+            get {
+                return ResourceManager.GetString("download new data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Education Staff Newsletter.
+        /// </summary>
+        public static string Education_Staff_Newsletter {
+            get {
+                return ResourceManager.GetString("Education Staff Newsletter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to English.
         /// </summary>
         public static string en {
@@ -205,11 +430,47 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Export data to Excel.
+        /// </summary>
+        public static string Export_data_to_Excel {
+            get {
+                return ResourceManager.GetString("Export data to Excel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fail.
         /// </summary>
         public static string fail {
             get {
                 return ResourceManager.GetString("fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Female.
+        /// </summary>
+        public static string female {
+            get {
+                return ResourceManager.GetString("female", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to French.
+        /// </summary>
+        public static string French {
+            get {
+                return ResourceManager.GetString("French", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Function.
+        /// </summary>
+        public static string Function {
+            get {
+                return ResourceManager.GetString("Function", resourceCulture);
             }
         }
         
@@ -223,11 +484,47 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gender.
+        /// </summary>
+        public static string gender {
+            get {
+                return ResourceManager.GetString("gender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Grade.
         /// </summary>
         public static string Grade {
             get {
                 return ResourceManager.GetString("Grade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grade.
+        /// </summary>
+        public static string grades {
+            get {
+                return ResourceManager.GetString("grades", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Group.
+        /// </summary>
+        public static string group {
+            get {
+                return ResourceManager.GetString("group", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import data to Excel.
+        /// </summary>
+        public static string Import_data_to_Excel {
+            get {
+                return ResourceManager.GetString("Import data to Excel", resourceCulture);
             }
         }
         
@@ -259,6 +556,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Internet.
+        /// </summary>
+        public static string Internet {
+            get {
+                return ResourceManager.GetString("Internet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Khmer.
         /// </summary>
         public static string kh {
@@ -277,6 +583,42 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Large to small.
+        /// </summary>
+        public static string large_to_small {
+            get {
+                return ResourceManager.GetString("large to small", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Level.
+        /// </summary>
+        public static string level {
+            get {
+                return ResourceManager.GetString("level", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to List of staff roles.
+        /// </summary>
+        public static string List_of_staff_roles {
+            get {
+                return ResourceManager.GetString("List of staff roles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to List students by age.
+        /// </summary>
+        public static string List_students_by_age {
+            get {
+                return ResourceManager.GetString("List students by age", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Logout.
         /// </summary>
         public static string logout {
@@ -291,6 +633,15 @@ namespace CamemisOffLine.Properties.Langs {
         public static string LogoutWarning {
             get {
                 return ResourceManager.GetString("LogoutWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Male.
+        /// </summary>
+        public static string male {
+            get {
+                return ResourceManager.GetString("male", resourceCulture);
             }
         }
         
@@ -358,11 +709,38 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Month / Semester / Year.
+        /// </summary>
+        public static string month___semester___year {
+            get {
+                return ResourceManager.GetString("month / semester / year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Monthly.
         /// </summary>
         public static string monthly {
             get {
                 return ResourceManager.GetString("monthly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New.
+        /// </summary>
+        public static string New {
+            get {
+                return ResourceManager.GetString("New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No internet connection.
+        /// </summary>
+        public static string No_internet_connection {
+            get {
+                return ResourceManager.GetString("No internet connection", resourceCulture);
             }
         }
         
@@ -394,6 +772,78 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Options:.
+        /// </summary>
+        public static string options {
+            get {
+                return ResourceManager.GetString("options", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Permission.
+        /// </summary>
+        public static string permission {
+            get {
+                return ResourceManager.GetString("permission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please select.
+        /// </summary>
+        public static string please_select {
+            get {
+                return ResourceManager.GetString("please select", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please select a class and result type.
+        /// </summary>
+        public static string Please_select_a_class_and_result_type {
+            get {
+                return ResourceManager.GetString("Please select a class and result type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please select a school year and class!.
+        /// </summary>
+        public static string Please_select_a_school_year_and_class {
+            get {
+                return ResourceManager.GetString("Please select a school year and class", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please select a school year and grade!.
+        /// </summary>
+        public static string Please_select_a_school_year_and_grade {
+            get {
+                return ResourceManager.GetString("Please select a school year and grade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please select a school year and group!.
+        /// </summary>
+        public static string Please_select_a_school_year_and_group {
+            get {
+                return ResourceManager.GetString("Please select a school year and group", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please wait.
+        /// </summary>
+        public static string Please_wait {
+            get {
+                return ResourceManager.GetString("Please wait", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Print monthly result.
         /// </summary>
         public static string Pring_Result {
@@ -417,6 +867,33 @@ namespace CamemisOffLine.Properties.Langs {
         public static string print_all_sub {
             get {
                 return ResourceManager.GetString("print all sub", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Print Classification.
+        /// </summary>
+        public static string Print_Classification {
+            get {
+                return ResourceManager.GetString("Print Classification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Print for educators.
+        /// </summary>
+        public static string print_for_educators {
+            get {
+                return ResourceManager.GetString("print for educators", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Print for students.
+        /// </summary>
+        public static string print_for_students {
+            get {
+                return ResourceManager.GetString("print for students", resourceCulture);
             }
         }
         
@@ -448,11 +925,47 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Programs running.
+        /// </summary>
+        public static string Programs_running {
+            get {
+                return ResourceManager.GetString("Programs running", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to logout?.
         /// </summary>
         public static string QuseLogout {
             get {
                 return ResourceManager.GetString("QuseLogout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rating - Classification.
+        /// </summary>
+        public static string Rating___Classification {
+            get {
+                return ResourceManager.GetString("Rating - Classification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Repeat class.
+        /// </summary>
+        public static string repeat_class {
+            get {
+                return ResourceManager.GetString("repeat class", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Results.
+        /// </summary>
+        public static string results {
+            get {
+                return ResourceManager.GetString("results", resourceCulture);
             }
         }
         
@@ -475,6 +988,33 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to School Newsletter.
+        /// </summary>
+        public static string School_Newsletter {
+            get {
+                return ResourceManager.GetString("School Newsletter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to School year.
+        /// </summary>
+        public static string school_year {
+            get {
+                return ResourceManager.GetString("school year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Science.
+        /// </summary>
+        public static string science {
+            get {
+                return ResourceManager.GetString("science", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Score Enter.
         /// </summary>
         public static string Sco_Enter {
@@ -493,11 +1033,92 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Search students:.
+        /// </summary>
+        public static string search_students_ {
+            get {
+                return ResourceManager.GetString("search students:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select class.
+        /// </summary>
+        public static string select_class {
+            get {
+                return ResourceManager.GetString("select class", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select grade.
+        /// </summary>
+        public static string select_grade {
+            get {
+                return ResourceManager.GetString("select grade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select level.
+        /// </summary>
+        public static string select_level {
+            get {
+                return ResourceManager.GetString("select level", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Month / Semester / Year.
+        /// </summary>
+        public static string Select_Month___Semester___Year {
+            get {
+                return ResourceManager.GetString("Select Month / Semester / Year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select school year.
+        /// </summary>
+        public static string Select_school_year {
+            get {
+                return ResourceManager.GetString("Select school year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select students.
+        /// </summary>
+        public static string select_students {
+            get {
+                return ResourceManager.GetString("select students", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Semester.
         /// </summary>
         public static string semester {
             get {
                 return ResourceManager.GetString("semester", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Semester Exam Results.
+        /// </summary>
+        public static string Semester_Exam_Results {
+            get {
+                return ResourceManager.GetString("Semester Exam Results", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Semester Results.
+        /// </summary>
+        public static string Semester_Results {
+            get {
+                return ResourceManager.GetString("Semester Results", resourceCulture);
             }
         }
         
@@ -516,6 +1137,42 @@ namespace CamemisOffLine.Properties.Langs {
         public static string setting {
             get {
                 return ResourceManager.GetString("setting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show all.
+        /// </summary>
+        public static string show_all {
+            get {
+                return ResourceManager.GetString("show all", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Small to large.
+        /// </summary>
+        public static string small_to_large {
+            get {
+                return ResourceManager.GetString("small to large", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Society.
+        /// </summary>
+        public static string society {
+            get {
+                return ResourceManager.GetString("society", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sort:.
+        /// </summary>
+        public static string sort {
+            get {
+                return ResourceManager.GetString("sort", resourceCulture);
             }
         }
         
@@ -552,6 +1209,15 @@ namespace CamemisOffLine.Properties.Langs {
         public static string staffadmin {
             get {
                 return ResourceManager.GetString("staffadmin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statistics.
+        /// </summary>
+        public static string statistics {
+            get {
+                return ResourceManager.GetString("statistics", resourceCulture);
             }
         }
         
@@ -601,6 +1267,60 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Student Attendence Report.
+        /// </summary>
+        public static string student_Attendence_Report {
+            get {
+                return ResourceManager.GetString("student Attendence Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Student list.
+        /// </summary>
+        public static string student_list {
+            get {
+                return ResourceManager.GetString("student list", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Student Schedule.
+        /// </summary>
+        public static string student_schedule {
+            get {
+                return ResourceManager.GetString("student schedule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Student statistics by grade.
+        /// </summary>
+        public static string Student_statistics_by_grade {
+            get {
+                return ResourceManager.GetString("Student statistics by grade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Student Statistics for Education Staff.
+        /// </summary>
+        public static string Student_Statistics_for_Education_Staff {
+            get {
+                return ResourceManager.GetString("Student Statistics for Education Staff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Study results.
+        /// </summary>
+        public static string study_results {
+            get {
+                return ResourceManager.GetString("study results", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Subject List.
         /// </summary>
         public static string Sub_List {
@@ -628,11 +1348,38 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Teacher.
+        /// </summary>
+        public static string Teacher {
+            get {
+                return ResourceManager.GetString("Teacher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Teacher and Staff Attendance Report.
+        /// </summary>
+        public static string Teacher_and_Staff_Attendance_Report {
+            get {
+                return ResourceManager.GetString("Teacher and Staff Attendance Report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Telegram.
         /// </summary>
         public static string telegram {
             get {
                 return ResourceManager.GetString("telegram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temporary Student Statistics Grade 9 and 12.
+        /// </summary>
+        public static string Temporary_Student_Statistics_Grade_9_and_12 {
+            get {
+                return ResourceManager.GetString("Temporary Student Statistics Grade 9 and 12", resourceCulture);
             }
         }
         
@@ -678,6 +1425,78 @@ namespace CamemisOffLine.Properties.Langs {
         public static string Tooltip_top_bar_Min {
             get {
                 return ResourceManager.GetString("Tooltip top bar Min", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transfer class.
+        /// </summary>
+        public static string transfer_class {
+            get {
+                return ResourceManager.GetString("transfer class", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type of education.
+        /// </summary>
+        public static string Type_of_education {
+            get {
+                return ResourceManager.GetString("Type of education", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type of student.
+        /// </summary>
+        public static string Type_of_student {
+            get {
+                return ResourceManager.GetString("Type of student", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Under construction.
+        /// </summary>
+        public static string Under_construction {
+            get {
+                return ResourceManager.GetString("Under construction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unsuccessful printing.
+        /// </summary>
+        public static string Unsuccessful_printing {
+            get {
+                return ResourceManager.GetString("Unsuccessful printing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use new data.
+        /// </summary>
+        public static string Use_new_data {
+            get {
+                return ResourceManager.GetString("Use new data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use old data.
+        /// </summary>
+        public static string Use_old_data {
+            get {
+                return ResourceManager.GetString("Use old data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        public static string yes {
+            get {
+                return ResourceManager.GetString("yes", resourceCulture);
             }
         }
     }
