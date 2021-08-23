@@ -19,6 +19,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
@@ -687,6 +688,7 @@ namespace CamemisOffLine.Windows
                 tabcontrolScore.SelectedIndex = 1;
                 TilteSelection.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title_select_month;
                 cbSelectMonth.Visibility = Visibility.Visible;
+                cbSelectMonth.ItemsSource = null;
                 if (Teacher.InternetChecker()&&internet)
                 {
                     
@@ -987,13 +989,24 @@ namespace CamemisOffLine.Windows
 
         private void isCheck_Click(object sender, RoutedEventArgs e)
         {
-            if (btnCheckAutoSave.IsChecked == true)
+            obj.Datadate = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+            string JsonString = JsonConvert.SerializeObject(obj);
+            Thread t = new Thread(() => saveLocalString(months, JsonString, false));
+            if(t.IsAlive)
             {
-                string JsonString = JsonConvert.SerializeObject(obj);
-                saveLocalString(months, JsonString, true);
+                t.Abort();
+                t.IsBackground = true;
+                t.Start();
             }
+            else
+            {
+                t.IsBackground=true;
+                t.Start();
+            }
+
             var item = DGScoreMonth.SelectedItem as StudentInformation;
             item.visible = "Collapsed";
+            item.color = "Blue";
             DGScoreMonth.ItemsSource = null;
             DGScoreMonth.ItemsSource = obj.data;
         }
@@ -1067,7 +1080,18 @@ namespace CamemisOffLine.Windows
             this.IsEnabled = false;
             obj.Datadate = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
             string JsonString = JsonConvert.SerializeObject(obj);
-            saveLocalString(months, JsonString,true);
+            Thread t = new Thread(() => saveLocalString(months, JsonString, false));
+            if (t.IsAlive)
+            {
+                t.Abort();
+                t.IsBackground = true;
+                t.Start();
+            }
+            else
+            {
+                t.IsBackground = true;
+                t.Start();
+            }
             //Console.WriteLine(JsonString);
             this.IsEnabled = true;
             loading.Close();
@@ -1102,19 +1126,31 @@ namespace CamemisOffLine.Windows
             message.title = "ការលុបទិន្នន៏យ";
             message.discription = "តើអ្នកចង់លុបទិន្នន័យទាំងអស់មែនទេ?";
             message.ShowDialog();
-            if(message.result == 1)
+            if (message.result == 1)
             {
                 foreach (var item in obj.data)
                 {
                     item.absent_exam = false;
                     item.score = null;
                     item.teacher_comment = null;
+                    item.color = "Blue";
+                    item.visible = "Collapsed";
                 }
-                if(btnCheckAutoSave.IsChecked==true)
+
+                string JsonString = JsonConvert.SerializeObject(obj);
+                Thread t = new Thread(() => saveLocalString(months, JsonString, false));
+                if (t.IsAlive)
                 {
-                    string JsonString = JsonConvert.SerializeObject(obj);
-                    saveLocalString(months, JsonString, true);
+                    t.Abort();
+                    t.IsBackground = true;
+                    t.Start();
                 }
+                else
+                {
+                    t.IsBackground = true;
+                    t.Start();
+                }
+
                 DGScoreMonth.ItemsSource = null;
                 DGScoreMonth.ItemsSource = obj.data;
             }
@@ -1137,21 +1173,30 @@ namespace CamemisOffLine.Windows
                     {
                         item.visible = "Visible";
                         item.color = "Red";
+                        DGScoreMonth.ItemsSource = null;
+                        DGScoreMonth.ItemsSource = obj.data;
                     }
                     else
                     {
                         item.visible = "Collapsed";
                         item.color = "Blue";
                     }
-                        
+
                 }
-                if (btnCheckAutoSave.IsChecked == true)
+               
+                string JsonString = JsonConvert.SerializeObject(obj);
+                Thread t1 = new Thread(() => saveLocalString(months,JsonString,false));
+                if (t1.IsAlive)
                 {
-                    string JsonString = JsonConvert.SerializeObject(obj);
-                    saveLocalString(months, JsonString, false);
+                    t1.Abort();
+                    t1.IsBackground = true;
+                    t1.Start();
                 }
-                DGScoreMonth.ItemsSource = null;
-                DGScoreMonth.ItemsSource = obj.data;
+                else
+                {
+                    t1.IsBackground = true;
+                    t1.Start();
+                }
             }
             catch
             {
@@ -1249,7 +1294,7 @@ namespace CamemisOffLine.Windows
             var btn = sender as Button;
             var item = DGScoreMonth.SelectedItem as StudentInformation;
 
-            if(item.score==null)
+            if(item.score==null||item.score.Equals(""))
             {
                 item.score = "0";
             }
@@ -1261,6 +1306,16 @@ namespace CamemisOffLine.Windows
                 }
                 else
                 {
+                    if (int.Parse(item.score) <= int.Parse(item.subject_score_max) + 1)
+                    {
+                        item.color = "Blue";
+                        item.visible = "Collapsed";
+                    }
+                    else
+                    {
+                        item.color = "Red";
+                        item.visible = "Visible";
+                    }
                     if (string.IsNullOrEmpty(item.score))
                     {
                         item.score = 0.ToString();
@@ -1273,9 +1328,24 @@ namespace CamemisOffLine.Windows
                     }
 
                     item.score = btn.Name == "UpBtn" ? (++number).ToString() : (++number).ToString();
+                    DGScoreMonth.ItemsSource = null;
+                    DGScoreMonth.ItemsSource = obj.data;
                 }
+
             }
-           
+            string JsonString = JsonConvert.SerializeObject(obj);
+            Thread t1 = new Thread(() => saveLocalString(months, JsonString, false));
+            if (t1.IsAlive)
+            {
+                t1.Abort();
+                t1.IsBackground = true;
+                t1.Start();
+            }
+            else
+            {
+                t1.IsBackground = true;
+                t1.Start();
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -1327,6 +1397,19 @@ namespace CamemisOffLine.Windows
                     item.score = btn.Name == "DownBtn" ? (--number).ToString() : (--number).ToString();
                     DGScoreMonth.ItemsSource = null;
                     DGScoreMonth.ItemsSource = obj.data;
+                }
+                string JsonString = JsonConvert.SerializeObject(obj);
+                Thread t1 = new Thread(() => saveLocalString(months, JsonString, false));
+                if (t1.IsAlive)
+                {
+                    t1.Abort();
+                    t1.IsBackground = true;
+                    t1.Start();
+                }
+                else
+                {
+                    t1.IsBackground = true;
+                    t1.Start();
                 }
             }
             catch
@@ -1611,7 +1694,7 @@ namespace CamemisOffLine.Windows
         //............................End..................................................
         private void saveLocalString(string month, string respone,bool checkAutosave)
         {
-            MessageBoxControl message = new MessageBoxControl();
+            Console.WriteLine("Save Data");
             try
             {
                 
@@ -1621,6 +1704,7 @@ namespace CamemisOffLine.Windows
                 }
                if(checkAutosave)
                 {
+                    MessageBoxControl message = new MessageBoxControl();
                     this.Opacity = 0.5;
                     message.title = "ដំណឹង";
                     message.discription = "ការរក្សាទុកបានជោគជ័យ";
@@ -1631,6 +1715,7 @@ namespace CamemisOffLine.Windows
             }
             catch
             {
+                MessageBoxControl message = new MessageBoxControl();
                 this.Opacity = 0.5;
                 message.title = "ដំណឹង";
                 message.discription = "ការរក្សាទុកមិនបានជោគជ័យ";
@@ -1939,7 +2024,6 @@ namespace CamemisOffLine.Windows
         private void btnExamSemester_Click(object sender, RoutedEventArgs e)
         {
             type = "4";
-            txtTitleMonth.Text = "លទ្ធផលប្រលង"+monthName;
             tabcontrolLearn1.SelectedIndex = 5;
             btnSaveSemester.Visibility = Visibility.Collapsed;
             btnPostSemester.Visibility = Visibility.Collapsed;
@@ -1947,7 +2031,6 @@ namespace CamemisOffLine.Windows
 
         private void btnClassification_Click(object sender, RoutedEventArgs e)
         {
-            txtTitleMonth.Text = "ចំណាត់ថ្នាក់ចំណាត់ប្រភេទ"+monthName;
             tabcontrolLearn1.SelectedIndex = 4;
 
             if(type=="2")
@@ -1965,7 +2048,6 @@ namespace CamemisOffLine.Windows
 
         private void btnResultSemester_Click(object sender, RoutedEventArgs e)
         {
-            txtTitleMonth.Text = "លទ្ធផលប្រចាំ"+monthName;
             tabcontrolLearn1.SelectedIndex = 2;
             btnSaveSemester.Visibility = Visibility.Collapsed;
             btnPostSemester.Visibility = Visibility.Collapsed;
@@ -2238,24 +2320,23 @@ namespace CamemisOffLine.Windows
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(btnCheckAutoSave.IsChecked==true)
-            {
-                try
-                {
-                    var data = new ListMorality();
-                    data.data = moralities;
-                    data.date = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
-                    string JsonString = JsonConvert.SerializeObject(data);
-                    using (StreamWriter writer = new StreamWriter(filePath + "\\" + classId + " " + nameSemester + ".txt"))
-                    {
-                        writer.WriteLine(JsonString);
-                    }
-                }
-                catch
-                {
 
+            try
+            {
+                var data = new ListMorality();
+                data.data = moralities;
+                data.date = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+                string JsonString = JsonConvert.SerializeObject(data);
+                using (StreamWriter writer = new StreamWriter(filePath + "\\" + classId + " " + nameSemester + ".txt"))
+                {
+                    writer.WriteLine(JsonString);
                 }
             }
+            catch
+            {
+
+            }
+
         }
         string title = "",label="",titleYear="";
         private async void cbSelectMonth_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -2281,6 +2362,7 @@ namespace CamemisOffLine.Windows
                         string respone = "";
 
                         term = selection.Value;
+                        months = term;
                         type = "2";
                         message.title = "ដំណឹង";
                         message.discription = "ទាញទិន្នន័យបានជោគជ័យ";
@@ -2751,7 +2833,6 @@ namespace CamemisOffLine.Windows
                     }
                     title = "semester";
                     type = "2";
-                    txtTitleMonth.Text = "លទ្ធផលប្រចាំ​ "+selection.Key;
                     btnSaveSemester.Visibility = Visibility.Collapsed;
                     btnPostSemester.Visibility = Visibility.Collapsed;
                     MessageBoxControl message = new MessageBoxControl();
@@ -2862,7 +2943,6 @@ namespace CamemisOffLine.Windows
                     }
                     title = "year";
                     type = "3";
-                    txtTitleMonth.Text = selection.Key;
                     btnSaveSemester.Visibility = Visibility.Collapsed;
                     btnPostSemester.Visibility = Visibility.Collapsed;
                     MessageBoxControl message = new MessageBoxControl();
@@ -2965,7 +3045,6 @@ namespace CamemisOffLine.Windows
                     }
                     title = "month";
                     type = "1";
-                    txtTitleMonth.Text = "លទ្ធផលប្រចាំ​ ខែ" + selection.Key;
                     btnSaveSemester.Visibility = Visibility.Collapsed;
                     btnPostSemester.Visibility = Visibility.Collapsed;
                     MessageBoxControl message = new MessageBoxControl();
@@ -3541,6 +3620,23 @@ namespace CamemisOffLine.Windows
             this.IsEnabled = true;
         }
 
+        private void TextinputScore_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key==Key.Return)
+            {
+                ContentPresenter myCp = DGScoreMonth.Columns[4].GetCellContent(DGScoreMonth.SelectedItem) as ContentPresenter;
+                var myTemplate = myCp.ContentTemplate;
+                TextBox mytxtbox = myTemplate.FindName("TextinputScore", myCp) as TextBox;
+                foreach (var item1 in obj.data)
+                {
+                    if (item1.tabIndex == int.Parse(mytxtbox.Tag.ToString()) + 1)
+                        item1.focus = true;
+                    else
+                        item1.focus = true;
+                }
+            }
+        }
+
         private async void btnDeleteApproved_Click(object sender, RoutedEventArgs e)
         {
             Loading load = new Loading();
@@ -3775,5 +3871,6 @@ namespace CamemisOffLine.Windows
             }
         }
         //----------------------------------------------------------------
+       
     }
 }

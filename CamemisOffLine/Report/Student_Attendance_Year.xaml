@@ -23,7 +23,7 @@
 
                                     <Label Name="lbllogoLeft" Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" Style="{DynamicResource Muol}" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 15 0 0"></Label>
                                     <Grid Margin="0,0,0,0">
-                                        <Label Name="TitleSchool" Style="{DynamicResource Siemreap}" Content="វិទ្យាល័យ ហ៊ុនសែនបូរី១០០ខ្នង" FontSize="13" Foreground="Black" HorizontalAlignment="Center" Margin="0 0 0 0" VerticalAlignment="Center"></Label>
+                                        <Label Name="TitleSchool" Style="{DynamicResource Siemreap}" Content="វិទ្យាល័យ ហ៊ុនសែនបូរី១០០ខ្នង" FontSize="15" Foreground="Black" HorizontalAlignment="Center" Margin="0 0 0 0" VerticalAlignment="Center"></Label>
                                     </Grid>
                                     <Grid Margin="0,-12,0,0"/>
                                 </StackPanel>
@@ -58,13 +58,15 @@
                         </Grid.ColumnDefinitions>
                         <StackPanel Orientation="Vertical" Grid.Column="0">
                             <Grid>
-                                <DataGrid Margin="10 0 10 0" AutoGenerateColumns="False" RowHeight="40" BorderThickness="1 1 1 0" BorderBrush="Black" Background="White" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="25cm" CanUserAddRows="False" HorizontalScrollBarVisibility="Hidden">
+                                <DataGrid Margin="10 0 10 0" AutoGenerateColumns="False" RowHeight="40" BorderThickness="1 1 1 0" BorderBrush="Black" Background="White" FontSize="16" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="25cm" CanUserAddRows="False" HorizontalScrollBarVisibility="Hidden">
                                     <DataGrid.Resources>
 
                                         <Style TargetType="DataGrid">
                                             <Setter Property="Background" Value="Transparent"/>
                                             <Setter Property="BorderBrush" Value="LightGray"/>
                                             <Setter Property="BorderThickness" Value="0"/>
+                                            <Setter Property="FontSize" Value="13"/>
+
                                         </Style>
 
                                         <Style TargetType="DataGridColumnHeader">
@@ -84,21 +86,31 @@
                                     <DataGrid.Columns>
 
                                         <!--<..........................លេខរៀង....................>-->
-                                            <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
                                             <DataGridTextColumn.Header>
-                                                
-                                                    <TextBlock Text="លេខរៀង" >
-                                                        <TextBlock.LayoutTransform>
-                                                            <RotateTransform Angle="270" />
-                                                        </TextBlock.LayoutTransform>
-                                                    </TextBlock>
-                                                
+
+                                                <TextBlock Text="លេខរៀង" >
+                                                    <TextBlock.LayoutTransform>
+                                                        <RotateTransform Angle="270" />
+                                                    </TextBlock.LayoutTransform>
+                                                </TextBlock>
+
                                             </DataGridTextColumn.Header>
+                                            <DataGridTextColumn.ElementStyle>
+
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
 
                                         <!--<..........................អត្ថលេខ....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
                                             <DataGridTextColumn.Header>
 
                                                 <TextBlock Text="អត្ថលេខ" >
@@ -108,147 +120,621 @@
                                                 </TextBlock>
 
                                             </DataGridTextColumn.Header>
+                                            <DataGridTextColumn.ElementStyle>
+
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
 
                                         <!--<..........................នាម....................>-->
-                                        <DataGridTextColumn Header="គោត្តនាម-នាម" Width="114">
-                                            
+                                        <DataGridTextColumn Header="គោត្តនាម-នាម" Width="112">
+                                            <DataGridTextColumn.ElementStyle>
+
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................សរុប....................>-->
-                                        <DataGridTextColumn Width="30">
+                                        <DataGridTextColumn Width="28">
+                                            <DataGridTextColumn.ElementStyle>
 
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+
+                                            <DataGridTextColumn.Header>
+                                                <Grid Width="755" Margin="-728 0 0 0" Background="White" Height="150">
+                                                    <StackPanel Orientation="Vertical">
+                                                        <Grid Height="90">
+                                                            <Border BorderBrush="Gray" BorderThickness="0 0 0 1"/>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <Grid Width="672">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <StackPanel Orientation="Vertical">
+                                                                        <Grid Height="50">
+                                                                            <Border BorderBrush="Gray" BorderThickness=" 0 0 0 1"/>
+                                                                            <Label Content="ចំនួនអវត្តមានប្រចាំខែ" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                                                        </Grid>
+                                                                        <Grid Height="40">
+                                                                            <StackPanel Orientation="Horizontal">
+                                                                                <Grid Width="56">
+                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                                    <Label Content="តុលា" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                                                                </Grid>
+                                                                                <Grid Width="56">
+                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                                    <Label Content="វិច្ឆិកា" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                                                                </Grid>
+                                                                                <Grid Width="56">
+                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                                    <Label Content="ធ្នូ" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                                                                </Grid>
+                                                                                <Grid Width="56">
+                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                                    <Label Content="មករា" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                                                                </Grid>
+                                                                                <Grid Width="56">
+                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                                    <Label Content="តុលា" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                                                                </Grid>
+                                                                                <Grid Width="56">
+                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                                    <StackPanel Orientation="Vertical">
+                                                                                        <Label Content="សរុប" FontSize="8" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center" Height="21" Margin="16,0"/>
+                                                                                        <Label Content="ឆមាសទី១" FontSize="8" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Padding="0 -10 0 0" Width="56" HorizontalContentAlignment="Center"/>
+
+                                                                                    </StackPanel>
+                                                                                </Grid>
+                                                                                <Grid Width="56">
+                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                                    <Label Content="មិនា" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                                                                </Grid>
+                                                                                <Grid Width="56">
+                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                                    <Label Content="មេសា" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                                                                </Grid>
+                                                                                <Grid Width="56">
+                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                                    <Label Content="ឧសភា" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                                                                </Grid>
+                                                                                <Grid Width="56">
+                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                                    <Label Content="មិថុនា" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                                                                </Grid>
+                                                                                <Grid Width="56">
+                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                                    <Label Content="កក្កដា" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                                                                </Grid>
+                                                                                <Grid Width="56">
+                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 0 0"/>
+                                                                                    <StackPanel Orientation="Vertical">
+                                                                                        <Label Content="សរុប" FontSize="8" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center" Height="21" Margin="16,0"/>
+                                                                                        <Label Content="ឆមាសទី២" FontSize="8" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Padding="0 -10 0 0" Width="56" HorizontalContentAlignment="Center"/>
+
+                                                                                    </StackPanel>
+                                                                                </Grid>
+                                                                               
+                                                                            </StackPanel>
+                                                                        </Grid>
+                                                                    </StackPanel>
+                                                                </Grid>
+                                                                <Grid Width="83">
+                                                                    <StackPanel Orientation="Vertical" Margin="0 13 0 0">
+                                                                        <Label Content="ចំនួនអវត្តមាន" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                        <Label Content="ប្រចាំឆ្នាំ" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                    </StackPanel>
+                                                                </Grid>
+                                                            </StackPanel>
+
+                                                        </Grid>
+                                                        <Grid Height="60">
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                                <Grid Width="28">
+                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="សរុប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                </Grid>
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DataGridTextColumn.Header>
                                         </DataGridTextColumn>
                                     </DataGrid.Columns>
                                 </DataGrid>
@@ -269,8 +755,58 @@
                             </Grid>
 
                             <Grid Grid.Column="1" Margin="50 0 0 0">
-                               
+
                             </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid Height="60">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal" Margin="20 0 0 0">
+                                <TextBlock Text="ឆមាសទី" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Name="lblsemester" Text="........." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Text="ធ្វើនៅ" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Name="lblWork" Text="..............." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Text="ថ្ងៃទី" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Name="lblDay" Text="..........." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Text="ខែ" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Name="lblMonths" Text="..................." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Text="ឆ្នាំ" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Name="lblYear" Text="..................." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                              
+                            </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="នាយក" FontSize="18" Margin="20 0 200 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light"></TextBlock>
+                                    <TextBlock Text="គ្រូទទួលបន្ទុកថ្នាក់" FontSize="18" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+
+                                </StackPanel> 
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Column="1" Margin="20 0 0 0">
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal" Margin="0 0 20 0">
+                                    <TextBlock Text="ឆមាសទី" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Name="lblsemester1" Text="........." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Text="ធ្វើនៅ" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Name="lblWork1" Text="..............." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Text="ថ្ងៃទី" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Name="lblDay1" Text="..........." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Text="ខែ" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Name="lblMonths1" Text="..................." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Text="ឆ្នាំ" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Name="lblYea1r" Text="..................." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="នាយក" FontSize="18" Margin="0 0 200 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light"></TextBlock>
+                                    <TextBlock Text="គ្រូទទួលបន្ទុកថ្នាក់" FontSize="18" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+
+                                </StackPanel>
+                            </StackPanel>
                         </Grid>
                     </Grid>
                     <Rectangle Height="100" Fill="Transparent"></Rectangle>

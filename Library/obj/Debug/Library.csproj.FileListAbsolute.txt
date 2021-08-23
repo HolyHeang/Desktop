@@ -8,3 +8,4 @@ D:\Clone\10-08-2021\Desktop\Library\obj\Debug\Library.csproj.CoreCompileInputs.c
 D:\Clone\10-08-2021\Desktop\Library\obj\Debug\Library.csproj.CopyComplete
 D:\Clone\10-08-2021\Desktop\Library\obj\Debug\Library.dll
 D:\Clone\10-08-2021\Desktop\Library\obj\Debug\Library.pdb
+D:\Clone\10-08-2021\Desktop\Library\obj\Debug\Library.csproj.AssemblyReference.cache
