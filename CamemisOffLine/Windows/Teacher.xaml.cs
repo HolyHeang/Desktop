@@ -4206,29 +4206,40 @@ namespace CamemisOffLine
 
                 this.Opacity = 1;
             }
-            else if (item.id == 8)
+            else if (item.id == 10)
             {
                 StudenPrintMonthlySemesterResult();
             }
-            else if (item.id == 9)
+            else if (item.id == 11)
             {
                 StudentPrintMonthlySemesterTranscrip();
             }
-            else if (item.id == 10)
+            else if (item.id == 12)
             {
                 StudentPrintHonoraryList();
             }
-            else if (item.id == 11)
+            else if (item.id == 13)
             {
                 Classification classification = new Classification(classId, term, YearSelection, ping);
                 classification.Show();
             }
-            else if (item.id == 16)
+            else if (item.id == 18)
             {
-
-                AttendanceReport attendance = new AttendanceReport(classId, month, yearTitle, studentClass);
-                attendance.Show();
-
+                if(month=="0")
+                {
+                    Student_Attendance_Year attendance_Year = new Student_Attendance_Year(classId, month, yearTitle, studentClass);
+                    attendance_Year.Show();
+                }
+                else
+                {
+                    AttendanceReport attendance = new AttendanceReport(classId, month, yearTitle, studentClass);
+                    attendance.Show();
+                }
+            }
+            else if(item.id==7)
+            {
+                ListStudentCencel studentCencel = new ListStudentCencel(schoolYearId, YearSelection);
+                studentCencel.Show();
             }
             else
             {

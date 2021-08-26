@@ -31,5 +31,8 @@ namespace Library
         public string level { get; set; }
         public string grade { get; set; }
         public string grade_id { get; set; }
+        public string re_exam { get; set; }
+        public string give_up { get; set; }
+        public string give_up_date { get; set; }
     }
 }

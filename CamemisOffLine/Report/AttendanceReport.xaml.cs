@@ -42,7 +42,6 @@ namespace CamemisOffLine.Report
             this.className = className;
         }
         string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
-        private bool complete = true;
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -333,7 +332,6 @@ namespace CamemisOffLine.Report
                     }
                 }
                 document.Close();
-                complete = false;
                 Process.Start(filePath + "\\" + "ResultTemplate" + ".pdf");
                 this.Close();
             }

@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CamemisOffLine.Report"
         mc:Ignorable="d"
-        Title="Student_Attendance_Year" Height="31cm" Width="25cm">
+        Title="Student_Attendance_Year" Height="32cm" Width="47cm" Loaded="Window_Loaded">
     <Grid>
-        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+        <ScrollViewer VerticalScrollBarVisibility="Hidden" Grid.ColumnSpan="2">
             <Grid>
                 <StackPanel Orientation="Vertical" Name="Grid">
                     <Grid Name="Header" Margin="0 20 0 0">
@@ -48,22 +48,22 @@
                     <Grid Margin="0 10 0 10" Name="title">
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                             <TextBlock Name="lblMonth" Text="ចំនួនអត្តមានសិស្សក្នុង ឆ្នាំសិក្សា ២០២០-២០២១" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Foreground="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light"></TextBlock>
-
+                            <Label Name="txtClass" Style="{DynamicResource Siemreap}" Content="ថ្នាក់" FontSize="17" Foreground="Black" HorizontalAlignment="Center" Margin="0 0 0 0" VerticalAlignment="Center"></Label>
                         </StackPanel>
                     </Grid>
 
-                    <Grid Name="Body" HorizontalAlignment="Center" MinWidth="25cm" Margin="0 5 0 0">
+                    <Grid Name="Body" HorizontalAlignment="Center" MinWidth="46cm" Margin="0 0 0 0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <StackPanel Orientation="Vertical" Grid.Column="0">
                             <Grid>
-                                <DataGrid Margin="10 0 10 0" AutoGenerateColumns="False" RowHeight="40" BorderThickness="1 1 1 0" BorderBrush="Black" Background="White" FontSize="16" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="25cm" CanUserAddRows="False" HorizontalScrollBarVisibility="Hidden">
+                                <DataGrid Name="Data"  Margin="10 0 10 0" AutoGenerateColumns="False" RowHeight="40" BorderThickness="1 1 1 1" BorderBrush="Black" Background="White" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="43.5cm" MinWidth="43cm" CanUserAddRows="False" HorizontalScrollBarVisibility="Hidden" SelectionChanged="Data_SelectionChanged">
                                     <DataGrid.Resources>
 
                                         <Style TargetType="DataGrid">
                                             <Setter Property="Background" Value="Transparent"/>
-                                            <Setter Property="BorderBrush" Value="LightGray"/>
+                                            <Setter Property="BorderBrush" Value="Black"/>
                                             <Setter Property="BorderThickness" Value="0"/>
                                             <Setter Property="FontSize" Value="13"/>
 
@@ -86,13 +86,11 @@
                                     <DataGrid.Columns>
 
                                         <!--<..........................លេខរៀង....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="70" Binding="{Binding number}">
                                             <DataGridTextColumn.Header>
 
                                                 <TextBlock Text="លេខរៀង" >
-                                                    <TextBlock.LayoutTransform>
-                                                        <RotateTransform Angle="270" />
-                                                    </TextBlock.LayoutTransform>
+
                                                 </TextBlock>
 
                                             </DataGridTextColumn.Header>
@@ -110,13 +108,11 @@
 
 
                                         <!--<..........................អត្ថលេខ....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="70" Binding="{Binding student_school_id}">
                                             <DataGridTextColumn.Header>
 
                                                 <TextBlock Text="អត្ថលេខ" >
-                                                    <TextBlock.LayoutTransform>
-                                                        <RotateTransform Angle="270" />
-                                                    </TextBlock.LayoutTransform>
+
                                                 </TextBlock>
 
                                             </DataGridTextColumn.Header>
@@ -134,21 +130,21 @@
 
 
                                         <!--<..........................នាម....................>-->
-                                        <DataGridTextColumn Header="គោត្តនាម-នាម" Width="112">
+                                        <DataGridTextColumn Header="គោត្តនាម-នាម" Width="1.5*" MinWidth="160" Binding="{Binding name}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
                                                     <Setter Property="Foreground" Value="Black"></Setter>
 
                                                     <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="HorizontalAlignment" Value="Left"/>
                                                     <Setter Property="VerticalAlignment" Value="Center"/>
                                                 </Style>
                                             </DataGridTextColumn.ElementStyle>
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding per1}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -162,7 +158,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding absent1}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -176,7 +172,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding per2}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -190,7 +186,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding absent2}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -204,7 +200,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding per3}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -218,7 +214,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding absent3}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -232,7 +228,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding per4}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -246,7 +242,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding absent4}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -260,7 +256,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding per5}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -274,7 +270,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding absent5}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -288,7 +284,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding semesterPer1}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -302,7 +298,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding semersterAtt1}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -316,7 +312,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding per6}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -330,7 +326,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding absent6}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -344,7 +340,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding per7}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -358,7 +354,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding absent7}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -372,7 +368,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding per8}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -386,7 +382,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding absent8}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -400,7 +396,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding per9}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -414,7 +410,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding absent9}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -428,7 +424,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding per10}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -442,7 +438,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding absent10}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -456,7 +452,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding semesterPer2}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -470,7 +466,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding semersterAtt2}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -484,7 +480,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................មានចប្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding yearlyPer}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -498,7 +494,7 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................អត់ច្បាប់....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding yearlyAtt}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
@@ -512,223 +508,223 @@
                                         </DataGridTextColumn>
 
                                         <!--<..........................សរុប....................>-->
-                                        <DataGridTextColumn Width="28">
+                                        <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding yearlyTotal}">
                                             <DataGridTextColumn.ElementStyle>
 
                                                 <Style TargetType="TextBlock">
                                                     <Setter Property="Foreground" Value="Black"></Setter>
 
                                                     <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                    <Setter Property="HorizontalAlignment" Value="Left"/>
                                                     <Setter Property="VerticalAlignment" Value="Center"/>
                                                 </Style>
                                             </DataGridTextColumn.ElementStyle>
 
                                             <DataGridTextColumn.Header>
-                                                <Grid Width="755" Margin="-728 0 0 0" Background="White" Height="150">
+                                                <Grid Width="1350" Margin="-1300 0 0 0" Background="White" Height="150" HorizontalAlignment="Center">
                                                     <StackPanel Orientation="Vertical">
-                                                        <Grid Height="90">
-                                                            <Border BorderBrush="Gray" BorderThickness="0 0 0 1"/>
+                                                        <Grid Height="100">
+                                                            <Border BorderBrush="Black" BorderThickness="0 0 0 1"/>
                                                             <StackPanel Orientation="Horizontal">
-                                                                <Grid Width="672">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                <Grid Width="1200" Margin="0 0 0 0">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
                                                                     <StackPanel Orientation="Vertical">
                                                                         <Grid Height="50">
-                                                                            <Border BorderBrush="Gray" BorderThickness=" 0 0 0 1"/>
-                                                                            <Label Content="ចំនួនអវត្តមានប្រចាំខែ" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                            <Border BorderBrush="Black" BorderThickness=" 0 0 0 1"/>
+                                                                            <Label Content="ចំនួនអវត្តមាន" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
                                                                         </Grid>
-                                                                        <Grid Height="40">
+                                                                        <Grid Height="50">
                                                                             <StackPanel Orientation="Horizontal">
-                                                                                <Grid Width="56">
-                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                                    <Label Content="តុលា" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                <Grid Width="100">
+                                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                                    <Label Name="txtMonth1" Content="{Binding month1}" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
                                                                                 </Grid>
-                                                                                <Grid Width="56">
-                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                                    <Label Content="វិច្ឆិកា" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                <Grid Width="100">
+                                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                                    <Label Name="txtMonth2" Content="{Binding Path=month2}" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
                                                                                 </Grid>
-                                                                                <Grid Width="56">
-                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                                    <Label Content="ធ្នូ" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                <Grid Width="100">
+                                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                                    <Label Name="txtMonth3" Content="{Binding Path=month3}" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
                                                                                 </Grid>
-                                                                                <Grid Width="56">
-                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                                    <Label Content="មករា" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                <Grid Width="100">
+                                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                                    <Label Name="txtMonth4" Content="{Binding Path=month4}" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
                                                                                 </Grid>
-                                                                                <Grid Width="56">
-                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                                    <Label Content="តុលា" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                <Grid Width="100">
+                                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                                    <Label Name="txtMonth5" Content="{Binding Path=month5}" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
                                                                                 </Grid>
-                                                                                <Grid Width="56">
-                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
+                                                                                <Grid Width="100">
+                                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
                                                                                     <StackPanel Orientation="Vertical">
-                                                                                        <Label Content="សរុប" FontSize="8" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center" Height="21" Margin="16,0"/>
-                                                                                        <Label Content="ឆមាសទី១" FontSize="8" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Padding="0 -10 0 0" Width="56" HorizontalContentAlignment="Center"/>
+                                                                                        <Label Content="សរុប" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                                                        <Label Content="ឆមាសទី១" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Margin="0 -15 0 0"/>
 
                                                                                     </StackPanel>
                                                                                 </Grid>
-                                                                                <Grid Width="56">
-                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                                    <Label Content="មិនា" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                <Grid Width="100">
+                                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                                    <Label Name="txtMonth6" Content="{Binding Path=month6}" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
                                                                                 </Grid>
-                                                                                <Grid Width="56">
-                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                                    <Label Content="មេសា" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                <Grid Width="100">
+                                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                                    <Label Name="txtMonth7" Content="{Binding Path=month7}" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
                                                                                 </Grid>
-                                                                                <Grid Width="56">
-                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                                    <Label Content="ឧសភា" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                <Grid Width="100">
+                                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                                    <Label Name="txtMonth8" Content="{Binding Path=month8}" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
                                                                                 </Grid>
-                                                                                <Grid Width="56">
-                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                                    <Label Content="មិថុនា" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                <Grid Width="100">
+                                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                                    <Label Name="txtMonth9" Content="{Binding Path=month9}" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
                                                                                 </Grid>
-                                                                                <Grid Width="56">
-                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                                    <Label Content="កក្កដា" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                <Grid Width="100">
+                                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                                    <Label Name="txtMonth10" Content="{Binding Path=month10}" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
                                                                                 </Grid>
-                                                                                <Grid Width="56">
-                                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 0 0"/>
+                                                                                <Grid Width="100">
+                                                                                    <Border BorderBrush="Black" BorderThickness="0 0 0 0"/>
                                                                                     <StackPanel Orientation="Vertical">
-                                                                                        <Label Content="សរុប" FontSize="8" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center" Height="21" Margin="16,0"/>
-                                                                                        <Label Content="ឆមាសទី២" FontSize="8" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Padding="0 -10 0 0" Width="56" HorizontalContentAlignment="Center"/>
+                                                                                        <Label Content="សរុប" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                                                        <Label Content="ឆមាសទី2" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Margin="0 -15 0 0"/>
 
                                                                                     </StackPanel>
                                                                                 </Grid>
-                                                                               
+
                                                                             </StackPanel>
                                                                         </Grid>
                                                                     </StackPanel>
                                                                 </Grid>
-                                                                <Grid Width="83">
+                                                                <Grid Width="150" Margin="0 0 0 0">
                                                                     <StackPanel Orientation="Vertical" Margin="0 13 0 0">
-                                                                        <Label Content="ចំនួនអវត្តមាន" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                                                        <Label Content="ប្រចាំឆ្នាំ" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                        <Label Content="ចំនួនអវត្តមាន" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                        <Label Content="ប្រចាំឆ្នាំ" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                                                     </StackPanel>
                                                                 </Grid>
                                                             </StackPanel>
 
                                                         </Grid>
-                                                        <Grid Height="60">
+                                                        <Grid Height="60" Margin="0 0 0 0">
                                                             <StackPanel Orientation="Horizontal">
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="ច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="អច្ប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                 </Grid>
-                                                                <Grid Width="28">
-                                                                    <Border BorderBrush="Gray" BorderThickness="0 0 1 0"/>
-                                                                    <Label Content="សរុប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                <Grid Width="50">
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                                    <Label Content="សរុប" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Padding="0 0 10 0"/>
                                                                 </Grid>
                                                             </StackPanel>
                                                         </Grid>
@@ -741,33 +737,16 @@
                             </Grid>
                         </StackPanel>
                     </Grid>
-                    <Grid Name="Footer">
-                        <Grid Margin="0 5 0 0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-
-                            <Grid Grid.Column="0" Margin="20 0 0 0">
-                                <StackPanel Orientation="Horizontal">
-
-                                </StackPanel>
-                            </Grid>
-
-                            <Grid Grid.Column="1" Margin="50 0 0 0">
-
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                    <Grid Height="60">
+                   
+                    <Grid Height="60" Name="Footer" Margin="0 20 0 0" VerticalAlignment="Top">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Grid Grid.Column="0">
+                        <Grid Grid.Column="0" Margin="40 0 0 0">
                             <StackPanel Orientation="Vertical">
-                            <StackPanel Orientation="Horizontal" Margin="20 0 0 0">
-                                <TextBlock Text="ឆមាសទី" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                <StackPanel Orientation="Horizontal" Margin="20 0 0 0">
+                                    <TextBlock Text="ឆមាសទី" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
                                     <TextBlock Name="lblsemester" Text="........." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
                                     <TextBlock Text="ធ្វើនៅ" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
                                     <TextBlock Name="lblWork" Text="..............." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
@@ -777,16 +756,16 @@
                                     <TextBlock Name="lblMonths" Text="..................." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
                                     <TextBlock Text="ឆ្នាំ" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
                                     <TextBlock Name="lblYear" Text="..................." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                              
-                            </StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="នាយក" FontSize="18" Margin="20 0 200 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light"></TextBlock>
-                                    <TextBlock Text="គ្រូទទួលបន្ទុកថ្នាក់" FontSize="18" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
 
-                                </StackPanel> 
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="នាយក" FontSize="15" Margin="20 0 200 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light"></TextBlock>
+                                    <TextBlock Text="គ្រូទទួលបន្ទុកថ្នាក់" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+
+                                </StackPanel>
                             </StackPanel>
                         </Grid>
-                        <Grid Grid.Column="1" Margin="20 0 0 0">
+                        <Grid Grid.Column="1" Margin="20 0 40 0">
                             <StackPanel Orientation="Vertical">
                                 <StackPanel Orientation="Horizontal" Margin="0 0 20 0">
                                     <TextBlock Text="ឆមាសទី" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
@@ -802,8 +781,8 @@
 
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="នាយក" FontSize="18" Margin="0 0 200 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light"></TextBlock>
-                                    <TextBlock Text="គ្រូទទួលបន្ទុកថ្នាក់" FontSize="18" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Text="នាយក" FontSize="15" Margin="0 0 200 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light"></TextBlock>
+                                    <TextBlock Text="គ្រូទទួលបន្ទុកថ្នាក់" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
 
                                 </StackPanel>
                             </StackPanel>
