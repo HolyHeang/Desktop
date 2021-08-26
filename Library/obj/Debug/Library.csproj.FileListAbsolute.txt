@@ -1,14 +1,3 @@
-D:\Clone\10-08-2021\Desktop\Library\bin\Debug\Library.dll
-D:\Clone\10-08-2021\Desktop\Library\bin\Debug\Library.pdb
-D:\Clone\10-08-2021\Desktop\Library\bin\Debug\Dapper.dll
-D:\Clone\10-08-2021\Desktop\Library\bin\Debug\Newtonsoft.Json.dll
-D:\Clone\10-08-2021\Desktop\Library\bin\Debug\System.Data.SQLite.dll
-D:\Clone\10-08-2021\Desktop\Library\bin\Debug\System.Net.Http.Formatting.dll
-D:\Clone\10-08-2021\Desktop\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
-D:\Clone\10-08-2021\Desktop\Library\obj\Debug\Library.csproj.CopyComplete
-D:\Clone\10-08-2021\Desktop\Library\obj\Debug\Library.dll
-D:\Clone\10-08-2021\Desktop\Library\obj\Debug\Library.pdb
-<<<<<<< HEAD
 C:\Users\ASUS\Desktop\Camemis\Desktop\Library\bin\Debug\Library.dll
 C:\Users\ASUS\Desktop\Camemis\Desktop\Library\bin\Debug\Library.pdb
 C:\Users\ASUS\Desktop\Camemis\Desktop\Library\bin\Debug\Dapper.dll
@@ -21,7 +10,3 @@ C:\Users\ASUS\Desktop\Camemis\Desktop\Library\obj\Debug\Library.csproj.CoreCompi
 C:\Users\ASUS\Desktop\Camemis\Desktop\Library\obj\Debug\Library.csproj.CopyComplete
 C:\Users\ASUS\Desktop\Camemis\Desktop\Library\obj\Debug\Library.dll
 C:\Users\ASUS\Desktop\Camemis\Desktop\Library\obj\Debug\Library.pdb
-C:\Users\ASUS\Desktop\Camemis\Desktop\Library\obj\Debug\Library.csprojAssemblyReference.cache
-=======
-D:\Clone\10-08-2021\Desktop\Library\obj\Debug\Library.csproj.AssemblyReference.cache
->>>>>>> 83b37d9f0fe5b89f92191e4f2aadc4b7ff73073e

@@ -18,7 +18,7 @@
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>ftp.camemis-learn.com/</PublishUrl>
+    <PublishUrl>ftp://camemis%40files.000webhost.com/public_html/CAMEMIS/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -28,13 +28,14 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://ftp.camemis-learn.com/</InstallUrl>
-    <UpdateUrl>http://ftp.camemis-learn.com/</UpdateUrl>
+    <InstallUrl>https://camemis.000webhostapp.com/CAMEMIS/</InstallUrl>
     <ProductName>CAMEMIS Desktop</ProductName>
     <PublisherName>Heang Holy</PublisherName>
-    <SuiteName>Heang Holy</SuiteName>
+    <SuiteName>Camemis</SuiteName>
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
-    <ApplicationRevision>2</ApplicationRevision>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -215,6 +216,12 @@
     <Compile Include="Report\ListStudentCencel.xaml.cs">
       <DependentUpon>ListStudentCencel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Report\List_Attendance_staff.xaml.cs">
+      <DependentUpon>List_Attendance_staff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report\List_of_repeat_students.xaml.cs">
+      <DependentUpon>List_of_repeat_students.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Report\MonthlySubjectResult.xaml.cs">
       <DependentUpon>MonthlySubjectResult.xaml</DependentUpon>
     </Compile>
@@ -226,6 +233,9 @@
     </Compile>
     <Compile Include="Report\StatisticGrade9.xaml.cs">
       <DependentUpon>StatisticGrade9.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Studemt_Exam_up_class.xaml.cs">
+      <DependentUpon>Studemt_Exam_up_class.xaml</DependentUpon>
     </Compile>
     <Compile Include="Report\StudentList.xaml.cs">
       <DependentUpon>StudentList.xaml</DependentUpon>
@@ -367,6 +377,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Report\List_Attendance_staff.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Report\List_of_repeat_students.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Report\MonthlySubjectResult.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -380,6 +398,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Report\StatisticGrade9.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Report\Studemt_Exam_up_class.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

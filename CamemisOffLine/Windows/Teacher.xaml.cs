@@ -4236,13 +4236,13 @@ namespace CamemisOffLine
             else
             {
                 this.Opacity = 0.5;
-<<<<<<< HEAD
+
                 message.title = Properties.Langs.Lang.print;
                 message.discription = Properties.Langs.Lang.Function+ item.title +Properties.Langs.Lang.Under_construction;
-=======
+
                 message.title = "បោះពុម្ភ";
                 message.discription = "មុខងារ" + item.title + "កំពុងសាងសង់";
->>>>>>> 83b37d9f0fe5b89f92191e4f2aadc4b7ff73073e
+
                 message.buttonType = 1;
                 message.ShowDialog();
                 this.Opacity = 1;
@@ -4737,7 +4737,6 @@ namespace CamemisOffLine
             var button = sender as Button;
             var item = button.DataContext as CardPrint;
             MessageBoxControl message = new MessageBoxControl();
-<<<<<<< HEAD
             message.Owner = this;
             this.Opacity = 0.5;
             message.title = Properties.Langs.Lang.print;
@@ -4745,7 +4744,6 @@ namespace CamemisOffLine
             message.buttonType = 1;
             message.ShowDialog();
             this.Opacity = 1;
-=======
             if(item.id==5)
             {
                 this.Opacity = 0.5;
@@ -4764,14 +4762,13 @@ namespace CamemisOffLine
             {
                 message.Owner = this;
                 this.Opacity = 0.5;
-                message.title = "បោះពុម្ភ";
+                message.title = Properties.Langs.Lang.print;
                 message.discription = "មុខងារ" + item.title + "កំពុងសាងសង់";
                 message.buttonType = 1;
                 message.ShowDialog();
                 this.Opacity = 1;
             }
             Console.WriteLine("Item : "+item.id);
->>>>>>> 83b37d9f0fe5b89f92191e4f2aadc4b7ff73073e
         }
 
         //-----------------------------------------------------------

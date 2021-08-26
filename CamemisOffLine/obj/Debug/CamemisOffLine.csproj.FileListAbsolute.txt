@@ -321,3 +321,9 @@ C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\CamemisOffLine.ap
 C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\CamemisOffLine.csproj.CopyComplete
 C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\CamemisOffLine.exe
 C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\CamemisOffLine.pdb
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\List_of_repeat_students.g.cs
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\List_of_repeat_students.baml
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\Studemt_Exam_up_class.g.cs
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\Studemt_Exam_up_class.baml
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\List_Attendance_staff.g.cs
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\List_Attendance_staff.baml
