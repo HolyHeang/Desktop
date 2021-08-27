@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Clone\10-08-2021\Desktop\CamemisOffLine\App.xaml
-35742841144
+38-1067408993
 3-1125448426
-53-52409279
+561578172645
 49857986773
-Component\MessageBoxControl.xaml;Component\PrintCardStyle.xaml;PopupUserControl.xaml;Report\AdministratorReport.xaml;Report\AtendentAcademy.xaml;Report\AttendanceReport.xaml;Report\Classification.xaml;Report\DistributionLetter.xaml;Report\DistributionStaffAcademy.xaml;Report\DistributionTeacher.xaml;Report\Education_Staff_Information_Sheet.xaml;Report\ListStudentCencel.xaml;Report\MonthlySubjectResult.xaml;Report\Semi-classification.xaml;Report\StatisticGrade12.xaml;Report\StatisticGrade9.xaml;Report\StudentList.xaml;Report\Student_Attendance_Year.xaml;Report\Summary_of_Students.xaml;Report\TeacherInformationExcel.xaml;Windows\About.xaml;Windows\Account.xaml;Windows\AllSubMonthlyResult.xaml;Windows\HomePage.xaml;Windows\HonoraryList.xaml;Windows\Loading.xaml;Windows\Login.xaml;Windows\MainWindow.xaml;Windows\MonthlyResult.xaml;Windows\MonthlyStatisticResult.xaml;Windows\PartTeacher.xaml;Windows\ShowListStudentToPrint.xaml;Windows\StudentResultDetail.xaml;Windows\Teacher.xaml;Windows\Transcript.xaml;
+Component\MessageBoxControl.xaml;Component\PrintCardStyle.xaml;PopupUserControl.xaml;Report\AdministratorReport.xaml;Report\AtendentAcademy.xaml;Report\AttendanceReport.xaml;Report\Classification.xaml;Report\DistributionLetter.xaml;Report\DistributionStaffAcademy.xaml;Report\DistributionTeacher.xaml;Report\Education_Staff_Information_Sheet.xaml;Report\ListStudentCencel.xaml;Report\List_Attendance_staff.xaml;Report\List_of_repeat_students.xaml;Report\MonthlySubjectResult.xaml;Report\Semi-classification.xaml;Report\StatisticGrade12.xaml;Report\StatisticGrade9.xaml;Report\Studemt_Exam_up_class.xaml;Report\StudentList.xaml;Report\Student_Attendance_Year.xaml;Report\Summary_of_Students.xaml;Report\TeacherInformationExcel.xaml;Windows\About.xaml;Windows\Account.xaml;Windows\AllSubMonthlyResult.xaml;Windows\HomePage.xaml;Windows\HonoraryList.xaml;Windows\Loading.xaml;Windows\Login.xaml;Windows\MainWindow.xaml;Windows\MonthlyResult.xaml;Windows\MonthlyStatisticResult.xaml;Windows\PartTeacher.xaml;Windows\ShowListStudentToPrint.xaml;Windows\StudentResultDetail.xaml;Windows\Teacher.xaml;Windows\Transcript.xaml;
 
-True
+False
 

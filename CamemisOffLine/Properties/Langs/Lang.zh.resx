@@ -120,17 +120,53 @@
   <data name="about" xml:space="preserve">
     <value>关于</value>
   </data>
+  <data name="absence" xml:space="preserve">
+    <value>缺席</value>
+  </data>
+  <data name="absent" xml:space="preserve">
+    <value>缺席的</value>
+  </data>
   <data name="acc" xml:space="preserve">
     <value>帐户</value>
   </data>
   <data name="Admin Menu" xml:space="preserve">
     <value>管理员菜单</value>
   </data>
+  <data name="Administrative Certificate" xml:space="preserve">
+    <value>行政证书</value>
+  </data>
+  <data name="allow score correction" xml:space="preserve">
+    <value>允许分数修正</value>
+  </data>
+  <data name="Application running" xml:space="preserve">
+    <value>应用程序运行</value>
+  </data>
+  <data name="approve" xml:space="preserve">
+    <value>批准</value>
+  </data>
   <data name="back" xml:space="preserve">
     <value>背部</value>
   </data>
+  <data name="by name" xml:space="preserve">
+    <value>按名称</value>
+  </data>
+  <data name="by rating" xml:space="preserve">
+    <value>按评级</value>
+  </data>
+  <data name="by score" xml:space="preserve">
+    <value>按分数</value>
+  </data>
+  <data name="calculate" xml:space="preserve">
+    <value>计算</value>
+  </data>
+  <data name="Calculated scores not successful" xml:space="preserve">
+    <value>计算分数不成功</value>
+  </data>
   <data name="Camemis Menu" xml:space="preserve">
     <value>CAMEMIS菜单</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>取消</value>
   </data>
   <data name="chines" xml:space="preserve">
     <value>中文</value>
@@ -141,6 +177,12 @@
   <data name="Cl Sch" xml:space="preserve">
     <value>课程表</value>
   </data>
+  <data name="class" xml:space="preserve">
+    <value>班级</value>
+  </data>
+  <data name="Classes" xml:space="preserve">
+    <value>班级</value>
+  </data>
   <data name="color" xml:space="preserve">
     <value>颜色</value>
   </data>
@@ -149,6 +191,12 @@
   </data>
   <data name="daily" xml:space="preserve">
     <value>日常</value>
+  </data>
+  <data name="Data" xml:space="preserve">
+    <value>数据</value>
+  </data>
+  <data name="data update" xml:space="preserve">
+    <value>数据更新：</value>
   </data>
   <data name="delect" xml:space="preserve">
     <value>选择</value>
@@ -159,20 +207,77 @@
   <data name="Differentfile" xml:space="preserve">
     <value>归档其他文件</value>
   </data>
+  <data name="distribution" xml:space="preserve">
+    <value>连接分布</value>
+  </data>
+  <data name="Do you really want to do the calculations" xml:space="preserve">
+    <value>你真的想做计算吗？</value>
+  </data>
+  <data name="Do you really want to exit CAMEMIS DESKTOP?" xml:space="preserve">
+    <value>您真的要退出 CAMEMIS DESKTOP 吗？</value>
+  </data>
+  <data name="Do you really want to submit" xml:space="preserve">
+    <value>你真的要提交吗？</value>
+  </data>
+  <data name="Do you want to use existing data for or new data?" xml:space="preserve">
+    <value>您要使用现有数据还是新数据？</value>
+  </data>
+  <data name="Do you want to use the print function?" xml:space="preserve">
+    <value>您要使用打印功能吗</value>
+  </data>
+  <data name="Download data" xml:space="preserve">
+    <value>下载数据</value>
+  </data>
+  <data name="Download image done" xml:space="preserve">
+    <value>下载图片完成</value>
+  </data>
+  <data name="download new data" xml:space="preserve">
+    <value>下载新数据</value>
+  </data>
+  <data name="Education Staff Newsletter" xml:space="preserve">
+    <value>教育职员通讯</value>
+  </data>
   <data name="en" xml:space="preserve">
     <value>英语</value>
   </data>
   <data name="Err" xml:space="preserve">
     <value>错误</value>
   </data>
+  <data name="Export data to Excel" xml:space="preserve">
+    <value>将数据导出到 Excel</value>
+  </data>
   <data name="fail" xml:space="preserve">
     <value>失败</value>
+  </data>
+  <data name="female" xml:space="preserve">
+    <value>女性</value>
+  </data>
+  <data name="French" xml:space="preserve">
+    <value>French</value>
+  </data>
+  <data name="Function" xml:space="preserve">
+    <value>功能</value>
   </data>
   <data name="GenaratePdf" xml:space="preserve">
     <value>生成所有分数公告为PDF</value>
   </data>
+  <data name="gender" xml:space="preserve">
+    <value>性别</value>
+  </data>
   <data name="Grade" xml:space="preserve">
     <value>年级</value>
+  </data>
+  <data name="grades" xml:space="preserve">
+    <value />
+  </data>
+  <data name="group" xml:space="preserve">
+    <value>团体</value>
+  </data>
+  <data name="Import data to Excel" xml:space="preserve">
+    <value>将数据导入 Excel</value>
+  </data>
+  <data name="In cho sinh viên" xml:space="preserve">
+    <value>为学生打印</value>
   </data>
   <data name="Incorect User/Pass" xml:space="preserve">
     <value>用户名或密码错误！</value>
@@ -183,17 +288,35 @@
   <data name="inputscore" xml:space="preserve">
     <value>输入分数</value>
   </data>
+  <data name="Internet" xml:space="preserve">
+    <value>互联网</value>
+  </data>
   <data name="kh" xml:space="preserve">
     <value>高棉语</value>
   </data>
   <data name="language" xml:space="preserve">
     <value>语</value>
   </data>
+  <data name="large to small" xml:space="preserve">
+    <value>大到小</value>
+  </data>
+  <data name="level" xml:space="preserve">
+    <value>等级</value>
+  </data>
+  <data name="List of staff roles" xml:space="preserve">
+    <value>员工角色列表</value>
+  </data>
+  <data name="List students by age" xml:space="preserve">
+    <value>按年龄列出学生</value>
+  </data>
   <data name="logout" xml:space="preserve">
     <value>登出</value>
   </data>
   <data name="LogoutWarning" xml:space="preserve">
     <value>登出</value>
+  </data>
+  <data name="male" xml:space="preserve">
+    <value>男性</value>
   </data>
   <data name="MergeFile" xml:space="preserve">
     <value>合并档案</value>
@@ -216,8 +339,17 @@
   <data name="month" xml:space="preserve">
     <value>月</value>
   </data>
+  <data name="month / semester / year" xml:space="preserve">
+    <value>月/学期/年</value>
+  </data>
   <data name="monthly" xml:space="preserve">
     <value>每月一次</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>新的</value>
+  </data>
+  <data name="No internet connection" xml:space="preserve">
+    <value>没有互联网连接</value>
   </data>
   <data name="noresultdata" xml:space="preserve">
     <value>没有结果数据！</value>
@@ -228,6 +360,30 @@
   <data name="option print" xml:space="preserve">
     <value>选项打印</value>
   </data>
+  <data name="options" xml:space="preserve">
+    <value>选项：</value>
+  </data>
+  <data name="permission" xml:space="preserve">
+    <value>权限</value>
+  </data>
+  <data name="please select" xml:space="preserve">
+    <value>请选择</value>
+  </data>
+  <data name="Please select a class and result type" xml:space="preserve">
+    <value>请选择一个班级和结果类型</value>
+  </data>
+  <data name="Please select a school year and class" xml:space="preserve">
+    <value>请选择学年和班级!</value>
+  </data>
+  <data name="Please select a school year and grade" xml:space="preserve">
+    <value>请选择学年和年级!</value>
+  </data>
+  <data name="Please select a school year and group" xml:space="preserve">
+    <value>请选择学年和组!</value>
+  </data>
+  <data name="Please wait" xml:space="preserve">
+    <value>请稍等</value>
+  </data>
   <data name="Pring Result" xml:space="preserve">
     <value>发布每月结果</value>
   </data>
@@ -236,6 +392,12 @@
   </data>
   <data name="print all sub" xml:space="preserve">
     <value>打印所有主题</value>
+  </data>
+  <data name="Print Classification" xml:space="preserve">
+    <value>印刷分类</value>
+  </data>
+  <data name="print for educators" xml:space="preserve">
+    <value>为教育工作者打印</value>
   </data>
   <data name="print honor table" xml:space="preserve">
     <value>打印荣誉表</value>
@@ -249,8 +411,26 @@
   <data name="QuseLogout" xml:space="preserve">
     <value>您确定要注销吗？</value>
   </data>
+  <data name="Rating - Classification" xml:space="preserve">
+    <value>评级 - 分类</value>
+  </data>
+  <data name="repeat class" xml:space="preserve">
+    <value>复课</value>
+  </data>
+  <data name="results" xml:space="preserve">
+    <value>结果</value>
+  </data>
   <data name="Sch Year" xml:space="preserve">
     <value>学年</value>
+  </data>
+  <data name="School Newsletter" xml:space="preserve">
+    <value>学校通讯</value>
+  </data>
+  <data name="school year" xml:space="preserve">
+    <value>学年</value>
+  </data>
+  <data name="science" xml:space="preserve">
+    <value>科学</value>
   </data>
   <data name="Sco Enter" xml:space="preserve">
     <value>分数输入</value>
@@ -258,14 +438,53 @@
   <data name="score" xml:space="preserve">
     <value>分数</value>
   </data>
+  <data name="search students:" xml:space="preserve">
+    <value>搜索学生：</value>
+  </data>
+  <data name="select class" xml:space="preserve">
+    <value>研究生</value>
+  </data>
+  <data name="select grade" xml:space="preserve">
+    <value>选择组</value>
+  </data>
+  <data name="select level" xml:space="preserve">
+    <value>选择级别</value>
+  </data>
+  <data name="Select Month / Semester / Year" xml:space="preserve">
+    <value>选择月/学期/年</value>
+  </data>
+  <data name="Select school year" xml:space="preserve">
+    <value>选择学年</value>
+  </data>
+  <data name="select students" xml:space="preserve">
+    <value>选择学生</value>
+  </data>
   <data name="semester" xml:space="preserve">
     <value>学期</value>
+  </data>
+  <data name="Semester Exam Results" xml:space="preserve">
+    <value>学期考试成绩</value>
+  </data>
+  <data name="Semester Results" xml:space="preserve">
+    <value>学期成绩</value>
   </data>
   <data name="set" xml:space="preserve">
     <value>设置</value>
   </data>
   <data name="setting" xml:space="preserve">
     <value>环境</value>
+  </data>
+  <data name="show all" xml:space="preserve">
+    <value>显示所有</value>
+  </data>
+  <data name="small to large" xml:space="preserve">
+    <value>从小到大</value>
+  </data>
+  <data name="Society" xml:space="preserve">
+    <value>社会</value>
+  </data>
+  <data name="sort" xml:space="preserve">
+    <value>种类：</value>
   </data>
   <data name="Staff Att" xml:space="preserve">
     <value>员工出勤</value>
@@ -278,6 +497,9 @@
   </data>
   <data name="staffadmin" xml:space="preserve">
     <value>员工管理员</value>
+  </data>
+  <data name="statistics" xml:space="preserve">
+    <value>统计数据</value>
   </data>
   <data name="Stu Att" xml:space="preserve">
     <value>学生参加</value>
@@ -294,6 +516,24 @@
   <data name="Stu List" xml:space="preserve">
     <value>学生名单</value>
   </data>
+  <data name="student Attendence Report" xml:space="preserve">
+    <value>学生出勤报告</value>
+  </data>
+  <data name="student list" xml:space="preserve">
+    <value>学生名单</value>
+  </data>
+  <data name="student schedule" xml:space="preserve">
+    <value>学生日程</value>
+  </data>
+  <data name="Student statistics by grade" xml:space="preserve">
+    <value>各年级学生统计</value>
+  </data>
+  <data name="Student Statistics for Education Staff" xml:space="preserve">
+    <value>教育人员的学生统计</value>
+  </data>
+  <data name="study results" xml:space="preserve">
+    <value>研究结果</value>
+  </data>
   <data name="Sub List" xml:space="preserve">
     <value>主题清单</value>
   </data>
@@ -303,8 +543,17 @@
   <data name="Tea Sche" xml:space="preserve">
     <value>教师时间表</value>
   </data>
+  <data name="Teacher" xml:space="preserve">
+    <value>老师</value>
+  </data>
+  <data name="Teacher and Staff Attendance Report" xml:space="preserve">
+    <value>教职工考勤报告</value>
+  </data>
   <data name="telegram" xml:space="preserve">
     <value>电报</value>
+  </data>
+  <data name="Temporary Student Statistics Grade 9 and 12" xml:space="preserve">
+    <value>9 年级和 12 年级临时学生统计</value>
   </data>
   <data name="Tooltip full screen" xml:space="preserve">
     <value>全屏</value>
@@ -320,5 +569,29 @@
   </data>
   <data name="Tooltip top bar Min" xml:space="preserve">
     <value>最小化</value>
+  </data>
+  <data name="transfer class" xml:space="preserve">
+    <value>转班</value>
+  </data>
+  <data name="Type of education" xml:space="preserve">
+    <value>教育类型</value>
+  </data>
+  <data name="Type of student" xml:space="preserve">
+    <value>学生类型</value>
+  </data>
+  <data name="Under construction" xml:space="preserve">
+    <value>建设中</value>
+  </data>
+  <data name="Unsuccessful printing" xml:space="preserve">
+    <value>打印不成功</value>
+  </data>
+  <data name="Use new data" xml:space="preserve">
+    <value>使用新数据</value>
+  </data>
+  <data name="Use old data" xml:space="preserve">
+    <value>使用旧数据</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>是的</value>
   </data>
 </root>

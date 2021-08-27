@@ -120,17 +120,53 @@
   <data name="about" xml:space="preserve">
     <value>អំពី</value>
   </data>
+  <data name="absence" xml:space="preserve">
+    <value>អវត្តមានមានច្បាប់</value>
+  </data>
+  <data name="absent" xml:space="preserve">
+    <value>អវត្តមាន</value>
+  </data>
   <data name="acc" xml:space="preserve">
     <value>គណនី</value>
   </data>
   <data name="Admin Menu" xml:space="preserve">
     <value>ទម្រង់នាយក</value>
   </data>
+  <data name="Administrative Certificate" xml:space="preserve">
+    <value>វិញ្ញាបនបត្ររដ្ឋបាល</value>
+  </data>
+  <data name="allow score correction" xml:space="preserve">
+    <value>អនុញ្ញាតឪ្យកែពិន្ទុ</value>
+  </data>
+  <data name="Application running" xml:space="preserve">
+    <value>កម្មវិធីកំពុងដំណើរការ</value>
+  </data>
+  <data name="approve" xml:space="preserve">
+    <value>អនុម័ត</value>
+  </data>
   <data name="back" xml:space="preserve">
     <value>ត្រឡប់</value>
   </data>
+  <data name="by name" xml:space="preserve">
+    <value>តាមឈ្មោះ</value>
+  </data>
+  <data name="by rating" xml:space="preserve">
+    <value>តាមចំណាត់ថ្នាក់</value>
+  </data>
+  <data name="by score" xml:space="preserve">
+    <value>តាមពិន្ទុ</value>
+  </data>
+  <data name="calculate" xml:space="preserve">
+    <value>គណនា</value>
+  </data>
+  <data name="Calculated scores not successful" xml:space="preserve">
+    <value>ការគណនាពិន្ទុមិនជោគជ័យ</value>
+  </data>
   <data name="Camemis Menu" xml:space="preserve">
     <value>ទម្រង់​ CAMEMIS</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>បោះបង់</value>
   </data>
   <data name="chines" xml:space="preserve">
     <value>ចិន</value>
@@ -141,6 +177,12 @@
   <data name="Cl Sch" xml:space="preserve">
     <value>កាលវិភាគប្រចាំថ្នាក់</value>
   </data>
+  <data name="class" xml:space="preserve">
+    <value>ថ្នាក់</value>
+  </data>
+  <data name="Classes" xml:space="preserve">
+    <value>ថ្នាក់បង្រៀន</value>
+  </data>
   <data name="color" xml:space="preserve">
     <value>ពណ៌</value>
   </data>
@@ -149,6 +191,12 @@
   </data>
   <data name="daily" xml:space="preserve">
     <value>ប្រចាំថ្ងៃ</value>
+  </data>
+  <data name="Data" xml:space="preserve">
+    <value>ទិន្នន័យ</value>
+  </data>
+  <data name="data update" xml:space="preserve">
+    <value>បច្ចុប្បន្នភាពទិន្នន័យ៖</value>
   </data>
   <data name="delect" xml:space="preserve">
     <value>លុប</value>
@@ -159,20 +207,74 @@
   <data name="Differentfile" xml:space="preserve">
     <value>ដាក់ឯកសារផ្សេងគ្នា</value>
   </data>
+  <data name="distribution" xml:space="preserve">
+    <value>បំណែងចែក</value>
+  </data>
+  <data name="Do you really want to do the calculations" xml:space="preserve">
+    <value>តើអ្នកពិតជាចង់ធ្វើការគណនាមែនទេ?</value>
+  </data>
+  <data name="Do you really want to exit CAMEMIS DESKTOP?" xml:space="preserve">
+    <value>តើអ្នកពីតជាចង់ចាក់ចេញពី​ CAMEMIS DESKTOP​ មែនទេ?</value>
+  </data>
+  <data name="Do you really want to submit" xml:space="preserve">
+    <value>តើអ្នកពិតជាចង់ធ្វើការដាក់ស្នើមែនទេ?</value>
+  </data>
+  <data name="Do you want to use existing data for or new data?" xml:space="preserve">
+    <value>តើអ្នកចង់ប្រើប្រាស់ទិន្នន័យមានសម្រាប់ ឬទិន្នន័យថ្មី?</value>
+  </data>
+  <data name="Do you want to use the print function?" xml:space="preserve">
+    <value>តើអ្នកចង់ប្រើមុខងារបោះពុម្ភ</value>
+  </data>
+  <data name="Download data" xml:space="preserve">
+    <value>ទាញទិន្នន័យ</value>
+  </data>
+  <data name="Download image done" xml:space="preserve">
+    <value>ទាញយករូបភាពរួចរាល់</value>
+  </data>
+  <data name="download new data" xml:space="preserve">
+    <value>ទាញទិន្នន័យថ្មី</value>
+  </data>
+  <data name="Education Staff Newsletter" xml:space="preserve">
+    <value>សាលាកបត្រព័ត៌មានបុគ្គលិកអប់រំ</value>
+  </data>
   <data name="en" xml:space="preserve">
     <value>អង់គ្លេស</value>
   </data>
   <data name="Err" xml:space="preserve">
     <value>កំហុស</value>
   </data>
+  <data name="Export data to Excel" xml:space="preserve">
+    <value>នាំចេញទិន្នន័យទៅ Excel</value>
+  </data>
   <data name="fail" xml:space="preserve">
     <value>បរាជ័យ</value>
+  </data>
+  <data name="female" xml:space="preserve">
+    <value>ស្រី</value>
+  </data>
+  <data name="French" xml:space="preserve">
+    <value>បារាំង</value>
+  </data>
+  <data name="Function" xml:space="preserve">
+    <value>មុខងារ</value>
   </data>
   <data name="GenaratePdf" xml:space="preserve">
     <value>បង្កើតព្រឹត្តិប័ត្រពិន្ទុទាំងអស់ជាPDF</value>
   </data>
+  <data name="gender" xml:space="preserve">
+    <value>ភេទ</value>
+  </data>
   <data name="Grade" xml:space="preserve">
     <value>កម្រិត</value>
+  </data>
+  <data name="grades" xml:space="preserve">
+    <value />
+  </data>
+  <data name="group" xml:space="preserve">
+    <value>ក្រុម</value>
+  </data>
+  <data name="Import data to Excel" xml:space="preserve">
+    <value>នាំចូលទិន្នន័យទៅ Excel</value>
   </data>
   <data name="Incorect User/Pass" xml:space="preserve">
     <value>ឈ្មោះអ្នកប្រើឬពាក្យសម្ងាត់មិនត្រឹមត្រូវ!</value>
@@ -183,17 +285,35 @@
   <data name="inputscore" xml:space="preserve">
     <value>បញ្ជូលពិន្ទុ</value>
   </data>
+  <data name="Internet" xml:space="preserve">
+    <value>អ៊ិនធឺណែត</value>
+  </data>
   <data name="kh" xml:space="preserve">
     <value>ខ្មែរ</value>
   </data>
   <data name="language" xml:space="preserve">
     <value>ភាសា</value>
   </data>
+  <data name="large to small" xml:space="preserve">
+    <value>ពីធំទៅតូច</value>
+  </data>
+  <data name="level" xml:space="preserve">
+    <value>កម្រិតរួម</value>
+  </data>
+  <data name="List of staff roles" xml:space="preserve">
+    <value>បញ្ជីបំណែងចែកតួនាទីបុគ្គលិក</value>
+  </data>
+  <data name="List students by age" xml:space="preserve">
+    <value>តារាងចំនួនសិស្សតាមប្រភេទអាយុ</value>
+  </data>
   <data name="logout" xml:space="preserve">
     <value>ចាកចេញ</value>
   </data>
   <data name="LogoutWarning" xml:space="preserve">
     <value>ចាកចេញ</value>
+  </data>
+  <data name="male" xml:space="preserve">
+    <value>ប្រុស</value>
   </data>
   <data name="MergeFile" xml:space="preserve">
     <value>ដាក់ឯកសារតែមួយចូលគ្នា</value>
@@ -216,8 +336,17 @@
   <data name="month" xml:space="preserve">
     <value>ជ្រើសខែ</value>
   </data>
+  <data name="month / semester / year" xml:space="preserve">
+    <value>ខែ / ឆមាស / ឆ្នាំ</value>
+  </data>
   <data name="monthly" xml:space="preserve">
     <value>ប្រចាំខែ</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>ថ្មី</value>
+  </data>
+  <data name="No internet connection" xml:space="preserve">
+    <value>មិនមានការភ្ជាប់អ៊ិនធឺណែត</value>
   </data>
   <data name="noresultdata" xml:space="preserve">
     <value>គ្មានទិន្ន័យ!</value>
@@ -228,6 +357,30 @@
   <data name="option print" xml:space="preserve">
     <value>ជម្រើសបោះពុម្ភ</value>
   </data>
+  <data name="options" xml:space="preserve">
+    <value>ជម្រើស៖</value>
+  </data>
+  <data name="permission" xml:space="preserve">
+    <value>អវត្តមានឥតច្បាប់</value>
+  </data>
+  <data name="please select" xml:space="preserve">
+    <value>សូមជ្រើសរើស</value>
+  </data>
+  <data name="Please select a class and result type" xml:space="preserve">
+    <value>សូមជ្រើសរើសថ្នាក់ និងប្រភេទលទ្ធផល</value>
+  </data>
+  <data name="Please select a school year and class" xml:space="preserve">
+    <value>សូមជ្រើសរើសឆ្នាំសិក្សា និងថ្នាក់!</value>
+  </data>
+  <data name="Please select a school year and grade" xml:space="preserve">
+    <value>សូមជ្រើសរើសឆ្នាំសិក្សា និងកម្រិត!</value>
+  </data>
+  <data name="Please select a school year and group" xml:space="preserve">
+    <value>សូមជ្រើសរើសឆ្នាំសិក្សា និងក្រុម!</value>
+  </data>
+  <data name="Please wait" xml:space="preserve">
+    <value>សូមមេត្តារង់ចាំ</value>
+  </data>
   <data name="Pring Result" xml:space="preserve">
     <value>បោះពុម្ភពិន្ទុ</value>
   </data>
@@ -236,6 +389,15 @@
   </data>
   <data name="print all sub" xml:space="preserve">
     <value>បោះពុម្ភមុខវិជ្ជាទាំងអស់</value>
+  </data>
+  <data name="Print Classification" xml:space="preserve">
+    <value>បោះពុម្ភចំណាត់ថ្នាក់ចំណាត់ប្រភេទ</value>
+  </data>
+  <data name="print for educators" xml:space="preserve">
+    <value>បោះពុម្ភសម្រាប់បុគ្គលិកអប់រំ</value>
+  </data>
+  <data name="print for students" xml:space="preserve">
+    <value>បោះពុម្ពសម្រាប់សិស្ស</value>
   </data>
   <data name="print honor table" xml:space="preserve">
     <value>បោះពុម្ភតារាងកិត្តិយស</value>
@@ -249,11 +411,29 @@
   <data name="QuseLogout" xml:space="preserve">
     <value>តើអ្នកពិតជាចង់ចាកចេញឬ?</value>
   </data>
+  <data name="Rating - Classification" xml:space="preserve">
+    <value>ចំណាត់ថ្នាក់-ចំណាត់ប្រភេទ</value>
+  </data>
+  <data name="repeat class" xml:space="preserve">
+    <value>ត្រួតថ្នាក់</value>
+  </data>
+  <data name="results" xml:space="preserve">
+    <value>លទ្ធផល</value>
+  </data>
   <data name="Return" xml:space="preserve">
     <value>ត្រឡប់ក្រោយ</value>
   </data>
   <data name="Sch Year" xml:space="preserve">
     <value>ឆ្នាំសិក្សា</value>
+  </data>
+  <data name="School Newsletter" xml:space="preserve">
+    <value>ព្រឹត្តិប័ត្រព័ត៌មាន សាលា</value>
+  </data>
+  <data name="school year" xml:space="preserve">
+    <value>ឆ្នាំសិក្សា</value>
+  </data>
+  <data name="science" xml:space="preserve">
+    <value>វិទ្យាសាស្រ្ត</value>
   </data>
   <data name="Sco Enter" xml:space="preserve">
     <value>បញ្ជូលពិន្ទុសិស្ស</value>
@@ -261,14 +441,53 @@
   <data name="score" xml:space="preserve">
     <value>ពិន្ទុ</value>
   </data>
+  <data name="search students:" xml:space="preserve">
+    <value>ស្វែងរកសិស្ស៖</value>
+  </data>
+  <data name="select class" xml:space="preserve">
+    <value>ជ្រើសរើសថ្នាក់</value>
+  </data>
+  <data name="select grade" xml:space="preserve">
+    <value>ជ្រើសរើសកម្រិត</value>
+  </data>
+  <data name="select level" xml:space="preserve">
+    <value>ជ្រើសរើសកម្រិតរួម</value>
+  </data>
+  <data name="Select Month / Semester / Year" xml:space="preserve">
+    <value>ជ្រើសរើសខែ/ឆមាស/ឆ្នាំ</value>
+  </data>
+  <data name="Select school year" xml:space="preserve">
+    <value>ជ្រើសរើសឆ្នាំសិក្សា</value>
+  </data>
+  <data name="select students" xml:space="preserve">
+    <value>សូមជ្រើសរើសសិស្ស</value>
+  </data>
   <data name="semester" xml:space="preserve">
     <value>ប្រចាំឆ្នាំ</value>
+  </data>
+  <data name="Semester Exam Results" xml:space="preserve">
+    <value>លទ្ធផលប្រឡងឆមាស</value>
+  </data>
+  <data name="Semester Results" xml:space="preserve">
+    <value />
   </data>
   <data name="set" xml:space="preserve">
     <value>កំណត់</value>
   </data>
   <data name="setting" xml:space="preserve">
     <value>ការកំណត់</value>
+  </data>
+  <data name="show all" xml:space="preserve">
+    <value>បង្ហាញ​ទាំងអស់</value>
+  </data>
+  <data name="small to large" xml:space="preserve">
+    <value>ពីតូចទៅធំ</value>
+  </data>
+  <data name="Society" xml:space="preserve">
+    <value>សង្គម</value>
+  </data>
+  <data name="sort" xml:space="preserve">
+    <value>តម្រៀប៖</value>
   </data>
   <data name="Staff Att" xml:space="preserve">
     <value>វត្តមានបុគ្គលិក</value>
@@ -281,6 +500,9 @@
   </data>
   <data name="staffadmin" xml:space="preserve">
     <value>ផ្នែកបុគ្គលិក</value>
+  </data>
+  <data name="statistics" xml:space="preserve">
+    <value>ស្ថិតិ</value>
   </data>
   <data name="Stu Att" xml:space="preserve">
     <value>បញ្ជីសម្រង់វត្តមានសិស្ស</value>
@@ -297,6 +519,24 @@
   <data name="Stu List" xml:space="preserve">
     <value>បញ្ជីឈ្មោះសិស្ស</value>
   </data>
+  <data name="student Attendence Report" xml:space="preserve">
+    <value>របាយការណ៏អវត្តមានសិស្ស</value>
+  </data>
+  <data name="student list" xml:space="preserve">
+    <value>បញ្ជីឈ្មោះសិស្ស</value>
+  </data>
+  <data name="student schedule" xml:space="preserve">
+    <value>កាលវិភាគសិស្ស</value>
+  </data>
+  <data name="Student statistics by grade" xml:space="preserve">
+    <value>ស្ថិតិសិស្សតាមថ្នាក់</value>
+  </data>
+  <data name="Student Statistics for Education Staff" xml:space="preserve">
+    <value>ស្ថិតិសិស្សថ្នាក់ បុគ្គលិកអប់រំ</value>
+  </data>
+  <data name="study results" xml:space="preserve">
+    <value>លទ្ធផលសិក្សា</value>
+  </data>
   <data name="Sub List" xml:space="preserve">
     <value>បញ្ជីមុខវិជ្ចា</value>
   </data>
@@ -306,8 +546,17 @@
   <data name="Tea Sche" xml:space="preserve">
     <value>កាលវិភាគគ្រូ</value>
   </data>
+  <data name="Teacher" xml:space="preserve">
+    <value>គ្រូ</value>
+  </data>
+  <data name="Teacher and Staff Attendance Report" xml:space="preserve">
+    <value>របាយការណ៍វត្តមានគ្រូនិងបុគ្គលិក</value>
+  </data>
   <data name="telegram" xml:space="preserve">
     <value>តេឡេក្រាម</value>
+  </data>
+  <data name="Temporary Student Statistics Grade 9 and 12" xml:space="preserve">
+    <value>ស្ថិតិសិស្សបណ្តោះអាសន្នថ្នាក់ទី៩​ និង ១២</value>
   </data>
   <data name="Tooltip full screen" xml:space="preserve">
     <value>ពេញអេក្រង់</value>
@@ -323,5 +572,29 @@
   </data>
   <data name="Tooltip top bar Min" xml:space="preserve">
     <value>បង្រួម</value>
+  </data>
+  <data name="transfer class" xml:space="preserve">
+    <value>ផ្ទេរថ្នាក់</value>
+  </data>
+  <data name="Type of education" xml:space="preserve">
+    <value>ប្រភេទអប់រំ</value>
+  </data>
+  <data name="Type of student" xml:space="preserve">
+    <value>ប្រភេទសិស្ស</value>
+  </data>
+  <data name="Under construction" xml:space="preserve">
+    <value>កំពុង​សាងសង់</value>
+  </data>
+  <data name="Unsuccessful printing" xml:space="preserve">
+    <value>ការបោះពុម្ពមិនជោគជ័យ</value>
+  </data>
+  <data name="Use new data" xml:space="preserve">
+    <value>ប្រើទិន្នន័យថ្មី</value>
+  </data>
+  <data name="Use old data" xml:space="preserve">
+    <value>ប្រើទិន្នន័យចាស់</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>បាទ/ចាស</value>
   </data>
 </root>

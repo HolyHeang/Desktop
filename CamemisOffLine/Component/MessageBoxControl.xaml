@@ -4,13 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
           xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+          xmlns:language="clr-namespace:CamemisOffLine.Properties.Langs"
         xmlns:local="clr-namespace:CamemisOffLine.Component"
         mc:Ignorable="d"
-        Title="MessageBoxControl" Height="168" Width="400" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Transparent" AllowsTransparency="True" MinHeight="168" Loaded="Window_Loaded">
+        Title="MessageBoxControl" Height="168" Width="450" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Transparent" AllowsTransparency="True" MinHeight="168" Loaded="Window_Loaded">
     <Border CornerRadius="10" Background="White" BorderBrush="Black" BorderThickness="0">
         <Grid>
             <StackPanel Orientation="Vertical">
-                <TextBlock Name="txtTitle" FontSize="16" Text="បោះពុម្ភ" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                <TextBlock Name="txtTitle" FontSize="16" Text="{x:Static language:Lang.print}" HorizontalAlignment="Left" VerticalAlignment="Top" 
                        Margin="20 10 10 0" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontWeight="Bold"/>
                 <Separator Margin="20 0 20 0"/>
                 <StackPanel Orientation="Horizontal"  Margin="30 10 10 0" Height="auto">
@@ -22,10 +23,10 @@
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"  Margin="0 0 24 24">
-                <Button Name="btnYes" Background="#1183CA" BorderBrush="Transparent" BorderThickness="0" Height="30" Width="auto" Content="បាទ/ចាស" FontSize="12" 
+                <Button Name="btnYes" Background="#1183CA" BorderBrush="Transparent" BorderThickness="0" Height="30" Width="auto" MinWidth="80" Content="{x:Static language:Lang.yes}" FontSize="12" 
                 VerticalContentAlignment="Bottom" HorizontalAlignment="Right" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"
                 FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="0 0 10 0" Click="btnYes_Click"/>
-                <Button Name="btnNo" Background="#D83A56" BorderBrush="Transparent" BorderThickness="0" Height="30" Width="auto" Content="បោះបង់" FontSize="12" 
+                <Button Name="btnNo" Background="#D83A56" BorderBrush="Transparent" BorderThickness="0" Height="30" Width="auto" MinWidth="80" Content="{x:Static language:Lang.cancel}" FontSize="12" 
                 VerticalContentAlignment="Bottom" HorizontalAlignment="Right" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"
                 FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Click="btnNo_Click"/>
             </StackPanel>
