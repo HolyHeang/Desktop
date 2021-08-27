@@ -18,7 +18,7 @@
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>ftp://camemis%40files.000webhost.com/public_html/CAMEMIS/</PublishUrl>
+    <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -28,14 +28,14 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://camemis.000webhostapp.com/CAMEMIS/</InstallUrl>
+    <InstallUrl>https://camemis.000webhostapp.com/camemis/</InstallUrl>
+    <UpdateUrl>https://camemis.000webhostapp.com/camemis/</UpdateUrl>
     <ProductName>CAMEMIS Desktop</ProductName>
     <PublisherName>Heang Holy</PublisherName>
     <SuiteName>Camemis</SuiteName>
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
-    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -66,7 +66,7 @@
     <ApplicationIcon>Image\CAMEMIS.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -81,7 +81,7 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>ACC4A2FFEED1F5233885359DCA7B329ADB0EF4C9</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>AB5BC14FEA5476047FC519CFE838842F828A3CA1</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>CamemisOffLine_TemporaryKey.pfx</ManifestKeyFile>
@@ -545,6 +545,7 @@
     <Resource Include="FontStyle\Khmer OS Muol Light.ttf" />
     <Resource Include="FontStyle\KHMEROSBATTAMBANG-BOLD.TTF" />
     <Resource Include="FontStyle\KHMEROSBATTAMBANG-REGULAR.TTF" />
+    <None Include="CamemisOffLine_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
