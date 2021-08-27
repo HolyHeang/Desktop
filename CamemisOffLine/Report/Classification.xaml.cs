@@ -136,15 +136,32 @@ namespace CamemisOffLine.Report
                         str = DecodeFrom64(File.ReadAllText(filePath + "\\" + "Year" + classId + ".txt"));
                         data = str.Split('|');
                     }
-                    obj = JObject.Parse(data[0]).ToObject<StudentMonthlyResultData>().data.OrderBy(s => s.result_yearly.rank).ToList();
+
+                    try
+                    {
+                        obj = JObject.Parse(data[0]).ToObject<StudentMonthlyResultData>().data.OrderBy(s => s.result_yearly.rank).ToList();
+                        NumberList(obj.OrderBy(s => s.result_yearly.rank).ToList());
+                    }
+                    catch
+                    {
+                        obj = JObject.Parse(data[0]).ToObject<StudentMonthlyResultData>().data;
+                        NumberList(obj);
+                    }
 
                     foreach (var item in obj)
                     {
                         txtClassName.Text = "ថ្នាក់ទី " + item.class_name + " ";
-                        if (item.result_yearly.avg_score == "0")
+                        try
                         {
-                            item.result_yearly.avg_score = "មិនចាត់ថ្នាក់";
-                            item.result_yearly.color = "Red";
+                            if (item.result_yearly.avg_score == "0")
+                            {
+                                item.result_yearly.avg_score = "មិនចាត់ថ្នាក់";
+                                item.result_yearly.color = "Red";
+                            }
+                        }
+                        catch {
+                            item.result_yearly.avg_score = "--";
+                            item.result_yearly.color = "Blue";
                         }
                         if (item.result_yearly.morality == null)
                             item.result_yearly.morality = "--";
@@ -153,7 +170,7 @@ namespace CamemisOffLine.Report
                         if (item.result_yearly.health == null)
                             item.result_yearly.health = "--";
                     }
-                    NumberList(obj.OrderBy(s => s.result_yearly.rank).ToList());
+                    
                     foreach (var item in obj)
                     {
                         mol.Add(new Morality
@@ -289,6 +306,7 @@ namespace CamemisOffLine.Report
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex);
                 MessageBoxControl message = new MessageBoxControl();
                 message.title = "ទិន្នន័យ";
                 message.discription = "មិនមានទិន្នន័យ";

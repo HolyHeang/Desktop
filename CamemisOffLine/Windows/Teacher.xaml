@@ -3848,31 +3848,12 @@
                                                 <Separator Margin="20 10 20 0"/>
                                                 <Grid Height="60" Background="White" Margin="20 10 20 0">
                                                     <StackPanel Orientation="Horizontal">
-                                                    <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
-                                                        <TextBlock Text="{x:Static language:Lang.school_year}" FontSize="14" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 0 0 0" VerticalAlignment="Center"/>
+                                                        <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                                                            <TextBlock Text="{x:Static language:Lang.school_year}" FontSize="14" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 0 0 0" VerticalAlignment="Center"/>
                                                             <ComboBox Name="cmbAcademicYearStatistic12Print" Text="{x:Static language:Lang.Select_school_year}" IsEditable="True" Style="{StaticResource combobox}" Height="40" HorizontalAlignment="Left" Width="200" Margin="10 0 0 0"  VerticalAlignment="Center" Padding="5 10 0 0"
                                                                           BorderThickness="1 2 1 1" BorderBrush="Black" materialDesign:HintAssist.Hint=" ជ្រើសរើស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" ItemsSource="{Binding ItemsSource,ElementName=cmbAcademicYearResultPrint}"
-                                                                          FontSize="14" SelectionChanged="cmbAcademicYearResultPrint_SelectionChanged"/>
-                                                    </StackPanel>
-                                                    <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                                                        <TextBlock Text="{x:Static language:Lang.Type_of_education}" FontSize="14" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 0 0 0" VerticalAlignment="Center"/>
-                                                        <ComboBox Name="cmbGradeStatistic12Print" Style="{StaticResource combobox}" Height="40" HorizontalAlignment="Left" Width="200" Margin="10 0 0 0"  VerticalAlignment="Center" Padding="5 10 0 0"
-                                                                          BorderThickness="1 2 1 1" BorderBrush="Black" materialDesign:HintAssist.Hint=" ជ្រើសរើស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"
-                                                                          FontSize="14">
-                                                                <ComboBoxItem IsSelected="True" Content="{x:Static language:Lang.show_all}" Padding="5 0 0 0"></ComboBoxItem>
-                                                                <ComboBoxItem Content="{x:Static language:Lang.science}" Padding="5 0 0 0"></ComboBoxItem>
-                                                                <ComboBoxItem Content="{x:Static language:Lang.society}" Padding="5 0 0 0"></ComboBoxItem>
-                                                        </ComboBox>
-                                                    </StackPanel>
-                                                    <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
-                                                        <TextBlock Text="{x:Static language:Lang.language}" FontSize="14" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 0 0 0" VerticalAlignment="Center"/>
-                                                        <ComboBox Name="cmbClassStatistic12Print" Style="{StaticResource combobox}" Height="40" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Width="200" VerticalAlignment="Center"  Margin="10 0 0 0" Padding="5 10 0 0"
-                                                                          BorderThickness="1 2 1 1" BorderBrush="Black" materialDesign:HintAssist.Hint=" ជ្រើសរើស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="14">
-                                                                <ComboBoxItem IsSelected="True" Content="{x:Static language:Lang.show_all}"></ComboBoxItem>
-                                                                <ComboBoxItem Content="{x:Static language:Lang.en}"></ComboBoxItem>
-                                                                <ComboBoxItem Content="{x:Static language:Lang.French}"></ComboBoxItem>
-                                                        </ComboBox>
-                                                    </StackPanel>
+                                                                          FontSize="14" SelectionChanged="cmbAcademicYearStatistic12Print_SelectionChanged"/>
+                                                        </StackPanel>
                                                     </StackPanel>
                                                 </Grid>
                                                 <ItemsControl Name="StatisticResultGrade12ReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1500">
@@ -3901,7 +3882,7 @@
                                                 </ItemsControl>
                                             </StackPanel>
                                             <!--Statistic by Class-->
-                                            <StackPanel Name="L11" >
+                                            <!--<StackPanel Name="L11" >
                                                 <TextBlock Text="{x:Static language:Lang.Student_statistics_by_grade}" HorizontalAlignment="Left" FontSize="18" Margin="20 20 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                 <Separator Margin="20 10 20 0"/>
                                                 <Grid Height="60" Background="White" Margin="20 10 20 0">
@@ -3973,9 +3954,9 @@
                                                         </ItemsPanelTemplate>
                                                     </ItemsControl.ItemsPanel>
                                                 </ItemsControl>
-                                            </StackPanel>
+                                            </StackPanel>-->
                                             <!--Student by Age-->
-                                            <StackPanel Name="L13" >
+                                            <!--<StackPanel Name="L13" >
                                                 <TextBlock Text="{x:Static language:Lang.List_students_by_age}" HorizontalAlignment="Left" FontSize="18" Margin="20 20 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                 <Separator Margin="20 10 20 0"/>
                                                 <Grid Height="60" Background="White" Margin="20 10 20 0">
@@ -4025,7 +4006,7 @@
                                                         </ItemsPanelTemplate>
                                                     </ItemsControl.ItemsPanel>
                                                 </ItemsControl>
-                                            </StackPanel>
+                                            </StackPanel>-->
                                             <!--Grade Summary-->
                                             <!--<StackPanel Name="L12" >
                                                 <TextBlock Text="តារាងសង្ខេបនិទ្ទេសសិស្សតាមមុខវិជ្ជា" HorizontalAlignment="Left" FontSize="18" Margin="20 20 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>

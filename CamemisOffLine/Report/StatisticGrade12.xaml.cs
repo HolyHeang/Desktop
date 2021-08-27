@@ -24,9 +24,11 @@ namespace CamemisOffLine.Report
     /// </summary>
     public partial class StatisticGrade12 : Window
     {
-        public StatisticGrade12()
+        string titleYear = "";
+        public StatisticGrade12(string titleYear)
         {
             InitializeComponent();
+            this.titleYear = titleYear;
         }
         string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
 
@@ -83,6 +85,7 @@ namespace CamemisOffLine.Report
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            lblMonth.Text = titleYear;
             List<StaffAttendance> at = new List<StaffAttendance>();
             for (int i = 1; i <= 1; i++)
             {
@@ -115,6 +118,11 @@ namespace CamemisOffLine.Report
         {
             Grid g = (Grid)sender;
             g.Background = Brushes.Transparent;
+        }
+
+        private void Header_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
     }
 }

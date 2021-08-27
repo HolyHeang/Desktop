@@ -1,5 +1,9 @@
-﻿using iTextSharp.text;
+﻿using CamemisOffLine.Component;
+using CamemisOffLine.Windows;
+using iTextSharp.text;
 using iTextSharp.text.pdf;
+using Library;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -23,63 +27,231 @@ namespace CamemisOffLine.Report
     /// </summary>
     public partial class List_of_repeat_students : Window
     {
+        string yearId = "90457379570337304433", titleYear = "";
         public List_of_repeat_students()
         {
             InitializeComponent();
-        }
-        string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
-
-        private void print()
-        {
             lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
             TitleSchool.Content = Properties.Settings.Default.schoolName;
+        }
+        public List_of_repeat_students(string yearId, string titleYear)
+        {
+            InitializeComponent();
+            this.titleYear = titleYear;
+            this.yearId = yearId;
+            lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
+            TitleSchool.Content = Properties.Settings.Default.schoolName;
+        }
+        string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
+        private int number = 1, gril = 0;
+
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Loading load = new Loading();
+            load.Show();
             try
             {
+                TitleSchool.Content = Properties.Settings.Default.schoolName;
+
+                lblMonth.Text = titleYear;
+
 
                 this.Hide();
-                Document document = new Document(PageSize.A4, 5, 0, 0, 0);
-                PdfWriter.GetInstance(document, new System.IO.FileStream(filePath + "\\" + "បញ្ជីសិស្សត្រួតថ្នាក់" + ".pdf", FileMode.Create));
+                var respone = "";
+                if (Teacher.InternetChecker())
+                {
+                    respone = await GetDataAsync(yearId);
+                }
+                else
+                {
+                    respone = File.ReadAllText(filePath + "\\" + "PassFailStudent" + yearId + ".txt");
+                }
+                var obj = JObject.Parse(respone).ToObject<AllStudentList>().data;
 
+
+
+                foreach (var item in obj)
+                {
+                    item.number = number.ToString();
+                    if (item.gender == "ស្រី")
+                        gril++;
+                    number++;
+                }
+
+                int startIndex = 0, endIndex = 25;
+                Document document = new Document(PageSize.A4, 0, 0, 0, 0);
+                PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "ResultTemplate" + ".pdf", FileMode.Create));
                 document.Open();
-
                 GC.Collect();
 
-                string targetFile = System.IO.Path.GetTempFileName();
-                using (FileStream outStream = new FileStream(targetFile, FileMode.Create))
+                List<StuedntofTheYear> copyResult = new List<StuedntofTheYear>();
+                if (obj.Count <= 25)
                 {
+                    if (obj.Count <= 18)
+                    {
+                        Grid.Dispatcher.Invoke(() =>
+                        {
+                            showData(obj);
+                            Grid.UpdateLayout();
+                        });
+                        PrintList(document);
+                    }
+                    else
+                    {
+                        for (int i = 0; i < 2; i++)
+                        {
+                            if (i == 0)
+                            {
+                                Footer.Visibility = Visibility.Collapsed;
+                                Grid.Dispatcher.Invoke(() =>
+                                {
+                                    showData(obj);
+                                    Grid.UpdateLayout();
+                                });
+                                PrintList(document);
+                            }
+                            else if (i == 1)
+                            {
+                                Footer.Visibility = Visibility.Visible;
+                                Header.Visibility = Visibility.Collapsed;
 
-                    PngBitmapEncoder enc = new PngBitmapEncoder();
-                    var bitmap = new RenderTargetBitmap((int)Grid.ActualWidth * 2, (int)Grid.ActualHeight * 2, 120, 120, PixelFormats.Pbgra32);
-                    bitmap.Render(Grid);
-                    enc.Frames.Add(BitmapFrame.Create(bitmap));
-                    enc.Save(outStream);
-                    bitmap = null;
-
-                    outStream.Dispose();
+                                Grid.Dispatcher.Invoke(() =>
+                                {
+                                    showData(obj);
+                                    Grid.UpdateLayout();
+                                });
+                                PrintList(document);
+                            }
+                        }
+                    }
                 }
-                using (FileStream fs = new FileStream(targetFile, FileMode.Open))
+                else
                 {
-                    iTextSharp.text.Image png = iTextSharp.text.Image.GetInstance(System.Drawing.Image.FromStream(fs), System.Drawing.Imaging.ImageFormat.Png);
-                    png.ScalePercent(49f);
-                    document.Add(png);
-                }
+                    bool footerAvaliable = false;
+                    while (true)
+                    {
+                        copyResult.Clear();
+                        for (int i = startIndex; i < endIndex; i++)
+                        {
+                            if (obj[i] != null)
+                            {
+                                copyResult.Add(obj[i]);
+                            }
+                        }
+                        if (!footerAvaliable)
+                            Footer.Visibility = Visibility.Collapsed;
 
-                GC.Collect();
+                        Grid.Dispatcher.Invoke(() =>
+                        {
+                            showData(copyResult);
+                            Grid.UpdateLayout();
+                        });
+                        PrintList(document);
+                        if (endIndex == obj.Count())
+                        {
+                            if (!footerAvaliable)
+                            {
+                                Header.Visibility = Visibility.Collapsed;
+                                title.Visibility = Visibility.Collapsed;
+                                Body.Visibility = Visibility.Collapsed;
+                                Footer.Visibility = Visibility.Visible;
+                                PrintList(document);
+                            }
+
+                            break;
+                        }
+
+                        startIndex = endIndex;
+
+                        if (obj.Count() - endIndex > 30)
+                        {
+                            endIndex = startIndex + 32;
+                            if (endIndex > obj.Count)
+                                endIndex = obj.Count();
+                            Header.Visibility = Visibility.Collapsed;
+                            title.Visibility = Visibility.Collapsed;
+                            Footer.Visibility = Visibility.Collapsed;
+                        }
+                        else
+                        {
+                            endIndex = obj.ToList().Count();
+                            Header.Visibility = Visibility.Collapsed;
+                            title.Visibility = Visibility.Collapsed;
+                            if (obj.ToList().Count() - startIndex <= 25)
+                            {
+                                Footer.Visibility = Visibility.Visible;
+                                footerAvaliable = true;
+                            }
+
+                        }
+
+                    }
+                }
                 document.Close();
-                GC.Collect();
-                Process.Start(filePath + "\\" + "បញ្ជីសិស្សត្រួតថ្នាក់" + ".pdf");
+                Process.Start(filePath + "\\" + "ResultTemplate" + ".pdf");
                 this.Close();
             }
             catch
             {
-                MessageBox.Show("ការបោះពុម្ភរបស់អ្នកមិនទទូលបានជោគជ័យ", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
-                this.Close();
+                MessageBoxControl message = new MessageBoxControl();
+                message.buttonType = 1;
+                message.title = "បោះពុម្ភ";
+                message.discription = "បោះពុម្ភមិនបានជោគជ័យ";
+                message.ShowDialog();
+            }
+            load.Close();
+        }
+        private async Task<string> GetDataAsync(string yearId)
+        {
+            try
+            {
+                string accessUrl = Properties.Settings.Default.acessUrl;
+                string token = Properties.Settings.Default.Token;
+                string respone = "";
+
+                respone = await RESTApiHelper.GetAll(accessUrl, "/academic/" + yearId + "/print-list-student-status?pass_fail=2", token);
+
+                using (StreamWriter writer = new StreamWriter(filePath + "\\" + "PassFailStudent" + yearId + ".txt"))
+                {
+                    writer.WriteLine(respone);
+                }
+
+                return respone;
+            }
+            catch
+            {
+                return null;
             }
         }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void showData(List<StuedntofTheYear> obj)
         {
-            print();
+            Data.ItemsSource = null;
+            txtTotalStudent.Text = "បញ្ឈប់បញ្ជីត្រឹមចំនួន " + DateChange.Num(obj.Count) + "នាក់ ស្រី " + DateChange.Num(gril) + "នាក់";
+            Data.ItemsSource = obj;
+        }
+        void PrintList(Document document)
+        {
+            string targetFile = System.IO.Path.GetTempFileName();
+            using (FileStream outStream = new FileStream(targetFile, FileMode.Create))
+            {
+
+                PngBitmapEncoder enc = new PngBitmapEncoder();
+                var bitmap = new RenderTargetBitmap((int)Grid.ActualWidth * 2, (int)Grid.ActualHeight * 2, 120, 120, PixelFormats.Pbgra32);
+                bitmap.Render(Grid);
+                enc.Frames.Add(BitmapFrame.Create(bitmap));
+                enc.Save(outStream);
+                bitmap = null;
+
+                outStream.Dispose();
+            }
+            using (FileStream fs = new FileStream(targetFile, FileMode.Open))
+            {
+                iTextSharp.text.Image png = iTextSharp.text.Image.GetInstance(System.Drawing.Image.FromStream(fs), System.Drawing.Imaging.ImageFormat.Png);
+                png.ScalePercent(49f);
+                document.Add(png);
+            }
+
         }
     }
+
 }

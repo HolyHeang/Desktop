@@ -33,11 +33,13 @@ namespace CamemisOffLine.Report
         public string classId { get; set; }
         public string gradeId { get; set; }
         public string level { get; set; }
-        public StudentList(int ping,int type)
+        string titleYear = "";
+        public StudentList(int ping,int type,string titleYear)
         {
             InitializeComponent();
             pings = ping;
             this.type = type;
+            this.titleYear = titleYear;
         }
 
         public string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
@@ -48,6 +50,7 @@ namespace CamemisOffLine.Report
         {
             TitleSchool.Content = Properties.Settings.Default.schoolName;
             lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
+            lblMonth.Text = "បញ្ជីរាយនាមសិស្សគ្រប់កម្រិតថ្នាក់ ឆ្នាំសិក្សា "+titleYear;
             List<string> fileArray = new List<string>();
             try
             {

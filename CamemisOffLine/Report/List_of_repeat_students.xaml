@@ -46,9 +46,9 @@
                 </Grid>
                 <Grid Height="60" Margin="0 10 0 0" Name="title">
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                        <TextBlock Name="lblMonth" Text="បញ្ជីសិស្សត្រួតថ្នាក់" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="18" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+                        <TextBlock Text="បញ្ជីសិស្សត្រួតថ្នាក់" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="18" Foreground="Black" Margin="0 0 0 0"></TextBlock>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <TextBlock Text="២០២០-២០២១" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+                            <TextBlock Name="lblMonth" Text="២០២០-២០២១" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
 
                         </StackPanel>
                     </StackPanel>
@@ -60,7 +60,7 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Orientation="Vertical" Grid.Column="0">
                         <Grid>
-                            <DataGrid Margin="10 0 10 0" AutoGenerateColumns="False" RowHeight="35" BorderThickness="1 1 1 0" BorderBrush="Black" Background="White" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="25cm" CanUserAddRows="False" HorizontalScrollBarVisibility="Hidden">
+                            <DataGrid Name="Data" Margin="10 0 10 0" AutoGenerateColumns="False" RowHeight="40" BorderThickness="1 1 1 0" BorderBrush="Black" Background="White" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="25cm" CanUserAddRows="False" HorizontalScrollBarVisibility="Hidden">
                                 <DataGrid.Resources>
 
                                     <Style TargetType="DataGrid">
@@ -87,7 +87,7 @@
                                 <!--//............................Number............................-->
                                 <DataGrid.Columns>
 
-                                    <DataGridTextColumn Header="ល.រ" Width="80" FontSize="15">
+                                    <DataGridTextColumn Header="ល.រ" Width="80" FontSize="14" Binding="{Binding number}">
                                         <DataGridTextColumn.ElementStyle>
                                             <Style TargetType="TextBlock">
                                                 <Setter Property="Foreground" Value="Black"></Setter>
@@ -100,12 +100,12 @@
 
 
                                     <!--//............................Name............................-->
-                                    <DataGridTextColumn Width="200" FontSize="15" Header="គោត្តនាម-នាមខ្លួន" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang">
+                                    <DataGridTextColumn Width="200" FontSize="15" Header="គោត្តនាម-នាមខ្លួន" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Binding="{Binding name}">
                                         <DataGridTextColumn.ElementStyle>
                                             <Style TargetType="TextBlock">
                                                 <Setter Property="Foreground" Value="Black"></Setter>
                                                 <Setter Property="FontWeight" Value="Bold"></Setter>
-                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                <Setter Property="HorizontalAlignment" Value="Left"/>
                                                 <Setter Property="VerticalAlignment" Value="Center"/>
                                             </Style>
                                         </DataGridTextColumn.ElementStyle>
@@ -113,7 +113,7 @@
                                     </DataGridTextColumn>
 
                                     <!--//............................Date of birth............................-->
-                                    <DataGridTextColumn Width="144" Header="ថ្ងៃខែកំណើត" FontSize="12">
+                                    <DataGridTextColumn Width="144" Header="ថ្ងៃខែកំណើត" FontSize="14" Binding="{Binding dob}">
 
                                         <DataGridTextColumn.ElementStyle>
 
@@ -129,7 +129,7 @@
 
 
                                     <!--//............................Gender............................-->
-                                    <DataGridTextColumn  Width="90" Header="ភេទ" FontSize="12">
+                                    <DataGridTextColumn  Width="90" Header="ភេទ" FontSize="14" Binding="{Binding gender}">
                                         <DataGridTextColumn.ElementStyle>
                                             <Style TargetType="TextBlock">
                                                 <Setter Property="Foreground" Value="Black"></Setter>
@@ -143,7 +143,7 @@
 
                                    
                                     <!--//............................Number Phone............................-->
-                                    <DataGridTextColumn Width="170" Header="លេខទូរស័ព្ទ" FontSize="12">
+                                    <DataGridTextColumn Width="170" Header="លេខទូរស័ព្ទ" FontSize="14" Binding="{Binding phone}">
 
                                         <DataGridTextColumn.ElementStyle>
 
@@ -160,7 +160,7 @@
 
 
                                     <!--//............................Student learn............................-->
-                                    <DataGridTextColumn Width="150" Header="សិស្សរៀនថ្នាក់ទី" FontSize="12" >
+                                    <DataGridTextColumn Width="150" Header="សិស្សរៀនថ្នាក់ទី" FontSize="14" Binding="{Binding class_name}">
 
                                         <DataGridTextColumn.ElementStyle>
 
@@ -175,7 +175,7 @@
                                     </DataGridTextColumn>
 
                                     <!--//............................New Class............................-->
-                                    <DataGridTextColumn Width="110" Header="ថ្នាក់ថ្មី" FontSize="12">
+                                    <DataGridTextColumn Width="110" Header="ថ្នាក់ថ្មី" FontSize="14" Binding="{Binding go_to_class}">
 
                                         <DataGridTextColumn.ElementStyle>
 
@@ -205,7 +205,7 @@
 
                         <Grid Grid.Column="0" Margin="20 0 0 0">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="បញ្ឈប់បញ្ជីត្រឹមចំនួន៥៣នាក់ ស្រី ២១នាក់" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
+                                <TextBlock Name="txtTotalStudent" Text="បញ្ឈប់បញ្ជីត្រឹមចំនួន៥៣នាក់ ស្រី ២១នាក់" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
 
                             </StackPanel>
                         </Grid>

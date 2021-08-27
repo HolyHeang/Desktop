@@ -23,6 +23,7 @@ namespace Library
         public string lastname { get; set; }
         public string gender { get; set; }
         public string dob { get; set; }
+        public string class_name { get; set; }
         public string lower_secondary_school { get; set; }
         public string come_from_class { get; set; }
         public string come_from_school { get; set; }
@@ -31,5 +32,10 @@ namespace Library
         public string level { get; set; }
         public string grade { get; set; }
         public string grade_id { get; set; }
+        public string re_exam { get; set; }
+        public string give_up { get; set; }
+        public string give_up_date { get; set; }
+        public string phone { get; set; }
+        public string go_to_class { get; set; }
     }
 }

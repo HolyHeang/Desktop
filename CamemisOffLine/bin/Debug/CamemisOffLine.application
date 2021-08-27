@@ -14,14 +14,23 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
+<<<<<<< HEAD
     <dependentAssembly dependencyType="install" codebase="CamemisOffLine.exe.manifest" size="37795">
       <assemblyIdentity name="CamemisOffLine.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+=======
+    <dependentAssembly dependencyType="install" codebase="CamemisOffLine.exe.manifest" size="37796">
+      <assemblyIdentity name="CamemisOffLine.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+>>>>>>> 3519618ff30f6100df3c72d8334613372508bb72
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>rt5MQXQ/1PrgTgje8osAf3cI9ThHDiK5WmgE0MCpFJg=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>eLd97yGoxtWjSDEF+C3kLJv7AKRRYHvjeciSIhkAWJo=</dsig:DigestValue>
+>>>>>>> 3519618ff30f6100df3c72d8334613372508bb72
       </hash>
     </dependentAssembly>
   </dependency>

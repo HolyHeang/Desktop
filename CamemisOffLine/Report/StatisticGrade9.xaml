@@ -10,7 +10,7 @@
     <ScrollViewer VerticalScrollBarVisibility="Hidden">
         <Grid HorizontalAlignment="Center">
             <StackPanel Orientation="Vertical" Name="Grid" HorizontalAlignment="Center">
-                <Grid Name="Header" Margin="0 0 0 0">
+                <Grid Name="Header" Margin="0 0 0 0" MouseDown="Header_MouseDown">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1.5*"></ColumnDefinition>
                         <ColumnDefinition Width="0.5*"></ColumnDefinition>
@@ -73,10 +73,10 @@
                 </Grid>
                 <Grid Height="60" Margin="0 10 0 0" Name="title">
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                        <TextBlock Name="lblMonth" Text="ស្ថិតិសិស្សបណ្ដោះអាសន្នថ្នាក់ទី៩ ចំណេះទូទៅ និងបំពេញវិជ្ជា សាធារណៈ និងឯកជន" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+                        <TextBlock Text="ស្ថិតិសិស្សបណ្ដោះអាសន្នថ្នាក់ទី៩ ចំណេះទូទៅ និងបំពេញវិជ្ជា សាធារណៈ និងឯកជន" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                             <TextBlock Text="ឆ្នាំសិក្សា" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
-                            <TextBlock Text="២០២០-២០២១" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+                            <TextBlock Name="lblMonth" Text="២០២០-២០២១" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
 
                         </StackPanel>
                     </StackPanel>
@@ -388,13 +388,13 @@
                                 <Label HorizontalAlignment="Left" Margin="0 0 25 0">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="ថ្ងៃ" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                                        <TextBlock Name="lblDay" Text="............." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                        <TextBox Name="lblDay" Text="............." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="auto" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0 -3 0 0"></TextBox>
                                         <TextBlock Text="ខែ" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                                        <TextBlock Name="lblMonths" Text="............." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                        <TextBox Name="lblMonths" Text="............." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="auto" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0 -3 0 0"></TextBox>
                                         <TextBlock Text="ឆ្នាំ" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                                        <TextBlock Name="lblYear" Text=".............." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                        <TextBox Name="lblYear" Text=".............." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="auto" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0 -3 0 0"></TextBox>
                                         <TextBlock Text="ព.ស" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                                        <TextBlock Name="lblKhmerYear" Text=".............." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                        <TextBox Name="lblKhmerYear" Text=".............." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="auto" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0 -3 0 0"></TextBox>
                                     </StackPanel>
                                 </Label>
                                 <Label HorizontalAlignment="Right" Margin="0 5 70 0" FontSize="10">
@@ -404,10 +404,10 @@
                                         <TextBlock Text="ខែ" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
                                         <TextBlock Text="{Binding Text,ElementName=lblMonths}" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
                                         <TextBlock Text="ឆ្នាំ" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                                        <TextBlock Text="{Binding Text,ElementName=lblMonths}" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                        <TextBlock Text="{Binding Text,ElementName=lblYear}" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
                                     </StackPanel>
                                 </Label>
-                                <Label Content="នាយកវិទ្យាល័យ" FontSize="15" HorizontalAlignment="Center" Margin=" 0 5 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
+                                <TextBox Text="នាយកវិទ្យាល័យ" FontSize="15" HorizontalAlignment="Center" Margin=" 0 5 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" BorderThickness="0"></TextBox>
                             </StackPanel>
                         </Grid>
                     </Grid>

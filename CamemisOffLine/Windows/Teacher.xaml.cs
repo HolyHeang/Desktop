@@ -4138,7 +4138,7 @@ namespace CamemisOffLine
             m.title = Properties.Langs.Lang.Data;
             m.buttonType = 1;
             message.Owner = this;
-            if (item.id >= 1 && item.id <= 5)
+            if (item.id >= 1 && item.id <= 4)
             {
                 this.Opacity = 0.5;
                 message.title = Properties.Langs.Lang.print;
@@ -4155,7 +4155,7 @@ namespace CamemisOffLine
                     }
                     else
                     {
-                        StudentList student = new StudentList(ping, 1);
+                        StudentList student = new StudentList(ping, 1, YearSelection);
                         student.schoolYearId = schoolYearId;
                         student.Show();
                     }
@@ -4170,7 +4170,7 @@ namespace CamemisOffLine
                     }
                     else
                     {
-                        StudentList student = new StudentList(ping, 2);
+                        StudentList student = new StudentList(ping, 2, YearSelection);
                         student.classId = classId;
                         student.schoolYearId = schoolYearId;
                         student.Show();
@@ -4185,7 +4185,7 @@ namespace CamemisOffLine
                     }
                     else
                     {
-                        StudentList student = new StudentList(ping, 3);
+                        StudentList student = new StudentList(ping, 3, YearSelection);
                         student.gradeId = gradeId;
                         student.schoolYearId = schoolYearId;
                         student.Show();
@@ -4200,7 +4200,7 @@ namespace CamemisOffLine
                     }
                     else
                     {
-                        StudentList student = new StudentList(ping, 4);
+                        StudentList student = new StudentList(ping, 4, YearSelection);
                         student.schoolYearId = schoolYearId;
                         student.level = level;
                         student.Show();
@@ -4209,36 +4209,71 @@ namespace CamemisOffLine
 
                 this.Opacity = 1;
             }
-            else if (item.id == 8)
+            else if (item.id == 9)
             {
                 StudenPrintMonthlySemesterResult();
             }
-            else if (item.id == 9)
+            else if (item.id == 10)
             {
                 StudentPrintMonthlySemesterTranscrip();
             }
-            else if (item.id == 10)
+            else if (item.id == 11)
             {
                 StudentPrintHonoraryList();
             }
-            else if (item.id == 11)
+            else if (item.id == 12)
             {
                 Classification classification = new Classification(classId, term, YearSelection, ping);
                 classification.Show();
             }
-            else if (item.id == 16)
+            else if (item.id == 14)
             {
-
-                AttendanceReport attendance = new AttendanceReport(classId, month, yearTitle, studentClass);
-                attendance.Show();
-
+                if (month == "0")
+                {
+                    Student_Attendance_Year attendance_Year = new Student_Attendance_Year(classId, month, yearTitle, studentClass);
+                    attendance_Year.Show();
+                }
+                else
+                {
+                    AttendanceReport attendance = new AttendanceReport(classId, month, yearTitle, studentClass);
+                    attendance.Show();
+                }
+            }
+            else if (item.id == 5)
+            {
+                Studemt_Exam_up_class up_Class = new Studemt_Exam_up_class(schoolYearId, YearSelection);
+                up_Class.Show();
+            }
+            else if (item.id == 7)
+            {
+                ListStudentCencel studentCencel = new ListStudentCencel(schoolYearId, YearSelection);
+                studentCencel.Show();
+            }
+            else if (item.id == 6)
+            {
+                List_of_repeat_students repeat_Students = new List_of_repeat_students(schoolYearId, YearSelection);
+                repeat_Students.Show();
+            }
+            else if (item.id == 23)
+            {
+                this.Opacity = 0.5;
+                StatisticGrade9 statisticGrade9 = new StatisticGrade9(YearSelection);
+                statisticGrade9.ShowDialog();
+                this.Opacity = 1;
+            }
+            else if (item.id == 24)
+            {
+                this.Opacity = 0.5;
+                StatisticGrade12 statisticGrade12 = new StatisticGrade12(YearSelection);
+                statisticGrade12.ShowDialog();
+                this.Opacity = 1;
             }
             else
             {
                 this.Opacity = 0.5;
 
                 message.title = Properties.Langs.Lang.print;
-                message.discription = Properties.Langs.Lang.Function+ item.title +Properties.Langs.Lang.Under_construction;
+                message.discription = Properties.Langs.Lang.Function + item.title + Properties.Langs.Lang.Under_construction;
 
                 message.title = "បោះពុម្ភ";
                 message.discription = "មុខងារ" + item.title + "កំពុងសាងសង់";
@@ -4523,9 +4558,9 @@ namespace CamemisOffLine
             //SubScoreReportListPrint.ItemsSource = list[7];
             //StatisticResultReportListPrint.ItemsSource = list[8];
             StatisticResultGrade12ReportListPrint.ItemsSource = list[9];
-            StatisticbyClassReportListPrint.ItemsSource = list[10];
+            //StatisticbyClassReportListPrint.ItemsSource = list[10];
             //GradeSummaryReportListPrint.ItemsSource = list[11];
-            StudentbyAgeReportListPrint.ItemsSource = list[12];
+            //StudentbyAgeReportListPrint.ItemsSource = list[12];
 
 
         }
@@ -5213,6 +5248,32 @@ namespace CamemisOffLine
                 studentMonth = selection.Key;
                 month = DateChange.checkMonthString(selection.Key).ToString();
                 items.BorderBrush = Brushes.Black;
+            }
+            catch { }
+        }
+
+        private void cmbAcademicYearStatistic12Print_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                List<string> grade = new List<string>();
+                var item = sender as ComboBox;
+                var selection = item.SelectedItem;
+                YearSelection = selection.ToString();
+                studentYear = selection.ToString();
+                yearTitle = selection.ToString();
+                var obj = JObject.Parse(Properties.Settings.Default.schoolAcademyYear).ToObject<YearofAcademy>().data.Where(y => y.name.Equals(selection.ToString()));
+                foreach (var items in obj)
+                {
+                    schoolYearId = items.id;
+                    foreach (var grades in items.school_system)
+                    {
+                        foreach (var gradeName in grades.grade)
+                        {
+                            grade.Add(gradeName.name);
+                        }
+                    }
+                }
             }
             catch { }
         }
