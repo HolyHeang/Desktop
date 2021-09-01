@@ -6,22 +6,8 @@ C:\Users\ASUS\Desktop\Camemis\Desktop\Library\bin\Debug\System.Data.SQLite.dll
 C:\Users\ASUS\Desktop\Camemis\Desktop\Library\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
 C:\Users\ASUS\Desktop\Camemis\Desktop\Library\bin\Debug\System.Net.Http.Formatting.dll
 C:\Users\ASUS\Desktop\Camemis\Desktop\Library\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\ASUS\Desktop\Camemis\Desktop\Library\obj\Debug\Library.csprojAssemblyReference.cache
 C:\Users\ASUS\Desktop\Camemis\Desktop\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\Desktop\Camemis\Desktop\Library\obj\Debug\Library.csproj.CopyComplete
 C:\Users\ASUS\Desktop\Camemis\Desktop\Library\obj\Debug\Library.dll
 C:\Users\ASUS\Desktop\Camemis\Desktop\Library\obj\Debug\Library.pdb
-<<<<<<< HEAD
-C:\Users\ASUS\Desktop\Camemis\Desktop\Library\obj\Debug\Library.csprojAssemblyReference.cache
-=======
-D:\Clone\10-08-2021\Desktop\Library\bin\Debug\Library.dll
-D:\Clone\10-08-2021\Desktop\Library\bin\Debug\Library.pdb
-D:\Clone\10-08-2021\Desktop\Library\bin\Debug\Dapper.dll
-D:\Clone\10-08-2021\Desktop\Library\bin\Debug\Newtonsoft.Json.dll
-D:\Clone\10-08-2021\Desktop\Library\bin\Debug\System.Data.SQLite.dll
-D:\Clone\10-08-2021\Desktop\Library\bin\Debug\System.Net.Http.Formatting.dll
-D:\Clone\10-08-2021\Desktop\Library\obj\Debug\Library.csproj.AssemblyReference.cache
-D:\Clone\10-08-2021\Desktop\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
-D:\Clone\10-08-2021\Desktop\Library\obj\Debug\Library.csproj.CopyComplete
-D:\Clone\10-08-2021\Desktop\Library\obj\Debug\Library.dll
-D:\Clone\10-08-2021\Desktop\Library\obj\Debug\Library.pdb
->>>>>>> 3519618ff30f6100df3c72d8334613372508bb72

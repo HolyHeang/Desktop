@@ -10,21 +10,21 @@
         <StackPanel Orientation="Vertical" Name="Grid" HorizontalAlignment="Center">
             <Grid Name="Header" Margin="0 10 0 0" Height="auto">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="350"></ColumnDefinition>
                     <ColumnDefinition Width="0.7*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
                     <Grid Margin="15,0,0,0">
                         <StackPanel Orientation="Vertical" Margin="0,25,0,0">
-                            <Image Source="/CamemisOffLine;component/Image/MoEYS.png" Height="100" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="126,0,222,0"></Image>
+                            <Image Source="/CamemisOffLine;component/Image/MoEYS.png" Height="100" VerticalAlignment="Top" HorizontalAlignment="Center"></Image>
 
-                            <Label Name="lbllogoLeft" Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" Style="{DynamicResource Muol}" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0 15 0 0"></Label>
+                            <Label Name="lbllogoLeft" Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" Style="{DynamicResource Muol}" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 15 0 0"></Label>
                             <Grid Margin="0,-5,0,0">
                                 <Label Name="TitleSchool" Style="{DynamicResource Siemreap}" FontSize="13" Height="30" Foreground="White" HorizontalAlignment="Left" Margin="0 0 0 0" VerticalAlignment="Center"></Label>
                             </Grid>
                             <Grid Margin="0,-12,0,0">
-                                <Label Content="លេខ៖........................................" HorizontalAlignment="Left" Style="{DynamicResource Siemreap}" FontSize="15" VerticalAlignment="Bottom"></Label>
+                                <Label Content="លេខ៖........................................" HorizontalAlignment="Left" Style="{DynamicResource Siemreap}" Margin="10 0 0 0" FontSize="15" VerticalAlignment="Bottom"></Label>
                             </Grid>
                         </StackPanel>
                     </Grid>

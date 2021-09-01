@@ -76,9 +76,9 @@ namespace CamemisOffLine.Report
                 List<StuedntofTheYear> copyResult = new List<StuedntofTheYear>();
                 NumberList(data);
                 bool footerAvaliable = false;
-                int total = 0, pageNumber = 0, itemCount = 469;
+                int total = 0, pageNumber = 0, itemCount = 509;
                 double time = data.Count / 473;
-                int startIndex = 0, endIndex = 39;
+                int startIndex = 0, endIndex = 36;
                 for (int j = 0; j <= time; j++)
                 {
                     Header.Visibility = Visibility.Visible;
@@ -89,7 +89,7 @@ namespace CamemisOffLine.Report
                     document.Open();
                     GC.Collect();
                     var obj = new List<StuedntofTheYear>();
-                    if (data.Count >= 469)
+                    if (data.Count >= 509)
                     {
                         obj = data.GetRange(total, itemCount);
                     }
@@ -171,7 +171,7 @@ namespace CamemisOffLine.Report
                     }
                     else
                     {
-                        total += 469;
+                        total += 509;
                     }
                     if (data.Count <= (total + 473))
                     {

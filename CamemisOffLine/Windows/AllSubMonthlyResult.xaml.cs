@@ -32,7 +32,7 @@ namespace CamemisOffLine.Windows
             this.title = title;
             this.yearTitle = yearTitle;
         }
-        public AllSubMonthlyResult()
+        public AllSubMonthlyResult(string title, string yearTitle)
         {
             InitializeComponent();
         }
@@ -246,7 +246,7 @@ namespace CamemisOffLine.Windows
                         gender = item.gender,
                         grading = item.result_monthly.grading,
                         rank = item.result_monthly.rank,
-                        color = item.result_monthly.color,
+                        color = "Blue",
                         total_score = item.result_monthly.total_score,
                         student_schoolyear_id = item.student_school_id
                     });
