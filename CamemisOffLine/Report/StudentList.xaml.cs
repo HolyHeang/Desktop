@@ -50,7 +50,6 @@ namespace CamemisOffLine.Report
         {
             TitleSchool.Content = Properties.Settings.Default.schoolName;
             lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
-            lblMonth.Text = "បញ្ជីរាយនាមសិស្សគ្រប់កម្រិតថ្នាក់ ឆ្នាំសិក្សា "+titleYear;
             List<string> fileArray = new List<string>();
             try
             {
@@ -244,20 +243,24 @@ namespace CamemisOffLine.Report
                
                 if(type==1&&schoolYearId!="")
                 {
+                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សគ្រប់កម្រិតថ្នាក់ ឆ្នាំសិក្សា " + titleYear;
                     respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId, token);
                     encryptionString = Teacher.EncodeTo64(respone);
                     SaveString(schoolYearId);
                 }
                 else if(type==2&&classId!="")
                 {
+                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សសម្រាប់ថ្នាក់" + titleYear;
                     respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId+ "?classId="+classId, token);
                 }
                 else if(type==3&&gradeId!="")
                 {
+                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សសម្រាប់ក្រុម​ " + titleYear;
                     respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId + "?gradeId=" + gradeId, token);
                 }
                 else if (type == 4&&level!="")
                 {
+                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សសម្រាប់កម្រិត " + titleYear;
                     respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId + "?level=" + level, token);
                 }
                 else
@@ -273,18 +276,22 @@ namespace CamemisOffLine.Report
 
                 if(type==1)
                 {
+                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សគ្រប់កម្រិតថ្នាក់ ឆ្នាំសិក្សា " + titleYear;
                     obj = data;
                 }
                 else if(type==2)
                 {
+                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សសម្រាប់ថ្នាក់" + titleYear;
                     obj = data.Where(s => s.current_class_id == classId).ToList();
                 }
                 else if(type==3)
                 {
+                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សសម្រាប់ក្រុម​ " + titleYear;
                     obj = data.Where(s => s.grade_id == gradeId).ToList();
                 }
                 else if(type==4)
                 {
+                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សសម្រាប់កម្រិត " + titleYear;
                     obj = data.Where(s => s.level == level).ToList();
                 }
                 respone = null;
