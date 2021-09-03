@@ -174,7 +174,7 @@ namespace CamemisOffLine.Report
                 }
                
                 List<Morality> copyResult = new List<Morality>();
-                int startIndex = 0, endIndex = 26;
+                int startIndex = 0, endIndex = 24;
                 Document document = new Document(PageSize.A4, 20, 0, 0, 0);
                 PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "ResultTemplate" + ".pdf", FileMode.Create));
                 document.Open();

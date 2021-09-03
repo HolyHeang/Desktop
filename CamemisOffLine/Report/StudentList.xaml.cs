@@ -50,7 +50,6 @@ namespace CamemisOffLine.Report
         {
             TitleSchool.Content = Properties.Settings.Default.schoolName;
             lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
-            lblMonth.Text = "បញ្ជីរាយនាមសិស្សគ្រប់កម្រិតថ្នាក់ ឆ្នាំសិក្សា "+titleYear;
             List<string> fileArray = new List<string>();
             try
             {
@@ -76,9 +75,9 @@ namespace CamemisOffLine.Report
                 List<StuedntofTheYear> copyResult = new List<StuedntofTheYear>();
                 NumberList(data);
                 bool footerAvaliable = false;
-                int total = 0, pageNumber = 0, itemCount = 469;
+                int total = 0, pageNumber = 0, itemCount = 509;
                 double time = data.Count / 473;
-                int startIndex = 0, endIndex = 39;
+                int startIndex = 0, endIndex = 36;
                 for (int j = 0; j <= time; j++)
                 {
                     Header.Visibility = Visibility.Visible;
@@ -89,7 +88,7 @@ namespace CamemisOffLine.Report
                     document.Open();
                     GC.Collect();
                     var obj = new List<StuedntofTheYear>();
-                    if (data.Count >= 469)
+                    if (data.Count >= 509)
                     {
                         obj = data.GetRange(total, itemCount);
                     }
@@ -171,7 +170,7 @@ namespace CamemisOffLine.Report
                     }
                     else
                     {
-                        total += 469;
+                        total += 509;
                     }
                     if (data.Count <= (total + 473))
                     {
@@ -244,20 +243,24 @@ namespace CamemisOffLine.Report
                
                 if(type==1&&schoolYearId!="")
                 {
+                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សគ្រប់កម្រិតថ្នាក់ ឆ្នាំសិក្សា " + titleYear;
                     respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId, token);
                     encryptionString = Teacher.EncodeTo64(respone);
                     SaveString(schoolYearId);
                 }
                 else if(type==2&&classId!="")
                 {
+                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សសម្រាប់ថ្នាក់" + titleYear;
                     respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId+ "?classId="+classId, token);
                 }
                 else if(type==3&&gradeId!="")
                 {
+                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សសម្រាប់ក្រុម​ " + titleYear;
                     respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId + "?gradeId=" + gradeId, token);
                 }
                 else if (type == 4&&level!="")
                 {
+                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សសម្រាប់កម្រិត " + titleYear;
                     respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId + "?level=" + level, token);
                 }
                 else
@@ -273,18 +276,22 @@ namespace CamemisOffLine.Report
 
                 if(type==1)
                 {
+                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សគ្រប់កម្រិតថ្នាក់ ឆ្នាំសិក្សា " + titleYear;
                     obj = data;
                 }
                 else if(type==2)
                 {
+                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សសម្រាប់ថ្នាក់" + titleYear;
                     obj = data.Where(s => s.current_class_id == classId).ToList();
                 }
                 else if(type==3)
                 {
+                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សសម្រាប់ក្រុម​ " + titleYear;
                     obj = data.Where(s => s.grade_id == gradeId).ToList();
                 }
                 else if(type==4)
                 {
+                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សសម្រាប់កម្រិត " + titleYear;
                     obj = data.Where(s => s.level == level).ToList();
                 }
                 respone = null;

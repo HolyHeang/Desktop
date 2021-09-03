@@ -129,7 +129,7 @@ namespace CamemisOffLine
         {
            
 
-            OptionStaffAtt.Visibility = Visibility.Collapsed;
+           
             ///.................Part Setting...................
             btnAbout.Visibility = Visibility.Collapsed;
             btnColor.Visibility = Visibility.Collapsed;
@@ -174,7 +174,7 @@ namespace CamemisOffLine
             gridbarstuAtt.Visibility = Visibility.Collapsed;
             tabStudentAtt.SelectedIndex = 1;
             gridStudentAtt.Margin = new Thickness(0, -10, 0, 0);
-            StaffAttRe.SelectedIndex = 2;
+           
             //defult home page//
             tabMenu.SelectedIndex = 3;
             //END.........//
@@ -299,35 +299,8 @@ namespace CamemisOffLine
                     ///
                     /// 
                     ///
-
-
-
-                    Date.SelectedDate = DateTime.Now;
-                    var dateValue = Date.SelectedDate.Value.Date;
-                    ////////////////////////////////////////////////////////////////
-                    ///dateTime StaffAttendanceRepore Admin
-
-                    lblday.Content = DateChange.checkDay(dateValue.DayOfWeek.ToString());
-                    lblMonth.Content = DateChange.checkMonth(int.Parse(dateValue.Month.ToString()));
-                    lblyear.Content = DateChange.Num(int.Parse(dateValue.Year.ToString()));
-                    lbldayNum.Content = DateChange.Num(int.Parse(dateValue.Day.ToString()));
-                    //////////////////////////////////////////////////////////////////////////
-                    /////dateTime StanAttendanceRepore Acard
-                    ///
-                    lbldayAcard.Content = DateChange.checkDay(dateValue.DayOfWeek.ToString());
-                    lblMonthAcard.Content = DateChange.checkMonth(int.Parse(dateValue.Month.ToString()));
-                    lblyearAcard.Content = DateChange.Num(int.Parse(dateValue.Year.ToString()));
-                    lbldayNumAcard.Content = DateChange.Num(int.Parse(dateValue.Day.ToString()));
-
-
-                    todayDate = DateChange.checkDay(dateValue.DayOfWeek.ToString()) +
-                        " ទី" + DateChange.Num(int.Parse(dateValue.Day.ToString())) +
-                        " " + DateChange.checkMonth(int.Parse(dateValue.Month.ToString())) +
-                        " ឆ្នាំ" + DateChange.Num(int.Parse(dateValue.Year.ToString()));
-                    lbldate.Content = todayDate;
-
-                    List<StaffAttendance> at = new List<StaffAttendance>();
-                    for (int i = 1; i <= 10; i++)
+                 List<StaffAttendance> at = new List<StaffAttendance>();
+                    for (int i = 1; i <= 5; i++)
                     {
                         at.Add(new StaffAttendance
                         {
@@ -345,7 +318,8 @@ namespace CamemisOffLine
                             other = "fskdafakf"
                         });
                     }
-                    DGStudentAtt.ItemsSource = at;
+                    DGStaffAtt.ItemsSource = at;
+                    DGStaffAtt1.ItemsSource = at;
 
                     //Load Year of Academy
                     if (InternetChecker()&&internet)
@@ -561,13 +535,36 @@ namespace CamemisOffLine
         {
             tabMenu.SelectedIndex = 0;
         }
-        bool checkButtonClick = true;
-        private void btnStaffAttendanceReport_Click(object sender, RoutedEventArgs e)
+        private async void btnStaffAttendanceReport_Click(object sender, RoutedEventArgs e)
         {
             var bc = new BrushConverter();
+            var accessUrl = Properties.Settings.Default.acessUrl;
+            var token = Properties.Settings.Default.Token;
 
-
-
+            if(InternetChecker())
+            {
+                int i = 1;
+                var respone = await RESTApiHelper.GetAll(accessUrl, "/staff-attendance-permission?date=03/09/2021", token);
+                var respone1 = await RESTApiHelper.GetAll(accessUrl, "/get-daily-staff-attendance-report?date=03/09/2021", token);
+                var obj = JObject.Parse(respone).ToObject<StaffPermissionList>().data;
+                var obj1 = JObject.Parse(respone1).ToObject<StaffAttendanceDailyList>().data;
+                foreach(var item in obj)
+                {
+                    item.number = i.ToString();
+                    i++;
+                }
+                foreach (var item in obj1)
+                {
+                    item.number = i.ToString();
+                    if (item.gender == "1")
+                        item.gender = "ប្រុស";
+                    else
+                        item.gender = "ស្រី";
+                    i++;
+                }
+                DGStaffAtt.ItemsSource = obj;
+                DGStaffAtt1.ItemsSource = obj1;
+            }
 
             //___________________Change  button State______________________
             btnStaffAttendanceReport.Background = Brushes.White;
@@ -608,15 +605,6 @@ namespace CamemisOffLine
             MateriaSettingDrop.Foreground = Brushes.White;
             //________________End__________________________________________
             tabMenu.SelectedIndex = 1;
-
-            //if (slideLeft.Width == 320)
-            //{
-            //DoubleAnimation animation = new DoubleAnimation();
-            //animation.From = 320;
-            //animation.To = 45;
-            //animation.Duration = TimeSpan.FromMilliseconds(150);
-            //slideLeft.BeginAnimation(WidthProperty, animation);
-            //checkButtonClick = false;
             gridAcc.Visibility = Visibility.Visible;
             lblnameCompany.Visibility = Visibility.Visible;
             gridfeature.Margin = new Thickness(0, 0, 0, 0);
@@ -638,27 +626,8 @@ namespace CamemisOffLine
             gridLanguage.Visibility = Visibility.Collapsed;
             //....................End.........................
 
-            //btnStaffAttendanceReport.Margin = new Thickness(5, 10, 5, 5);
-            //btnStudentAttendanceReport.Margin = new Thickness(5, -3, 5, 5);
-            //btnStudentLearningRsult.Margin = new Thickness(5, -3, 5, 5);
-            //btnClassSchedule.Margin = new Thickness(5, -3, 5, 5);
-            //btnTeacherSchedule.Margin = new Thickness(5, -3, 5, 5);
-            //btnStudentList.Margin = new Thickness(5, -3, 5, 5);
-            //btnSubJectList.Margin = new Thickness(5, -3, 5, 5);
-            //}
-            //else
-            //{
-            //    DoubleAnimation animation = new DoubleAnimation();
-            //    animation.From = 45;
-            //    animation.To = 45;
-            //    animation.Duration = TimeSpan.FromMilliseconds(150);
-            //    slideLeft.BeginAnimation(WidthProperty, animation);
-            //    MateriaSettingDrop.Visibility = Visibility.Visible;
-            //}
-
-
+           
             check = false;
-            //btnHome.IsEnabled = false;
         }
 
         private void btnStudentAttendanceReport_Click_1(object sender, RoutedEventArgs e)
@@ -2206,63 +2175,6 @@ namespace CamemisOffLine
         {
 
         }
-
-
-        //button tabcontrol in button staff attendent report
-        private void AdminStaff_Click(object sender, RoutedEventArgs e)
-        {
-            GridCursor.Margin = new Thickness(10, 30, 0, 0);
-            GridCursor.Width = 170;
-            StaffAttRe.SelectedIndex = 2;
-        }
-
-        private void AcardmeStaff_Click(object sender, RoutedEventArgs e)
-        {
-            GridCursor.Margin = new Thickness(180, 30, 0, 0);
-            GridCursor.Width = 150;
-            StaffAttRe.SelectedIndex = 2;
-        }
-        //..........................................................
-
-
-        //button Print in staff attendent Report
-        private void btnPrint_Click(object sender, RoutedEventArgs e)
-        {
-            if (StaffAttRe.SelectedIndex == 0)
-            {/*
-                Attendance_Admin report = new Attendance_Admin();
-                report.SetSource(at);
-                report.setParamet(0, lbldayNum.Content);
-                report.setParamet(1, lblMonth.Content);
-                report.setParamet(2, txttotalAttno.Text);
-                report.setParamet(3, lblday.Content);
-                report.setParamet(4, lblyear.Content);
-                report.setParamet(5, txttotalAtthave.Text);
-                report.setParamet(6, txtotherAdmin.Text);
-                report.setParamet(7, lblSchoolAdmin.Content);
-                report.setParamet(8, txtAdmintitle.Text);
-                report.ShowDialog();*/
-            }
-            else if (StaffAttRe.SelectedIndex == 1)
-            {
-                /*Attendance_Academy report = new Attendance_Academy();
-                report.SetSource(at1);
-                report.setParamet(0, lbldayNumAcard.Content);
-                report.setParamet(1, lblMonthAcard.Content);
-                report.setParamet(2, txttotalAttAcard.Text);
-                report.setParamet(3, lbldayAcard.Content);
-                report.setParamet(4, lblyearAcard.Content);
-                report.setParamet(5, txtAtthaveAcrad.Text);
-                report.setParamet(6, txtotherAcard.Text);
-                report.setParamet(7, lblSchoolAcard.Content);
-                report.setParamet(8, txttitleAcard.Text);
-                report.setParamet(9, txtsalaryAcard.Text);
-                report.ShowDialog();*/
-
-            }
-
-        }
-
         private void btnPrintAttStu_Click(object sender, RoutedEventArgs e)
         {
             /*Student_Attendance StuAtt = new Student_Attendance();
@@ -2365,40 +2277,7 @@ namespace CamemisOffLine
         /// //////////date Packid In StaffAttendeanc Report
         /// </summary>
 
-        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (StaffAttRe.SelectedIndex == 0)
-            {
-                /////////Admin
-                var dateValue = Date.SelectedDate.Value.Date;
-                lblday.Content = DateChange.checkDay(dateValue.DayOfWeek.ToString());
-                lblMonth.Content = DateChange.checkMonth(int.Parse(dateValue.Month.ToString()));
-                lblyear.Content = DateChange.Num(int.Parse(dateValue.Year.ToString()));
-                lbldayNum.Content = DateChange.Num(int.Parse(dateValue.Day.ToString()));
-
-                todayDate = DateChange.checkDay(dateValue.DayOfWeek.ToString()) +
-                   " ទី" + DateChange.Num(int.Parse(dateValue.Day.ToString())) +
-                   "  ខែ" + DateChange.checkMonth(int.Parse(dateValue.Month.ToString())) +
-                   " ឆ្នាំ" + DateChange.Num(int.Parse(dateValue.Year.ToString()));
-                lbldate.Content = todayDate;
-            }
-            else if (StaffAttRe.SelectedIndex == 1)
-            {
-                ////////////Acard
-                var dateValue = Date.SelectedDate.Value.Date;
-                lbldayAcard.Content = DateChange.checkDay(dateValue.DayOfWeek.ToString());
-                lblMonthAcard.Content = DateChange.checkMonth(int.Parse(dateValue.Month.ToString()));
-                lblyearAcard.Content = DateChange.Num(int.Parse(dateValue.Year.ToString()));
-                lbldayNumAcard.Content = DateChange.Num(int.Parse(dateValue.Day.ToString()));
-
-                todayDate = DateChange.checkDay(dateValue.DayOfWeek.ToString()) +
-                   " ទី" + DateChange.Num(int.Parse(dateValue.Day.ToString())) +
-                   "  ខែ" + DateChange.checkMonth(int.Parse(dateValue.Month.ToString())) +
-                   " ឆ្នាំ" + DateChange.Num(int.Parse(dateValue.Year.ToString()));
-                lbldate.Content = todayDate;
-            }
-
-        }
+       
         //Internte Checker
         static public bool InternetChecker()
         {
@@ -4170,7 +4049,7 @@ namespace CamemisOffLine
                     }
                     else
                     {
-                        StudentList student = new StudentList(ping, 2, YearSelection);
+                        StudentList student = new StudentList(ping, 2, studentClass);
                         student.classId = classId;
                         student.schoolYearId = schoolYearId;
                         student.Show();
@@ -4185,7 +4064,7 @@ namespace CamemisOffLine
                     }
                     else
                     {
-                        StudentList student = new StudentList(ping, 3, YearSelection);
+                        StudentList student = new StudentList(ping, 3, gradName);
                         student.gradeId = gradeId;
                         student.schoolYearId = schoolYearId;
                         student.Show();
@@ -4200,7 +4079,7 @@ namespace CamemisOffLine
                     }
                     else
                     {
-                        StudentList student = new StudentList(ping, 4, YearSelection);
+                        StudentList student = new StudentList(ping, 4, level);
                         student.schoolYearId = schoolYearId;
                         student.level = level;
                         student.Show();
@@ -4208,6 +4087,22 @@ namespace CamemisOffLine
                 }
 
                 this.Opacity = 1;
+            }
+            else if (item.id == 5)
+            {
+                    Studemt_Exam_up_class up_Class = new Studemt_Exam_up_class(schoolYearId, YearSelection);      
+                    up_Class.Show();
+            }
+            
+            else if (item.id == 6)
+            {
+                List_of_repeat_students repeat_Students = new List_of_repeat_students(schoolYearId, YearSelection);
+                repeat_Students.Show();
+            }
+            else if (item.id == 7)
+            {
+                ListStudentCencel studentCencel = new ListStudentCencel(schoolYearId, YearSelection);
+                studentCencel.Show();
             }
             else if (item.id == 9)
             {
@@ -4226,7 +4121,13 @@ namespace CamemisOffLine
                 Classification classification = new Classification(classId, term, YearSelection, ping);
                 classification.Show();
             }
-            else if (item.id == 14)
+            else if (item.id == 13)
+            {
+
+                AllSubjectPrint();
+
+            }
+            else if (item.id == 15)
             {
                 if (month == "0")
                 {
@@ -4239,29 +4140,15 @@ namespace CamemisOffLine
                     attendance.Show();
                 }
             }
-            else if (item.id == 5)
-            {
-                Studemt_Exam_up_class up_Class = new Studemt_Exam_up_class(schoolYearId, YearSelection);
-                up_Class.Show();
-            }
-            else if (item.id == 7)
-            {
-                ListStudentCencel studentCencel = new ListStudentCencel(schoolYearId, YearSelection);
-                studentCencel.Show();
-            }
-            else if (item.id == 6)
-            {
-                List_of_repeat_students repeat_Students = new List_of_repeat_students(schoolYearId, YearSelection);
-                repeat_Students.Show();
-            }
-            else if (item.id == 23)
+           
+            else if (item.id == 24)
             {
                 this.Opacity = 0.5;
                 StatisticGrade9 statisticGrade9 = new StatisticGrade9(YearSelection);
                 statisticGrade9.ShowDialog();
                 this.Opacity = 1;
             }
-            else if (item.id == 24)
+            else if (item.id == 25)
             {
                 this.Opacity = 0.5;
                 StatisticGrade12 statisticGrade12 = new StatisticGrade12(YearSelection);
@@ -4721,15 +4608,17 @@ namespace CamemisOffLine
                 this.Opacity = 1;
             }
         }
-        string gradeId = "";
+        string gradeId = "",gradName="";
         private void cmbGradeStudentListPrint_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
             {
                 
                 var list = new List<KeyValuePair<string, string>>();
-                var item = sender as ComboBox;
-                gradeId = item.SelectedValue.ToString();
+                var select = sender as ComboBox;
+                var item = (KeyValuePair<string, string>)select.SelectedItem;
+                gradeId = item.Value.ToString();
+                gradName = item.Key.ToString();
                 var obj = JObject.Parse(Properties.Settings.Default.schoolAcademyYear).ToObject<YearofAcademy>().data.Where(y => y.name.Equals(YearSelection));
                 foreach (var items in obj)
                 {
@@ -4772,14 +4661,11 @@ namespace CamemisOffLine
             var button = sender as Button;
             var item = button.DataContext as CardPrint;
             MessageBoxControl message = new MessageBoxControl();
+            MessageBoxControl m = new MessageBoxControl();
+            m.title = Properties.Langs.Lang.Data;
+            m.buttonType = 1;
             message.Owner = this;
-            this.Opacity = 0.5;
-            message.title = Properties.Langs.Lang.print;
-            message.discription = Properties.Langs.Lang.Function + item.title + Properties.Langs.Lang.Under_construction;
-            message.buttonType = 1;
-            message.ShowDialog();
-            this.Opacity = 1;
-            if(item.id==5)
+            if (item.id==5)
             {
                 this.Opacity = 0.5;
                 DistributionTeacher distribution = new DistributionTeacher(yearId,yearName);
@@ -4795,10 +4681,14 @@ namespace CamemisOffLine
             }
             else
             {
-                message.Owner = this;
                 this.Opacity = 0.5;
+
                 message.title = Properties.Langs.Lang.print;
+                message.discription = Properties.Langs.Lang.Function + item.title + Properties.Langs.Lang.Under_construction;
+
+                message.title = "បោះពុម្ភ";
                 message.discription = "មុខងារ" + item.title + "កំពុងសាងសង់";
+
                 message.buttonType = 1;
                 message.ShowDialog();
                 this.Opacity = 1;
@@ -5037,6 +4927,7 @@ namespace CamemisOffLine
 
         //....................................................................................
 
+       
         private async void StudenPrintMonthlySemesterResult()
         {
             if(classId==""|| studentMonth=="")
@@ -5138,6 +5029,65 @@ namespace CamemisOffLine
                         ShowListStudentToPrint show = new ShowListStudentToPrint(data, title, yearTitle: yearTitle);
                         show.Owner = this;
                         show.ShowDialog();
+                    }
+                }
+                catch
+                {
+                    MessageBoxControl messageBox = new MessageBoxControl();
+                    messageBox.Owner = this;
+                    messageBox.title = Properties.Langs.Lang.print;
+                    messageBox.discription = Properties.Langs.Lang.noresultdata;
+                    messageBox.buttonType = 1;
+                    this.Opacity = 0.5;
+                    messageBox.ShowDialog();
+                    this.Opacity = 1;
+                }
+            }
+        }
+        private async void AllSubjectPrint()
+        {
+            if (classId == "" || studentMonth == "")
+            {
+                MessageBoxControl messageBox = new MessageBoxControl();
+                messageBox.Owner = this;
+                messageBox.title = Properties.Langs.Lang.print;
+                messageBox.discription = Properties.Langs.Lang.Please_select_a_class_and_result_type;
+                messageBox.buttonType = 1;
+                this.Opacity = 0.5;
+                messageBox.ShowDialog();
+                this.Opacity = 1;
+            }
+            else
+            {
+                try
+                {
+                    if (!File.Exists(filePath + "\\" + classId + ".txt"))
+                        await GetMonthlyResultFormApiAsync();
+                    string title = "";
+                    var data = GetDataForPrint();
+                    var select = studentMonth;
+
+                    foreach(var item in data)
+                    {
+                        if (item.gender == "1")
+                            item.gender = "ប្រុស";
+                        else
+                            item.gender = "ស្រី";
+                    }
+
+                    if (select.Equals("ឆមាសទី១") || select.Equals("ឆមាសទី២"))
+                    {
+                        title = "semester";
+                    }
+                    else
+                    {
+                        title = "month";
+                    }
+
+                    if (data != null)
+                    {
+                        AllSubMonthlyResult allsub = new AllSubMonthlyResult(true,data,title,yearTitle);
+                        allsub.Show();
                     }
                 }
                 catch
@@ -5320,7 +5270,7 @@ namespace CamemisOffLine
 
                         if (select.Equals("ឆមាសទី១") || select.Equals("ឆមាសទី២"))
                         {
-                            foreach (var item in data.OrderByDescending(r => r.result_semester.avg_score).Take(5))
+                            foreach (var item in data.OrderBy(r => r.result_semester.rank).Take(5))
                             {
                                 teacher = item.instructor.name;
                                 topStudent.Add(item);
@@ -5338,7 +5288,7 @@ namespace CamemisOffLine
                         }
                         else
                         {
-                            foreach (var item in data.OrderByDescending(r => r.result_monthly.avg_score).Take(5))
+                            foreach (var item in data.OrderBy(r => r.result_monthly.rank).Take(5))
                             {
                                 teacher = item.instructor.name;
                                 topStudent.Add(item);

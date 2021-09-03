@@ -408,6 +408,9 @@
   <data name="Print Score Choice Bulletin" xml:space="preserve">
     <value>បោះពុម្ភព្រឹត្តិប័ត្រពិន្ទុតាមជម្រើសសិស្ស</value>
   </data>
+  <data name="Programs running" xml:space="preserve">
+    <value>កម្មវិធីកំពុងដំណើរការ......</value>
+  </data>
   <data name="QuseLogout" xml:space="preserve">
     <value>តើអ្នកពិតជាចង់ចាកចេញឬ?</value>
   </data>
@@ -469,7 +472,7 @@
     <value>លទ្ធផលប្រឡងឆមាស</value>
   </data>
   <data name="Semester Results" xml:space="preserve">
-    <value />
+    <value>លទ្ធផលឆមាស</value>
   </data>
   <data name="set" xml:space="preserve">
     <value>កំណត់</value>

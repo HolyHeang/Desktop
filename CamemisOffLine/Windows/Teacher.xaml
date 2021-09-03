@@ -80,7 +80,7 @@
 
 
                                 <StackPanel Orientation="Vertical" Name="adminPart" HorizontalAlignment="Stretch"  Height="auto" >
-                                    <Button Name="btnStaffAttendanceReport" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="35" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" Margin="5,10,5,5" Click="btnStaffAttendanceReport_Click" MouseEnter="btnStaffAttendanceReport_MouseEnter" MouseLeave="btnStaffAttendanceReport_MouseLeave" Visibility="Collapsed">
+                                    <Button Name="btnStaffAttendanceReport" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="35" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" Margin="5,10,5,5" Click="btnStaffAttendanceReport_Click" MouseEnter="btnStaffAttendanceReport_MouseEnter" MouseLeave="btnStaffAttendanceReport_MouseLeave" Visibility="Visible">
 
                                         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="-10 0" Width="272" Height="25">
 
@@ -315,7 +315,467 @@
 
 
                             <TabItem Name="staffAttendanceReport">
-                                <Grid>
+                               
+                                <Grid Margin="-3 0 -3 -3">
+                                   <Grid Margin="10 0 10 10" Background="WhiteSmoke">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+
+                                        <Grid Grid.Row="0">
+                                            
+                                        </Grid>
+                                       
+                                        <ScrollViewer  Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                                        <StackPanel Orientation="Vertical" Margin="10" Background="White">
+                                                <Expander IsExpanded="True" Padding="10 0 0 0" Foreground="White" FontSize="40" Background="#1183CA" BorderThickness="1" BorderBrush="Black" Margin="10">
+                                                <Expander.Header>
+                                                    
+                                                    <StackPanel>
+
+                                                            <TextBlock Text="Perminssion Request" Padding="0 0 0 0" FontSize="18" Height="30" Foreground="White" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontWeight="Bold"/>
+                                                        
+                                                    </StackPanel>
+                                                </Expander.Header>
+                                                <StackPanel Orientation="Vertical">
+                                                    <Grid Background="White" Margin="-10 0 0 0">
+                                                        <ScrollViewer Foreground="WhiteSmoke" VerticalScrollBarVisibility="Disabled">
+                                                            <Grid>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="*"/>
+
+                                                                </Grid.ColumnDefinitions>
+                                                                <Grid Grid.Column="0">
+                                                                    <Grid.Resources>
+                                                                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#4C1183CA" />
+                                                                    </Grid.Resources>
+                                                                        <DataGrid Name="DGStaffAtt" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 20 10 30" BorderThickness="1 0 1 1" RowHeight="45" BorderBrush="#7F808080" Grid.Column="0" FontSize="14" GridLinesVisibility="All" SelectionUnit="FullRow" SelectionMode="Extended" AutoGenerateColumns="False" Background="#7FFFFFFF" CanUserSortColumns="False" AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" VirtualizingPanel.ScrollUnit="Pixel" IsReadOnly="True" ScrollViewer.CanContentScroll="True">
+                                                                            <DataGrid.Resources>
+                                                                            <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                                                                                <Setter Property="Background" Value="White" />
+                                                                                <Setter Property="Height" Value="45"></Setter>
+                                                                                <Setter Property="FontFamily" Value="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                                <Setter Property="BorderThickness" Value="1"/>
+                                                                                <Setter Property="Margin" Value="-1 0 -1 0"/>
+                                                                                <Setter Property="BorderBrush" Value="#7F808080"/>
+                                                                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                                <Setter Property="FontWeight" Value="Bold"/>
+                                                                            </Style>
+                                                                            <Style BasedOn="{StaticResource {x:Type DataGridRowHeader}}" TargetType="{x:Type DataGridRowHeader}">
+                                                                                <Setter Property="Background" Value="Transparent" />
+                                                                                <Setter Property="Width" Value="Auto"/>
+                                                                                <Setter Property="Height" Value="auto"/>
+                                                                                <Setter Property="BorderBrush" Value="#7F808080"/>
+                                                                                <Setter Property="BorderThickness" Value="1"/>
+                                                                                <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                                                                            </Style>
+                                                                        </DataGrid.Resources>
+
+                                                                        <DataGrid.Columns>
+
+                                                                            <DataGridTextColumn Header="ល.រ" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MinWidth="60" Width="0.6*" Binding="{Binding number}">
+                                                                                <DataGridTextColumn.ElementStyle>
+                                                                                    <Style TargetType="{x:Type TextBlock}">
+                                                                                        <Setter Property="HorizontalAlignment" Value="Center" />
+                                                                                        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                                                                                        <Setter Property="ScrollViewer.CanContentScroll" Value="False"/>
+                                                                                        <Setter Property="FontWeight" Value="Regular"/>
+                                                                                        <Setter Property="FontSize" Value="14"/>
+
+                                                                                        <Setter Property="Foreground" Value="Black"/>
+                                                                                    </Style>
+                                                                                </DataGridTextColumn.ElementStyle>
+                                                                            </DataGridTextColumn>
+                                                                                <DataGridTextColumn Header="គោត្តនាម​ និងនាម" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MinWidth="200" Width="2*" Binding="{Binding user.name}">
+                                                                                    <DataGridTextColumn.ElementStyle>
+                                                                                        <Style TargetType="{x:Type TextBlock}">
+                                                                                            <Setter Property="HorizontalAlignment" Value="Left" />
+                                                                                            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                                                                                            <Setter Property="ScrollViewer.CanContentScroll" Value="False"/>
+                                                                                            <Setter Property="FontWeight" Value="Regular"/>
+                                                                                            <Setter Property="FontSize" Value="14"/>
+
+                                                                                            <Setter Property="Foreground" Value="Black"/>
+                                                                                        </Style>
+                                                                                    </DataGridTextColumn.ElementStyle>
+                                                                                </DataGridTextColumn>
+                                                                                <DataGridTextColumn Header="ការបរិច្ឆេទចាប់ផ្ដើម" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MinWidth="150" Width="1.5*" Binding="{Binding start_date}">
+                                                                                <DataGridTextColumn.ElementStyle>
+                                                                                    <Style TargetType="{x:Type TextBlock}">
+                                                                                        <Setter Property="HorizontalAlignment" Value="Center" />
+                                                                                        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                                                                                        <Setter Property="FontWeight" Value="Regular"/>
+                                                                                        <Setter Property="Foreground" Value="Black"/>
+                                                                                        <Setter Property="FontSize" Value="14"/>
+                                                                                    </Style>
+                                                                                </DataGridTextColumn.ElementStyle>
+                                                                            </DataGridTextColumn>
+
+                                                                                <DataGridTextColumn Header="ការបរិច្ឆេទបញ្ចប់" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MinWidth="100" Width="1.2*" Binding="{Binding end_date}">
+                                                                                <DataGridTextColumn.ElementStyle>
+                                                                                    <Style TargetType="{x:Type TextBlock}">
+                                                                                        <Setter Property="HorizontalAlignment" Value="Center" />
+                                                                                        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                                                                                        <Setter Property="FontWeight" Value="Regular"/>
+                                                                                        <Setter Property="Foreground" Value="Black"/>
+                                                                                        <Setter Property="FontSize" Value="14"/>
+                                                                                    </Style>
+                                                                                </DataGridTextColumn.ElementStyle>
+                                                                            </DataGridTextColumn>
+
+                                                                                <DataGridTextColumn Header="ថ្ងៃ" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MinWidth="60" Width="0.6*" Binding="{Binding duration}">
+                                                                                    <DataGridTextColumn.ElementStyle>
+                                                                                        <Style TargetType="{x:Type TextBlock}">
+                                                                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                                                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                                                                            <Setter Property="FontSize" Value="14"/>
+                                                                                            <Setter Property="FontWeight" Value="Regular"/>
+                                                                                            <Setter Property="Foreground" Value="Black"/>
+                                                                                        </Style>
+                                                                                    </DataGridTextColumn.ElementStyle>
+                                                                                </DataGridTextColumn>
+
+                                                                                <DataGridTextColumn Header="មូលហេតុ" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MinWidth="150" Width="1.5*" Binding="{Binding reason}">
+                                                                                    <DataGridTextColumn.ElementStyle>
+                                                                                        <Style TargetType="{x:Type TextBlock}">
+                                                                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                                                                            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                                                                                            <Setter Property="FontWeight" Value="Regular"/>
+                                                                                            <Setter Property="Foreground" Value="Black"/>
+                                                                                            <Setter Property="FontSize" Value="14"/>
+                                                                                        </Style>
+                                                                                    </DataGridTextColumn.ElementStyle>
+                                                                                </DataGridTextColumn>
+                                                                                <DataGridTextColumn Header="ការបរិច្ឆេទដែលបានអនុម័ត" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MinWidth="150" Width="1.5*" Binding="{Binding approved_at}">
+                                                                                <DataGridTextColumn.ElementStyle>
+                                                                                    <Style TargetType="{x:Type TextBlock}">
+                                                                                        <Setter Property="HorizontalAlignment" Value="Center" />
+                                                                                        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                                                                                        <Setter Property="FontWeight" Value="Regular"/>
+                                                                                        <Setter Property="Foreground" Value="Black"/>
+                                                                                        <Setter Property="FontSize" Value="14"/>
+                                                                                    </Style>
+                                                                                </DataGridTextColumn.ElementStyle>
+                                                                            </DataGridTextColumn>
+                                                                                <DataGridTemplateColumn Header="កំណត់" Width="1.5*"  MinWidth="210">
+                                                                                    <DataGridTemplateColumn.CellTemplate>
+                                                                                        <DataTemplate>
+                                                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+                                                                                                <Button Name="btnApprovedStaffAttendance" ToolTip="អនុម័ត" Height="35" Width="90" Content="អនុម័ត" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#78c4d4" Foreground="White" Style="{DynamicResource Siemreap}" FontSize="14" BorderThickness="0">
+                                                                                                </Button>
+                                                                                            </StackPanel>
+                                                                                        </DataTemplate>
+                                                                                    </DataGridTemplateColumn.CellTemplate>
+                                                                                </DataGridTemplateColumn>
+                                                                            </DataGrid.Columns>
+                                                                    </DataGrid>
+                                                                </Grid>
+                                                            </Grid>
+                                                        </ScrollViewer>
+                                                    </Grid>
+
+                                                </StackPanel>
+                                            </Expander>
+
+                                                <Expander IsExpanded="True" Padding="10 0 0 0" Foreground="White" FontSize="40" Background="#1183CA" BorderThickness="1" BorderBrush="Black" Margin="10">
+                                                    <Expander.Header>
+
+                                                        <StackPanel>
+
+                                                            <TextBlock Text="Attendant information" FontSize="18" Height="30" Padding="0 0 0 0" Foreground="White" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontWeight="Bold"/>
+
+                                                        </StackPanel>
+                                                    </Expander.Header>
+                                                    <StackPanel Orientation="Vertical">
+                                                        <Grid Background="White" Margin="-10 0 0 0">
+                                                            <ScrollViewer Foreground="WhiteSmoke" VerticalScrollBarVisibility="Disabled">
+                                                                <Grid>
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="*"/>
+
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <Grid Grid.Column="0">
+                                                                        <Grid.Resources>
+                                                                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#4C1183CA" />
+                                                                        </Grid.Resources>
+                                                                        <DataGrid Name="DGStaffAtt1" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 20 10 30" BorderThickness="1 0 1 1" RowHeight="40" BorderBrush="#7F808080" Grid.Column="0" FontSize="14" GridLinesVisibility="All" SelectionUnit="FullRow" SelectionMode="Extended" AutoGenerateColumns="False" Background="#7FFFFFFF" CanUserSortColumns="False" AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" VirtualizingPanel.ScrollUnit="Pixel" IsReadOnly="True" ScrollViewer.CanContentScroll="True">
+                                                                            <DataGrid.Resources>
+                                                                                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                                                                                    <Setter Property="Background" Value="White" />
+                                                                                    <Setter Property="Height" Value="105"></Setter>
+                                                                                    <Setter Property="FontFamily" Value="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                                                    <Setter Property="BorderThickness" Value="1"/>
+                                                                                    <Setter Property="Margin" Value="-1 0 -1 0"/>
+                                                                                    <Setter Property="BorderBrush" Value="#7F808080"/>
+                                                                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                                    <Setter Property="FontWeight" Value="Bold"/>
+                                                                                </Style>
+                                                                                <Style BasedOn="{StaticResource {x:Type DataGridRowHeader}}" TargetType="{x:Type DataGridRowHeader}">
+                                                                                    <Setter Property="Background" Value="Transparent" />
+                                                                                    <Setter Property="Width" Value="Auto"/>
+                                                                                    <Setter Property="Height" Value="auto"/>
+                                                                                    <Setter Property="BorderBrush" Value="#7F808080"/>
+                                                                                    <Setter Property="BorderThickness" Value="1"/>
+                                                                                    <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                                                                                </Style>
+                                                                            </DataGrid.Resources>
+
+                                                                            <DataGrid.Columns>
+                                                                                <DataGridTextColumn Header="លេខ" MinWidth="70" Width="0.6*" FontSize="15" Binding="{Binding number}">
+                                                                                    <DataGridTextColumn.ElementStyle>
+                                                                                        <Style TargetType="TextBlock">
+                                                                                            <Setter Property="Foreground" Value="Black"></Setter>
+                                                                                            <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                                                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                                                                        </Style>
+                                                                                    </DataGridTextColumn.ElementStyle>
+                                                                                </DataGridTextColumn>
+
+
+                                                                                <!--//............................Name............................-->
+
+
+                                                                                <DataGridTextColumn Width="2*" MinWidth="200" FontSize="15" Header="គោត្តនាម-នាមខ្លួន" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Binding="{Binding name}">
+                                                                                    <DataGridTextColumn.ElementStyle>
+                                                                                        <Style TargetType="TextBlock">
+                                                                                            <Setter Property="Foreground" Value="Black"></Setter>
+                                                                                            <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                                                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                                                                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                                                                        </Style>
+                                                                                    </DataGridTextColumn.ElementStyle>
+                                                                                </DataGridTextColumn>
+                                                                                <DataGridTextColumn Header="ភេទ" Width="0.6*" MinWidth="60" FontSize="12" Binding="{Binding gender}">
+                                                                                    <DataGridTextColumn.ElementStyle>
+                                                                                        <Style TargetType="TextBlock">
+                                                                                            <Setter Property="Foreground" Value="Black"></Setter>
+                                                                                            <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                                                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                                                                        </Style>
+                                                                                    </DataGridTextColumn.ElementStyle>
+
+                                                                                </DataGridTextColumn>
+
+                                                                                <!--//........................................................-->
+                                                                                <DataGridTextColumn Header="តួនាទី" Width="1.5*" MinWidth="150" FontSize="12" Binding="{Binding position}">
+
+                                                                                    <DataGridTextColumn.ElementStyle>
+
+                                                                                        <Style TargetType="TextBlock">
+                                                                                            <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                                                            <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                                                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                                                                        </Style>
+                                                                                    </DataGridTextColumn.ElementStyle>
+                                                                                </DataGridTextColumn>
+
+                                                                                <DataGridTextColumn Width="250" FontSize="15" Binding="{Binding daily_present.morning.in_time}" Header="ព្រឹក(ចូល)">
+
+                                                                                    <DataGridTextColumn.ElementStyle>
+
+                                                                                        <Style TargetType="TextBlock">
+                                                                                            <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                                                            <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                                                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                                                                        </Style>
+                                                                                    </DataGridTextColumn.ElementStyle>
+
+                                                                                </DataGridTextColumn>
+
+                                                                                <!--//........................................................-->
+                                                                                <DataGridTextColumn Width="250" FontSize="15" Header="ព្រឹក(ចេញ)" Binding="{Binding daily_present.morning.out_time}">
+
+                                                                                    <DataGridTextColumn.ElementStyle>
+
+                                                                                        <Style TargetType="TextBlock">
+                                                                                            <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                                                            <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                                                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                                                                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                                                                        </Style>
+                                                                                    </DataGridTextColumn.ElementStyle>
+
+                                                                                </DataGridTextColumn>
+
+                                                                                <!--//............................class............................-->
+                                                                                <DataGridTextColumn Width="250" FontSize="15" Header="ល្ងាច(ចូល)" Binding="{Binding daily_present.afternoon.in_time}">
+
+                                                                                    <DataGridTextColumn.ElementStyle>
+
+                                                                                        <Style TargetType="TextBlock">
+                                                                                            <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                                                            <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                                                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                                                                        </Style>
+                                                                                    </DataGridTextColumn.ElementStyle>
+
+                                                                                </DataGridTextColumn>
+
+                                                                                <!--//........................................................-->
+                                                                                <DataGridTextColumn Width="250" FontSize="15" Header="ល្ងាច(ចេញ)" Binding="{Binding daily_present.afternoon.out_time}">
+
+                                                                                    <DataGridTextColumn.ElementStyle>
+
+                                                                                        <Style TargetType="TextBlock">
+                                                                                            <Setter Property="Foreground" Value="Black"></Setter>
+
+                                                                                            <Setter Property="FontWeight" Value="Thin"></Setter>
+                                                                                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                                                                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                                                                        </Style>
+                                                                                    </DataGridTextColumn.ElementStyle>
+                                                                                    
+                                                                                </DataGridTextColumn>
+
+                                                                                
+                                                                                
+                                                                                <!--//........................................................-->
+                                                                                <DataGridTemplateColumn Width="*" MinWidth="100" Header="មកយឺត" CanUserResize="False">
+                                                                                    <DataGridTemplateColumn.CellTemplate>
+                                                                                        <DataTemplate>
+                                                                                            <Grid VerticalAlignment="Center">
+
+                                                                                                <CheckBox Name="isCheck" HorizontalAlignment="Center" Height="30" Background="#1183CA" Foreground="Gray" Margin="0 -8 0 0" IsChecked="{Binding late}">
+                                                                                                    <CheckBox.Resources>
+
+                                                                                                        <!--Unchecked state-->
+                                                                                                        <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="Gray"/>
+                                                                                                        <!--Checked state-->
+                                                                                                        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#1183CA"/>
+
+                                                                                                    </CheckBox.Resources>
+
+                                                                                                    <CheckBox.LayoutTransform>
+                                                                                                        <ScaleTransform ScaleX="1.3" ScaleY="1.3" />
+                                                                                                    </CheckBox.LayoutTransform>
+                                                                                                </CheckBox>
+
+
+                                                                                            </Grid>
+                                                                                        </DataTemplate>
+                                                                                    </DataGridTemplateColumn.CellTemplate>
+                                                                                </DataGridTemplateColumn>
+                                                                                <!--//........................................................-->
+                                                                                <DataGridTemplateColumn Width="*" MinWidth="100" Header="ចាកចេញ" CanUserResize="False">
+                                                                                    <DataGridTemplateColumn.CellTemplate>
+                                                                                        <DataTemplate>
+                                                                                            <Grid VerticalAlignment="Center">
+
+                                                                                                <CheckBox Name="isCheck" HorizontalAlignment="Center" Height="30" Background="#1183CA" Foreground="Gray" Margin="0 -8 0 0" IsChecked="{Binding leave}">
+                                                                                                    <CheckBox.Resources>
+
+                                                                                                        <!--Unchecked state-->
+                                                                                                        <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="Gray"/>
+                                                                                                        <!--Checked state-->
+                                                                                                        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#1183CA"/>
+
+                                                                                                    </CheckBox.Resources>
+
+                                                                                                    <CheckBox.LayoutTransform>
+                                                                                                        <ScaleTransform ScaleX="1.3" ScaleY="1.3" />
+                                                                                                    </CheckBox.LayoutTransform>
+                                                                                                </CheckBox>
+
+
+                                                                                            </Grid>
+                                                                                        </DataTemplate>
+                                                                                    </DataGridTemplateColumn.CellTemplate>
+                                                                                </DataGridTemplateColumn>
+                                                                                <!--//........................................................-->
+                                                                                <DataGridTemplateColumn Width="*" MinWidth="100" Header="អរត្តមានមានច្បាប់" CanUserResize="False">
+                                                                                    <DataGridTemplateColumn.CellTemplate>
+                                                                                        <DataTemplate>
+                                                                                            <Grid VerticalAlignment="Center">
+
+                                                                                                <CheckBox Name="isCheck" HorizontalAlignment="Center" Height="30" Background="#1183CA" Foreground="Gray" Margin="0 -8 0 0" IsChecked="{Binding permission}">
+                                                                                                    <CheckBox.Resources>
+
+                                                                                                        <!--Unchecked state-->
+                                                                                                        <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="Gray"/>
+                                                                                                        <!--Checked state-->
+                                                                                                        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#1183CA"/>
+
+                                                                                                    </CheckBox.Resources>
+
+                                                                                                    <CheckBox.LayoutTransform>
+                                                                                                        <ScaleTransform ScaleX="1.3" ScaleY="1.3" />
+                                                                                                    </CheckBox.LayoutTransform>
+                                                                                                </CheckBox>
+
+
+                                                                                            </Grid>
+                                                                                        </DataTemplate>
+                                                                                    </DataGridTemplateColumn.CellTemplate>
+                                                                                </DataGridTemplateColumn>
+
+                                                                                <!--//........................................................-->
+                                                                                <DataGridTemplateColumn Width="*" MinWidth="100" Header="អវត្តមាន" CanUserResize="False">
+                                                                                    <DataGridTemplateColumn.CellTemplate>
+                                                                                        <DataTemplate>
+                                                                                            <Grid VerticalAlignment="Center">
+
+                                                                                                <CheckBox Name="isCheck" HorizontalAlignment="Center" Height="30" Background="#1183CA" Foreground="Gray" Margin="0 -8 0 0" IsChecked="{Binding absent}">
+                                                                                                        <CheckBox.Resources>
+
+                                                                                                            <!--Unchecked state-->
+                                                                                                            <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="Gray"/>
+                                                                                                            <!--Checked state-->
+                                                                                                            <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#1183CA"/>
+
+                                                                                                        </CheckBox.Resources>
+
+                                                                                                        <CheckBox.LayoutTransform>
+                                                                                                            <ScaleTransform ScaleX="1.3" ScaleY="1.3" />
+                                                                                                        </CheckBox.LayoutTransform>
+                                                                                                    </CheckBox>
+                                                                                              
+
+                                                                                            </Grid>
+                                                                                        </DataTemplate>
+                                                                                    </DataGridTemplateColumn.CellTemplate>
+                                                                                </DataGridTemplateColumn>
+                                                                                <!--//........................................................-->
+                                                                                <DataGridTemplateColumn Width="*" MinWidth="100" Header="ផ្សេងៗ" CanUserResize="False">
+                                                                                    <DataGridTemplateColumn.CellTemplate>
+                                                                                        <DataTemplate>
+                                                                                            <Grid VerticalAlignment="Center">
+
+                                                                                                <TextBox Margin="0 -2 0 0" Height="25" BorderBrush="Gray" TextWrapping="Wrap" FontSize="12" Padding="2 -2 0 0" BorderThickness="1" materialDesign:HintAssist.Hint="others...."></TextBox>
+                                                                                            
+
+                                                                                            </Grid>
+                                                                                        </DataTemplate>
+                                                                                    </DataGridTemplateColumn.CellTemplate>
+                                                                                </DataGridTemplateColumn>
+
+                                                                                
+                                                                            </DataGrid.Columns>
+                                                                            
+                                                                        </DataGrid>
+                                                                    </Grid>
+                                                                </Grid>
+                                                            </ScrollViewer>
+                                                        </Grid>
+
+                                                    </StackPanel>
+                                                </Expander>
+
+                                            </StackPanel>
+                                       </ScrollViewer>
+                                    </Grid>
+                                </Grid>
+                                
+                                <!--<Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="35"></RowDefinition>
                                         <RowDefinition Height="*"></RowDefinition>
@@ -673,19 +1133,19 @@
                                                                 </Grid>
 
 
-                                                                <!--<Grid Width="817" Height="45" Margin="0,37,-245,0" HorizontalAlignment="Right" VerticalAlignment="Top">
+                                                                <Grid Width="817" Height="45" Margin="0,37,-245,0" HorizontalAlignment="Right" VerticalAlignment="Top">
                                                                     <Label Content="{Binding Content,ElementName=lbldate}" Name="lbldaybutom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="12" HorizontalAlignment="Center" FontFamily="Khmer OS Siemreap" Width="80" Margin="282,0,455,0" />
-                                                                    -->
-                                                                <!--<Label Content="ទី" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="12" HorizontalAlignment="Center" FontFamily="Khmer Os Siemreab" Width="34" Margin="334,0,449,0" />
+                                                                    
+                                                                <Label Content="ទី" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="12" HorizontalAlignment="Center" FontFamily="Khmer Os Siemreab" Width="34" Margin="334,0,449,0" />
                                                                     <Label Content="{Binding Content,ElementName=lbldayNum}" Name="lbldayNumbutom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="12" HorizontalAlignment="Center" FontFamily="Khmer Os Siemreab" Width="34" Margin="356,0,427,0" />
                                                                     <Label Content="ខែ" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="12" HorizontalAlignment="Center" FontFamily="Khmer Os Siemreab" Width="34" Margin="376,0,407,0"/>
                                                                     <Label Content="{Binding Content, ElementName=lblMonth}" Name="lblMonthbutom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="12" HorizontalAlignment="Center" FontFamily="Khmer Os Siemreab" Margin="398,0,357,0" Width="62" />
                                                                     <Label Content="ឆ្នាំ" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="12" HorizontalAlignment="Center" FontFamily="Khmer Os Siemreab" Width="32" Margin="429,0,356,0"/>
-                                                                    <Label Content="{Binding Content,ElementName=lblyear}" Name="lblyearbutom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="12" HorizontalAlignment="Center" FontFamily="Khmer Os Siemreab" Width="62" Margin="451,0,304,0"/>-->
-                                                                <!--
+                                                                    <Label Content="{Binding Content,ElementName=lblyear}" Name="lblyearbutom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="12" HorizontalAlignment="Center" FontFamily="Khmer Os Siemreab" Width="62" Margin="451,0,304,0"/>
+                                                                
 
                                                                 </Grid>
-                                                                <Label Content="ប្រធានអង្គភាព" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="12" HorizontalAlignment="Right" FontFamily="Khmer OS Siemreap" Width="131" Margin="0,69,121,88" />-->
+                                                                <Label Content="ប្រធានអង្គភាព" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="12" HorizontalAlignment="Right" FontFamily="Khmer OS Siemreap" Width="131" Margin="0,69,121,88" />
 
                                                             </Grid>
                                                         </StackPanel>
@@ -1008,7 +1468,7 @@
 
                                                                     </Grid>
 
-                                                                    <!--<Grid Width="817" Height="45" Margin="0,37,-245,0" HorizontalAlignment="Right" VerticalAlignment="Top">
+                                                                    --><!--<Grid Width="817" Height="45" Margin="0,37,-245,0" HorizontalAlignment="Right" VerticalAlignment="Top">
 
                                                                         <Label Content="{Binding Content,ElementName=lbldayAcard}" Name="lbldaybutomAcard" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="12" HorizontalAlignment="Center" FontFamily="Khmer Os Siemreab" Width="80" Margin="284,0,453,0" />
                                                                         <Label Content="ទី" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="12" HorizontalAlignment="Center" FontFamily="Khmer Os Siemreab" Width="34" Margin="334,0,449,0" />
@@ -1019,7 +1479,7 @@
                                                                         <Label Content="{Binding Content,ElementName=lblyearAcard}" Name="lblyearbutomAcard" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="12" HorizontalAlignment="Center" FontFamily="Khmer Os Siemreab" Width="62" Margin="451,0,304,0"/>
 
                                                                     </Grid>
-                                                                    <Label Content="ប្រធានអង្គភាព" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="12" HorizontalAlignment="Right" FontFamily="Khmer OS Siemreab" Width="131" Margin="0,73,121,144" />-->
+                                                                    <Label Content="ប្រធានអង្គភាព" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="12" HorizontalAlignment="Right" FontFamily="Khmer OS Siemreab" Width="131" Margin="0,73,121,144" />--><!--
 
 
                                                                 </Grid>
@@ -1050,7 +1510,7 @@
                                             </Grid>
                                         </Grid>
                                     </Grid>
-                                </Grid>
+                                </Grid>-->
                             </TabItem>
 
                             <TabItem Name="StudntAttReport">
@@ -3294,7 +3754,7 @@
 
                                             <!--Student List Print-->
                                             <StackPanel Name="L1">
-                                                <TextBlock Text="{x:Static language:Lang.Sub_List}" HorizontalAlignment="Left" FontSize="18" Margin="20 20 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                                <TextBlock Text="{x:Static language:Lang.Stu_List}" HorizontalAlignment="Left" FontSize="18" Margin="20 20 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                 <Separator Margin="20 10 20 0"/>
                                                 <Grid Height="60" Background="White" Margin="20 10 20 0">
                                                     <StackPanel Orientation="Horizontal">
@@ -3338,18 +3798,18 @@
                                                     </StackPanel>
                                                 </Grid>
                                             
-                                            <ItemsControl Name="StudentListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1500">
+                                            <ItemsControl Name="StudentListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1900">
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
-                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintList_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                                                            <Button BorderThickness="0" Height="90" Width="370" Click="btnPrintList_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
                                                                     FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 20 20 10" Foreground="Black">
                                                                 <Button.Background>
-                                                                    <LinearGradientBrush EndPoint="0.6,2.4" StartPoint="-0.2,0">
+                                                                    <LinearGradientBrush EndPoint="0.6,1.9" StartPoint="-0.2,0">
                                                                         <GradientStop Color="#1183Ca" Offset="1"/>
                                                                         <GradientStop Color="White" Offset="1"/>
                                                                     </LinearGradientBrush>
                                                                 </Button.Background>
-                                                                <Grid HorizontalAlignment="Stretch" Width="410">
+                                                                <Grid HorizontalAlignment="Stretch" Width="335">
                                                                     <TextBlock  Text="{Binding title}" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
                                                                     <Image Source="/Image/PrintIcon.png" Height="40" Opacity="0.5" HorizontalAlignment="Right"/>
                                                                 </Grid>
@@ -3389,18 +3849,18 @@
                                                     </StackPanel>
                                                     </StackPanel>
                                                 </Grid>
-                                                <ItemsControl Name="ScheduleListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1500">
+                                                <ItemsControl Name="ScheduleListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1900">
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
-                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintList_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                                                            <Button BorderThickness="0" Height="90" Width="370" Click="btnPrintList_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
                                                                     FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 20 20 10" Foreground="Black">
                                                                 <Button.Background>
-                                                                    <LinearGradientBrush EndPoint="0.6,2.4" StartPoint="-0.2,0">
+                                                                    <LinearGradientBrush EndPoint="0.6,1.9" StartPoint="-0.2,0">
                                                                         <GradientStop Color="#1183Ca" Offset="1"/>
                                                                         <GradientStop Color="White" Offset="1"/>
                                                                     </LinearGradientBrush>
                                                                 </Button.Background>
-                                                                <Grid HorizontalAlignment="Stretch" Width="410">
+                                                                <Grid HorizontalAlignment="Stretch" Width="335">
                                                                     <TextBlock  Text="{Binding title}" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
                                                                     <Image Source="/Image/PrintIcon.png" Height="40" Opacity="0.5" HorizontalAlignment="Right"/>
                                                                 </Grid>
@@ -3445,18 +3905,18 @@
                                                     </StackPanel>
                                                     </StackPanel>
                                                 </Grid>
-                                                <ItemsControl Name="ResultListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1500">
+                                                <ItemsControl Name="ResultListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1900">
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
-                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintList_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                                                            <Button BorderThickness="0" Height="90" Width="370" Click="btnPrintList_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
                                                                     FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 20 20 10" Foreground="Black">
                                                                 <Button.Background>
-                                                                    <LinearGradientBrush EndPoint="0.6,2.4" StartPoint="-0.2,0">
+                                                                    <LinearGradientBrush EndPoint="0.6,1.9" StartPoint="-0.2,0">
                                                                         <GradientStop Color="#1183Ca" Offset="1"/>
                                                                         <GradientStop Color="White" Offset="1"/>
                                                                     </LinearGradientBrush>
                                                                 </Button.Background>
-                                                                <Grid HorizontalAlignment="Stretch" Width="410">
+                                                                <Grid HorizontalAlignment="Stretch" Width="335">
                                                                     <TextBlock  Text="{Binding title}" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
                                                                     <Image Source="/Image/PrintIcon.png" Height="40" Opacity="0.5" HorizontalAlignment="Right"/>
                                                                 </Grid>
@@ -3557,18 +4017,18 @@
                                                     </StackPanel>
                                                     </StackPanel>
                                                 </Grid>
-                                                <ItemsControl Name="AttReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1500">
+                                                <ItemsControl Name="AttReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1900">
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
-                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintList_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                                                            <Button BorderThickness="0" Height="90" Width="370" Click="btnPrintList_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
                                                                     FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 20 20 10" Foreground="Black">
                                                                 <Button.Background>
-                                                                    <LinearGradientBrush EndPoint="0.6,2.4" StartPoint="-0.2,0">
+                                                                    <LinearGradientBrush EndPoint="0.6,1.9" StartPoint="-0.2,0">
                                                                         <GradientStop Color="#1183Ca" Offset="1"/>
                                                                         <GradientStop Color="White" Offset="1"/>
                                                                     </LinearGradientBrush>
                                                                 </Button.Background>
-                                                                <Grid HorizontalAlignment="Stretch" Width="410">
+                                                                <Grid HorizontalAlignment="Stretch" Width="335">
                                                                     <TextBlock  Text="{Binding title}" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
                                                                     <Image Source="/Image/PrintIcon.png" Height="40" Opacity="0.5" HorizontalAlignment="Right"/>
                                                                 </Grid>
@@ -3856,18 +4316,18 @@
                                                         </StackPanel>
                                                     </StackPanel>
                                                 </Grid>
-                                                <ItemsControl Name="StatisticResultGrade12ReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1500">
+                                                <ItemsControl Name="StatisticResultGrade12ReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1900">
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
-                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintList_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                                                            <Button BorderThickness="0" Height="90" Width="370" Click="btnPrintList_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
                                                                     FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 20 20 10" Foreground="Black">
                                                                 <Button.Background>
-                                                                    <LinearGradientBrush EndPoint="0.6,2.4" StartPoint="-0.2,0">
+                                                                    <LinearGradientBrush EndPoint="0.6,1.9" StartPoint="-0.2,0">
                                                                         <GradientStop Color="#1183Ca" Offset="1"/>
                                                                         <GradientStop Color="White" Offset="1"/>
                                                                     </LinearGradientBrush>
                                                                 </Button.Background>
-                                                                <Grid HorizontalAlignment="Stretch" Width="410">
+                                                                <Grid HorizontalAlignment="Stretch" Width="335">
                                                                     <TextBlock  Text="{Binding title}" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
                                                                     <Image Source="/Image/PrintIcon.png" Height="40" Opacity="0.5" HorizontalAlignment="Right"/>
                                                                 </Grid>
@@ -4153,18 +4613,18 @@
                                                                           FontSize="14" SelectionChanged="cmbAcademicYearResultPrint_SelectionChanged"/>
                                                     </StackPanel>
                                                 </Grid>
-                                                <ItemsControl Name="AdminReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1500">
+                                                <ItemsControl Name="AdminReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1900">
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
-                                                            <Button BorderThickness="0" Name="btnPrintListAdmin" Height="90" Width="450" Click="btnPrintListAdmin_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                                                            <Button BorderThickness="0" Name="btnPrintListAdmin" Height="90" Width="370" Click="btnPrintListAdmin_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
                                                                     FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 20 20 10" Foreground="Black">
                                                                 <Button.Background>
-                                                                    <LinearGradientBrush EndPoint="0.6,2.4" StartPoint="-0.2,0">
+                                                                    <LinearGradientBrush EndPoint="0.6,1.9" StartPoint="-0.2,0">
                                                                         <GradientStop Color="#1183Ca" Offset="1"/>
                                                                         <GradientStop Color="White" Offset="1"/>
                                                                     </LinearGradientBrush>
                                                                 </Button.Background>
-                                                                <Grid HorizontalAlignment="Stretch" Width="410">
+                                                                <Grid HorizontalAlignment="Stretch" Width="335">
                                                                     <TextBlock  Text="{Binding title}" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
                                                                     <Image Source="/Image/PrintIcon.png" Height="40" Opacity="0.5" HorizontalAlignment="Right"/>
                                                                 </Grid>
@@ -4191,18 +4651,18 @@
                                                                           FontSize="14" SelectionChanged="cmbAcademicYearResultPrint_SelectionChanged" ItemsSource="{Binding ItemsSource,ElementName=cmbAcademicYearResultPrint}"/>
                                                     </StackPanel>
                                                 </Grid>
-                                                <ItemsControl Name="AcademicReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1500">
+                                                <ItemsControl Name="AcademicReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1900">
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
-                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintListAdmin_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                                                            <Button BorderThickness="0" Height="90" Width="370" Click="btnPrintListAdmin_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
                                                                     FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 20 20 10" Foreground="Black">
                                                                 <Button.Background>
-                                                                    <LinearGradientBrush EndPoint="0.6,2.4" StartPoint="-0.2,0">
+                                                                    <LinearGradientBrush EndPoint="0.6,1.9" StartPoint="-0.2,0">
                                                                         <GradientStop Color="#1183Ca" Offset="1"/>
                                                                         <GradientStop Color="White" Offset="1"/>
                                                                     </LinearGradientBrush>
                                                                 </Button.Background>
-                                                                <Grid HorizontalAlignment="Stretch" Width="410">
+                                                                <Grid HorizontalAlignment="Stretch" Width="335">
                                                                     <TextBlock  Text="{Binding title}" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
                                                                     <Image Source="/Image/PrintIcon.png" Height="40" Opacity="0.5" HorizontalAlignment="Right"/>
                                                                 </Grid>
@@ -4245,18 +4705,18 @@
                                                     </StackPanel>
 
                                 </Grid>
-                                                <ItemsControl Name="PositionReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1500">
+                                                <ItemsControl Name="PositionReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1900">
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
-                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintListAdmin_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                                                            <Button BorderThickness="0" Height="90" Width="370" Click="btnPrintListAdmin_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
                                                                     FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 20 20 10" Foreground="Black">
                                                                 <Button.Background>
-                                                                    <LinearGradientBrush EndPoint="0.6,2.4" StartPoint="-0.2,0">
+                                                                    <LinearGradientBrush EndPoint="0.6,1.9" StartPoint="-0.2,0">
                                                                         <GradientStop Color="#1183Ca" Offset="1"/>
                                                                         <GradientStop Color="White" Offset="1"/>
                                                                     </LinearGradientBrush>
                                                                 </Button.Background>
-                                                                <Grid HorizontalAlignment="Stretch" Width="410">
+                                                                <Grid HorizontalAlignment="Stretch" Width="335">
                                                                     <TextBlock  Text="{Binding title}" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
                                                                     <Image Source="/Image/PrintIcon.png" Height="40" Opacity="0.5" HorizontalAlignment="Right"/>
                                                                 </Grid>
@@ -4274,18 +4734,18 @@
                                             <StackPanel Name="Ls3" >
                                                 <TextBlock Text="{x:Static language:Lang.School_Newsletter}" HorizontalAlignment="Left" FontSize="18" Margin="20 20 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                 <Separator Margin="20 10 20 0"/>
-                                                <ItemsControl Name="SchoolInformationReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1500">
+                                                <ItemsControl Name="SchoolInformationReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1900">
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
-                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintListAdmin_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                                                            <Button BorderThickness="0" Height="90" Width="370" Click="btnPrintListAdmin_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
                                                                     FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 20 20 10" Foreground="Black">
                                                                 <Button.Background>
-                                                                    <LinearGradientBrush EndPoint="0.6,2.4" StartPoint="-0.2,0">
+                                                                    <LinearGradientBrush EndPoint="0.6,1.9" StartPoint="-0.2,0">
                                                                         <GradientStop Color="#1183Ca" Offset="1"/>
                                                                         <GradientStop Color="White" Offset="1"/>
                                                                     </LinearGradientBrush>
                                                                 </Button.Background>
-                                                                <Grid HorizontalAlignment="Stretch" Width="410">
+                                                                <Grid HorizontalAlignment="Stretch" Width="335">
                                                                     <TextBlock  Text="{Binding title}" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
                                                                     <Image Source="/Image/PrintIcon.png" Height="40" Opacity="0.5" HorizontalAlignment="Right"/>
                                                                 </Grid>
@@ -4303,18 +4763,18 @@
                                             <StackPanel Name="Ls5" >
                                                 <TextBlock Text="{x:Static language:Lang.Student_Statistics_for_Education_Staff}" HorizontalAlignment="Left" FontSize="18" Margin="20 20 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                 <Separator Margin="20 10 20 0"/>
-                                                <ItemsControl Name="StatisticReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1500">
+                                                <ItemsControl Name="StatisticReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1900">
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
-                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintListAdmin_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                                                            <Button BorderThickness="0" Height="90" Width="370" Click="btnPrintListAdmin_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
                                                                     FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 20 20 10" Foreground="Black">
                                                                 <Button.Background>
-                                                                    <LinearGradientBrush EndPoint="0.6,2.4" StartPoint="-0.2,0">
+                                                                    <LinearGradientBrush EndPoint="0.6,1.9" StartPoint="-0.2,0">
                                                                         <GradientStop Color="#1183Ca" Offset="1"/>
                                                                         <GradientStop Color="White" Offset="1"/>
                                                                     </LinearGradientBrush>
                                                                 </Button.Background>
-                                                                <Grid HorizontalAlignment="Stretch" Width="410">
+                                                                <Grid HorizontalAlignment="Stretch" Width="335">
                                                                     <TextBlock  Text="{Binding title}" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
                                                                     <Image Source="/Image/PrintIcon.png" Height="40" Opacity="0.5" HorizontalAlignment="Right"/>
                                                                 </Grid>
@@ -4364,18 +4824,18 @@
                                                               SelectionChanged="cmbClassResultPrint_SelectionChanged"/>
                                                     </StackPanel>
                                                 </Grid>
-                                                <ItemsControl Name="TeacherShecduleReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1500">
+                                                <ItemsControl Name="TeacherShecduleReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1900">
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
-                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintListAdmin_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                                                            <Button BorderThickness="0" Height="90" Width="370" Click="btnPrintListAdmin_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
                                                                     FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 20 20 10" Foreground="Black">
                                                                 <Button.Background>
-                                                                    <LinearGradientBrush EndPoint="0.6,2.4" StartPoint="-0.2,0">
+                                                                    <LinearGradientBrush EndPoint="0.6,1.9" StartPoint="-0.2,0">
                                                                         <GradientStop Color="#1183Ca" Offset="1"/>
                                                                         <GradientStop Color="White" Offset="1"/>
                                                                     </LinearGradientBrush>
                                                                 </Button.Background>
-                                                                <Grid HorizontalAlignment="Stretch" Width="410">
+                                                                <Grid HorizontalAlignment="Stretch" Width="335">
                                                                     <TextBlock  Text="{Binding title}" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
                                                                     <Image Source="/Image/PrintIcon.png" Height="40" Opacity="0.5" HorizontalAlignment="Right"/>
                                                                 </Grid>
@@ -4419,18 +4879,18 @@
                                                               SelectionChanged="cmbClassResultPrint_SelectionChanged"/>
                                                     </StackPanel>
                                                 </Grid>
-                                                <ItemsControl Name="TeacherAttReportReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1500">
+                                                <ItemsControl Name="TeacherAttReportReportListPrint" HorizontalAlignment="Left" Margin="10 0 0 0" Width="1900">
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
-                                                            <Button BorderThickness="0" Height="90" Width="450" Click="btnPrintListAdmin_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                                                            <Button BorderThickness="0" Height="90" Width="370" Click="btnPrintListAdmin_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
                                                                     FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 20 20 10" Foreground="Black">
                                                                 <Button.Background>
-                                                                    <LinearGradientBrush EndPoint="0.6,2.4" StartPoint="-0.2,0">
+                                                                    <LinearGradientBrush EndPoint="0.6,1.9" StartPoint="-0.2,0">
                                                                         <GradientStop Color="#1183Ca" Offset="1"/>
                                                                         <GradientStop Color="White" Offset="1"/>
                                                                     </LinearGradientBrush>
                                                                 </Button.Background>
-                                                                <Grid HorizontalAlignment="Stretch" Width="410">
+                                                                <Grid HorizontalAlignment="Stretch" Width="335">
                                                                     <TextBlock  Text="{Binding title}" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
                                                                     <Image Source="/Image/PrintIcon.png" Height="40" Opacity="0.5" HorizontalAlignment="Right"/>
                                                                 </Grid>

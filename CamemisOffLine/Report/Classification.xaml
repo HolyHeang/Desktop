@@ -18,9 +18,11 @@
                     <Grid Grid.Column="0">
                         <Grid Margin="15,0,0,0">
                             <StackPanel Orientation="Vertical" Margin="0,5,0,0">
-                                <Label Name="lbllogoLeft" Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" Style="{DynamicResource Muol}" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0 15 0 0"></Label>
+                                <Image Source="/CamemisOffLine;component/Image/MoEYS.png" Height="100" VerticalAlignment="Top" HorizontalAlignment="Center"></Image>
+
+                                <Label Name="lbllogoLeft" Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" Style="{DynamicResource Muol}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 15 0 0"></Label>
                                 <Grid Margin="0,0,0,0">
-                                    <Label Name="TitleSchool" Style="{DynamicResource Siemreap}" Content="វិទ្យាល័យ ហ៊ុនសែនបូរី១០០ខ្នង" FontSize="15" Foreground="Black" HorizontalAlignment="Left" Margin="0 0 0 0" VerticalAlignment="Center"></Label>
+                                    <Label Name="TitleSchool" Style="{DynamicResource Siemreap}" Content="វិទ្យាល័យ ហ៊ុនសែនបូរី១០០ខ្នង" FontSize="15" Foreground="Black" HorizontalAlignment="Center" Margin="0 0 0 0" VerticalAlignment="Center"></Label>
                                 </Grid>
                                 <Grid Margin="0,-12,0,0"/>
                             </StackPanel>

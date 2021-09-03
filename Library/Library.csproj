@@ -72,6 +72,8 @@
     <Compile Include="School.cs" />
     <Compile Include="SchoolUrl.cs" />
     <Compile Include="SQLiteHelper.cs" />
+    <Compile Include="StaffAttendaceAndPermissionList.cs" />
+    <Compile Include="StaffAttendanceDaily.cs" />
     <Compile Include="StatisticGradeAllClass.cs" />
     <Compile Include="StatisticPassFail.cs" />
     <Compile Include="StatisticSubjectsGradingscale.cs" />
