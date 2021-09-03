@@ -1,5 +1,7 @@
 ﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
+using Library;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -79,9 +81,27 @@ namespace CamemisOffLine.Report
             }
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            print();
+            var accessUrl = Properties.Settings.Default.acessUrl;
+            var token = Properties.Settings.Default.Token;
+            if(Teacher.InternetChecker())
+            {
+                int i = 1;
+                var respone = await RESTApiHelper.GetAll(accessUrl, "/get-daily-staff-attendance-report?date=03/09/2021", token);
+                var obj = JObject.Parse(respone).ToObject<StaffAttendanceDailyList>().data;
+
+                foreach (var item in obj)
+                {
+                    item.number = i.ToString();
+                    if (item.gender == "1")
+                        item.gender = "ប្រុស";
+                    else
+                        item.gender = "ស្រី";
+                    i++;
+                }
+                Data.ItemsSource = obj;
+            }
         }
     }
 }

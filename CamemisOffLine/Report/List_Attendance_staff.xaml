@@ -44,7 +44,7 @@
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid Height="60" Margin="0 10 0 0" Name="title">
+                <Grid Height="70" Margin="0 0 0 0" Name="title">
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                         <Grid>
                             <Label Content="បញ្ជីស្រង់វត្តមានបុគ្កលិក" HorizontalAlignment="Center" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
@@ -61,7 +61,7 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Orientation="Vertical" Grid.Column="0">
                         <Grid>
-                            <DataGrid Margin="10 0 10 0" AutoGenerateColumns="False" RowHeight="40" BorderThickness="1 1 1 0" BorderBrush="Black" Background="White" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="25cm" CanUserAddRows="False" HorizontalScrollBarVisibility="Hidden">
+                            <DataGrid Margin="10 0 10 0" AutoGenerateColumns="False" RowHeight="40" BorderThickness="1 1 1 0" BorderBrush="Black" Background="White" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="25cm" CanUserAddRows="False" HorizontalScrollBarVisibility="Hidden" Name="Data">
                                 <DataGrid.Resources>
 
                                     <Style TargetType="DataGrid">
@@ -88,7 +88,7 @@
                                 <!--//............................Number............................-->
                                 <DataGrid.Columns>
 
-                                    <DataGridTextColumn Header="ល.រ" Width="50" FontSize="15">
+                                    <DataGridTextColumn Header="ល.រ" Width="50" FontSize="15" Binding="{Binding number}">
                                         <DataGridTextColumn.ElementStyle>
                                             <Style TargetType="TextBlock">
                                                 <Setter Property="Foreground" Value="Black"></Setter>
@@ -101,7 +101,7 @@
 
 
                                     <!--//............................Name............................-->
-                                    <DataGridTextColumn Width="124" FontSize="15" Header="គោត្តនាម-នាមខ្លួន" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang">
+                                    <DataGridTextColumn Width="124" FontSize="15" Header="គោត្តនាម-នាមខ្លួន" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Binding="{Binding name}">
                                         <DataGridTextColumn.ElementStyle>
                                             <Style TargetType="TextBlock">
                                                 <Setter Property="Foreground" Value="Black"></Setter>
@@ -127,7 +127,7 @@
                                     </DataGridTextColumn>
 
                                     <!--//........................................................-->
-                                    <DataGridTextColumn Header="តួនាទី" Width="100" FontSize="12" Binding="{Binding dob}">
+                                    <DataGridTextColumn Header="តួនាទី" Width="100" FontSize="12" Binding="{Binding position}">
 
                                         <DataGridTextColumn.ElementStyle>
 
@@ -144,7 +144,7 @@
 
 
                                     <!--//........................................................-->
-                                    <DataGridTextColumn Width="70" FontSize="15" Binding="{Binding come_from_class}">
+                                    <DataGridTextColumn Width="70" FontSize="15" >
 
                                         <DataGridTextColumn.ElementStyle>
 
@@ -160,7 +160,7 @@
                                     </DataGridTextColumn>
 
                                     <!--//........................................................-->
-                                    <DataGridTextColumn Width="70" FontSize="15" Binding="{Binding come_from_school}">
+                                    <DataGridTextColumn Width="70" FontSize="15" >
 
                                         <DataGridTextColumn.ElementStyle>
 
@@ -176,7 +176,7 @@
                                     </DataGridTextColumn>
 
                                     <!--//............................class............................-->
-                                    <DataGridTextColumn Width="70" FontSize="15" Binding="{Binding come_from_class}">
+                                    <DataGridTextColumn Width="70" FontSize="15" >
 
                                         <DataGridTextColumn.ElementStyle>
 
@@ -192,7 +192,7 @@
                                     </DataGridTextColumn>
 
                                     <!--//........................................................-->
-                                    <DataGridTextColumn Width="70" FontSize="15" Binding="{Binding come_from_school}">
+                                    <DataGridTextColumn Width="70" FontSize="15" >
 
                                         <DataGridTextColumn.ElementStyle>
 
@@ -252,7 +252,7 @@
                                     </DataGridTextColumn>
 
                                     <!--//............................Kind............................-->
-                                    <DataGridTextColumn Header="មកយឺត" MinWidth="80" FontSize="12" >
+                                    <DataGridTextColumn Header="មកយឺត" MinWidth="80" FontSize="12">
 
                                         <DataGridTextColumn.ElementStyle>
 
