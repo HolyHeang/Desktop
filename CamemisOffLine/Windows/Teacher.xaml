@@ -308,10 +308,7 @@
                                 </StackPanel>
 
                             </TabItem>
-
-
                             <TabItem Name="staffAttendanceReport">
-                               
                                 <Grid Margin="-3 0 -3 -3">
                                    <Grid Margin="10 0 10 10" Background="WhiteSmoke">
                                         <Grid.RowDefinitions>
@@ -331,7 +328,7 @@
                                                         <Label Content="{x:Static language:Lang.please_select}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                                                     </Grid>
                                                     <Grid Width="200">
-                                                        <DatePicker Name="DPStaffAtt" Height="35" BorderBrush="Gray" BorderThickness="1" SelectedDateChanged="DPStaffAtt_SelectedDateChanged" SelectedDate="{Binding DateTime, StringFormat='dd/MM/yyyy'}"/>
+                                                        <DatePicker Height="35" SelectedDate="{Binding DateTime, StringFormat='dd/MM/yyyy'}" CalendarStyle="{StaticResource styleCalendar}" BorderBrush="Gray" BorderThickness="1" SelectedDateChanged="DPStaffAtt_SelectedDateChanged" />
                                                     </Grid>
                                                     <Grid>
                                                         <Button BorderThickness="0 0 0 0" BorderBrush="LightGray" VerticalAlignment="Center" Margin="5 0 5 0" Height="35" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" HorizontalAlignment="Center">
