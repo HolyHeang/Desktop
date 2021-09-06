@@ -123,13 +123,10 @@ namespace CamemisOffLine
             ///...........
         }
         //combobox select in top bar and datepicker.....
-        public string token = Properties.Settings.Default.Token;
+        public string token = Properties.Settings.Default.Token, staffAtt = "";
         ObservableCollection<GradeTimeButton> DataButton = new ObservableCollection<GradeTimeButton>();
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-           
-
-           
             ///.................Part Setting...................
             btnAbout.Visibility = Visibility.Collapsed;
             btnColor.Visibility = Visibility.Collapsed;
@@ -5186,6 +5183,11 @@ namespace CamemisOffLine
                 cmbTypeAttReportPrint.SelectedValuePath = "Value";
             }
             catch { }
+        }
+
+        private void DPStaffAtt_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+           
         }
 
         private void cmbTypeAttReportPrint_SelectionChanged(object sender, SelectionChangedEventArgs e)

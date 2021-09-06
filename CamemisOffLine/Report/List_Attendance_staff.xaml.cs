@@ -41,7 +41,7 @@ namespace CamemisOffLine.Report
             {
 
                 this.Hide();
-                Document document = new Document(PageSize.A4, 5, 0, 0, 0);
+                Document document = new Document(PageSize.A4.Rotate(), 5, 0, 0, 0);
                 PdfWriter.GetInstance(document, new System.IO.FileStream(filePath + "\\" + "បញ្ជីស្រង់វត្តមានបុគ្កលិកសិក្សា" + ".pdf", FileMode.Create));
 
                 document.Open();
@@ -53,7 +53,7 @@ namespace CamemisOffLine.Report
                 {
 
                     PngBitmapEncoder enc = new PngBitmapEncoder();
-                    var bitmap = new RenderTargetBitmap((int)Grid.ActualWidth * 2, (int)Grid.ActualHeight * 2, 120, 120, PixelFormats.Pbgra32);
+                    var bitmap = new RenderTargetBitmap((int)Grid.ActualWidth * 4, (int)Grid.ActualHeight * 4, 147, 150, PixelFormats.Pbgra32);
                     bitmap.Render(Grid);
                     enc.Frames.Add(BitmapFrame.Create(bitmap));
                     enc.Save(outStream);
@@ -100,8 +100,10 @@ namespace CamemisOffLine.Report
                         item.gender = "ស្រី";
                     i++;
                 }
-                Data.ItemsSource = obj;
+                DG.ItemsSource = obj;
             }
+
+            print();
         }
     }
 }
