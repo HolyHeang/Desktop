@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-﻿C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\GeneratedInternalTypeHelper.g.cs
+﻿
 FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\App.xaml;;
 FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Component\MessageBoxControl.xaml;;
 FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Component\PrintCardStyle.xaml;;
@@ -39,46 +38,4 @@ FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Windows\ShowListStudentToP
 FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Windows\StudentResultDetail.xaml;;
 FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Windows\Teacher.xaml;;
 FC:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\Windows\Transcript.xaml;;
-=======
-﻿D:\Clone\10-08-2021\Desktop\CamemisOffLine\obj\Debug\GeneratedInternalTypeHelper.g.cs
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\App.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Component\MessageBoxControl.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Component\PrintCardStyle.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\PopupUserControl.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\AdministratorReport.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\AtendentAcademy.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\AttendanceReport.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\Classification.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\DistributionLetter.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\DistributionStaffAcademy.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\DistributionTeacher.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\Education_Staff_Information_Sheet.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\ListStudentCencel.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\List_Attendance_staff.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\List_of_repeat_students.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\MonthlySubjectResult.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\Semi-classification.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\StatisticGrade12.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\StatisticGrade9.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\Studemt_Exam_up_class.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\StudentList.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\Student_Attendance_Year.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\Summary_of_Students.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Report\TeacherInformationExcel.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Windows\About.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Windows\Account.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Windows\AllSubMonthlyResult.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Windows\HomePage.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Windows\HonoraryList.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Windows\Loading.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Windows\Login.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Windows\MainWindow.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Windows\MonthlyResult.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Windows\MonthlyStatisticResult.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Windows\PartTeacher.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Windows\ShowListStudentToPrint.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Windows\StudentResultDetail.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Windows\Teacher.xaml;;
-FD:\Clone\10-08-2021\Desktop\CamemisOffLine\Windows\Transcript.xaml;;
->>>>>>> ff9a5b4282270b71e2562a05128ac205ba630f25
 

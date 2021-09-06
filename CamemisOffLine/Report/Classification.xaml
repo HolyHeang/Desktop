@@ -46,7 +46,7 @@
                 </Grid>
                 <Grid Height="60" Margin="0 10 0 0" Name="title">
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                        <TextBlock Name="lblMonth" Text="ចំណាត់-ថ្នាក់ចំណាត់ប្រភេទប្រចាំឆមាសលើកទី១" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+                        <TextBlock Name="lblMonth" Text="ចំណាត់ថ្នាក់-ចំណាត់ប្រភេទប្រចាំឆមាសលើកទី១" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                             <TextBlock Name="txtClassName" Text="ថ្នាក់ទី១១​ A2 " VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
                             <TextBlock Text="ឆ្នាំសិក្សា" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
