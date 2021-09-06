@@ -335,7 +335,7 @@
                                                         <Label Content="{x:Static language:Lang.please_select}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                                                     </Grid>
                                                     <Grid Width="200">
-                                                        <DatePicker SelectedDateChanged="DateAtt_SelectedDateChanged" Height="35"  CalendarStyle="{StaticResource styleCalendar}" BorderBrush="Gray" BorderThickness="1"/>
+                                                        <DatePicker SelectedDateChanged="DateAtt_SelectedDateChanged" Height="35"  CalendarStyle="{StaticResource styleCalendar}" BorderBrush="Gray" BorderThickness="1" SelectedDate="{Binding DateTime, StringFormat='dd/MM/yyyy'}"/>
                                                     </Grid>
                                                     <Grid>
                                                         <Button BorderThickness="0 0 0 0" BorderBrush="LightGray" VerticalAlignment="Center" Margin="5 0 5 0" Height="35" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" HorizontalAlignment="Center">
