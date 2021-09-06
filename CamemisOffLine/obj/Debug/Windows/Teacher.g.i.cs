@@ -104,7 +104,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 82 "..\..\..\Windows\Teacher.xaml"
+        #line 80 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel adminPart;
         
@@ -112,7 +112,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 83 "..\..\..\Windows\Teacher.xaml"
+        #line 81 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnStaffAttendanceReport;
         
@@ -120,7 +120,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 87 "..\..\..\Windows\Teacher.xaml"
+        #line 85 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon MateriaStaffAtt;
         
@@ -128,7 +128,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 88 "..\..\..\Windows\Teacher.xaml"
+        #line 86 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblStaffAtt;
         
@@ -136,7 +136,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 91 "..\..\..\Windows\Teacher.xaml"
+        #line 89 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnStudentAttendanceReport;
         
@@ -144,7 +144,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 94 "..\..\..\Windows\Teacher.xaml"
+        #line 92 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon MateriaStuAtt;
         
@@ -152,7 +152,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 95 "..\..\..\Windows\Teacher.xaml"
+        #line 93 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblStuAtt;
         
@@ -160,7 +160,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 98 "..\..\..\Windows\Teacher.xaml"
+        #line 96 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnStudentLearningRsult;
         
@@ -168,7 +168,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 100 "..\..\..\Windows\Teacher.xaml"
+        #line 98 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon MateriaStuLearn;
         
@@ -176,7 +176,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 101 "..\..\..\Windows\Teacher.xaml"
+        #line 99 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblStuLearn;
         
@@ -184,7 +184,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 105 "..\..\..\Windows\Teacher.xaml"
+        #line 103 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnClassSchedule;
         
@@ -192,7 +192,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 107 "..\..\..\Windows\Teacher.xaml"
+        #line 105 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon MateriaClassSche;
         
@@ -200,7 +200,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 108 "..\..\..\Windows\Teacher.xaml"
+        #line 106 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblClassSched;
         
@@ -208,7 +208,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 111 "..\..\..\Windows\Teacher.xaml"
+        #line 109 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnTeacherSchedule;
         
@@ -216,7 +216,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 114 "..\..\..\Windows\Teacher.xaml"
+        #line 112 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon MateriaTeacherSche;
         
@@ -224,7 +224,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 115 "..\..\..\Windows\Teacher.xaml"
+        #line 113 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblTeacherSche;
         
@@ -232,7 +232,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 118 "..\..\..\Windows\Teacher.xaml"
+        #line 116 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnStudentList;
         
@@ -240,7 +240,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 120 "..\..\..\Windows\Teacher.xaml"
+        #line 118 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon MateriaStu;
         
@@ -248,7 +248,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 121 "..\..\..\Windows\Teacher.xaml"
+        #line 119 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblStuList;
         
@@ -256,7 +256,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 124 "..\..\..\Windows\Teacher.xaml"
+        #line 122 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnSubJectList;
         
@@ -264,7 +264,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 126 "..\..\..\Windows\Teacher.xaml"
+        #line 124 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon MateriaSubj;
         
@@ -272,7 +272,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 127 "..\..\..\Windows\Teacher.xaml"
+        #line 125 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblSubject;
         
@@ -280,7 +280,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 132 "..\..\..\Windows\Teacher.xaml"
+        #line 130 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel TeacherPart;
         
@@ -288,7 +288,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 134 "..\..\..\Windows\Teacher.xaml"
+        #line 132 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel SettingPart;
         
@@ -296,7 +296,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 136 "..\..\..\Windows\Teacher.xaml"
+        #line 134 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnFeaPrint;
         
@@ -304,7 +304,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 138 "..\..\..\Windows\Teacher.xaml"
+        #line 136 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon MateriaFeaprint;
         
@@ -312,7 +312,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 139 "..\..\..\Windows\Teacher.xaml"
+        #line 137 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblFeaprint;
         
@@ -320,7 +320,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 140 "..\..\..\Windows\Teacher.xaml"
+        #line 138 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon MateriaFeaprintdrop;
         
@@ -328,7 +328,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 141 "..\..\..\Windows\Teacher.xaml"
+        #line 139 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon MateriaFeaprintUp;
         
@@ -336,7 +336,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 145 "..\..\..\Windows\Teacher.xaml"
+        #line 143 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnStudent;
         
@@ -344,7 +344,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 151 "..\..\..\Windows\Teacher.xaml"
+        #line 149 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnTeacher;
         
@@ -352,7 +352,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 160 "..\..\..\Windows\Teacher.xaml"
+        #line 158 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnSetting;
         
@@ -360,7 +360,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 162 "..\..\..\Windows\Teacher.xaml"
+        #line 160 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon MateriaSetting;
         
@@ -368,7 +368,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 163 "..\..\..\Windows\Teacher.xaml"
+        #line 161 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblSetting;
         
@@ -376,7 +376,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 164 "..\..\..\Windows\Teacher.xaml"
+        #line 162 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon MateriaSettingDrop;
         
@@ -384,7 +384,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 165 "..\..\..\Windows\Teacher.xaml"
+        #line 163 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon MateriaSettingUp;
         
@@ -392,7 +392,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 170 "..\..\..\Windows\Teacher.xaml"
+        #line 168 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnLang;
         
@@ -400,7 +400,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 172 "..\..\..\Windows\Teacher.xaml"
+        #line 170 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon MateriaLang;
         
@@ -408,7 +408,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 173 "..\..\..\Windows\Teacher.xaml"
+        #line 171 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblLang;
         
@@ -416,7 +416,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 174 "..\..\..\Windows\Teacher.xaml"
+        #line 172 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon MateriaLangDrop;
         
@@ -424,7 +424,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 175 "..\..\..\Windows\Teacher.xaml"
+        #line 173 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon MateriaLangUp;
         
@@ -432,7 +432,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 180 "..\..\..\Windows\Teacher.xaml"
+        #line 178 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid gridLanguage;
         
@@ -440,7 +440,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 188 "..\..\..\Windows\Teacher.xaml"
+        #line 186 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button Khmer;
         
@@ -448,7 +448,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 190 "..\..\..\Windows\Teacher.xaml"
+        #line 188 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image Langkh;
         
@@ -456,7 +456,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 196 "..\..\..\Windows\Teacher.xaml"
+        #line 194 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button English;
         
@@ -464,7 +464,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 198 "..\..\..\Windows\Teacher.xaml"
+        #line 196 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image LangEng;
         
@@ -472,7 +472,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 203 "..\..\..\Windows\Teacher.xaml"
+        #line 201 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button Chinese;
         
@@ -480,7 +480,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 205 "..\..\..\Windows\Teacher.xaml"
+        #line 203 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image LangChin;
         
@@ -488,7 +488,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 210 "..\..\..\Windows\Teacher.xaml"
+        #line 208 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button Vietnam;
         
@@ -496,7 +496,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 212 "..\..\..\Windows\Teacher.xaml"
+        #line 210 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image LangVit;
         
@@ -504,7 +504,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 223 "..\..\..\Windows\Teacher.xaml"
+        #line 221 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnColor;
         
@@ -512,7 +512,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 225 "..\..\..\Windows\Teacher.xaml"
+        #line 223 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon MateriaColor;
         
@@ -520,7 +520,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 226 "..\..\..\Windows\Teacher.xaml"
+        #line 224 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblColor;
         
@@ -528,7 +528,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 227 "..\..\..\Windows\Teacher.xaml"
+        #line 225 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon MateriaColorDrop;
         
@@ -536,7 +536,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 228 "..\..\..\Windows\Teacher.xaml"
+        #line 226 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon MateriaColorUp;
         
@@ -544,7 +544,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 232 "..\..\..\Windows\Teacher.xaml"
+        #line 230 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnAbout;
         
@@ -552,7 +552,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 234 "..\..\..\Windows\Teacher.xaml"
+        #line 232 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon MateriaAbout;
         
@@ -560,7 +560,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 235 "..\..\..\Windows\Teacher.xaml"
+        #line 233 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblAbout;
         
@@ -568,7 +568,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 240 "..\..\..\Windows\Teacher.xaml"
+        #line 238 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnLogout;
         
@@ -576,7 +576,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 242 "..\..\..\Windows\Teacher.xaml"
+        #line 240 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon MateriaLogout;
         
@@ -584,7 +584,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 243 "..\..\..\Windows\Teacher.xaml"
+        #line 241 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblLogout;
         
@@ -592,7 +592,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 257 "..\..\..\Windows\Teacher.xaml"
+        #line 253 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblnameCompany;
         
@@ -600,7 +600,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 270 "..\..\..\Windows\Teacher.xaml"
+        #line 266 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label Tiltle;
         
@@ -608,7 +608,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 273 "..\..\..\Windows\Teacher.xaml"
+        #line 269 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon wifiIcon;
         
@@ -616,7 +616,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 274 "..\..\..\Windows\Teacher.xaml"
+        #line 270 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock txtPing;
         
@@ -624,7 +624,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 276 "..\..\..\Windows\Teacher.xaml"
+        #line 272 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label txtxCheckinternet;
         
@@ -632,7 +632,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 277 "..\..\..\Windows\Teacher.xaml"
+        #line 273 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Primitives.ToggleButton btnCheck;
         
@@ -640,7 +640,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 286 "..\..\..\Windows\Teacher.xaml"
+        #line 282 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid gridmax;
         
@@ -648,7 +648,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 287 "..\..\..\Windows\Teacher.xaml"
+        #line 283 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon maximized;
         
@@ -656,7 +656,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 289 "..\..\..\Windows\Teacher.xaml"
+        #line 285 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid gridmini;
         
@@ -664,7 +664,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 292 "..\..\..\Windows\Teacher.xaml"
+        #line 288 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid gridExit;
         
@@ -672,7 +672,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 300 "..\..\..\Windows\Teacher.xaml"
+        #line 296 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabControl tabMenu;
         
@@ -680,7 +680,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 302 "..\..\..\Windows\Teacher.xaml"
+        #line 298 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem HomePage;
         
@@ -688,7 +688,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 307 "..\..\..\Windows\Teacher.xaml"
+        #line 303 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock txttime;
         
@@ -696,7 +696,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 310 "..\..\..\Windows\Teacher.xaml"
+        #line 306 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock txtDate;
         
@@ -704,7 +704,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 317 "..\..\..\Windows\Teacher.xaml"
+        #line 313 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem staffAttendanceReport;
         
@@ -712,7 +712,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 353 "..\..\..\Windows\Teacher.xaml"
+        #line 349 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid DGStaffAtt;
         
@@ -720,7 +720,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 502 "..\..\..\Windows\Teacher.xaml"
+        #line 498 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid DGStaffAtt1;
         
@@ -728,7 +728,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1516 "..\..\..\Windows\Teacher.xaml"
+        #line 1512 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem StudntAttReport;
         
@@ -736,7 +736,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1518 "..\..\..\Windows\Teacher.xaml"
+        #line 1514 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid gridStudentAttendance;
         
@@ -744,7 +744,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1521 "..\..\..\Windows\Teacher.xaml"
+        #line 1517 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DockPanel DockTreeview;
         
@@ -752,7 +752,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1532 "..\..\..\Windows\Teacher.xaml"
+        #line 1528 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid gridbtnGrad;
         
@@ -760,7 +760,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1535 "..\..\..\Windows\Teacher.xaml"
+        #line 1531 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnGradAtt;
         
@@ -768,7 +768,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1540 "..\..\..\Windows\Teacher.xaml"
+        #line 1536 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid gridtabStuAtt;
         
@@ -776,7 +776,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1541 "..\..\..\Windows\Teacher.xaml"
+        #line 1537 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabControl tabtreeStuAtt;
         
@@ -784,7 +784,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1542 "..\..\..\Windows\Teacher.xaml"
+        #line 1538 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem GradAtt;
         
@@ -792,7 +792,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1551 "..\..\..\Windows\Teacher.xaml"
+        #line 1547 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cbAcademyYearAtt;
         
@@ -800,7 +800,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1556 "..\..\..\Windows\Teacher.xaml"
+        #line 1552 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TreeView tvAcademyAtt;
         
@@ -808,7 +808,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1624 "..\..\..\Windows\Teacher.xaml"
+        #line 1620 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DockPanel DockStuAtt;
         
@@ -816,7 +816,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1632 "..\..\..\Windows\Teacher.xaml"
+        #line 1628 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid gridbarstuAtt;
         
@@ -824,7 +824,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1634 "..\..\..\Windows\Teacher.xaml"
+        #line 1630 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid MenuStuAtt;
         
@@ -832,7 +832,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1635 "..\..\..\Windows\Teacher.xaml"
+        #line 1631 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon ArroBackStuAtt;
         
@@ -840,7 +840,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1638 "..\..\..\Windows\Teacher.xaml"
+        #line 1634 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DatePicker DateAtt;
         
@@ -848,7 +848,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1658 "..\..\..\Windows\Teacher.xaml"
+        #line 1654 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lbltitleyearAtt;
         
@@ -856,7 +856,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1682 "..\..\..\Windows\Teacher.xaml"
+        #line 1678 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lbltitleClassAtt;
         
@@ -864,7 +864,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1685 "..\..\..\Windows\Teacher.xaml"
+        #line 1681 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel stackPrintStuAtt;
         
@@ -872,7 +872,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1698 "..\..\..\Windows\Teacher.xaml"
+        #line 1694 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem btnPrintAttStu;
         
@@ -880,7 +880,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1717 "..\..\..\Windows\Teacher.xaml"
+        #line 1713 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid gridStudentAtt;
         
@@ -888,7 +888,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1719 "..\..\..\Windows\Teacher.xaml"
+        #line 1715 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabControl tabStudentAtt;
         
@@ -896,7 +896,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1734 "..\..\..\Windows\Teacher.xaml"
+        #line 1730 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblSchoolAdminAtt;
         
@@ -904,7 +904,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1739 "..\..\..\Windows\Teacher.xaml"
+        #line 1735 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox txtAdmintitleAtt;
         
@@ -912,7 +912,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1747 "..\..\..\Windows\Teacher.xaml"
+        #line 1743 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lbldayAtt;
         
@@ -920,7 +920,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1749 "..\..\..\Windows\Teacher.xaml"
+        #line 1745 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lbldayNumAtt;
         
@@ -928,7 +928,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1751 "..\..\..\Windows\Teacher.xaml"
+        #line 1747 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblMonthAtt;
         
@@ -936,7 +936,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1753 "..\..\..\Windows\Teacher.xaml"
+        #line 1749 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblyearAtt;
         
@@ -944,7 +944,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1757 "..\..\..\Windows\Teacher.xaml"
+        #line 1753 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid gridheadrStuAtt;
         
@@ -952,7 +952,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1858 "..\..\..\Windows\Teacher.xaml"
+        #line 1854 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ScrollViewer scrolStuatt;
         
@@ -960,7 +960,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1860 "..\..\..\Windows\Teacher.xaml"
+        #line 1856 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid DGStudentAtt;
         
@@ -968,7 +968,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1982 "..\..\..\Windows\Teacher.xaml"
+        #line 1978 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label LabelTitleAtNodata;
         
@@ -976,7 +976,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1994 "..\..\..\Windows\Teacher.xaml"
+        #line 1990 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid MessageblockStuAtt;
         
@@ -984,7 +984,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 1996 "..\..\..\Windows\Teacher.xaml"
+        #line 1992 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label LabelTitleAtt;
         
@@ -992,7 +992,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2016 "..\..\..\Windows\Teacher.xaml"
+        #line 2012 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem studentLearningResult;
         
@@ -1000,7 +1000,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2023 "..\..\..\Windows\Teacher.xaml"
+        #line 2019 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grideStuResult;
         
@@ -1008,7 +1008,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2046 "..\..\..\Windows\Teacher.xaml"
+        #line 2042 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lbltitleClassResult;
         
@@ -1016,7 +1016,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2067 "..\..\..\Windows\Teacher.xaml"
+        #line 2063 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lbltitleGrade;
         
@@ -1024,7 +1024,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2078 "..\..\..\Windows\Teacher.xaml"
+        #line 2074 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label txtDataDate;
         
@@ -1032,7 +1032,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2082 "..\..\..\Windows\Teacher.xaml"
+        #line 2078 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Menu TranscripPrint;
         
@@ -1040,7 +1040,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2095 "..\..\..\Windows\Teacher.xaml"
+        #line 2091 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem btnPrintresultStu;
         
@@ -1048,7 +1048,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2100 "..\..\..\Windows\Teacher.xaml"
+        #line 2096 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem btnPrintAllSub;
         
@@ -1056,7 +1056,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2110 "..\..\..\Windows\Teacher.xaml"
+        #line 2106 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem printTranscriptAllInOne;
         
@@ -1064,7 +1064,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2115 "..\..\..\Windows\Teacher.xaml"
+        #line 2111 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem printTranscriptByStudentInOne;
         
@@ -1072,7 +1072,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2120 "..\..\..\Windows\Teacher.xaml"
+        #line 2116 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem printClasscify;
         
@@ -1080,7 +1080,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2129 "..\..\..\Windows\Teacher.xaml"
+        #line 2125 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Menu OptionMenu;
         
@@ -1088,7 +1088,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2146 "..\..\..\Windows\Teacher.xaml"
+        #line 2142 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem GerateFileAllInOne;
         
@@ -1096,7 +1096,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2151 "..\..\..\Windows\Teacher.xaml"
+        #line 2147 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem GenerateFileOther;
         
@@ -1104,7 +1104,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2157 "..\..\..\Windows\Teacher.xaml"
+        #line 2153 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem MenuExportToExcel;
         
@@ -1112,7 +1112,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2176 "..\..\..\Windows\Teacher.xaml"
+        #line 2172 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid gridformstuResult;
         
@@ -1120,7 +1120,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2179 "..\..\..\Windows\Teacher.xaml"
+        #line 2175 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DockPanel docktree;
         
@@ -1128,7 +1128,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2188 "..\..\..\Windows\Teacher.xaml"
+        #line 2184 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Grade;
         
@@ -1136,7 +1136,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2189 "..\..\..\Windows\Teacher.xaml"
+        #line 2185 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel staGrade;
         
@@ -1144,7 +1144,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2192 "..\..\..\Windows\Teacher.xaml"
+        #line 2188 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnGrade;
         
@@ -1152,7 +1152,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2195 "..\..\..\Windows\Teacher.xaml"
+        #line 2191 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Month;
         
@@ -1160,7 +1160,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2197 "..\..\..\Windows\Teacher.xaml"
+        #line 2193 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnMonth;
         
@@ -1168,7 +1168,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2205 "..\..\..\Windows\Teacher.xaml"
+        #line 2201 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid GridCursors;
         
@@ -1176,7 +1176,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2208 "..\..\..\Windows\Teacher.xaml"
+        #line 2204 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabControl tabStuResult;
         
@@ -1184,7 +1184,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2209 "..\..\..\Windows\Teacher.xaml"
+        #line 2205 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem Grad;
         
@@ -1192,7 +1192,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2211 "..\..\..\Windows\Teacher.xaml"
+        #line 2207 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid gridgade;
         
@@ -1200,7 +1200,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2218 "..\..\..\Windows\Teacher.xaml"
+        #line 2214 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cbAcademyYear;
         
@@ -1208,7 +1208,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2222 "..\..\..\Windows\Teacher.xaml"
+        #line 2218 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TreeView tvAcademy;
         
@@ -1216,7 +1216,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2297 "..\..\..\Windows\Teacher.xaml"
+        #line 2293 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem Months;
         
@@ -1224,7 +1224,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2298 "..\..\..\Windows\Teacher.xaml"
+        #line 2294 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ScrollViewer gridmonths;
         
@@ -1232,7 +1232,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2300 "..\..\..\Windows\Teacher.xaml"
+        #line 2296 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ListView lButton;
         
@@ -1240,7 +1240,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2323 "..\..\..\Windows\Teacher.xaml"
+        #line 2319 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnResultofTheYear;
         
@@ -1248,7 +1248,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2355 "..\..\..\Windows\Teacher.xaml"
+        #line 2351 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DockPanel DockControlTabResul;
         
@@ -1256,7 +1256,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2363 "..\..\..\Windows\Teacher.xaml"
+        #line 2359 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid gridgoto;
         
@@ -1264,7 +1264,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2372 "..\..\..\Windows\Teacher.xaml"
+        #line 2368 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid menuResult;
         
@@ -1272,7 +1272,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2373 "..\..\..\Windows\Teacher.xaml"
+        #line 2369 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MaterialDesignThemes.Wpf.PackIcon ArroBackStuRes;
         
@@ -1280,7 +1280,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2379 "..\..\..\Windows\Teacher.xaml"
+        #line 2375 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnStatistic;
         
@@ -1288,7 +1288,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2398 "..\..\..\Windows\Teacher.xaml"
+        #line 2394 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnSave;
         
@@ -1296,7 +1296,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2419 "..\..\..\Windows\Teacher.xaml"
+        #line 2415 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btngoto;
         
@@ -1304,7 +1304,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2442 "..\..\..\Windows\Teacher.xaml"
+        #line 2438 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lbltitleMonth;
         
@@ -1312,7 +1312,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2449 "..\..\..\Windows\Teacher.xaml"
+        #line 2445 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid gridHeadernumstu;
         
@@ -1320,7 +1320,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2462 "..\..\..\Windows\Teacher.xaml"
+        #line 2458 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbStudentName;
         
@@ -1328,7 +1328,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2463 "..\..\..\Windows\Teacher.xaml"
+        #line 2459 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox txtStudentName;
         
@@ -1336,7 +1336,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2470 "..\..\..\Windows\Teacher.xaml"
+        #line 2466 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbSort;
         
@@ -1344,7 +1344,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2492 "..\..\..\Windows\Teacher.xaml"
+        #line 2488 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.RadioButton rbSmall;
         
@@ -1352,7 +1352,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2495 "..\..\..\Windows\Teacher.xaml"
+        #line 2491 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.RadioButton rbBig;
         
@@ -1360,7 +1360,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2500 "..\..\..\Windows\Teacher.xaml"
+        #line 2496 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_ResultLearning;
         
@@ -1368,7 +1368,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2502 "..\..\..\Windows\Teacher.xaml"
+        #line 2498 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnApproved;
         
@@ -1376,7 +1376,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2519 "..\..\..\Windows\Teacher.xaml"
+        #line 2515 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnUnApproved;
         
@@ -1384,7 +1384,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2536 "..\..\..\Windows\Teacher.xaml"
+        #line 2532 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnCalculate;
         
@@ -1392,7 +1392,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2553 "..\..\..\Windows\Teacher.xaml"
+        #line 2549 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Menu Selectresult;
         
@@ -1400,7 +1400,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2565 "..\..\..\Windows\Teacher.xaml"
+        #line 2560 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem btnExam_Semester;
         
@@ -1408,7 +1408,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2568 "..\..\..\Windows\Teacher.xaml"
+        #line 2563 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem btnClassification_Semester;
         
@@ -1416,7 +1416,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2571 "..\..\..\Windows\Teacher.xaml"
+        #line 2566 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem btnResultSemester;
         
@@ -1424,7 +1424,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2581 "..\..\..\Windows\Teacher.xaml"
+        #line 2576 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblTitleTotalStudent;
         
@@ -1432,7 +1432,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2585 "..\..\..\Windows\Teacher.xaml"
+        #line 2580 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid gridStudentResult;
         
@@ -1440,7 +1440,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2587 "..\..\..\Windows\Teacher.xaml"
+        #line 2582 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid gridMonth;
         
@@ -1448,7 +1448,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2596 "..\..\..\Windows\Teacher.xaml"
+        #line 2591 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label LabelTitleAtNodataMonth;
         
@@ -1456,7 +1456,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2603 "..\..\..\Windows\Teacher.xaml"
+        #line 2598 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabControl tabStudentResult;
         
@@ -1464,7 +1464,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2604 "..\..\..\Windows\Teacher.xaml"
+        #line 2599 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem tabError;
         
@@ -1472,7 +1472,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2605 "..\..\..\Windows\Teacher.xaml"
+        #line 2600 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid MessageblockStuRes;
         
@@ -1480,7 +1480,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2612 "..\..\..\Windows\Teacher.xaml"
+        #line 2607 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label LabelTitle;
         
@@ -1488,7 +1488,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2619 "..\..\..\Windows\Teacher.xaml"
+        #line 2614 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem tabMonth;
         
@@ -1496,7 +1496,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2627 "..\..\..\Windows\Teacher.xaml"
+        #line 2622 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid dataStudentLearning;
         
@@ -1504,7 +1504,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2631 "..\..\..\Windows\Teacher.xaml"
+        #line 2626 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid DGMonthlyResult;
         
@@ -1512,7 +1512,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2840 "..\..\..\Windows\Teacher.xaml"
+        #line 2835 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem tabSemester;
         
@@ -1520,7 +1520,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 2853 "..\..\..\Windows\Teacher.xaml"
+        #line 2848 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid DGSemester;
         
@@ -1528,7 +1528,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3070 "..\..\..\Windows\Teacher.xaml"
+        #line 3065 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem tabYear;
         
@@ -1536,7 +1536,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3078 "..\..\..\Windows\Teacher.xaml"
+        #line 3073 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid DGYear;
         
@@ -1544,7 +1544,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3288 "..\..\..\Windows\Teacher.xaml"
+        #line 3283 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem Result_Semester_Classificate;
         
@@ -1552,7 +1552,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3301 "..\..\..\Windows\Teacher.xaml"
+        #line 3296 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid DGSemesterClass;
         
@@ -1560,7 +1560,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3472 "..\..\..\Windows\Teacher.xaml"
+        #line 3467 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem Result_Semester_Exam;
         
@@ -1568,7 +1568,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3485 "..\..\..\Windows\Teacher.xaml"
+        #line 3480 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid DGSemesterExam;
         
@@ -1576,7 +1576,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3678 "..\..\..\Windows\Teacher.xaml"
+        #line 3673 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem classSchedule;
         
@@ -1584,7 +1584,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3681 "..\..\..\Windows\Teacher.xaml"
+        #line 3676 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem teacherSchedule;
         
@@ -1592,7 +1592,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3684 "..\..\..\Windows\Teacher.xaml"
+        #line 3679 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem studentList;
         
@@ -1600,7 +1600,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3687 "..\..\..\Windows\Teacher.xaml"
+        #line 3682 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem subjectList;
         
@@ -1608,7 +1608,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3692 "..\..\..\Windows\Teacher.xaml"
+        #line 3687 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.RadioButton Rkh;
         
@@ -1616,7 +1616,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3693 "..\..\..\Windows\Teacher.xaml"
+        #line 3688 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.RadioButton Ren;
         
@@ -1624,7 +1624,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3694 "..\..\..\Windows\Teacher.xaml"
+        #line 3689 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.RadioButton Rcode;
         
@@ -1632,7 +1632,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3696 "..\..\..\Windows\Teacher.xaml"
+        #line 3691 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox txtSub;
         
@@ -1640,7 +1640,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3699 "..\..\..\Windows\Teacher.xaml"
+        #line 3694 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid Data;
         
@@ -1648,7 +1648,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3712 "..\..\..\Windows\Teacher.xaml"
+        #line 3707 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem TabStudent;
         
@@ -1656,7 +1656,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3724 "..\..\..\Windows\Teacher.xaml"
+        #line 3719 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel StackCmb;
         
@@ -1664,7 +1664,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3726 "..\..\..\Windows\Teacher.xaml"
+        #line 3721 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbChoice;
         
@@ -1672,7 +1672,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3752 "..\..\..\Windows\Teacher.xaml"
+        #line 3747 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel ListPrintStudent;
         
@@ -1680,7 +1680,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3756 "..\..\..\Windows\Teacher.xaml"
+        #line 3751 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel L1;
         
@@ -1688,7 +1688,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3763 "..\..\..\Windows\Teacher.xaml"
+        #line 3758 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbAcademicYearStudentListPrint;
         
@@ -1696,7 +1696,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3767 "..\..\..\Windows\Teacher.xaml"
+        #line 3762 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel st3;
         
@@ -1704,7 +1704,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3769 "..\..\..\Windows\Teacher.xaml"
+        #line 3764 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbLevelStudentListPrint;
         
@@ -1712,7 +1712,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3786 "..\..\..\Windows\Teacher.xaml"
+        #line 3781 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel st1;
         
@@ -1720,7 +1720,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3788 "..\..\..\Windows\Teacher.xaml"
+        #line 3783 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbGradeStudentListPrint;
         
@@ -1728,7 +1728,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3792 "..\..\..\Windows\Teacher.xaml"
+        #line 3787 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel st2;
         
@@ -1736,7 +1736,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3794 "..\..\..\Windows\Teacher.xaml"
+        #line 3789 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbClassStudentListPrint;
         
@@ -1744,7 +1744,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3801 "..\..\..\Windows\Teacher.xaml"
+        #line 3796 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ItemsControl StudentListPrint;
         
@@ -1752,7 +1752,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3827 "..\..\..\Windows\Teacher.xaml"
+        #line 3822 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel L2;
         
@@ -1760,7 +1760,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3834 "..\..\..\Windows\Teacher.xaml"
+        #line 3829 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbAcademicYearScedulePrint;
         
@@ -1768,7 +1768,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3840 "..\..\..\Windows\Teacher.xaml"
+        #line 3835 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbGradeScedulePrint;
         
@@ -1776,7 +1776,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3846 "..\..\..\Windows\Teacher.xaml"
+        #line 3841 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbClassScedulePrint;
         
@@ -1784,7 +1784,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3852 "..\..\..\Windows\Teacher.xaml"
+        #line 3847 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ItemsControl ScheduleListPrint;
         
@@ -1792,7 +1792,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3878 "..\..\..\Windows\Teacher.xaml"
+        #line 3873 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel L3;
         
@@ -1800,7 +1800,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3885 "..\..\..\Windows\Teacher.xaml"
+        #line 3880 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbAcademicYearResultPrint;
         
@@ -1808,7 +1808,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3891 "..\..\..\Windows\Teacher.xaml"
+        #line 3886 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbGradeResultPrint;
         
@@ -1816,7 +1816,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3897 "..\..\..\Windows\Teacher.xaml"
+        #line 3892 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbClassResultPrint;
         
@@ -1824,7 +1824,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3903 "..\..\..\Windows\Teacher.xaml"
+        #line 3898 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbMonthResultPrint;
         
@@ -1832,7 +1832,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3908 "..\..\..\Windows\Teacher.xaml"
+        #line 3903 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ItemsControl ResultListPrint;
         
@@ -1840,7 +1840,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3988 "..\..\..\Windows\Teacher.xaml"
+        #line 3983 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel L5;
         
@@ -1848,7 +1848,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 3995 "..\..\..\Windows\Teacher.xaml"
+        #line 3990 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbAcademicYearAttReportPrint;
         
@@ -1856,7 +1856,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4001 "..\..\..\Windows\Teacher.xaml"
+        #line 3996 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbGradeAttReportPrint;
         
@@ -1864,7 +1864,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4007 "..\..\..\Windows\Teacher.xaml"
+        #line 4002 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbClassAttReportPrint;
         
@@ -1872,7 +1872,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4013 "..\..\..\Windows\Teacher.xaml"
+        #line 4008 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbTypeAttReportPrint;
         
@@ -1880,7 +1880,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4020 "..\..\..\Windows\Teacher.xaml"
+        #line 4015 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ItemsControl AttReportListPrint;
         
@@ -1888,7 +1888,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4306 "..\..\..\Windows\Teacher.xaml"
+        #line 4301 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel L10;
         
@@ -1896,7 +1896,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4313 "..\..\..\Windows\Teacher.xaml"
+        #line 4308 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbAcademicYearStatistic12Print;
         
@@ -1904,7 +1904,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4319 "..\..\..\Windows\Teacher.xaml"
+        #line 4314 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ItemsControl StatisticResultGrade12ReportListPrint;
         
@@ -1912,7 +1912,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4532 "..\..\..\Windows\Teacher.xaml"
+        #line 4527 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem TabTeacher;
         
@@ -1920,7 +1920,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4541 "..\..\..\Windows\Teacher.xaml"
+        #line 4536 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel StackCmbStaff;
         
@@ -1928,7 +1928,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4543 "..\..\..\Windows\Teacher.xaml"
+        #line 4538 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbChoiceStaff;
         
@@ -1936,7 +1936,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4562 "..\..\..\Windows\Teacher.xaml"
+        #line 4557 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnImportTeacher;
         
@@ -1944,7 +1944,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4580 "..\..\..\Windows\Teacher.xaml"
+        #line 4575 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnExmportTeacher;
         
@@ -1952,7 +1952,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4602 "..\..\..\Windows\Teacher.xaml"
+        #line 4597 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel ListPrintStaff;
         
@@ -1960,7 +1960,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4604 "..\..\..\Windows\Teacher.xaml"
+        #line 4599 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel Ls1;
         
@@ -1968,7 +1968,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4611 "..\..\..\Windows\Teacher.xaml"
+        #line 4606 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbAcademicYearCardInformationPrint;
         
@@ -1976,7 +1976,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4616 "..\..\..\Windows\Teacher.xaml"
+        #line 4611 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ItemsControl AdminReportListPrint;
         
@@ -1984,7 +1984,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4642 "..\..\..\Windows\Teacher.xaml"
+        #line 4637 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel Ls4;
         
@@ -1992,7 +1992,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4649 "..\..\..\Windows\Teacher.xaml"
+        #line 4644 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbAcademicYearAdminCirtificatePrint;
         
@@ -2000,7 +2000,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4654 "..\..\..\Windows\Teacher.xaml"
+        #line 4649 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ItemsControl AcademicReportListPrint;
         
@@ -2008,7 +2008,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4680 "..\..\..\Windows\Teacher.xaml"
+        #line 4675 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel Ls2;
         
@@ -2016,7 +2016,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4687 "..\..\..\Windows\Teacher.xaml"
+        #line 4682 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbAcademicYearPostionPrint;
         
@@ -2024,7 +2024,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4694 "..\..\..\Windows\Teacher.xaml"
+        #line 4689 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbGradePostionPrint;
         
@@ -2032,7 +2032,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4700 "..\..\..\Windows\Teacher.xaml"
+        #line 4695 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbClassPostionPrint;
         
@@ -2040,7 +2040,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4708 "..\..\..\Windows\Teacher.xaml"
+        #line 4703 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ItemsControl PositionReportListPrint;
         
@@ -2048,7 +2048,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4734 "..\..\..\Windows\Teacher.xaml"
+        #line 4729 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel Ls3;
         
@@ -2056,7 +2056,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4737 "..\..\..\Windows\Teacher.xaml"
+        #line 4732 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ItemsControl SchoolInformationReportListPrint;
         
@@ -2064,7 +2064,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4763 "..\..\..\Windows\Teacher.xaml"
+        #line 4758 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel Ls5;
         
@@ -2072,7 +2072,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4766 "..\..\..\Windows\Teacher.xaml"
+        #line 4761 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ItemsControl StatisticReportListPrint;
         
@@ -2080,7 +2080,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4792 "..\..\..\Windows\Teacher.xaml"
+        #line 4787 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel Ls6;
         
@@ -2088,7 +2088,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4804 "..\..\..\Windows\Teacher.xaml"
+        #line 4799 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbAcademicYearTeacherShecdulePrint;
         
@@ -2096,7 +2096,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4810 "..\..\..\Windows\Teacher.xaml"
+        #line 4805 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbGradeTeacherShecdulePrint;
         
@@ -2104,7 +2104,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4816 "..\..\..\Windows\Teacher.xaml"
+        #line 4811 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbClassTeacherShecdulePrint;
         
@@ -2112,7 +2112,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4822 "..\..\..\Windows\Teacher.xaml"
+        #line 4817 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbClassifyTeacherShecdulePrint;
         
@@ -2120,7 +2120,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4827 "..\..\..\Windows\Teacher.xaml"
+        #line 4822 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ItemsControl TeacherShecduleReportListPrint;
         
@@ -2128,7 +2128,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4853 "..\..\..\Windows\Teacher.xaml"
+        #line 4848 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel Ls7;
         
@@ -2136,7 +2136,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4865 "..\..\..\Windows\Teacher.xaml"
+        #line 4860 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbAcademicYearTeacherAttReportPrint;
         
@@ -2144,7 +2144,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4871 "..\..\..\Windows\Teacher.xaml"
+        #line 4866 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbGradeTeacherAttReportPrint;
         
@@ -2152,7 +2152,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4877 "..\..\..\Windows\Teacher.xaml"
+        #line 4872 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbClassTeacherAttReportPrint;
         
@@ -2160,7 +2160,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4882 "..\..\..\Windows\Teacher.xaml"
+        #line 4877 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ItemsControl TeacherAttReportReportListPrint;
         
@@ -2168,7 +2168,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4912 "..\..\..\Windows\Teacher.xaml"
+        #line 4907 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem TabAdmin;
         
@@ -2176,7 +2176,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4924 "..\..\..\Windows\Teacher.xaml"
+        #line 4919 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Primitives.Popup popup_uc;
         
@@ -2184,7 +2184,7 @@ namespace CamemisOffLine {
         #line hidden
         
         
-        #line 4930 "..\..\..\Windows\Teacher.xaml"
+        #line 4925 "..\..\..\Windows\Teacher.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal CamemisOffLine.PopupUserControl Header;
         
@@ -2281,19 +2281,19 @@ namespace CamemisOffLine {
             case 10:
             this.btnStaffAttendanceReport = ((System.Windows.Controls.Button)(target));
             
-            #line 83 "..\..\..\Windows\Teacher.xaml"
+            #line 81 "..\..\..\Windows\Teacher.xaml"
             this.btnStaffAttendanceReport.Click += new System.Windows.RoutedEventHandler(this.btnStaffAttendanceReport_Click);
             
             #line default
             #line hidden
             
-            #line 83 "..\..\..\Windows\Teacher.xaml"
+            #line 81 "..\..\..\Windows\Teacher.xaml"
             this.btnStaffAttendanceReport.MouseEnter += new System.Windows.Input.MouseEventHandler(this.btnStaffAttendanceReport_MouseEnter);
             
             #line default
             #line hidden
             
-            #line 83 "..\..\..\Windows\Teacher.xaml"
+            #line 81 "..\..\..\Windows\Teacher.xaml"
             this.btnStaffAttendanceReport.MouseLeave += new System.Windows.Input.MouseEventHandler(this.btnStaffAttendanceReport_MouseLeave);
             
             #line default
@@ -2308,19 +2308,19 @@ namespace CamemisOffLine {
             case 13:
             this.btnStudentAttendanceReport = ((System.Windows.Controls.Button)(target));
             
-            #line 91 "..\..\..\Windows\Teacher.xaml"
+            #line 89 "..\..\..\Windows\Teacher.xaml"
             this.btnStudentAttendanceReport.Click += new System.Windows.RoutedEventHandler(this.btnStudentAttendanceReport_Click_1);
             
             #line default
             #line hidden
             
-            #line 91 "..\..\..\Windows\Teacher.xaml"
+            #line 89 "..\..\..\Windows\Teacher.xaml"
             this.btnStudentAttendanceReport.MouseEnter += new System.Windows.Input.MouseEventHandler(this.btnStudentAttendanceReport_MouseEnter_1);
             
             #line default
             #line hidden
             
-            #line 91 "..\..\..\Windows\Teacher.xaml"
+            #line 89 "..\..\..\Windows\Teacher.xaml"
             this.btnStudentAttendanceReport.MouseLeave += new System.Windows.Input.MouseEventHandler(this.btnStudentAttendanceReport_MouseLeave_1);
             
             #line default
@@ -2335,19 +2335,19 @@ namespace CamemisOffLine {
             case 16:
             this.btnStudentLearningRsult = ((System.Windows.Controls.Button)(target));
             
-            #line 98 "..\..\..\Windows\Teacher.xaml"
+            #line 96 "..\..\..\Windows\Teacher.xaml"
             this.btnStudentLearningRsult.Click += new System.Windows.RoutedEventHandler(this.btnStudentLearningRsult_Click);
             
             #line default
             #line hidden
             
-            #line 98 "..\..\..\Windows\Teacher.xaml"
+            #line 96 "..\..\..\Windows\Teacher.xaml"
             this.btnStudentLearningRsult.MouseEnter += new System.Windows.Input.MouseEventHandler(this.btnStudentLearningRsult_MouseEnter);
             
             #line default
             #line hidden
             
-            #line 98 "..\..\..\Windows\Teacher.xaml"
+            #line 96 "..\..\..\Windows\Teacher.xaml"
             this.btnStudentLearningRsult.MouseLeave += new System.Windows.Input.MouseEventHandler(this.btnStudentLearningRsult_MouseLeave);
             
             #line default
@@ -2362,19 +2362,19 @@ namespace CamemisOffLine {
             case 19:
             this.btnClassSchedule = ((System.Windows.Controls.Button)(target));
             
-            #line 105 "..\..\..\Windows\Teacher.xaml"
+            #line 103 "..\..\..\Windows\Teacher.xaml"
             this.btnClassSchedule.Click += new System.Windows.RoutedEventHandler(this.btnClassSchedule_Click);
             
             #line default
             #line hidden
             
-            #line 105 "..\..\..\Windows\Teacher.xaml"
+            #line 103 "..\..\..\Windows\Teacher.xaml"
             this.btnClassSchedule.MouseEnter += new System.Windows.Input.MouseEventHandler(this.btnClassSchedule_MouseEnter);
             
             #line default
             #line hidden
             
-            #line 105 "..\..\..\Windows\Teacher.xaml"
+            #line 103 "..\..\..\Windows\Teacher.xaml"
             this.btnClassSchedule.MouseLeave += new System.Windows.Input.MouseEventHandler(this.btnClassSchedule_MouseLeave);
             
             #line default
@@ -2389,19 +2389,19 @@ namespace CamemisOffLine {
             case 22:
             this.btnTeacherSchedule = ((System.Windows.Controls.Button)(target));
             
-            #line 111 "..\..\..\Windows\Teacher.xaml"
+            #line 109 "..\..\..\Windows\Teacher.xaml"
             this.btnTeacherSchedule.Click += new System.Windows.RoutedEventHandler(this.btnTeacherSchedule_Click);
             
             #line default
             #line hidden
             
-            #line 111 "..\..\..\Windows\Teacher.xaml"
+            #line 109 "..\..\..\Windows\Teacher.xaml"
             this.btnTeacherSchedule.MouseEnter += new System.Windows.Input.MouseEventHandler(this.btnTeacherSchedule_MouseEnter);
             
             #line default
             #line hidden
             
-            #line 111 "..\..\..\Windows\Teacher.xaml"
+            #line 109 "..\..\..\Windows\Teacher.xaml"
             this.btnTeacherSchedule.MouseLeave += new System.Windows.Input.MouseEventHandler(this.btnTeacherSchedule_MouseLeave);
             
             #line default
@@ -2416,19 +2416,19 @@ namespace CamemisOffLine {
             case 25:
             this.btnStudentList = ((System.Windows.Controls.Button)(target));
             
-            #line 118 "..\..\..\Windows\Teacher.xaml"
+            #line 116 "..\..\..\Windows\Teacher.xaml"
             this.btnStudentList.Click += new System.Windows.RoutedEventHandler(this.btnStudentList_Click);
             
             #line default
             #line hidden
             
-            #line 118 "..\..\..\Windows\Teacher.xaml"
+            #line 116 "..\..\..\Windows\Teacher.xaml"
             this.btnStudentList.MouseEnter += new System.Windows.Input.MouseEventHandler(this.btnStudentList_MouseEnter);
             
             #line default
             #line hidden
             
-            #line 118 "..\..\..\Windows\Teacher.xaml"
+            #line 116 "..\..\..\Windows\Teacher.xaml"
             this.btnStudentList.MouseLeave += new System.Windows.Input.MouseEventHandler(this.btnStudentList_MouseLeave);
             
             #line default
@@ -2443,19 +2443,19 @@ namespace CamemisOffLine {
             case 28:
             this.btnSubJectList = ((System.Windows.Controls.Button)(target));
             
-            #line 124 "..\..\..\Windows\Teacher.xaml"
+            #line 122 "..\..\..\Windows\Teacher.xaml"
             this.btnSubJectList.Click += new System.Windows.RoutedEventHandler(this.btnSubJectList_Click);
             
             #line default
             #line hidden
             
-            #line 124 "..\..\..\Windows\Teacher.xaml"
+            #line 122 "..\..\..\Windows\Teacher.xaml"
             this.btnSubJectList.MouseEnter += new System.Windows.Input.MouseEventHandler(this.btnSubJectList_MouseEnter_1);
             
             #line default
             #line hidden
             
-            #line 124 "..\..\..\Windows\Teacher.xaml"
+            #line 122 "..\..\..\Windows\Teacher.xaml"
             this.btnSubJectList.MouseLeave += new System.Windows.Input.MouseEventHandler(this.btnSubJectList_MouseLeave);
             
             #line default
@@ -2476,7 +2476,7 @@ namespace CamemisOffLine {
             case 33:
             this.btnFeaPrint = ((System.Windows.Controls.Button)(target));
             
-            #line 136 "..\..\..\Windows\Teacher.xaml"
+            #line 134 "..\..\..\Windows\Teacher.xaml"
             this.btnFeaPrint.Click += new System.Windows.RoutedEventHandler(this.btnFeaPrint_Click);
             
             #line default
@@ -2497,7 +2497,7 @@ namespace CamemisOffLine {
             case 38:
             this.btnStudent = ((System.Windows.Controls.Button)(target));
             
-            #line 145 "..\..\..\Windows\Teacher.xaml"
+            #line 143 "..\..\..\Windows\Teacher.xaml"
             this.btnStudent.Click += new System.Windows.RoutedEventHandler(this.btnStudent_Click);
             
             #line default
@@ -2506,7 +2506,7 @@ namespace CamemisOffLine {
             case 39:
             this.btnTeacher = ((System.Windows.Controls.Button)(target));
             
-            #line 151 "..\..\..\Windows\Teacher.xaml"
+            #line 149 "..\..\..\Windows\Teacher.xaml"
             this.btnTeacher.Click += new System.Windows.RoutedEventHandler(this.btnTeacher_Click);
             
             #line default
@@ -2515,7 +2515,7 @@ namespace CamemisOffLine {
             case 40:
             this.btnSetting = ((System.Windows.Controls.Button)(target));
             
-            #line 160 "..\..\..\Windows\Teacher.xaml"
+            #line 158 "..\..\..\Windows\Teacher.xaml"
             this.btnSetting.Click += new System.Windows.RoutedEventHandler(this.btnSetting_Click);
             
             #line default
@@ -2536,7 +2536,7 @@ namespace CamemisOffLine {
             case 45:
             this.btnLang = ((System.Windows.Controls.Button)(target));
             
-            #line 170 "..\..\..\Windows\Teacher.xaml"
+            #line 168 "..\..\..\Windows\Teacher.xaml"
             this.btnLang.Click += new System.Windows.RoutedEventHandler(this.btnLang_Click);
             
             #line default
@@ -2560,7 +2560,7 @@ namespace CamemisOffLine {
             case 51:
             this.Khmer = ((System.Windows.Controls.Button)(target));
             
-            #line 188 "..\..\..\Windows\Teacher.xaml"
+            #line 186 "..\..\..\Windows\Teacher.xaml"
             this.Khmer.Click += new System.Windows.RoutedEventHandler(this.Khmer_Click_1);
             
             #line default
@@ -2572,7 +2572,7 @@ namespace CamemisOffLine {
             case 53:
             this.English = ((System.Windows.Controls.Button)(target));
             
-            #line 196 "..\..\..\Windows\Teacher.xaml"
+            #line 194 "..\..\..\Windows\Teacher.xaml"
             this.English.Click += new System.Windows.RoutedEventHandler(this.English_Click_1);
             
             #line default
@@ -2584,7 +2584,7 @@ namespace CamemisOffLine {
             case 55:
             this.Chinese = ((System.Windows.Controls.Button)(target));
             
-            #line 203 "..\..\..\Windows\Teacher.xaml"
+            #line 201 "..\..\..\Windows\Teacher.xaml"
             this.Chinese.Click += new System.Windows.RoutedEventHandler(this.Chinese_Click_1);
             
             #line default
@@ -2596,7 +2596,7 @@ namespace CamemisOffLine {
             case 57:
             this.Vietnam = ((System.Windows.Controls.Button)(target));
             
-            #line 210 "..\..\..\Windows\Teacher.xaml"
+            #line 208 "..\..\..\Windows\Teacher.xaml"
             this.Vietnam.Click += new System.Windows.RoutedEventHandler(this.Vietnam_Click_1);
             
             #line default
@@ -2623,7 +2623,7 @@ namespace CamemisOffLine {
             case 64:
             this.btnAbout = ((System.Windows.Controls.Button)(target));
             
-            #line 232 "..\..\..\Windows\Teacher.xaml"
+            #line 230 "..\..\..\Windows\Teacher.xaml"
             this.btnAbout.Click += new System.Windows.RoutedEventHandler(this.btnAbout_Click);
             
             #line default
@@ -2638,7 +2638,7 @@ namespace CamemisOffLine {
             case 67:
             this.btnLogout = ((System.Windows.Controls.Button)(target));
             
-            #line 240 "..\..\..\Windows\Teacher.xaml"
+            #line 238 "..\..\..\Windows\Teacher.xaml"
             this.btnLogout.Click += new System.Windows.RoutedEventHandler(this.btnLogout_Click);
             
             #line default
@@ -2655,7 +2655,7 @@ namespace CamemisOffLine {
             return;
             case 71:
             
-            #line 264 "..\..\..\Windows\Teacher.xaml"
+            #line 260 "..\..\..\Windows\Teacher.xaml"
             ((System.Windows.Controls.DockPanel)(target)).MouseLeftButtonDown += new System.Windows.Input.MouseButtonEventHandler(this.DockPanel_MouseLeftButtonDown);
             
             #line default
@@ -2676,7 +2676,7 @@ namespace CamemisOffLine {
             case 76:
             this.btnCheck = ((System.Windows.Controls.Primitives.ToggleButton)(target));
             
-            #line 277 "..\..\..\Windows\Teacher.xaml"
+            #line 273 "..\..\..\Windows\Teacher.xaml"
             this.btnCheck.Click += new System.Windows.RoutedEventHandler(this.btnCheck_Click);
             
             #line default
@@ -2685,19 +2685,19 @@ namespace CamemisOffLine {
             case 77:
             this.gridmax = ((System.Windows.Controls.Grid)(target));
             
-            #line 286 "..\..\..\Windows\Teacher.xaml"
+            #line 282 "..\..\..\Windows\Teacher.xaml"
             this.gridmax.MouseDown += new System.Windows.Input.MouseButtonEventHandler(this.gridmax_MouseDown);
             
             #line default
             #line hidden
             
-            #line 286 "..\..\..\Windows\Teacher.xaml"
+            #line 282 "..\..\..\Windows\Teacher.xaml"
             this.gridmax.MouseEnter += new System.Windows.Input.MouseEventHandler(this.gridmini_MouseEnter);
             
             #line default
             #line hidden
             
-            #line 286 "..\..\..\Windows\Teacher.xaml"
+            #line 282 "..\..\..\Windows\Teacher.xaml"
             this.gridmax.MouseLeave += new System.Windows.Input.MouseEventHandler(this.gridmini_MouseLeave);
             
             #line default
@@ -2709,19 +2709,19 @@ namespace CamemisOffLine {
             case 79:
             this.gridmini = ((System.Windows.Controls.Grid)(target));
             
-            #line 289 "..\..\..\Windows\Teacher.xaml"
+            #line 285 "..\..\..\Windows\Teacher.xaml"
             this.gridmini.MouseDown += new System.Windows.Input.MouseButtonEventHandler(this.gridmini_MouseDown);
             
             #line default
             #line hidden
             
-            #line 289 "..\..\..\Windows\Teacher.xaml"
+            #line 285 "..\..\..\Windows\Teacher.xaml"
             this.gridmini.MouseEnter += new System.Windows.Input.MouseEventHandler(this.gridmini_MouseEnter);
             
             #line default
             #line hidden
             
-            #line 289 "..\..\..\Windows\Teacher.xaml"
+            #line 285 "..\..\..\Windows\Teacher.xaml"
             this.gridmini.MouseLeave += new System.Windows.Input.MouseEventHandler(this.gridmini_MouseLeave);
             
             #line default
@@ -2730,19 +2730,19 @@ namespace CamemisOffLine {
             case 80:
             this.gridExit = ((System.Windows.Controls.Grid)(target));
             
-            #line 292 "..\..\..\Windows\Teacher.xaml"
+            #line 288 "..\..\..\Windows\Teacher.xaml"
             this.gridExit.MouseDown += new System.Windows.Input.MouseButtonEventHandler(this.gridExit_MouseDown);
             
             #line default
             #line hidden
             
-            #line 292 "..\..\..\Windows\Teacher.xaml"
+            #line 288 "..\..\..\Windows\Teacher.xaml"
             this.gridExit.MouseEnter += new System.Windows.Input.MouseEventHandler(this.gridMenu_MouseEnter);
             
             #line default
             #line hidden
             
-            #line 292 "..\..\..\Windows\Teacher.xaml"
+            #line 288 "..\..\..\Windows\Teacher.xaml"
             this.gridExit.MouseLeave += new System.Windows.Input.MouseEventHandler(this.gridMenu_MouseLeave);
             
             #line default
@@ -2796,7 +2796,7 @@ namespace CamemisOffLine {
             case 96:
             this.cbAcademyYearAtt = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 1551 "..\..\..\Windows\Teacher.xaml"
+            #line 1547 "..\..\..\Windows\Teacher.xaml"
             this.cbAcademyYearAtt.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cbAcademyYearAtt_SelectionChanged);
             
             #line default
@@ -2805,13 +2805,13 @@ namespace CamemisOffLine {
             case 97:
             this.tvAcademyAtt = ((System.Windows.Controls.TreeView)(target));
             
-            #line 1556 "..\..\..\Windows\Teacher.xaml"
+            #line 1552 "..\..\..\Windows\Teacher.xaml"
             this.tvAcademyAtt.SelectedItemChanged += new System.Windows.RoutedPropertyChangedEventHandler<object>(this.tvAcademyAtt_SelectedItemChanged);
             
             #line default
             #line hidden
             
-            #line 1556 "..\..\..\Windows\Teacher.xaml"
+            #line 1552 "..\..\..\Windows\Teacher.xaml"
             this.tvAcademyAtt.AddHandler(System.Windows.Controls.TreeViewItem.SelectedEvent, new System.Windows.RoutedEventHandler(this.tvAcademyAtt_Selected));
             
             #line default
@@ -2826,7 +2826,7 @@ namespace CamemisOffLine {
             case 100:
             this.MenuStuAtt = ((System.Windows.Controls.Grid)(target));
             
-            #line 1634 "..\..\..\Windows\Teacher.xaml"
+            #line 1630 "..\..\..\Windows\Teacher.xaml"
             this.MenuStuAtt.MouseDown += new System.Windows.Input.MouseButtonEventHandler(this.MenuStuAtt_MouseDown);
             
             #line default
@@ -2838,7 +2838,7 @@ namespace CamemisOffLine {
             case 102:
             this.DateAtt = ((System.Windows.Controls.DatePicker)(target));
             
-            #line 1638 "..\..\..\Windows\Teacher.xaml"
+            #line 1634 "..\..\..\Windows\Teacher.xaml"
             this.DateAtt.SelectedDateChanged += new System.EventHandler<System.Windows.Controls.SelectionChangedEventArgs>(this.DateAtt_SelectedDateChanged);
             
             #line default
@@ -2856,7 +2856,7 @@ namespace CamemisOffLine {
             case 106:
             this.btnPrintAttStu = ((System.Windows.Controls.MenuItem)(target));
             
-            #line 1698 "..\..\..\Windows\Teacher.xaml"
+            #line 1694 "..\..\..\Windows\Teacher.xaml"
             this.btnPrintAttStu.Click += new System.Windows.RoutedEventHandler(this.btnPrintAttStu_Click);
             
             #line default
@@ -2864,7 +2864,7 @@ namespace CamemisOffLine {
             return;
             case 107:
             
-            #line 1704 "..\..\..\Windows\Teacher.xaml"
+            #line 1700 "..\..\..\Windows\Teacher.xaml"
             ((System.Windows.Controls.MenuItem)(target)).Click += new System.Windows.RoutedEventHandler(this.MenuItem_Click);
             
             #line default
@@ -2933,7 +2933,7 @@ namespace CamemisOffLine {
             case 128:
             this.btnPrintresultStu = ((System.Windows.Controls.MenuItem)(target));
             
-            #line 2095 "..\..\..\Windows\Teacher.xaml"
+            #line 2091 "..\..\..\Windows\Teacher.xaml"
             this.btnPrintresultStu.Click += new System.Windows.RoutedEventHandler(this.btnPrintresultStu_Click);
             
             #line default
@@ -2942,7 +2942,7 @@ namespace CamemisOffLine {
             case 129:
             this.btnPrintAllSub = ((System.Windows.Controls.MenuItem)(target));
             
-            #line 2100 "..\..\..\Windows\Teacher.xaml"
+            #line 2096 "..\..\..\Windows\Teacher.xaml"
             this.btnPrintAllSub.Click += new System.Windows.RoutedEventHandler(this.btnPrintAllSub_Click);
             
             #line default
@@ -2950,7 +2950,7 @@ namespace CamemisOffLine {
             return;
             case 130:
             
-            #line 2105 "..\..\..\Windows\Teacher.xaml"
+            #line 2101 "..\..\..\Windows\Teacher.xaml"
             ((System.Windows.Controls.MenuItem)(target)).Click += new System.Windows.RoutedEventHandler(this.MenuItem_Click_1);
             
             #line default
@@ -2959,7 +2959,7 @@ namespace CamemisOffLine {
             case 131:
             this.printTranscriptAllInOne = ((System.Windows.Controls.MenuItem)(target));
             
-            #line 2110 "..\..\..\Windows\Teacher.xaml"
+            #line 2106 "..\..\..\Windows\Teacher.xaml"
             this.printTranscriptAllInOne.Click += new System.Windows.RoutedEventHandler(this.printTranscriptAllInOne_Click);
             
             #line default
@@ -2968,7 +2968,7 @@ namespace CamemisOffLine {
             case 132:
             this.printTranscriptByStudentInOne = ((System.Windows.Controls.MenuItem)(target));
             
-            #line 2115 "..\..\..\Windows\Teacher.xaml"
+            #line 2111 "..\..\..\Windows\Teacher.xaml"
             this.printTranscriptByStudentInOne.Click += new System.Windows.RoutedEventHandler(this.printTranscriptByStudentInOne_Click);
             
             #line default
@@ -2977,7 +2977,7 @@ namespace CamemisOffLine {
             case 133:
             this.printClasscify = ((System.Windows.Controls.MenuItem)(target));
             
-            #line 2120 "..\..\..\Windows\Teacher.xaml"
+            #line 2116 "..\..\..\Windows\Teacher.xaml"
             this.printClasscify.Click += new System.Windows.RoutedEventHandler(this.printClasscify_Click);
             
             #line default
@@ -2989,7 +2989,7 @@ namespace CamemisOffLine {
             case 135:
             this.GerateFileAllInOne = ((System.Windows.Controls.MenuItem)(target));
             
-            #line 2146 "..\..\..\Windows\Teacher.xaml"
+            #line 2142 "..\..\..\Windows\Teacher.xaml"
             this.GerateFileAllInOne.Click += new System.Windows.RoutedEventHandler(this.GerateFileAllInOne_Click);
             
             #line default
@@ -2998,7 +2998,7 @@ namespace CamemisOffLine {
             case 136:
             this.GenerateFileOther = ((System.Windows.Controls.MenuItem)(target));
             
-            #line 2151 "..\..\..\Windows\Teacher.xaml"
+            #line 2147 "..\..\..\Windows\Teacher.xaml"
             this.GenerateFileOther.Click += new System.Windows.RoutedEventHandler(this.GenerateFileOther_Click);
             
             #line default
@@ -3007,7 +3007,7 @@ namespace CamemisOffLine {
             case 137:
             this.MenuExportToExcel = ((System.Windows.Controls.MenuItem)(target));
             
-            #line 2157 "..\..\..\Windows\Teacher.xaml"
+            #line 2153 "..\..\..\Windows\Teacher.xaml"
             this.MenuExportToExcel.Click += new System.Windows.RoutedEventHandler(this.MenuExportToExcel_Click);
             
             #line default
@@ -3015,7 +3015,7 @@ namespace CamemisOffLine {
             return;
             case 138:
             
-            #line 2162 "..\..\..\Windows\Teacher.xaml"
+            #line 2158 "..\..\..\Windows\Teacher.xaml"
             ((System.Windows.Controls.MenuItem)(target)).Click += new System.Windows.RoutedEventHandler(this.MenuItem_Click);
             
             #line default
@@ -3036,7 +3036,7 @@ namespace CamemisOffLine {
             case 143:
             this.btnGrade = ((System.Windows.Controls.Button)(target));
             
-            #line 2192 "..\..\..\Windows\Teacher.xaml"
+            #line 2188 "..\..\..\Windows\Teacher.xaml"
             this.btnGrade.Click += new System.Windows.RoutedEventHandler(this.btnGrade_Click);
             
             #line default
@@ -3048,7 +3048,7 @@ namespace CamemisOffLine {
             case 145:
             this.btnMonth = ((System.Windows.Controls.Button)(target));
             
-            #line 2197 "..\..\..\Windows\Teacher.xaml"
+            #line 2193 "..\..\..\Windows\Teacher.xaml"
             this.btnMonth.Click += new System.Windows.RoutedEventHandler(this.btnMonth_Click);
             
             #line default
@@ -3069,7 +3069,7 @@ namespace CamemisOffLine {
             case 150:
             this.cbAcademyYear = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 2218 "..\..\..\Windows\Teacher.xaml"
+            #line 2214 "..\..\..\Windows\Teacher.xaml"
             this.cbAcademyYear.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cbAcademyYear_SelectionChanged);
             
             #line default
@@ -3078,13 +3078,13 @@ namespace CamemisOffLine {
             case 151:
             this.tvAcademy = ((System.Windows.Controls.TreeView)(target));
             
-            #line 2222 "..\..\..\Windows\Teacher.xaml"
+            #line 2218 "..\..\..\Windows\Teacher.xaml"
             this.tvAcademy.AddHandler(System.Windows.Controls.TreeViewItem.SelectedEvent, new System.Windows.RoutedEventHandler(this.tvAcademy_Selected));
             
             #line default
             #line hidden
             
-            #line 2222 "..\..\..\Windows\Teacher.xaml"
+            #line 2218 "..\..\..\Windows\Teacher.xaml"
             this.tvAcademy.SelectedItemChanged += new System.Windows.RoutedPropertyChangedEventHandler<object>(this.tvAcademy_SelectedItemChanged);
             
             #line default
@@ -3102,19 +3102,19 @@ namespace CamemisOffLine {
             case 157:
             this.btnResultofTheYear = ((System.Windows.Controls.Button)(target));
             
-            #line 2323 "..\..\..\Windows\Teacher.xaml"
+            #line 2319 "..\..\..\Windows\Teacher.xaml"
             this.btnResultofTheYear.Click += new System.Windows.RoutedEventHandler(this.btnResultofTheYear_Click);
             
             #line default
             #line hidden
             
-            #line 2323 "..\..\..\Windows\Teacher.xaml"
+            #line 2319 "..\..\..\Windows\Teacher.xaml"
             this.btnResultofTheYear.GotFocus += new System.Windows.RoutedEventHandler(this.Button_GotFocus);
             
             #line default
             #line hidden
             
-            #line 2323 "..\..\..\Windows\Teacher.xaml"
+            #line 2319 "..\..\..\Windows\Teacher.xaml"
             this.btnResultofTheYear.LostFocus += new System.Windows.RoutedEventHandler(this.Button_LostFocus);
             
             #line default
@@ -3129,7 +3129,7 @@ namespace CamemisOffLine {
             case 160:
             this.menuResult = ((System.Windows.Controls.Grid)(target));
             
-            #line 2372 "..\..\..\Windows\Teacher.xaml"
+            #line 2368 "..\..\..\Windows\Teacher.xaml"
             this.menuResult.MouseDown += new System.Windows.Input.MouseButtonEventHandler(this.menuResult_MouseDown);
             
             #line default
@@ -3141,7 +3141,7 @@ namespace CamemisOffLine {
             case 162:
             this.btnStatistic = ((System.Windows.Controls.Button)(target));
             
-            #line 2379 "..\..\..\Windows\Teacher.xaml"
+            #line 2375 "..\..\..\Windows\Teacher.xaml"
             this.btnStatistic.Click += new System.Windows.RoutedEventHandler(this.btnStatistic_Click);
             
             #line default
@@ -3150,7 +3150,7 @@ namespace CamemisOffLine {
             case 163:
             this.btnSave = ((System.Windows.Controls.Button)(target));
             
-            #line 2398 "..\..\..\Windows\Teacher.xaml"
+            #line 2394 "..\..\..\Windows\Teacher.xaml"
             this.btnSave.Click += new System.Windows.RoutedEventHandler(this.btnSave_Click);
             
             #line default
@@ -3159,7 +3159,7 @@ namespace CamemisOffLine {
             case 164:
             this.btngoto = ((System.Windows.Controls.Button)(target));
             
-            #line 2419 "..\..\..\Windows\Teacher.xaml"
+            #line 2415 "..\..\..\Windows\Teacher.xaml"
             this.btngoto.Click += new System.Windows.RoutedEventHandler(this.btngoto_Click);
             
             #line default
@@ -3174,7 +3174,7 @@ namespace CamemisOffLine {
             case 167:
             this.cmbStudentName = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 2462 "..\..\..\Windows\Teacher.xaml"
+            #line 2458 "..\..\..\Windows\Teacher.xaml"
             this.cmbStudentName.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbStudentName_SelectionChanged);
             
             #line default
@@ -3183,13 +3183,13 @@ namespace CamemisOffLine {
             case 168:
             this.txtStudentName = ((System.Windows.Controls.TextBox)(target));
             
-            #line 2463 "..\..\..\Windows\Teacher.xaml"
+            #line 2459 "..\..\..\Windows\Teacher.xaml"
             this.txtStudentName.GotFocus += new System.Windows.RoutedEventHandler(this.txtStudentName_GotFocus);
             
             #line default
             #line hidden
             
-            #line 2463 "..\..\..\Windows\Teacher.xaml"
+            #line 2459 "..\..\..\Windows\Teacher.xaml"
             this.txtStudentName.TextChanged += new System.Windows.Controls.TextChangedEventHandler(this.txtStudentName_TextChanged);
             
             #line default
@@ -3198,7 +3198,7 @@ namespace CamemisOffLine {
             case 169:
             this.cmbSort = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 2470 "..\..\..\Windows\Teacher.xaml"
+            #line 2466 "..\..\..\Windows\Teacher.xaml"
             this.cmbSort.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbSort_SelectionChanged);
             
             #line default
@@ -3207,7 +3207,7 @@ namespace CamemisOffLine {
             case 170:
             this.rbSmall = ((System.Windows.Controls.RadioButton)(target));
             
-            #line 2492 "..\..\..\Windows\Teacher.xaml"
+            #line 2488 "..\..\..\Windows\Teacher.xaml"
             this.rbSmall.Checked += new System.Windows.RoutedEventHandler(this.rbSmall_Checked);
             
             #line default
@@ -3216,7 +3216,7 @@ namespace CamemisOffLine {
             case 171:
             this.rbBig = ((System.Windows.Controls.RadioButton)(target));
             
-            #line 2495 "..\..\..\Windows\Teacher.xaml"
+            #line 2491 "..\..\..\Windows\Teacher.xaml"
             this.rbBig.Checked += new System.Windows.RoutedEventHandler(this.rbSmall_Checked);
             
             #line default
@@ -3228,7 +3228,7 @@ namespace CamemisOffLine {
             case 173:
             this.btnApproved = ((System.Windows.Controls.Button)(target));
             
-            #line 2502 "..\..\..\Windows\Teacher.xaml"
+            #line 2498 "..\..\..\Windows\Teacher.xaml"
             this.btnApproved.Click += new System.Windows.RoutedEventHandler(this.btnApproved_Click);
             
             #line default
@@ -3237,7 +3237,7 @@ namespace CamemisOffLine {
             case 174:
             this.btnUnApproved = ((System.Windows.Controls.Button)(target));
             
-            #line 2519 "..\..\..\Windows\Teacher.xaml"
+            #line 2515 "..\..\..\Windows\Teacher.xaml"
             this.btnUnApproved.Click += new System.Windows.RoutedEventHandler(this.btnUnApproved_Click);
             
             #line default
@@ -3246,7 +3246,7 @@ namespace CamemisOffLine {
             case 175:
             this.btnCalculate = ((System.Windows.Controls.Button)(target));
             
-            #line 2536 "..\..\..\Windows\Teacher.xaml"
+            #line 2532 "..\..\..\Windows\Teacher.xaml"
             this.btnCalculate.Click += new System.Windows.RoutedEventHandler(this.btnCalculate_Click);
             
             #line default
@@ -3258,7 +3258,7 @@ namespace CamemisOffLine {
             case 177:
             this.btnExam_Semester = ((System.Windows.Controls.MenuItem)(target));
             
-            #line 2565 "..\..\..\Windows\Teacher.xaml"
+            #line 2560 "..\..\..\Windows\Teacher.xaml"
             this.btnExam_Semester.Click += new System.Windows.RoutedEventHandler(this.btnExam_Semester_Click);
             
             #line default
@@ -3267,7 +3267,7 @@ namespace CamemisOffLine {
             case 178:
             this.btnClassification_Semester = ((System.Windows.Controls.MenuItem)(target));
             
-            #line 2568 "..\..\..\Windows\Teacher.xaml"
+            #line 2563 "..\..\..\Windows\Teacher.xaml"
             this.btnClassification_Semester.Click += new System.Windows.RoutedEventHandler(this.btnClassification_Semester_Click);
             
             #line default
@@ -3276,7 +3276,7 @@ namespace CamemisOffLine {
             case 179:
             this.btnResultSemester = ((System.Windows.Controls.MenuItem)(target));
             
-            #line 2571 "..\..\..\Windows\Teacher.xaml"
+            #line 2566 "..\..\..\Windows\Teacher.xaml"
             this.btnResultSemester.Click += new System.Windows.RoutedEventHandler(this.btnResultSemester_Click);
             
             #line default
@@ -3315,13 +3315,13 @@ namespace CamemisOffLine {
             case 190:
             this.DGMonthlyResult = ((System.Windows.Controls.DataGrid)(target));
             
-            #line 2631 "..\..\..\Windows\Teacher.xaml"
+            #line 2626 "..\..\..\Windows\Teacher.xaml"
             this.DGMonthlyResult.MouseDoubleClick += new System.Windows.Input.MouseButtonEventHandler(this.DGMonthlyResult_MouseDoubleClick);
             
             #line default
             #line hidden
             
-            #line 2631 "..\..\..\Windows\Teacher.xaml"
+            #line 2626 "..\..\..\Windows\Teacher.xaml"
             this.DGMonthlyResult.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.DGMonthlyResult_SelectionChanged);
             
             #line default
@@ -3333,7 +3333,7 @@ namespace CamemisOffLine {
             case 194:
             this.DGSemester = ((System.Windows.Controls.DataGrid)(target));
             
-            #line 2853 "..\..\..\Windows\Teacher.xaml"
+            #line 2848 "..\..\..\Windows\Teacher.xaml"
             this.DGSemester.MouseDoubleClick += new System.Windows.Input.MouseButtonEventHandler(this.DGSemester_MouseDoubleClick);
             
             #line default
@@ -3345,7 +3345,7 @@ namespace CamemisOffLine {
             case 196:
             this.DGYear = ((System.Windows.Controls.DataGrid)(target));
             
-            #line 3078 "..\..\..\Windows\Teacher.xaml"
+            #line 3073 "..\..\..\Windows\Teacher.xaml"
             this.DGYear.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.DGMonthlyResult_SelectionChanged);
             
             #line default
@@ -3387,7 +3387,7 @@ namespace CamemisOffLine {
             case 208:
             this.txtSub = ((System.Windows.Controls.TextBox)(target));
             
-            #line 3696 "..\..\..\Windows\Teacher.xaml"
+            #line 3691 "..\..\..\Windows\Teacher.xaml"
             this.txtSub.TextChanged += new System.Windows.Controls.TextChangedEventHandler(this.txtSub_TextChanged);
             
             #line default
@@ -3405,7 +3405,7 @@ namespace CamemisOffLine {
             case 212:
             this.cmbChoice = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 3726 "..\..\..\Windows\Teacher.xaml"
+            #line 3721 "..\..\..\Windows\Teacher.xaml"
             this.cmbChoice.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbChoice_SelectionChanged);
             
             #line default
@@ -3420,7 +3420,7 @@ namespace CamemisOffLine {
             case 215:
             this.cmbAcademicYearStudentListPrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 3765 "..\..\..\Windows\Teacher.xaml"
+            #line 3760 "..\..\..\Windows\Teacher.xaml"
             this.cmbAcademicYearStudentListPrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbAcademicYearStudentListPrint_SelectionChanged);
             
             #line default
@@ -3432,7 +3432,7 @@ namespace CamemisOffLine {
             case 217:
             this.cmbLevelStudentListPrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 3771 "..\..\..\Windows\Teacher.xaml"
+            #line 3766 "..\..\..\Windows\Teacher.xaml"
             this.cmbLevelStudentListPrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbLevelStudentListPrint_SelectionChanged);
             
             #line default
@@ -3444,7 +3444,7 @@ namespace CamemisOffLine {
             case 219:
             this.cmbGradeStudentListPrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 3790 "..\..\..\Windows\Teacher.xaml"
+            #line 3785 "..\..\..\Windows\Teacher.xaml"
             this.cmbGradeStudentListPrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbGradeStudentListPrint_SelectionChanged);
             
             #line default
@@ -3456,7 +3456,7 @@ namespace CamemisOffLine {
             case 221:
             this.cmbClassStudentListPrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 3796 "..\..\..\Windows\Teacher.xaml"
+            #line 3791 "..\..\..\Windows\Teacher.xaml"
             this.cmbClassStudentListPrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbClassResultPrint_SelectionChanged);
             
             #line default
@@ -3471,7 +3471,7 @@ namespace CamemisOffLine {
             case 225:
             this.cmbAcademicYearScedulePrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 3836 "..\..\..\Windows\Teacher.xaml"
+            #line 3831 "..\..\..\Windows\Teacher.xaml"
             this.cmbAcademicYearScedulePrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbAcademicYearResultPrint_SelectionChanged);
             
             #line default
@@ -3480,7 +3480,7 @@ namespace CamemisOffLine {
             case 226:
             this.cmbGradeScedulePrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 3842 "..\..\..\Windows\Teacher.xaml"
+            #line 3837 "..\..\..\Windows\Teacher.xaml"
             this.cmbGradeScedulePrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbGradeResultPrint_SelectionChanged);
             
             #line default
@@ -3489,7 +3489,7 @@ namespace CamemisOffLine {
             case 227:
             this.cmbClassScedulePrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 3848 "..\..\..\Windows\Teacher.xaml"
+            #line 3843 "..\..\..\Windows\Teacher.xaml"
             this.cmbClassScedulePrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbClassResultPrint_SelectionChanged);
             
             #line default
@@ -3504,7 +3504,7 @@ namespace CamemisOffLine {
             case 231:
             this.cmbAcademicYearResultPrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 3887 "..\..\..\Windows\Teacher.xaml"
+            #line 3882 "..\..\..\Windows\Teacher.xaml"
             this.cmbAcademicYearResultPrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbAcademicYearResultPrint_SelectionChanged);
             
             #line default
@@ -3513,7 +3513,7 @@ namespace CamemisOffLine {
             case 232:
             this.cmbGradeResultPrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 3893 "..\..\..\Windows\Teacher.xaml"
+            #line 3888 "..\..\..\Windows\Teacher.xaml"
             this.cmbGradeResultPrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbGradeResultPrint_SelectionChanged);
             
             #line default
@@ -3522,7 +3522,7 @@ namespace CamemisOffLine {
             case 233:
             this.cmbClassResultPrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 3899 "..\..\..\Windows\Teacher.xaml"
+            #line 3894 "..\..\..\Windows\Teacher.xaml"
             this.cmbClassResultPrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbClassResultPrint_SelectionChanged);
             
             #line default
@@ -3531,7 +3531,7 @@ namespace CamemisOffLine {
             case 234:
             this.cmbMonthResultPrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 3904 "..\..\..\Windows\Teacher.xaml"
+            #line 3899 "..\..\..\Windows\Teacher.xaml"
             this.cmbMonthResultPrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbMonthResultPrint_SelectionChanged);
             
             #line default
@@ -3546,7 +3546,7 @@ namespace CamemisOffLine {
             case 238:
             this.cmbAcademicYearAttReportPrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 3997 "..\..\..\Windows\Teacher.xaml"
+            #line 3992 "..\..\..\Windows\Teacher.xaml"
             this.cmbAcademicYearAttReportPrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbAcademicYearResultPrint_SelectionChanged);
             
             #line default
@@ -3555,7 +3555,7 @@ namespace CamemisOffLine {
             case 239:
             this.cmbGradeAttReportPrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 4003 "..\..\..\Windows\Teacher.xaml"
+            #line 3998 "..\..\..\Windows\Teacher.xaml"
             this.cmbGradeAttReportPrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbGradeAttReportPrint_SelectionChanged);
             
             #line default
@@ -3564,7 +3564,7 @@ namespace CamemisOffLine {
             case 240:
             this.cmbClassAttReportPrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 4009 "..\..\..\Windows\Teacher.xaml"
+            #line 4004 "..\..\..\Windows\Teacher.xaml"
             this.cmbClassAttReportPrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbClassAttReportPrint_SelectionChanged);
             
             #line default
@@ -3573,7 +3573,7 @@ namespace CamemisOffLine {
             case 241:
             this.cmbTypeAttReportPrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 4015 "..\..\..\Windows\Teacher.xaml"
+            #line 4010 "..\..\..\Windows\Teacher.xaml"
             this.cmbTypeAttReportPrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbTypeAttReportPrint_SelectionChanged);
             
             #line default
@@ -3588,7 +3588,7 @@ namespace CamemisOffLine {
             case 245:
             this.cmbAcademicYearStatistic12Print = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 4315 "..\..\..\Windows\Teacher.xaml"
+            #line 4310 "..\..\..\Windows\Teacher.xaml"
             this.cmbAcademicYearStatistic12Print.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbAcademicYearStatistic12Print_SelectionChanged);
             
             #line default
@@ -3606,7 +3606,7 @@ namespace CamemisOffLine {
             case 250:
             this.cmbChoiceStaff = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 4543 "..\..\..\Windows\Teacher.xaml"
+            #line 4538 "..\..\..\Windows\Teacher.xaml"
             this.cmbChoiceStaff.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbChoiceStaff_SelectionChanged);
             
             #line default
@@ -3615,7 +3615,7 @@ namespace CamemisOffLine {
             case 251:
             this.btnImportTeacher = ((System.Windows.Controls.Button)(target));
             
-            #line 4562 "..\..\..\Windows\Teacher.xaml"
+            #line 4557 "..\..\..\Windows\Teacher.xaml"
             this.btnImportTeacher.Click += new System.Windows.RoutedEventHandler(this.btnImportTeacher_Click);
             
             #line default
@@ -3624,7 +3624,7 @@ namespace CamemisOffLine {
             case 252:
             this.btnExmportTeacher = ((System.Windows.Controls.Button)(target));
             
-            #line 4580 "..\..\..\Windows\Teacher.xaml"
+            #line 4575 "..\..\..\Windows\Teacher.xaml"
             this.btnExmportTeacher.Click += new System.Windows.RoutedEventHandler(this.btnExmportTeacher_Click);
             
             #line default
@@ -3639,7 +3639,7 @@ namespace CamemisOffLine {
             case 255:
             this.cmbAcademicYearCardInformationPrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 4613 "..\..\..\Windows\Teacher.xaml"
+            #line 4608 "..\..\..\Windows\Teacher.xaml"
             this.cmbAcademicYearCardInformationPrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbAcademicYearResultPrint_SelectionChanged);
             
             #line default
@@ -3654,7 +3654,7 @@ namespace CamemisOffLine {
             case 259:
             this.cmbAcademicYearAdminCirtificatePrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 4651 "..\..\..\Windows\Teacher.xaml"
+            #line 4646 "..\..\..\Windows\Teacher.xaml"
             this.cmbAcademicYearAdminCirtificatePrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbAcademicYearResultPrint_SelectionChanged);
             
             #line default
@@ -3669,7 +3669,7 @@ namespace CamemisOffLine {
             case 263:
             this.cmbAcademicYearPostionPrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 4689 "..\..\..\Windows\Teacher.xaml"
+            #line 4684 "..\..\..\Windows\Teacher.xaml"
             this.cmbAcademicYearPostionPrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbAcademicYearPostionPrint_SelectionChanged);
             
             #line default
@@ -3678,7 +3678,7 @@ namespace CamemisOffLine {
             case 264:
             this.cmbGradePostionPrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 4696 "..\..\..\Windows\Teacher.xaml"
+            #line 4691 "..\..\..\Windows\Teacher.xaml"
             this.cmbGradePostionPrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbGradeResultPrint_SelectionChanged);
             
             #line default
@@ -3687,7 +3687,7 @@ namespace CamemisOffLine {
             case 265:
             this.cmbClassPostionPrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 4702 "..\..\..\Windows\Teacher.xaml"
+            #line 4697 "..\..\..\Windows\Teacher.xaml"
             this.cmbClassPostionPrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbClassResultPrint_SelectionChanged);
             
             #line default
@@ -3714,7 +3714,7 @@ namespace CamemisOffLine {
             case 275:
             this.cmbAcademicYearTeacherShecdulePrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 4806 "..\..\..\Windows\Teacher.xaml"
+            #line 4801 "..\..\..\Windows\Teacher.xaml"
             this.cmbAcademicYearTeacherShecdulePrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbAcademicYearResultPrint_SelectionChanged);
             
             #line default
@@ -3723,7 +3723,7 @@ namespace CamemisOffLine {
             case 276:
             this.cmbGradeTeacherShecdulePrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 4812 "..\..\..\Windows\Teacher.xaml"
+            #line 4807 "..\..\..\Windows\Teacher.xaml"
             this.cmbGradeTeacherShecdulePrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbGradeResultPrint_SelectionChanged);
             
             #line default
@@ -3732,7 +3732,7 @@ namespace CamemisOffLine {
             case 277:
             this.cmbClassTeacherShecdulePrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 4818 "..\..\..\Windows\Teacher.xaml"
+            #line 4813 "..\..\..\Windows\Teacher.xaml"
             this.cmbClassTeacherShecdulePrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbClassResultPrint_SelectionChanged);
             
             #line default
@@ -3741,7 +3741,7 @@ namespace CamemisOffLine {
             case 278:
             this.cmbClassifyTeacherShecdulePrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 4824 "..\..\..\Windows\Teacher.xaml"
+            #line 4819 "..\..\..\Windows\Teacher.xaml"
             this.cmbClassifyTeacherShecdulePrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbClassResultPrint_SelectionChanged);
             
             #line default
@@ -3756,7 +3756,7 @@ namespace CamemisOffLine {
             case 282:
             this.cmbAcademicYearTeacherAttReportPrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 4867 "..\..\..\Windows\Teacher.xaml"
+            #line 4862 "..\..\..\Windows\Teacher.xaml"
             this.cmbAcademicYearTeacherAttReportPrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbAcademicYearResultPrint_SelectionChanged);
             
             #line default
@@ -3765,7 +3765,7 @@ namespace CamemisOffLine {
             case 283:
             this.cmbGradeTeacherAttReportPrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 4873 "..\..\..\Windows\Teacher.xaml"
+            #line 4868 "..\..\..\Windows\Teacher.xaml"
             this.cmbGradeTeacherAttReportPrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbGradeResultPrint_SelectionChanged);
             
             #line default
@@ -3774,7 +3774,7 @@ namespace CamemisOffLine {
             case 284:
             this.cmbClassTeacherAttReportPrint = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 4879 "..\..\..\Windows\Teacher.xaml"
+            #line 4874 "..\..\..\Windows\Teacher.xaml"
             this.cmbClassTeacherAttReportPrint.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbClassResultPrint_SelectionChanged);
             
             #line default
@@ -3807,7 +3807,7 @@ namespace CamemisOffLine {
             {
             case 155:
             
-            #line 2309 "..\..\..\Windows\Teacher.xaml"
+            #line 2305 "..\..\..\Windows\Teacher.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.btnMonths_Click);
             
             #line default
@@ -3815,7 +3815,7 @@ namespace CamemisOffLine {
             break;
             case 156:
             
-            #line 2316 "..\..\..\Windows\Teacher.xaml"
+            #line 2312 "..\..\..\Windows\Teacher.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.btnSemester_Click);
             
             #line default
@@ -3823,7 +3823,7 @@ namespace CamemisOffLine {
             break;
             case 191:
             
-            #line 2825 "..\..\..\Windows\Teacher.xaml"
+            #line 2820 "..\..\..\Windows\Teacher.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.btnStudenResultDetail_Click);
             
             #line default
@@ -3831,7 +3831,7 @@ namespace CamemisOffLine {
             break;
             case 192:
             
-            #line 2827 "..\..\..\Windows\Teacher.xaml"
+            #line 2822 "..\..\..\Windows\Teacher.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.btnStudenPrint_Click);
             
             #line default
@@ -3839,7 +3839,7 @@ namespace CamemisOffLine {
             break;
             case 223:
             
-            #line 3804 "..\..\..\Windows\Teacher.xaml"
+            #line 3799 "..\..\..\Windows\Teacher.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.btnPrintList_Click);
             
             #line default
@@ -3847,7 +3847,7 @@ namespace CamemisOffLine {
             break;
             case 229:
             
-            #line 3855 "..\..\..\Windows\Teacher.xaml"
+            #line 3850 "..\..\..\Windows\Teacher.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.btnPrintList_Click);
             
             #line default
@@ -3855,7 +3855,7 @@ namespace CamemisOffLine {
             break;
             case 236:
             
-            #line 3911 "..\..\..\Windows\Teacher.xaml"
+            #line 3906 "..\..\..\Windows\Teacher.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.btnPrintList_Click);
             
             #line default
@@ -3863,7 +3863,7 @@ namespace CamemisOffLine {
             break;
             case 243:
             
-            #line 4023 "..\..\..\Windows\Teacher.xaml"
+            #line 4018 "..\..\..\Windows\Teacher.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.btnPrintList_Click);
             
             #line default
@@ -3871,7 +3871,7 @@ namespace CamemisOffLine {
             break;
             case 247:
             
-            #line 4322 "..\..\..\Windows\Teacher.xaml"
+            #line 4317 "..\..\..\Windows\Teacher.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.btnPrintList_Click);
             
             #line default
@@ -3879,7 +3879,7 @@ namespace CamemisOffLine {
             break;
             case 257:
             
-            #line 4619 "..\..\..\Windows\Teacher.xaml"
+            #line 4614 "..\..\..\Windows\Teacher.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.btnPrintListAdmin_Click);
             
             #line default
@@ -3887,7 +3887,7 @@ namespace CamemisOffLine {
             break;
             case 261:
             
-            #line 4657 "..\..\..\Windows\Teacher.xaml"
+            #line 4652 "..\..\..\Windows\Teacher.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.btnPrintListAdmin_Click);
             
             #line default
@@ -3895,7 +3895,7 @@ namespace CamemisOffLine {
             break;
             case 267:
             
-            #line 4711 "..\..\..\Windows\Teacher.xaml"
+            #line 4706 "..\..\..\Windows\Teacher.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.btnPrintListAdmin_Click);
             
             #line default
@@ -3903,7 +3903,7 @@ namespace CamemisOffLine {
             break;
             case 270:
             
-            #line 4740 "..\..\..\Windows\Teacher.xaml"
+            #line 4735 "..\..\..\Windows\Teacher.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.btnPrintListAdmin_Click);
             
             #line default
@@ -3911,7 +3911,7 @@ namespace CamemisOffLine {
             break;
             case 273:
             
-            #line 4769 "..\..\..\Windows\Teacher.xaml"
+            #line 4764 "..\..\..\Windows\Teacher.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.btnPrintListAdmin_Click);
             
             #line default
@@ -3919,7 +3919,7 @@ namespace CamemisOffLine {
             break;
             case 280:
             
-            #line 4830 "..\..\..\Windows\Teacher.xaml"
+            #line 4825 "..\..\..\Windows\Teacher.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.btnPrintListAdmin_Click);
             
             #line default
@@ -3927,7 +3927,7 @@ namespace CamemisOffLine {
             break;
             case 286:
             
-            #line 4885 "..\..\..\Windows\Teacher.xaml"
+            #line 4880 "..\..\..\Windows\Teacher.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.btnPrintListAdmin_Click);
             
             #line default

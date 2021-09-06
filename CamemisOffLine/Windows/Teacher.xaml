@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:CamemisOffLine"
         mc:Ignorable="d"
-       xmlns:language="clr-namespace:CamemisOffLine.Properties.Langs"
+        xmlns:language="clr-namespace:CamemisOffLine.Properties.Langs"
         xmlns:properties="clr-namespace:CamemisOffLine.Properties"
         xmlns:class="clr-namespace:CamemisOffLine.Class"
         Title="CAMEMIS" Height="1080" Width="1920" AllowsTransparency="False" ResizeMode="CanResizeWithGrip" WindowState="Maximized" Loaded="Window_Loaded" WindowStyle="None">
@@ -77,8 +77,6 @@
                     <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
                         <Grid Name="gridfeature">
                             <StackPanel Margin="0,0,0,0">
-
-
                                 <StackPanel Orientation="Vertical" Name="adminPart" HorizontalAlignment="Stretch"  Height="auto" >
                                     <Button Name="btnStaffAttendanceReport" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="35" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" Margin="5,10,5,5" Click="btnStaffAttendanceReport_Click" MouseEnter="btnStaffAttendanceReport_MouseEnter" MouseLeave="btnStaffAttendanceReport_MouseLeave" Visibility="Visible">
 
@@ -244,9 +242,7 @@
                                         </Grid>
                                     </Button>
                                     <Separator Foreground="Gray" VerticalAlignment="Bottom"></Separator>
-
                                 </StackPanel>
-
                             </StackPanel>
 
 
@@ -2552,9 +2548,8 @@
                                                                 </Button>
                                                                 <Menu Name="Selectresult" DockPanel.Dock="Top" Visibility="Visible" Margin="0 0 5 0" Width="90" Height="30" Background="#1183CA" FontSize="10">
                                                                     <MenuItem FontSize="12" Foreground="White" Style="{DynamicResource Siemreap}" Height="30" Background="#1183CA" Width="90">
-                                                                        <MenuItem.Icon>
-
-                                                                            <Grid  Margin="57,-6,-69,-6" Height="28" VerticalAlignment="Top">
+                                                                            <MenuItem.Icon>
+                                                                                <Grid  Margin="57,-6,-69,-6" Height="28" VerticalAlignment="Top">
                                                                                 <Label Foreground="White" Content="{x:Static language:Lang.results}" Height="28" Margin="-62,0,32,0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                                                                                 <Border BorderBrush="LightGray" BorderThickness="1 0 0 0"></Border>
                                                                                 <materialDesign:PackIcon Kind="ChevronDown" VerticalAlignment="Center" Foreground="White" Width="20" Height="20" Margin="4,5,0,3">

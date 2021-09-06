@@ -288,7 +288,6 @@
 
                                             <Style TargetType="TextBlock">
                                                 <Setter Property="Foreground" Value="Black"></Setter>
-
                                                 <Setter Property="FontWeight" Value="Thin"></Setter>
                                                 <Setter Property="HorizontalAlignment" Value="Center"/>
                                                 <Setter Property="VerticalAlignment" Value="Center"/>
@@ -328,7 +327,6 @@
 
                             </StackPanel>
                         </Grid>
-
                         <Grid Grid.Column="1" Margin="50 0 0 0">
                             <StackPanel Orientation="Vertical">
                                 <Label HorizontalAlignment="Left">
