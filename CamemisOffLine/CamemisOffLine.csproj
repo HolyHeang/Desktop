@@ -189,6 +189,9 @@
     <Compile Include="Component\PrintCardStyle.xaml.cs">
       <DependentUpon>PrintCardStyle.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Component\StaffAttdanceApprovedPopup.xaml.cs">
+      <DependentUpon>StaffAttdanceApprovedPopup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Report\AdministratorReport.xaml.cs">
       <DependentUpon>AdministratorReport.xaml</DependentUpon>
     </Compile>
@@ -330,6 +333,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Component\PrintCardStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Component\StaffAttdanceApprovedPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -517,6 +524,7 @@
     <Resource Include="Image\undraw_under_construction_46pa.png" />
     <Resource Include="Image\PrintIcon.png" />
     <Resource Include="Image\Online.png" />
+    <Resource Include="Component\undraw_Wall_post_re_y78d.png" />
     <Content Include="x64\SQLite.Interop.dll" />
     <Content Include="x86\SQLite.Interop.dll" />
     <EmbeddedResource Include="Properties\Langs\Lang.resx">

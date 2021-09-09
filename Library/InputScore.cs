@@ -43,7 +43,7 @@ namespace Library
             }
         }
         public bool focus { get; set; }
-        public string error { get; set; }
+        public string error { get; set; } 
         public string visible { get; set; } = "Collapsed";
         public string number { get; set; }
         public string student_id { get; set; }
