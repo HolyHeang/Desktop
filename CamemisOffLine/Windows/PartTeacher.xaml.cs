@@ -909,7 +909,7 @@ namespace CamemisOffLine.Windows
                             DGScoreMonth.IsEnabled = true;
                             btnPost.Visibility = Visibility.Visible;
                             btnDeleteAll.Visibility = Visibility.Visible;
-                            btnSave.Visibility = Visibility.Visible;
+                            btnSave.Visibility = Visibility.Collapsed;
                         }
                     }
                     catch
@@ -1481,7 +1481,7 @@ namespace CamemisOffLine.Windows
                         DGScoreMonth.IsEnabled = true;
                         btnPost.Visibility = Visibility.Visible;
                         btnDeleteAll.Visibility = Visibility.Visible;
-                        btnSave.Visibility = Visibility.Visible;
+                        btnSave.Visibility = Visibility.Collapsed;
                     }
                 }
                 catch
@@ -2427,7 +2427,7 @@ namespace CamemisOffLine.Windows
                             DGScoreMonth.IsEnabled = true;
                             btnPost.Visibility = Visibility.Visible;
                             btnDeleteAll.Visibility = Visibility.Visible;
-                            btnSave.Visibility = Visibility.Visible;
+                            btnSave.Visibility = Visibility.Collapsed;
                         }
                         DGScoreMonth.ItemsSource = null;
                         DGScoreMonth.ItemsSource = obj.data;
@@ -2556,7 +2556,7 @@ namespace CamemisOffLine.Windows
                                         DGScoreMonth.IsEnabled = true;
                                         btnPost.Visibility = Visibility.Visible;
                                         btnDeleteAll.Visibility = Visibility.Visible;
-                                        btnSave.Visibility = Visibility.Visible;
+                                        btnSave.Visibility = Visibility.Collapsed;
                                     }
                                 }
                                 catch
@@ -2565,7 +2565,7 @@ namespace CamemisOffLine.Windows
                                     DGScoreMonth.IsEnabled = true;
                                     btnPost.Visibility = Visibility.Visible;
                                     btnDeleteAll.Visibility = Visibility.Visible;
-                                    btnSave.Visibility = Visibility.Visible;
+                                    btnSave.Visibility = Visibility.Collapsed;
                                     File.Delete(filePath + "\\" + classId + " " + month + " " + SubjectId + ".txt");
                                 }
                             }
@@ -2604,7 +2604,7 @@ namespace CamemisOffLine.Windows
                         DGScoreMonth.ItemsSource = obj.data;
                         File.Delete(filePath + "\\" + classId + " " + month + " " + SubjectId + ".txt");
                         btnPrint.Visibility = Visibility.Visible;
-                        btnSave.Visibility = Visibility.Visible;
+                        btnSave.Visibility = Visibility.Collapsed;
                         loading.Close();
                         /*this.Opacity = 0.5;
                         message.ShowDialog();

@@ -46,7 +46,7 @@
                 </Grid>
                 <Grid Height="40" Margin="0 10 0 0" Name="title">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <TextBlock Name="lblMonth" Text="បញ្ជីរាយនាមសិស្សគ្រប់កម្រិតថ្នាក់ ឆ្នាំសិក្សា ២០១៩-២០២០" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="12" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+                        <TextBlock Name="lblMonth" Text="បញ្ជីរាយនាមសិស្សតាមកម្រិតនីមួយៗ ឆ្នាំសិក្សា ២០១៩-២០២០" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="12" Foreground="Black" Margin="0 0 0 0"></TextBlock>
                     </StackPanel>
                 </Grid>
 

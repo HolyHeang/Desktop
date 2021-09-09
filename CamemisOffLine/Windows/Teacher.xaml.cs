@@ -4037,7 +4037,7 @@ namespace CamemisOffLine
                     }
 
                 }
-                else if (message.result == 1 && item.id == 2)
+                else if (message.result == 1 && item.id == 4)
                 {
                     if (schoolYearId == "" || classId == "")
                     {
@@ -4067,7 +4067,7 @@ namespace CamemisOffLine
                         student.Show();
                     }
                 }
-                else if (message.result == 1 && item.id == 4)
+                else if (message.result == 1 && item.id == 2)
                 {
                     if (schoolYearId == "" || level == "")
                     {

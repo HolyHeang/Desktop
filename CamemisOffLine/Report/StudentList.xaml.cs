@@ -255,12 +255,12 @@ namespace CamemisOffLine.Report
                 }
                 else if(type==3&&gradeId!="")
                 {
-                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សសម្រាប់ក្រុម​ " + titleYear;
+                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សសម្រាប់កម្រិតនីមួយៗ " + titleYear;
                     respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId + "?gradeId=" + gradeId, token);
                 }
                 else if (type == 4&&level!="")
                 {
-                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សសម្រាប់កម្រិត " + titleYear;
+                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សសម្រាប់កម្រិតរួម " + titleYear;
                     respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId + "?level=" + level, token);
                 }
                 else

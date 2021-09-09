@@ -239,7 +239,7 @@
                                                         </Grid>
                                                         <Grid Width="80" Height="39">
                                                             <Border BorderBrush="Black" BorderThickness="0 0 1 0">
-                                                                <Label Content="សិលធម៏" HorizontalAlignment="Center" FontSize="14" Style="{DynamicResource Siemreap}"></Label>
+                                                                <Label Content="សីលធម៏" HorizontalAlignment="Center" FontSize="14" Style="{DynamicResource Siemreap}"></Label>
 
                                                             </Border>
                                                         </Grid>
