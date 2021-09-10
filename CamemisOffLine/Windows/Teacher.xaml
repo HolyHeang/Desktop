@@ -147,7 +147,7 @@
                                             <Label FontWeight="Bold" Content="{x:Static language:Lang.staffacademy}" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="12" VerticalContentAlignment="Center" Height="33" Width="205" Foreground="White" Margin="0,-3,-6,0" Style="{DynamicResource Siemreap}"></Label>
                                         </Grid>
                                     </Button>
-                                    <Button Name="btnTeacher" Height="30" HorizontalAlignment="Stretch"  Background="Transparent" BorderThickness="0" FontSize="15" Margin="50,-5,5,10" Click="btnTeacher_Click">
+                                    <Button Name="btnTeacher" Visibility="Collapsed"  Height="30" HorizontalAlignment="Stretch"  Background="Transparent" BorderThickness="0" FontSize="15" Margin="50,-5,5,10" Click="btnTeacher_Click">
                                         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="-10 0" Width="222" Height="25">
                                             <materialDesign:PackIcon Kind="Printer" VerticalAlignment="Center" HorizontalAlignment="Left" Height="20" Margin="0,0,0,0" Width="24" ></materialDesign:PackIcon>
                                             <Label FontWeight="Bold" Content="{x:Static language:Lang.staffadmin}" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="12" VerticalContentAlignment="Center" Height="33" Width="205" Foreground="White" Margin="0,-3,-6,0" Style="{DynamicResource Siemreap}"></Label>
@@ -632,11 +632,11 @@
                                                                             <Grid.Resources>
                                                                                 <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#4C1183CA" />
                                                                             </Grid.Resources>
-                                                                            <DataGrid Name="DGStaffAtt1" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 0 10 10" BorderThickness="1 0 1 1" RowHeight="40" BorderBrush="#7F808080" Grid.Column="0" FontSize="14" GridLinesVisibility="All" SelectionUnit="FullRow" SelectionMode="Extended" AutoGenerateColumns="False" Background="#7FFFFFFF" CanUserSortColumns="False" AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" VirtualizingPanel.ScrollUnit="Pixel" IsReadOnly="True" ScrollViewer.CanContentScroll="True">
+                                                                            <DataGrid Name="DGStaffAtt1" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 0 10 10" BorderThickness="1 0 1 0" RowHeight="40" BorderBrush="#7F808080" Grid.Column="0" FontSize="14" GridLinesVisibility="All" SelectionUnit="FullRow" SelectionMode="Extended" AutoGenerateColumns="False" Background="#7FFFFFFF" CanUserSortColumns="False" AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" VirtualizingPanel.ScrollUnit="Pixel" IsReadOnly="True" ScrollViewer.CanContentScroll="True">
                                                                                 <DataGrid.Resources>
                                                                                     <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                                                                                         <Setter Property="Background" Value="White" />
-                                                                                        <Setter Property="Height" Value="60"></Setter>
+                                                                                        <Setter Property="Height" Value="100"></Setter>
                                                                                         <Setter Property="FontFamily" Value="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                                                         <Setter Property="BorderThickness" Value="1"/>
                                                                                         <Setter Property="Margin" Value="-1 0 -1 0"/>
@@ -670,7 +670,7 @@
                                                                                     <!--//............................Name............................-->
 
 
-                                                                                    <DataGridTextColumn Width="2*" MinWidth="200" FontSize="15" Header="គោត្តនាម-នាមខ្លួន" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Binding="{Binding name}">
+                                                                                    <DataGridTextColumn Width="2*" MinWidth="180" FontSize="15" Header="គោត្តនាម-នាមខ្លួន" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Binding="{Binding name}">
                                                                                         <DataGridTextColumn.ElementStyle>
                                                                                             <Style TargetType="TextBlock">
                                                                                                 <Setter Property="Foreground" Value="Black"></Setter>
@@ -693,7 +693,7 @@
                                                                                     </DataGridTextColumn>
 
                                                                                     <!--//........................................................-->
-                                                                                    <DataGridTextColumn Header="តួនាទី" Width="1.5*" MinWidth="150" FontSize="14" Binding="{Binding position}">
+                                                                                    <DataGridTextColumn Header="តួនាទី" Width="1.2*" MinWidth="120" FontSize="14" Binding="{Binding position}">
 
                                                                                         <DataGridTextColumn.ElementStyle>
 
@@ -708,7 +708,7 @@
                                                                                     </DataGridTextColumn>
 
 
-                                                                                    <DataGridTemplateColumn MinWidth="120" Width="1.5*" Header="ព្រឹក(ចូល)">
+                                                                                    <DataGridTemplateColumn MinWidth="100" Width="*" Header="ព្រឹក(ចូល)">
 
 
                                                                                         <DataGridTemplateColumn.CellTemplate>
@@ -725,7 +725,7 @@
                                                                                     </DataGridTemplateColumn>
 
                                                                                     <!--//........................................................-->
-                                                                                    <DataGridTemplateColumn MinWidth="120" Width="1.5*" Header="ព្រឹក(ចេញ)">
+                                                                                    <DataGridTemplateColumn MinWidth="100" Width="*" Header="ព្រឹក(ចេញ)">
                                                                                         <DataGridTemplateColumn.CellTemplate>
                                                                                             <DataTemplate>
                                                                                                 <Grid VerticalAlignment="Center">
@@ -739,7 +739,7 @@
                                                                                     <!--//............................class............................-->
 
 
-                                                                                    <DataGridTemplateColumn MinWidth="120" Width="1.5*" Header="ល្ងាច(ចូល)">
+                                                                                    <DataGridTemplateColumn MinWidth="100" Width="*" Header="ល្ងាច(ចូល)">
 
 
                                                                                         <DataGridTemplateColumn.CellTemplate>
@@ -756,7 +756,7 @@
                                                                                     </DataGridTemplateColumn>
 
                                                                                     <!--//........................................................-->
-                                                                                    <DataGridTemplateColumn MinWidth="120" Width="1.5*" Header="ល្ងាច(ចេញ)">
+                                                                                    <DataGridTemplateColumn MinWidth="100" Width="*" Header="ល្ងាច(ចេញ)">
 
 
                                                                                         <DataGridTemplateColumn.CellTemplate>
@@ -775,7 +775,7 @@
 
 
                                                                                     <!--//........................................................-->
-                                                                                    <DataGridTemplateColumn Width="*" MinWidth="100" Header="មកយឺត" CanUserResize="False">
+                                                                                    <DataGridTemplateColumn MinWidth="80" Header="មកយឺត" CanUserResize="False">
                                                                                         <DataGridTemplateColumn.CellTemplate>
                                                                                             <DataTemplate>
                                                                                                 <Grid VerticalAlignment="Center">
@@ -790,7 +790,7 @@
                                                                                         </DataGridTemplateColumn.CellTemplate>
                                                                                     </DataGridTemplateColumn>
                                                                                     <!--//........................................................-->
-                                                                                    <DataGridTemplateColumn Width="*" MinWidth="100" Header="ចេញមុន" CanUserResize="False">
+                                                                                    <DataGridTemplateColumn MinWidth="80" Header="ចេញមុន" CanUserResize="False">
                                                                                         <DataGridTemplateColumn.CellTemplate>
                                                                                             <DataTemplate>
                                                                                                 <Grid VerticalAlignment="Center">
@@ -803,7 +803,7 @@
                                                                                         </DataGridTemplateColumn.CellTemplate>
                                                                                     </DataGridTemplateColumn>
                                                                                     <!--//........................................................-->
-                                                                                    <DataGridTemplateColumn Width="*" MinWidth="100" Header="អរត្តមានមានច្បាប់" CanUserResize="False">
+                                                                                    <DataGridTemplateColumn MinWidth="80" CanUserResize="False">
                                                                                         <DataGridTemplateColumn.CellTemplate>
                                                                                             <DataTemplate>
                                                                                                 <Grid VerticalAlignment="Center">
@@ -817,7 +817,9 @@
                                                                                     </DataGridTemplateColumn>
 
                                                                                     <!--//........................................................-->
-                                                                                    <DataGridTemplateColumn Width="*" MinWidth="100" Header="អវត្តមាន" CanUserResize="False">
+                                                                                    <DataGridTemplateColumn MinWidth="80">
+
+                                                                                        
                                                                                         <DataGridTemplateColumn.CellTemplate>
                                                                                             <DataTemplate>
                                                                                                 <Grid VerticalAlignment="Center">
@@ -829,6 +831,33 @@
                                                                                                 </Grid>
                                                                                             </DataTemplate>
                                                                                         </DataGridTemplateColumn.CellTemplate>
+
+                                                                                        <DataGridTemplateColumn.Header>
+                                                                                            <Grid Height="99" Width="160" Margin="-97 -10 -16 -10" Background="White">
+                                                                                                <Grid>
+                                                                                                    <StackPanel>
+                                                                                                        <Grid Height="50">
+                                                                                                            <Border BorderBrush="LightGray" BorderThickness="0 0 0 1"/>
+                                                                                                            <Label Content="អវត្តមាន" FontSize="13" FontWeight="Thin" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                                        </Grid>
+                                                                                                        <Grid Height="50">
+                                                                                                            <Grid.ColumnDefinitions>
+                                                                                                                <ColumnDefinition Width="*"/>
+                                                                                                                <ColumnDefinition Width="*"/>
+                                                                                                            </Grid.ColumnDefinitions>
+                                                                                                            <Grid Grid.Column="0">
+                                                                                                                <Border BorderBrush="LightGray" BorderThickness="0 0 1 0"/>
+                                                                                                                <Label Content="មានច្បាប់" FontWeight="Thin" FontSize="13" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                                            </Grid>
+                                                                                                            <Grid Grid.Column="1">
+                                                                                                                <Label Content="ឥតច្បាប់" FontSize="13" FontWeight="Thin" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                                            </Grid>
+                                                                                                        </Grid>
+                                                                                                    </StackPanel>
+                                                                                                </Grid>
+                                                                                            </Grid>
+                                                                                        </DataGridTemplateColumn.Header>
+
                                                                                     </DataGridTemplateColumn>
                                                                                     <!--//........................................................-->
                                                                                     <DataGridTemplateColumn Width="*" MinWidth="100" Header="ផ្សេងៗ" CanUserResize="False">

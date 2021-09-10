@@ -800,8 +800,9 @@ namespace CamemisOffLine.Windows
                 btnCheck.IsChecked = false;
                 this.Opacity = 0.5;
                 MessageBoxControl message = new MessageBoxControl();
-                message.title = "អ៊ិនធឺណែត";
-                message.discription = "មិនមានការភ្ជាប់អ៊ិនធឺណែត";
+                message.title = Properties.Langs.Lang.Internet;
+                message.discription = Properties.Langs.Lang.No_internet_connection;
+                message.subtxt = "សូមធ្វើការភ្ជាប់ អ៊ិនធឺណេត";
                 message.buttonType = 2;
                 message.Owner = this;
                 message.ShowDialog();
@@ -1022,8 +1023,8 @@ namespace CamemisOffLine.Windows
             MessageBoxControl message1 = new MessageBoxControl();
             if(Teacher.InternetChecker()==true&&internet)
             {
-                message.title = "ត្រួតពិនិត្យអ៊ីនធឺណែត";
-                message.discription = "ល្បឿនអ៊ីនរបស់អ្នក "+txtPing.Text+"\n"+"តើអ្នកចង់បញ្ចូនទិន្នន័យពេលនេះទេ?";
+                message.title = "ត្រួតពិនិត្យអ៊ីនធឺណេត";
+                message.discription = "ល្បឿនអ៊ីនធឺណេតរបស់អ្នក " + txtPing.Text+"\n"+"តើអ្នកចង់បញ្ចូនទិន្នន័យពេលនេះទេ?";
                 this.Opacity = 0.5;
                 message.ShowDialog();
                 this.Opacity = 1;
@@ -1061,8 +1062,9 @@ namespace CamemisOffLine.Windows
             }
             else
             {
-                message1.title = "អ៊ីនធឺណែត";
-                message1.discription = "មិនមានការតភ្ជាប់អ៊ីនធឺណែត";
+                message1.title = Properties.Langs.Lang.Internet;
+                message1.discription = Properties.Langs.Lang.No_internet_connection;
+                message1.subtxt = "សូមធ្វើការភ្ជាប់ អ៊ីនធឺណេត";
                 message1.buttonType = 2;
             }
             this.IsEnabled = true;

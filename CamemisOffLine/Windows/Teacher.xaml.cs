@@ -1313,7 +1313,7 @@ namespace CamemisOffLine
             if (MateriaFeaprintdrop.Visibility == Visibility.Visible)
             {
 
-                btnTeacher.Visibility = Visibility.Visible;
+                btnTeacher.Visibility = Visibility.Collapsed;
                 MateriaFeaprintUp.Visibility = Visibility.Visible;
                 btnStudent.Visibility = Visibility.Visible;
 
@@ -4639,6 +4639,7 @@ namespace CamemisOffLine
                 MessageBoxControl message = new MessageBoxControl();
                 message.title = Properties.Langs.Lang.Internet;
                 message.discription = Properties.Langs.Lang.No_internet_connection;
+                message.subtxt = "សូមធ្វើការភ្ជាប់ អ៊ិនធឺណេត";
                 message.buttonType = 2;
                 message.Owner = this;
                 message.ShowDialog();

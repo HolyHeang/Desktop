@@ -21,6 +21,7 @@ namespace CamemisOffLine.Component
     {
         public int result { get; set; }
         public string title { get; set; }
+        public string subtxt { get; set; }
         public string discription { get; set; }
         public int buttonType { get; set; }
         public string yes { get; set; } = Properties.Langs.Lang.yes;
@@ -54,6 +55,7 @@ namespace CamemisOffLine.Component
             btnYes.Content = yes;
             btnNo.Content = no;
             txtDis.Text = this.discription;
+            txt.Text = this.subtxt;
             txtTitle.Text = this.title;
             showButton(buttonType);
         }

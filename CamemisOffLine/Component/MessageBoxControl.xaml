@@ -14,12 +14,15 @@
                 <TextBlock Name="txtTitle" FontSize="16" Text="{x:Static language:Lang.print}" HorizontalAlignment="Left" VerticalAlignment="Top" 
                        Margin="20 10 10 0" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontWeight="Bold"/>
                 <Separator Margin="20 0 20 0"/>
-                <StackPanel Orientation="Horizontal"  Margin="30 10 10 0" Height="auto">
+                <StackPanel Orientation="Vertical"  Margin="30 10 10 0" Height="auto">
                     <!--<Grid Width="30" Height="auto" VerticalAlignment="Top">
                         <materialDesign:PackIcon Kind="Alert" VerticalAlignment="Top" Foreground="#fec30f" Margin="0,0,0,0" Width="24" Height="30" HorizontalAlignment="Center"/>
                     </Grid>-->
-                    <TextBlock Name="txtDis" FontSize="12" Text="កំពុងសាងសង់" HorizontalAlignment="Left" VerticalAlignment="Top"
+                    <TextBlock Name="txtDis" FontSize="14" Text="កំពុងសាងសង់" HorizontalAlignment="Left" VerticalAlignment="Top"
+                       TextWrapping="Wrap" FontWeight="Bold" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Opacity="0.8" ScrollViewer.CanContentScroll="True"/>
+                    <TextBlock Name="txt" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Top"
                        TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontWeight="Thin" Opacity="0.8" ScrollViewer.CanContentScroll="True"/>
+
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"  Margin="0 0 24 24">

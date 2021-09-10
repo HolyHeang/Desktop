@@ -286,7 +286,7 @@
     <value>បញ្ជូលពិន្ទុ</value>
   </data>
   <data name="Internet" xml:space="preserve">
-    <value>អ៊ិនធឺណែត</value>
+    <value>អ៊ីនធឺណេត</value>
   </data>
   <data name="kh" xml:space="preserve">
     <value>ខ្មែរ</value>
@@ -346,7 +346,7 @@
     <value>ថ្មី</value>
   </data>
   <data name="No internet connection" xml:space="preserve">
-    <value>មិនមានការភ្ជាប់អ៊ិនធឺណែត</value>
+    <value>មិនមានការភ្ជាប់អ៊ីនធឺណេត</value>
   </data>
   <data name="noresultdata" xml:space="preserve">
     <value>គ្មានទិន្ន័យ!</value>

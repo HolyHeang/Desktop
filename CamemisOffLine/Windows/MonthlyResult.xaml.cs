@@ -215,6 +215,8 @@ namespace CamemisOffLine.Windows
                         color = colors,
                         totalScore = obj[i].result_monthly.total_score.ToString(),
                         studentId = obj[i].student_school_id,
+                        date = obj[i].date_of_birth,
+                        gender = obj[i].gender,
                         studentName = obj[i].name,
                         grade=obj[i].result_monthly.grading,
 
@@ -254,6 +256,8 @@ namespace CamemisOffLine.Windows
                         color = colors,
                         totalScore = obj[i].result_semester_exam.total_score.ToString(),
                         studentId = obj[i].student_school_id,
+                        date = obj[i].date_of_birth,
+                        gender = obj[i].gender,
                         studentName = obj[i].name,
                         grade = obj[i].result_semester.grading,
 
@@ -292,6 +296,8 @@ namespace CamemisOffLine.Windows
                         color = colors,
                         totalScore = obj[i].result_semester_exam.total_score.ToString(),
                         studentId = obj[i].student_school_id,
+                        date = obj[i].date_of_birth,
+                        gender = obj[i].gender,
                         studentName = obj[i].name,
                         grade = obj[i].result_semester_exam.grading,
 
@@ -319,6 +325,8 @@ namespace CamemisOffLine.Windows
                         rank = obj[i].result_yearly.rank,
                         color = colors,
                         studentId = obj[i].student_school_id,
+                        date = obj[i].date_of_birth,
+                        gender = obj[i].gender,
                         studentName = obj[i].name,
                         grade = obj[i].result_yearly.grading,
 

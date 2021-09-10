@@ -205,7 +205,7 @@
                 <TextBlock Name="txtNoPermission" Text="អត្តលេខសិស្ស" Grid.Column="8" Grid.Row="2" HorizontalAlignment="Left" FontSize="12" Foreground="Red" Style="{DynamicResource Siemreap}"/>
             </Grid>
             <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
-                <TextBlock Text="មូលវិចារណ៍គ្រូ :" HorizontalAlignment="Left" FontWeight="Thin" FontSize="12" Foreground="Blue" Style="{DynamicResource Siemreap}"/>
+                <TextBlock Text="មូលវិចារគ្រូ :" HorizontalAlignment="Left" FontWeight="Thin" FontSize="12" Foreground="Blue" Style="{DynamicResource Siemreap}"/>
                 <TextBlock Name="txtTeacherRecommend" Text="មូលវិចារណ៍គ្រូ" HorizontalAlignment="Left" FontWeight="Thin" FontSize="12" Foreground="Black" Style="{DynamicResource Siemreap}" Margin="20 0 0 0"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
