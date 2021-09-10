@@ -38,6 +38,12 @@ namespace CamemisOffLine.Report
         string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            if(Properties.Settings.Default.role=="1")
+            {
+                titleTeacher.Content = "នាយកសាលា";
+                titleAdmin.Visibility = Visibility.Collapsed;
+                lblTeacherName.Visibility = Visibility.Collapsed;
+            }
             lblSchoolName.Content = Properties.Settings.Default.schoolName;
             lblLogoNameLeft.Content = Properties.Settings.Default.logoNameLeft;
 

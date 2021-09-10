@@ -173,7 +173,7 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0" VerticalAlignment="Center">
+                    <Grid Grid.Column="0" VerticalAlignment="Center" Name="titleAdmin">
                         <Label HorizontalAlignment="Center" VerticalAlignment="Center">
                             <StackPanel Orientation="Vertical">
                                 <TextBlock Text="បានឃើញ និងឯកភាព" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
@@ -206,7 +206,7 @@
                                     <TextBlock Text="{Binding Text,ElementName=lblMonths}" FontSize="14" Style="{DynamicResource Siemreap}"></TextBlock>
                                 </StackPanel>
                             </Label>
-                            <Label Content="គ្រូប្រចាំថ្នាក់" HorizontalAlignment="Center" Margin=" 0 5 0 0" Style="{DynamicResource Muol}" FontWeight="Bold" FontSize="14"></Label>
+                            <Label Content="គ្រូប្រចាំថ្នាក់" HorizontalAlignment="Center" Margin=" 0 5 0 0" Style="{DynamicResource Muol}" FontWeight="Bold" FontSize="14" Name="titleTeacher"></Label>
                             <Label Name="lblTeacherName" Content="----" HorizontalAlignment="Center" Margin=" 50 30 0 0" Style="{DynamicResource Muol}" FontWeight="Bold" FontSize="13"></Label>
                         </StackPanel>
                     </Grid>

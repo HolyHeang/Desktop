@@ -221,7 +221,7 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0" VerticalAlignment="Center" Margin="0 -15 0 0">
+                <Grid Grid.Column="0" VerticalAlignment="Center" Margin="0 -15 0 0" Name="titleAdmin">
                     <Label HorizontalAlignment="Center" VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="បានឃើញ និងឯកភាព" FontSize="12"  Style="{DynamicResource Siemreap}"></TextBlock>
@@ -254,7 +254,7 @@
                                 <TextBlock Text="{Binding Text,ElementName=lblMonths}" FontSize="10" Style="{DynamicResource Siemreap}"></TextBlock>
                             </StackPanel>
                         </Label>
-                        <Label Content="គ្រូប្រចាំថ្នាក់" HorizontalAlignment="Center" Margin=" 0 10 0 0" Style="{DynamicResource Muol}" FontWeight="Bold"></Label>
+                        <Label Content="គ្រូប្រចាំថ្នាក់" HorizontalAlignment="Center" Margin=" 0 10 0 0" Style="{DynamicResource Muol}" FontWeight="Bold" Name="titleTeacher"></Label>
                         <Label Name="lblTeacherName" Content="----" HorizontalAlignment="Center" Margin=" 50 30 0 0" Style="{DynamicResource Muol}" FontWeight="Bold"></Label>
                     </StackPanel>
                 </Grid>

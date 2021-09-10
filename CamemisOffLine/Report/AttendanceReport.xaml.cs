@@ -46,6 +46,10 @@ namespace CamemisOffLine.Report
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Loading load = new Loading();
+            if(Properties.Settings.Default.role=="1")
+            {
+                teacherPanel.Visibility = Visibility.Collapsed;
+            }
             load.Show();
             try
             {
