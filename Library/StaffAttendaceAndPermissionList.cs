@@ -13,6 +13,7 @@ namespace Library
     public class StaffPermission
     {
         public string number { get; set; }
+        public string visble { get; set; } = "Visible";
         public string id { get; set; }
         public string start_date { get; set; }
         public string end_date { get; set; }
@@ -22,10 +23,14 @@ namespace Library
         public UserPermission user { get; set; }
         public string is_approve { get; set; }
         public string approved_comment { get; set; }
-        public string approved_by { get; set; }
+        public Approved_by approved_by { get; set; }
         public string approved_at { get; set; }
         public string created_at { get; set; }
         public string updated_at { get; set; }
+    }
+    public class Approved_by
+    {
+        public string name { get; set; }
     }
     public class UserPermission
     {

@@ -52,7 +52,11 @@ namespace CamemisOffLine
 
             InitializeComponent();
 
-            
+            CultureInfo ci = CultureInfo.CreateSpecificCulture(CultureInfo.CurrentCulture.Name);
+            ci.DateTimeFormat.LongDatePattern = "MMM/yyyy"; //This can be used for one type of DatePicker
+            ci.DateTimeFormat.ShortDatePattern = "dd/MM/yyyy"; //for the second type
+            Thread.CurrentThread.CurrentCulture = ci;
+
             WindowState = System.Windows.WindowState.Maximized;
             DispatcherTimer timer = new DispatcherTimer();
             timer.Tick += new EventHandler(UpdateTimer_Tick);
@@ -127,6 +131,7 @@ namespace CamemisOffLine
         ObservableCollection<GradeTimeButton> DataButton = new ObservableCollection<GradeTimeButton>();
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            DPStaffAtt.DisplayDate = DateTime.Now;
             ///.................Part Setting...................
             btnAbout.Visibility = Visibility.Collapsed;
             btnColor.Visibility = Visibility.Collapsed;
@@ -532,37 +537,11 @@ namespace CamemisOffLine
         {
             tabMenu.SelectedIndex = 0;
         }
+        string dateForStaffAtt = "";
         private async void btnStaffAttendanceReport_Click(object sender, RoutedEventArgs e)
         {
+            gridAcc.Visibility = Visibility.Collapsed;
             var bc = new BrushConverter();
-            var accessUrl = Properties.Settings.Default.acessUrl;
-            var token = Properties.Settings.Default.Token;
-
-            if(InternetChecker())
-            {
-                int i = 1;
-                var respone = await RESTApiHelper.GetAll(accessUrl, "/staff-attendance-permission?date=03/09/2021", token);
-                var respone1 = await RESTApiHelper.GetAll(accessUrl, "/get-daily-staff-attendance-report?date=03/09/2021", token);
-                var obj = JObject.Parse(respone).ToObject<StaffPermissionList>().data;
-                var obj1 = JObject.Parse(respone1).ToObject<StaffAttendanceDailyList>().data;
-                foreach(var item in obj)
-                {
-                    item.number = i.ToString();
-                    i++;
-                }
-                foreach (var item in obj1)
-                {
-                    item.number = i.ToString();
-                    if (item.gender == "1")
-                        item.gender = "ប្រុស";
-                    else
-                        item.gender = "ស្រី";
-                    i++;
-                }
-                DGStaffAtt.ItemsSource = obj;
-                DGStaffAtt1.ItemsSource = obj1;
-            }
-
             //___________________Change  button State______________________
             btnStaffAttendanceReport.Background = Brushes.White;
             Tiltle.Content = Properties.Langs.Lang.Staff_Att_Re;
@@ -623,8 +602,69 @@ namespace CamemisOffLine
             gridLanguage.Visibility = Visibility.Collapsed;
             //....................End.........................
 
+            Loading loading = new Loading();
+            loading.Owner = this;
+            loading.Show();
+            this.sender = sender;
+            this.e = e;
+            
+            var accessUrl = Properties.Settings.Default.acessUrl;
+            var token = Properties.Settings.Default.Token;
+
            
+            dateForStaffAtt = DPStaffAtt.SelectedDate.Value.ToString("dd/MM/yyyy");
+
+            if(InternetChecker())
+            {
+                int i = 1;
+                var respone = await RESTApiHelper.GetAll(accessUrl, "/staff-attendance-permission?date=" + dateForStaffAtt, token);
+                var respone1 = await RESTApiHelper.GetAll(accessUrl, "/get-daily-staff-attendance-report?date=" + dateForStaffAtt, token);
+                var obj = JObject.Parse(respone).ToObject<StaffPermissionList>().data;
+                var obj1 = JObject.Parse(respone1).ToObject<StaffAttendanceDailyList>().data;
+                listAttStaff = JObject.Parse(respone1).ToObject<StaffAttendanceDailyList>();
+                foreach (var item in obj)
+                {
+                    item.number = i.ToString();
+                    if (item.is_approve == null)
+                    {
+                        item.approved_at = "";
+                        item.visble = "Visible";
+                    }
+                    else
+                    {
+                        item.visble = "Collapsed";
+                    }
+                    i++;
+                }
+                i = 1;
+                foreach (var item in listAttStaff.data)
+                {
+                    requestIdPermission = item.id;
+                    item.number = i.ToString();
+                    if (item.gender == "1")
+                        item.gender = "ប្រុស";
+                    else
+                        item.gender = "ស្រី";
+                    if (!item.daily_present.morning.in_time.Equals(""))
+                        item.mIn = "Red";
+                    if (!item.daily_present.morning.out_time.Equals(""))
+                        item.mOut = "Red";
+                    if (!item.daily_present.afternoon.out_time.Equals(""))
+                        item.aOut = "Red";
+                    if (!item.daily_present.afternoon.in_time.Equals(""))
+                        item.aIn = "Red";
+
+                    i++;
+                }
+                DGStaffAtt.ItemsSource = obj;
+                DGStaffAtt1.ItemsSource = listAttStaff.data;
+
+                staffs = obj1;           
+            }
+
+            gridAcc.Visibility = Visibility.Collapsed;
             check = false;
+            loading.Close();
         }
 
         private void btnStudentAttendanceReport_Click_1(object sender, RoutedEventArgs e)
@@ -4882,7 +4922,7 @@ namespace CamemisOffLine
                 {
                     using (HttpClient client = new HttpClient())
                     {
-                        client.DefaultRequestHeaders.Accept.Add(
+                       client.DefaultRequestHeaders.Accept.Add(
                        new MediaTypeWithQualityHeaderValue("application/json"));
                         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
                         using (HttpResponseMessage res = client.PostAsJsonAsync(accessUrl + "/approve-on-request-learning/"+requestId, new PostRequestApproved { month = month, term = term, type = type }).Result)
@@ -5188,6 +5228,224 @@ namespace CamemisOffLine
         private void DPStaffAtt_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
            
+        }
+        
+        List<StaffAttendanceDaily> staffs = new List<StaffAttendanceDaily>();
+        StaffAttendanceDailyList listAttStaff = new StaffAttendanceDailyList();
+        object sender; RoutedEventArgs e;
+        private async void btnGetAtt_Click(object sender, RoutedEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.Owner = this;
+            loading.Show();
+            this.sender = sender;
+            this.e = e;
+            var bc = new BrushConverter();
+            var accessUrl = Properties.Settings.Default.acessUrl;
+            var token = Properties.Settings.Default.Token;
+            dateForStaffAtt = DPStaffAtt.SelectedDate.Value.ToString("dd/MM/yyyy");
+            if (InternetChecker())
+            {
+                int i = 1;
+                var respone = await RESTApiHelper.GetAll(accessUrl, "/staff-attendance-permission?date=" + dateForStaffAtt, token);
+                var respone1 = await RESTApiHelper.GetAll(accessUrl, "/get-daily-staff-attendance-report?date=" + dateForStaffAtt, token);
+                var obj = JObject.Parse(respone).ToObject<StaffPermissionList>().data;
+                var obj1 = JObject.Parse(respone1).ToObject<StaffAttendanceDailyList>().data;
+                listAttStaff = JObject.Parse(respone1).ToObject<StaffAttendanceDailyList>();
+                foreach (var item in obj)
+                {
+                    item.number = i.ToString();
+                    if (item.is_approve == null)
+                    {
+                        item.approved_at = "";
+                        item.visble = "Visible";
+                    }
+                    else
+                    {
+                        item.visble = "Collapsed";
+                    }
+
+                    i++;
+                }
+                i = 1;
+                foreach (var item in listAttStaff.data)
+                {
+                    requestIdPermission = item.id;
+                    item.number = i.ToString();
+                    if (item.gender == "1")
+                        item.gender = "ប្រុស";
+                    else
+                        item.gender = "ស្រី";
+                    if (!item.daily_present.morning.in_time.Equals(""))
+                        item.mIn = "Red";
+                    if (!item.daily_present.morning.out_time.Equals(""))
+                        item.mOut = "Red";
+                    if (!item.daily_present.afternoon.out_time.Equals(""))
+                        item.aOut = "Red";
+                    if (!item.daily_present.afternoon.in_time.Equals(""))
+                        item.aIn = "Red";
+                    i++;
+                }
+                DGStaffAtt.ItemsSource = obj;
+                DGStaffAtt1.ItemsSource = listAttStaff.data;
+                staffs = obj1;
+            }
+            loading.Close();
+        }
+
+        private void btnSearchStaffAtt_Click(object sender, RoutedEventArgs e)
+        {
+            var staff = staffs.Where(i => i.name.Contains(txtSeachStaffName.Text));
+            DGStaffAtt1.ItemsSource​ = null;
+            DGStaffAtt1.ItemsSource = staff;
+        }
+
+        private void txtSeachStaffName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+           if(txtSeachStaffName.Text.Equals(""))
+            {
+                DGStaffAtt1.ItemsSource​ = null;
+                DGStaffAtt1.ItemsSource = staffs;
+            }
+            else
+            {
+                var staff = staffs.Where(i => i.name.Contains(txtSeachStaffName.Text));
+                DGStaffAtt1.ItemsSource​ = null;
+                DGStaffAtt1.ItemsSource = staff;
+            }
+        }
+
+        private void btnPrintStaffAtt_Click(object sender, RoutedEventArgs e)
+        {
+            List_Attendance_staff _Staff = new List_Attendance_staff(dateForStaffAtt,false);
+            _Staff.Show();
+        }
+
+        private void btnStaffAttPrint_Click(object sender, RoutedEventArgs e)
+        {
+            List_Attendance_staff _Staff = new List_Attendance_staff(dateForStaffAtt,true);
+            _Staff.Show();
+        }
+
+        private void btnApprovedStaffAttendance_Click(object sender, RoutedEventArgs e)
+        {
+            var item = DGStaffAtt.SelectedItem as StaffPermission;
+            var requestId = item.id;
+            if(internet&&InternetChecker())
+            {
+                this.Opacity = 0.5;
+                StaffAttdanceApprovedPopup popup = new StaffAttdanceApprovedPopup(requestId);
+                popup.ShowDialog();
+                this.Opacity = 1;
+                btnGetAtt_Click(sender,e);
+            }
+        }
+        string requestIdPermission = "";
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Loading load = new Loading();
+            this.IsEnabled = false;
+            load.Show();
+            string accessUrl = Properties.Settings.Default.acessUrl;
+            string token = Properties.Settings.Default.Token;
+            MessageBoxControl message = new MessageBoxControl();
+            if (Teacher.InternetChecker() == true && internet)
+            {
+                message.title = Properties.Langs.Lang.Information;
+                message.discription = Properties.Langs.Lang.Do_you_really_want_to_submit;
+                this.Opacity = 0.5;
+                message.ShowDialog();
+                this.Opacity = 1;
+                if (message.result == 1)
+                {
+                    using (HttpClient client = new HttpClient())
+                    {
+                        client.DefaultRequestHeaders.Accept.Add(
+                        new MediaTypeWithQualityHeaderValue("application/json"));
+                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                        using (HttpResponseMessage res = client.PostAsJsonAsync(accessUrl + "/save-daily-staff-attendance", new StaffAttendanceDailyList { date= dateForStaffAtt, data=listAttStaff.data }).Result)
+                        {
+                            using (HttpContent content = res.Content)
+                            {
+                                string datas = await content.ReadAsStringAsync();
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                message.title = Properties.Langs.Lang.Internet;
+                message.discription = Properties.Langs.Lang.No_internet_connection;
+                message.buttonType = 2;
+                message.Owner = this;
+                this.Opacity = 0.5;
+                message.ShowDialog();
+                this.Opacity = 1;
+            }
+            this.IsEnabled = true;
+            load.Close();
+        }
+
+        private void CheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            var item = DGStaffAtt1.SelectedItem as StaffAttendanceDaily;
+            if(item.late==true)
+            {
+                item.leave = false;
+                item.permission = false;
+                item.absent = false;
+                //item.OnpropertyChange();
+            }
+            else if(item.leave==true)
+            {
+                item.late = false;
+                item.permission = false;
+                item.absent = false;
+            }
+            else if(item.permission==true)
+            {
+                item.leave = false;
+                item.late = false;
+                item.absent = false;
+            }
+            else if(item.absent==true)
+            {
+                item.leave = false;
+                item.permission = false;
+                item.late = false;
+            }
+        }
+
+        private void MaAttInfo_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (MaAttInfo.Kind == MaterialDesignThemes.Wpf.PackIconKind.ChevronUp)
+            {
+                gridBodyAttInfo.Visibility = Visibility.Collapsed;
+                MaAttInfo.Kind = MaterialDesignThemes.Wpf.PackIconKind.ChevronDown;
+            }
+            
+            else if(gridBodyAttInfo.Visibility == Visibility.Collapsed)
+            {
+                gridBodyAttInfo.Visibility = Visibility.Visible;
+                MaAttInfo.Kind = MaterialDesignThemes.Wpf.PackIconKind.ChevronUp;
+            }
+           
+        }
+
+        private void MaProRequse_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (MaProRequse.Kind == MaterialDesignThemes.Wpf.PackIconKind.ChevronUp)
+            {
+                gridPerRequseBody.Visibility = Visibility.Collapsed;
+                MaProRequse.Kind = MaterialDesignThemes.Wpf.PackIconKind.ChevronDown;
+            }
+
+            else if (gridPerRequseBody.Visibility == Visibility.Collapsed)
+            {
+                gridPerRequseBody.Visibility = Visibility.Visible;
+                MaProRequse.Kind = MaterialDesignThemes.Wpf.PackIconKind.ChevronUp;
+            }
         }
 
         private void cmbTypeAttReportPrint_SelectionChanged(object sender, SelectionChangedEventArgs e)
