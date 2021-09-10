@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CamemisOffLine.exe" size="4989376">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CamemisOffLine.exe" size="4990400">
       <assemblyIdentity name="CamemisOffLine" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jfhykse9HqxuTRCurk+SJ+CNKUXQf5wgjHcRnOg4paI=</dsig:DigestValue>
+        <dsig:DigestValue>snToycupkFsAIx15m/p3I0661s0JZifqFu+HTMmj2GQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>guI753Os3zcNsate5oYjqUGzhNH307L1rOsNv8C/Nqk=</dsig:DigestValue>
+        <dsig:DigestValue>Leq43G0ZXMiy7Wc6fHzCWwnFi5Hh1X7NUWGpx4TIYpo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>pJxJ9XV4qyVpYIdVnPk8p4XqN9rHZfRlLaPzdpLyu20=</dsig:DigestValue>
+        <dsig:DigestValue>7aHUXmEwL98cungIYgNqk9ZchvWR55hDw3eLBlvoSB0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -98,7 +98,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>D65sNrDRGsYSdYluitszRZN6y+iBHWf16l9kgcEsUTo=</dsig:DigestValue>
+        <dsig:DigestValue>5Or2i182ax+4RWbQ/hq1nVLOpAcD2G1vRmkftuh0uPs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

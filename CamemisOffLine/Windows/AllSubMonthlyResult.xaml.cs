@@ -44,6 +44,12 @@ namespace CamemisOffLine.Windows
         bool print = true;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            if(Properties.Settings.Default.role=="1")
+            {
+                titleTeacher.Content = "នាយកសាលា";
+                titleAdmin.Visibility = Visibility.Collapsed;
+                lblTeacherName.Visibility = Visibility.Collapsed;
+            }
             if (print)
             {
                 Loading loading = new Loading();

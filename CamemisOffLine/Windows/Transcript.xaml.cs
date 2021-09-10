@@ -78,7 +78,13 @@ namespace CamemisOffLine.Windows
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            if(printCheck)
+            if (Properties.Settings.Default.role == "1")
+            {
+                titleTeacher.Content = "នាយកសាលា";
+                titleAdmin.Visibility = Visibility.Collapsed;
+                lblTeacherName.Visibility = Visibility.Collapsed;
+            }
+            if (printCheck)
             {
                 this.Hide();
                 MessageBoxControl message = new MessageBoxControl();

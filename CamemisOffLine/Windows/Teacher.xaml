@@ -724,10 +724,7 @@
                                                                                     <DataGridTemplateColumn.CellTemplate>
                                                                                         <DataTemplate>
                                                                                             <Grid VerticalAlignment="Center">
-
                                                                                                 <TextBox Margin="0 -2 0 0" Height="25" BorderBrush="Gray" TextWrapping="Wrap" FontSize="14" Padding="2 -2 0 0" BorderThickness="1" materialDesign:HintAssist.Hint="hh:mm" Text="{Binding daily_present.afternoon.in_time,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding aIn}" FontWeight="Bold"></TextBox>
-
-
                                                                                             </Grid>
                                                                                         </DataTemplate>
                                                                                     </DataGridTemplateColumn.CellTemplate>
