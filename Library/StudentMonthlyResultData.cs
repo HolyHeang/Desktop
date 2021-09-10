@@ -140,7 +140,7 @@ namespace Library
     public class MonthlyResult
     {
         public string id { get; set; }
-        public string avg_score { get; set; }
+        public string avg_score { get; set; } = "--";
         public int total_score { get; set; }
         public string total_coeff { get; set; }
         public int rank { get; set; }
@@ -157,7 +157,7 @@ namespace Library
         public string letter_grade { get; set; }
         public string grade_points { get; set; }
         public string is_fail { get; set; }
-        public string color { get; set; }
+        public string color { get; set; } = "Red";
     }
     public class MonthlyResultAllSubjectResult
     {

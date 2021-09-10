@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CamemisOffLine.Report"
         mc:Ignorable="d"
-        Title="Summary_of_Students" Height="21cm" Width="29.7cm" Loaded="Window_Loaded">
+        Title="Summary_of_Students" Height="21cm" Width="35cm" Loaded="Window_Loaded">
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Hidden">
             <Grid>
@@ -51,15 +51,20 @@
                         </StackPanel>
                     </Grid>
 
-                    <Grid Name="Body" HorizontalAlignment="Center" MinWidth="29.7cm" Margin="0 5 0 0">
+                    <Grid Name="Body" HorizontalAlignment="Center" MinWidth="34cm" Margin="0 5 0 0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <StackPanel Orientation="Vertical" Grid.Column="0">
                             <Grid>
-                                <DataGrid Margin="10 0 10 0" AutoGenerateColumns="False" RowHeight="40" BorderThickness="1 1 1 0" BorderBrush="Black" Background="White" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="29.7cm" CanUserAddRows="False" HorizontalScrollBarVisibility="Hidden">
+                                <DataGrid Name="DG" Margin="10 0 10 0" AutoGenerateColumns="False" BorderThickness="1 1 1 0" BorderBrush="Black" Background="White" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="34cm" CanUserAddRows="False" HorizontalScrollBarVisibility="Hidden">
+                                    <DataGrid.RowStyle>
+                                        <Style TargetType="{x:Type DataGridRow}">
+                                            <Setter Property="Height" Value="Auto"/>
+                                        </Style>
+                                    </DataGrid.RowStyle>
                                     <DataGrid.Resources>
-
+                                        
                                         <Style TargetType="DataGrid">
                                             <Setter Property="Background" Value="Transparent"/>
                                             <Setter Property="BorderBrush" Value="LightGray"/>
@@ -86,7 +91,7 @@
 
 
                                         <!--//............................Student Total............................-->
-                                        <DataGridTextColumn Width="130" Header="ថ្នាក់" FontSize="15" Binding="{Binding come_from_class}">
+                                        <DataGridTextColumn Width="130" Header="ថ្នាក់" FontSize="15" Binding="{Binding level}">
 
                                             <DataGridTextColumn.ElementStyle>
 
@@ -102,7 +107,7 @@
                                         </DataGridTextColumn>
 
                                         <!--//............................Student Total............................-->
-                                        <DataGridTextColumn Width="70" FontSize="15" Binding="{Binding come_from_class}">
+                                        <DataGridTextColumn Width="70" FontSize="15" Binding="{Binding students.totals}">
 
                                             <DataGridTextColumn.ElementStyle>
 
@@ -118,7 +123,7 @@
                                         </DataGridTextColumn>
 
                                         <!--//............................Student Female............................-->
-                                        <DataGridTextColumn Width="70" FontSize="15" Binding="{Binding come_from_class}">
+                                        <DataGridTextColumn Width="70" FontSize="15" Binding="{Binding students.female}">
 
                                             <DataGridTextColumn.ElementStyle>
 
@@ -156,36 +161,52 @@
 
 
                                         <!--//............................Subject............................-->
-                                        <DataGridTextColumn Header="មុខវិជ្ជា" Width="120" FontSize="12" >
+                                        <DataGridTemplateColumn Header="មុខវិជ្ជា" Width="300">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <DataGrid ItemsSource="{Binding subjects}" Width="300" BorderThickness="0 0 0 0" BorderBrush="Black" Margin="-15 -20 -17 -9" HorizontalAlignment="Center" VerticalContentAlignment="Top" AutoGenerateColumns="False" Background="Transparent" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" CanUserAddRows="False" >
+                                                        <DataGrid.Resources>
 
-                                            <DataGridTextColumn.ElementStyle>
-
-                                                <Style TargetType="TextBlock">
-                                                    <Setter Property="Foreground" Value="Black"></Setter>
-
-                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
-                                                    <Setter Property="VerticalAlignment" Value="Center"/>
-                                                </Style>
-                                            </DataGridTextColumn.ElementStyle>
-                                        </DataGridTextColumn>
+                                                            <Style TargetType="DataGridColumnHeader">
+                                                                <Setter Property="BorderThickness" Value="0"/>
+                                                                <Setter Property="Height" Value="0"/>
+                                                            </Style>
+                                                        </DataGrid.Resources>
+                                                        <DataGrid.Columns>
+                                                            <DataGridTextColumn Binding="{Binding name}" Width="*"/>
+                                                        </DataGrid.Columns>
+                                                    </DataGrid>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
 
 
                                         <!--//............................Student Total............................-->
-                                        <DataGridTextColumn Width="49" FontSize="15" Binding="{Binding come_from_class}">
-
-                                            <DataGridTextColumn.ElementStyle>
-
-                                                <Style TargetType="TextBlock">
-                                                    <Setter Property="Foreground" Value="Black"></Setter>
-
-                                                    <Setter Property="FontWeight" Value="Thin"></Setter>
-                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
-                                                    <Setter Property="VerticalAlignment" Value="Center"/>
-                                                </Style>
-                                            </DataGridTextColumn.ElementStyle>
-
-                                        </DataGridTextColumn>
+                                        <DataGridTemplateColumn Header="មុខវិជ្ជា" Width="49">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <DataGrid ItemsSource="{Binding subjects}" Width="49" BorderThickness="0 0 0 0" BorderBrush="Black" Margin="0" HorizontalAlignment="Center" VerticalContentAlignment="Top" AutoGenerateColumns="False" Background="Transparent" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" CanUserAddRows="False" >
+                                                        <DataGrid.Resources>
+                                                            <Style TargetType="DataGridColumnHeader">
+                                                                <Setter Property="BorderThickness" Value="0"/>
+                                                                <Setter Property="Height" Value="0"/>
+                                                            </Style>
+                                                        </DataGrid.Resources>
+                                                        <DataGrid.Columns>
+                                                            <DataGridTemplateColumn>
+                                                                <DataGridTemplateColumn.CellTemplate>
+                                                                    <DataTemplate>
+                                                                        <DataGrid ItemsSource="{Binding totalA}">
+                                                                            
+                                                                        </DataGrid>  
+                                                                    </DataTemplate>
+                                                                </DataGridTemplateColumn.CellTemplate>
+                                                            </DataGridTemplateColumn>
+                                                        </DataGrid.Columns>
+                                                    </DataGrid>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
 
                                         <!--//............................Student Female............................-->
                                         <DataGridTextColumn Width="49" FontSize="15" Binding="{Binding come_from_class}">
