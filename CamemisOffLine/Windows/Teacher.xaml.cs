@@ -2581,14 +2581,18 @@ namespace CamemisOffLine
                     else
                         profileId = item.profileMedia.id;
                     item.localProfileLink = filePath + "\\" + profileId + ".jpg";
-                    if (item.result_semester.is_fail.Equals("1"))
+                    try
                     {
-                        item.result_semester.is_fail = "ធ្លាក់";
+                        if (item.result_semester.is_fail.Equals("1"))
+                        {
+                            item.result_semester.is_fail = "ធ្លាក់";
+                        }
+                        else
+                        {
+                            item.result_semester.is_fail = "ជាប់";
+                        }
                     }
-                    else
-                    {
-                        item.result_semester.is_fail = "ជាប់";
-                    }
+                    catch { }
                     if (item.gender == "2")
                     {
                         girlTotal++;
@@ -2608,37 +2612,56 @@ namespace CamemisOffLine
 
                 foreach(var item in obj)
                 {
-                    if (item.result_semester.avg_score == "0")
-                        item.result_semester.avg_score = "មិនចាត់ថ្នាក់";
-                    if (item.result_semester_exam.avg_score == "0")
-                        item.result_semester_exam.avg_score = "មិនចាត់ថ្នាក់";
-                    if (item.result_semester.morality == null)
-                        item.result_semester.morality = "--";
-                    if (item.result_semester.bangkeun_phal == null)
-                        item.result_semester.bangkeun_phal = "--";
-                    if (item.result_semester.health == null)
-                        item.result_semester.health = "--";
+                    try
+                    {
+                        if (item.result_semester.avg_score == "0")
+                            item.result_semester.avg_score = "មិនចាត់ថ្នាក់";
+                        if (item.result_semester_exam.avg_score == "0")
+                            item.result_semester_exam.avg_score = "មិនចាត់ថ្នាក់";
+                        if (item.result_semester.morality == null)
+                            item.result_semester.morality = "--";
+                        if (item.result_semester.bangkeun_phal == null)
+                            item.result_semester.bangkeun_phal = "--";
+                        if (item.result_semester.health == null)
+                            item.result_semester.health = "--";
+                    }
+                    catch
+                    {
+                        
+                    }
                 }
                 var obj1 = obj;
-                if (startProgram == true)
+                try
                 {
-                    NumberList(obj.OrderBy(s => s.result_semester.rank).ToList());
-                    NumberList(obj1.OrderBy(s => int.Parse(s.result_semester_exam.rank)).ToList());
+                    if (startProgram == true)
+                    {
+                        NumberList(obj.OrderBy(s => s.result_semester.rank).ToList());
+                        NumberList(obj1.OrderBy(s => int.Parse(s.result_semester_exam.rank)).ToList());
+                        DGSemester.ItemsSource = null;
+                        DGSemester.ItemsSource = obj.OrderBy(s => s.result_semester.rank);
+                        DGSemesterExam.ItemsSource = obj1.OrderBy(s => int.Parse(s.result_semester_exam.rank));
+                        DGSemesterClass.ItemsSource = obj.OrderBy(s => s.result_semester.rank);
+                    }
+                    else
+                    {
+                        NumberList(obj.OrderBy(s => s.result_semester.rank).ToList());
+                        NumberList(obj1.OrderBy(s => int.Parse(s.result_semester_exam.rank)).ToList());
+                        DGSemester.ItemsSource = obj.OrderBy(s => s.result_semester.rank);
+                        DGSemesterExam.ItemsSource = obj1.OrderBy(s => int.Parse(s.result_semester_exam.rank));
+                        DGSemesterClass.ItemsSource = obj.OrderBy(s => s.result_semester.rank);
+                    }
+                    students = obj1.OrderBy(s => int.Parse(s.result_semester_exam.rank)).ToList();
+                    report.data = obj.OrderBy(s => s.result_semester_exam.total_score).ToList();
+                }
+                catch
+                {
+                    NumberList(obj.OrderBy(s => s.name).ToList());
                     DGSemester.ItemsSource = null;
-                    DGSemester.ItemsSource = obj.OrderBy(s => s.result_semester.rank);
-                    DGSemesterExam.ItemsSource = obj1.OrderBy(s => int.Parse(s.result_semester_exam.rank));
-                    DGSemesterClass.ItemsSource = obj.OrderBy(s => s.result_semester.rank);
+                    DGSemester.ItemsSource = obj.OrderBy(s => s.name);
+                    DGSemesterExam.ItemsSource = obj1.OrderBy(s => s.name);
+                    DGSemesterClass.ItemsSource = obj.OrderBy(s => s.name);
+
                 }
-                else
-                {
-                    NumberList(obj.OrderBy(s => s.result_semester.rank).ToList());
-                    NumberList(obj1.OrderBy(s => int.Parse(s.result_semester_exam.rank)).ToList());
-                    DGSemester.ItemsSource = obj.OrderBy(s => s.result_semester.rank);
-                    DGSemesterExam.ItemsSource = obj1.OrderBy(s => int.Parse(s.result_semester_exam.rank));
-                    DGSemesterClass.ItemsSource = obj.OrderBy(s => s.result_semester.rank);
-                }
-                students = obj1.OrderBy(s => int.Parse(s.result_semester_exam.rank)).ToList();
-                report.data = obj.OrderBy(s => s.result_semester_exam.total_score).ToList();
                 lblTitleTotalStudent.Content = "សិស្សសរុប : " + DGSemester.Items.Count.ToString() + " នាក់" + " ស្រី : " + girlTotal.ToString() + " នាក់";
                 gridMonth.Visibility = Visibility.Collapsed;
                 tabStudentResult.Visibility = Visibility.Visible;
@@ -2737,31 +2760,49 @@ namespace CamemisOffLine
                         }
                         SaveImage(item.student_schoolyear_id, ImageFormat.Jpeg, item.profileMedia.file_show);
                     }
-                    monthName = DateChange.checkMonth(int.Parse(item.result_monthly.month));
+                    if(number==1)
+                    {
+                        monthName = DateChange.checkMonth(int.Parse(item.result_monthly.month));
+                    }
                     if (item.profileMedia.id == null)
                         profileId = item.student_id;
                     else
                         profileId = item.profileMedia.id;
                     item.localProfileLink = filePath + "\\" + profileId + ".jpg";
                     studentName.Add(item.name);
-                    if (item.result_monthly.absence_exam.Equals(1))
+                    try
                     {
-                        item.result_monthly.avg_score = "មិនចាត់ថ្នាក់";
-                        item.result_monthly.color = "Red";
-                    }
-                    else
-                    {
-                        if (item.result_monthly.avg_score == "0")
+                        if (item.result_monthly.absence_exam.Equals(1))
                         {
-                            item.result_monthly.avg_score = "--";
-                            item.result_monthly.color = "Blue";
+                            item.result_monthly.avg_score = "មិនចាត់ថ្នាក់";
+                            item.result_monthly.color = "Red";
                         }
                         else
                         {
-                            var changeAvg = obj.FirstOrDefault(s => s.result_monthly.avg_score == item.result_monthly.avg_score);
-                            changeAvg.result_monthly.avg_score = double.Parse(item.result_monthly.avg_score).ToString("#.##");
-                            item.result_monthly.color = "Blue";
+                            try
+                            {
+                                if (item.result_monthly.avg_score == "0" || item.result_monthly.avg_score == null)
+                                {
+                                    item.result_monthly.avg_score = "--";
+                                    item.result_monthly.color = "Blue";
+                                }
+                                else
+                                {
+                                    var changeAvg = obj.FirstOrDefault(s => s.result_monthly.avg_score == item.result_monthly.avg_score);
+                                    changeAvg.result_monthly.avg_score = double.Parse(item.result_monthly.avg_score).ToString("#.##");
+                                    item.result_monthly.color = "Blue";
+                                }
+                            }
+                            catch
+                            {
+                                item.result_monthly.avg_score = "--";
+                                item.result_monthly.color = "Blue";
+                            }
+
                         }
+                    }
+                    catch
+                    {
                         
                     }
                     if (item.gender == "2")
@@ -2781,18 +2822,28 @@ namespace CamemisOffLine
                 studentName.Add("");
                 cmbStudentName.ItemsSource = studentName;
 
-                if (startProgram == true)
+                try
                 {
-                    NumberList(obj.OrderBy(s => s.result_monthly.rank).ToList());
+                    if (startProgram == true)
+                    {
+                        NumberList(obj.OrderBy(s => s.result_monthly.rank).ToList());
+                        DGMonthlyResult.ItemsSource = null;
+                        DGMonthlyResult.ItemsSource = obj.OrderBy(s => s.result_monthly.rank);
+                    }
+                    else
+                    {
+                        NumberList(obj.OrderBy(s => s.result_monthly.rank).ToList());
+                        DGMonthlyResult.ItemsSource = obj.OrderBy(s => s.result_monthly.rank);
+                    }
+                    report.data = obj.OrderBy(s => s.result_monthly.rank).ToList();
+                }
+                catch
+                {
+                    NumberList(obj.OrderBy(s => s.name).ToList());
                     DGMonthlyResult.ItemsSource = null;
-                    DGMonthlyResult.ItemsSource = obj.OrderBy(s => s.result_monthly.rank);
+                    DGMonthlyResult.ItemsSource = obj.OrderBy(s => s.name);
+                    report.data = obj.OrderBy(s => s.name).ToList();
                 }
-                else
-                {
-                    NumberList(obj.OrderBy(s => s.result_monthly.rank).ToList());
-                    DGMonthlyResult.ItemsSource = obj.OrderBy(s => s.result_monthly.rank);
-                }
-                report.data = obj.OrderBy(s => s.result_monthly.rank).ToList();
                 lblTitleTotalStudent.Content = "សិស្សសរុប : " + DGMonthlyResult.Items.Count.ToString() + " នាក់" + " ស្រី : " + girlTotal.ToString() + " នាក់";
                 gridMonth.Visibility = Visibility.Collapsed;
                 tabStudentResult.Visibility = Visibility.Visible;
@@ -2806,8 +2857,9 @@ namespace CamemisOffLine
                 rbSmall.IsChecked = true;
 
             }
-            catch
+            catch(Exception ex)
             {
+                Console.WriteLine("Error:" + ex.ToString());
                 btnStatistic.Visibility = Visibility.Collapsed;
                 OptionMenu.Visibility = Visibility.Collapsed;
                 TranscripPrint.Visibility = Visibility.Collapsed;
@@ -3098,14 +3150,18 @@ namespace CamemisOffLine
                     else
                         profileId = item.profileMedia.id;
                     item.localProfileLink = filePath + "\\" + profileId + ".jpg";
-                    if (item.result_yearly.is_fail.Equals("1"))
+                    try
                     {
-                        item.result_yearly.is_fail = "ធ្លាក់";
+                        if (item.result_yearly.is_fail.Equals("1"))
+                        {
+                            item.result_yearly.is_fail = "ធ្លាក់";
+                        }
+                        else
+                        {
+                            item.result_yearly.is_fail = "ជាប់";
+                        }
                     }
-                    else
-                    {
-                        item.result_yearly.is_fail = "ជាប់";
-                    }
+                    catch { }
                     if (item.gender == "2")
                     {
                         girlTotal++;
@@ -3127,8 +3183,12 @@ namespace CamemisOffLine
                 {
                     if (item.result_yearly.avg_score == "0")
                         item.result_yearly.avg_score = "មិនចាត់ថ្នាក់";
+                    else if (item.result_yearly.avg_score == null)
+                        item.result_yearly.avg_score = "--";
                     if (item.result_yearly.avg_score == "0")
                         item.result_yearly.avg_score = "មិនចាត់ថ្នាក់";
+                    if (item.result_yearly.avg_score == null)
+                        item.result_yearly.avg_score = "--";
                     if (item.result_yearly.morality == null)
                         item.result_yearly.morality = "--";
                     if (item.result_yearly.bangkeun_phal == null)
@@ -3152,11 +3212,22 @@ namespace CamemisOffLine
                  }*/
 
 
-                NumberList(obj.OrderBy(s => s.result_yearly.rank).ToList());
-                DGYear.ItemsSource = null;
-                DGYear.ItemsSource = obj.OrderBy(s=>s.result_yearly.rank);
+                try
+                {
+                    NumberList(obj.OrderBy(s => s.result_yearly.rank).ToList());
+                    DGYear.ItemsSource = null;
+                    DGYear.ItemsSource = obj.OrderBy(s => s.result_yearly.rank);
 
-                report.data = obj.OrderBy(s => s.result_yearly.rank).ToList();
+                    report.data = obj.OrderBy(s => s.result_yearly.rank).ToList();
+                }
+                catch
+                {
+                    NumberList(obj.OrderBy(s => s.name).ToList());
+                    DGYear.ItemsSource = null;
+                    DGYear.ItemsSource = obj.OrderBy(s => s.name);
+
+                    report.data = obj.OrderBy(s => s.name).ToList();
+                }
                 lblTitleTotalStudent.Content = "សិស្សសរុប : " + DGYear.Items.Count.ToString() + " នាក់" + " ស្រី : " + girlTotal.ToString() + " នាក់";
                 gridMonth.Visibility = Visibility.Collapsed;
                 tabStudentResult.Visibility = Visibility.Visible;
@@ -4272,12 +4343,12 @@ namespace CamemisOffLine
                 if (semester == "ឆមាសទី១")
                 {
                     var obj = JObject.Parse(allRespone[0].ToString()).ToObject<StudentMonthlyResultData>().data;
-                    return obj.OrderBy(s=>s.result_semester.rank).ToList();
+                    return obj;
                 }
                 else if (semester == "ឆមាសទី២")
                 {
                     var obj = JObject.Parse(allRespone[1].ToString()).ToObject<StudentMonthlyResultData>().data;
-                    return obj.OrderBy(s => s.result_semester.rank).ToList();
+                    return obj;
                 }
             }
             else if (title == "year")
@@ -4298,7 +4369,7 @@ namespace CamemisOffLine
                         var obj = JObject.Parse(allMonth[1].ToString()).ToObject<StudentMonthlyResultData>().data;
                         Properties.Settings.Default.studentMonthlyResult = allMonth[1];
                         Properties.Settings.Default.Save();
-                        return obj.OrderBy(s => s.result_monthly.rank).ToList();
+                        return obj;
                     }
                 }
             }

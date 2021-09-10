@@ -1,5 +1,7 @@
 ﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
+using Library;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -30,57 +32,68 @@ namespace CamemisOffLine.Report
 
         string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
 
-        private void print()
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
-            TitleSchool.Content = Properties.Settings.Default.schoolName;
-
+            var reponse = await GetDataAsync();
+            var obj = JObject.Parse(reponse).ToObject<SummarySubjectGradingList>().data;
+            foreach(var item in obj)
+            {
+                foreach(var i in item.subjects)
+                {
+                    foreach (var j in i.grading_system)
+                    {
+                        if(j.letter_grade=="A")
+                        {
+                            i.girlA.Add(j.student.female);
+                            i.totalA.Add(j.student.total);
+                        }
+                        else if (j.letter_grade == "B")
+                        {
+                            i.girlB.Add(j.student.female);
+                            i.totalB.Add(j.student.total);
+                        }
+                        else if (j.letter_grade == "C")
+                        {
+                            i.girlC.Add(j.student.female);
+                            i.totalC.Add(j.student.total);
+                        }
+                        else if (j.letter_grade == "D")
+                        {
+                            i.girlD.Add(j.student.female);
+                            i.totalD.Add(j.student.total);
+                        }
+                        else if (j.letter_grade == "E")
+                        {
+                            i.girlE.Add(j.student.female);
+                            i.totalE.Add(j.student.total);
+                        }
+                        else if (j.letter_grade == "F")
+                        {
+                            i.girlF.Add(j.student.female);
+                            i.totalF.Add(j.student.total);
+                        }
+                    }
+                    
+                }
+            }
+            DG.ItemsSource = obj;
+        }
+        private async Task<string> GetDataAsync()
+        {
             try
             {
+                string accessUrl = Properties.Settings.Default.acessUrl;
+                string token = Properties.Settings.Default.Token;
 
-                this.Hide();
-                Document document = new Document(PageSize.A4.Rotate(), 5, 0, 0, 0);
-                PdfWriter.GetInstance(document, new System.IO.FileStream(filePath + "\\" + "តារាងសង្ខេបនិន្ទេស" + ".pdf", FileMode.Create));
-
-                document.Open();
-
-                GC.Collect();
-
-                string targetFile = System.IO.Path.GetTempFileName();
-                using (FileStream outStream = new FileStream(targetFile, FileMode.Create))
-                {
-
-                    PngBitmapEncoder enc = new PngBitmapEncoder();
-                    var bitmap = new RenderTargetBitmap((int)Grid.ActualWidth * 4, (int)Grid.ActualHeight * 4, 147, 150, PixelFormats.Pbgra32);
-                    bitmap.Render(Grid);
-                    enc.Frames.Add(BitmapFrame.Create(bitmap));
-                    enc.Save(outStream);
-                    bitmap = null;
-
-                    outStream.Dispose();
-                }
-                using (FileStream fs = new FileStream(targetFile, FileMode.Open))
-                {
-                    iTextSharp.text.Image png = iTextSharp.text.Image.GetInstance(System.Drawing.Image.FromStream(fs), System.Drawing.Imaging.ImageFormat.Png);
-                    png.ScalePercent(49f);
-                    document.Add(png);
-                }
-
-                GC.Collect();
-                document.Close();
-                GC.Collect();
-                Process.Start(filePath + "\\" + "តារាងសង្ខេបនិន្ទេស" + ".pdf");
-                this.Close();
+                var respone = await RESTApiHelper.GetAll(accessUrl, "/get-summary-subject-gradingscale/508?type=1&month=3&semester=FIRST_SEMESTER", token);
+                var obj = JObject.Parse(respone).ToObject<StaffAttendanceDailyList>().data;
+               
+                return respone;
             }
             catch
             {
-                MessageBox.Show("ការបោះពុម្ភរបស់អ្នកមិនទទូលបានជោគជ័យ", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
-                this.Close();
+                return null;
             }
-        }
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            print();
         }
     }
 }
