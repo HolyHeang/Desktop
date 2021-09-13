@@ -1060,6 +1060,10 @@ namespace CamemisOffLine.Windows
                             }
                         }
                     }
+                    message1.Owner = this;
+                    this.Opacity = 0.5;
+                    message1.ShowDialog();
+                    this.Opacity = 1;
                 }
             }
             else
@@ -1067,13 +1071,13 @@ namespace CamemisOffLine.Windows
                 message1.title = "អ៊ីនធឺណែត";
                 message1.discription = "មិនមានការតភ្ជាប់អ៊ីនធឺណែត";
                 message1.buttonType = 2;
+                message1.Owner = this;
+                this.Opacity = 0.5;
+                message1.ShowDialog();
+                this.Opacity = 1;
             }
             this.IsEnabled = true;
             load.Close();
-            message1.Owner = this;
-            this.Opacity = 0.5;
-            message1.ShowDialog();
-            this.Opacity = 1;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
