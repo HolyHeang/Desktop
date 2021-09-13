@@ -1042,7 +1042,10 @@ namespace CamemisOffLine.Windows
                                 var obj = JObject.Parse(datas).ToObject<InputScore>();
                                 message1.title = "ការបញ្ចូនទិន្នន័យ";
                                 if (obj.message.Equals("data error"))
+                                {
                                     message1.discription = "ទិន្នន័យរបស់អ្នកមាន​បញ្ហា សូមត្រួតពិនិត្យឡើងវិញ";
+                                    File.Delete(filePath + "\\" + classId + " " + months + " " + SubjectId + ".txt");
+                                }
                                 else if (obj.message.Equals("true"))
                                 {
                                     File.Delete(filePath + "\\" + classId + " " + months + " " + SubjectId + ".txt");
