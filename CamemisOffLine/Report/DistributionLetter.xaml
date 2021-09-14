@@ -254,10 +254,10 @@
 
                     <Grid Grid.Column="1">
                         <StackPanel Orientation="Vertical">
-                            <Label HorizontalAlignment="Left">
+                            <Label HorizontalAlignment="Left" Margin="20 0 0 0">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="ថ្ងៃ" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
-                                    <TextBlock Name="lblDay" Text="..................." FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
+                                    <TextBlock Name="lblDay" Text=".........................." FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                     <TextBlock Text="ខែ" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                     <TextBlock Name="lblMonths" Text="..................." FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                     <TextBlock Text="ឆ្នាំ" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>

@@ -3432,7 +3432,7 @@ namespace CamemisOffLine.Windows
             if (Teacher.InternetChecker() == true && internet)
             {
                 message.title = "ដំណឹង";
-                message.discription = "តើអ្នកពិតជាចង់ធ្វើការគណនាស្មែនទេ?";
+                message.discription = "តើអ្នកពិតជាចង់ធ្វើការគណនាមែនទេ?";
                 this.Opacity = 0.5;
                 message.ShowDialog();
                 this.Opacity = 1;

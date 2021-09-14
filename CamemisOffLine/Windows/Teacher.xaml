@@ -313,12 +313,12 @@
                                 <Grid Margin="-3 0 -3 -3">
                                    <Grid Margin="10 0 10 10" Background="WhiteSmoke">
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="100"></RowDefinition>
+                                            <RowDefinition Height="70"></RowDefinition>
                                             <RowDefinition Height="*"></RowDefinition>
                                         </Grid.RowDefinitions>
 
                                         <Grid Grid.Row="0">
-                                            <Grid Height="50" Margin="10 0 27 0" Background="White" VerticalAlignment="Bottom">
+                                            <Grid Height="50" Margin="10 0 27 0" Background="White" VerticalAlignment="Center">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*"/>
                                                     <ColumnDefinition Width="600"/>
@@ -354,7 +354,7 @@
                                             </Grid>
                                         </Grid>
                                        
-                                        <ScrollViewer  Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="0 10 0 0">
+                                        <ScrollViewer  Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="0 0 0 0">
 
                                             <StackPanel Orientation="Vertical" Margin="10 0 10 10" Background="White">
 
@@ -632,7 +632,7 @@
                                                                             <Grid.Resources>
                                                                                 <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#4C1183CA" />
                                                                             </Grid.Resources>
-                                                                            <DataGrid Name="DGStaffAtt1" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 0 10 10" BorderThickness="1 0 1 0" RowHeight="40" BorderBrush="#7F808080" Grid.Column="0" FontSize="14" GridLinesVisibility="All" SelectionUnit="FullRow" SelectionMode="Extended" AutoGenerateColumns="False" Background="#7FFFFFFF" CanUserSortColumns="False" AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" VirtualizingPanel.ScrollUnit="Pixel" IsReadOnly="True" ScrollViewer.CanContentScroll="True">
+                                                                            <DataGrid Name="DGStaffAtt1" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="3 0 3 5" BorderThickness="1 0 1 0" RowHeight="40" BorderBrush="#7F808080" Grid.Column="0" FontSize="14" GridLinesVisibility="All" SelectionUnit="FullRow" SelectionMode="Extended" AutoGenerateColumns="False" Background="#7FFFFFFF" CanUserSortColumns="False" AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" VirtualizingPanel.ScrollUnit="Pixel" IsReadOnly="True" ScrollViewer.CanContentScroll="True">
                                                                                 <DataGrid.Resources>
                                                                                     <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                                                                                         <Setter Property="Background" Value="White" />
@@ -655,7 +655,7 @@
                                                                                 </DataGrid.Resources>
 
                                                                                 <DataGrid.Columns>
-                                                                                    <DataGridTextColumn Header="លេខ" MinWidth="70" Width="0.6*" FontSize="15" Binding="{Binding number}">
+                                                                                    <DataGridTextColumn Header="លេខ" MinWidth="60" Width="0.6*" FontSize="13" Binding="{Binding number}">
                                                                                         <DataGridTextColumn.ElementStyle>
                                                                                             <Style TargetType="TextBlock">
                                                                                                 <Setter Property="Foreground" Value="Black"></Setter>
@@ -670,17 +670,18 @@
                                                                                     <!--//............................Name............................-->
 
 
-                                                                                    <DataGridTextColumn Width="2*" MinWidth="180" FontSize="15" Header="គោត្តនាម-នាមខ្លួន" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Binding="{Binding name}">
+                                                                                    <DataGridTextColumn Width="2*" MinWidth="140" FontSize="13" Header="គោត្តនាម-នាមខ្លួន" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Binding="{Binding name}">
                                                                                         <DataGridTextColumn.ElementStyle>
                                                                                             <Style TargetType="TextBlock">
                                                                                                 <Setter Property="Foreground" Value="Black"></Setter>
                                                                                                 <Setter Property="FontWeight" Value="Thin"></Setter>
                                                                                                 <Setter Property="HorizontalAlignment" Value="Left"/>
                                                                                                 <Setter Property="VerticalAlignment" Value="Center"/>
+                                                                                                <Setter Property="Padding" Value="0"/>
                                                                                             </Style>
                                                                                         </DataGridTextColumn.ElementStyle>
                                                                                     </DataGridTextColumn>
-                                                                                    <DataGridTextColumn Header="ភេទ" Width="0.6*" MinWidth="60" FontSize="14" Binding="{Binding gender}">
+                                                                                    <DataGridTextColumn Header="ភេទ" Width="0.6*" MinWidth="60" FontSize="13" Binding="{Binding gender}">
                                                                                         <DataGridTextColumn.ElementStyle>
                                                                                             <Style TargetType="TextBlock">
                                                                                                 <Setter Property="Foreground" Value="Black"></Setter>
@@ -693,13 +694,13 @@
                                                                                     </DataGridTextColumn>
 
                                                                                     <!--//........................................................-->
-                                                                                    <DataGridTextColumn Header="តួនាទី" Width="1.2*" MinWidth="120" FontSize="14" Binding="{Binding position}">
+                                                                                    <DataGridTextColumn Header="តួនាទី" Width="1.2*" MinWidth="170" FontSize="11" Binding="{Binding position}">
 
                                                                                         <DataGridTextColumn.ElementStyle>
 
                                                                                             <Style TargetType="TextBlock">
                                                                                                 <Setter Property="Foreground" Value="Black"></Setter>
-
+                                                                                                <Setter Property="FontSize" Value="6"></Setter>
                                                                                                 <Setter Property="FontWeight" Value="Thin"></Setter>
                                                                                                 <Setter Property="HorizontalAlignment" Value="Left"/>
                                                                                                 <Setter Property="VerticalAlignment" Value="Center"/>
@@ -708,7 +709,7 @@
                                                                                     </DataGridTextColumn>
 
 
-                                                                                    <DataGridTemplateColumn MinWidth="100" Width="*" Header="ព្រឹក(ចូល)">
+                                                                                    <DataGridTemplateColumn MinWidth="100">
 
 
                                                                                         <DataGridTemplateColumn.CellTemplate>
@@ -725,7 +726,7 @@
                                                                                     </DataGridTemplateColumn>
 
                                                                                     <!--//........................................................-->
-                                                                                    <DataGridTemplateColumn MinWidth="100" Width="*" Header="ព្រឹក(ចេញ)">
+                                                                                    <DataGridTemplateColumn MinWidth="100">
                                                                                         <DataGridTemplateColumn.CellTemplate>
                                                                                             <DataTemplate>
                                                                                                 <Grid VerticalAlignment="Center">
@@ -739,7 +740,7 @@
                                                                                     <!--//............................class............................-->
 
 
-                                                                                    <DataGridTemplateColumn MinWidth="100" Width="*" Header="ល្ងាច(ចូល)">
+                                                                                    <DataGridTemplateColumn MinWidth="100">
 
 
                                                                                         <DataGridTemplateColumn.CellTemplate>
@@ -753,10 +754,36 @@
                                                                                             </DataTemplate>
                                                                                         </DataGridTemplateColumn.CellTemplate>
 
+                                                                                        <DataGridTemplateColumn.Header>
+                                                                                            <Grid Height="99" Width="199" Margin="-317 -10 -16 -10" Background="White">
+                                                                                                <Grid>
+                                                                                                    <StackPanel>
+                                                                                                        <Grid Height="50">
+                                                                                                            <Border BorderBrush="LightGray" BorderThickness="0 0 0 1"/>
+                                                                                                            <Label Content="ព្រឹក" FontSize="14" FontWeight="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                                        </Grid>
+                                                                                                        <Grid Height="50">
+                                                                                                            <Grid.ColumnDefinitions>
+                                                                                                                <ColumnDefinition Width="*"/>
+                                                                                                                <ColumnDefinition Width="*"/>
+                                                                                                            </Grid.ColumnDefinitions>
+                                                                                                            <Grid Grid.Column="0">
+                                                                                                                <Border BorderBrush="LightGray" BorderThickness="0 0 1 0"/>
+                                                                                                                <Label Content="ចូល" FontWeight="Black" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                                            </Grid>
+                                                                                                            <Grid Grid.Column="1">
+                                                                                                                <Label Content="ចេញ" FontSize="14" FontWeight="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                                            </Grid>
+                                                                                                        </Grid>
+                                                                                                    </StackPanel>
+                                                                                                </Grid>
+                                                                                            </Grid>
+                                                                                        </DataGridTemplateColumn.Header>
+
                                                                                     </DataGridTemplateColumn>
 
                                                                                     <!--//........................................................-->
-                                                                                    <DataGridTemplateColumn MinWidth="100" Width="*" Header="ល្ងាច(ចេញ)">
+                                                                                    <DataGridTemplateColumn MinWidth="100">
 
 
                                                                                         <DataGridTemplateColumn.CellTemplate>
@@ -769,6 +796,32 @@
                                                                                                 </Grid>
                                                                                             </DataTemplate>
                                                                                         </DataGridTemplateColumn.CellTemplate>
+
+                                                                                        <DataGridTemplateColumn.Header>
+                                                                                            <Grid Height="99" Width="200" Margin="-116 -10 -16 -10" Background="White">
+                                                                                                <Grid>
+                                                                                                    <StackPanel>
+                                                                                                        <Grid Height="50">
+                                                                                                            <Border BorderBrush="LightGray" BorderThickness="0 0 0 1"/>
+                                                                                                            <Label Content="ល្ងាច" FontSize="14" FontWeight="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                                        </Grid>
+                                                                                                        <Grid Height="50">
+                                                                                                            <Grid.ColumnDefinitions>
+                                                                                                                <ColumnDefinition Width="*"/>
+                                                                                                                <ColumnDefinition Width="*"/>
+                                                                                                            </Grid.ColumnDefinitions>
+                                                                                                            <Grid Grid.Column="0">
+                                                                                                                <Border BorderBrush="LightGray" BorderThickness="0 0 1 0"/>
+                                                                                                                <Label Content="ចូល" FontWeight="Black" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                                            </Grid>
+                                                                                                            <Grid Grid.Column="1">
+                                                                                                                <Label Content="ចេញ" FontSize="14" FontWeight="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                                            </Grid>
+                                                                                                        </Grid>
+                                                                                                    </StackPanel>
+                                                                                                </Grid>
+                                                                                            </Grid>
+                                                                                        </DataGridTemplateColumn.Header>
 
                                                                                     </DataGridTemplateColumn>
 
@@ -838,7 +891,7 @@
                                                                                                     <StackPanel>
                                                                                                         <Grid Height="50">
                                                                                                             <Border BorderBrush="LightGray" BorderThickness="0 0 0 1"/>
-                                                                                                            <Label Content="អវត្តមាន" FontSize="13" FontWeight="Thin" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                                            <Label Content="អវត្តមាន" FontSize="14" FontWeight="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                                                                                         </Grid>
                                                                                                         <Grid Height="50">
                                                                                                             <Grid.ColumnDefinitions>
@@ -847,10 +900,10 @@
                                                                                                             </Grid.ColumnDefinitions>
                                                                                                             <Grid Grid.Column="0">
                                                                                                                 <Border BorderBrush="LightGray" BorderThickness="0 0 1 0"/>
-                                                                                                                <Label Content="មានច្បាប់" FontWeight="Thin" FontSize="13" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                                                <Label Content="មានច្បាប់" FontWeight="Black" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                                                                                             </Grid>
                                                                                                             <Grid Grid.Column="1">
-                                                                                                                <Label Content="ឥតច្បាប់" FontSize="13" FontWeight="Thin" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                                                                <Label Content="ឥតច្បាប់" FontSize="14" FontWeight="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                                                                                             </Grid>
                                                                                                         </Grid>
                                                                                                     </StackPanel>
@@ -1402,7 +1455,7 @@
                                     </Grid.RowDefinitions>
                                     <Grid Grid.Row="0" Margin="0 0 7 0" Name="grideStuResult">
                                         <Grid Height="40" Background="White">
-                                            <Grid  Margin="138,5,0,5" HorizontalAlignment="Left" Width="69">
+                                            <Grid  Margin="155,5,0,5" HorizontalAlignment="Left" Width="75">
                                                 <Path 
                                                   Data="M5,0
                                                     v32 
@@ -1428,7 +1481,7 @@
 
 
 
-                                            <Grid Margin="2,5,0,5"  Width="155" HorizontalAlignment="Left">
+                                            <Grid Margin="2,5,0,5"  Width="170" HorizontalAlignment="Left">
                                                 <Path 
                                                   Data="M5,0
                                                     v32 
@@ -1840,7 +1893,7 @@
                                                                     <TextBlock Text="{x:Static language:Lang.search_students_}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" Margin="10 0 0 0"/>
                                                                     <Grid>
                                                                         <ComboBox Name="cmbStudentName" Width="130" Height="3" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Left" Margin="10,0,0,-8" SelectionChanged="cmbStudentName_SelectionChanged" VerticalAlignment="Bottom"></ComboBox>
-                                                                        <TextBox Name="txtStudentName"  materialDesign:HintAssist.Hint="{x:Static language:Lang.select_students}" Width="130" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Left" Margin="10,0,0,0" BorderThickness="1" BorderBrush="LightGray" GotFocus="txtStudentName_GotFocus" TextChanged="txtStudentName_TextChanged" Foreground="Black" Background="White" Height="33" Cursor="Hand" Padding="3 0 0 0"/>
+                                                                        <TextBox Name="txtStudentName"  materialDesign:HintAssist.Hint="{x:Static language:Lang.select_students}" Width="135" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Left" Margin="10,0,0,0" BorderThickness="1" BorderBrush="LightGray" GotFocus="txtStudentName_GotFocus" TextChanged="txtStudentName_TextChanged" Foreground="Black" Background="White" Height="33" Cursor="Hand" Padding="2 0 0 0"/>
                                                                     </Grid>
                                                                 </StackPanel>
                                                             </Grid>

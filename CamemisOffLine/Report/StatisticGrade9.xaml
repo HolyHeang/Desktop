@@ -385,7 +385,7 @@
                                 <Label HorizontalAlignment="Left" Margin="0 0 25 0">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="ថ្ងៃ" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                                        <TextBox Name="lblDay" Text="......................" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="auto" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0 -3 0 0"></TextBox>
+                                        <TextBox Name="lblDay" Text="........................." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="auto" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0 -3 0 0"></TextBox>
                                         <TextBlock Text="ខែ" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
                                         <TextBox Name="lblMonths" Text="............." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="auto" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0 -3 0 0"></TextBox>
                                         <TextBlock Text="ឆ្នាំ" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
@@ -394,7 +394,7 @@
                                         <TextBox Name="lblKhmerYear" Text=".............." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="auto" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0 -3 0 0"></TextBox>
                                     </StackPanel>
                                 </Label>
-                                <Label HorizontalAlignment="Right" Margin="0 5 25 0" FontSize="10">
+                                <Label HorizontalAlignment="Right" Margin="0 5 55 0" FontSize="10">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="ថ្ងៃទី" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
                                         <TextBlock Text="{Binding Text,ElementName=lblDay}" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>

@@ -299,7 +299,7 @@
                                 <Label HorizontalAlignment="Left">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="ថ្ងៃ" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
-                                        <TextBlock Name="lblDay" Text="..................." FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
+                                        <TextBlock Name="lblDay" Text="..........................." FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                         <TextBlock Text="ខែ" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                         <TextBlock Name="lblMonths" Text="..................." FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                         <TextBlock Text="ឆ្នាំ" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
@@ -308,7 +308,7 @@
                                         <TextBlock Name="lblKhmerYear" Text="..................." FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                     </StackPanel>
                                 </Label>
-                                <Label HorizontalAlignment="Right" Margin="0 5 42 0" FontSize="10">
+                                <Label HorizontalAlignment="Right" Margin="0 5 52 0" FontSize="10">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="ថ្ងៃទី" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                         <TextBlock Text="{Binding Text,ElementName=lblDay}" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>

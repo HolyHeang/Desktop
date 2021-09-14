@@ -335,10 +335,10 @@
                         </Grid>
                         <Grid Grid.Column="1" Margin="50 0 0 0">
                             <StackPanel Orientation="Vertical">
-                                <Label HorizontalAlignment="Left">
+                                <Label HorizontalAlignment="Center">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="ថ្ងៃ" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
-                                        <TextBlock Name="lblDay" Text="..................." FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
+                                        <TextBlock Name="lblDay" Text="..........................." FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                         <TextBlock Text="ខែ" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                         <TextBlock Name="lblMonths" Text="..................." FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                         <TextBlock Text="ឆ្នាំ" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
@@ -347,7 +347,7 @@
                                         <TextBlock Name="lblKhmerYear" Text="..................." FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                     </StackPanel>
                                 </Label>
-                                <Label HorizontalAlignment="Left" Margin="0 5 0 0" FontSize="10">
+                                <Label HorizontalAlignment="Center" Margin="0 5 0 0" FontSize="10">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="ថ្ងៃទី" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                         <TextBlock Text="{Binding Text,ElementName=lblDay}" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>

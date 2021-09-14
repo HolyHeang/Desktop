@@ -540,6 +540,7 @@ namespace CamemisOffLine
         string dateForStaffAtt = "";
         private async void btnStaffAttendanceReport_Click(object sender, RoutedEventArgs e)
         {
+            tabMenu.SelectedIndex = 1;
             gridAcc.Visibility = Visibility.Collapsed;
             var bc = new BrushConverter();
             //___________________Change  button State______________________
@@ -580,7 +581,7 @@ namespace CamemisOffLine
             MateriaSettingUp.Foreground = Brushes.White;
             MateriaSettingDrop.Foreground = Brushes.White;
             //________________End__________________________________________
-            tabMenu.SelectedIndex = 1;
+           
             gridAcc.Visibility = Visibility.Visible;
             lblnameCompany.Visibility = Visibility.Visible;
             gridfeature.Margin = new Thickness(0, 0, 0, 0);
@@ -611,7 +612,7 @@ namespace CamemisOffLine
             var accessUrl = Properties.Settings.Default.acessUrl;
             var token = Properties.Settings.Default.Token;
 
-           
+            
             dateForStaffAtt = DPStaffAtt.SelectedDate.Value.ToString("dd/MM/yyyy");
 
             if(InternetChecker())
