@@ -1043,7 +1043,10 @@ namespace CamemisOffLine.Windows
                                 var obj = JObject.Parse(datas).ToObject<InputScore>();
                                 message1.title = "ការបញ្ចូនទិន្នន័យ";
                                 if (obj.message.Equals("data error"))
+                                {
                                     message1.discription = "ទិន្នន័យរបស់អ្នកមាន​បញ្ហា សូមត្រួតពិនិត្យឡើងវិញ";
+                                    File.Delete(filePath + "\\" + classId + " " + months + " " + SubjectId + ".txt");
+                                }
                                 else if (obj.message.Equals("true"))
                                 {
                                     File.Delete(filePath + "\\" + classId + " " + months + " " + SubjectId + ".txt");
@@ -1058,6 +1061,10 @@ namespace CamemisOffLine.Windows
                             }
                         }
                     }
+                    message1.Owner = this;
+                    this.Opacity = 0.5;
+                    message1.ShowDialog();
+                    this.Opacity = 1;
                 }
             }
             else
@@ -1066,13 +1073,13 @@ namespace CamemisOffLine.Windows
                 message1.discription = Properties.Langs.Lang.No_internet_connection;
                 message1.subtxt = "សូមធ្វើការភ្ជាប់ អ៊ីនធឺណេត";
                 message1.buttonType = 2;
+                message1.Owner = this;
+                this.Opacity = 0.5;
+                message1.ShowDialog();
+                this.Opacity = 1;
             }
             this.IsEnabled = true;
             load.Close();
-            message1.Owner = this;
-            this.Opacity = 0.5;
-            message1.ShowDialog();
-            this.Opacity = 1;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -2391,10 +2398,7 @@ namespace CamemisOffLine.Windows
                         txtDataDate.Text = "កាលបរិច្ឆេទរបស់ទិន្នន័យ : " + obj.Datadate;
                         foreach (var item1 in obj.data)
                         {
-                            if (item1.score == null|| item1.score == "0")
-                            {
-                                item1.score = "";
-                            }
+                            
                             item1.subject_score_max = maxScore;
                             item1.subject_score_min = "0";
                             item1.error = "ពិន្ទុអតិបរិមា: " + maxScore;
@@ -2406,8 +2410,11 @@ namespace CamemisOffLine.Windows
                             txtExpireDate.Text = "ការកំណត់ថ្ងៃសុពលភាពនៃការបញ្ចូលពិន្ទុ : " + expireDate.expired_at;
                             if (expireDate.is_expired == "True")
                             {
-                                
-                                DGScoreMonth.IsEnabled = false;
+                                foreach (var i in obj.data)
+                                {
+                                    i.Check = true;
+                                    i.Display = false;
+                                }
                                 btnPost.Visibility = Visibility.Collapsed;
                                 btnDeleteAll.Visibility = Visibility.Collapsed;
                                 btnSave.Visibility = Visibility.Collapsed;
@@ -2415,8 +2422,12 @@ namespace CamemisOffLine.Windows
                             }
                             else
                             {
-                                
-                                DGScoreMonth.IsEnabled = true;
+
+                                foreach (var i in obj.data)
+                                {
+                                    i.Check = false;
+                                    i.Display = true;
+                                }
                                 btnPost.Visibility = Visibility.Visible;
                                 btnDeleteAll.Visibility = Visibility.Visible;
                                 btnSave.Visibility = Visibility.Visible;
@@ -2426,7 +2437,11 @@ namespace CamemisOffLine.Windows
                         catch
                         {
                             txtExpireDate.Text = "ការកំណត់ថ្ងៃសុពលភាពនៃការបញ្ចូលពិន្ទុ : --";
-                            DGScoreMonth.IsEnabled = true;
+                            foreach (var i in obj.data)
+                            {
+                                i.Check = false;
+                                i.Display = true;
+                            }
                             btnPost.Visibility = Visibility.Visible;
                             btnDeleteAll.Visibility = Visibility.Visible;
                             btnSave.Visibility = Visibility.Collapsed;
@@ -2536,7 +2551,11 @@ namespace CamemisOffLine.Windows
                         {
                             if (obj.approve_learning_result.is_approved == "1")
                             {
-                                DGScoreMonth.IsEnabled = false;
+                                foreach (var i in obj.data)
+                                {
+                                    i.Check = true;
+                                    i.Display = false;
+                                }
                                 btnPost.Visibility = Visibility.Collapsed;
                                 btnDeleteAll.Visibility = Visibility.Collapsed;
                                 btnSave.Visibility = Visibility.Collapsed;
@@ -2548,14 +2567,22 @@ namespace CamemisOffLine.Windows
                                     var expireDate = JObject.Parse(data[1]).ToObject<MonthlyScoreExpire>().data;
                                     if (expireDate.is_expired == "True")
                                     {
-                                        DGScoreMonth.IsEnabled = false;
+                                        foreach (var i in obj.data)
+                                        {
+                                            i.Check = true;
+                                            i.Display = false;
+                                        }
                                         btnPost.Visibility = Visibility.Collapsed;
                                         btnDeleteAll.Visibility = Visibility.Collapsed;
                                         btnSave.Visibility = Visibility.Collapsed;
                                     }
                                     else
                                     {
-                                        DGScoreMonth.IsEnabled = true;
+                                        foreach (var i in obj.data)
+                                        {
+                                            i.Check = false;
+                                            i.Display = true;
+                                        }
                                         btnPost.Visibility = Visibility.Visible;
                                         btnDeleteAll.Visibility = Visibility.Visible;
                                         btnSave.Visibility = Visibility.Collapsed;
@@ -2564,7 +2591,11 @@ namespace CamemisOffLine.Windows
                                 catch
                                 {
                                     txtExpireDate.Text = "ការកំណត់ថ្ងៃសុពលភាពនៃការបញ្ចូលពិន្ទុ : --";
-                                    DGScoreMonth.IsEnabled = true;
+                                    foreach (var i in obj.data)
+                                    {
+                                        i.Check = false;
+                                        i.Display = true;
+                                    }
                                     btnPost.Visibility = Visibility.Visible;
                                     btnDeleteAll.Visibility = Visibility.Visible;
                                     btnSave.Visibility = Visibility.Collapsed;
@@ -2579,14 +2610,22 @@ namespace CamemisOffLine.Windows
                                 var expireDate = JObject.Parse(data[1]).ToObject<MonthlyScoreExpire>().data;
                                 if (expireDate.is_expired == "True")
                                 {
-                                    DGScoreMonth.IsEnabled = false;
+                                   foreach(var i in obj.data)
+                                    {
+                                        i.Check = true;
+                                        i.Display = false;
+                                    }
                                     btnPost.Visibility = Visibility.Collapsed;
                                     btnDeleteAll.Visibility = Visibility.Collapsed;
                                     btnSave.Visibility = Visibility.Collapsed;
                                 }
                                 else
                                 {
-                                    DGScoreMonth.IsEnabled = true;
+                                    foreach (var i in obj.data)
+                                    {
+                                        i.Display = true;
+                                        i.Check = false;
+                                    }
                                     btnPost.Visibility = Visibility.Visible;
                                     btnDeleteAll.Visibility = Visibility.Visible;
                                     btnSave.Visibility = Visibility.Visible;
@@ -2595,7 +2634,11 @@ namespace CamemisOffLine.Windows
                             catch
                             {
                                 txtExpireDate.Text = "ការកំណត់ថ្ងៃសុពលភាពនៃការបញ្ចូលពិន្ទុ : --";
-                                DGScoreMonth.IsEnabled = true;
+                                foreach (var i in obj.data)
+                                {
+                                    i.Display = true;
+                                    i.Check = false;
+                                }
                                 btnPost.Visibility = Visibility.Visible;
                                 btnDeleteAll.Visibility = Visibility.Visible;
                                 btnSave.Visibility = Visibility.Visible;
@@ -2653,8 +2696,7 @@ namespace CamemisOffLine.Windows
                 var item = sender as ComboBox;
                 var selection = (KeyValuePair<string, string>)item.SelectedItem;
                 //treeViewItemChange(item.id);
-                classId = selection.Value;
-               
+                classId = selection.Value;              
                 LabelTitle.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title_select_month;
                 tabcontrolScore.SelectedIndex = 1;
 

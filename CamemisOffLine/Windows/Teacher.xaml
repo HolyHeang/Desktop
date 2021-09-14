@@ -2863,7 +2863,6 @@
                                                                                                         </Style>
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
-
                                                                                                 <DataGridTextColumn CellStyle="{DynamicResource Siemreap}" MinWidth="100" Width="*" Binding="{Binding result_semester.rank}">
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
@@ -2889,13 +2888,9 @@
                                                                                                         </Style>
                                                                                                     </DataGridTextColumn.ElementStyle>
                                                                                                 </DataGridTextColumn>
-                                                                                               
                                                                                             </DataGrid.Columns>
-
                                                                                         </DataGrid>
                                                                                     </Grid>
-
-
                                                                                 </Grid>
                                                                             </ScrollViewer>
                                                                         </Grid>

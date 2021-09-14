@@ -24,11 +24,13 @@ namespace Library
     public class StudentInformation : INotifyPropertyChanged
     {
         private string Score;
+        
         private bool? Absance_exam;
         private string TeacherRecomment,Color="";
-        private bool Check;
+        public bool Check;
         public int tabIndex { get; set; }
         public string color { get; set; } = "Blue";
+        public bool Display { get; set; }
         public string checkBoxColor 
         {
 
@@ -113,7 +115,7 @@ namespace Library
         {
             get
             {
-                return ((bool)absent_exam) ? false : true;
+                return (((bool)absent_exam)||Check) ? false : true;
             }
             set
             {
