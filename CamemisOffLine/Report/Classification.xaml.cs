@@ -83,12 +83,14 @@ namespace CamemisOffLine.Report
                     }
                     if (term == "FIRST_SEMESTER")
                     {
-                        obj = JObject.Parse(data[0]).ToObject<StudentMonthlyResultData>().data.OrderBy(s => s.result_semester.rank).ToList();
+                        obj = JObject.Parse(data[0]).ToObject<StudentMonthlyResultData>().data;
                     }
                     else
                     {
-                        obj = JObject.Parse(data[1]).ToObject<StudentMonthlyResultData>().data.OrderBy(s => s.result_semester.rank).ToList();
+                        obj = JObject.Parse(data[1]).ToObject<StudentMonthlyResultData>().data;
                     }
+                    obj = obj.Where(s => s.result_semester != null).ToList();
+                    obj = obj.OrderBy(s => s.result_semester.rank).ToList();
                     foreach (var item in obj)
                     {
                         txtClassName.Text = "ថ្នាក់ទី " + item.class_name + " ";
@@ -104,6 +106,7 @@ namespace CamemisOffLine.Report
                         if (item.result_semester.health == null)
                             item.result_semester.health = "--";
                     }
+
                     NumberList(obj.OrderBy(s => s.result_semester.rank).ToList());
                     foreach (var item in obj)
                     {
@@ -136,8 +139,9 @@ namespace CamemisOffLine.Report
                         str = DecodeFrom64(File.ReadAllText(filePath + "\\" + "Year" + classId + ".txt"));
                         data = str.Split('|');
                     }
-                    obj = JObject.Parse(data[0]).ToObject<StudentMonthlyResultData>().data.OrderBy(s => s.result_yearly.rank).ToList();
-
+                    obj = JObject.Parse(data[0]).ToObject<StudentMonthlyResultData>().data;
+                    obj = obj.Where(s => s.result_yearly != null).ToList();
+                    obj = obj.OrderBy(s => s.result_yearly.rank).ToList();
                     foreach (var item in obj)
                     {
                         txtClassName.Text = "ថ្នាក់ទី " + item.class_name + " ";

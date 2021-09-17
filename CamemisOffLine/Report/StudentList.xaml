@@ -46,7 +46,7 @@
                 </Grid>
                 <Grid Height="40" Margin="0 10 0 0" Name="title">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <TextBlock Name="lblMonth" Text="បញ្ជីរាយនាមសិស្សគ្រប់កម្រិតថ្នាក់ ឆ្នាំសិក្សា ២០១៩-២០២០" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="12" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+                        <TextBlock Name="lblMonth" Text="បញ្ជីរាយនាមសិស្សតាមកម្រិតនីមួយៗ ឆ្នាំសិក្សា ២០១៩-២០២០" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="12" Foreground="Black" Margin="0 0 0 0"></TextBlock>
                     </StackPanel>
                 </Grid>
 
@@ -285,7 +285,7 @@
                                 <Label HorizontalAlignment="Center">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="ថ្ងៃ" FontSize="12"  FontFamily="Khmer OS Siemreap"></TextBlock>
-                                        <TextBlock Name="lblDay" Text="..................." FontSize="12"  FontFamily="Khmer OS Siemreap"></TextBlock>
+                                        <TextBlock Name="lblDay" Text=".................................." FontSize="12"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                         <TextBlock Text="ខែ" FontSize="12"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                         <TextBlock Name="lblMonths" Text="..................." FontSize="12"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                         <TextBlock Text="ឆ្នាំ" FontSize="12"  FontFamily="Khmer OS Siemreap"></TextBlock>
@@ -294,7 +294,7 @@
                                         <TextBlock Name="lblKhmerYear" Text="..................." FontSize="12"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                     </StackPanel>
                                 </Label>
-                                <Label HorizontalAlignment="Right" Margin="0 5 85 0" FontSize="10">
+                                <Label HorizontalAlignment="Right" Margin="0 5 125 0" FontSize="10">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="ថ្ងៃទី" FontSize="10"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                         <TextBlock Text="{Binding Text,ElementName=lblDay}" FontSize="10"  FontFamily="Khmer OS Siemreap"></TextBlock>

@@ -234,41 +234,38 @@
                                         <DataGridTemplateColumn.Header>
                                             <Grid Height="138" Width="558" Background="White" Margin="-489 0 0 0">
                                                 <StackPanel Orientation="Vertical">
-                                                    <Grid Height="34.5">
-                                                        <Border BorderBrush="Black" BorderThickness="0 0 0 1"/>
-                                                        <Label Content="ថ្នាក់វិទ្យាសាស្រ្ត" Padding="0 1 0 0" Style="{DynamicResource Siemreap}" FontSize="15" HorizontalContentAlignment="Center"></Label>
-                                                    </Grid>
-                                                    <Grid Height="34.5">
+                                                   
+                                                    <Grid Height="54.5">
                                                         <Border BorderBrush="Black" BorderThickness="0 0 0 1"/>
                                                         <StackPanel Orientation="Horizontal">
                                                             <Grid Width="279">
                                                                 <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
-                                                                <Label Style="{DynamicResource Siemreap}" Content="អង្គគ្លេស" HorizontalContentAlignment="Center"/>
+                                                                <Label Style="{DynamicResource Siemreap}" Content="អង្គគ្លេស" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                                                             </Grid>
                                                             <Grid Width="279">
                                                                 <Border BorderBrush="Black" BorderThickness="0"/>
-                                                                <Label Style="{DynamicResource Siemreap}" Content="បារាំង" HorizontalContentAlignment="Center"/>
+                                                                <Label Style="{DynamicResource Siemreap}" Content="បារាំង" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                                                             </Grid>
                                                         </StackPanel>
                                                     </Grid>
-                                                    <Grid Height="34.5">
+                                                    <Grid Height="48.5">
                                                         <Border BorderBrush="Black" BorderThickness="0 0 0 1"/>
                                                         <StackPanel Orientation="Horizontal">
                                                             <Grid Width="139">
                                                                 <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
-                                                                <Label Style="{DynamicResource Siemreap}" Content="ច.ទ" HorizontalContentAlignment="Center"/>
+                                                                <Label Style="{DynamicResource Siemreap}" VerticalContentAlignment="Center" Content="ច.ទ" HorizontalContentAlignment="Center"/>
                                                             </Grid>
                                                             <Grid Width="140">
                                                                 <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
-                                                                <Label Style="{DynamicResource Siemreap}" Content="បំ.វិ" HorizontalContentAlignment="Center"/>
+                                                                <Label Style="{DynamicResource Siemreap}" Content="បំ.វិ" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                                                             </Grid>
                                                             <Grid Width="140">
                                                                 <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
-                                                                <Label Style="{DynamicResource Siemreap}" Content="ច.ទ" HorizontalContentAlignment="Center"/>
+                                                                <Label Style="{DynamicResource Siemreap}" Content="ច.ទ" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                                                             </Grid>
                                                             <Grid Width="140">
                                                                 <Border BorderBrush="Black" BorderThickness="0"/>
-                                                                <Label Style="{DynamicResource Siemreap}" Content="បំ.វិ" HorizontalContentAlignment="Center"/>
+                                                                <Label Style="{DynamicResource Siemreap}" Content="បំ.វិ" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                                                             </Grid>
                                                         </StackPanel>
                                                     </Grid>
@@ -388,7 +385,7 @@
                                 <Label HorizontalAlignment="Left" Margin="0 0 25 0">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="ថ្ងៃ" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                                        <TextBox Name="lblDay" Text="............." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="auto" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0 -3 0 0"></TextBox>
+                                        <TextBox Name="lblDay" Text="........................." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="auto" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0 -3 0 0"></TextBox>
                                         <TextBlock Text="ខែ" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
                                         <TextBox Name="lblMonths" Text="............." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="auto" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0 -3 0 0"></TextBox>
                                         <TextBlock Text="ឆ្នាំ" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
@@ -397,7 +394,7 @@
                                         <TextBox Name="lblKhmerYear" Text=".............." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="auto" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0 -3 0 0"></TextBox>
                                     </StackPanel>
                                 </Label>
-                                <Label HorizontalAlignment="Right" Margin="0 5 70 0" FontSize="10">
+                                <Label HorizontalAlignment="Right" Margin="0 5 55 0" FontSize="10">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="ថ្ងៃទី" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
                                         <TextBlock Text="{Binding Text,ElementName=lblDay}" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>

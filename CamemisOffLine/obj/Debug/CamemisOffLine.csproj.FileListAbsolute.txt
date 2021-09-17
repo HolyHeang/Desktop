@@ -335,3 +335,5 @@ D:\Clone\10-08-2021\Desktop\CamemisOffLine\obj\Debug\Report\List_of_repeat_stude
 D:\Clone\10-08-2021\Desktop\CamemisOffLine\obj\Debug\Report\Studemt_Exam_up_class.baml
 D:\Clone\10-08-2021\Desktop\CamemisOffLine\obj\Debug\Component\StaffAttdanceApprovedPopup.g.cs
 D:\Clone\10-08-2021\Desktop\CamemisOffLine\obj\Debug\Component\StaffAttdanceApprovedPopup.baml
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Component\StaffAttdanceApprovedPopup.g.cs
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Component\StaffAttdanceApprovedPopup.baml

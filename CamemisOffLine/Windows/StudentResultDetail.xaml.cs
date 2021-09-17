@@ -37,17 +37,21 @@ namespace CamemisOffLine.Windows
             InitializeComponent();
             results = list;
             this.studentName = studentName;
-            if (title == "month")
+            try
             {
-                state = result.result_monthly.rank;
+                if (title == "month")
+                {
+                    state = result.result_monthly.rank;
+                }
+                else if (title == "semester")
+                {
+                    state = result.result_semester.rank;
+                }
+                this.title = title;
+                total = list.Count;
+                showData(state);
             }
-            else if(title== "semester")
-            {
-                state = result.result_semester.rank;
-            }
-            this.title = title;
-            total = list.Count;
-            showData(state);
+            catch { }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

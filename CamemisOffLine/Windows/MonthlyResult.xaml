@@ -49,7 +49,7 @@
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
                     <Grid>
-                        <DataGrid Margin="5 0 0 0" AutoGenerateColumns="False" Name="DatagridResult" BorderThickness="1 1 1 0" Background="White" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="25cm" CanUserAddRows="False">
+                        <DataGrid Margin="5 0 0 0" AutoGenerateColumns="False" Name="DatagridResult" BorderThickness="1 1 1 0" Background="White" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="26cm" CanUserAddRows="False">
                             <DataGrid.Resources>
                                 <Style TargetType="DataGrid">
                                     <Setter Property="Background" Value="Transparent"/>
@@ -94,7 +94,7 @@
                                         </Style>
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn Header="គោត្តនាម និងនាម" Width="2.5*" Binding="{Binding studentName}" MinWidth="250" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="14">
+                                <DataGridTextColumn Header="គោត្តនាម និងនាម" Width="2.5*" Binding="{Binding studentName}" MinWidth="207" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="14">
                                     <DataGridTextColumn.ElementStyle>
                                         <Style TargetType="TextBlock">
                                             <Setter Property="Foreground" Value="Black"></Setter>
@@ -103,6 +103,26 @@
                                             <Setter Property="Padding" Value="0 0 0 0"/>
                                             <Setter Property="VerticalAlignment" Value="Center"/>
                                             <Setter Property="FontFamily" Value="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="ភេទ" Width="0.8*" Binding="{Binding gender}" MinWidth="80" FontSize="14">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Foreground" Value="Black"></Setter>
+                                            <Setter Property="FontWeight" Value="Thin"></Setter>
+                                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="ថ្ងែខែឆ្នាំកំណើត" Width="1.3*" Binding="{Binding date}" MinWidth="122" FontSize="14">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Foreground" Value="Black"></Setter>
+                                            <Setter Property="FontWeight" Value="Thin"></Setter>
+                                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                                            <Setter Property="VerticalAlignment" Value="Center"/>
                                         </Style>
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
@@ -197,7 +217,7 @@
                             </Label>
                             <Label HorizontalAlignment="Center" Margin="0 10 0 0" FontSize="10">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="ធ្វើនៅរាជធានីភ្នំពេញ " FontSize="14"  Style="{DynamicResource Siemreap}"></TextBlock>
+                                    <TextBlock Text="ធ្វើនៅ..............." FontSize="14"  Style="{DynamicResource Siemreap}"></TextBlock>
                                     <TextBlock Text="ថ្ងៃទី" FontSize="14"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                     <TextBlock Text="{Binding Text,ElementName=lblDay}" FontSize="14" Style="{DynamicResource Siemreap}"></TextBlock>
                                     <TextBlock Text="ខែ" FontSize="14"  FontFamily="Khmer OS Siemreap"></TextBlock>

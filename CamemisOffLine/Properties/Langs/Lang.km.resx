@@ -244,7 +244,7 @@
     <value>កំហុស</value>
   </data>
   <data name="Export data to Excel" xml:space="preserve">
-    <value>នាំចេញទិន្នន័យទៅ Excel</value>
+    <value>នាំចេញទិន្នន័យលទ្ធផលពិន្ទុទៅ Excel</value>
   </data>
   <data name="fail" xml:space="preserve">
     <value>បរាជ័យ</value>
@@ -274,7 +274,7 @@
     <value>ក្រុម</value>
   </data>
   <data name="Import data to Excel" xml:space="preserve">
-    <value>នាំចូលទិន្នន័យទៅ Excel</value>
+    <value>នាំចូលទិន្នន័យលទ្ធផលពិន្ទុពី Excel</value>
   </data>
   <data name="Incorect User/Pass" xml:space="preserve">
     <value>ឈ្មោះអ្នកប្រើឬពាក្យសម្ងាត់មិនត្រឹមត្រូវ!</value>
@@ -286,7 +286,7 @@
     <value>បញ្ជូលពិន្ទុ</value>
   </data>
   <data name="Internet" xml:space="preserve">
-    <value>អ៊ិនធឺណែត</value>
+    <value>អ៊ីនធឺណេត</value>
   </data>
   <data name="kh" xml:space="preserve">
     <value>ខ្មែរ</value>
@@ -346,7 +346,7 @@
     <value>ថ្មី</value>
   </data>
   <data name="No internet connection" xml:space="preserve">
-    <value>មិនមានការភ្ជាប់អ៊ិនធឺណែត</value>
+    <value>មិនមានការភ្ជាប់អ៊ីនធឺណេត</value>
   </data>
   <data name="noresultdata" xml:space="preserve">
     <value>គ្មានទិន្ន័យ!</value>
@@ -463,7 +463,7 @@
     <value>ជ្រើសរើសឆ្នាំសិក្សា</value>
   </data>
   <data name="select students" xml:space="preserve">
-    <value>សូមជ្រើសរើសសិស្ស</value>
+    <value>ស្វែងរកសិស្សតាមអក្ខរក្រម</value>
   </data>
   <data name="semester" xml:space="preserve">
     <value>ប្រចាំឆ្នាំ</value>
@@ -535,7 +535,7 @@
     <value>ស្ថិតិសិស្សតាមថ្នាក់</value>
   </data>
   <data name="Student Statistics for Education Staff" xml:space="preserve">
-    <value>ស្ថិតិសិស្សថ្នាក់ បុគ្គលិកអប់រំ</value>
+    <value>ស្ថិតិសិស្ស ថ្នាក់ បុគ្គលិកអប់រំ</value>
   </data>
   <data name="study results" xml:space="preserve">
     <value>លទ្ធផលសិក្សា</value>

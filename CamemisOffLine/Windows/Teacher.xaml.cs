@@ -540,65 +540,9 @@ namespace CamemisOffLine
         string dateForStaffAtt = "";
         private async void btnStaffAttendanceReport_Click(object sender, RoutedEventArgs e)
         {
-            Loading loading = new Loading();
-            loading.Owner = this;
-            loading.Show();
-            this.sender = sender;
-            this.e = e;
+            tabMenu.SelectedIndex = 1;
+            gridAcc.Visibility = Visibility.Collapsed;
             var bc = new BrushConverter();
-            var accessUrl = Properties.Settings.Default.acessUrl;
-            var token = Properties.Settings.Default.Token;
-
-            dateForStaffAtt = DPStaffAtt.SelectedDate.Value.ToString("dd/MM/yyyy");
-
-            if(InternetChecker())
-            {
-                int i = 1;
-                var respone = await RESTApiHelper.GetAll(accessUrl, "/staff-attendance-permission?date=" + dateForStaffAtt, token);
-                var respone1 = await RESTApiHelper.GetAll(accessUrl, "/get-daily-staff-attendance-report?date=" + dateForStaffAtt, token);
-                var obj = JObject.Parse(respone).ToObject<StaffPermissionList>().data;
-                var obj1 = JObject.Parse(respone1).ToObject<StaffAttendanceDailyList>().data;
-                listAttStaff = JObject.Parse(respone1).ToObject<StaffAttendanceDailyList>();
-                foreach (var item in obj)
-                {
-                    item.number = i.ToString();
-                    if (item.is_approve == null)
-                    {
-                        item.approved_at = "";
-                        item.visble = "Visible";
-                    }
-                    else
-                    {
-                        item.visble = "Collapsed";
-                    }
-                    i++;
-                }
-                i = 1;
-                foreach (var item in listAttStaff.data)
-                {
-                    requestIdPermission = item.id;
-                    item.number = i.ToString();
-                    if (item.gender == "1")
-                        item.gender = "ប្រុស";
-                    else
-                        item.gender = "ស្រី";
-                    if (!item.daily_present.morning.in_time.Equals(""))
-                        item.mIn = "Red";
-                    if (!item.daily_present.morning.out_time.Equals(""))
-                        item.mOut = "Red";
-                    if (!item.daily_present.afternoon.out_time.Equals(""))
-                        item.aOut = "Red";
-                    if (!item.daily_present.afternoon.in_time.Equals(""))
-                        item.aIn = "Red";
-
-                    i++;
-                }
-                DGStaffAtt.ItemsSource = obj;
-                DGStaffAtt1.ItemsSource = listAttStaff.data;
-
-                staffs = obj1;           
-            }
-
             //___________________Change  button State______________________
             btnStaffAttendanceReport.Background = Brushes.White;
             Tiltle.Content = Properties.Langs.Lang.Staff_Att_Re;
@@ -637,7 +581,7 @@ namespace CamemisOffLine
             MateriaSettingUp.Foreground = Brushes.White;
             MateriaSettingDrop.Foreground = Brushes.White;
             //________________End__________________________________________
-            tabMenu.SelectedIndex = 1;
+           
             gridAcc.Visibility = Visibility.Visible;
             lblnameCompany.Visibility = Visibility.Visible;
             gridfeature.Margin = new Thickness(0, 0, 0, 0);
@@ -659,7 +603,68 @@ namespace CamemisOffLine
             gridLanguage.Visibility = Visibility.Collapsed;
             //....................End.........................
 
-           
+            Loading loading = new Loading();
+            loading.Owner = this;
+            loading.Show();
+            this.sender = sender;
+            this.e = e;
+            
+            var accessUrl = Properties.Settings.Default.acessUrl;
+            var token = Properties.Settings.Default.Token;
+
+            
+            dateForStaffAtt = DPStaffAtt.SelectedDate.Value.ToString("dd/MM/yyyy");
+
+            if(InternetChecker())
+            {
+                int i = 1;
+                var respone = await RESTApiHelper.GetAll(accessUrl, "/staff-attendance-permission?date=" + dateForStaffAtt, token);
+                var respone1 = await RESTApiHelper.GetAll(accessUrl, "/get-daily-staff-attendance-report?date=" + dateForStaffAtt, token);
+                var obj = JObject.Parse(respone).ToObject<StaffPermissionList>().data;
+                var obj1 = JObject.Parse(respone1).ToObject<StaffAttendanceDailyList>().data;
+                listAttStaff = JObject.Parse(respone1).ToObject<StaffAttendanceDailyList>();
+                foreach (var item in obj)
+                {
+                    item.number = i.ToString();
+                    if (item.is_approve == null)
+                    {
+                        item.approved_at = "";
+                        item.visble = "Visible";
+                    }
+                    else
+                    {
+                        item.visble = "Collapsed";
+                    }
+                    i++;
+                }
+                i = 1;
+                foreach (var item in listAttStaff.data)
+                {
+                    requestIdPermission = item.id;
+                    staffName.Add(item.name);
+                    item.number = i.ToString();
+                    if (item.gender == "1")
+                        item.gender = "ប្រុស";
+                    else
+                        item.gender = "ស្រី";
+                    if (!item.daily_present.morning.in_time.Equals(""))
+                        item.mIn = "Red";
+                    if (!item.daily_present.morning.out_time.Equals(""))
+                        item.mOut = "Red";
+                    if (!item.daily_present.afternoon.out_time.Equals(""))
+                        item.aOut = "Red";
+                    if (!item.daily_present.afternoon.in_time.Equals(""))
+                        item.aIn = "Red";
+
+                    i++;
+                }
+                DGStaffAtt.ItemsSource = obj;
+                DGStaffAtt1.ItemsSource = listAttStaff.data;
+
+                staffs = obj1;           
+            }
+
+            gridAcc.Visibility = Visibility.Collapsed;
             check = false;
             loading.Close();
         }
@@ -1310,7 +1315,7 @@ namespace CamemisOffLine
             if (MateriaFeaprintdrop.Visibility == Visibility.Visible)
             {
 
-                btnTeacher.Visibility = Visibility.Visible;
+                btnTeacher.Visibility = Visibility.Collapsed;
                 MateriaFeaprintUp.Visibility = Visibility.Visible;
                 btnStudent.Visibility = Visibility.Visible;
 
@@ -2236,7 +2241,8 @@ namespace CamemisOffLine
             if (tabStudentResult.SelectedIndex == 1)
             {
                 title = "month";
-                AllSubMonthlyResult result = new AllSubMonthlyResult(true, report.data, title,yearTitle);
+                var data = report.data.Where(s => s.result_monthly != null);
+                AllSubMonthlyResult result = new AllSubMonthlyResult(true, data.OrderBy(s=>s.result_monthly.rank).ToList(), title,yearTitle);
                 loading.Show();
                 this.IsEnabled = false;
                 result.Show();
@@ -2247,7 +2253,8 @@ namespace CamemisOffLine
             else if (tabStudentResult.SelectedIndex == 2)
             {
                 title = "semester";
-                AllSubMonthlyResult result = new AllSubMonthlyResult(true, report.data.OrderBy(r => r.result_semester.rank).ToList(), title,yearTitle);
+                var data = report.data.Where(s => s.result_semester != null);
+                AllSubMonthlyResult result = new AllSubMonthlyResult(true, data.OrderBy(r => r.result_semester.rank).ToList(), title,yearTitle);
                 loading.Show();
                 this.IsEnabled = false;
                 result.Show();
@@ -2260,17 +2267,40 @@ namespace CamemisOffLine
             List<StudentMonthlyResult> results = new List<StudentMonthlyResult>();
             if (startProgram)
             {
+               
                 if (tabStudentResult.SelectedIndex == 1)
                 {
-                    results = report.data.OrderBy(r => r.result_monthly.rank).ToList();
+                    foreach (var i in report.data)
+                    {
+                        if (i.result_monthly == null)
+                        {
+                            i.result_monthly = new Library.MonthlyResult { rank = report.data.Count(),avg_score="--",absence_exam=2 };
+                        }
+                    }
+                    results = report.data.OrderBy(r => r.result_monthly!=null).ThenBy(r=>r.result_monthly.rank).ToList();
                 }
                 else if (tabStudentResult.SelectedIndex == 2)
                 {
-                    results = report.data.OrderBy(r => r.result_semester.rank).ToList();
+                    foreach (var i in report.data)
+                    {
+                        if (i.result_semester == null)
+                        {
+                            i.result_semester = new resultSemester { rank = report.data.Count(),avg_score="--" };
+                            i.result_semester_exam = new resultSemesterExam { total_score = 0 };
+                        }
+                    }
+                    results = report.data.OrderBy(r => r.result_semester!=null).ThenBy(r => r.result_semester.rank).ToList();
                 }
                 else if (tabStudentResult.SelectedIndex == 3)
                 {
-                    results = report.data.OrderBy(r => r.result_yearly.rank).ToList();
+                    foreach (var i in report.data)
+                    {
+                        if (i.result_yearly == null)
+                        {
+                            i.result_yearly = new resultYearly { rank = report.data.Count(),avg_score="--" };
+                        }
+                    }
+                    results = report.data.OrderBy(r => r.result_yearly!=null).ThenBy(r => r.result_yearly.rank).ToList();
                 }
             }
 
@@ -3287,7 +3317,8 @@ namespace CamemisOffLine
             string teacher = "", title = "";
             if (tabStudentResult.SelectedIndex == 1)
             {
-                foreach (var item in report.data.OrderBy(r => r.result_monthly.rank))
+                var data = report.data.Where(s => s.result_monthly != null);
+                foreach (var item in data.OrderBy(s=>s.result_monthly.rank))
                 {
                     if (item.result_monthly.rank <= 5)
                     {
@@ -3299,7 +3330,8 @@ namespace CamemisOffLine
             }
             else if (tabStudentResult.SelectedIndex == 2)
             {
-                foreach (var item in report.data.OrderBy(r => r.result_semester.rank))
+                var data = report.data.Where(s => s.result_semester != null);
+                foreach (var item in data.OrderBy(r => r.result_semester.rank))
                 {
                     if (item.result_semester.rank <= 5)
                     {
@@ -3311,7 +3343,8 @@ namespace CamemisOffLine
             }
             else if (tabStudentResult.SelectedIndex == 3)
             {
-                foreach (var item in report.data.OrderBy(r => r.result_yearly.rank))
+                var data = report.data.Where(s => s.result_yearly != null);
+                foreach (var item in data.OrderBy(r => r.result_yearly.rank))
                 {
                     if (item.result_yearly.rank <= 5)
                     {
@@ -3599,13 +3632,23 @@ namespace CamemisOffLine
         {
             string title = "";
             if (tabStudentResult.SelectedIndex == 1)
+            {
                 title = "month";
+                var data = report.data.Where(s => s.result_monthly != null);
+                data = data.OrderBy(s => s.result_monthly.rank);
+                AllSubMonthlyResult result = new AllSubMonthlyResult(false, data.ToList(), title);
+                result.Show();
+            }
             else if (tabStudentResult.SelectedIndex == 2)
+            {
                 title = "semester";
-            Mouse.OverrideCursor = System.Windows.Input.Cursors.Wait;
-            AllSubMonthlyResult result = new AllSubMonthlyResult(false, report.data, title);
-            result.Show();
-            Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
+                var data = report.data.Where(s => s.result_semester_exam != null);
+                data = data.OrderBy(s => s.result_semester_exam.rank);
+                AllSubMonthlyResult result = new AllSubMonthlyResult(false,data.ToList(), title);
+                result.Show();
+            }
+
+          
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -4145,7 +4188,7 @@ namespace CamemisOffLine
                     }
 
                 }
-                else if (message.result == 1 && item.id == 2)
+                else if (message.result == 1 && item.id == 4)
                 {
                     if (schoolYearId == "" || classId == "")
                     {
@@ -4175,7 +4218,7 @@ namespace CamemisOffLine
                         student.Show();
                     }
                 }
-                else if (message.result == 1 && item.id == 4)
+                else if (message.result == 1 && item.id == 2)
                 {
                     if (schoolYearId == "" || level == "")
                     {
@@ -4707,6 +4750,7 @@ namespace CamemisOffLine
                 MessageBoxControl message = new MessageBoxControl();
                 message.title = Properties.Langs.Lang.Internet;
                 message.discription = Properties.Langs.Lang.No_internet_connection;
+                message.subtxt = "សូមធ្វើការភ្ជាប់ អ៊ិនធឺណេត";
                 message.buttonType = 2;
                 message.Owner = this;
                 message.ShowDialog();
@@ -5059,6 +5103,15 @@ namespace CamemisOffLine
                     {
                         title = "semester";
                         var data = GetDataForPrint();
+                        foreach (var i in data)
+                        {
+                            if (i.result_semester == null)
+                            {
+                                i.result_semester = new resultSemester { rank = data.Count(), avg_score = "--" };
+                                i.result_semester_exam = new resultSemesterExam { total_score = 0 };
+                            }
+                        }
+                        data = data.OrderBy(s => s.result_semester.rank).ToList();
                         MonthlyResult monthlyResult = new MonthlyResult(data, title,yearTitle);
                         monthlyResult.Show();
                     }
@@ -5066,6 +5119,14 @@ namespace CamemisOffLine
                     {
                         title = "year";
                         var data = GetDataForPrint();
+                        foreach (var i in data)
+                        {
+                            if (i.result_yearly == null)
+                            {
+                                i.result_yearly = new resultYearly { rank = data.Count(), avg_score = "--" };
+                            }
+                        }
+                       data = data.OrderBy(s => s.result_yearly.rank).ToList();
                         MonthlyResult monthlyResult = new MonthlyResult(data, title, yearTitle);
                         monthlyResult.Show();
                     }
@@ -5079,6 +5140,14 @@ namespace CamemisOffLine
                         }
                         else
                         {
+                            foreach (var i in data)
+                            {
+                                if (i.result_monthly == null)
+                                {
+                                    i.result_monthly = new Library.MonthlyResult { rank = data.Count(), avg_score = "--" };
+                                }
+                            }
+                            data = data.OrderBy(s => s.result_monthly.rank).ToList();
                             MonthlyResult monthlyResult = new MonthlyResult(data, title, yearTitle);
                             monthlyResult.Show();
                         }
@@ -5170,6 +5239,7 @@ namespace CamemisOffLine
                         await GetMonthlyResultFormApiAsync();
                     string title = "";
                     var data = GetDataForPrint();
+                    
                     var select = studentMonth;
 
                     foreach(var item in data)
@@ -5182,10 +5252,14 @@ namespace CamemisOffLine
 
                     if (select.Equals("ឆមាសទី១") || select.Equals("ឆមាសទី២"))
                     {
+                        data = data.Where(r => r.result_semester != null).ToList();
+                        data = data.OrderBy(r => r.result_semester.rank).ToList();
                         title = "semester";
                     }
                     else
                     {
+                        data = data.Where(r => r.result_monthly != null).ToList();
+                        data = data.OrderBy(r => r.result_monthly.rank).ToList();
                         title = "month";
                     }
 
@@ -5300,6 +5374,7 @@ namespace CamemisOffLine
         
         List<StaffAttendanceDaily> staffs = new List<StaffAttendanceDaily>();
         StaffAttendanceDailyList listAttStaff = new StaffAttendanceDailyList();
+        List<string> staffName = new List<string>();
         object sender; RoutedEventArgs e;
         private async void btnGetAtt_Click(object sender, RoutedEventArgs e)
         {
@@ -5339,6 +5414,7 @@ namespace CamemisOffLine
                 foreach (var item in listAttStaff.data)
                 {
                     requestIdPermission = item.id;
+                    staffName.Add(item.name);
                     item.number = i.ToString();
                     if (item.gender == "1")
                         item.gender = "ប្រុស";
@@ -5363,26 +5439,95 @@ namespace CamemisOffLine
 
         private void btnSearchStaffAtt_Click(object sender, RoutedEventArgs e)
         {
-            var staff = staffs.Where(i => i.name.Contains(txtSeachStaffName.Text));
+            var staff = staffs.Where(j => j.name.Contains(txtSeachStaffName.Text));
+            int i = 1;
+            foreach (var item in staff)
+            {
+                requestIdPermission = item.id;
+                item.number = i.ToString();
+                if (item.gender == "1")
+                    item.gender = "ប្រុស";
+                else
+                    item.gender = "ស្រី";
+                if (!item.daily_present.morning.in_time.Equals(""))
+                    item.mIn = "Red";
+                if (!item.daily_present.morning.out_time.Equals(""))
+                    item.mOut = "Red";
+                if (!item.daily_present.afternoon.out_time.Equals(""))
+                    item.aOut = "Red";
+                if (!item.daily_present.afternoon.in_time.Equals(""))
+                    item.aIn = "Red";
+                i++;
+            }
             DGStaffAtt1.ItemsSource​ = null;
             DGStaffAtt1.ItemsSource = staff;
         }
 
         private void txtSeachStaffName_TextChanged(object sender, TextChangedEventArgs e)
         {
-           if(txtSeachStaffName.Text.Equals(""))
+            if(txtSeachStaffName.Text.Equals(""))
             {
+                int i = 1;
+                foreach (var item in staffs)
+                {
+                    requestIdPermission = item.id;
+                    item.number = i.ToString();
+                    if (item.gender == "1")
+                        item.gender = "ប្រុស";
+                    else
+                        item.gender = "ស្រី";
+                    if (!item.daily_present.morning.in_time.Equals(""))
+                        item.mIn = "Red";
+                    if (!item.daily_present.morning.out_time.Equals(""))
+                        item.mOut = "Red";
+                    if (!item.daily_present.afternoon.out_time.Equals(""))
+                        item.aOut = "Red";
+                    if (!item.daily_present.afternoon.in_time.Equals(""))
+                        item.aIn = "Red";
+                    i++;
+                }
                 DGStaffAtt1.ItemsSource​ = null;
                 DGStaffAtt1.ItemsSource = staffs;
             }
             else
             {
-                var staff = staffs.Where(i => i.name.Contains(txtSeachStaffName.Text));
+                var name = staffName.Where(s => s.Contains(txtSeachStaffName.Text));
+                cbSeachStaffName.ItemsSource = name;
+                cbSeachStaffName.IsDropDownOpen = true;
+            }
+        }
+        private void cbSeachStaffName_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                int i = 1;
+                var name = cbSeachStaffName.SelectedItem.ToString();
+                var staff = staffs.Where(j => j.name.Contains(name));
+                foreach (var item in staff)
+                {
+                    requestIdPermission = item.id;
+                    item.number = i.ToString();
+                    if (item.gender == "1")
+                        item.gender = "ប្រុស";
+                    else
+                        item.gender = "ស្រី";
+                    if (!item.daily_present.morning.in_time.Equals(""))
+                        item.mIn = "Red";
+                    if (!item.daily_present.morning.out_time.Equals(""))
+                        item.mOut = "Red";
+                    if (!item.daily_present.afternoon.out_time.Equals(""))
+                        item.aOut = "Red";
+                    if (!item.daily_present.afternoon.in_time.Equals(""))
+                        item.aIn = "Red";
+                    i++;
+                }
+                txtSeachStaffName.Text = cbSeachStaffName.SelectedItem.ToString();
+                cbSeachStaffName.Text = "";
                 DGStaffAtt1.ItemsSource​ = null;
                 DGStaffAtt1.ItemsSource = staff;
             }
+            catch { }
         }
-
         private void btnPrintStaffAtt_Click(object sender, RoutedEventArgs e)
         {
             List_Attendance_staff _Staff = new List_Attendance_staff(dateForStaffAtt,false);
@@ -5482,6 +5627,37 @@ namespace CamemisOffLine
                 item.leave = false;
                 item.permission = false;
                 item.late = false;
+            }
+        }
+
+        private void MaAttInfo_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (MaAttInfo.Kind == MaterialDesignThemes.Wpf.PackIconKind.ChevronUp)
+            {
+                gridBodyAttInfo.Visibility = Visibility.Collapsed;
+                MaAttInfo.Kind = MaterialDesignThemes.Wpf.PackIconKind.ChevronDown;
+            }
+            
+            else if(gridBodyAttInfo.Visibility == Visibility.Collapsed)
+            {
+                gridBodyAttInfo.Visibility = Visibility.Visible;
+                MaAttInfo.Kind = MaterialDesignThemes.Wpf.PackIconKind.ChevronUp;
+            }
+           
+        }
+
+        private void MaProRequse_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (MaProRequse.Kind == MaterialDesignThemes.Wpf.PackIconKind.ChevronUp)
+            {
+                gridPerRequseBody.Visibility = Visibility.Collapsed;
+                MaProRequse.Kind = MaterialDesignThemes.Wpf.PackIconKind.ChevronDown;
+            }
+
+            else if (gridPerRequseBody.Visibility == Visibility.Collapsed)
+            {
+                gridPerRequseBody.Visibility = Visibility.Visible;
+                MaProRequse.Kind = MaterialDesignThemes.Wpf.PackIconKind.ChevronUp;
             }
         }
 

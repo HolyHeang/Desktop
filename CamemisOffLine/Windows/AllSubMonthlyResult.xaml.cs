@@ -237,11 +237,16 @@ namespace CamemisOffLine.Windows
             lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
             if (title== "month")
             {
-                foreach (var item in obj)
+                var data = obj.Where(s => s.result_monthly != null);
+                foreach (var item in data.OrderBy(s=>s.result_monthly.rank))
                 {
-                    lblClass.Content = item.class_name+" ("+ yearTitle +")";
-                    lblTeacherName.Content = item.instructor.name;
-                    lblMonth.Content = DateChange.checkMonth(int.Parse(item.all_subject_result[0].month));
+                    try
+                    {
+                        lblClass.Content = item.class_name + " (" + yearTitle + ")";
+                        lblTeacherName.Content = item.instructor.name;
+                        lblMonth.Content = DateChange.checkMonth(int.Parse(item.all_subject_result[0].month));
+                    }
+                    catch { }
                     result.Add(new DIYSubject
                     {
                         id = item.student_school_id,
@@ -389,7 +394,8 @@ namespace CamemisOffLine.Windows
             }
             else if(title== "semester")
             {
-                foreach (var item in obj)
+                var data = obj.Where(s => s.result_semester != null);
+                foreach (var item in data.OrderBy(s=>s.result_semester.rank))
                 {
                     lblClass.Content = item.class_name;
                     lblTeacherName.Content = item.instructor.name;

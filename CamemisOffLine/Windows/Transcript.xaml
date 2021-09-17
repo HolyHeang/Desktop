@@ -44,7 +44,7 @@
                     <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="16" Margin="0 -0 0 0"></Label>
                     <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="16" Margin="0 -5 0 0"></Label>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0">
-                        <TextBlock Name="lblMonth" Text="លទ្ធផលប្រចាំ ខែ--" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="14" Foreground="Blue" Margin="0 0 0 0" TextDecorations="Underline"></TextBlock>
+                        <TextBlock Name="lblMonth" Text="ព្រឹត្តិបត្រពិន្ទុ ខែ--" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="14" Foreground="Blue" Margin="0 0 0 0" TextDecorations="Underline"></TextBlock>
                     </StackPanel>
                 </StackPanel>
             </Grid>
@@ -205,7 +205,7 @@
                 <TextBlock Name="txtNoPermission" Text="អត្តលេខសិស្ស" Grid.Column="8" Grid.Row="2" HorizontalAlignment="Left" FontSize="12" Foreground="Red" Style="{DynamicResource Siemreap}"/>
             </Grid>
             <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
-                <TextBlock Text="មូលវិចារណ៍គ្រូ :" HorizontalAlignment="Left" FontWeight="Thin" FontSize="12" Foreground="Blue" Style="{DynamicResource Siemreap}"/>
+                <TextBlock Text="មូលវិចារគ្រូ :" HorizontalAlignment="Left" FontWeight="Thin" FontSize="12" Foreground="Blue" Style="{DynamicResource Siemreap}"/>
                 <TextBlock Name="txtTeacherRecommend" Text="មូលវិចារណ៍គ្រូ" HorizontalAlignment="Left" FontWeight="Thin" FontSize="12" Foreground="Black" Style="{DynamicResource Siemreap}" Margin="20 0 0 0"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
