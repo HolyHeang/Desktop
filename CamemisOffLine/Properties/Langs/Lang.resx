@@ -348,6 +348,9 @@
   <data name="noresultdata" xml:space="preserve">
     <value>No result data!</value>
   </data>
+  <data name="ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
   <data name="option" xml:space="preserve">
     <value>Option</value>
   </data>
@@ -593,8 +596,5 @@
   </data>
   <data name="Use old data" xml:space="preserve">
     <value>Use old data</value>
-  </data>
-  <data name="yes" xml:space="preserve">
-    <value>Yes</value>
   </data>
 </root>

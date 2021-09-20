@@ -1429,8 +1429,6 @@ namespace CamemisOffLine.Windows
         }
 
 
-
-
         private async void btnSemester_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxControl message = new MessageBoxControl();
@@ -2867,7 +2865,7 @@ namespace CamemisOffLine.Windows
                 this.IsEnabled = true;
             }
         }
-        string monthName = "",requestId="";
+        string monthName = "", requestId = "";
         List<StudentMonthlyResult> resultData = new List<StudentMonthlyResult>();
         object senderCombo;
         SelectionChangedEventArgs ev;

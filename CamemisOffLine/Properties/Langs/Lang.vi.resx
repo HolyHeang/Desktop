@@ -351,6 +351,9 @@
   <data name="noresultdata" xml:space="preserve">
     <value>Không có dữ liệu kết quả!</value>
   </data>
+  <data name="ok" xml:space="preserve">
+    <value>Vâng</value>
+  </data>
   <data name="option" xml:space="preserve">
     <value>Lựa chọn</value>
   </data>
@@ -590,8 +593,5 @@
   </data>
   <data name="Use old data" xml:space="preserve">
     <value>Sử dụng dữ liệu cũ</value>
-  </data>
-  <data name="yes" xml:space="preserve">
-    <value>đúng</value>
   </data>
 </root>

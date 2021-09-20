@@ -24,7 +24,7 @@ namespace CamemisOffLine.Component
         public string subtxt { get; set; }
         public string discription { get; set; }
         public int buttonType { get; set; }
-        public string yes { get; set; } = Properties.Langs.Lang.yes;
+        public string yes { get; set; } = Properties.Langs.Lang.ok;
         public string no { get; set; } = Properties.Langs.Lang.cancel;
         public MessageBoxControl()
         {

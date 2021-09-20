@@ -354,6 +354,9 @@
   <data name="noresultdata" xml:space="preserve">
     <value>没有结果数据！</value>
   </data>
+  <data name="ok" xml:space="preserve">
+    <value>好的</value>
+  </data>
   <data name="option" xml:space="preserve">
     <value>选项</value>
   </data>
@@ -590,8 +593,5 @@
   </data>
   <data name="Use old data" xml:space="preserve">
     <value>使用旧数据</value>
-  </data>
-  <data name="yes" xml:space="preserve">
-    <value>是的</value>
   </data>
 </root>

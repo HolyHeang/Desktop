@@ -1797,9 +1797,9 @@
                                                         <Grid Grid.Row="0" Margin="0,0,5,0" Name="gridgoto" Background="WhiteSmoke" >
                                                             <Grid>
                                                                 <Grid.ColumnDefinitions>
-                                                                    <ColumnDefinition Width="60"/>
                                                                     <ColumnDefinition Width="*"/>
-                                                                    <ColumnDefinition Width="500"/>
+                                                                    <ColumnDefinition Width="*"/>
+                                                                    <ColumnDefinition Width="*"/>
                                                                    
                                                                 </Grid.ColumnDefinitions>
                                                                 <Grid Grid.Column="0">
@@ -1933,7 +1933,7 @@
                                                             </Grid>
                                                             <Grid Grid.Column="4" Name="grid_ResultLearning">
                                                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                                                <Button Name="btnApproved" BorderThickness="0 0 0 0" BorderBrush="LightGray" VerticalAlignment="Center" Margin="5 0 5 0" Height="30" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" Click="btnApproved_Click">
+                                                                <Button Name="btnApproved" BorderThickness="1" BorderBrush="#1883CA" VerticalAlignment="Center" Margin="5 0 5 0" Height="30" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" Click="btnApproved_Click">
                                                                     <Grid Height="30" Width="auto">
                                                                         <Grid.ColumnDefinitions>
                                                                             <ColumnDefinition Width="30"></ColumnDefinition>
@@ -1944,41 +1944,41 @@
                                                                             <materialDesign:PackIcon Kind="Telegram" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" Height="20" Width="20"/>
                                                                         </Grid>
                                                                         <Grid Grid.Column="1" Background="#5fa2dd">
-                                                                            <Label Content="{x:Static language:Lang.approve}" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="5,0,5,0">
+                                                                            <Label Content="{x:Static language:Lang.approve}" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="5,-2,5,0">
 
                                                                             </Label>
                                                                         </Grid>
                                                                     </Grid>
                                                                 </Button>
-                                                                <Button Name="btnUnApproved" BorderThickness="0 0 0 0" BorderBrush="LightGray" VerticalAlignment="Center" Margin="0 0 5 0" Height="30" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" Click="btnUnApproved_Click">
+                                                                <Button Name="btnUnApproved" BorderThickness="1" BorderBrush="#1883CA" VerticalAlignment="Center" Margin="0 0 5 0" Height="30" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" Click="btnUnApproved_Click">
                                                                     <Grid Height="30" Width="auto">
                                                                         <Grid.ColumnDefinitions>
                                                                             <ColumnDefinition Width="30"></ColumnDefinition>
                                                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                                                         </Grid.ColumnDefinitions>
-                                                                        <Grid Grid.Column="0" Margin="0,0,0,1" Background="White">
+                                                                        <Grid Grid.Column="0" Margin="0,0,0,3" Background="White">
                                                                             <Border BorderBrush="Gray" BorderThickness="0 0 1 0" Background="#f76c51" Opacity="0.8"></Border>
                                                                             <materialDesign:PackIcon Kind="Pencil" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" Height="20" Width="20"/>
                                                                         </Grid>
                                                                         <Grid Grid.Column="1" Background="#f76447">
-                                                                            <Label Content="{x:Static language:Lang.allow_score_correction}" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="5,0,5,0">
+                                                                            <Label Content="{x:Static language:Lang.allow_score_correction}" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="5,-2,5,0">
 
                                                                             </Label>
                                                                         </Grid>
                                                                     </Grid>
                                                                 </Button>
-                                                                <Button Name="btnCalculate" BorderThickness="0 0 0 0" BorderBrush="LightGray" VerticalAlignment="Center" Margin="0 0 5 0" Height="30" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" Click="btnCalculate_Click">
+                                                                <Button Name="btnCalculate" BorderThickness="1" BorderBrush="#1883CA" VerticalAlignment="Center" Margin="0 0 5 0" Height="30" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" Click="btnCalculate_Click">
                                                                     <Grid Height="30" Width="auto">
                                                                         <Grid.ColumnDefinitions>
                                                                             <ColumnDefinition Width="30"></ColumnDefinition>
                                                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                                                         </Grid.ColumnDefinitions>
-                                                                        <Grid Grid.Column="0" Margin="0,0,0,1" Background="White">
+                                                                        <Grid Grid.Column="0" Margin="0,0,0,3" Background="White">
                                                                             <Border BorderBrush="Gray" BorderThickness="0 0 1 0" Background="#f76c51" Opacity="0.8"></Border>
                                                                             <materialDesign:PackIcon Kind="Calculator" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" Height="20" Width="20"/>
                                                                         </Grid>
                                                                         <Grid Grid.Column="1" Background="#f76447">
-                                                                            <Label Content="{x:Static language:Lang.calculate}" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="5,0,5,0">
+                                                                            <Label Content="{x:Static language:Lang.calculate}" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="5,-2,5,0">
 
                                                                             </Label>
                                                                         </Grid>
@@ -3987,7 +3987,7 @@
 
                                                 </ComboBox>
                                                 
-                                                <Button Name="btnImportTeacher" BorderThickness="0 0 0 0" BorderBrush="Transparent" VerticalAlignment="Center" Margin="5 0 0 0" Height="40" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" Click="btnImportTeacher_Click">
+                                                <Button Name="btnImportTeacher" BorderThickness="1" BorderBrush="#1883CA" VerticalAlignment="Center" Margin="5 0 0 0" Height="40" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" Click="btnImportTeacher_Click">
                                                     <Grid Height="40" Width="auto">
                                                         <Grid.ColumnDefinitions>
                                                             <ColumnDefinition Width="30"></ColumnDefinition>
@@ -4005,7 +4005,7 @@
                                                     </Grid>
                                                 </Button>
 
-                                                <Button Name="btnExmportTeacher" BorderThickness="0 0 0 0" BorderBrush="Transparent" VerticalAlignment="Center" Margin="5 0 0 0" Height="40" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" Click="btnExmportTeacher_Click">
+                                                <Button Name="btnExmportTeacher" BorderThickness="1" BorderBrush="#1883CA" VerticalAlignment="Center" Margin="5 0 0 0" Height="40" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" Click="btnExmportTeacher_Click">
                                                     <Grid Height="40" Width="auto">
                                                         <Grid.ColumnDefinitions>
                                                             <ColumnDefinition Width="30"></ColumnDefinition>

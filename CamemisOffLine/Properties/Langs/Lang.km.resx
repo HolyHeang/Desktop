@@ -351,6 +351,9 @@
   <data name="noresultdata" xml:space="preserve">
     <value>គ្មានទិន្ន័យ!</value>
   </data>
+  <data name="ok" xml:space="preserve">
+    <value>យល់ព្រម</value>
+  </data>
   <data name="option" xml:space="preserve">
     <value>ជម្រើស</value>
   </data>
@@ -596,8 +599,5 @@
   </data>
   <data name="Use old data" xml:space="preserve">
     <value>ប្រើទិន្នន័យចាស់</value>
-  </data>
-  <data name="yes" xml:space="preserve">
-    <value>បាទ/ចាស</value>
   </data>
 </root>

@@ -754,6 +754,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        public static string ok {
+            get {
+                return ResourceManager.GetString("ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Option.
         /// </summary>
         public static string option {
@@ -1488,15 +1497,6 @@ namespace CamemisOffLine.Properties.Langs {
         public static string Use_old_data {
             get {
                 return ResourceManager.GetString("Use old data", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Yes.
-        /// </summary>
-        public static string yes {
-            get {
-                return ResourceManager.GetString("yes", resourceCulture);
             }
         }
     }
