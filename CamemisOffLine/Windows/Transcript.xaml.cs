@@ -249,17 +249,49 @@ namespace CamemisOffLine.Windows
             result.localProfileLink = filePath + "\\" + id + ".jpg";
             if (title=="month")
             {
-                lblMonth.Text = "លទ្ធផលប្រចាំ " + DateChange.checkMonth(int.Parse(result.result_monthly.month));
-                lblSchoolName.Content = Properties.Settings.Default.schoolName;
-                lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
-                txtStudentId.Text = "អត្តលេខសិស្ស : " + result.student_school_id;
-                txtName.Text = "ឈ្មោះ : " + result.name;
-                txtGender.Text = "ភេទ : " + result.gender;
-                lblClass.Content = result.class_name;
-                _class = result.class_name;
-                txtTotalScore.Text = result.result_monthly.total_score.ToString();
-                txtRank.Text = result.result_monthly.rank.ToString();
-                txtGrade.Text = result.result_monthly.grading;
+                try
+                {
+                    lblMonth.Text = "លទ្ធផលប្រចាំ " + DateChange.checkMonth(int.Parse(result.result_monthly.month));
+                    lblSchoolName.Content = Properties.Settings.Default.schoolName;
+                    lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
+                    txtStudentId.Text = "អត្តលេខសិស្ស : " + result.student_school_id;
+                    txtName.Text = "ឈ្មោះ : " + result.name;
+                    txtGender.Text = "ភេទ : " + result.gender;
+                    lblClass.Content = result.class_name;
+                    _class = result.class_name;
+                    txtTotalScore.Text = result.result_monthly.total_score.ToString();
+                    txtRank.Text = result.result_monthly.rank.ToString();
+                    txtGrade.Text = result.result_monthly.grading;
+
+                    txtTotalAbsent.Text = result.result_monthly.absence_total;
+                    txtWithPermission.Text = result.result_monthly.absence_with_permission;
+                    txtNoPermission.Text = result.result_monthly.absence_without_permission;
+
+                    txtTeacherRecommend.Text = result.result_monthly.recommendation;
+                    txtTeacherCommend.Text = result.result_monthly.teacher_comment;
+                    txtBehavoiur.Text = result.result_monthly.behavior;
+                    lblTeacherName.Content = result.instructor.name;
+                    if (result.gender == "1")
+                    {
+                        txtGender.Text = "ភេទ : ប្រុស";
+                    }
+                    else
+                    {
+                        txtGender.Text = "ភេទ : ស្រី";
+                    }
+                    if (result.result_monthly.absence_exam == 1)
+                    {
+                        txtAvg.Text = "មិនចាត់ថ្នាក់";
+                    }
+                    else
+                    {
+                        txtAvg.Text = double.Parse(result.result_monthly.avg_score).ToString("#.##");
+                    }
+                    DGMonthlyResultDetail.ItemsSource = result.all_subject_result.ToList();
+
+                    Grid.UpdateLayout();
+                }
+                catch { }
 
                 try
                 {
@@ -267,76 +299,54 @@ namespace CamemisOffLine.Windows
                 }
                 catch { }
 
-                txtTotalAbsent.Text = result.result_monthly.absence_total;
-                txtWithPermission.Text = result.result_monthly.absence_with_permission;
-                txtNoPermission.Text = result.result_monthly.absence_without_permission;
-
-                txtTeacherRecommend.Text = result.result_monthly.recommendation;
-                txtTeacherCommend.Text = result.result_monthly.teacher_comment;
-                txtBehavoiur.Text = result.result_monthly.behavior;
-                lblTeacherName.Content = result.instructor.name;
-                if (result.gender == "1")
-                {
-                    txtGender.Text = "ភេទ : ប្រុស";
-                }
-                else
-                {
-                    txtGender.Text = "ភេទ : ស្រី";
-                }
-                if (result.result_monthly.absence_exam == 1)
-                {
-                    txtAvg.Text = "មិនចាត់ថ្នាក់";
-                }
-                else
-                {
-                    txtAvg.Text = double.Parse(result.result_monthly.avg_score).ToString("#.##");
-                }
-                DGMonthlyResultDetail.ItemsSource = result.all_subject_result.ToList();
-
-                Grid.UpdateLayout();
+                
             }
             else if(title== "semester")
             {
-                if(result.result_semester.term== "FIRST_SEMESTER")
+                try
                 {
-                    lblMonth.Text = "លទ្ធផលប្រចាំ ឆមាសទី១";
-                }
-                else
-                {
-                    lblMonth.Text = "លទ្ធផលប្រចាំ ឆមាសទី២";
-                }
-                lblSchoolName.Content = Properties.Settings.Default.schoolName;
-                txtStudentId.Text = "អត្តលេខសិស្ស : " + result.student_school_id;
-                txtName.Text = "ឈ្មោះ : " + result.name;
-                txtGender.Text = "ភេទ : " + result.gender;
-                lblClass.Content = result.class_name;
-                _class = result.class_name;
-                txtTotalScore.Text = result.result_semester_exam.total_score.ToString();
-                txtRank.Text = result.result_semester.rank.ToString();
-                txtGrade.Text = result.result_semester.grading;
+                    if (result.result_semester.term == "FIRST_SEMESTER")
+                    {
+                        lblMonth.Text = "លទ្ធផលប្រចាំ ឆមាសទី១";
+                    }
+                    else
+                    {
+                        lblMonth.Text = "លទ្ធផលប្រចាំ ឆមាសទី២";
+                    }
+                    lblSchoolName.Content = Properties.Settings.Default.schoolName;
+                    txtStudentId.Text = "អត្តលេខសិស្ស : " + result.student_school_id;
+                    txtName.Text = "ឈ្មោះ : " + result.name;
+                    txtGender.Text = "ភេទ : " + result.gender;
+                    lblClass.Content = result.class_name;
+                    _class = result.class_name;
+                    txtTotalScore.Text = result.result_semester_exam.total_score.ToString();
+                    txtRank.Text = result.result_semester.rank.ToString();
+                    txtGrade.Text = result.result_semester.grading;
 
-                imgProfile.Source = new BitmapImage(new Uri(result.localProfileLink));
+                    imgProfile.Source = new BitmapImage(new Uri(result.localProfileLink));
 
-                txtTotalAbsent.Text = result.result_semester.absence_total;
-                txtWithPermission.Text = result.result_semester.absence_with_permission;
-                txtNoPermission.Text = result.result_semester.absence_without_permission;
+                    txtTotalAbsent.Text = result.result_semester.absence_total;
+                    txtWithPermission.Text = result.result_semester.absence_with_permission;
+                    txtNoPermission.Text = result.result_semester.absence_without_permission;
 
-                txtTeacherRecommend.Text = result.result_semester.recommendation;
-                txtTeacherCommend.Text = result.result_semester_exam.teacher_comment;
-                txtBehavoiur.Text = result.result_semester.behavior;
-                lblTeacherName.Content = result.instructor.name;
-                txtAvg.Text = result.result_semester.avg_score;
-                if (result.gender == "ប្រុស")
-                {
-                    txtGender.Text = "ភេទ : ប្រុស";
+                    txtTeacherRecommend.Text = result.result_semester.recommendation;
+                    txtTeacherCommend.Text = result.result_semester_exam.teacher_comment;
+                    txtBehavoiur.Text = result.result_semester.behavior;
+                    lblTeacherName.Content = result.instructor.name;
+                    txtAvg.Text = result.result_semester.avg_score;
+                    if (result.gender == "ប្រុស")
+                    {
+                        txtGender.Text = "ភេទ : ប្រុស";
+                    }
+                    else
+                    {
+                        txtGender.Text = "ភេទ : ស្រី";
+                    }
+                    DGMonthlyResultDetail.ItemsSource = result.all_subject_semester_exam_result.ToList();
+
+                    Grid.UpdateLayout();
                 }
-                else
-                {
-                    txtGender.Text = "ភេទ : ស្រី";
-                }
-                DGMonthlyResultDetail.ItemsSource = result.all_subject_semester_exam_result.ToList();
-
-                Grid.UpdateLayout();
+                catch { }
             }
         }
         private void SaveFileInOne(string _class,string month,List<StudentMonthlyResult> results)

@@ -598,6 +598,7 @@
                                                                         <Label Content="{x:Static language:Lang.please_select}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                                                                     </Grid>
                                                                     <Grid Width="200">
+                                                                        <ComboBox Name="cbSeachStaffName" Style="{StaticResource combobox}" Margin="5 0 5 0" Height="35" BorderBrush="Gray" FontSize="14" Padding="5 0 0 0" BorderThickness="1" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalAlignment="Left" Foreground="Black" Width="190" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" SelectionChanged="cbSeachStaffName_SelectionChanged"></ComboBox>
                                                                         <TextBox Name="txtSeachStaffName" Margin="5 0 5 0" Height="35" BorderBrush="Gray" TextWrapping="Wrap" FontSize="14" Padding="5 0 0 0" BorderThickness="1" materialDesign:HintAssist.Hint="គោត្តនាម និងនាម" FontWeight="Bold" TextChanged="txtSeachStaffName_TextChanged" VerticalContentAlignment="Center" HorizontalAlignment="Left" Foreground="Black" Width="190" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBox>
                                                                     </Grid>
                                                                     <Grid>
@@ -670,7 +671,7 @@
                                                                                     <!--//............................Name............................-->
 
 
-                                                                                    <DataGridTextColumn Width="2*" MinWidth="140" FontSize="13" Header="គោត្តនាម-នាមខ្លួន" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Binding="{Binding name}">
+                                                                                    <DataGridTextColumn Width="2*" MinWidth="140" FontSize="14" Header="គោត្តនាម-នាមខ្លួន" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Binding="{Binding name}">
                                                                                         <DataGridTextColumn.ElementStyle>
                                                                                             <Style TargetType="TextBlock">
                                                                                                 <Setter Property="Foreground" Value="Black"></Setter>
@@ -681,7 +682,7 @@
                                                                                             </Style>
                                                                                         </DataGridTextColumn.ElementStyle>
                                                                                     </DataGridTextColumn>
-                                                                                    <DataGridTextColumn Header="ភេទ" Width="0.6*" MinWidth="60" FontSize="13" Binding="{Binding gender}">
+                                                                                    <DataGridTextColumn Header="ភេទ" Width="0.6*" MinWidth="60" FontSize="14" Binding="{Binding gender}">
                                                                                         <DataGridTextColumn.ElementStyle>
                                                                                             <Style TargetType="TextBlock">
                                                                                                 <Setter Property="Foreground" Value="Black"></Setter>
@@ -694,7 +695,7 @@
                                                                                     </DataGridTextColumn>
 
                                                                                     <!--//........................................................-->
-                                                                                    <DataGridTextColumn Header="តួនាទី" Width="1.2*" MinWidth="170" FontSize="11" Binding="{Binding position}">
+                                                                                    <DataGridTextColumn Header="តួនាទី" Width="1.2*" MinWidth="170" FontSize="14" Binding="{Binding position}">
 
                                                                                         <DataGridTextColumn.ElementStyle>
 

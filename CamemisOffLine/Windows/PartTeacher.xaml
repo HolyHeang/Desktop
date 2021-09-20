@@ -16,7 +16,6 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" >
-
             <Grid HorizontalAlignment="Left" Margin="20 0 0 0">
                 <Grid.ColumnDefinitions>
 

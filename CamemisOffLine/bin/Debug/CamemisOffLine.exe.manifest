@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CamemisOffLine.exe" size="5004224">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CamemisOffLine.exe" size="5012416">
       <assemblyIdentity name="CamemisOffLine" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BJLZmDodbIFaNdePxD39tKqup/fQnoobu068GeF+vZc=</dsig:DigestValue>
+        <dsig:DigestValue>vfTMOa+j9jjtIDpsoKj7mZxKcDv8pHtnau6ErUkALwk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,7 +74,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>v2xVQZF6h0n1zgp6q7CmQiPGHgAc81y+ZK4fOvJ9yfA=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>FsyMg4TnXzgLe2AwTOPREw3/x2jWns+uqCj6FlmNps4=</dsig:DigestValue>
+>>>>>>> 6a83e4a148bad947ae87f4d0dff91f4158cc8fc5
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +90,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>CH3BjYY2S0o8yGPfmjSd7KEHO2ad5z81tCon9XaQse8=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>3he9D+thhD8QhKgETxtIgmMeSsC89QrVY99QqnDr4PI=</dsig:DigestValue>
+>>>>>>> 6a83e4a148bad947ae87f4d0dff91f4158cc8fc5
       </hash>
     </dependentAssembly>
   </dependency>
@@ -98,7 +106,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>P+e2x+XKNoSNfKgja7Ao+g2ihFnlu6+5FVACOSxWixc=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>m7DnqgrdtYuURq7Fho/afQ4I7NXlE8g8FNUkQXQ+8DU=</dsig:DigestValue>
+>>>>>>> 6a83e4a148bad947ae87f4d0dff91f4158cc8fc5
       </hash>
     </dependentAssembly>
   </dependency>
@@ -362,7 +374,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ueaES+MANvj3UKGB4Kk1rLJ5gMVUEa8YUztgagZzsBY=</dsig:DigestValue>
+        <dsig:DigestValue>mm/dNFSSRwd6pfCoXMUmxPlB77dPnLzv5+Pb9zDimNc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -530,7 +542,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>w+WKWN8hrnAPMBVWrF/2DJ15GS7h6GEY4Dbbbs02KsQ=</dsig:DigestValue>
+        <dsig:DigestValue>2nbLf/RLhWBUej5XjBjxWPu6uxm4KuQbKC9HgBJ370k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

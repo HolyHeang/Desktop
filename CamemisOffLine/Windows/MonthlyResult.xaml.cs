@@ -186,24 +186,50 @@ namespace CamemisOffLine.Windows
             int startIndex = 0;
             string avg = "", colors = "";
 
+           
             if (title == "month")
             {
+                foreach(var i in obj)
+                {
+                    if(i.result_monthly==null)
+                    {
+                        i.result_monthly = new Library.MonthlyResult { rank = obj.Count(), avg_score = "--" };
+                    }
+                }
+                obj.OrderBy(s => !s.result_monthly.Equals(null)).ThenBy(s => s.result_monthly.total_score);
                 //--------------------L1-----------------------------------
                 for (int i = startIndex; i < (obj.Count() / 1); i++)
                 {
                     num++;
-                    lblTeacherName.Content = obj[i].instructor.name;
-                    lblclass.Text = "ថ្នាក់ទី " + obj[i].class_name + " (" + year + ")";
-                    lblMonth.Text = "លទ្ធផលប្រចាំ " + DateChange.checkMonth(int.Parse(obj[i].result_monthly.month));
+                    try
+                    {
+                        lblTeacherName.Content = obj[i].instructor.name;
+                        lblclass.Text = "ថ្នាក់ទី " + obj[i].class_name + " (" + year + ")";
+                        lblMonth.Text = "លទ្ធផលប្រចាំ " + DateChange.checkMonth(int.Parse(obj[i].result_monthly.month));
+                    }
+                    catch { }
+
+                    if (obj[i].gender == "1")
+                        obj[i].gender = "ប្រុស";
+                    else if(obj[i].gender == "2")
+                        obj[i].gender = "ស្រី";
                     if (obj[i].result_monthly.absence_exam.Equals(1))
                     {
                         avg = "មិនចាត់ថ្នាក់";
                         colors = "Red";
                     }
+                    else if (obj[i].result_monthly.absence_exam.Equals(2))
+                    {
+                        avg = "--";
+                        colors = "Red";
+                    }
                     else
                     {
                         var changeAvg = obj.FirstOrDefault(s => s.result_monthly.avg_score == obj[i].result_monthly.avg_score);
-                        changeAvg.result_monthly.avg_score = double.Parse(obj[i].result_monthly.avg_score).ToString("#.##");
+                        if(changeAvg.result_monthly.avg_score!="--")
+                        {
+                            changeAvg.result_monthly.avg_score = double.Parse(obj[i].result_monthly.avg_score).ToString("#.##");
+                        }
                         avg = changeAvg.result_monthly.avg_score;
                         colors = "Blue";
                     }
@@ -218,17 +244,23 @@ namespace CamemisOffLine.Windows
                         date = obj[i].date_of_birth,
                         gender = obj[i].gender,
                         studentName = obj[i].name,
-                        grade=obj[i].result_monthly.grading,
+                        grade = obj[i].result_monthly.grading,
 
                     });
                 }
                 //-------------------- end L1---------------------
-
-               
             }
             else if (title == "semester")
             {
-                obj.OrderBy(s => s.result_semester_exam.total_score);
+                foreach (var i in obj)
+                {
+                    if (i.result_semester == null)
+                    {
+                        i.result_semester = new resultSemester { rank = obj.Count(), avg_score = "--" };
+                        i.result_semester_exam = new resultSemesterExam { total_score = 0 };
+                    }
+                }
+                obj.OrderBy(s => s.result_semester_exam!=null).ThenBy(s => s.result_semester_exam.total_score);
                 
                 //--------------------L1-----------------------------------
                 for (int i = startIndex; i < (obj.Count() / 1); i++)
@@ -239,15 +271,23 @@ namespace CamemisOffLine.Windows
                     {
                         lblTeacherName.Content = obj[i].instructor.name;
 
-                        if (obj[i].result_semester.term == "FIRST_SEMESTER")
+                        try
                         {
-                            lblMonth.Text = "លទ្ធផលប្រចាំ ឆមាសទី១";
+                            if (obj[i].result_semester.term == "FIRST_SEMESTER")
+                            {
+                                lblMonth.Text = "លទ្ធផលប្រចាំ ឆមាសទី១";
+                            }
+                            else
+                            {
+                                lblMonth.Text = "លទ្ធផលប្រចាំ ឆមាសទី២";
+                            }
                         }
-                        else
-                        {
-                            lblMonth.Text = "លទ្ធផលប្រចាំ ឆមាសទី២";
-                        }
+                        catch { }
                     }
+                    if (obj[i].gender == "1")
+                        obj[i].gender = "ប្រុស";
+                    else
+                        obj[i].gender = "ស្រី";
                     L1.Add(new StudentResultForCrystalReport
                     {
                         number = DateChange.Num(num),
@@ -270,7 +310,14 @@ namespace CamemisOffLine.Windows
             }
             else if (title == "exam")
             {
-                obj.OrderBy(s => s.result_semester_exam.total_score);
+                foreach (var i in obj)
+                {
+                    if (i.result_semester_exam == null)
+                    {
+                        i.result_semester_exam = new resultSemesterExam { rank = obj.Count().ToString(), avg_score = "--",total_score=0 };
+                    }
+                }
+                obj.OrderBy(s => s.result_semester_exam!=null).ThenBy(s => s.result_semester_exam.total_score);
                 for (int i = startIndex; i < (obj.Count() / 1); i++)
                 {
                     lblclass.Text = "ថ្នាក់ទី " + obj[i].class_name + " (" + year + ")";
@@ -288,6 +335,10 @@ namespace CamemisOffLine.Windows
                             lblMonth.Text = "លទ្ធផលប្រឡង ឆមាសទី២";
                         }
                     }
+                    if (obj[i].gender == "1")
+                        obj[i].gender = "ប្រុស";
+                    else
+                        obj[i].gender = "ស្រី";
                     L1.Add(new StudentResultForCrystalReport
                     {
                         number = DateChange.Num(num),
@@ -307,7 +358,14 @@ namespace CamemisOffLine.Windows
             }
             else if (title == "year")
             {
-                obj.OrderBy(s => s.result_yearly.rank);
+                foreach (var i in obj)
+                {
+                    if (i.result_yearly == null)
+                    {
+                        i.result_yearly = new resultYearly { rank = obj.Count(), avg_score = "--" };
+                    }
+                }
+                obj.OrderBy(s => s.result_yearly!=null).ThenBy(s => s.result_yearly.rank);
                 for (int i = startIndex; i < (obj.Count() / 1); i++)
                 {
                     lblclass.Text = "ថ្នាក់ទី " + obj[i].class_name + " (" + year + ")";
@@ -318,6 +376,10 @@ namespace CamemisOffLine.Windows
 
                         lblMonth.Text = "លទ្ធផលប្រចាំឆ្នាំ";
                     }
+                    if (obj[i].gender == "1")
+                        obj[i].gender = "ប្រុស";
+                    else
+                        obj[i].gender = "ស្រី";
                     L1.Add(new StudentResultForCrystalReport
                     {
                         number = DateChange.Num(num),
@@ -329,12 +391,9 @@ namespace CamemisOffLine.Windows
                         gender = obj[i].gender,
                         studentName = obj[i].name,
                         grade = obj[i].result_yearly.grading,
-
-
                     });
                 }
-               
-                DatagridResult.Columns[4].Header = "មធ្យមភាគ";
+                DatagridResult.Columns[5].Visibility = Visibility.Collapsed;
                
             }
             DatagridResult.ItemsSource = L1.OrderBy(r=>r.rank);
