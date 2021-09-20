@@ -36,124 +36,128 @@ namespace CamemisOffLine.Windows
             lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
             lblSchoolName.Content = Properties.Settings.Default.schoolName;
             lblTeacherName.Content = teacherName;
-            for(int i = 0;i<topStudent.Count;i++)
+            try
             {
-                lblClass.Content = topStudent[0].class_name+"("+ yearTitle + ")";
-               
-                string id = "";
-                if (topStudent[i].profileMedia.id == null)
-                    id = topStudent[i].student_id;
-                else
-                    id = topStudent[i].profileMedia.id;
-                topStudent[i].localProfileLink = filePath + "\\" + id + ".jpg";
-                if (title=="month")
+                for (int i = 0; i < topStudent.Count; i++)
                 {
-                    lblMonth.Content = DateChange.checkMonth(int.Parse(topStudent[0].all_subject_result[0].month));
-                    if (i == 0)
-                    {
-                        lblNum1.Content = "លេខ " + DateChange.Num(topStudent[i].result_monthly.rank);
-                        lblNameNum1.Content = topStudent[i].name;
-                        imgProfile1.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
-                    }
-                    else if (i == 1)
-                    {
-                        lblNum2.Content = "លេខ " + DateChange.Num(topStudent[i].result_monthly.rank);
-                        lblNameNum2.Content = topStudent[i].name;
-                        imgProfile2.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
-                    }
-                    else if (i == 2)
-                    {
-                        lblNum3.Content = "លេខ " + DateChange.Num(topStudent[i].result_monthly.rank);
-                        lblNameNum3.Content = topStudent[i].name;
-                        imgProfile3.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
-                    }
-                    else if (i == 3)
-                    {
-                        lblNum4.Content = "លេខ " + DateChange.Num(topStudent[i].result_monthly.rank);
-                        lblNameNum4.Content = topStudent[i].name;
-                        imgProfile4.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
-                    }
-                    else if (i == 4)
-                    {
-                        lblNum5.Content = "លេខ " + DateChange.Num(topStudent[i].result_monthly.rank);
-                        lblNameNum5.Content = topStudent[i].name;
-                        imgProfile5.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
-                    }
-                }
-                else if(title=="semester")
-                {
-                    if (topStudent[0].result_semester.term == "FIRST_SEMESTER")
-                        lblMonth.Content = "ប្រចាំឆមាសលើកទី១";
+                    lblClass.Content = topStudent[0].class_name + "(" + yearTitle + ")";
+
+                    string id = "";
+                    if (topStudent[i].profileMedia.id == null)
+                        id = topStudent[i].student_id;
                     else
-                        lblMonth.Content = "ប្រចាំឆមាសលើកទី២";
+                        id = topStudent[i].profileMedia.id;
+                    topStudent[i].localProfileLink = filePath + "\\" + id + ".jpg";
+                    if (title == "month")
+                    {
+                        lblMonth.Content = DateChange.checkMonth(int.Parse(topStudent[0].all_subject_result[0].month));
+                        if (i == 0)
+                        {
+                            lblNum1.Content = "លេខ " + DateChange.Num(topStudent[i].result_monthly.rank);
+                            lblNameNum1.Content = topStudent[i].name;
+                            imgProfile1.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
+                        }
+                        else if (i == 1)
+                        {
+                            lblNum2.Content = "លេខ " + DateChange.Num(topStudent[i].result_monthly.rank);
+                            lblNameNum2.Content = topStudent[i].name;
+                            imgProfile2.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
+                        }
+                        else if (i == 2)
+                        {
+                            lblNum3.Content = "លេខ " + DateChange.Num(topStudent[i].result_monthly.rank);
+                            lblNameNum3.Content = topStudent[i].name;
+                            imgProfile3.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
+                        }
+                        else if (i == 3)
+                        {
+                            lblNum4.Content = "លេខ " + DateChange.Num(topStudent[i].result_monthly.rank);
+                            lblNameNum4.Content = topStudent[i].name;
+                            imgProfile4.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
+                        }
+                        else if (i == 4)
+                        {
+                            lblNum5.Content = "លេខ " + DateChange.Num(topStudent[i].result_monthly.rank);
+                            lblNameNum5.Content = topStudent[i].name;
+                            imgProfile5.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
+                        }
+                    }
+                    else if (title == "semester")
+                    {
+                        if (topStudent[0].result_semester.term == "FIRST_SEMESTER")
+                            lblMonth.Content = "ប្រចាំឆមាសលើកទី១";
+                        else
+                            lblMonth.Content = "ប្រចាំឆមាសលើកទី២";
 
-                    if (i == 0)
-                    {
-                        lblNum1.Content = "លេខ " + DateChange.Num(topStudent[i].result_semester.rank);
-                        lblNameNum1.Content = topStudent[i].name;
-                        imgProfile1.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
+                        if (i == 0)
+                        {
+                            lblNum1.Content = "លេខ " + DateChange.Num(topStudent[i].result_semester.rank);
+                            lblNameNum1.Content = topStudent[i].name;
+                            imgProfile1.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
+                        }
+                        else if (i == 1)
+                        {
+                            lblNum2.Content = "លេខ " + DateChange.Num(topStudent[i].result_semester.rank);
+                            lblNameNum2.Content = topStudent[i].name;
+                            imgProfile2.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
+                        }
+                        else if (i == 2)
+                        {
+                            lblNum3.Content = "លេខ " + DateChange.Num(topStudent[i].result_semester.rank);
+                            lblNameNum3.Content = topStudent[i].name;
+                            imgProfile3.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
+                        }
+                        else if (i == 3)
+                        {
+                            lblNum4.Content = "លេខ " + DateChange.Num(topStudent[i].result_semester.rank);
+                            lblNameNum4.Content = topStudent[i].name;
+                            imgProfile4.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
+                        }
+                        else if (i == 4)
+                        {
+                            lblNum5.Content = "លេខ " + DateChange.Num(topStudent[i].result_semester.rank);
+                            lblNameNum5.Content = topStudent[i].name;
+                            imgProfile5.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
+                        }
                     }
-                    else if (i == 1)
+                    else if (title == "year")
                     {
-                        lblNum2.Content = "លេខ " + DateChange.Num(topStudent[i].result_semester.rank);
-                        lblNameNum2.Content = topStudent[i].name;
-                        imgProfile2.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
-                    }
-                    else if (i == 2)
-                    {
-                        lblNum3.Content = "លេខ " + DateChange.Num(topStudent[i].result_semester.rank);
-                        lblNameNum3.Content = topStudent[i].name;
-                        imgProfile3.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
-                    }
-                    else if (i == 3)
-                    {
-                        lblNum4.Content = "លេខ " + DateChange.Num(topStudent[i].result_semester.rank);
-                        lblNameNum4.Content = topStudent[i].name;
-                        imgProfile4.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
-                    }
-                    else if (i == 4)
-                    {
-                        lblNum5.Content = "លេខ " + DateChange.Num(topStudent[i].result_semester.rank);
-                        lblNameNum5.Content = topStudent[i].name;
-                        imgProfile5.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
-                    }
-                }
-                else if (title == "year")
-                {
-                    lblMonth.Content = "ប្រចាំឆ្នាំ";
+                        lblMonth.Content = "ប្រចាំឆ្នាំ";
 
-                    if (i == 0)
-                    {
-                        lblNum1.Content = "លេខ " + DateChange.Num(topStudent[i].result_yearly.rank);
-                        lblNameNum1.Content = topStudent[i].name;
-                        imgProfile1.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
-                    }
-                    else if (i == 1)
-                    {
-                        lblNum2.Content = "លេខ " + DateChange.Num(topStudent[i].result_yearly.rank);
-                        lblNameNum2.Content = topStudent[i].name;
-                        imgProfile2.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
-                    }
-                    else if (i == 2)
-                    {
-                        lblNum3.Content = "លេខ " + DateChange.Num(topStudent[i].result_yearly.rank);
-                        lblNameNum3.Content = topStudent[i].name;
-                        imgProfile3.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
-                    }
-                    else if (i == 3)
-                    {
-                        lblNum4.Content = "លេខ " + DateChange.Num(topStudent[i].result_yearly.rank);
-                        lblNameNum4.Content = topStudent[i].name;
-                        imgProfile4.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
-                    }
-                    else if (i == 4)
-                    {
-                        lblNum5.Content = "លេខ " + DateChange.Num(topStudent[i].result_yearly.rank);
-                        lblNameNum5.Content = topStudent[i].name;
-                        imgProfile5.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
+                        if (i == 0)
+                        {
+                            lblNum1.Content = "លេខ " + DateChange.Num(topStudent[i].result_yearly.rank);
+                            lblNameNum1.Content = topStudent[i].name;
+                            imgProfile1.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
+                        }
+                        else if (i == 1)
+                        {
+                            lblNum2.Content = "លេខ " + DateChange.Num(topStudent[i].result_yearly.rank);
+                            lblNameNum2.Content = topStudent[i].name;
+                            imgProfile2.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
+                        }
+                        else if (i == 2)
+                        {
+                            lblNum3.Content = "លេខ " + DateChange.Num(topStudent[i].result_yearly.rank);
+                            lblNameNum3.Content = topStudent[i].name;
+                            imgProfile3.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
+                        }
+                        else if (i == 3)
+                        {
+                            lblNum4.Content = "លេខ " + DateChange.Num(topStudent[i].result_yearly.rank);
+                            lblNameNum4.Content = topStudent[i].name;
+                            imgProfile4.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
+                        }
+                        else if (i == 4)
+                        {
+                            lblNum5.Content = "លេខ " + DateChange.Num(topStudent[i].result_yearly.rank);
+                            lblNameNum5.Content = topStudent[i].name;
+                            imgProfile5.Source = new BitmapImage(new Uri(topStudent[i].localProfileLink));
+                        }
                     }
                 }
             }
+            catch { }
         }
         private void print()
         {

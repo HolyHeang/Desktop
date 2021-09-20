@@ -222,6 +222,8 @@ namespace CamemisOffLine.Windows
                     {
                         avg = "--";
                         colors = "Red";
+                        obj[i].result_monthly.visbleTotalScore = "Collapsed";
+                        obj[i].result_monthly.visbleRank = "Collapsed";
                     }
                     else
                     {
@@ -245,6 +247,8 @@ namespace CamemisOffLine.Windows
                         gender = obj[i].gender,
                         studentName = obj[i].name,
                         grade = obj[i].result_monthly.grading,
+                        visbleRank = obj[i].result_monthly.visbleRank,
+                        visbleTotalScore = obj[i].result_monthly.visbleTotalScore
 
                     });
                 }

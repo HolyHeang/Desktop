@@ -21,5 +21,7 @@ namespace CamemisOffLine
         public string att_without_permission { get; set; }
         public string att_with_permission { get; set; }
         public string color { get; set; }
+        public string visbleRank { get; set; } = "Visible";
+        public string visbleTotalScore { get; set; } = "Visible";
     }
 }

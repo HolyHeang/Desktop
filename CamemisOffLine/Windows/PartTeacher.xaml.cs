@@ -1765,14 +1765,22 @@ namespace CamemisOffLine.Windows
                         item.gender = "ប្រុស";
                     else
                         item.gender = "ស្រី";
-                    if (item.result_monthly.avg_score == "0")
+                    if(item.result_monthly==null)
                     {
-                        item.result_monthly.avg_score = "មិនចាត់ថ្នាក់";
-                        item.result_monthly.color = "Red";
+                        item.result_monthly = new Library.MonthlyResult { avg_score = "--", color = "Blue", visbleRank = "Collapsed", visbleTotalScore = "Collapsed" };
                     }
                     else
                     {
-                        item.result_monthly.color = "Blue";
+                        if (item.result_monthly.avg_score == "0")
+                        {
+                            item.result_monthly.avg_score = "មិនចាត់ថ្នាក់";
+                            item.result_monthly.color = "Red";
+                        }
+                        else
+                        {
+                            item.result_monthly.avg_score = double.Parse(item.result_monthly.avg_score).ToString("#.##");
+                            item.result_monthly.color = "Blue";
+                        }
                     }
 
                     item.numbers = DateChange.Num(i);
@@ -1787,14 +1795,22 @@ namespace CamemisOffLine.Windows
                         item.gender = "ប្រុស";
                     else
                         item.gender = "ស្រី";
-                    if (item.result_monthly.avg_score == "0")
+                    if (item.result_semester == null)
                     {
-                        item.result_monthly.avg_score = "មិនចាត់ថ្នាក់";
-                        item.result_monthly.color = "Red";
+                        item.result_semester = new resultSemester { avg_score = "--", color = "Blue", visbleRank = "Collapsed", visbleTotalScore = "Collapsed" };
                     }
                     else
                     {
-                        item.result_monthly.color = "Blue";
+                        if (item.result_semester.avg_score == "0")
+                        {
+                            item.result_semester.avg_score = "មិនចាត់ថ្នាក់";
+                            item.result_semester.color = "Red";
+                        }
+                        else
+                        {
+                            item.result_semester.avg_score = double.Parse(item.result_monthly.avg_score).ToString("#.##");
+                            item.result_semester.color = "Blue";
+                        }
                     }
 
                     item.numbers = DateChange.Num(i);
@@ -3132,6 +3148,9 @@ namespace CamemisOffLine.Windows
                                 id = item1.profileMedia.id;
                             item1.localProfileLink = filePath + "\\" + id + ".jpg";
                         }
+
+                        resultData = resultData.OrderBy(r => r.result_monthly != null).ThenBy(r => r.result_monthly.rank).ToList();
+
                         DGMonthlyResult.ItemsSource = null;
                         DGMonthlyResult.ItemsSource = resultData;
                         loading.Close();
@@ -3340,7 +3359,7 @@ namespace CamemisOffLine.Windows
                         var obj = JObject.Parse(allMonth[1].ToString()).ToObject<StudentMonthlyResultData>().data;
                         Properties.Settings.Default.studentMonthlyResult = allMonth[1];
                         Properties.Settings.Default.Save();
-                        return obj.OrderBy(s => s.result_monthly.rank).ToList();
+                        return obj;
                     }
                 }
             }
