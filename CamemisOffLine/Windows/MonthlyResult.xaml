@@ -133,6 +133,7 @@
                                             <Setter Property="FontWeight" Value="Thin"></Setter>
                                             <Setter Property="HorizontalAlignment" Value="Center"/>
                                             <Setter Property="VerticalAlignment" Value="Center"/>
+                                            <Setter Property="Visibility" Value="{Binding visbleTotalScore}"/>
                                         </Style>
                                     </DataGridTextColumn.ElementStyle>
                                     <DataGridTextColumn.Header>
@@ -163,6 +164,7 @@
                                             <Setter Property="FontWeight" Value="Thin"></Setter>
                                             <Setter Property="HorizontalAlignment" Value="Center"/>
                                             <Setter Property="VerticalAlignment" Value="Center"/>
+                                            <Setter Property="Visibility" Value="{Binding visbleRank}"/>
                                         </Style>
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>

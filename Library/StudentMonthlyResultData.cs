@@ -78,6 +78,8 @@ namespace Library
     }
     public class resultSemester
     {
+        public string visbleRank { get; set; } = "Visible";
+        public string visbleTotalScore { get; set; } = "Visible";
         public string id { get; set; }
         public string color { get; set; } = "Blue";
         public string avg_score { get; set; }
@@ -139,6 +141,8 @@ namespace Library
     }
     public class MonthlyResult
     {
+        public string visbleRank { get; set; } = "Visible";
+        public string visbleTotalScore { get; set; } = "Visible";
         public string id { get; set; }
         public string avg_score { get; set; } = "--";
         public int total_score { get; set; }
