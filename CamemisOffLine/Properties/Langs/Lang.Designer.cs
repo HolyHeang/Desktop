@@ -151,6 +151,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to By common level.
+        /// </summary>
+        public static string by_common_level {
+            get {
+                return ResourceManager.GetString("by common level", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to By name.
         /// </summary>
         public static string by_name {
@@ -358,7 +367,7 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you want to use existing data for or new data?.
+        ///   Looks up a localized string similar to Do you want to use old data for or new data?.
         /// </summary>
         public static string Do_you_want_to_use_existing_data_for_or_new_data_ {
             get {
@@ -1434,6 +1443,24 @@ namespace CamemisOffLine.Properties.Langs {
         public static string Tooltip_top_bar_Min {
             get {
                 return ResourceManager.GetString("Tooltip top bar Min", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total by school year.
+        /// </summary>
+        public static string total_by_school_year {
+            get {
+                return ResourceManager.GetString("total by school year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total students.
+        /// </summary>
+        public static string totalStu {
+            get {
+                return ResourceManager.GetString("totalStu", resourceCulture);
             }
         }
         

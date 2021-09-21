@@ -337,3 +337,5 @@ D:\Clone\10-08-2021\Desktop\CamemisOffLine\obj\Debug\Component\StaffAttdanceAppr
 D:\Clone\10-08-2021\Desktop\CamemisOffLine\obj\Debug\Component\StaffAttdanceApprovedPopup.baml
 C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Component\StaffAttdanceApprovedPopup.g.cs
 C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Component\StaffAttdanceApprovedPopup.baml
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\Summery_of _Students_Short.g.cs
+C:\Users\ASUS\Desktop\Camemis\Desktop\CamemisOffLine\obj\Debug\Report\Summery_of _Students_Short.baml

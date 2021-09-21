@@ -147,6 +147,9 @@
   <data name="back" xml:space="preserve">
     <value>trở lại</value>
   </data>
+  <data name="by common level" xml:space="preserve">
+    <value>Theo cấp độ chung</value>
+  </data>
   <data name="by name" xml:space="preserve">
     <value>Bằng tên</value>
   </data>
@@ -572,6 +575,12 @@
   </data>
   <data name="Tooltip top bar Min" xml:space="preserve">
     <value>giảm thiểu</value>
+  </data>
+  <data name="total by school year" xml:space="preserve">
+    <value>Tổng số theo năm học</value>
+  </data>
+  <data name="totalStu" xml:space="preserve">
+    <value>Tổng số học sinh</value>
   </data>
   <data name="transfer class" xml:space="preserve">
     <value>Chuyển lớp</value>
