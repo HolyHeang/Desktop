@@ -4275,7 +4275,12 @@ namespace CamemisOffLine
                 AllSubjectPrint();
 
             }
-            else if (item.id == 15)
+            else if(item.id==14)
+            {
+                Summary_of_Students summary = new Summary_of_Students(yearId,resulType,DateChange.checkMonthString(studentMonth).ToString(),term,studentMonth);
+                summary.Show();
+            }
+            else if (item.id == 16)
             {
                 if (month == "0")
                 {
@@ -4289,14 +4294,14 @@ namespace CamemisOffLine
                 }
             }
            
-            else if (item.id == 24)
+            else if (item.id == 25)
             {
                 this.Opacity = 0.5;
                 StatisticGrade9 statisticGrade9 = new StatisticGrade9(YearSelection);
                 statisticGrade9.ShowDialog();
                 this.Opacity = 1;
             }
-            else if (item.id == 25)
+            else if (item.id == 26)
             {
                 this.Opacity = 0.5;
                 StatisticGrade12 statisticGrade12 = new StatisticGrade12(YearSelection);
@@ -4447,6 +4452,7 @@ namespace CamemisOffLine
                 foreach (var items in obj)
                 {
                     schoolYearId = items.id;
+
                     foreach (var grades in items.school_system)
                     {
                         foreach (var gradeName in grades.grade)
@@ -4480,6 +4486,7 @@ namespace CamemisOffLine
                         {
                             if (gradeName.name.Equals(selection))
                             {
+                                yearId = gradeName.id;
                                 foreach (var className in gradeName.children)
                                 {
                                     ClassAndId.Add(new KeyValuePair<string, string>(className.name,className.id.ToString()));
@@ -4532,7 +4539,7 @@ namespace CamemisOffLine
             }
             catch { }
         }
-        string term = "";
+        string term = "",resulType="";
         private void cmbMonthResultPrint_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
@@ -4542,6 +4549,18 @@ namespace CamemisOffLine
                 var selection = (KeyValuePair<string, string>)items.SelectedItem;
                 studentMonth = selection.Key;
                 term = selection.Value;
+                if(studentMonth.Equals("ឆមាសទី១")|| studentMonth.Equals("ឆមាសទី២"))
+                {
+                    resulType = "2";
+                }
+                else if(studentMonth.Equals("លទ្ធផលប្រចាំឆ្នាំ"))
+                {
+                    resulType = "3";
+                }
+                else
+                {
+                    resulType = "1";
+                }
                 items.BorderBrush = Brushes.Black;
 
             }

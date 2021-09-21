@@ -27,19 +27,19 @@ namespace Library
         public string subject_id { get; set; }
         public string name { get; set; }
 
-        public List<string> totalA { get; set; } = new List<string>();
-        public List<string> totalB { get; set; } = new List<string>();
-        public List<string> totalC { get; set; } = new List<string>();
-        public List<string> totalD { get; set; } = new List<string>();
-        public List<string> totalE { get; set; } = new List<string>();
-        public List<string> totalF { get; set; } = new List<string>();
+        public string totalA { get; set; }
+        public string totalB { get; set; }
+        public string totalC { get; set; }
+        public string totalD { get; set; }
+        public string totalE { get; set; }
+        public string totalF { get; set; }
 
-        public List<string> girlA { get; set; } = new List<string>();
-        public List<string> girlB { get; set; } = new List<string>();
-        public List<string> girlC { get; set; } = new List<string>();
-        public List<string> girlD { get; set; } = new List<string>();
-        public List<string> girlE { get; set; } = new List<string>();
-        public List<string> girlF { get; set; } = new List<string>();
+        public string girlA { get; set; } 
+        public string girlB { get; set; } 
+        public string girlC { get; set; } 
+        public string girlD { get; set; } 
+        public string girlE { get; set; } 
+        public string girlF { get; set; } 
 
         public List<GradingSystem> grading_system { get; set; }
     }
