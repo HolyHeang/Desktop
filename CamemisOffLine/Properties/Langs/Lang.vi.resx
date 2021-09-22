@@ -147,6 +147,9 @@
   <data name="back" xml:space="preserve">
     <value>trở lại</value>
   </data>
+  <data name="by common level" xml:space="preserve">
+    <value>Theo cấp độ chung</value>
+  </data>
   <data name="by name" xml:space="preserve">
     <value>Bằng tên</value>
   </data>
@@ -350,6 +353,9 @@
   </data>
   <data name="noresultdata" xml:space="preserve">
     <value>Không có dữ liệu kết quả!</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>Vâng</value>
   </data>
   <data name="option" xml:space="preserve">
     <value>Lựa chọn</value>
@@ -570,6 +576,12 @@
   <data name="Tooltip top bar Min" xml:space="preserve">
     <value>giảm thiểu</value>
   </data>
+  <data name="total by school year" xml:space="preserve">
+    <value>Tổng số theo năm học</value>
+  </data>
+  <data name="totalStu" xml:space="preserve">
+    <value>Tổng số học sinh</value>
+  </data>
   <data name="transfer class" xml:space="preserve">
     <value>Chuyển lớp</value>
   </data>
@@ -590,8 +602,5 @@
   </data>
   <data name="Use old data" xml:space="preserve">
     <value>Sử dụng dữ liệu cũ</value>
-  </data>
-  <data name="yes" xml:space="preserve">
-    <value>đúng</value>
   </data>
 </root>

@@ -144,6 +144,9 @@
   <data name="back" xml:space="preserve">
     <value>Back</value>
   </data>
+  <data name="by common level" xml:space="preserve">
+    <value>By common level</value>
+  </data>
   <data name="by name" xml:space="preserve">
     <value>By name</value>
   </data>
@@ -217,7 +220,7 @@
     <value>Do you really want to submit?</value>
   </data>
   <data name="Do you want to use existing data for or new data?" xml:space="preserve">
-    <value>Do you want to use existing data for or new data?</value>
+    <value>Do you want to use old data for or new data?</value>
   </data>
   <data name="Do you want to use the print function?" xml:space="preserve">
     <value>Do you want to use the print function</value>
@@ -347,6 +350,9 @@
   </data>
   <data name="noresultdata" xml:space="preserve">
     <value>No result data!</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>OK</value>
   </data>
   <data name="option" xml:space="preserve">
     <value>Option</value>
@@ -573,6 +579,12 @@
   <data name="Tooltip top bar Min" xml:space="preserve">
     <value>Minimize</value>
   </data>
+  <data name="total by school year" xml:space="preserve">
+    <value>Total by school year</value>
+  </data>
+  <data name="totalStu" xml:space="preserve">
+    <value>Total students</value>
+  </data>
   <data name="transfer class" xml:space="preserve">
     <value>Transfer class</value>
   </data>
@@ -593,8 +605,5 @@
   </data>
   <data name="Use old data" xml:space="preserve">
     <value>Use old data</value>
-  </data>
-  <data name="yes" xml:space="preserve">
-    <value>Yes</value>
   </data>
 </root>

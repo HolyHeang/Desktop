@@ -53,13 +53,14 @@ namespace CamemisOffLine.Report
             var obj = JObject.Parse(reponse).ToObject<SummarySubjectGradingList>().data;
             try
             {
-                int startIndex = 0, endIndex = 1;
+                int startIndex = 0, endIndex = 1,round = 1;
                 Document document = new Document(PageSize.A4.Rotate(), 30, 0, 0, 0);
                 PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "ResultTemplate" + ".pdf", FileMode.Create));
                 document.Open();
                 GC.Collect();
 
                 List<SummarySubjectGrading> copyResult = new List<SummarySubjectGrading>();
+                var sub1 = new List<Subjects>();
                 bool footerAvaliable = false;
                 while (true)
                 {
@@ -71,6 +72,79 @@ namespace CamemisOffLine.Report
                             copyResult.Add(obj[i]);
                         }
                     }
+
+                    if (startIndex == 5)
+                    {
+                        if (round == 1)
+                        {
+                            var sub = new List<Subjects>();
+                            sub1 = new List<Subjects>();
+                            foreach (var item in copyResult)
+                            {
+                                foreach (var next in item.subjects)
+                                {
+                                    if (next.name.Contains("(សង្គម)"))
+                                    {
+                                        sub.Add(next);
+                                    }
+                                    else
+                                    {
+                                        sub1.Add(next);
+                                    }
+                                }
+                                item.subjects = null;
+                                item.subjects = sub;
+                            }
+                            round++;
+                            endIndex--;
+                        }
+                        else if (round == 2)
+                        {
+                            var sub = new List<Subjects>();
+                            foreach (var item in copyResult)
+                            {
+                                item.subjects = null;
+                                item.subjects = sub1;
+                            }
+                        }
+                    }
+                    else if (startIndex == 4)
+                    {
+                        if (round == 1)
+                        {
+                            var sub = new List<Subjects>();
+                            sub1 = new List<Subjects>();
+                            foreach (var item in copyResult)
+                            {
+                                foreach (var next in item.subjects)
+                                {
+                                    if (next.name.Contains("(សង្គម)"))
+                                    {
+                                        sub.Add(next);
+                                    }
+                                    else
+                                    {
+                                        sub1.Add(next);
+                                    }
+                                }
+                                item.subjects = null;
+                                item.subjects = sub;
+                            }
+                            round++;
+                            endIndex--;
+                        }
+                        else if (round == 2)
+                        {
+                            var sub = new List<Subjects>();
+                            foreach (var item in copyResult)
+                            {
+                                item.subjects = null;
+                                item.subjects = sub1;
+                            }
+                            round = 1;
+                        }
+                    }
+
                     if (!footerAvaliable)
                         Footer.Visibility = Visibility.Collapsed;
 
@@ -109,7 +183,7 @@ namespace CamemisOffLine.Report
                         endIndex = obj.ToList().Count();
                         Header.Visibility = Visibility.Collapsed;
                         title.Visibility = Visibility.Collapsed;
-                        if (obj.ToList().Count() - startIndex <= 6)
+                        if (obj.ToList().Count() - startIndex <= 6 && round == 2)
                         {
                             Footer.Visibility = Visibility.Visible;
                             footerAvaliable = true;

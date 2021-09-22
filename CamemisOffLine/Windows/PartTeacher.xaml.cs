@@ -1428,6 +1428,7 @@ namespace CamemisOffLine.Windows
            
         }
 
+
         private async void btnSemester_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxControl message = new MessageBoxControl();
@@ -2052,10 +2053,12 @@ namespace CamemisOffLine.Windows
             tabcontrolLearn1.SelectedIndex = 5;
             btnSaveSemester.Visibility = Visibility.Collapsed;
             btnPostSemester.Visibility = Visibility.Collapsed;
+            lblTitleDataResult.Content = "លទ្ធផលប្រឡង";
         }
 
         private void btnClassification_Click(object sender, RoutedEventArgs e)
         {
+            
             tabcontrolLearn1.SelectedIndex = 4;
 
             if(type=="2")
@@ -2125,7 +2128,7 @@ namespace CamemisOffLine.Windows
             }
             this.Opacity = 0.5;
             message.title = "ដំណឹង";
-            message.buttonType = 1;
+            message.buttonType = 2;
             message.ShowDialog();
             this.Opacity = 1;
         }
@@ -2862,7 +2865,7 @@ namespace CamemisOffLine.Windows
                 this.IsEnabled = true;
             }
         }
-        string monthName = "",requestId="";
+        string monthName = "", requestId = "";
         List<StudentMonthlyResult> resultData = new List<StudentMonthlyResult>();
         object senderCombo;
         SelectionChangedEventArgs ev;

@@ -1413,8 +1413,8 @@ namespace CamemisOffLine
 
             if (MateriaSettingDrop.Visibility == Visibility.Visible)
             {
-                btnAbout.Visibility = Visibility.Visible;
-                btnColor.Visibility = Visibility.Visible;
+                btnAbout.Visibility = Visibility.Collapsed;
+                btnColor.Visibility = Visibility.Collapsed;
                 MateriaSettingUp.Visibility = Visibility.Visible;
                 btnLang.Visibility = Visibility.Visible;
 
@@ -2692,7 +2692,7 @@ namespace CamemisOffLine
                     DGSemesterClass.ItemsSource = obj.OrderBy(s => s.name);
 
                 }
-                lblTitleTotalStudent.Content = "សិស្សសរុប : " + DGSemester.Items.Count.ToString() + " នាក់" + " ស្រី : " + girlTotal.ToString() + " នាក់";
+                lblTitleTotalStudent.Content = Properties.Langs.Lang.totalStu + " : " + DGSemester.Items.Count.ToString() + " " + Properties.Langs.Lang.female + " : " + girlTotal.ToString();
                 gridMonth.Visibility = Visibility.Collapsed;
                 tabStudentResult.Visibility = Visibility.Visible;
                 gridStudentResult.Margin = new Thickness(0);
@@ -2874,7 +2874,7 @@ namespace CamemisOffLine
                     DGMonthlyResult.ItemsSource = obj.OrderBy(s => s.name);
                     report.data = obj.OrderBy(s => s.name).ToList();
                 }
-                lblTitleTotalStudent.Content = "សិស្សសរុប : " + DGMonthlyResult.Items.Count.ToString() + " នាក់" + " ស្រី : " + girlTotal.ToString() + " នាក់";
+                lblTitleTotalStudent.Content = Properties.Langs.Lang.totalStu + " : " + DGMonthlyResult.Items.Count.ToString() + " " + Properties.Langs.Lang.female + " : " + girlTotal.ToString();
                 gridMonth.Visibility = Visibility.Collapsed;
                 tabStudentResult.Visibility = Visibility.Visible;
                 gridStudentResult.Margin = new Thickness(0);
@@ -3258,7 +3258,7 @@ namespace CamemisOffLine
 
                     report.data = obj.OrderBy(s => s.name).ToList();
                 }
-                lblTitleTotalStudent.Content = "សិស្សសរុប : " + DGYear.Items.Count.ToString() + " នាក់" + " ស្រី : " + girlTotal.ToString() + " នាក់";
+                lblTitleTotalStudent.Content = Properties.Langs.Lang.totalStu + " : " + DGYear.Items.Count.ToString() + " " + Properties.Langs.Lang.female + " : " + girlTotal.ToString();
                 gridMonth.Visibility = Visibility.Collapsed;
                 tabStudentResult.Visibility = Visibility.Visible;
                 gridStudentResult.Margin = new Thickness(0);
@@ -4277,7 +4277,7 @@ namespace CamemisOffLine
             }
             else if(item.id==14)
             {
-                Summary_of_Students summary = new Summary_of_Students(yearId,resulType,DateChange.checkMonthString(studentMonth).ToString(),term,studentMonth);
+                Sumery_of_Students_Short summary = new Sumery_of_Students_Short(yearId,resulType,DateChange.checkMonthString(studentMonth).ToString(),term,studentMonth);
                 summary.Show();
             }
             else if (item.id == 16)
@@ -4315,8 +4315,8 @@ namespace CamemisOffLine
                 message.title = Properties.Langs.Lang.print;
                 message.discription = Properties.Langs.Lang.Function + item.title + Properties.Langs.Lang.Under_construction;
 
-                message.title = "បោះពុម្ភ";
-                message.discription = "មុខងារ" + item.title + "កំពុងសាងសង់";
+                message.title = Properties.Langs.Lang.print;
+                message.discription = Properties.Langs.Lang.Function + item.title + Properties.Langs.Lang.Under_construction;
 
                 message.buttonType = 1;
                 message.ShowDialog();

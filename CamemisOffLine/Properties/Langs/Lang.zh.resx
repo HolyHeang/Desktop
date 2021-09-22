@@ -147,6 +147,9 @@
   <data name="back" xml:space="preserve">
     <value>背部</value>
   </data>
+  <data name="by common level" xml:space="preserve">
+    <value>按普通级别</value>
+  </data>
   <data name="by name" xml:space="preserve">
     <value>按名称</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="noresultdata" xml:space="preserve">
     <value>没有结果数据！</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>好的</value>
   </data>
   <data name="option" xml:space="preserve">
     <value>选项</value>
@@ -570,6 +576,12 @@
   <data name="Tooltip top bar Min" xml:space="preserve">
     <value>最小化</value>
   </data>
+  <data name="total by school year" xml:space="preserve">
+    <value>学年总数</value>
+  </data>
+  <data name="totalStu" xml:space="preserve">
+    <value>学生总数</value>
+  </data>
   <data name="transfer class" xml:space="preserve">
     <value>转班</value>
   </data>
@@ -590,8 +602,5 @@
   </data>
   <data name="Use old data" xml:space="preserve">
     <value>使用旧数据</value>
-  </data>
-  <data name="yes" xml:space="preserve">
-    <value>是的</value>
   </data>
 </root>
