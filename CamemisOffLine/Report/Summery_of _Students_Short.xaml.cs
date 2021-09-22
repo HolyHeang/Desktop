@@ -60,6 +60,16 @@ namespace CamemisOffLine.Report
             {
                 reponse = await GetDataAsync();
             }
+            else
+            {
+                MessageBoxControl message = new MessageBoxControl();
+                message.title = "អ៊ីនធឺណេត";
+                message.discription = "មិនមានការតភ្ជាប់អ៊ីនធឺណែត";
+                message.buttonType = 1;
+                message.ShowDialog();
+                load.Close();
+                this.Close();
+            }
             var obj = JObject.Parse(reponse).ToObject<SummarySubjectGradingList>().data;
 
             if(obj.All(s=>s.subjects.All(l=>l.grading_system.Count>4)))

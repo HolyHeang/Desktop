@@ -4266,8 +4266,21 @@ namespace CamemisOffLine
             }
             else if (item.id == 12)
             {
-                Classification classification = new Classification(classId, term, YearSelection, ping);
-                classification.Show();
+               if(classId==""||term==""||YearSelection=="")
+                {
+                    this.Opacity = 0.5;
+                    MessageBoxControl messageBox = new MessageBoxControl();
+                    messageBox.title = "បោះពុម្ភ";
+                    messageBox.discription = "សូមធ្វើការជ្រើសរើសឆ្នាំសិក្សា ថ្នាក់ និងឆមាស";
+                    messageBox.buttonType = 1;
+                    messageBox.ShowDialog();
+                    this.Opacity = 1;
+                }
+                else
+                {
+                    Classification classification = new Classification(classId, term, YearSelection, ping);
+                    classification.Show();
+                }
             }
             else if (item.id == 13)
             {
@@ -4277,20 +4290,46 @@ namespace CamemisOffLine
             }
             else if(item.id==14)
             {
-                Sumery_of_Students_Short summary = new Sumery_of_Students_Short(yearId,resulType,DateChange.checkMonthString(studentMonth).ToString(),term,studentMonth);
-                summary.Show();
-            }
-            else if (item.id == 16)
-            {
-                if (month == "0")
+                if (yearId == "" || resulType == "" || studentMonth == "" || term == "" || studentMonth == "")
                 {
-                    Student_Attendance_Year attendance_Year = new Student_Attendance_Year(classId, month, yearTitle, studentClass);
-                    attendance_Year.Show();
+                    this.Opacity = 0.5;
+                    MessageBoxControl messageBox = new MessageBoxControl();
+                    messageBox.title = "បោះពុម្ភ";
+                    messageBox.discription = "សូមធ្វើការជ្រើសរើសឆ្នាំសិក្សា ថ្នាក់ និងឆមាស";
+                    messageBox.buttonType = 1;
+                    messageBox.ShowDialog();
+                    this.Opacity = 1;
                 }
                 else
                 {
-                    AttendanceReport attendance = new AttendanceReport(classId, month, yearTitle, studentClass);
-                    attendance.Show();
+                    Sumery_of_Students_Short summary = new Sumery_of_Students_Short(yearId, resulType, DateChange.checkMonthString(studentMonth).ToString(), term, studentMonth);
+                    summary.Show();
+                }
+            }
+            else if (item.id == 16)
+            {
+                if(classId==""||month==""||yearTitle==""||studentClass=="")
+                {
+                    this.Opacity = 0.5;
+                    MessageBoxControl messageBox = new MessageBoxControl();
+                    messageBox.title = "បោះពុម្ភ";
+                    messageBox.discription = "សូមធ្វើការជ្រើសរើសឆ្នាំសិក្សា ថ្នាក់ និងឆមាស";
+                    messageBox.buttonType = 1;
+                    messageBox.ShowDialog();
+                    this.Opacity = 1;
+                }
+                else
+                {
+                    if (month == "0")
+                    {
+                        Student_Attendance_Year attendance_Year = new Student_Attendance_Year(classId, month, yearTitle, studentClass);
+                        attendance_Year.Show();
+                    }
+                    else
+                    {
+                        AttendanceReport attendance = new AttendanceReport(classId, month, yearTitle, studentClass);
+                        attendance.Show();
+                    }
                 }
             }
            
