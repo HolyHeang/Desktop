@@ -4266,8 +4266,21 @@ namespace CamemisOffLine
             }
             else if (item.id == 12)
             {
-                Classification classification = new Classification(classId, term, YearSelection, ping);
-                classification.Show();
+               if(classId==""||term==""||YearSelection=="")
+                {
+                    this.Opacity = 0.5;
+                    MessageBoxControl messageBox = new MessageBoxControl();
+                    messageBox.title = "បោះពុម្ភ";
+                    messageBox.discription = "សូមធ្វើការជ្រើសរើសឆ្នាំសិក្សា ថ្នាក់ និងឆមាស";
+                    messageBox.buttonType = 1;
+                    messageBox.ShowDialog();
+                    this.Opacity = 1;
+                }
+                else
+                {
+                    Classification classification = new Classification(classId, term, YearSelection, ping);
+                    classification.Show();
+                }
             }
             else if (item.id == 13)
             {
@@ -4275,28 +4288,59 @@ namespace CamemisOffLine
                 AllSubjectPrint();
 
             }
-            else if (item.id == 15)
+            else if(item.id==14)
             {
-                if (month == "0")
+                if (yearId == "" || resulType == "" || studentMonth == "" || term == "" || studentMonth == "")
                 {
-                    Student_Attendance_Year attendance_Year = new Student_Attendance_Year(classId, month, yearTitle, studentClass);
-                    attendance_Year.Show();
+                    this.Opacity = 0.5;
+                    MessageBoxControl messageBox = new MessageBoxControl();
+                    messageBox.title = "បោះពុម្ភ";
+                    messageBox.discription = "សូមធ្វើការជ្រើសរើសឆ្នាំសិក្សា ថ្នាក់ និងឆមាស";
+                    messageBox.buttonType = 1;
+                    messageBox.ShowDialog();
+                    this.Opacity = 1;
                 }
                 else
                 {
-                    AttendanceReport attendance = new AttendanceReport(classId, month, yearTitle, studentClass);
-                    attendance.Show();
+                    Sumery_of_Students_Short summary = new Sumery_of_Students_Short(yearId, resulType, DateChange.checkMonthString(studentMonth).ToString(), term, studentMonth);
+                    summary.Show();
+                }
+            }
+            else if (item.id == 16)
+            {
+                if(classId==""||month==""||yearTitle==""||studentClass=="")
+                {
+                    this.Opacity = 0.5;
+                    MessageBoxControl messageBox = new MessageBoxControl();
+                    messageBox.title = "បោះពុម្ភ";
+                    messageBox.discription = "សូមធ្វើការជ្រើសរើសឆ្នាំសិក្សា ថ្នាក់ និងឆមាស";
+                    messageBox.buttonType = 1;
+                    messageBox.ShowDialog();
+                    this.Opacity = 1;
+                }
+                else
+                {
+                    if (month == "0")
+                    {
+                        Student_Attendance_Year attendance_Year = new Student_Attendance_Year(classId, month, yearTitle, studentClass);
+                        attendance_Year.Show();
+                    }
+                    else
+                    {
+                        AttendanceReport attendance = new AttendanceReport(classId, month, yearTitle, studentClass);
+                        attendance.Show();
+                    }
                 }
             }
            
-            else if (item.id == 24)
+            else if (item.id == 25)
             {
                 this.Opacity = 0.5;
                 StatisticGrade9 statisticGrade9 = new StatisticGrade9(YearSelection);
                 statisticGrade9.ShowDialog();
                 this.Opacity = 1;
             }
-            else if (item.id == 25)
+            else if (item.id == 26)
             {
                 this.Opacity = 0.5;
                 StatisticGrade12 statisticGrade12 = new StatisticGrade12(YearSelection);
@@ -4447,6 +4491,7 @@ namespace CamemisOffLine
                 foreach (var items in obj)
                 {
                     schoolYearId = items.id;
+
                     foreach (var grades in items.school_system)
                     {
                         foreach (var gradeName in grades.grade)
@@ -4480,6 +4525,7 @@ namespace CamemisOffLine
                         {
                             if (gradeName.name.Equals(selection))
                             {
+                                yearId = gradeName.id;
                                 foreach (var className in gradeName.children)
                                 {
                                     ClassAndId.Add(new KeyValuePair<string, string>(className.name,className.id.ToString()));
@@ -4532,7 +4578,7 @@ namespace CamemisOffLine
             }
             catch { }
         }
-        string term = "";
+        string term = "",resulType="";
         private void cmbMonthResultPrint_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
@@ -4542,6 +4588,18 @@ namespace CamemisOffLine
                 var selection = (KeyValuePair<string, string>)items.SelectedItem;
                 studentMonth = selection.Key;
                 term = selection.Value;
+                if(studentMonth.Equals("ឆមាសទី១")|| studentMonth.Equals("ឆមាសទី២"))
+                {
+                    resulType = "2";
+                }
+                else if(studentMonth.Equals("លទ្ធផលប្រចាំឆ្នាំ"))
+                {
+                    resulType = "3";
+                }
+                else
+                {
+                    resulType = "1";
+                }
                 items.BorderBrush = Brushes.Black;
 
             }
@@ -5608,7 +5666,6 @@ namespace CamemisOffLine
                 item.leave = false;
                 item.permission = false;
                 item.absent = false;
-                //item.OnpropertyChange();
             }
             else if(item.leave==true)
             {

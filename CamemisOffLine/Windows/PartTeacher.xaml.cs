@@ -98,9 +98,10 @@ namespace CamemisOffLine.Windows
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-           
-            //.........................Control Header Result..................
 
+            //.........................Control Header Result..................
+            lblTitleDataResult.Visibility = Visibility.Collapsed;
+            lblTitleDataResult.Content = "";
             Selectresult.Visibility = Visibility.Collapsed;
             cbSelectClass.Visibility = Visibility.Collapsed;
             cbSelectMonth.Visibility = Visibility.Collapsed;
@@ -270,6 +271,7 @@ namespace CamemisOffLine.Windows
         //..........................Tab Button..................
         private void btnLearningResult_Click(object sender, RoutedEventArgs e)
         {
+            lblTitleDataResult.Visibility = Visibility.Visible;
             var bc = new BrushConverter();
             btnLearningResult.Background = Brushes.White;  
             btnInputScore.Background = (Brush)bc.ConvertFrom("#66D3D3D3");
@@ -279,7 +281,7 @@ namespace CamemisOffLine.Windows
 
         private void btnInputScore_Click(object sender, RoutedEventArgs e)
         {
-            
+            lblTitleDataResult.Visibility = Visibility.Collapsed;
             var bc = new BrushConverter();
             btnLearningResult.Background = (Brush)bc.ConvertFrom("#66D3D3D3");
             btnInputScore.Background = Brushes.White;
@@ -2053,12 +2055,12 @@ namespace CamemisOffLine.Windows
             tabcontrolLearn1.SelectedIndex = 5;
             btnSaveSemester.Visibility = Visibility.Collapsed;
             btnPostSemester.Visibility = Visibility.Collapsed;
-            lblTitleDataResult.Content = "លទ្ធផលប្រឡង";
+            lblTitleDataResult.Content = "លទ្ធផលប្រឡង "+monthName;
         }
 
         private void btnClassification_Click(object sender, RoutedEventArgs e)
         {
-            
+            lblTitleDataResult.Content = "ចំណាត់ថ្នាក់-ចំណាត់ប្រភេទ " + monthName;
             tabcontrolLearn1.SelectedIndex = 4;
 
             if(type=="2")
@@ -2077,6 +2079,7 @@ namespace CamemisOffLine.Windows
         private void btnResultSemester_Click(object sender, RoutedEventArgs e)
         {
             tabcontrolLearn1.SelectedIndex = 2;
+            lblTitleDataResult.Content = "លទ្ធផលប្រចាំ " + monthName;
             btnSaveSemester.Visibility = Visibility.Collapsed;
             btnPostSemester.Visibility = Visibility.Collapsed;
         }
@@ -2880,7 +2883,8 @@ namespace CamemisOffLine.Windows
                 string id="";
                 var selection = (KeyValuePair<string, string>)item.SelectedItem;
                 monthName = selection.Key;
-
+                lblTitleDataResult.Visibility = Visibility.Visible;
+                lblTitleDataResult.Content = "លទ្ធផលប្រចាំ " + selection.Key;
                 if (selection.Key.Equals("ឆមាសទី១") || selection.Key.Equals("ឆមាសទី២"))
                 {
                    
@@ -2993,7 +2997,7 @@ namespace CamemisOffLine.Windows
                 }
                 else if(selection.Key.Equals("លទ្ធផលប្រចាំឆ្នាំ"))
                 {
-                    
+                    lblTitleDataResult.Content = monthName;
                     btnExamSemester.Visibility = Visibility.Collapsed;
                     btnResultSemester.Visibility = Visibility.Collapsed;
                     btnResultYear.Visibility = Visibility.Visible;
@@ -3550,6 +3554,7 @@ namespace CamemisOffLine.Windows
         private void btnResultYear_Click(object sender, RoutedEventArgs e)
         {
             tabcontrolLearn1.SelectedIndex = 3;
+            lblTitleDataResult.Content = "លទ្ធផលប្រចាំឆ្នាំ";
        }
 
         private void btnPrintresultStu_Click(object sender, RoutedEventArgs e)
