@@ -5666,7 +5666,6 @@ namespace CamemisOffLine
                 item.leave = false;
                 item.permission = false;
                 item.absent = false;
-                //item.OnpropertyChange();
             }
             else if(item.leave==true)
             {
