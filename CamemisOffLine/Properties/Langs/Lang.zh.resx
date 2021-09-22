@@ -405,6 +405,9 @@
   <data name="permission request" xml:space="preserve">
     <value>权限请求</value>
   </data>
+  <data name="please connect to the internet" xml:space="preserve">
+    <value>请连接到互联网</value>
+  </data>
   <data name="please select" xml:space="preserve">
     <value>请选择</value>
   </data>
