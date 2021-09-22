@@ -12,16 +12,16 @@ namespace CamemisOffLine.Asset
 
         public string[][] titel = new string[][]
         {
-            new string[]{Properties.Langs.Lang.total_by_school_year,"តាមកម្រិតរួម", "តាមកម្រិតនីមួយៗ", "តាមថ្នាក់នីមួយៗ", "ប្រឡងឡើងថ្នាក់","ត្រួតថ្នាក់","បោះបង់ការសិក្សា"},
-            new string[]{"កាលវិភាគសិក្សាតាមថ្នាក់"},
-            new string[]{"លទ្ធផលសិក្សាតាមថ្នាក់","ព្រិត្តប័ត្តពិន្ទុសិស្ស","តារាងកិត្តិយសតាមថ្នាក់","ចំណាត់ថ្នាក់ ចំណាត់ប្រភេទប្រចាំឆមាសតាមថ្នាក់","លទ្ធផលសិក្សាគ្រប់មុខវិជ្ជា" },
+            new string[]{Properties.Langs.Lang.total_by_school_year,Properties.Langs.Lang.by_common_level, Properties.Langs.Lang.by_each_level,Properties.Langs.Lang.by_each_class,Properties.Langs.Lang.exam_promote_class,Properties.Langs.Lang.repeat_class,Properties.Langs.Lang.studies_cancel},
+            new string[]{Properties.Langs.Lang.class_schedule},
+            new string[]{Properties.Langs.Lang.results_study_by_class,Properties.Langs.Lang.student_Score_Bulletin,Properties.Langs.Lang.honor_tables_by_class,Properties.Langs.Lang.rating_Classification_semester_by_class,Properties.Langs.Lang.results_learning_all_subjects },
             new string[]{"កាតសិស្សតាមថ្នាក់"},
-            new string[]{"បញ្ចីអវត្តមានសិស្សតាមថ្នាក់"},
+            new string[]{Properties.Langs.Lang.student_attendance_by_class},
             new string[]{"តាមថ្នាក់នីមួយៗ","សរុបតាមកម្រិតនីមួយៗ"},
             new string[]{"ចំណាត់ថ្នាក់ ចំណាត់ប្រភេទប្រចាំឆមាសតាមថ្នាក់"},
             new string[]{"តាមថ្នាក់នីមួយៗ", "សរុបតាមកម្រិតនីមួយៗ" },
             new string[]{"សញ្ញាប័ត្ររបស់បុគ្គលិក","និទ្ទេសតាមថ្នាក់","និទ្ទេស​តាមកម្រិត​"},
-            new string[]{ "ចំណេះទូទៅនិង បំពេញវិជ្ជាថ្នាក់ ទី៩", "ចំណេះទូទៅនិង បំពេញវិជ្ជាថ្នាក់ ទី១២"},
+            new string[]{ Properties.Langs.Lang.general_knowledge_and_Completion_Grade_9, Properties.Langs.Lang.general_knowledge_and_Completion_Grade_12},
             new string[]{"សិស្សសរុបតាមថ្នាក់នីមួយៗ"},
             new string[]{"និទ្ទេសមុខវិជ្ជាតាមថ្នាក់", "និទ្ទេសមុខវិជ្ជាតាមកម្រិត" },
             new string[]{"តាមថ្នាក់នីមួយៗ", "សរុបតាមកម្រិតនីមួយៗ" },

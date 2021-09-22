@@ -650,8 +650,8 @@ namespace CamemisOffLine.Windows
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxControl message = new MessageBoxControl();
-            message.title = "ព័ត៌មាន";
-            message.discription = "តើអ្នកពីតជាចង់ចាក់ចេញពី​ CAMEMIS DESKTOP​ មែនទេ?";
+            message.title = Properties.Langs.Lang.Information;
+            message.discription = Properties.Langs.Lang.Do_you_really_want_to_exit_CAMEMIS_DESKTOP_;
             this.IsEnabled = false;
             this.Opacity = 0.5;
             message.ShowDialog();
@@ -661,7 +661,7 @@ namespace CamemisOffLine.Windows
             if (message.result == 1)
             {
 
-                Properties.Settings.Default.checkLoginOrLogut = "logout";
+                Properties.Settings.Default.checkLoginOrLogut = Properties.Langs.Lang.logout;
                 Properties.Settings.Default.Save();
                 Login login = new Login();
                 this.Close();
@@ -669,7 +669,7 @@ namespace CamemisOffLine.Windows
             }
             else
             {
-                Properties.Settings.Default.checkLoginOrLogut = "login";
+                Properties.Settings.Default.checkLoginOrLogut = Properties.Langs.Lang.login;
                 Properties.Settings.Default.Save();
             }
         }
@@ -802,7 +802,7 @@ namespace CamemisOffLine.Windows
                 MessageBoxControl message = new MessageBoxControl();
                 message.title = Properties.Langs.Lang.Internet;
                 message.discription = Properties.Langs.Lang.No_internet_connection;
-                message.subtxt = "សូមធ្វើការភ្ជាប់ អ៊ិនធឺណេត";
+                message.subtxt = Properties.Langs.Lang.please_connect_to_the_internet;
                 message.buttonType = 2;
                 message.Owner = this;
                 message.ShowDialog();
@@ -1226,11 +1226,11 @@ namespace CamemisOffLine.Windows
             cbSelectClass.ItemsSource = null;
             cbSelectMonth.ItemsSource = null;
             cbSelectSubject.ItemsSource = null;
-            cbSelectClass.Text = "សូមជ្រើសរើសថ្នាក់";
-            cbSelectMonth.Text = "សូមជ្រើសរើសឆ្នាំខែ/ឆមាស";
-            cbSelectSubject.Text = "សូមជ្រើសរើសមុខវិជ្ជា";
+            cbSelectClass.Text = Properties.Langs.Lang.select_class;
+            cbSelectMonth.Text = Properties.Langs.Lang.Select_Month___Semester___Year;
+            cbSelectSubject.Text = Properties.Langs.Lang.select_subjects;
             cbSelectResultMonth.ItemsSource = null;
-            cbSelectResultMonth.Text = "សូមជ្រើសរើសឆ្នាំខែ/ឆមាស";
+            cbSelectResultMonth.Text = Properties.Langs.Lang.Select_Month___Semester___Year;
 
             Selectresult.Visibility = Visibility.Collapsed;
            
@@ -2699,9 +2699,9 @@ namespace CamemisOffLine.Windows
 
                 this.IsEnabled = false;
                 btnLearningResult.IsEnabled = true;
-                cbSelectSubject.Text = "សូមជ្រើរើសមុខវិជ្ជា";
+                cbSelectSubject.Text = Properties.Langs.Lang.select_subjects;
                 cbSelectSubject.SelectedIndex = -1;
-                cbSelectMonth.Text = "សូមជ្រើសរើសខែ/ឆមាស";
+                cbSelectMonth.Text = Properties.Langs.Lang.Select_Month___Semester___Year;
                 cbSelectMonth.SelectedIndex = -1;
                 cbSelectMonth.Visibility = Visibility.Collapsed;
                 DGMonthlyResult.ItemsSource = null;

@@ -142,6 +142,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Attendant information.
+        /// </summary>
+        public static string attendant_information {
+            get {
+                return ResourceManager.GetString("attendant information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string back {
@@ -156,6 +165,24 @@ namespace CamemisOffLine.Properties.Langs {
         public static string by_common_level {
             get {
                 return ResourceManager.GetString("by common level", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to By each class.
+        /// </summary>
+        public static string by_each_class {
+            get {
+                return ResourceManager.GetString("by each class", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to By each level.
+        /// </summary>
+        public static string by_each_level {
+            get {
+                return ResourceManager.GetString("by each level", resourceCulture);
             }
         }
         
@@ -250,6 +277,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Class schedule.
+        /// </summary>
+        public static string class_schedule {
+            get {
+                return ResourceManager.GetString("class schedule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Classes.
         /// </summary>
         public static string Classes {
@@ -318,6 +354,15 @@ namespace CamemisOffLine.Properties.Langs {
         public static string delectall {
             get {
                 return ResourceManager.GetString("delectall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selete submit to the commission check.
+        /// </summary>
+        public static string delete_submit_to_the_Commission_check {
+            get {
+                return ResourceManager.GetString("delete submit to the Commission check", resourceCulture);
             }
         }
         
@@ -439,6 +484,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Exam promote class.
+        /// </summary>
+        public static string exam_promote_class {
+            get {
+                return ResourceManager.GetString("exam promote class", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Export data to Excel.
         /// </summary>
         public static string Export_data_to_Excel {
@@ -502,6 +556,24 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Knowledge and Completion Grade 12.
+        /// </summary>
+        public static string general_knowledge_and_Completion_Grade_12 {
+            get {
+                return ResourceManager.GetString("general knowledge and Completion Grade 12", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Knowledge and Completion Grade 9.
+        /// </summary>
+        public static string general_knowledge_and_Completion_Grade_9 {
+            get {
+                return ResourceManager.GetString("general knowledge and Completion Grade 9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Grade.
         /// </summary>
         public static string Grade {
@@ -525,6 +597,15 @@ namespace CamemisOffLine.Properties.Langs {
         public static string group {
             get {
                 return ResourceManager.GetString("group", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Honor tables by class.
+        /// </summary>
+        public static string honor_tables_by_class {
+            get {
+                return ResourceManager.GetString("honor tables by class", resourceCulture);
             }
         }
         
@@ -624,6 +705,15 @@ namespace CamemisOffLine.Properties.Langs {
         public static string List_students_by_age {
             get {
                 return ResourceManager.GetString("List students by age", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        public static string login {
+            get {
+                return ResourceManager.GetString("login", resourceCulture);
             }
         }
         
@@ -808,6 +898,24 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Permission request.
+        /// </summary>
+        public static string permission_request {
+            get {
+                return ResourceManager.GetString("permission request", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please connect to the internet.
+        /// </summary>
+        public static string please_connect_to_the_internet {
+            get {
+                return ResourceManager.GetString("please connect to the internet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please select.
         /// </summary>
         public static string please_select {
@@ -970,6 +1078,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rating-Classification semester by class.
+        /// </summary>
+        public static string rating_Classification_semester_by_class {
+            get {
+                return ResourceManager.GetString("rating-Classification semester by class", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Repeat class.
         /// </summary>
         public static string repeat_class {
@@ -988,11 +1105,38 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Results learning all subjects.
+        /// </summary>
+        public static string results_learning_all_subjects {
+            get {
+                return ResourceManager.GetString("results learning all subjects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Results Learning by class.
+        /// </summary>
+        public static string results_study_by_class {
+            get {
+                return ResourceManager.GetString("results study by class", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Return.
         /// </summary>
         public static string Return {
             get {
                 return ResourceManager.GetString("Return", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string save {
+            get {
+                return ResourceManager.GetString("save", resourceCulture);
             }
         }
         
@@ -1047,6 +1191,15 @@ namespace CamemisOffLine.Properties.Langs {
         public static string score {
             get {
                 return ResourceManager.GetString("score", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        public static string search {
+            get {
+                return ResourceManager.GetString("search", resourceCulture);
             }
         }
         
@@ -1114,6 +1267,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select subjects.
+        /// </summary>
+        public static string select_subjects {
+            get {
+                return ResourceManager.GetString("select subjects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Semester.
         /// </summary>
         public static string semester {
@@ -1137,6 +1299,15 @@ namespace CamemisOffLine.Properties.Langs {
         public static string Semester_Results {
             get {
                 return ResourceManager.GetString("Semester Results", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send data.
+        /// </summary>
+        public static string send_data {
+            get {
+                return ResourceManager.GetString("send data", resourceCulture);
             }
         }
         
@@ -1285,6 +1456,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Student attendance by class.
+        /// </summary>
+        public static string student_attendance_by_class {
+            get {
+                return ResourceManager.GetString("student attendance by class", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Student Attendence Report.
         /// </summary>
         public static string student_Attendence_Report {
@@ -1312,6 +1492,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Student Score Bulletin.
+        /// </summary>
+        public static string student_Score_Bulletin {
+            get {
+                return ResourceManager.GetString("student Score Bulletin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Student statistics by grade.
         /// </summary>
         public static string Student_statistics_by_grade {
@@ -1330,6 +1519,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Studies cancel.
+        /// </summary>
+        public static string studies_cancel {
+            get {
+                return ResourceManager.GetString("studies cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Study results.
         /// </summary>
         public static string study_results {
@@ -1344,6 +1542,15 @@ namespace CamemisOffLine.Properties.Langs {
         public static string Sub_List {
             get {
                 return ResourceManager.GetString("Sub List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Submit to the commission check.
+        /// </summary>
+        public static string submit_to_the_Commission_check {
+            get {
+                return ResourceManager.GetString("submit to the Commission check", resourceCulture);
             }
         }
         

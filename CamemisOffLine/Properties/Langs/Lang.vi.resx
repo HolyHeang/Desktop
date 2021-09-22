@@ -144,11 +144,20 @@
   <data name="approve" xml:space="preserve">
     <value>Chấp thuận</value>
   </data>
+  <data name="attendant information" xml:space="preserve">
+    <value>Thông tin người phục vụ</value>
+  </data>
   <data name="back" xml:space="preserve">
     <value>trở lại</value>
   </data>
   <data name="by common level" xml:space="preserve">
     <value>Theo cấp độ chung</value>
+  </data>
+  <data name="by each class" xml:space="preserve">
+    <value>Theo từng lớp</value>
+  </data>
+  <data name="by each level" xml:space="preserve">
+    <value>Theo từng cấp độ</value>
   </data>
   <data name="by name" xml:space="preserve">
     <value>Bằng tên</value>
@@ -183,6 +192,9 @@
   <data name="class" xml:space="preserve">
     <value>lớp</value>
   </data>
+  <data name="class schedule" xml:space="preserve">
+    <value>Lịch học</value>
+  </data>
   <data name="Classes" xml:space="preserve">
     <value>Các lớp học</value>
   </data>
@@ -206,6 +218,9 @@
   </data>
   <data name="delectall" xml:space="preserve">
     <value>Chọn tất cả</value>
+  </data>
+  <data name="delete submit to the Commission check" xml:space="preserve">
+    <value>xóa gửi đến Ủy ban kiểm tra</value>
   </data>
   <data name="Differentfile" xml:space="preserve">
     <value>Gửi một tệp khác</value>
@@ -246,6 +261,9 @@
   <data name="Err" xml:space="preserve">
     <value>lỗi</value>
   </data>
+  <data name="exam promote class" xml:space="preserve">
+    <value>Kỳ thi thăng cấp</value>
+  </data>
   <data name="Export data to Excel" xml:space="preserve">
     <value>Xuất dữ liệu sang Excel</value>
   </data>
@@ -267,6 +285,12 @@
   <data name="gender" xml:space="preserve">
     <value>Giới tính</value>
   </data>
+  <data name="general knowledge and Completion Grade 12" xml:space="preserve">
+    <value>Kiến thức chung và Hoàn thành lớp 12</value>
+  </data>
+  <data name="general knowledge and Completion Grade 9" xml:space="preserve">
+    <value>Kiến thức chung và Hoàn thành lớp 9</value>
+  </data>
   <data name="Grade" xml:space="preserve">
     <value>cấp</value>
   </data>
@@ -275,6 +299,9 @@
   </data>
   <data name="group" xml:space="preserve">
     <value>Tập đoàn</value>
+  </data>
+  <data name="honor tables by class" xml:space="preserve">
+    <value>Bảng danh dự theo lớp</value>
   </data>
   <data name="Import data to Excel" xml:space="preserve">
     <value>Nhập dữ liệu vào Excel</value>
@@ -308,6 +335,9 @@
   </data>
   <data name="List students by age" xml:space="preserve">
     <value>Liệt kê học sinh theo độ tuổi</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Đăng nhập</value>
   </data>
   <data name="logout" xml:space="preserve">
     <value>Đăng xuất</value>
@@ -369,6 +399,9 @@
   <data name="permission" xml:space="preserve">
     <value>Sự cho phép</value>
   </data>
+  <data name="permission request" xml:space="preserve">
+    <value>Yêu cầu sự cho phép</value>
+  </data>
   <data name="please select" xml:space="preserve">
     <value>Xin hãy lựa chọn</value>
   </data>
@@ -420,11 +453,23 @@
   <data name="Rating - Classification" xml:space="preserve">
     <value>Đánh giá - Phân loại</value>
   </data>
+  <data name="rating-Classification semester by class" xml:space="preserve">
+    <value>Xếp loại-Phân loại học kỳ theo lớp</value>
+  </data>
   <data name="repeat class" xml:space="preserve">
     <value>lớp học lặp lại</value>
   </data>
   <data name="results" xml:space="preserve">
     <value>Kết quả</value>
+  </data>
+  <data name="results learning all subjects" xml:space="preserve">
+    <value>Kết quả học tập tất cả các môn</value>
+  </data>
+  <data name="results study by class" xml:space="preserve">
+    <value>Kết quả nghiên cứu theo lớp</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Cứu</value>
   </data>
   <data name="Sch Year" xml:space="preserve">
     <value>năm học</value>
@@ -443,6 +488,9 @@
   </data>
   <data name="score" xml:space="preserve">
     <value>ghi bàn</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Tìm kiếm</value>
   </data>
   <data name="search students:" xml:space="preserve">
     <value>Tìm kiếm sinh viên:</value>
@@ -465,6 +513,9 @@
   <data name="select students" xml:space="preserve">
     <value>Chọn học sinh</value>
   </data>
+  <data name="select subjects" xml:space="preserve">
+    <value>chọn chủ đề</value>
+  </data>
   <data name="semester" xml:space="preserve">
     <value>học kỳ</value>
   </data>
@@ -473,6 +524,9 @@
   </data>
   <data name="Semester Results" xml:space="preserve">
     <value>Kết quả học kỳ</value>
+  </data>
+  <data name="send data" xml:space="preserve">
+    <value>gửi dữ liệu</value>
   </data>
   <data name="set" xml:space="preserve">
     <value>Cài đặt</value>
@@ -522,6 +576,9 @@
   <data name="Stu List" xml:space="preserve">
     <value>Danh sách sinh viên</value>
   </data>
+  <data name="student attendance by class" xml:space="preserve">
+    <value>Sự tham gia của học sinh theo lớp</value>
+  </data>
   <data name="student Attendence Report" xml:space="preserve">
     <value>Báo cáo chuyên cần của học sinh</value>
   </data>
@@ -531,17 +588,26 @@
   <data name="student schedule" xml:space="preserve">
     <value>Thời khóa biểu của sinh viên</value>
   </data>
+  <data name="student Score Bulletin" xml:space="preserve">
+    <value>Bản tin điểm sinh viên</value>
+  </data>
   <data name="Student statistics by grade" xml:space="preserve">
     <value>Thống kê học sinh theo lớp</value>
   </data>
   <data name="Student Statistics for Education Staff" xml:space="preserve">
     <value>Thống kê sinh viên cho nhân viên giáo dục</value>
   </data>
+  <data name="studies cancel" xml:space="preserve">
+    <value>nghiên cứu hủy bỏ</value>
+  </data>
   <data name="study results" xml:space="preserve">
     <value>Kết quả học tập</value>
   </data>
   <data name="Sub List" xml:space="preserve">
     <value>Danh sách chủ đề</value>
+  </data>
+  <data name="submit to the Commission check" xml:space="preserve">
+    <value>Gửi cho Ủy ban kiểm tra</value>
   </data>
   <data name="Tea Menu" xml:space="preserve">
     <value>THỰC ĐƠN GIÁO VIÊN</value>

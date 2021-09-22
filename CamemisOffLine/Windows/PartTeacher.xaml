@@ -329,11 +329,11 @@
                                                                         <ColumnDefinition Width="310"/>
                                                                     </Grid.ColumnDefinitions>
                                                                     <Grid Grid.Column="0">
-                                                                        <ComboBox Style="{StaticResource combobox}" Name="cbAcademyYear" IsEditable="True" FontSize="14" Foreground="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Text="សូមជ្រើសរើសឆ្នាំសិក្សា" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35" Margin="-10 0 0 0" Width="200"
+                                                                        <ComboBox Style="{StaticResource combobox}" Name="cbAcademyYear" IsEditable="True" FontSize="14" Foreground="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Text="{x:Static language:Lang.Select_school_year}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35" Margin="-10 0 0 0" Width="200"
                                                                                   BorderThickness="1 2 1 1" BorderBrush="White" SelectionChanged="cbAcademyYear_SelectionChanged" />
                                                                     </Grid>
                                                                     <Grid Grid.Column="1">
-                                                                        <ComboBox Style="{StaticResource combobox}" Name="cbSelectClass" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35"  Width="200" Text="សូមជ្រើសរើសថ្នាក់" IsEditable="True" BorderThickness="1" BorderBrush="WhiteSmoke" Margin="0 0 0 0" SelectionChanged="cbSelectClass_SelectionChanged"/>
+                                                                        <ComboBox Style="{StaticResource combobox}" Name="cbSelectClass" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35"  Width="200" Text="{x:Static language:Lang.select_class}" IsEditable="True" BorderThickness="1" BorderBrush="WhiteSmoke" Margin="0 0 0 0" SelectionChanged="cbSelectClass_SelectionChanged"/>
 
                                                                     </Grid>
                                                                     
@@ -341,7 +341,7 @@
                                                                     <StackPanel Orientation="Horizontal" Grid.Column="3" HorizontalAlignment="Right">
                                                                        
                                                                         <Button Name="btnBack" Cursor="Hand" Width="90" HorizontalAlignment="Right" Style="{DynamicResource Siemreap}" Background="LightGray" Margin="0,0,10,0" Height="35" Click="btnBack_Click">
-                                                                            <Grid Height="28" Width="90">
+                                                                            <Grid Height="28" MinWidth="90">
                                                                                 <Grid.ColumnDefinitions>
                                                                                     <ColumnDefinition Width="30"></ColumnDefinition>
                                                                                     <ColumnDefinition Width="*"></ColumnDefinition>
@@ -402,14 +402,14 @@
 
                                                                                         <Grid Grid.Row="0">
                                                                                             <Grid.ColumnDefinitions>
-                                                                                                <ColumnDefinition Width="420"/>
+                                                                                                <ColumnDefinition Width="*"/>
                                                                                                 <ColumnDefinition Width="0"/>
                                                                                                 <ColumnDefinition Width="1.2*"/>
                                                                                             </Grid.ColumnDefinitions>
 
                                                                                             <StackPanel Orientation="Horizontal" Grid.Column="0" Margin="10,0,0,-0.4">
-                                                                                                <ComboBox Style="{StaticResource combobox}" Name="cbSelectSubject" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35" Width="200"  Text="សូមជ្រើសរើសមុខវិជ្ជា" IsEditable="True" BorderThickness="1" BorderBrush="WhiteSmoke" Margin="0,4,10,11" SelectionChanged="cbSelectSubject_SelectionChanged"/>
-                                                                                                <ComboBox Style="{StaticResource combobox}" Name="cbSelectMonth" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35" Width="200" Text="សូមជ្រើសរើសខែ/ឆមាស" IsEditable="True" BorderThickness="1" BorderBrush="WhiteSmoke" Margin="0,4,10,11" SelectionChanged="cbSelectMonth_SelectionChanged"/>
+                                                                                                <ComboBox Style="{StaticResource combobox}" Name="cbSelectSubject" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35" Text="{x:Static language:Lang.select_subjects}" IsEditable="True" BorderThickness="1" MinWidth="190" BorderBrush="WhiteSmoke" Margin="0,4,10,11" SelectionChanged="cbSelectSubject_SelectionChanged"/>
+                                                                                                <ComboBox Style="{StaticResource combobox}" Name="cbSelectMonth" FontSize="14" MinWidth="200" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35" Text="{x:Static language:Lang.Select_Month___Semester___Year}" IsEditable="True" BorderThickness="1" BorderBrush="WhiteSmoke" Margin="5,4,10,11" SelectionChanged="cbSelectMonth_SelectionChanged"/>
                                                                                             </StackPanel>
                                                                                             <StackPanel Name="stacButtonTop" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="2" Margin="0,0,0,-0.4" Grid.ColumnSpan="2">
                                                                                                 <Label Name="txtxCheckAutoSave" HorizontalAlignment="Right" Content="រក្សាទុកស្វ័យប្រវត្តិ"  VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Width="auto" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="0 0 10 0" Visibility="Collapsed"></Label>
@@ -442,8 +442,8 @@
                                                                                                     </Grid>
 
                                                                                                 </Button>
-                                                                                                <Button Name="btnPost" BorderThickness="1" BorderBrush="#1183CA" Click="btnPost_Click" VerticalAlignment="Center" Margin="0 -3 5 0" Height="35" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}">
-                                                                                                    <Grid Height="35" Width="auto">
+                                                                                                <Button Name="btnPost" BorderThickness="1" BorderBrush="#1183CA" Click="btnPost_Click" VerticalAlignment="Center" Margin="0 -3 5 0" Height="35" Cursor="Hand" MinWidth="90" Style="{DynamicResource Siemreap}">
+                                                                                                    <Grid Height="35" MinWidth="90">
                                                                                                         <Grid.ColumnDefinitions>
                                                                                                             <ColumnDefinition Width="30"></ColumnDefinition>
                                                                                                             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -453,7 +453,7 @@
                                                                                                             <materialDesign:PackIcon Kind="CloudUpload" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" Height="20" Width="20"/>
                                                                                                         </Grid>
                                                                                                         <Grid Grid.Column="1" Background="Green">
-                                                                                                            <Label Content="បញ្ជូនទិន្ន័យ" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="5,2,5,4">
+                                                                                                            <Label Content="{x:Static language:Lang.send_data}" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="5,2,5,4">
 
                                                                                                             </Label>
                                                                                                         </Grid>
@@ -462,8 +462,8 @@
                                                                                                     </Grid>
                                                                                                 </Button>
 
-                                                                                                <Button Name="btnDeleteAll" Height="35" BorderThickness="1" BorderBrush="#1183CA" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" Background="LightGray" Margin="0 -3 0 0" Click="btnDeleteAll_Click" VerticalAlignment="Center">
-                                                                                                    <Grid Height="35" Width="auto">
+                                                                                                <Button Name="btnDeleteAll" Height="35" BorderThickness="1" BorderBrush="#1183CA" Cursor="Hand" MinWidth="90" Style="{DynamicResource Siemreap}" Background="LightGray" Margin="0 -3 0 0" Click="btnDeleteAll_Click" VerticalAlignment="Center">
+                                                                                                    <Grid Height="35" MinWidth="90">
                                                                                                         <Grid.ColumnDefinitions>
                                                                                                             <ColumnDefinition Width="30"></ColumnDefinition>
                                                                                                             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -482,8 +482,8 @@
                                                                                                     </Grid>
                                                                                                 </Button>
 
-                                                                                                <Button Name="btnPrint" BorderThickness="1" BorderBrush="#1183CA" VerticalAlignment="Center" Margin="5 -3 10 0" Height="35" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" Click="btnPrint_Click">
-                                                                                                    <Grid Height="35" Width="auto">
+                                                                                                <Button Name="btnPrint" BorderThickness="1" BorderBrush="#1183CA" VerticalAlignment="Center" Margin="5 -3 10 0" Height="35" Cursor="Hand" MinWidth="90" Style="{DynamicResource Siemreap}" Click="btnPrint_Click">
+                                                                                                    <Grid Height="35" MinWidth="90">
                                                                                                         <Grid.ColumnDefinitions>
                                                                                                             <ColumnDefinition Width="30"></ColumnDefinition>
                                                                                                             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -493,7 +493,7 @@
                                                                                                             <materialDesign:PackIcon Kind="Printer" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" Height="20" Width="20"/>
                                                                                                         </Grid>
                                                                                                         <Grid Grid.Column="1" Background="Black">
-                                                                                                            <Label Content="បោះពុម្ភ" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="5,2,5,4">
+                                                                                                            <Label Content="{x:Static language:Lang.print}" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="5,2,5,4">
 
                                                                                                             </Label>
                                                                                                         </Grid>
@@ -777,12 +777,12 @@
 
                                                                                     <Grid Grid.Row="0" Name="gridheaderResult">
                                                                                         <Grid.ColumnDefinitions>
-                                                                                            <ColumnDefinition Width="220"/>
+                                                                                            <ColumnDefinition Width="250"/>
                                                                                             <ColumnDefinition Width="0"/>
-                                                                                            <ColumnDefinition Width="*"/>
+                                                                                            <ColumnDefinition Width="2*"/>
                                                                                         </Grid.ColumnDefinitions>
                                                                                         <StackPanel Grid.Column="0" Margin="10 0 0 0" Orientation="Horizontal">
-                                                                                            <ComboBox Style="{StaticResource combobox}" Name="cbSelectResultMonth" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35" Width="200"  Text="សូមជ្រើសរើសខែ/ឆមាស" IsEditable="True" BorderThickness="1" BorderBrush="WhiteSmoke" Margin="0,0,10,0" SelectionChanged="cbSelectResultMonth_SelectionChanged"/>
+                                                                                            <ComboBox Style="{StaticResource combobox}" Name="cbSelectResultMonth" FontSize="14" MinWidth="190" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35" Text="{x:Static language:Lang.Select_Month___Semester___Year}" IsEditable="True" BorderThickness="1" BorderBrush="WhiteSmoke" Margin="0,0,10,0" SelectionChanged="cbSelectResultMonth_SelectionChanged"/>
                                                                                         </StackPanel>
                                                                                         <StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Right" Margin="0 0 0 0">
                                                                                             <TextBlock Name="txtDate" Text="កាលបរិច្ឆេទ​ : 26/07/2021" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Margin="0 0 10 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Visibility="Collapsed"/>
@@ -806,18 +806,18 @@
 
                                                                                                 </Grid>
                                                                                             </Button>-->
-                                                                                            <Button Name="btnCalculate" BorderThickness="1" BorderBrush="#1183CA" VerticalAlignment="Center" Margin="5 0 0 0" Height="35" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" Click="btnCalculate_Click">
-                                                                                                <Grid Height="35" Width="auto">
+                                                                                            <Button Name="btnCalculate" BorderThickness="1" BorderBrush="#1183CA" VerticalAlignment="Center" Margin="5 0 0 0" Height="35" Cursor="Hand" MinWidth="90" Style="{DynamicResource Siemreap}" Click="btnCalculate_Click">
+                                                                                                <Grid Height="35" MinWidth="90">
                                                                                                     <Grid.ColumnDefinitions>
                                                                                                         <ColumnDefinition Width="30"></ColumnDefinition>
-                                                                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                                                                        <ColumnDefinition Width="2*"></ColumnDefinition>
                                                                                                     </Grid.ColumnDefinitions>
                                                                                                     <Grid Grid.Column="0" Margin="0,0,0,1" Background="White">
                                                                                                         <Border BorderBrush="Gray" BorderThickness="0 0 1 0" Background="#f76c51" Opacity="0.8"></Border>
                                                                                                         <materialDesign:PackIcon Kind="Calculator" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" Height="20" Width="20"/>
                                                                                                     </Grid>
                                                                                                     <Grid Grid.Column="1" Background="#f76447">
-                                                                                                        <Label Content="គណនា" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="5,2,5,4">
+                                                                                                        <Label Content="{x:Static language:Lang.calculate}" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Center" Margin="5,2,5,4">
 
                                                                                                         </Label>
                                                                                                     </Grid>
@@ -836,7 +836,7 @@
                                                                                                         <materialDesign:PackIcon Kind="Telegram" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" Height="20" Width="20"/>
                                                                                                     </Grid>
                                                                                                     <Grid Grid.Column="1" Background="#5fa2dd">
-                                                                                                        <Label Content="ដាក់ស្នើរគណៈកម្មការត្រួតពិនិត្យ" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="5,2,5,4">
+                                                                                                        <Label Content="{x:Static language:Lang.submit_to_the_Commission_check}" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="5,2,5,4">
 
                                                                                                         </Label>
                                                                                                     </Grid>
@@ -855,7 +855,7 @@
                                                                                                         <materialDesign:PackIcon Kind="DeleteOutline" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" Height="20" Width="20"/>
                                                                                                     </Grid>
                                                                                                     <Grid Grid.Column="1" Background="#eaa642">
-                                                                                                        <Label Content="លុបដាក់ស្នើរគណៈកម្មការត្រួតពិនិត្យ" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="5,2,5,4">
+                                                                                                        <Label Content="{x:Static language:Lang.delete_submit_to_the_Commission_check}" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="5,2,5,4">
 
                                                                                                         </Label>
                                                                                                     </Grid>
@@ -864,9 +864,9 @@
                                                                                                 </Grid>
                                                                                             </Button>
 
-                                                                                            <Button Name="btnSaveSemester" BorderThickness="1" BorderBrush="#1183CA" Click="btnSaveSemester_Click" Height="35" Width="auto" VerticalAlignment="Center" Margin="5 0 0 0" Style="{DynamicResource Siemreap}" Visibility="Collapsed">
+                                                                                            <Button Name="btnSaveSemester" BorderThickness="1" BorderBrush="#1183CA" Click="btnSaveSemester_Click" Height="35" MinWidth="90" VerticalAlignment="Center" Margin="5 0 0 0" Style="{DynamicResource Siemreap}" Visibility="Collapsed">
 
-                                                                                                <Grid Height="35" Width="auto">
+                                                                                                <Grid Height="35" MinWidth="90">
                                                                                                     <Grid.ColumnDefinitions>
                                                                                                         <ColumnDefinition Width="30"></ColumnDefinition>
                                                                                                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -876,15 +876,15 @@
                                                                                                         <materialDesign:PackIcon Kind="ContentSaveOutline" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" Height="20" Width="20"/>
                                                                                                     </Grid>
                                                                                                     <Grid Grid.Column="1" Background="#FF1D3678">
-                                                                                                        <Label Content="រក្សាទុក" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="5,2,5,4">
+                                                                                                        <Label Content="{x:Static language:Lang.save}" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Center" Margin="5,2,5,4">
 
                                                                                                         </Label>
                                                                                                     </Grid>
                                                                                                 </Grid>
                                                                                             </Button>
-                                                                                            <Button Name="btnPostSemester" BorderThickness="1" BorderBrush="#1183CA" Click="btnPostSemester_Click" Height="35" Width="auto" VerticalAlignment="Center" Margin="5 0 0 0" Style="{DynamicResource Siemreap}" Visibility="Collapsed">
+                                                                                            <Button Name="btnPostSemester" BorderThickness="1" BorderBrush="#1183CA" Click="btnPostSemester_Click" Height="35" MinWidth="90" VerticalAlignment="Center" Margin="5 0 0 0" Style="{DynamicResource Siemreap}" Visibility="Collapsed">
 
-                                                                                                <Grid Height="35" Width="auto">
+                                                                                                <Grid Height="35" MinWidth="90">
                                                                                                     <Grid.ColumnDefinitions>
                                                                                                         <ColumnDefinition Width="30"></ColumnDefinition>
                                                                                                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -894,7 +894,7 @@
                                                                                                         <materialDesign:PackIcon Kind="CloudUpload" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" Height="20" Width="20"/>
                                                                                                     </Grid>
                                                                                                     <Grid Grid.Column="1" Background="Green">
-                                                                                                        <Label Content="បញ្ចូនទិន្នន័យ" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Left" Margin="5,2,5,4">
+                                                                                                        <Label Content="{x:Static language:Lang.send_data}" Foreground="White" VerticalContentAlignment="Center" FontSize="12" Style="{DynamicResource Siemreap}" VerticalAlignment="Center" Padding="1" HorizontalContentAlignment="Center" Margin="5,2,5,4">
 
                                                                                                         </Label>
                                                                                                     </Grid>
@@ -908,20 +908,20 @@
                                                                                                 <MenuItem FontSize="12" Foreground="White" Style="{DynamicResource Siemreap}" Height="35" Background="#1183CA" Width="90">
                                                                                                     <MenuItem.Icon>
                                                                                                         <Grid  Margin="57,-6,-69,-6" Height="28" VerticalAlignment="Top">
-                                                                                                            <Label Foreground="White" Content="លទ្ធផល" Height="28" Margin="-62,0,32,0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                                                                            <Label Foreground="White" Content="{x:Static language:Lang.results}" Height="28" Margin="-62,0,32,0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                                                                                                             <Border BorderBrush="LightGray" BorderThickness="1 0 0 0"></Border>
                                                                                                             <materialDesign:PackIcon Kind="ChevronDown" VerticalAlignment="Center" Foreground="White" Width="20" Height="20" Margin="4,5,0,3">
 
                                                                                                             </materialDesign:PackIcon>
                                                                                                         </Grid>
                                                                                                     </MenuItem.Icon>
-                                                                                                    <MenuItem Header="លទ្ធផលប្រឡងឆមាស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Click="btnExamSemester_Click" Name="btnExamSemester" Foreground="Black" Background="#FFEFF3F3">
+                                                                                                    <MenuItem Header="{x:Static language:Lang.Semester_Exam_Results}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Click="btnExamSemester_Click" Name="btnExamSemester" Foreground="Black" Background="#FFEFF3F3">
 
                                                                                                     </MenuItem>
-                                                                                                    <MenuItem Header="ចំណាត់ថ្នាក់-ចំណាត់ប្រភេទ" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Click="btnClassification_Click" Name="btnClassification" Foreground="Black" Background="#FFEFF3F3">
+                                                                                                    <MenuItem Header="{x:Static language:Lang.Rating___Classification}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Click="btnClassification_Click" Name="btnClassification" Foreground="Black" Background="#FFEFF3F3">
 
                                                                                                     </MenuItem>
-                                                                                                    <MenuItem Header="លទ្ធផលប្រចាំឆមាស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Click="btnResultSemester_Click" Name="btnResultSemester" Foreground="Black" Background="#FFEFF3F3">
+                                                                                                    <MenuItem Header="{x:Static language:Lang.Semester_Results}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Click="btnResultSemester_Click" Name="btnResultSemester" Foreground="Black" Background="#FFEFF3F3">
 
                                                                                                     </MenuItem>
                                                                                                     <MenuItem Header="លទ្ធផលប្រចាំឆ្នាំ" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Click="btnResultYear_Click" Name="btnResultYear" Foreground="Black" Background="#FFEFF3F3">
@@ -963,7 +963,7 @@
                                                                                                             <Image Source="/CamemisOffLine;component/Image/printer.png"/>
                                                                                                         </MenuItem.Icon>
                                                                                                     </MenuItem>
-                                                                                                    <MenuItem Header="បោះពុម្ភចំណាត់ថ្នាក់ចំណាត់ប្រភេទ" Name="printClasscify" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black" Background="#FFEFF3F3" HorizontalContentAlignment="Left" Click="printClasscify_Click">
+                                                                                                    <MenuItem Header="{x:Static language:Lang.Rating___Classification}" Name="printClasscify" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black" Background="#FFEFF3F3" HorizontalContentAlignment="Left" Click="printClasscify_Click">
                                                                                                         <MenuItem.Icon>
                                                                                                             <Image Source="/CamemisOffLine;component/Image/printer.png"/>
                                                                                                         </MenuItem.Icon>

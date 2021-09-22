@@ -144,11 +144,20 @@
   <data name="approve" xml:space="preserve">
     <value>批准</value>
   </data>
+  <data name="attendant information" xml:space="preserve">
+    <value>服务员信息</value>
+  </data>
   <data name="back" xml:space="preserve">
     <value>背部</value>
   </data>
   <data name="by common level" xml:space="preserve">
     <value>按普通级别</value>
+  </data>
+  <data name="by each class" xml:space="preserve">
+    <value>每个班级</value>
+  </data>
+  <data name="by each level" xml:space="preserve">
+    <value>按每个级别</value>
   </data>
   <data name="by name" xml:space="preserve">
     <value>按名称</value>
@@ -183,6 +192,9 @@
   <data name="class" xml:space="preserve">
     <value>班级</value>
   </data>
+  <data name="class schedule" xml:space="preserve">
+    <value>课程表</value>
+  </data>
   <data name="Classes" xml:space="preserve">
     <value>班级</value>
   </data>
@@ -206,6 +218,9 @@
   </data>
   <data name="delectall" xml:space="preserve">
     <value>全选</value>
+  </data>
+  <data name="delete submit to the Commission check" xml:space="preserve">
+    <value>删除提交给委员会检查</value>
   </data>
   <data name="Differentfile" xml:space="preserve">
     <value>归档其他文件</value>
@@ -246,6 +261,9 @@
   <data name="Err" xml:space="preserve">
     <value>错误</value>
   </data>
+  <data name="exam promote class" xml:space="preserve">
+    <value>考试提升班</value>
+  </data>
   <data name="Export data to Excel" xml:space="preserve">
     <value>将数据导出到 Excel</value>
   </data>
@@ -267,6 +285,12 @@
   <data name="gender" xml:space="preserve">
     <value>性别</value>
   </data>
+  <data name="general knowledge and Completion Grade 12" xml:space="preserve">
+    <value>一般知识和完成 12 年级</value>
+  </data>
+  <data name="general knowledge and Completion Grade 9" xml:space="preserve">
+    <value>一般知识和完成 9 年级</value>
+  </data>
   <data name="Grade" xml:space="preserve">
     <value>年级</value>
   </data>
@@ -275,6 +299,9 @@
   </data>
   <data name="group" xml:space="preserve">
     <value>团体</value>
+  </data>
+  <data name="honor tables by class" xml:space="preserve">
+    <value>按班级荣誉表</value>
   </data>
   <data name="Import data to Excel" xml:space="preserve">
     <value>将数据导入 Excel</value>
@@ -311,6 +338,9 @@
   </data>
   <data name="List students by age" xml:space="preserve">
     <value>按年龄列出学生</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>登录</value>
   </data>
   <data name="logout" xml:space="preserve">
     <value>登出</value>
@@ -372,6 +402,9 @@
   <data name="permission" xml:space="preserve">
     <value>权限</value>
   </data>
+  <data name="permission request" xml:space="preserve">
+    <value>权限请求</value>
+  </data>
   <data name="please select" xml:space="preserve">
     <value>请选择</value>
   </data>
@@ -420,11 +453,23 @@
   <data name="Rating - Classification" xml:space="preserve">
     <value>评级 - 分类</value>
   </data>
+  <data name="rating-Classification semester by class" xml:space="preserve">
+    <value>按班级分级分类学期</value>
+  </data>
   <data name="repeat class" xml:space="preserve">
     <value>复课</value>
   </data>
   <data name="results" xml:space="preserve">
     <value>结果</value>
+  </data>
+  <data name="results learning all subjects" xml:space="preserve">
+    <value>学习所有科目的结果</value>
+  </data>
+  <data name="results study by class" xml:space="preserve">
+    <value>班级学习成绩</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>节省</value>
   </data>
   <data name="Sch Year" xml:space="preserve">
     <value>学年</value>
@@ -443,6 +488,9 @@
   </data>
   <data name="score" xml:space="preserve">
     <value>分数</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>搜索</value>
   </data>
   <data name="search students:" xml:space="preserve">
     <value>搜索学生：</value>
@@ -465,6 +513,9 @@
   <data name="select students" xml:space="preserve">
     <value>选择学生</value>
   </data>
+  <data name="select subjects" xml:space="preserve">
+    <value>选择科目</value>
+  </data>
   <data name="semester" xml:space="preserve">
     <value>学期</value>
   </data>
@@ -473,6 +524,9 @@
   </data>
   <data name="Semester Results" xml:space="preserve">
     <value>学期成绩</value>
+  </data>
+  <data name="send data" xml:space="preserve">
+    <value>发送数据</value>
   </data>
   <data name="set" xml:space="preserve">
     <value>设置</value>
@@ -522,6 +576,9 @@
   <data name="Stu List" xml:space="preserve">
     <value>学生名单</value>
   </data>
+  <data name="student attendance by class" xml:space="preserve">
+    <value>学生出勤率</value>
+  </data>
   <data name="student Attendence Report" xml:space="preserve">
     <value>学生出勤报告</value>
   </data>
@@ -531,17 +588,26 @@
   <data name="student schedule" xml:space="preserve">
     <value>学生日程</value>
   </data>
+  <data name="student Score Bulletin" xml:space="preserve">
+    <value>学生成绩公告</value>
+  </data>
   <data name="Student statistics by grade" xml:space="preserve">
     <value>各年级学生统计</value>
   </data>
   <data name="Student Statistics for Education Staff" xml:space="preserve">
     <value>教育人员的学生统计</value>
   </data>
+  <data name="studies cancel" xml:space="preserve">
+    <value>学业取消</value>
+  </data>
   <data name="study results" xml:space="preserve">
     <value>研究结果</value>
   </data>
   <data name="Sub List" xml:space="preserve">
     <value>主题清单</value>
+  </data>
+  <data name="submit to the Commission check" xml:space="preserve">
+    <value>提交给委员会检查</value>
   </data>
   <data name="Tea Menu" xml:space="preserve">
     <value>教师菜单</value>
