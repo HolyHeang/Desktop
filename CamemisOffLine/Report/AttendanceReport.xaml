@@ -120,8 +120,8 @@
                     </DataGrid.Resources>
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="1" Width="*" MinWidth="50" Binding="{Binding  day1}"/>
-                        <DataGridTextColumn Header="3" Width="*"  MinWidth="50" Binding="{Binding  day3}"/>
-                        <DataGridTextColumn Header="2" Width="*"  MinWidth="50" Binding="{Binding  day2}" Foreground="Black"/>
+                        <DataGridTextColumn Header="2" Width="*"  MinWidth="50" Binding="{Binding  day2}"/>
+                        <DataGridTextColumn Header="3" Width="*"  MinWidth="50" Binding="{Binding  day3}" Foreground="Black"/>
                         <DataGridTextColumn Header="4" Width="*"  MinWidth="50" Binding="{Binding  day4}"/>
                         <DataGridTextColumn Header="5" Width="*"  MinWidth="50" Binding="{Binding  day5}"/>
                         <DataGridTextColumn Header="6" Width="*"  MinWidth="50" Binding="{Binding  day6}"/>

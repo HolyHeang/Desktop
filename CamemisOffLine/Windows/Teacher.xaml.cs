@@ -4335,17 +4335,43 @@ namespace CamemisOffLine
            
             else if (item.id == 25)
             {
-                this.Opacity = 0.5;
-                StatisticGrade9 statisticGrade9 = new StatisticGrade9(YearSelection);
-                statisticGrade9.ShowDialog();
-                this.Opacity = 1;
+                if (YearSelection == "")
+                {
+                    this.Opacity = 0.5;
+                    MessageBoxControl messageBox = new MessageBoxControl();
+                    messageBox.title = "បោះពុម្ភ";
+                    messageBox.discription = "សូមធ្វើការជ្រើសរើសឆ្នាំសិក្សា";
+                    messageBox.buttonType = 1;
+                    messageBox.ShowDialog();
+                    this.Opacity = 1;
+                }
+                else
+                {
+                    this.Opacity = 0.5;
+                    StatisticGrade9 statisticGrade9 = new StatisticGrade9(YearSelection);
+                    statisticGrade9.ShowDialog();
+                    this.Opacity = 1;
+                }
             }
             else if (item.id == 26)
             {
-                this.Opacity = 0.5;
-                StatisticGrade12 statisticGrade12 = new StatisticGrade12(YearSelection);
-                statisticGrade12.ShowDialog();
-                this.Opacity = 1;
+                if (YearSelection == "")
+                {
+                    this.Opacity = 0.5;
+                    MessageBoxControl messageBox = new MessageBoxControl();
+                    messageBox.title = "បោះពុម្ភ";
+                    messageBox.discription = "សូមធ្វើការជ្រើសរើសឆ្នាំសិក្សា";
+                    messageBox.buttonType = 1;
+                    messageBox.ShowDialog();
+                    this.Opacity = 1;
+                }
+                else
+                {
+                    this.Opacity = 0.5;
+                    StatisticGrade12 statisticGrade12 = new StatisticGrade12(YearSelection);
+                    statisticGrade12.ShowDialog();
+                    this.Opacity = 1;
+                }
             }
             else
             {
