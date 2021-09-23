@@ -142,6 +142,24 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Approved date:.
+        /// </summary>
+        public static string Approved_date {
+            get {
+                return ResourceManager.GetString("Approved date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete the submission?.
+        /// </summary>
+        public static string Are_you_sure_you_want_to_delete_the_submission {
+            get {
+                return ResourceManager.GetString("Are you sure you want to delete the submission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Attendant information.
         /// </summary>
         public static string attendant_information {
@@ -250,6 +268,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Check internet connection.
+        /// </summary>
+        public static string check_internet_connection {
+            get {
+                return ResourceManager.GetString("check internet connection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chinese.
         /// </summary>
         public static string chines {
@@ -331,11 +358,47 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Data transmission.
+        /// </summary>
+        public static string Data_transmission {
+            get {
+                return ResourceManager.GetString("Data transmission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data transmission failed.
+        /// </summary>
+        public static string data_transmission_failed {
+            get {
+                return ResourceManager.GetString("data transmission failed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data transmission successful.
+        /// </summary>
+        public static string data_transmission_successful {
+            get {
+                return ResourceManager.GetString("data transmission successful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data update:.
         /// </summary>
         public static string data_update {
             get {
                 return ResourceManager.GetString("data update", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date of data:.
+        /// </summary>
+        public static string Date_of_data {
+            get {
+                return ResourceManager.GetString("Date of data", resourceCulture);
             }
         }
         
@@ -354,6 +417,15 @@ namespace CamemisOffLine.Properties.Langs {
         public static string delectall {
             get {
                 return ResourceManager.GetString("delectall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete data.
+        /// </summary>
+        public static string Delete_data {
+            get {
+                return ResourceManager.GetString("Delete data", resourceCulture);
             }
         }
         
@@ -412,6 +484,33 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you want to delete this data?.
+        /// </summary>
+        public static string Do_you_want_to_delete_this_data {
+            get {
+                return ResourceManager.GetString("Do you want to delete this data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to print?.
+        /// </summary>
+        public static string do_you_want_to_print {
+            get {
+                return ResourceManager.GetString("do you want to print", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to transmit data now?.
+        /// </summary>
+        public static string do_you_want_to_transmit_data_now {
+            get {
+                return ResourceManager.GetString("do you want to transmit data now", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you want to use old data for or new data?.
         /// </summary>
         public static string Do_you_want_to_use_existing_data_for_or_new_data_ {
@@ -435,6 +534,15 @@ namespace CamemisOffLine.Properties.Langs {
         public static string Download_data {
             get {
                 return ResourceManager.GetString("Download data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download data successfully.
+        /// </summary>
+        public static string Download_data_successfully {
+            get {
+                return ResourceManager.GetString("Download data successfully", resourceCulture);
             }
         }
         
@@ -835,11 +943,38 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No data saved, please use internet to download new data.
+        /// </summary>
+        public static string No_data_saved__please_use_internet_to_download_new_data {
+            get {
+                return ResourceManager.GetString("No data saved, please use internet to download new data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No internet connection.
         /// </summary>
         public static string No_internet_connection {
             get {
                 return ResourceManager.GetString("No internet connection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No save data.
+        /// </summary>
+        public static string No_save_data {
+            get {
+                return ResourceManager.GetString("No save data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No subject data saved.
+        /// </summary>
+        public static string No_subject_data_saved {
+            get {
+                return ResourceManager.GetString("No subject data saved", resourceCulture);
             }
         }
         
@@ -925,7 +1060,7 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please select a class and result type.
+        ///   Looks up a localized string similar to Please select a class and year/semester/month.
         /// </summary>
         public static string Please_select_a_class_and_result_type {
             get {
@@ -1051,6 +1186,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Print successful.
+        /// </summary>
+        public static string print_successful {
+            get {
+                return ResourceManager.GetString("print successful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Programs running.
         /// </summary>
         public static string Programs_running {
@@ -1141,6 +1285,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Saving successfully.
+        /// </summary>
+        public static string Saving_successfully {
+            get {
+                return ResourceManager.GetString("Saving successfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to School years.
         /// </summary>
         public static string Sch_Year {
@@ -1191,6 +1344,15 @@ namespace CamemisOffLine.Properties.Langs {
         public static string score {
             get {
                 return ResourceManager.GetString("score", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scoring validity date setting:.
+        /// </summary>
+        public static string Scoring_validity_date_setting {
+            get {
+                return ResourceManager.GetString("Scoring validity date setting", resourceCulture);
             }
         }
         
@@ -1555,6 +1717,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Summary table of student transcripts by core subject.
+        /// </summary>
+        public static string Summary_table_of_student_transcripts_by_core_subject {
+            get {
+                return ResourceManager.GetString("Summary table of student transcripts by core subject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to TEACHER MENU.
         /// </summary>
         public static string Tea_Menu {
@@ -1708,11 +1879,29 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unsuccessful calculate score.
+        /// </summary>
+        public static string unsuccessful_calculate_score {
+            get {
+                return ResourceManager.GetString("unsuccessful calculate score", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unsuccessful printing.
         /// </summary>
         public static string Unsuccessful_printing {
             get {
                 return ResourceManager.GetString("Unsuccessful printing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unsuccessful save.
+        /// </summary>
+        public static string Unsuccessful_save {
+            get {
+                return ResourceManager.GetString("Unsuccessful save", resourceCulture);
             }
         }
         
@@ -1731,6 +1920,33 @@ namespace CamemisOffLine.Properties.Langs {
         public static string Use_old_data {
             get {
                 return ResourceManager.GetString("Use old data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weak internet service !! Please check your internet routine again.
+        /// </summary>
+        public static string weak_internet_service_Please_check_your_internet_routine_again {
+            get {
+                return ResourceManager.GetString("weak internet service Please check your internet routine again", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your data is in trouble, please review.
+        /// </summary>
+        public static string your_data_is_in_trouble__please_review {
+            get {
+                return ResourceManager.GetString("your data is in trouble, please review", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your internet speed.
+        /// </summary>
+        public static string your_internet_speed {
+            get {
+                return ResourceManager.GetString("your internet speed", resourceCulture);
             }
         }
     }

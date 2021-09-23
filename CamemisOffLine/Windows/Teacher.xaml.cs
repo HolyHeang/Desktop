@@ -4270,8 +4270,8 @@ namespace CamemisOffLine
                 {
                     this.Opacity = 0.5;
                     MessageBoxControl messageBox = new MessageBoxControl();
-                    messageBox.title = "បោះពុម្ភ";
-                    messageBox.discription = "សូមធ្វើការជ្រើសរើសឆ្នាំសិក្សា ថ្នាក់ និងឆមាស";
+                    messageBox.title = Properties.Langs.Lang.print;
+                    messageBox.discription = Properties.Langs.Lang.Please_select_a_class_and_result_type;
                     messageBox.buttonType = 1;
                     messageBox.ShowDialog();
                     this.Opacity = 1;
@@ -4294,8 +4294,8 @@ namespace CamemisOffLine
                 {
                     this.Opacity = 0.5;
                     MessageBoxControl messageBox = new MessageBoxControl();
-                    messageBox.title = "បោះពុម្ភ";
-                    messageBox.discription = "សូមធ្វើការជ្រើសរើសឆ្នាំសិក្សា ថ្នាក់ និងឆមាស";
+                    messageBox.title = Properties.Langs.Lang.print;
+                    messageBox.discription = Properties.Langs.Lang.Please_select_a_class_and_result_type;
                     messageBox.buttonType = 1;
                     messageBox.ShowDialog();
                     this.Opacity = 1;
@@ -4312,8 +4312,8 @@ namespace CamemisOffLine
                 {
                     this.Opacity = 0.5;
                     MessageBoxControl messageBox = new MessageBoxControl();
-                    messageBox.title = "បោះពុម្ភ";
-                    messageBox.discription = "សូមធ្វើការជ្រើសរើសឆ្នាំសិក្សា ថ្នាក់ និងឆមាស";
+                    messageBox.title = Properties.Langs.Lang.print;
+                    messageBox.discription = Properties.Langs.Lang.Please_select_a_class_and_result_type;
                     messageBox.buttonType = 1;
                     messageBox.ShowDialog();
                     this.Opacity = 1;
@@ -4808,7 +4808,7 @@ namespace CamemisOffLine
                 MessageBoxControl message = new MessageBoxControl();
                 message.title = Properties.Langs.Lang.Internet;
                 message.discription = Properties.Langs.Lang.No_internet_connection;
-                message.subtxt = "សូមធ្វើការភ្ជាប់ អ៊ិនធឺណេត";
+                message.subtxt = Properties.Langs.Lang.please_connect_to_the_internet;
                 message.buttonType = 2;
                 message.Owner = this;
                 message.ShowDialog();
@@ -4893,8 +4893,8 @@ namespace CamemisOffLine
                 message.title = Properties.Langs.Lang.print;
                 message.discription = Properties.Langs.Lang.Function + item.title + Properties.Langs.Lang.Under_construction;
 
-                message.title = "បោះពុម្ភ";
-                message.discription = "មុខងារ" + item.title + "កំពុងសាងសង់";
+                message.title = Properties.Langs.Lang.print;
+                message.discription = Properties.Langs.Lang.Function + item.title + Properties.Langs.Lang.Under_construction;
 
                 message.buttonType = 1;
                 message.ShowDialog();

@@ -57,8 +57,8 @@ namespace CamemisOffLine.Report
             {
                 message.Owner = this;
                 this.Opacity = 0.5;
-                message.title = "បោះពុម្ភ";
-                message.discription = "សូមជ្រើសរើសឆ្នាំសិក្សា";
+                message.title = Properties.Langs.Lang.print;
+                message.discription = Properties.Langs.Lang.Select_school_year;
                 message.buttonType = 1;
                 message.ShowDialog();
                 this.Opacity = 1;
@@ -208,8 +208,8 @@ namespace CamemisOffLine.Report
                 {
                     message.Owner = this;
                     this.Opacity = 0.5;
-                    message.title = "បោះពុម្ភ";
-                    message.discription = "ការបោះពុម្ភមានបញ្ហា";
+                    message.title = Properties.Langs.Lang.print;
+                    message.discription = Properties.Langs.Lang.Unsuccessful_printing;
                     message.buttonType = 1;
                     message.ShowDialog();
                     this.Opacity = 1;

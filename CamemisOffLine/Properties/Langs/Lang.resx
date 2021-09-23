@@ -141,6 +141,12 @@
   <data name="approve" xml:space="preserve">
     <value>Approve</value>
   </data>
+  <data name="Approved date" xml:space="preserve">
+    <value>Approved date:</value>
+  </data>
+  <data name="Are you sure you want to delete the submission" xml:space="preserve">
+    <value>Are you sure you want to delete the submission?</value>
+  </data>
   <data name="attendant information" xml:space="preserve">
     <value>Attendant information</value>
   </data>
@@ -177,6 +183,9 @@
   <data name="cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="check internet connection" xml:space="preserve">
+    <value>Check internet connection</value>
+  </data>
   <data name="chines" xml:space="preserve">
     <value>Chinese</value>
   </data>
@@ -207,14 +216,29 @@
   <data name="Data" xml:space="preserve">
     <value>Data</value>
   </data>
+  <data name="Data transmission" xml:space="preserve">
+    <value>Data transmission</value>
+  </data>
+  <data name="data transmission failed" xml:space="preserve">
+    <value>Data transmission failed</value>
+  </data>
+  <data name="data transmission successful" xml:space="preserve">
+    <value>Data transmission successful</value>
+  </data>
   <data name="data update" xml:space="preserve">
     <value>Data update:</value>
+  </data>
+  <data name="Date of data" xml:space="preserve">
+    <value>Date of data:</value>
   </data>
   <data name="delect" xml:space="preserve">
     <value>Delect</value>
   </data>
   <data name="delectall" xml:space="preserve">
     <value>Delect all</value>
+  </data>
+  <data name="Delete data" xml:space="preserve">
+    <value>Delete data</value>
   </data>
   <data name="delete submit to the Commission check" xml:space="preserve">
     <value>Selete submit to the commission check</value>
@@ -234,6 +258,15 @@
   <data name="Do you really want to submit" xml:space="preserve">
     <value>Do you really want to submit?</value>
   </data>
+  <data name="Do you want to delete this data" xml:space="preserve">
+    <value>Do you want to delete this data?</value>
+  </data>
+  <data name="do you want to print" xml:space="preserve">
+    <value>Do you want to print?</value>
+  </data>
+  <data name="do you want to transmit data now" xml:space="preserve">
+    <value>Do you want to transmit data now?</value>
+  </data>
   <data name="Do you want to use existing data for or new data?" xml:space="preserve">
     <value>Do you want to use old data for or new data?</value>
   </data>
@@ -242,6 +275,9 @@
   </data>
   <data name="Download data" xml:space="preserve">
     <value>Download data</value>
+  </data>
+  <data name="Download data successfully" xml:space="preserve">
+    <value>Download data successfully</value>
   </data>
   <data name="Download image done" xml:space="preserve">
     <value>Download image done</value>
@@ -375,8 +411,17 @@
   <data name="New" xml:space="preserve">
     <value>New</value>
   </data>
+  <data name="No data saved, please use internet to download new data" xml:space="preserve">
+    <value>No data saved, please use internet to download new data</value>
+  </data>
   <data name="No internet connection" xml:space="preserve">
     <value>No internet connection</value>
+  </data>
+  <data name="No save data" xml:space="preserve">
+    <value>No save data</value>
+  </data>
+  <data name="No subject data saved" xml:space="preserve">
+    <value>No subject data saved</value>
   </data>
   <data name="noresultdata" xml:space="preserve">
     <value>No result data!</value>
@@ -406,7 +451,7 @@
     <value>Please select</value>
   </data>
   <data name="Please select a class and result type" xml:space="preserve">
-    <value>Please select a class and result type</value>
+    <value>Please select a class and year/semester/month</value>
   </data>
   <data name="Please select a school year and class" xml:space="preserve">
     <value>Please select a school year and class!</value>
@@ -447,6 +492,9 @@
   <data name="Print Score Choice Bulletin" xml:space="preserve">
     <value>Print student choice score bulletin</value>
   </data>
+  <data name="print successful" xml:space="preserve">
+    <value>Print successful</value>
+  </data>
   <data name="Programs running" xml:space="preserve">
     <value>Programs running</value>
   </data>
@@ -477,6 +525,9 @@
   <data name="save" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="Saving successfully" xml:space="preserve">
+    <value>Saving successfully</value>
+  </data>
   <data name="Sch Year" xml:space="preserve">
     <value>School years</value>
   </data>
@@ -494,6 +545,9 @@
   </data>
   <data name="score" xml:space="preserve">
     <value>Score</value>
+  </data>
+  <data name="Scoring validity date setting" xml:space="preserve">
+    <value>Scoring validity date setting:</value>
   </data>
   <data name="search" xml:space="preserve">
     <value>Search</value>
@@ -615,6 +669,9 @@
   <data name="submit to the Commission check" xml:space="preserve">
     <value>Submit to the commission check</value>
   </data>
+  <data name="Summary table of student transcripts by core subject" xml:space="preserve">
+    <value>Summary table of student transcripts by core subject</value>
+  </data>
   <data name="Tea Menu" xml:space="preserve">
     <value>TEACHER MENU</value>
   </data>
@@ -666,13 +723,28 @@
   <data name="Under construction" xml:space="preserve">
     <value>Under construction</value>
   </data>
+  <data name="unsuccessful calculate score" xml:space="preserve">
+    <value>Unsuccessful calculate score</value>
+  </data>
   <data name="Unsuccessful printing" xml:space="preserve">
     <value>Unsuccessful printing</value>
+  </data>
+  <data name="Unsuccessful save" xml:space="preserve">
+    <value>Unsuccessful save</value>
   </data>
   <data name="Use new data" xml:space="preserve">
     <value>Use new data</value>
   </data>
   <data name="Use old data" xml:space="preserve">
     <value>Use old data</value>
+  </data>
+  <data name="weak internet service Please check your internet routine again" xml:space="preserve">
+    <value>Weak internet service !! Please check your internet routine again</value>
+  </data>
+  <data name="your data is in trouble, please review" xml:space="preserve">
+    <value>Your data is in trouble, please review</value>
+  </data>
+  <data name="your internet speed" xml:space="preserve">
+    <value>Your internet speed</value>
   </data>
 </root>

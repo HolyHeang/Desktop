@@ -76,8 +76,8 @@ namespace CamemisOffLine.Windows
                 //--------------end Formula-------------------------------------
                 MessageBoxControl message = new MessageBoxControl();
                 message.Owner = this;
-                message.title = "បោះពុម្ភ";
-                message.discription = "តើអ្នកចង់បោះពុម្ភមែនទេ?";
+                message.title = Properties.Langs.Lang.print;
+                message.discription = Properties.Langs.Lang.do_you_want_to_print;
                 message.result = 0;
                 this.Opacity = 0.5;
                 message.ShowDialog();
