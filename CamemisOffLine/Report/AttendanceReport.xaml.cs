@@ -9,17 +9,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace CamemisOffLine.Report
 {
@@ -98,7 +91,7 @@ namespace CamemisOffLine.Report
                         }
                         if (i.day_number == "1")
                         {
-                            a.day1 = "A";
+                            a.day1 = i.absent.value;
                         }
                         else if (i.day_number == "2")
                         {
@@ -223,7 +216,6 @@ namespace CamemisOffLine.Report
                     }
                     ab.Add(a);
                 }
-
                 txtMan.Text = boy.ToString();
                 txtWoman.Text = girl.ToString();
                 txtTotal.Text = obj.Count().ToString();
