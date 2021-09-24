@@ -825,19 +825,14 @@
                                                                                         </DataGridTemplateColumn.Header>
 
                                                                                     </DataGridTemplateColumn>
-
-
-
                                                                                     <!--//........................................................-->
                                                                                     <DataGridTemplateColumn MinWidth="80" Header="មកយឺត" CanUserResize="False">
                                                                                         <DataGridTemplateColumn.CellTemplate>
                                                                                             <DataTemplate>
                                                                                                 <Grid VerticalAlignment="Center">
-
                                                                                                     <CheckBox HorizontalAlignment="Center" Height="30" Background="#1183CA" Foreground="Gray" Margin="0 -4 0 0" IsChecked="{Binding late ,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Click="CheckBox_Click">
 
                                                                                                     </CheckBox>
-
 
                                                                                                 </Grid>
                                                                                             </DataTemplate>
@@ -850,8 +845,6 @@
                                                                                                 <Grid VerticalAlignment="Center">
                                                                                                     <CheckBox HorizontalAlignment="Center" Height="30" Background="#1183CA" Foreground="Gray" Margin="0 -4 0 0" IsChecked="{Binding leave,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Click="CheckBox_Click">
                                                                                                     </CheckBox>
-
-
                                                                                                 </Grid>
                                                                                             </DataTemplate>
                                                                                         </DataGridTemplateColumn.CellTemplate>
@@ -872,8 +865,6 @@
 
                                                                                     <!--//........................................................-->
                                                                                     <DataGridTemplateColumn MinWidth="80">
-
-                                                                                        
                                                                                         <DataGridTemplateColumn.CellTemplate>
                                                                                             <DataTemplate>
                                                                                                 <Grid VerticalAlignment="Center">
@@ -885,7 +876,6 @@
                                                                                                 </Grid>
                                                                                             </DataTemplate>
                                                                                         </DataGridTemplateColumn.CellTemplate>
-
                                                                                         <DataGridTemplateColumn.Header>
                                                                                             <Grid Height="99" Width="160" Margin="-97 -10 -16 -10" Background="White">
                                                                                                 <Grid>
@@ -918,10 +908,7 @@
                                                                                         <DataGridTemplateColumn.CellTemplate>
                                                                                             <DataTemplate>
                                                                                                 <Grid VerticalAlignment="Center">
-
                                                                                                     <TextBox Margin="0 -2 0 0" Height="25" BorderBrush="Gray" TextWrapping="Wrap" FontSize="14" Padding="2 -2 0 0" BorderThickness="1" materialDesign:HintAssist.Hint="others...."></TextBox>
-
-
                                                                                                 </Grid>
                                                                                             </DataTemplate>
                                                                                         </DataGridTemplateColumn.CellTemplate>
