@@ -18,12 +18,10 @@ using System.Windows.Controls.Primitives;
 using System.Globalization;
 using CamemisOffLine.Class;
 using Newtonsoft.Json.Linq;
-using System.Printing;
 using Library;
 using System.Net;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.Web.Script.Serialization;
 using System.Drawing.Imaging;
 using System.IO;
 using MonthlyResult = CamemisOffLine.Windows.MonthlyResult;
@@ -64,7 +62,7 @@ namespace CamemisOffLine
             timer.Start();
             DispatcherTimer Internet = new DispatcherTimer();
             Internet.Tick += Internet_Tick;
-            Internet.Interval = TimeSpan.FromSeconds(40);
+            Internet.Interval = TimeSpan.FromSeconds(10);
             Internet.Start();
 
         }
@@ -90,6 +88,9 @@ namespace CamemisOffLine
                         }
                         txtPing.Text = "Ping :" + (ping) + "ms";
                     }
+                    wifiIcon.Kind = MaterialDesignThemes.Wpf.PackIconKind.Wifi;
+                    btnCheck.IsChecked = true;
+                    txtxCheckinternet.Content = "Online";
                 }
                 else
                 {
@@ -97,6 +98,8 @@ namespace CamemisOffLine
                     wifiIcon.Foreground = Brushes.Red;
                     txtPing.Text = "Ping :" + (ping) + "ms";
                     wifiIcon.Kind = MaterialDesignThemes.Wpf.PackIconKind.WifiOff;
+                    btnCheck.IsChecked = false;
+                    txtxCheckinternet.Content = "Offline";
                 }
             }
             catch
@@ -105,6 +108,8 @@ namespace CamemisOffLine
                 wifiIcon.Foreground = Brushes.Red;
                 txtPing.Text = "Ping :" + (ping) + "ms";
                 wifiIcon.Kind = MaterialDesignThemes.Wpf.PackIconKind.WifiOff;
+                btnCheck.IsChecked = false;
+                txtxCheckinternet.Content = "Offline";
             }
             GC.Collect();
         }
@@ -3647,8 +3652,7 @@ namespace CamemisOffLine
                 AllSubMonthlyResult result = new AllSubMonthlyResult(false,data.ToList(), title);
                 result.Show();
             }
-
-          
+            Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
