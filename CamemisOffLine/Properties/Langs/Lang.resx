@@ -141,11 +141,26 @@
   <data name="approve" xml:space="preserve">
     <value>Approve</value>
   </data>
+  <data name="Approved date" xml:space="preserve">
+    <value>Approved date:</value>
+  </data>
+  <data name="Are you sure you want to delete the submission" xml:space="preserve">
+    <value>Are you sure you want to delete the submission?</value>
+  </data>
+  <data name="attendant information" xml:space="preserve">
+    <value>Attendant information</value>
+  </data>
   <data name="back" xml:space="preserve">
     <value>Back</value>
   </data>
   <data name="by common level" xml:space="preserve">
     <value>By common level</value>
+  </data>
+  <data name="by each class" xml:space="preserve">
+    <value>By each class</value>
+  </data>
+  <data name="by each level" xml:space="preserve">
+    <value>By each level</value>
   </data>
   <data name="by name" xml:space="preserve">
     <value>By name</value>
@@ -168,6 +183,9 @@
   <data name="cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="check internet connection" xml:space="preserve">
+    <value>Check internet connection</value>
+  </data>
   <data name="chines" xml:space="preserve">
     <value>Chinese</value>
   </data>
@@ -179,6 +197,9 @@
   </data>
   <data name="class" xml:space="preserve">
     <value>Class</value>
+  </data>
+  <data name="class schedule" xml:space="preserve">
+    <value>Class schedule</value>
   </data>
   <data name="Classes" xml:space="preserve">
     <value>Classes</value>
@@ -195,14 +216,32 @@
   <data name="Data" xml:space="preserve">
     <value>Data</value>
   </data>
+  <data name="Data transmission" xml:space="preserve">
+    <value>Data transmission</value>
+  </data>
+  <data name="data transmission failed" xml:space="preserve">
+    <value>Data transmission failed</value>
+  </data>
+  <data name="data transmission successful" xml:space="preserve">
+    <value>Data transmission successful</value>
+  </data>
   <data name="data update" xml:space="preserve">
     <value>Data update:</value>
+  </data>
+  <data name="Date of data" xml:space="preserve">
+    <value>Date of data:</value>
   </data>
   <data name="delect" xml:space="preserve">
     <value>Delect</value>
   </data>
   <data name="delectall" xml:space="preserve">
     <value>Delect all</value>
+  </data>
+  <data name="Delete data" xml:space="preserve">
+    <value>Delete data</value>
+  </data>
+  <data name="delete submit to the Commission check" xml:space="preserve">
+    <value>Selete submit to the commission check</value>
   </data>
   <data name="Differentfile" xml:space="preserve">
     <value>Different file</value>
@@ -219,14 +258,26 @@
   <data name="Do you really want to submit" xml:space="preserve">
     <value>Do you really want to submit?</value>
   </data>
+  <data name="Do you want to delete this data" xml:space="preserve">
+    <value>Do you want to delete this data?</value>
+  </data>
+  <data name="do you want to print" xml:space="preserve">
+    <value>Do you want to print?</value>
+  </data>
+  <data name="do you want to transmit data now" xml:space="preserve">
+    <value>Do you want to transmit data now?</value>
+  </data>
   <data name="Do you want to use existing data for or new data?" xml:space="preserve">
-    <value>Do you want to use old data for or new data?</value>
+    <value>Do you want to use old data or new data?</value>
   </data>
   <data name="Do you want to use the print function?" xml:space="preserve">
     <value>Do you want to use the print function</value>
   </data>
   <data name="Download data" xml:space="preserve">
     <value>Download data</value>
+  </data>
+  <data name="Download data successfully" xml:space="preserve">
+    <value>Download data successfully</value>
   </data>
   <data name="Download image done" xml:space="preserve">
     <value>Download image done</value>
@@ -242,6 +293,9 @@
   </data>
   <data name="Err" xml:space="preserve">
     <value>Error</value>
+  </data>
+  <data name="exam promote class" xml:space="preserve">
+    <value>Exam promote class</value>
   </data>
   <data name="Export data to Excel" xml:space="preserve">
     <value>Export data to Excel</value>
@@ -264,6 +318,12 @@
   <data name="gender" xml:space="preserve">
     <value>Gender</value>
   </data>
+  <data name="general knowledge and Completion Grade 12" xml:space="preserve">
+    <value>Knowledge and Completion Grade 12</value>
+  </data>
+  <data name="general knowledge and Completion Grade 9" xml:space="preserve">
+    <value>Knowledge and Completion Grade 9</value>
+  </data>
   <data name="Grade" xml:space="preserve">
     <value>Grade</value>
   </data>
@@ -272,6 +332,9 @@
   </data>
   <data name="group" xml:space="preserve">
     <value>Group</value>
+  </data>
+  <data name="honor tables by class" xml:space="preserve">
+    <value>Honor tables by class</value>
   </data>
   <data name="Import data to Excel" xml:space="preserve">
     <value>Import data to Excel</value>
@@ -305,6 +368,9 @@
   </data>
   <data name="List students by age" xml:space="preserve">
     <value>List students by age</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Login</value>
   </data>
   <data name="logout" xml:space="preserve">
     <value>Logout</value>
@@ -345,8 +411,17 @@
   <data name="New" xml:space="preserve">
     <value>New</value>
   </data>
+  <data name="No data saved, please use internet to download new data" xml:space="preserve">
+    <value>No data saved, please use internet to download new data</value>
+  </data>
   <data name="No internet connection" xml:space="preserve">
     <value>No internet connection</value>
+  </data>
+  <data name="No save data" xml:space="preserve">
+    <value>No save data</value>
+  </data>
+  <data name="No subject data saved" xml:space="preserve">
+    <value>No subject data saved</value>
   </data>
   <data name="noresultdata" xml:space="preserve">
     <value>No result data!</value>
@@ -366,11 +441,17 @@
   <data name="permission" xml:space="preserve">
     <value>Permission</value>
   </data>
+  <data name="permission request" xml:space="preserve">
+    <value>Permission request</value>
+  </data>
+  <data name="please connect to the internet" xml:space="preserve">
+    <value>Please connect to the internet</value>
+  </data>
   <data name="please select" xml:space="preserve">
     <value>Please select</value>
   </data>
   <data name="Please select a class and result type" xml:space="preserve">
-    <value>Please select a class and result type</value>
+    <value>Please select a class and year/semester/month</value>
   </data>
   <data name="Please select a school year and class" xml:space="preserve">
     <value>Please select a school year and class!</value>
@@ -411,6 +492,9 @@
   <data name="Print Score Choice Bulletin" xml:space="preserve">
     <value>Print student choice score bulletin</value>
   </data>
+  <data name="print successful" xml:space="preserve">
+    <value>Print successful</value>
+  </data>
   <data name="Programs running" xml:space="preserve">
     <value>Programs running</value>
   </data>
@@ -420,14 +504,29 @@
   <data name="Rating - Classification" xml:space="preserve">
     <value>Rating - Classification</value>
   </data>
+  <data name="rating-Classification semester by class" xml:space="preserve">
+    <value>Rating-Classification semester by class</value>
+  </data>
   <data name="repeat class" xml:space="preserve">
     <value>Repeat class</value>
   </data>
   <data name="results" xml:space="preserve">
     <value>Results</value>
   </data>
+  <data name="results learning all subjects" xml:space="preserve">
+    <value>Results learning all subjects</value>
+  </data>
+  <data name="results study by class" xml:space="preserve">
+    <value>Results Learning by class</value>
+  </data>
   <data name="Return" xml:space="preserve">
     <value>Return</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Saving successfully" xml:space="preserve">
+    <value>Saving successfully</value>
   </data>
   <data name="Sch Year" xml:space="preserve">
     <value>School years</value>
@@ -446,6 +545,12 @@
   </data>
   <data name="score" xml:space="preserve">
     <value>Score</value>
+  </data>
+  <data name="Scoring validity date setting" xml:space="preserve">
+    <value>Scoring validity date setting:</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Search</value>
   </data>
   <data name="search students:" xml:space="preserve">
     <value>Search students:</value>
@@ -468,6 +573,9 @@
   <data name="select students" xml:space="preserve">
     <value>Select students</value>
   </data>
+  <data name="select subjects" xml:space="preserve">
+    <value>Select subjects</value>
+  </data>
   <data name="semester" xml:space="preserve">
     <value>Semester</value>
   </data>
@@ -476,6 +584,9 @@
   </data>
   <data name="Semester Results" xml:space="preserve">
     <value>Semester Results</value>
+  </data>
+  <data name="send data" xml:space="preserve">
+    <value>Send data</value>
   </data>
   <data name="set" xml:space="preserve">
     <value>Setting</value>
@@ -525,6 +636,9 @@
   <data name="Stu List" xml:space="preserve">
     <value>Student List</value>
   </data>
+  <data name="student attendance by class" xml:space="preserve">
+    <value>Student attendance by class</value>
+  </data>
   <data name="student Attendence Report" xml:space="preserve">
     <value>Student Attendence Report</value>
   </data>
@@ -534,17 +648,29 @@
   <data name="student schedule" xml:space="preserve">
     <value>Student Schedule</value>
   </data>
+  <data name="student Score Bulletin" xml:space="preserve">
+    <value>Student Score Bulletin</value>
+  </data>
   <data name="Student statistics by grade" xml:space="preserve">
     <value>Student statistics by grade</value>
   </data>
   <data name="Student Statistics for Education Staff" xml:space="preserve">
     <value>Student Statistics for Education Staff</value>
   </data>
+  <data name="studies cancel" xml:space="preserve">
+    <value>Studies cancel</value>
+  </data>
   <data name="study results" xml:space="preserve">
     <value>Study results</value>
   </data>
   <data name="Sub List" xml:space="preserve">
     <value>Subject List</value>
+  </data>
+  <data name="submit to the Commission check" xml:space="preserve">
+    <value>Submit to the commission check</value>
+  </data>
+  <data name="Summary table of student transcripts by core subject" xml:space="preserve">
+    <value>Summary table of student transcripts by core subject</value>
   </data>
   <data name="Tea Menu" xml:space="preserve">
     <value>TEACHER MENU</value>
@@ -597,13 +723,28 @@
   <data name="Under construction" xml:space="preserve">
     <value>Under construction</value>
   </data>
+  <data name="unsuccessful calculate score" xml:space="preserve">
+    <value>Unsuccessful calculate score</value>
+  </data>
   <data name="Unsuccessful printing" xml:space="preserve">
     <value>Unsuccessful printing</value>
+  </data>
+  <data name="Unsuccessful save" xml:space="preserve">
+    <value>Unsuccessful save</value>
   </data>
   <data name="Use new data" xml:space="preserve">
     <value>Use new data</value>
   </data>
   <data name="Use old data" xml:space="preserve">
     <value>Use old data</value>
+  </data>
+  <data name="weak internet service Please check your internet routine again" xml:space="preserve">
+    <value>Weak internet service !! Please check your internet routine again</value>
+  </data>
+  <data name="your data is in trouble, please review" xml:space="preserve">
+    <value>Your data is in trouble, please review</value>
+  </data>
+  <data name="your internet speed" xml:space="preserve">
+    <value>Your internet speed</value>
   </data>
 </root>

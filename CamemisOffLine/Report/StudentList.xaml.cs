@@ -186,8 +186,8 @@ namespace CamemisOffLine.Report
                 }
                 MessageBoxControl message = new MessageBoxControl();
                 message.Owner = this;
-                message.title = "ដំណឹង";
-                message.discription = "បោះពុម្ភបានជោគជ័យ";
+                message.title = Properties.Langs.Lang.print;
+                message.discription = Properties.Langs.Lang.print_successful;
                 message.buttonType = 2;
                 this.Opacity = 0.5;
                 message.ShowDialog();
@@ -198,8 +198,8 @@ namespace CamemisOffLine.Report
             catch (Exception e)
             {
                 MessageBoxControl message = new MessageBoxControl();
-                message.title = "មានបញ្ហាទិន្នន័យ";
-                message.discription = "មិនមានទិន្នន័យ";
+                message.title = Properties.Langs.Lang.Data;
+                message.discription = Properties.Langs.Lang.noresultdata;
                 message.buttonType = 2;
                 this.Opacity = 0.5;
                 message.ShowDialog();
@@ -297,8 +297,8 @@ namespace CamemisOffLine.Report
                 respone = null;
             }
             MessageBoxControl message = new MessageBoxControl();
-            message.title = "ដំណឹង";
-            message.discription = "ការបោះពុម្ភបានជោគជ័យ";
+            message.title = Properties.Langs.Lang.print;
+            message.discription = Properties.Langs.Lang.print_successful;
             message.buttonType = 1;
             print(respone,obj);
             loading.Close();

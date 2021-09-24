@@ -167,8 +167,8 @@ namespace CamemisOffLine.Windows
             {
                 Console.WriteLine(ex);
                 MessageBoxControl message = new MessageBoxControl();
-                message.title = "ទិន្នន័យ";
-                message.discription = "មិនមានទិន្នន័យ";
+                message.title = Properties.Langs.Lang.Data;
+                message.discription = Properties.Langs.Lang.noresultdata;
                 message.buttonType = 1;
                 message.ShowDialog();
                 this.Close();

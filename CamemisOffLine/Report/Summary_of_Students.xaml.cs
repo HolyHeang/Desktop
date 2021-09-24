@@ -53,8 +53,8 @@ namespace CamemisOffLine.Report
             else
             {
                 MessageBoxControl message = new MessageBoxControl();
-                message.title = "អ៊ីនធឺណេត";
-                message.discription = "មិនមានការតភ្ជាប់អ៊ីនធឺណែត";
+                message.title = Properties.Langs.Lang.Internet;
+                message.discription = Properties.Langs.Lang.No_internet_connection;
                 message.buttonType = 1;
                 message.ShowDialog();
                 load.Close();
@@ -210,8 +210,8 @@ namespace CamemisOffLine.Report
             {
                 MessageBoxControl message = new MessageBoxControl();
                 message.buttonType = 1;
-                message.title = "បោះពុម្ភ";
-                message.discription = "បោះពុម្ភមិនបានជោគជ័យ";
+                message.title = Properties.Langs.Lang.print;
+                message.discription = Properties.Langs.Lang.Unsuccessful_printing;
                 message.ShowDialog();
             }
             load.Close();
