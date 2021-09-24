@@ -511,7 +511,7 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you want to use old data for or new data?.
+        ///   Looks up a localized string similar to Do you want to use old data or new data?.
         /// </summary>
         public static string Do_you_want_to_use_existing_data_for_or_new_data_ {
             get {

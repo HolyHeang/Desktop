@@ -268,7 +268,7 @@
     <value>Do you want to transmit data now?</value>
   </data>
   <data name="Do you want to use existing data for or new data?" xml:space="preserve">
-    <value>Do you want to use old data for or new data?</value>
+    <value>Do you want to use old data or new data?</value>
   </data>
   <data name="Do you want to use the print function?" xml:space="preserve">
     <value>Do you want to use the print function</value>
