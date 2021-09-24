@@ -10,7 +10,7 @@
         xmlns:properties="clr-namespace:CamemisOffLine.Properties"
         xmlns:class="clr-namespace:CamemisOffLine.Class"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
-        Title="CAMEMIS" Height="1080" Width="1920" AllowsTransparency="False" ResizeMode="CanResizeWithGrip" WindowState="Maximized" Loaded="Window_Loaded" WindowStyle="None">
+        Title="CAMEMIS" Height="1080" MinWidth="1200" MinHeight="700" Width="1920" AllowsTransparency="False" ResizeMode="CanResizeWithGrip" WindowState="Maximized" Loaded="Window_Loaded" WindowStyle="None">
     <Grid Name="GridForm">
 
         <DockPanel LastChildFill="True" Grid.ColumnSpan="2" Margin="0,0,-0.4,-0.4">
@@ -580,12 +580,12 @@
                                                                                 </Grid>
                                                                             </MenuItem.Icon>
 
-                                                                            <MenuItem Header="បោះពុម្ភទិន្នន័យវត្តមាន" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Name="btnStaffAttPrint" Click="btnStaffAttPrint_Click" Foreground="Black">
+                                                                            <MenuItem Header="{x:Static language:Lang.print_attendance_report}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Name="btnStaffAttPrint" Click="btnStaffAttPrint_Click" Foreground="Black">
                                                                                 <MenuItem.Icon>
                                                                                     <Image Source="/CamemisOffLine;component/Image/printer.png"/>
                                                                                 </MenuItem.Icon>
                                                                             </MenuItem>
-                                                                            <MenuItem Header="បោះពុម្ភតារាងវត្តមាន" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Name="btnStaffAttPrintTemplet" Click="btnPrintStaffAtt_Click" Foreground="Black">
+                                                                            <MenuItem Header="{x:Static language:Lang.Print_attendance_tamplate}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Name="btnStaffAttPrintTemplet" Click="btnPrintStaffAtt_Click" Foreground="Black">
                                                                                 <MenuItem.Icon>
                                                                                     <Image Source="/CamemisOffLine;component/Image/printer.png"/>
                                                                                 </MenuItem.Icon>

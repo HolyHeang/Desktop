@@ -477,6 +477,12 @@
   <data name="print all sub" xml:space="preserve">
     <value>In tất cả chủ đề</value>
   </data>
+  <data name="print attendance report" xml:space="preserve">
+    <value>in báo cáo tham dự</value>
+  </data>
+  <data name="Print attendance tamplate" xml:space="preserve">
+    <value>In thẻ tham dự</value>
+  </data>
   <data name="Print Classification" xml:space="preserve">
     <value>Phân loại in</value>
   </data>

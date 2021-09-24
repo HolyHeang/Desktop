@@ -474,6 +474,12 @@
   <data name="print all sub" xml:space="preserve">
     <value>Print All Subject</value>
   </data>
+  <data name="print attendance report" xml:space="preserve">
+    <value>Print attendance report</value>
+  </data>
+  <data name="Print attendance tamplate" xml:space="preserve">
+    <value>Print attendance tamplate</value>
+  </data>
   <data name="Print Classification" xml:space="preserve">
     <value>Print Classification</value>
   </data>

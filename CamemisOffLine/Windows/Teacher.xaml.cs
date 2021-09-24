@@ -4169,7 +4169,7 @@ namespace CamemisOffLine
             {
                 this.Opacity = 0.5;
                 message.title = Properties.Langs.Lang.print;
-                message.discription = Properties.Langs.Lang.Do_you_want_to_use_the_print_function_ + item.title + "?";
+                message.discription = Properties.Langs.Lang.Do_you_want_to_use_the_print_function_ + " " + item.title + "?";
                 message.ShowDialog();
                 this.Opacity = 1;
                 if (message.result == 1 && item.id == 1)
@@ -4339,8 +4339,8 @@ namespace CamemisOffLine
                 {
                     this.Opacity = 0.5;
                     MessageBoxControl messageBox = new MessageBoxControl();
-                    messageBox.title = "បោះពុម្ភ";
-                    messageBox.discription = "សូមធ្វើការជ្រើសរើសឆ្នាំសិក្សា";
+                    messageBox.title = Properties.Langs.Lang.print;
+                    messageBox.discription = Properties.Langs.Lang.Select_school_year;
                     messageBox.buttonType = 1;
                     messageBox.ShowDialog();
                     this.Opacity = 1;
@@ -4359,8 +4359,8 @@ namespace CamemisOffLine
                 {
                     this.Opacity = 0.5;
                     MessageBoxControl messageBox = new MessageBoxControl();
-                    messageBox.title = "បោះពុម្ភ";
-                    messageBox.discription = "សូមធ្វើការជ្រើសរើសឆ្នាំសិក្សា";
+                    messageBox.title = Properties.Langs.Lang.print;
+                    messageBox.discription = Properties.Langs.Lang.Select_school_year;
                     messageBox.buttonType = 1;
                     messageBox.ShowDialog();
                     this.Opacity = 1;

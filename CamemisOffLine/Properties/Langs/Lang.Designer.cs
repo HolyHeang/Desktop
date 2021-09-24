@@ -1132,6 +1132,24 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Print attendance report.
+        /// </summary>
+        public static string print_attendance_report {
+            get {
+                return ResourceManager.GetString("print attendance report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Print attendance tamplate.
+        /// </summary>
+        public static string Print_attendance_tamplate {
+            get {
+                return ResourceManager.GetString("Print attendance tamplate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Print Classification.
         /// </summary>
         public static string Print_Classification {

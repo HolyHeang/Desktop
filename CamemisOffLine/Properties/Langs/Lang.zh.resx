@@ -480,6 +480,12 @@
   <data name="print all sub" xml:space="preserve">
     <value>打印所有主题</value>
   </data>
+  <data name="print attendance report" xml:space="preserve">
+    <value>打印出勤报告</value>
+  </data>
+  <data name="Print attendance tamplate" xml:space="preserve">
+    <value>打印考勤模板</value>
+  </data>
   <data name="Print Classification" xml:space="preserve">
     <value>印刷分类</value>
   </data>
