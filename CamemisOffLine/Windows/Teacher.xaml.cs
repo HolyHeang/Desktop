@@ -4378,11 +4378,10 @@ namespace CamemisOffLine
                 this.Opacity = 0.5;
 
                 message.title = Properties.Langs.Lang.print;
-                message.discription = Properties.Langs.Lang.Function + item.title + Properties.Langs.Lang.Under_construction;
+                message.discription = Properties.Langs.Lang.Function + " " + item.title + " " + Properties.Langs.Lang.Under_construction;
 
                 message.title = Properties.Langs.Lang.print;
-                message.discription = Properties.Langs.Lang.Function + item.title + Properties.Langs.Lang.Under_construction;
-
+                message.discription = Properties.Langs.Lang.Function + " " + item.title + " " + Properties.Langs.Lang.Under_construction;
                 message.buttonType = 1;
                 message.ShowDialog();
                 this.Opacity = 1;
