@@ -397,7 +397,6 @@ namespace CamemisOffLine
                 Login login = new Login();
                 this.Close();
                 login.Show();
-
                 Properties.Settings.Default.checkLoginOrLogut = "logout";
                 Properties.Settings.Default.Save();
             }
@@ -2553,6 +2552,14 @@ namespace CamemisOffLine
             tvAcademy.ItemsSource = null;
             var cb = cbAcademyYear.SelectedValue;
             var obj = JObject.Parse(Properties.Settings.Default.schoolAcademyYear).ToObject<YearofAcademy>().data.Where(y => y.name.Equals(cb.ToString()));
+            foreach (var item in obj)
+            {
+                foreach (var grade in item.school_system)
+                {
+                    var order = grade.grade.OrderBy(s => s.sortkey).ToList();
+                    grade.grade = order;
+                }
+            }
             tvAcademy.ItemsSource = obj;
         }
 
@@ -2986,6 +2993,14 @@ namespace CamemisOffLine
                 var cb = cbAcademyYear.SelectedValue;
 
                 var obj = JObject.Parse(Properties.Settings.Default.schoolAcademyYear).ToObject<YearofAcademy>().data.Where(y => y.name.Equals(cb.ToString()));
+                foreach (var item in obj)
+                {
+                    foreach(var grade in item.school_system)
+                    {
+                        var order = grade.grade.OrderBy(s => s.sortkey).ToList();
+                        grade.grade = order;
+                    }
+                }
                 tvAcademy.ItemsSource = obj;
                 Month.Visibility = Visibility.Collapsed;
                 lbltitleGrade.Content = "ឆ្នាំសិក្សា" + cbAcademyYear.SelectedValue.ToString();
@@ -3952,7 +3967,7 @@ namespace CamemisOffLine
             {
                 foreach (var Grade in item.school_system)
                 {
-                    foreach (var Class in Grade.grade)
+                    foreach (var Class in Grade.grade.OrderBy(s => s.sortkey))
                     {
                         foreach (var ClassName in Class.children)
                         {
@@ -3970,6 +3985,14 @@ namespace CamemisOffLine
                 }
             }
             tvAcademy.ItemsSource = null;
+            foreach (var item in obj)
+            {
+                foreach (var grade in item.school_system)
+                {
+                    var order = grade.grade.OrderBy(s => s.sortkey).ToList();
+                    grade.grade = order;
+                }
+            }
             tvAcademy.ItemsSource = obj.Where(y => y.name.Equals(year));
         }
 
@@ -4109,9 +4132,6 @@ namespace CamemisOffLine
             loading.Close();
             return encryptionString;
         }
-
-      
-
         //---------------------------------------------------------------------------------------------
 
         //------------------------GetData from String in local Storage---------------------------------
@@ -4523,7 +4543,7 @@ namespace CamemisOffLine
 
                     foreach (var grades in items.school_system)
                     {
-                        foreach (var gradeName in grades.grade)
+                        foreach (var gradeName in grades.grade.OrderBy(s=>s.sortkey))
                         {
                             grade.Add(gradeName.name);
                         }
@@ -4798,7 +4818,7 @@ namespace CamemisOffLine
                 schoolYearId = items.id;
                 foreach (var grades in items.school_system)
                 {
-                    foreach (var gradeName in grades.grade)
+                    foreach (var gradeName in grades.grade.OrderBy(s=>s.sortkey))
                     {
                         list.Add(new KeyValuePair<string, string>(gradeName.name, gradeName.id));
                     }

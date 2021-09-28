@@ -45,7 +45,7 @@ namespace CamemisOffLine
         public string name { get; set; }
         public string color { get; set; } = "Black";
         public bool IsExpande { get; set; } = false;
-        public ObservableCollection<Grade> grade { get; set; }
+        public List<Grade> grade { get; set; }
     }
     public class Grade
     {
@@ -56,6 +56,7 @@ namespace CamemisOffLine
         public string name_en { get; set; }
         public bool IsExpaned { get; set; } = false;
         public string color { get; set; } = "Black";
+        public int sortkey { get; set; }
         public ObservableCollection<Children> children { get; set; }
     }
     public class Children

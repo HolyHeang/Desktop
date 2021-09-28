@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CamemisOffLine.Windows"
         mc:Ignorable="d"
-       Title="MonthlyResult" Height="25cm" MinWidth="45cm" Loaded="Window_Loaded" Width="45cm">
+       Title="MonthlyResult" Height="25cm" MinWidth="46cm" Loaded="Window_Loaded" Width="46cm">
     <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Hidden">
         <StackPanel Orientation="Vertical" Name="Grid" HorizontalAlignment="Center" MaxWidth="45cm" Margin="10">
             <Grid Name="Header">

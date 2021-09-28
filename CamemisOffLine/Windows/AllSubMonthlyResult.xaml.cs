@@ -213,7 +213,7 @@ namespace CamemisOffLine.Windows
             using (FileStream fs = new FileStream(targetFile, FileMode.Open))
             {
                 iTextSharp.text.Image png = iTextSharp.text.Image.GetInstance(System.Drawing.Image.FromStream(fs), System.Drawing.Imaging.ImageFormat.Png);
-                png.ScalePercent(24.2f);
+                png.ScalePercent(23.5f);
                 document.Add(png);
             }
             GC.Collect();
