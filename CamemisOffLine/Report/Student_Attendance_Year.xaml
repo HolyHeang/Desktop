@@ -25,15 +25,24 @@
                                     <Grid Margin="0,0,0,0">
                                         <Label Name="TitleSchool" Style="{DynamicResource Siemreap}" Content="វិទ្យាល័យ ហ៊ុនសែនបូរី១០០ខ្នង" FontSize="15" Foreground="Black" HorizontalAlignment="Center" Margin="0 0 0 0" VerticalAlignment="Center"></Label>
                                     </Grid>
-                                    <Grid Margin="0,-12,0,0"/>
+                                    
                                 </StackPanel>
                             </Grid>
                         </Grid>
                         <Grid Grid.Column="1">
-
+                            <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Name="barCenter">
+                                <StackPanel>
+                                    <Grid Margin="0 -5 0 0">
+                                        <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="179"></Label>
+                                    </Grid>
+                                    <Grid Margin="0 -8 0 0">
+                                        <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="214"></Label>
+                                    </Grid>
+                                </StackPanel>
+                            </Grid>
                         </Grid>
                         <Grid Grid.Column="2">
-                            <Grid>
+                            <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Name="barRight">
                                 <StackPanel>
                                     <Grid Margin="0 -5 0 0">
                                         <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="179"></Label>

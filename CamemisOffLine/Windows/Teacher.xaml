@@ -3154,16 +3154,16 @@
                                                     </ComboBox.ItemContainerStyle>
                                                     <ComboBoxItem Content="{x:Static language:Lang.show_all}" Tag="0" IsSelected="True" Padding="5 0 0 0"/>
                                                     <ComboBoxItem Content="{x:Static language:Lang.student_list}" Tag="1" Padding="5 0 0 0"/>
-                                                    <ComboBoxItem Content="{x:Static language:Lang.student_schedule}" Tag="2" Padding="5 0 0 0"/>
+                                                    <!--<ComboBoxItem Content="{x:Static language:Lang.student_schedule}" Tag="2" Padding="5 0 0 0"/>-->
                                                     <ComboBoxItem Content="{x:Static language:Lang.study_results}" Tag="3" Padding="5 0 0 0"/>
                                                     <ComboBoxItem Content="{x:Static language:Lang.student_Attendence_Report}" Tag="5" Padding="5 0 0 0"/>
                                                     <!--<ComboBoxItem Content=" ចំណាត់ថ្នាក់ ចំណាត់ប្រភេទ" Tag="7"/>-->
                                                     <!--<ComboBoxItem Content=" តារាងស្រង់ប្រភេទពិន្ទុតាមមុខវិជ្ជា" Tag="8"/>-->
                                                     <!--<ComboBoxItem Content=" ស្ថិតិលទ្ធផលសិក្សា" Tag="9"/>-->
                                                     <ComboBoxItem Content="{x:Static language:Lang.Temporary_Student_Statistics_Grade_9_and_12}" Tag="10" Padding="5 0 0 0"/>
-                                                    <ComboBoxItem Content="{x:Static language:Lang.Student_statistics_by_grade}" Tag="11" Padding="5 0 0 0"/>
+                                                    <!--<ComboBoxItem Content="{x:Static language:Lang.Student_statistics_by_grade}" Tag="11" Padding="5 0 0 0"/>-->
                                                     <!--<ComboBoxItem Content=" តារាងសង្ខេបនិទ្ទេសសិស្សតាមមុខវិជ្ជា" Tag="12"/>-->
-                                                    <ComboBoxItem Content="{x:Static language:Lang.List_students_by_age}" Tag="13" Padding="5 0 0 0"/>
+                                                    <!--<ComboBoxItem Content="{x:Static language:Lang.List_students_by_age}" Tag="13" Padding="5 0 0 0"/>-->
                                                 </ComboBox>
                                             </StackPanel>
                                         </StackPanel>
@@ -3244,7 +3244,7 @@
                                                 </ItemsControl>
                                             </StackPanel>
                                             <!--Sceduule List Print-->
-                                            <StackPanel Name="L2" >
+                                            <StackPanel Name="L2" Visibility="Collapsed">
                                                 <TextBlock Text="{x:Static language:Lang.student_schedule}" HorizontalAlignment="Left" FontSize="18" Margin="20 20 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                 <Separator Margin="20 10 20 0"/>
                                                 <Grid Height="60" Background="White" Margin="20 10 20 0">

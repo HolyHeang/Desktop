@@ -43,6 +43,7 @@ namespace CamemisOffLine.Report
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            barRight.Visibility = Visibility.Collapsed;
             Loading load = new Loading();
             load.Show();
             var trimeDate = date.Split('/');

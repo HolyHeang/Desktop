@@ -1735,7 +1735,7 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Summary table of student transcripts by core subject.
+        ///   Looks up a localized string similar to Summary table of student transcripts.
         /// </summary>
         public static string Summary_table_of_student_transcripts_by_core_subject {
             get {

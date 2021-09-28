@@ -13,13 +13,13 @@
                 <Grid Name="Header" Margin="0 0 0 0" MouseDown="Header_MouseDown">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1.5*"></ColumnDefinition>
-                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
-                        <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
                         <Grid Margin="15,0,0,0">
-                            <StackPanel Orientation="Vertical" Margin="0,5,0,0">
-                                <Grid Name="gridPrint" Height="40" Margin="0 0 0 0">
+                            <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                                <Grid Name="gridPrint" Height="40" Margin="0 0 0 40">
 
                                     <Button Name="btnPrint" BorderThickness="0 0 0 0" BorderBrush="LightGray" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10 0 0 0" Height="35" Cursor="Hand" Width="82" Style="{DynamicResource Siemreap}" Click="btnPrint_Click">
                                         <Grid Height="35" Width="auto">
@@ -39,21 +39,33 @@
                                         </Grid>
                                     </Button>
                                 </Grid>
-                                <Image Source="/CamemisOffLine;component/Image/MoEYS.png" Height="100" VerticalAlignment="Top" HorizontalAlignment="Center"></Image>
+                                <StackPanel>
+                                    <Image Source="/CamemisOffLine;component/Image/MoEYS.png" Height="100" VerticalAlignment="Top" HorizontalAlignment="Center"></Image>
 
-                                <Label Name="lbllogoLeft" Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" Style="{DynamicResource Muol}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 15 0 0"></Label>
-                                <Grid Margin="0,0,0,0">
-                                    <Label Name="TitleSchool" Style="{DynamicResource Siemreap}" Content="វិទ្យាល័យ ហ៊ុនសែនបូរី១០០ខ្នង" FontSize="15" Foreground="Black" HorizontalAlignment="Center" Margin="0 0 0 0" VerticalAlignment="Center"></Label>
-                                </Grid>
-                                <Grid Margin="0,-12,0,0"/>
+                                    <Label Name="lbllogoLeft" Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" Style="{DynamicResource Muol}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 5 0 0"></Label>
+                                    <Grid Margin="0,0,0,0">
+                                        <Label Name="TitleSchool" Style="{DynamicResource Siemreap}" Content="វិទ្យាល័យ ហ៊ុនសែនបូរី១០០ខ្នង" FontSize="15" Foreground="Black" HorizontalAlignment="Center" Margin="0 0 0 0" VerticalAlignment="Center"></Label>
+                                    </Grid>
+                                    <Grid Margin="0,-12,0,0"/>
+                                </StackPanel>
+                               
                             </StackPanel>
                         </Grid>
                     </Grid>
                     <Grid Grid.Column="1">
-
+                        <Grid VerticalAlignment="Top" Margin="0 40 0 0" Name="barCenter">
+                            <StackPanel>
+                                <Grid Margin="0 -5 0 0">
+                                    <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15"></Label>
+                                </Grid>
+                                <Grid Margin="0 -8 0 0">
+                                    <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15"></Label>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
                     </Grid>
                     <Grid Grid.Column="2">
-                        <Grid>
+                        <Grid VerticalAlignment="Top">
                             <StackPanel>
                                 <Grid Height="40">
                                     <Grid Name="gridClose" HorizontalAlignment="Right" Height="35" Cursor="Hand" Width="35" VerticalAlignment="Top" MouseDown="gridClose_MouseDown" MouseEnter="gridClose_MouseEnter" MouseLeave="gridClose_MouseLeave">
@@ -61,12 +73,17 @@
                                     </Grid>
 
                                 </Grid>
-                                <Grid Margin="0 -5 0 0">
-                                    <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="179"></Label>
+                                <Grid  Name="barRight">
+                                    <StackPanel>
+                                        <Grid Margin="0 -5 0 0">
+                                            <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15"></Label>
+                                        </Grid>
+                                        <Grid Margin="0 -8 0 0">
+                                            <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15"></Label>
+                                        </Grid>
+                                    </StackPanel>
                                 </Grid>
-                                <Grid Margin="0 -8 0 0">
-                                    <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="214"></Label>
-                                </Grid>
+                                
                             </StackPanel>
                         </Grid>
                     </Grid>

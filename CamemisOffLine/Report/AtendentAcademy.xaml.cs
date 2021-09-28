@@ -81,6 +81,8 @@ namespace CamemisOffLine.Report
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            barRight.Visibility = Visibility.Collapsed;
+
             print();
         }
     }

@@ -29,10 +29,19 @@
                         </Grid>
                     </Grid>
                     <Grid Grid.Column="1">
-
+                        <Grid VerticalAlignment="Top" HorizontalAlignment="Center" Name="barcenter">
+                            <StackPanel>
+                                <Grid Margin="0 -5 0 0">
+                                    <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="179"></Label>
+                                </Grid>
+                                <Grid Margin="0 -8 0 0">
+                                    <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="214"></Label>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
                     </Grid>
                     <Grid Grid.Column="2">
-                        <Grid>
+                        <Grid VerticalAlignment="Top" HorizontalAlignment="Center" Name="barRight">
                             <StackPanel>
                                 <Grid Margin="0 -5 0 0">
                                     <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="179"></Label>

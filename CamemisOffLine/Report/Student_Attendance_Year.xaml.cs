@@ -47,6 +47,7 @@ namespace CamemisOffLine.Report
         string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            barRight.Visibility = Visibility.Collapsed;
             Loading load = new Loading();
             load.Show();
             try

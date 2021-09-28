@@ -44,6 +44,7 @@ namespace CamemisOffLine.Windows
         bool print = true;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            barRight.Visibility = Visibility.Collapsed;
             if(Properties.Settings.Default.role=="1")
             {
                 titleTeacher.Content = "នាយកសាលា";

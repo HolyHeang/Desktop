@@ -85,6 +85,8 @@ namespace CamemisOffLine.Report
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+
+            barRight.Visibility = Visibility.Collapsed;
             lblMonth.Text = titleYear;
             List<StaffAttendance> at = new List<StaffAttendance>();
             for (int i = 1; i <= 1; i++)

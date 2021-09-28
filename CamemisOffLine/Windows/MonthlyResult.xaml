@@ -27,21 +27,42 @@
                 </Grid>
                 <Grid Grid.Column="1">
                     <Grid>
-                        <StackPanel Orientation="Vertical" Grid.Column="1">
+                        <Grid Grid.Column="1">
+                            <Grid Name="barCenter" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <StackPanel>
+                                <Grid Margin="0 -5 0 0">
+                                    <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Margin="0 -0 0 0"></Label>
+                                </Grid>
+                                <Grid Margin="0 -8 0 0">
+                                    <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Margin="0 -5 0 0"></Label>
+                                </Grid>
+                            </StackPanel>
+                            </Grid>
+                            <Grid HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                                <StackPanel>
+                                <TextBlock Name="lblMonth" Text="លទ្ធផលប្រចាំ ខែ--" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="14" Foreground="Blue" Margin="0 0 0 0" TextDecorations="Underline"></TextBlock>
+                                <TextBlock Name="lblclass" Text="ថ្នាក់ទី ១១ខ (២០១៩-២០២០)" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="14" Foreground="Blue" Margin="0 0 0 0" TextDecorations="Underline"></TextBlock>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Column="2">
+                    <Grid Name="barRight" HorizontalAlignment="Center" VerticalAlignment="Top">
+                        <StackPanel>
                             <Grid Margin="0 -5 0 0">
                                 <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Margin="0 -0 0 0"></Label>
                             </Grid>
                             <Grid Margin="0 -8 0 0">
                                 <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Margin="0 -5 0 0"></Label>
                             </Grid>
-                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0 50 0 0">
-                                <TextBlock Name="lblMonth" Text="លទ្ធផលប្រចាំ ខែ--" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="14" Foreground="Blue" Margin="0 0 0 0" TextDecorations="Underline"></TextBlock>
-                                <TextBlock Name="lblclass" Text="ថ្នាក់ទី ១១ខ (២០១៩-២០២០)" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="14" Foreground="Blue" Margin="0 0 0 0" TextDecorations="Underline"></TextBlock>
-                            </StackPanel>
                         </StackPanel>
                     </Grid>
                 </Grid>
             </Grid>
+            
+            
             <Grid Name="Body" HorizontalAlignment="Center" MinWidth="27.5cm" Margin="0 20 0 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>

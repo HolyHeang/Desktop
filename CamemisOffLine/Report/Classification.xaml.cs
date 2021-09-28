@@ -41,15 +41,15 @@ namespace CamemisOffLine.Report
             this.classId = classId;
             if(term== "FIRST_SEMESTER")
             {
-                lblMonth.Text = "ចំណាត់-ថ្នាក់ចំណាត់ប្រភេទប្រចាំឆមាសលើកទី១";
+                lblMonth.Text = "ចំណាត់ថ្នាក់-ចំណាត់ប្រភេទប្រចាំឆមាសលើកទី១";
             }
             else if(term=="")
             {
-                lblMonth.Text = "ចំណាត់-ថ្នាក់ចំណាត់ប្រភេទប្រចាំឆ្នាំ";
+                lblMonth.Text = "ចំណាត់ថ្នាក់-ចំណាត់ប្រភេទប្រចាំឆ្នាំ";
             }
             else
             {
-                lblMonth.Text = "ចំណាត់-ថ្នាក់ចំណាត់ប្រភេទប្រចាំឆមាសលើកទី២";
+                lblMonth.Text = "ចំណាត់ថ្នាក់-ចំណាត់ប្រភេទប្រចាំឆមាសលើកទី២";
             }
         }
         string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
@@ -58,7 +58,7 @@ namespace CamemisOffLine.Report
         
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            barRight.Visibility = Visibility.Collapsed;
             Loading loading = new Loading();
             try
             {

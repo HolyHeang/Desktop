@@ -59,13 +59,13 @@ namespace CamemisOffLine.Windows
         //------------event---------------------------------- 
         private void btnPrint_Click(object sender, RoutedEventArgs e)
         {
-            btnPrint.Visibility = Visibility.Visible;
+           
             gridButton.Visibility = Visibility.Visible;
             PrintDialog printDialog = new PrintDialog();
             PageMediaSize pageSize = null;
             if (printDialog.ShowDialog() == true)
             {
-                btnPrint.Visibility = Visibility.Collapsed;
+              
                 gridButton.Visibility = Visibility.Collapsed;
                 pageSize = new PageMediaSize(PageMediaSizeName.ISOA4);
                 printDialog.PrintTicket.PageMediaSize = pageSize;
@@ -78,6 +78,7 @@ namespace CamemisOffLine.Windows
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            barRight.Visibility = Visibility.Collapsed;
             if (Properties.Settings.Default.role == "1")
             {
                 titleTeacher.Content = "នាយកសាលា";
@@ -97,7 +98,7 @@ namespace CamemisOffLine.Windows
                 this.Opacity = 1;
                 if (message.result==1)
                 {
-                    btnPrint.Visibility = Visibility.Collapsed;
+                  
                     gridButton.Visibility = Visibility.Collapsed;
                     loading.Show();
                     SaveFileInOne(results);
@@ -120,7 +121,7 @@ namespace CamemisOffLine.Windows
                     var resultFile = openFileDlg.ShowDialog();
                     if (resultFile.ToString() == "OK")
                     {
-                        btnPrint.Visibility = Visibility.Collapsed;
+                       
                         gridButton.Visibility = Visibility.Collapsed;
                         pathName = openFileDlg.SelectedPath;
                         if (saveInOne)
@@ -140,7 +141,7 @@ namespace CamemisOffLine.Windows
                 else
                 {
                     Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
-                    btnPrint.Visibility = Visibility.Collapsed;
+                   
                     gridButton.Visibility = Visibility.Collapsed;
                     this.Hide();
                     MessageBoxControl message = new MessageBoxControl();
@@ -173,12 +174,12 @@ namespace CamemisOffLine.Windows
         //---------------Fuction---------------------------------
         void print(List<StudentMonthlyResult> results = null, string name = "Untitle")
         {
-            btnPrint.Visibility = Visibility.Visible;
+           
             gridButton.Visibility = Visibility.Visible;
             PrintDialog printDialog = new PrintDialog();
             PageMediaSize pageSize = null;
 
-            btnPrint.Visibility = Visibility.Collapsed;
+           
             gridButton.Visibility = Visibility.Collapsed;
             pageSize = new PageMediaSize(PageMediaSizeName.ISOA4);
             printDialog.PrintTicket.PageMediaSize = pageSize;

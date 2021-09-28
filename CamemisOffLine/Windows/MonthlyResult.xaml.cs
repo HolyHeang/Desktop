@@ -19,11 +19,13 @@ namespace CamemisOffLine.Windows
     /// </summary>
     public partial class MonthlyResult : Window
     {
+    
         public MonthlyResult(List<StudentMonthlyResult> obj,string title)
         {
             InitializeComponent();
             this.obj = obj;
             this.title = title;
+            
         }
         public MonthlyResult(List<StudentMonthlyResult> obj, string title,string year)
         {
@@ -37,6 +39,7 @@ namespace CamemisOffLine.Windows
         string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            barRight.Visibility = Visibility.Collapsed;
             if (Properties.Settings.Default.role == "1")
             {
                 titleTeacher.Content = "នាយកសាលា";

@@ -29,10 +29,19 @@
                         </Grid>
                     </Grid>
                     <Grid Grid.Column="1">
-
+                        <Grid VerticalAlignment="Top" HorizontalAlignment="Center" Name="barCenter">
+                            <StackPanel>
+                                <Grid Margin="0 -5 0 0">
+                                    <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="179"></Label>
+                                </Grid>
+                                <Grid Margin="0 -8 0 0">
+                                    <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="214"></Label>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
                     </Grid>
                     <Grid Grid.Column="2">
-                        <Grid>
+                        <Grid VerticalAlignment="Top" HorizontalAlignment="Center" Name="barRight">
                             <StackPanel>
                                 <Grid Margin="0 -5 0 0">
                                     <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="179"></Label>
@@ -46,7 +55,7 @@
                 </Grid>
                 <Grid Height="60" Margin="0 10 0 0" Name="title">
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                        <TextBlock Text="បញ្ជី​ឈ្មោះសិស្សប្រលងឡើងថ្នាក់" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="18" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+                        <TextBlock Text="បញ្ជី​ឈ្មោះសិស្សប្រឡងឡើងថ្នាក់" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <TextBlock Name="lblMonth" Text="២០២០-២០២១" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
 
@@ -60,7 +69,7 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Orientation="Vertical" Grid.Column="0">
                         <Grid>
-                            <DataGrid Margin="10 0 10 0" AutoGenerateColumns="False" RowHeight="35" BorderThickness="1 1 1 0" BorderBrush="Black" Background="White" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="25cm" CanUserAddRows="False" HorizontalScrollBarVisibility="Hidden" Name="Data">
+                            <DataGrid Margin="10 0 10 0" AutoGenerateColumns="False" RowHeight="45" BorderThickness="1 1 1 0" BorderBrush="Black" Background="White" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="25cm" CanUserAddRows="False" HorizontalScrollBarVisibility="Hidden" Name="Data">
                                 <DataGrid.Resources>
 
                                     <Style TargetType="DataGrid">
@@ -104,7 +113,7 @@
                                         <DataGridTextColumn.ElementStyle>
                                             <Style TargetType="TextBlock">
                                                 <Setter Property="Foreground" Value="Black"></Setter>
-                                                <Setter Property="FontWeight" Value="Bold"></Setter>
+                                                <Setter Property="FontWeight" Value="Thin"></Setter>
                                                 <Setter Property="HorizontalAlignment" Value="Center"/>
                                                 <Setter Property="VerticalAlignment" Value="Center"/>
                                             </Style>
@@ -113,7 +122,7 @@
                                     </DataGridTextColumn>
 
                                     <!--//............................Date of birth............................-->
-                                    <DataGridTextColumn Width="184" Header="ថ្ងៃខែកំណើត" FontSize="12" Binding="{Binding dob}">
+                                    <DataGridTextColumn Width="184" Header="ថ្ងៃខែកំណើត" FontSize="14" Binding="{Binding dob}">
 
                                         <DataGridTextColumn.ElementStyle>
 
@@ -129,7 +138,7 @@
 
 
                                     <!--//............................Gender............................-->
-                                    <DataGridTextColumn  Width="100" Header="ភេទ" FontSize="12" Binding="{Binding gender}">
+                                    <DataGridTextColumn  Width="100" Header="ភេទ" FontSize="14" Binding="{Binding gender}">
                                         <DataGridTextColumn.ElementStyle>
                                             <Style TargetType="TextBlock">
                                                 <Setter Property="Foreground" Value="Black"></Setter>
@@ -143,7 +152,7 @@
 
 
                                     <!--//............................Number Phone............................-->
-                                    <DataGridTextColumn Width="190" Header="លេខទូរស័ព្ទ" FontSize="12" Binding="{Binding phone}">
+                                    <DataGridTextColumn Width="190" Header="លេខទូរស័ព្ទ" FontSize="14" Binding="{Binding phone}">
 
                                         <DataGridTextColumn.ElementStyle>
 
@@ -160,7 +169,7 @@
 
 
                                     <!--//............................Student learn............................-->
-                                    <DataGridTextColumn Width="170" Header="សិស្សរៀនថ្នាក់ទី" FontSize="12" Binding="{Binding class_name}">
+                                    <DataGridTextColumn Width="170" Header="សិស្សរៀនថ្នាក់ទី" FontSize="14" Binding="{Binding class_name}">
 
                                         <DataGridTextColumn.ElementStyle>
 
