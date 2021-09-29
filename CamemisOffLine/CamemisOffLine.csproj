@@ -189,6 +189,9 @@
     <Compile Include="Component\PrintCardStyle.xaml.cs">
       <DependentUpon>PrintCardStyle.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Component\PrintPopup.xaml.cs">
+      <DependentUpon>PrintPopup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Component\StaffAttdanceApprovedPopup.xaml.cs">
       <DependentUpon>StaffAttdanceApprovedPopup.xaml</DependentUpon>
     </Compile>
@@ -336,6 +339,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Component\PrintCardStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Component\PrintPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

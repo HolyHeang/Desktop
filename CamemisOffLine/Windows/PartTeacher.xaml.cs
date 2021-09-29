@@ -3666,9 +3666,11 @@ namespace CamemisOffLine.Windows
                 }
                 title = "year";
             }
+            this.Opacity = 0.5;
             HonoraryList honorary = new HonoraryList(topStudent, schoolName, teacher, title, titleYear);
             honorary.Owner = this;
             honorary.ShowDialog();
+            this.Opacity = 1;
         }
         private void printTranscriptByStudentInOne_Click(object sender, RoutedEventArgs e)
         {

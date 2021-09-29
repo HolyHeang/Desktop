@@ -62,7 +62,7 @@ namespace CamemisOffLine
             timer.Start();
             DispatcherTimer Internet = new DispatcherTimer();
             Internet.Tick += Internet_Tick;
-            Internet.Interval = TimeSpan.FromSeconds(10);
+            Internet.Interval = TimeSpan.FromSeconds(40);
             Internet.Start();
 
         }
@@ -3374,9 +3374,11 @@ namespace CamemisOffLine
                 }
                 title = "year";
             }
+            this.Opacity = 0.5;
             HonoraryList honorary = new HonoraryList(topStudent, schoolName, teacher, title,yearTitle);
             honorary.Owner = this;
             honorary.ShowDialog();
+            this.Opacity = 1;
         }
 
         private void btnStudenResultDetail_Click(object sender, RoutedEventArgs e)
@@ -5885,10 +5887,11 @@ namespace CamemisOffLine
                             }
                             title = "month";
                         }
-
+                        this.Opacity = 0.5;
                         HonoraryList honorary = new HonoraryList(topStudent, schoolName, teacher, title,yearTitle);
                         honorary.Owner = this;
                         honorary.ShowDialog();
+                        this.Opacity = 1;
                     }
                 }
                 catch
