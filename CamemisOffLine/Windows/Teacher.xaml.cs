@@ -4198,12 +4198,23 @@ namespace CamemisOffLine
                 this.Opacity = 1;
                 if (message.result == 1 && item.id == 1)
                 {
-                    this.Opacity = 0.5;
-                    if (schoolYearId == "")
+                    if (YearSelection == "")
                     {
-                        m.discription = Properties.Langs.Lang.Select_school_year;
-                        m.ShowDialog();
+                        this.Opacity = 0.5;
+                        MessageBoxControl messageBox = new MessageBoxControl();
+                        messageBox.title = Properties.Langs.Lang.print;
+                        messageBox.discription = Properties.Langs.Lang.Select_school_year;
+                        messageBox.buttonType = 1;
+                        messageBox.ShowDialog();
+                        this.Opacity = 1;
                     }
+                    
+
+                    // else if (schoolYearId == "")
+                    //{
+                    //    m.discription = Properties.Langs.Lang.Select_school_year;
+                    //    m.ShowDialog();
+                    //}
                     else
                     {
                         StudentList student = new StudentList(ping, 1, YearSelection);
