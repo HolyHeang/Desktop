@@ -1,4 +1,5 @@
-﻿using iTextSharp.text;
+﻿using CamemisOffLine.Component;
+using iTextSharp.text;
 using iTextSharp.text.pdf;
 using Library;
 using System;
@@ -207,9 +208,12 @@ namespace CamemisOffLine.Windows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            this.Hide();
             if (Properties.Settings.Default.role == "1")
             {
-                titleTeacher.Content = "នាយកសាលា";
+                PrintPopup prints = new PrintPopup();
+                prints.ShowDialog();
+                titleTeacher.Content = prints.position;
                 titleAdmin.Visibility = Visibility.Collapsed;
                 lblTeacherName.Visibility = Visibility.Collapsed;
             }
