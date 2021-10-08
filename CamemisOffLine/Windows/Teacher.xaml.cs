@@ -5764,6 +5764,19 @@ namespace CamemisOffLine
            
         }
 
+        private void DGStaffAtt1_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            if (!e.Handled)
+            {
+                e.Handled = true;
+                var eventArg = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
+                eventArg.RoutedEvent = MouseWheelEvent;
+                eventArg.Source = sender;
+                var parent = ((Control)sender).Parent as UIElement;
+                parent?.RaiseEvent(eventArg);
+            }
+        }
+
         private void MaProRequse_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (MaProRequse.Kind == MaterialDesignThemes.Wpf.PackIconKind.ChevronUp)

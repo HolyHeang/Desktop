@@ -623,7 +623,7 @@
                                                                 </StackPanel>
                                                             </Grid>
                                                             <Grid Background="White" Margin="0 0 0 0">
-                                                                <ScrollViewer Foreground="WhiteSmoke" VerticalScrollBarVisibility="Disabled">
+                                                                <!--<ScrollViewer Foreground="WhiteSmoke" VerticalScrollBarVisibility="Disabled">-->
                                                                     <Grid>
                                                                         <Grid.ColumnDefinitions>
                                                                             <ColumnDefinition Width="*"/>
@@ -633,7 +633,11 @@
                                                                             <Grid.Resources>
                                                                                 <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#4C1183CA" />
                                                                             </Grid.Resources>
-                                                                            <DataGrid Name="DGStaffAtt1" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="3 0 3 5" BorderThickness="1 0 1 0" RowHeight="40" BorderBrush="#7F808080" Grid.Column="0" FontSize="14" GridLinesVisibility="All" SelectionUnit="FullRow" SelectionMode="Extended" AutoGenerateColumns="False" Background="#7FFFFFFF" CanUserSortColumns="False" AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" VirtualizingPanel.ScrollUnit="Pixel" IsReadOnly="True" ScrollViewer.CanContentScroll="True">
+                                                                            <DataGrid Name="DGStaffAtt1" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="3 0 3 5" 
+                                                                                      BorderThickness="1 0 1 0" RowHeight="40" BorderBrush="#7F808080" Grid.Column="0" FontSize="14" GridLinesVisibility="All" 
+                                                                                      SelectionUnit="FullRow" SelectionMode="Extended" AutoGenerateColumns="False" Background="#7FFFFFFF" CanUserSortColumns="False" 
+                                                                                      AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" VirtualizingPanel.ScrollUnit="Pixel" IsReadOnly="True" 
+                                                                                      ScrollViewer.CanContentScroll="True" PreviewMouseWheel="DGStaffAtt1_PreviewMouseWheel">
                                                                                 <DataGrid.Resources>
                                                                                     <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                                                                                         <Setter Property="Background" Value="White" />
@@ -920,7 +924,7 @@
                                                                             </DataGrid>
                                                                         </Grid>
                                                                     </Grid>
-                                                                </ScrollViewer>
+                                                                <!--</ScrollViewer>-->
                                                             </Grid>
 
                                                         </StackPanel>
