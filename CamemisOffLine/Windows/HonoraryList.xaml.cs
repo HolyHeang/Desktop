@@ -192,7 +192,7 @@ namespace CamemisOffLine.Windows
                     png.ScalePercent(60f);
                     document.Add(png);
                 }
-
+                
                 GC.Collect();
                 document.Close();
                 GC.Collect();
@@ -206,7 +206,7 @@ namespace CamemisOffLine.Windows
             }
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e) 
         {
             this.Hide();
             if (Properties.Settings.Default.role == "1")

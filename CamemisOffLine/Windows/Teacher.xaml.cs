@@ -306,7 +306,7 @@ namespace CamemisOffLine
                     ///
                     /// 
                     ///
-                 List<StaffAttendance> at = new List<StaffAttendance>();
+               /*  List<StaffAttendance> at = new List<StaffAttendance>();
                     for (int i = 1; i <= 5; i++)
                     {
                         at.Add(new StaffAttendance
@@ -326,7 +326,7 @@ namespace CamemisOffLine
                         });
                     }
                     DGStaffAtt.ItemsSource = at;
-                    DGStaffAtt1.ItemsSource = at;
+                    DGStaffAtt1.ItemsSource = at;*/
 
                     //Load Year of Academy
                     if (InternetChecker()&&internet)
@@ -609,17 +609,19 @@ namespace CamemisOffLine
 
             Loading loading = new Loading();
             loading.Owner = this;
-            loading.Show();
+            await Dispatcher.InvokeAsync(() => {
+                loading.Show();
+            },DispatcherPriority.Background);
             this.sender = sender;
             this.e = e;
-            
+
             var accessUrl = Properties.Settings.Default.acessUrl;
             var token = Properties.Settings.Default.Token;
 
-            
+
             dateForStaffAtt = DPStaffAtt.SelectedDate.Value.ToString("dd/MM/yyyy");
 
-            if(InternetChecker())
+            if (InternetChecker())
             {
                 int i = 1;
                 var respone = await RESTApiHelper.GetAll(accessUrl, "/staff-attendance-permission?date=" + dateForStaffAtt, token);
@@ -627,50 +629,56 @@ namespace CamemisOffLine
                 var obj = JObject.Parse(respone).ToObject<StaffPermissionList>().data;
                 var obj1 = JObject.Parse(respone1).ToObject<StaffAttendanceDailyList>().data;
                 listAttStaff = JObject.Parse(respone1).ToObject<StaffAttendanceDailyList>();
-                foreach (var item in obj)
-                {
-                    item.number = i.ToString();
-                    if (item.is_approve == null)
+                await Dispatcher.InvokeAsync(() => {
+                    foreach (var item in obj)
                     {
-                        item.approved_at = "";
-                        item.visble = "Visible";
+                        item.number = i.ToString();
+                        if (item.is_approve == null)
+                        {
+                            item.approved_at = "";
+                            item.visble = "Visible";
+                        }
+                        else
+                        {
+                            item.visble = "Collapsed";
+                        }
+                        i++;
                     }
-                    else
+                    i = 1;
+                    foreach (var item in listAttStaff.data)
                     {
-                        item.visble = "Collapsed";
+                        requestIdPermission = item.id;
+                        staffName.Add(item.name);
+                        item.number = i.ToString();
+                        if (item.gender == "1")
+                            item.gender = "ប្រុស";
+                        else
+                            item.gender = "ស្រី";
+                        if (!item.daily_present.morning.in_time.Equals(""))
+                            item.mIn = "Red";
+                        if (!item.daily_present.morning.out_time.Equals(""))
+                            item.mOut = "Red";
+                        if (!item.daily_present.afternoon.out_time.Equals(""))
+                            item.aOut = "Red";
+                        if (!item.daily_present.afternoon.in_time.Equals(""))
+                            item.aIn = "Red";
+
+                        i++;
                     }
-                    i++;
-                }
-                i = 1;
-                foreach (var item in listAttStaff.data)
-                {
-                    requestIdPermission = item.id;
-                    staffName.Add(item.name);
-                    item.number = i.ToString();
-                    if (item.gender == "1")
-                        item.gender = "ប្រុស";
-                    else
-                        item.gender = "ស្រី";
-                    if (!item.daily_present.morning.in_time.Equals(""))
-                        item.mIn = "Red";
-                    if (!item.daily_present.morning.out_time.Equals(""))
-                        item.mOut = "Red";
-                    if (!item.daily_present.afternoon.out_time.Equals(""))
-                        item.aOut = "Red";
-                    if (!item.daily_present.afternoon.in_time.Equals(""))
-                        item.aIn = "Red";
-
-                    i++;
-                }
-                DGStaffAtt.ItemsSource = obj;
-                DGStaffAtt1.ItemsSource = listAttStaff.data;
-
-                staffs = obj1;           
+                    DGStaffAtt.ItemsSource = obj;
+                    DGStaffAtt1.ItemsSource = listAttStaff.data;
+                    staffs = obj1;
+                },
+                DispatcherPriority.Render);
+                
             }
 
             gridAcc.Visibility = Visibility.Collapsed;
             check = false;
-            loading.Close();
+            await Dispatcher.InvokeAsync(() => {
+                loading.Close(); 
+            },
+           DispatcherPriority.ApplicationIdle);
         }
 
         private void btnStudentAttendanceReport_Click_1(object sender, RoutedEventArgs e)
@@ -2536,7 +2544,7 @@ namespace CamemisOffLine
             Month.Visibility = Visibility.Collapsed;
             GridCursors.Margin = new Thickness(10, 43, 0, 0);
             tabStuResult.SelectedIndex = 0;
-            gridformstuResult.Margin = new Thickness(0, -40, 0, 0);
+            gridformstuResult.Margin = new Thickness(0, -40, 0, 0); 
             gridStudentResult.Margin = new Thickness(0, -41, 0, 0);
             grideStuResult.Visibility = Visibility.Collapsed;
             docktree.Visibility = Visibility.Visible;
@@ -2912,6 +2920,7 @@ namespace CamemisOffLine
                 cmbSort.SelectedIndex = 1;
                 rbSmall.IsChecked = true;
             }
+
             this.IsEnabled = true;
 
             if (monthName.Equals("លទ្ធផលប្រចាំឆ្នាំ"))
@@ -5123,7 +5132,6 @@ namespace CamemisOffLine
             this.IsEnabled = true;
             load.Close();
         }
-
         private async void btnApproved_Click(object sender, RoutedEventArgs e)
         {
             Loading load = new Loading();
@@ -5543,7 +5551,9 @@ namespace CamemisOffLine
                 DGStaffAtt1.ItemsSource = listAttStaff.data;
                 staffs = obj1;
             }
-            loading.Close();
+            await Dispatcher.InvokeAsync(() => { loading.Close(); },
+            DispatcherPriority.ApplicationIdle);
+            
         }
 
         private void btnSearchStaffAtt_Click(object sender, RoutedEventArgs e)
