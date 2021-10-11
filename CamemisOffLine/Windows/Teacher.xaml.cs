@@ -2570,7 +2570,6 @@ namespace CamemisOffLine
             }
             tvAcademy.ItemsSource = obj;
         }
-
         string classId = "", monthName = "", className = "", yearTitle = "";
         List<string> studentName = new List<string>();
 
@@ -5584,36 +5583,9 @@ namespace CamemisOffLine
 
         private void txtSeachStaffName_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if(txtSeachStaffName.Text.Equals(""))
-            {
-                int i = 1;
-                foreach (var item in staffs)
-                {
-                    requestIdPermission = item.id;
-                    item.number = i.ToString();
-                    if (item.gender == "1")
-                        item.gender = "ប្រុស";
-                    else
-                        item.gender = "ស្រី";
-                    if (!item.daily_present.morning.in_time.Equals(""))
-                        item.mIn = "Red";
-                    if (!item.daily_present.morning.out_time.Equals(""))
-                        item.mOut = "Red";
-                    if (!item.daily_present.afternoon.out_time.Equals(""))
-                        item.aOut = "Red";
-                    if (!item.daily_present.afternoon.in_time.Equals(""))
-                        item.aIn = "Red";
-                    i++;
-                }
-                DGStaffAtt1.ItemsSource​ = null;
-                DGStaffAtt1.ItemsSource = staffs;
-            }
-            else
-            {
-                var name = staffName.Where(s => s.Contains(txtSeachStaffName.Text));
-                cbSeachStaffName.ItemsSource = name;
-                cbSeachStaffName.IsDropDownOpen = true;
-            }
+            var name = staffName.Where(s => s.Contains(txtSeachStaffName.Text));
+            cbSeachStaffName.ItemsSource = name;
+            cbSeachStaffName.IsDropDownOpen = true;
         }
         private void cbSeachStaffName_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -5726,7 +5698,7 @@ namespace CamemisOffLine
             {
                 item.leave = false;
                 item.permission = false;
-                item.absent = false;
+                item.absent = false; 
             }
             else if(item.leave==true)
             {
@@ -5774,6 +5746,44 @@ namespace CamemisOffLine
                 eventArg.Source = sender;
                 var parent = ((Control)sender).Parent as UIElement;
                 parent?.RaiseEvent(eventArg);
+            }
+        }
+
+        private async void txtSeachStaffName_LostFocus(object sender, RoutedEventArgs e)
+        {
+
+            if (txtSeachStaffName.Text.Equals(""))
+            {
+                Loading loading = new Loading();
+                loading.Show();
+                int i = 1;
+                await Dispatcher.InvokeAsync(() => {
+
+                    foreach (var item in staffs)
+                    {
+                        requestIdPermission = item.id;
+                        item.number = i.ToString();
+                        if (item.gender == "1")
+                            item.gender = "ប្រុស";
+                        else
+                            item.gender = "ស្រី";
+                        if (!item.daily_present.morning.in_time.Equals(""))
+                            item.mIn = "Red";
+                        if (!item.daily_present.morning.out_time.Equals(""))
+                            item.mOut = "Red";
+                        if (!item.daily_present.afternoon.out_time.Equals(""))
+                            item.aOut = "Red";
+                        if (!item.daily_present.afternoon.in_time.Equals(""))
+                            item.aIn = "Red";
+                        i++;
+                    }
+                    DGStaffAtt1.ItemsSource​ = null;
+                    DGStaffAtt1.ItemsSource = staffs;
+                }, DispatcherPriority.Render);
+
+                await Dispatcher.InvokeAsync(()=> {
+                    loading.Close();
+                },DispatcherPriority.ApplicationIdle);
             }
         }
 
