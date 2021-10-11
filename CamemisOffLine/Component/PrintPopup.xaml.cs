@@ -20,6 +20,10 @@ namespace CamemisOffLine.Component
     public partial class PrintPopup : Window
     {
         public string position { get; set; }
+        public Visibility CheckCenter { get; set; }
+        public Visibility CheckRight { get; set; }
+        public bool isPrint { get; set; } = false;
+
         public PrintPopup()
         {
             InitializeComponent();
@@ -37,6 +41,47 @@ namespace CamemisOffLine.Component
                 position = txtPosition.Text;
                 this.Close();
             }
+            isPrint = true;
         }
+
+        private void checkCenter_Checked(object sender, RoutedEventArgs e)
+        {
+
+            try
+            {
+                if (checkCenter.IsChecked == true)
+                {
+                    CheckCenter = Visibility.Visible;
+                    CheckRight = Visibility.Collapsed;
+
+                    barcenter.Visibility = Visibility.Visible;
+                    barRight.Visibility = Visibility.Collapsed;
+                }
+                else if (checkRight.IsChecked == true)
+                {
+                    CheckCenter = Visibility.Collapsed;
+                    CheckRight = Visibility.Visible;
+                    barcenter.Visibility = Visibility.Collapsed;
+                    barRight.Visibility = Visibility.Visible;
+                }
+            }
+            catch { }
+        }
+
+        private void Exit_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Exit.Background = Brushes.Red;
+        }
+
+        private void Exit_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Exit.Background = Brushes.Transparent;
+        }
+
+        private void Exit_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

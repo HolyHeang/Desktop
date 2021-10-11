@@ -1,4 +1,5 @@
-﻿using CamemisOffLine.Windows;
+﻿using CamemisOffLine.Component;
+using CamemisOffLine.Windows;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System;
@@ -37,8 +38,7 @@ namespace CamemisOffLine.Report
            
             btnPrint.Visibility = Visibility.Collapsed;
             gridClose.Visibility = Visibility.Collapsed;
-            lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
-            TitleSchool.Content = Properties.Settings.Default.schoolName;
+           
             try
             {
 
@@ -86,6 +86,27 @@ namespace CamemisOffLine.Report
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             barRight.Visibility = Visibility.Collapsed;
+            lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
+            TitleSchool.Content = Properties.Settings.Default.schoolName;
+            this.Hide();
+
+            PrintPopup prints = new PrintPopup();
+            this.IsEnabled = false;
+            this.Opacity = 0.5;
+            prints.ShowDialog();
+            this.Opacity = 1;
+            this.IsEnabled = true;
+            txtPosition.Content = prints.position;
+
+
+            barCenter.Visibility = prints.CheckCenter;
+            barRight.Visibility = prints.CheckRight;
+
+            if (prints.isPrint == true)
+                this.ShowDialog();
+            else
+                this.Close();
+
             lblMonth.Text = titleYear;
             List<StaffAttendance> at = new List<StaffAttendance>();
             for (int i = 1; i <= 1; i++)

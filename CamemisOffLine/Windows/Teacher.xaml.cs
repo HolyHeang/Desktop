@@ -4219,9 +4219,11 @@ namespace CamemisOffLine
                     //}
                     else
                     {
+                        this.Opacity = 0.5;
                         StudentList student = new StudentList(ping, 1, YearSelection);
                         student.schoolYearId = schoolYearId;
                         student.Show();
+                        this.Opacity = 1;
                     }
 
                 }
@@ -4234,10 +4236,12 @@ namespace CamemisOffLine
                     }
                     else
                     {
+                        this.Opacity = 0.5;
                         StudentList student = new StudentList(ping, 2, studentClass);
                         student.classId = classId;
                         student.schoolYearId = schoolYearId;
                         student.Show();
+                        this.Opacity = 1;
                     }
                 }
                 else if (message.result == 1 && item.id == 3)
@@ -4249,10 +4253,12 @@ namespace CamemisOffLine
                     }
                     else
                     {
+                        this.Opacity = 0.5;
                         StudentList student = new StudentList(ping, 3, gradName);
                         student.gradeId = gradeId;
                         student.schoolYearId = schoolYearId;
                         student.Show();
+                        this.Opacity = 1;
                     }
                 }
                 else if (message.result == 1 && item.id == 2)
@@ -4264,10 +4270,12 @@ namespace CamemisOffLine
                     }
                     else
                     {
+                        this.Opacity = 0.5;
                         StudentList student = new StudentList(ping, 4, level);
                         student.schoolYearId = schoolYearId;
                         student.level = level;
                         student.Show();
+                        this.Opacity = 1;
                     }
                 }
 
@@ -4275,31 +4283,43 @@ namespace CamemisOffLine
             }
             else if (item.id == 5)
             {
-                    Studemt_Exam_up_class up_Class = new Studemt_Exam_up_class(schoolYearId, YearSelection);      
+                this.Opacity = 0.5;
+                Studemt_Exam_up_class up_Class = new Studemt_Exam_up_class(schoolYearId, YearSelection);      
                     up_Class.Show();
+                this.Opacity = 1;
             }
             
             else if (item.id == 6)
             {
+                this.Opacity = 0.5;
                 List_of_repeat_students repeat_Students = new List_of_repeat_students(schoolYearId, YearSelection);
                 repeat_Students.Show();
+                this.Opacity = 1;
             }
             else if (item.id == 7)
             {
+                this.Opacity = 0.5;
                 ListStudentCencel studentCencel = new ListStudentCencel(schoolYearId, YearSelection);
                 studentCencel.Show();
+                this.Opacity = 1;
             }
             else if (item.id == 9)
             {
+                this.Opacity = 0.5;
                 StudenPrintMonthlySemesterResult();
+                this.Opacity = 1;
             }
             else if (item.id == 10)
             {
+                this.Opacity = 0.5;
                 StudentPrintMonthlySemesterTranscrip();
+                this.Opacity = 1;
             }
             else if (item.id == 11)
             {
+                this.Opacity = 0.5;
                 StudentPrintHonoraryList();
+                this.Opacity = 1;
             }
             else if (item.id == 12)
             {
@@ -4315,15 +4335,17 @@ namespace CamemisOffLine
                 }
                 else
                 {
+                    this.Opacity = 0.5;
                     Classification classification = new Classification(classId, term, YearSelection, ping);
                     classification.Show();
+                    this.Opacity = 1;
                 }
             }
             else if (item.id == 13)
             {
-
+                this.Opacity = 0.5;
                 AllSubjectPrint();
-
+                this.Opacity = 1;
             }
             else if(item.id==14)
             {
@@ -4339,8 +4361,10 @@ namespace CamemisOffLine
                 }
                 else
                 {
+                    this.Opacity = 0.5;
                     Sumery_of_Students_Short summary = new Sumery_of_Students_Short(yearId, resulType, DateChange.checkMonthString(studentMonth).ToString(), term, studentMonth);
                     summary.Show();
+                    this.Opacity = 1;
                 }
             }
             else if (item.id == 16)
@@ -4359,13 +4383,17 @@ namespace CamemisOffLine
                 {
                     if (month == "0")
                     {
+                        this.Opacity = 0.5;
                         Student_Attendance_Year attendance_Year = new Student_Attendance_Year(classId, month, yearTitle, studentClass);
                         attendance_Year.Show();
+                        this.Opacity = 1;
                     }
                     else
                     {
+                        this.Opacity = 0.5;
                         AttendanceReport attendance = new AttendanceReport(classId, month, yearTitle, studentClass);
                         attendance.Show();
+                        this.Opacity = 1;
                     }
                 }
             }

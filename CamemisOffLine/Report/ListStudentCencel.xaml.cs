@@ -48,6 +48,22 @@ namespace CamemisOffLine.Report
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
             barRight.Visibility = Visibility.Collapsed;
+
+            this.Hide();
+
+            PrintPopup prints = new PrintPopup();
+            this.IsEnabled = false;
+            this.Opacity = 0.5;
+
+            prints.ShowDialog();
+
+            this.Opacity = 1;
+            this.IsEnabled = true;
+            txtPosition.Content = prints.position;
+
+            barCenter.Visibility = prints.CheckCenter;
+            barRight.Visibility = prints.CheckRight;
+
             Loading load = new Loading();
             load.Show();
             try

@@ -354,7 +354,7 @@
                                             </Grid>
                                         </Grid>
                                        
-                                        <ScrollViewer  Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="0 0 0 0">
+                                        <ScrollViewer  Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0 0 0 0">
 
                                             <StackPanel Orientation="Vertical" Margin="10 0 10 10" Background="White">
 
@@ -1875,16 +1875,16 @@
                                                             </Grid.ColumnDefinitions>
                                                             <Grid Grid.Column="0">
                                                                 <StackPanel Orientation="Horizontal">
-                                                                    <TextBlock Text="{x:Static language:Lang.search_students_}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="11" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="5 0 0 0"/>
+                                                                    <TextBlock Text="{x:Static language:Lang.search_students_}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="11" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="5 0 10 0"/>
                                                                     <Grid>
                                                                         <ComboBox Name="cmbStudentName" Width="130" Height="3" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Left" Margin="0,0,0,-8" SelectionChanged="cmbStudentName_SelectionChanged" VerticalAlignment="Bottom"></ComboBox>
-                                                                        <TextBox Name="txtStudentName"  materialDesign:HintAssist.Hint="{x:Static language:Lang.select_students}" Width="135" FontSize="11" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Left" Margin="0,0,0,0" BorderThickness="1" BorderBrush="LightGray" GotFocus="txtStudentName_GotFocus" TextChanged="txtStudentName_TextChanged" Foreground="Black" Background="White" Height="25" Cursor="Hand" Padding="2 -1.5 0 0"/>
+                                                                        <TextBox Name="txtStudentName"  materialDesign:HintAssist.Hint="{x:Static language:Lang.select_students}" Width="135" FontSize="11" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Left" Margin="0,0,10,0" BorderThickness="1" BorderBrush="LightGray" GotFocus="txtStudentName_GotFocus" TextChanged="txtStudentName_TextChanged" Foreground="Black" Background="White" Height="25" Cursor="Hand" Padding="2 -1.5 0 0"/>
                                                                     </Grid>
 
                                                                     <Grid>
                                                                         <StackPanel Orientation="Horizontal">
-                                                                            <TextBlock Text="{x:Static language:Lang.sort}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="11" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="0 1.6 0 0"/>
-                                                                            <ComboBox Name="cmbSort" Style="{StaticResource combobox}" Width="110" Height="25" FontSize="11" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Background="White" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Padding="5 0 0 0" BorderBrush="LightGray" Margin="0,0,0,0" Foreground="Gray" SelectionChanged="cmbSort_SelectionChanged">
+                                                                            <TextBlock Text="{x:Static language:Lang.sort}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="11" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="0 1.6 10 0"/>
+                                                                            <ComboBox Name="cmbSort" Style="{StaticResource combobox}" Width="110" Height="25" FontSize="11" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Background="White" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Padding="5 0 0 0" BorderBrush="LightGray" Margin="0,0,10,0" Foreground="Gray" SelectionChanged="cmbSort_SelectionChanged">
                                                                                 <ComboBox.ItemContainerStyle>
                                                                                     <Style TargetType="{x:Type ComboBoxItem}">
                                                                                         <Style.Triggers>
@@ -1907,10 +1907,10 @@
 
                                                                     <Grid>
                                                                         <StackPanel Orientation="Horizontal">
-                                                                            <RadioButton Name="rbSmall" FontSize="12" Background="Blue" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="0 0 0 0" IsChecked="True" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="rbSmall_Checked">
+                                                                            <RadioButton Name="rbSmall" FontSize="12" Background="Blue" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="0 0 10 0" IsChecked="True" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="rbSmall_Checked">
                                                                                 <Label Content="{x:Static language:Lang.small_to_large}" HorizontalContentAlignment="Left" HorizontalAlignment="Left" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="11" Padding="-5 0 0 0"></Label>
                                                                             </RadioButton>
-                                                                            <RadioButton Name="rbBig" FontSize="12" Background="Blue" Margin="0 0 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="rbSmall_Checked">
+                                                                            <RadioButton Name="rbBig" FontSize="12" Background="Blue" Margin="0 0 10 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="rbSmall_Checked">
                                                                                 <Label Content="{x:Static language:Lang.large_to_small}" HorizontalContentAlignment="Left" HorizontalAlignment="Left" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="11" Padding="-5 0 0 0"/>
                                                                             </RadioButton>
                                                                         </StackPanel>
@@ -2056,7 +2056,7 @@
                                                                                         <DataGrid BorderThickness="1 0 1 1" BorderBrush="#7F808080" Background="White" RowHeight="60" Margin="0 0 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Name="DGMonthlyResult" FontSize="13" AutoGenerateColumns="False" GridLinesVisibility="All" AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" MouseDoubleClick="DGMonthlyResult_MouseDoubleClick" IsReadOnly="True" CanUserSortColumns="False" SelectionMode="Extended" SelectionUnit="FullRow" SelectionChanged="DGMonthlyResult_SelectionChanged" VirtualizingPanel.ScrollUnit="Pixel" ScrollViewer.CanContentScroll="True">
                                                                                             <DataGrid.RowStyle>
                                                                                                 <Style TargetType="DataGridRow">
-                                                                                                    <Setter Property="ToolTip">
+                                                                                                    <!--<Setter Property="ToolTip">
                                                                                                         <Setter.Value>
                                                                                                             <Grid>
                                                                                                                 <Grid.ColumnDefinitions>
@@ -2073,7 +2073,7 @@
                                                                                                                 </StackPanel>
                                                                                                             </Grid>
                                                                                                         </Setter.Value>
-                                                                                                    </Setter>
+                                                                                                    </Setter>-->
                                                                                                 </Style>
                                                                                             </DataGrid.RowStyle>
                                                                                             <DataGrid.Resources>
@@ -2151,6 +2151,7 @@
                                                                                                     <DataGridTextColumn.ElementStyle>
                                                                                                         <Style TargetType="{x:Type TextBlock}">
                                                                                                             <Setter Property="HorizontalAlignment" Value="Center" />
+                                                                                                            <Setter Property="VerticalAlignment" Value="Center"></Setter>
                                                                                                             <Setter Property="FontWeight" Value="Regular"/>
                                                                                                             <Setter Property="Foreground" Value="Black"/>
                                                                                                         </Style>
@@ -2278,7 +2279,7 @@
                                                                                         <DataGrid Name="DGSemester" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" BorderThickness="1 0 1 1" RowHeight="60" BorderBrush="#7F808080" Grid.Column="0" FontSize="13" GridLinesVisibility="All" SelectionUnit="FullRow" SelectionMode="Extended" AutoGenerateColumns="False" Background="#7FFFFFFF" CanUserSortColumns="False" AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" VirtualizingPanel.ScrollUnit="Pixel" IsReadOnly="True" MouseDoubleClick="DGSemester_MouseDoubleClick" ScrollViewer.CanContentScroll="True">
                                                                                             <DataGrid.RowStyle>
                                                                                                 <Style TargetType="DataGridRow">
-                                                                                                    <Setter Property="ToolTip">
+                                                                                                    <!--<Setter Property="ToolTip">
                                                                                                         <Setter.Value>
                                                                                                             <Grid>
                                                                                                                 <Grid.ColumnDefinitions>
@@ -2295,7 +2296,7 @@
                                                                                                                 </StackPanel>
                                                                                                             </Grid>
                                                                                                         </Setter.Value>
-                                                                                                    </Setter>
+                                                                                                    </Setter>-->
                                                                                                 </Style>
                                                                                             </DataGrid.RowStyle>
                                                                                             <DataGrid.Resources>
@@ -2503,7 +2504,7 @@
                                                                                         <DataGrid Name="DGYear" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" BorderThickness="1 0 1 1" RowHeight="60" BorderBrush="#7F808080" Grid.Column="0" FontSize="13" GridLinesVisibility="All" SelectionUnit="FullRow" SelectionMode="Extended" AutoGenerateColumns="False" Background="#7FFFFFFF" CanUserSortColumns="False" AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" SelectionChanged="DGMonthlyResult_SelectionChanged" VirtualizingPanel.ScrollUnit="Pixel" IsReadOnly="True" ScrollViewer.CanContentScroll="True">
                                                                                             <DataGrid.RowStyle>
                                                                                                 <Style TargetType="DataGridRow">
-                                                                                                    <Setter Property="ToolTip">
+                                                                                                    <!--<Setter Property="ToolTip">
                                                                                                         <Setter.Value>
                                                                                                             <Grid>
                                                                                                                 <Grid.ColumnDefinitions>
@@ -2520,7 +2521,7 @@
                                                                                                                 </StackPanel>
                                                                                                             </Grid>
                                                                                                         </Setter.Value>
-                                                                                                    </Setter>
+                                                                                                    </Setter>-->
                                                                                                 </Style>
                                                                                             </DataGrid.RowStyle>
                                                                                             <DataGrid.Resources>
@@ -2726,7 +2727,7 @@
                                                                                         <DataGrid Name="DGSemesterClass" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" BorderThickness="1 0 1 1" RowHeight="61" BorderBrush="#7F808080" Grid.Column="0" FontSize="13" GridLinesVisibility="All" SelectionUnit="FullRow" SelectionMode="Extended" AutoGenerateColumns="False" Background="#7FFFFFFF" CanUserSortColumns="False" AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" VirtualizingPanel.ScrollUnit="Pixel" IsReadOnly="True" ScrollViewer.CanContentScroll="True">
                                                                                             <DataGrid.RowStyle>
                                                                                                 <Style TargetType="DataGridRow">
-                                                                                                    <Setter Property="ToolTip">
+                                                                                                    <!--<Setter Property="ToolTip">
                                                                                                         <Setter.Value>
                                                                                                             <Grid>
                                                                                                                 <Grid.ColumnDefinitions>
@@ -2743,7 +2744,7 @@
                                                                                                                 </StackPanel>
                                                                                                             </Grid>
                                                                                                         </Setter.Value>
-                                                                                                    </Setter>
+                                                                                                    </Setter>-->
                                                                                                 </Style>
                                                                                             </DataGrid.RowStyle>
                                                                                             <DataGrid.Resources>
@@ -2905,7 +2906,7 @@
                                                                                         <DataGrid Name="DGSemesterExam" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" BorderThickness="1 0 1 1" RowHeight="60" BorderBrush="#7F808080" Grid.Column="0" FontSize="14" GridLinesVisibility="All" SelectionUnit="FullRow" SelectionMode="Extended" AutoGenerateColumns="False" Background="#7FFFFFFF" CanUserSortColumns="False" AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" VirtualizingPanel.ScrollUnit="Pixel" IsReadOnly="True" ScrollViewer.CanContentScroll="True">
                                                                                             <DataGrid.RowStyle>
                                                                                                 <Style TargetType="DataGridRow">
-                                                                                                    <Setter Property="ToolTip">
+                                                                                                    <!--<Setter Property="ToolTip">
                                                                                                         <Setter.Value>
                                                                                                             <Grid>
                                                                                                                 <Grid.ColumnDefinitions>
@@ -2922,7 +2923,7 @@
                                                                                                                 </StackPanel>
                                                                                                             </Grid>
                                                                                                         </Setter.Value>
-                                                                                                    </Setter>
+                                                                                                    </Setter>-->
                                                                                                 </Style>
                                                                                             </DataGrid.RowStyle>
                                                                                             <DataGrid.Resources>

@@ -231,8 +231,18 @@ namespace CamemisOffLine.Report
         }
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            this.Opacity = 0.5;
             barRight.Visibility = Visibility.Collapsed;
             this.Hide();
+
+            PrintPopup prints = new PrintPopup();
+            prints.ShowDialog();
+            txtPosition.Content = prints.position;
+
+            barCenter.Visibility = prints.CheckCenter;
+            barRight.Visibility = prints.CheckRight;
+            this.Opacity = 1;
+
             Loading loading = new Loading();
             loading.Show();
             var respone = "";

@@ -56,6 +56,19 @@ namespace CamemisOffLine.Report
         {
             barRight.Visibility = Visibility.Collapsed;
             this.Hide();
+            PrintPopup prints = new PrintPopup();
+            this.IsEnabled = false;
+            this.Opacity = 0.5;
+
+            prints.ShowDialog();
+
+            this.Opacity = 1;
+            this.IsEnabled = true;
+            txtPosition.Text = prints.position;
+
+            barCenter.Visibility = prints.CheckCenter;
+            barRight.Visibility = prints.CheckRight;
+
             MessageBoxControl message = new MessageBoxControl();
             if (yearid == "")
             {

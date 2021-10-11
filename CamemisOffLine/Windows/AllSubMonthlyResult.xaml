@@ -229,7 +229,7 @@
                         <Label HorizontalAlignment="Center" VerticalAlignment="Center">
                             <StackPanel Orientation="Vertical">
                                 <TextBlock Text="បានឃើញ និងឯកភាព" FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                                <TextBlock Text="នាយកសាលា" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
+                                <TextBlock Name="txtPosition" Text="នាយក" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
                             </StackPanel>
                         </Label>
                     </Grid>
@@ -238,13 +238,13 @@
                             <Label HorizontalAlignment="Center">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="ថ្ងៃ" FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                                    <TextBlock Name="lblDay" Text="..................." FontSize="12"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Name="lblDay" Text="................................" FontSize="12"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
                                     <TextBlock Text="ខែ" FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                                    <TextBlock Name="lblMonths" Text="..................." FontSize="12"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Name="lblMonths" Text="..............................." FontSize="12"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
                                     <TextBlock Text="ឆ្នាំ" FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                                    <TextBlock Name="lblYear" Text="..................." FontSize="12"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Name="lblYear" Text=".........................." FontSize="12"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
                                     <TextBlock Text="ព.ស" FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                                    <TextBlock Name="lblKhmerYear" Text="..................." FontSize="12"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Name="lblKhmerYear" Text="........................" FontSize="12"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
                                 </StackPanel>
                             </Label>
                             <Label HorizontalAlignment="Center" Margin="0 10 0 0" FontSize="10">

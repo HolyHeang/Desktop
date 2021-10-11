@@ -296,7 +296,7 @@
                                         <TextBlock Text="{Binding Text,ElementName=lblMonths}" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                     </StackPanel>
                                 </Label>
-                                <Label Content="នាយកវិទ្យាល័យ" FontSize="15" HorizontalAlignment="Center" Margin=" 0 5 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
+                                <Label Name="txtPosition" Content="នាយក" FontSize="15" HorizontalAlignment="Center" Margin=" 0 5 0 0" Style="{DynamicResource Muol}"></Label>
                             </StackPanel>
                         </Grid>
                     </Grid>

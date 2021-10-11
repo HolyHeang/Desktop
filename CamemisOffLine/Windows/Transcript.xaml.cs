@@ -79,19 +79,43 @@ namespace CamemisOffLine.Windows
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             barRight.Visibility = Visibility.Collapsed;
+            this.Hide();
             if (Properties.Settings.Default.role == "1")
             {
-                titleTeacher.Content = "នាយកសាលា";
+                PrintPopup prints = new PrintPopup();
+                this.IsEnabled = false;
+                this.Opacity = 0.5;
+
+                prints.ShowDialog();
+
+                this.Opacity = 1;
+                this.IsEnabled = true;
+                titleTeacher.Content = prints.position;
                 titleAdmin.Visibility = Visibility.Collapsed;
                 lblTeacherName.Visibility = Visibility.Collapsed;
             }
+            else
+            {
+                PrintPopup prints = new PrintPopup();
+                this.IsEnabled = false;
+                this.Opacity = 0.5;
+
+                prints.ShowDialog();
+
+                this.Opacity = 1;
+                this.IsEnabled = true;
+                txtPosition.Text = prints.position;
+                titleAdmin.Visibility = Visibility.Visible;
+                lblTeacherName.Visibility = Visibility.Visible;
+            }
+
             if (printCheck)
             {
                 this.Hide();
                 MessageBoxControl message = new MessageBoxControl();
                 message.Owner = this;
-                message.title = "បោះពុម្ភ";
-                message.discription = "តើអ្នកចង់បោះពុម្ភមែនទេ?";
+                message.title = Properties.Langs.Lang.print; ;
+                message.discription = Properties.Langs.Lang.do_you_want_to_print;
                 message.result = 0;
                 this.Opacity = 0.5;
                 message.ShowDialog();

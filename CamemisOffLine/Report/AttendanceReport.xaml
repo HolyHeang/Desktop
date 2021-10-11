@@ -253,14 +253,16 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="100 0 0 0">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="100 0 0 0" Name="titleAdmin">
                         <TextBlock Text="បានឃើញ និងឯកភាព" HorizontalAlignment="Center"/>
-                        <TextBlock Name="txtDate" Text="ថ្ងៃទី..........ខែ.........ឆ្នាំ២០........" HorizontalAlignment="Center"/>
-                        <TextBlock Text="នាយក" HorizontalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light"/>
+                        <TextBlock Name="txtDate" Text="ថ្ងៃទី....................ខែ.................ឆ្នាំ២០............." HorizontalAlignment="Center"/>
+                        <TextBlock Name="txtPosition" Text="នាយក" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
                     </StackPanel>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="0 25 100 0" Grid.Column="1" Name="teacherPanel">
                         <TextBlock Text="{Binding Text,ElementName=txtDate}" HorizontalAlignment="Center"/>
-                        <TextBlock Text="គ្រូទទួលបន្ទុកថ្នាក់" HorizontalAlignment="Center"/>
+                        <TextBlock Name="titleTeacher" Text="គ្រូទទួលបន្ទុកថ្នាក់" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalAlignment="Center"/>
+                        <Label Name="lblTeacherName" Content="----" HorizontalAlignment="Center" Margin=" 50 40 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontWeight="Bold"></Label>
+
                     </StackPanel>
                 </Grid>
             </StackPanel>

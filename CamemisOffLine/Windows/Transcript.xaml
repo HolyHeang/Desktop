@@ -237,7 +237,7 @@
                     <Label HorizontalAlignment="Center" VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="បានឃើញ និងឯកភាព" FontSize="12"  Style="{DynamicResource Siemreap}"></TextBlock>
-                            <TextBlock Text="នាយកសាលា" FontSize="14" Style="{DynamicResource Muol}" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock Name="txtPosition" Text="នាយក" FontSize="14" Style="{DynamicResource Muol}" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
                         </StackPanel>
                     </Label>
                 </Grid>

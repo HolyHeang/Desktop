@@ -1,4 +1,5 @@
-﻿using CamemisOffLine.Windows;
+﻿using CamemisOffLine.Component;
+using CamemisOffLine.Windows;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System;
@@ -37,8 +38,7 @@ namespace CamemisOffLine.Report
         {
             btnPrint.Visibility = Visibility.Collapsed;
             gridClose.Visibility = Visibility.Collapsed;
-            lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
-            TitleSchool.Content = Properties.Settings.Default.schoolName;
+           
             try
             {
 
@@ -81,12 +81,33 @@ namespace CamemisOffLine.Report
                 MessageBox.Show("ការបោះពុម្ភរបស់អ្នកមិនទទូលបានជោគជ័យ", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
                 this.Close();
             }
+           
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+          
 
             barRight.Visibility = Visibility.Collapsed;
+            lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
+            TitleSchool.Content = Properties.Settings.Default.schoolName;
+            this.Hide();
+
+            PrintPopup prints = new PrintPopup();
+           
+            prints.ShowDialog();
+           
+            txtPosition.Content = prints.position;
+
+            barCenter.Visibility = prints.CheckCenter;
+            barRight.Visibility = prints.CheckRight;
+
+            if (prints.isPrint == true)
+                this.ShowDialog();
+            else
+                this.Close();
+
+           
             lblMonth.Text = titleYear;
             List<StaffAttendance> at = new List<StaffAttendance>();
             for (int i = 1; i <= 1; i++)
@@ -98,6 +119,8 @@ namespace CamemisOffLine.Report
                 });
             }
             DGStatistic9.ItemsSource = at;
+
+           
         }
 
         private void btnPrint_Click(object sender, RoutedEventArgs e)
@@ -125,6 +148,11 @@ namespace CamemisOffLine.Report
         private void Header_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

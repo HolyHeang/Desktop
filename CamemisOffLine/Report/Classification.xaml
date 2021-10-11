@@ -29,7 +29,7 @@
                         </Grid>
                     </Grid>
                     <Grid Grid.Column="1">
-                        <Grid VerticalAlignment="Top" HorizontalAlignment="Center" Name="barcenter">
+                        <Grid VerticalAlignment="Top" HorizontalAlignment="Center" Name="barCenter">
                             <StackPanel>
                                 <Grid Margin="0 -5 0 0">
                                     <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="179"></Label>
@@ -297,9 +297,16 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
-                        <Grid Grid.Column="0" Margin="20 0 0 0">
+                        <Grid Grid.Column="0" Margin="100 0 0 0">
                             <StackPanel Orientation="Horizontal">
-
+                                <Grid Grid.Column="0" VerticalAlignment="Center" Name="titleAdmin">
+                                    <Label HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Text="បានឃើញ និងឯកភាព" FontSize="12"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                            <TextBlock Name="txtPosition" Text="នាយក" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
+                                        </StackPanel>
+                                    </Label>
+                                </Grid>
                             </StackPanel>
                         </Grid>
 
@@ -327,7 +334,7 @@
                                         <TextBlock Text="{Binding Text,ElementName=lblMonths}" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                     </StackPanel>
                                 </Label>
-                                <Label Content="នាយកវិទ្យាល័យ" FontSize="15" HorizontalAlignment="Center" Margin=" 0 5 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
+                                <TextBlock Name="titleTeacher" Text="គ្រូប្រចាំថ្នាក់" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
                             </StackPanel>
                         </Grid>
                     </Grid>

@@ -399,12 +399,12 @@ namespace CamemisOffLine.Windows
                 MateriaLangUp.Visibility = Visibility.Collapsed;
 
                 //..........btn Color............
-                btnColor.Visibility = Visibility.Visible;
+                btnColor.Visibility = Visibility.Collapsed;
                 MateriaColorDrop.Visibility = Visibility.Visible;
                 MateriaColorUp.Visibility = Visibility.Collapsed;
 
                 //...........btn..................
-                btnAbout.Visibility = Visibility.Visible;
+                btnAbout.Visibility = Visibility.Collapsed;
             }
             else
             {

@@ -52,7 +52,40 @@ namespace CamemisOffLine.Report
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
             barRight.Visibility = Visibility.Collapsed;
+         
             this.Hide();
+            if (Properties.Settings.Default.role == "1")
+            {
+                PrintPopup prints = new PrintPopup();
+                this.IsEnabled = false;
+                this.Opacity = 0.5;
+
+                prints.ShowDialog();
+
+                this.Opacity = 1;
+                this.IsEnabled = true;
+                titleTeacher.Content = prints.position;
+                titleAdmin.Visibility = Visibility.Collapsed;
+                lblTeacherName.Visibility = Visibility.Collapsed;
+                barCenter.Visibility = prints.CheckCenter;
+                barRight.Visibility = prints.CheckRight;
+            }
+            else
+            {
+                PrintPopup prints = new PrintPopup();
+                this.IsEnabled = false;
+                this.Opacity = 0.5;
+
+                prints.ShowDialog();
+
+                this.Opacity = 1;
+                this.IsEnabled = true;
+                txtPosition.Text = prints.position;
+                titleAdmin.Visibility = Visibility.Visible;
+                lblTeacherName.Visibility = Visibility.Visible;
+                barCenter.Visibility = prints.CheckCenter;
+                barRight.Visibility = prints.CheckRight;
+            }
             MessageBoxControl message = new MessageBoxControl();
             if (yearid=="")
             {

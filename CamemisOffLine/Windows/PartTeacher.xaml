@@ -184,7 +184,7 @@
                                             </Grid>
                                         </Grid>
 
-                                        <Button Name="btnColor" Height="30" HorizontalAlignment="Stretch"  Background="Transparent" BorderThickness="0" FontSize="15" Margin="50,0,5,10">
+                                        <Button Visibility="Collapsed" Name="btnColor" Height="30" HorizontalAlignment="Stretch"  Background="Transparent" BorderThickness="0" FontSize="15" Margin="50,0,5,10">
                                             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="-10 0" Width="222" Height="25">
                                                 <materialDesign:PackIcon Name="MateriaColor" Kind="Color" VerticalAlignment="Center" HorizontalAlignment="Left" Height="20" Margin="0,0,0,0" Width="24" ></materialDesign:PackIcon>
                                                 <Label Name="lblColor" FontWeight="Bold" Content="{x:Static language:Lang.color}" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="12" VerticalContentAlignment="Center" Height="33" Width="205" Foreground="White" Margin="0,-3,-6,0" Style="{DynamicResource Siemreap}"></Label>
@@ -193,7 +193,7 @@
 
                                             </Grid>
                                         </Button>
-                                        <Button Name="btnAbout" Height="30" HorizontalAlignment="Stretch"  Background="Transparent" BorderThickness="0" FontSize="15" Margin="50,0,5,10">
+                                        <Button Visibility="Collapsed" Name="btnAbout" Height="30" HorizontalAlignment="Stretch"  Background="Transparent" BorderThickness="0" FontSize="15" Margin="50,0,5,10">
                                             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="-10 0" Width="222" Height="25">
                                                 <materialDesign:PackIcon Name="MateriaAbout" Kind="AboutOutline" VerticalAlignment="Center" HorizontalAlignment="Left" Height="20" Margin="0,0,0,0" Width="24" ></materialDesign:PackIcon>
                                                 <Label Name="lblAbout" FontWeight="Bold" Content="{x:Static language:Lang.about}" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="12" VerticalContentAlignment="Center" Height="33" Width="205" Foreground="White" Margin="0,-3,-6,0" Style="{DynamicResource Siemreap}"></Label>
@@ -650,7 +650,7 @@
 
                                                                                                                                                                 </Grid>
                                                                                                                                                                 <StackPanel Orientation="Vertical" Grid.Column="1">
-                                                                                                                                                                    <TextBox x:Name="TextinputScore" Padding="2 -1 0 0" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="White" Text="{Binding Path=score,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding check}" LostFocus="TextBox_LostFocus" PreviewTextInput="TextBox_PreviewTextInput" BorderThickness="1" BorderBrush="{Binding color}" Tag="{Binding tabIndex}" ForceCursor="True" PreviewKeyDown="TextinputScore_PreviewKeyDown"/>
+                                                                                                                                                                    <TextBox Style="{StaticResource styleTextbox}" x:Name="TextinputScore" Padding="2 -1 0 0" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="White" Text="{Binding Path=score,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding check}" LostFocus="TextBox_LostFocus" PreviewTextInput="TextBox_PreviewTextInput" BorderThickness="1" BorderBrush="{Binding color}" Tag="{Binding tabIndex}" ForceCursor="True" PreviewKeyDown="TextinputScore_PreviewKeyDown"/>
                                                                                                                                                                 </StackPanel>
                                                                                                                                                                 <Grid Grid.Column="2">
                                                                                                                                                                     <Button BorderThickness="0" Name="btnSum" Background="LightGray" FontWeight="Bold" Foreground="Black" Style="{DynamicResource Siemreap}" Click="btnSum_Click" IsTabStop="False" IsEnabled="{Binding Display}">
@@ -698,7 +698,7 @@
                                                                                                                                                 <DataGridTemplateColumn.CellTemplate>
                                                                                                                                                     <DataTemplate>
                                                                                                                                                         <StackPanel Margin="0" FocusManager.IsFocusScope="{Binding focus}">
-                                                                                                                                                            <TextBox Name="txtcmm" Padding="2 -1 0 0" Margin="0 7 0 0" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" Background="White" Text="{Binding Path=teacher_comment,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBox_LostFocus" Tag="{Binding tabIndex}" ForceCursor="True" IsEnabled="{Binding Display}">
+                                                                                                                                                            <TextBox Style="{StaticResource styleTextbox}" Name="txtcmm" Padding="2 -1 0 0" Margin="0 7 0 0" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" Background="White" Text="{Binding Path=teacher_comment,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" LostFocus="TextBox_LostFocus" Tag="{Binding tabIndex}" ForceCursor="True" IsEnabled="{Binding Display}">
 
                                                                                                                                                             </TextBox>
                                                                                                                                                         </StackPanel>
