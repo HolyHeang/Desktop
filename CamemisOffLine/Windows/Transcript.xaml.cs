@@ -112,16 +112,16 @@ namespace CamemisOffLine.Windows
             if (printCheck)
             {
                 this.Hide();
-                MessageBoxControl message = new MessageBoxControl();
-                message.Owner = this;
-                message.title = Properties.Langs.Lang.print; ;
-                message.discription = Properties.Langs.Lang.do_you_want_to_print;
-                message.result = 0;
-                this.Opacity = 0.5;
-                message.ShowDialog();
-                this.Opacity = 1;
-                if (message.result==1)
-                {
+                //MessageBoxControl message = new MessageBoxControl();
+                //message.Owner = this;
+                //message.title = Properties.Langs.Lang.print; ;
+                //message.discription = Properties.Langs.Lang.do_you_want_to_print;
+                //message.result = 0;
+                //this.Opacity = 0.5;
+                //message.ShowDialog();
+                //this.Opacity = 1;
+                //if (message.result==1)
+                //{
                   
                     gridButton.Visibility = Visibility.Collapsed;
                     loading.Show();
@@ -129,12 +129,12 @@ namespace CamemisOffLine.Windows
                     loading.Close();
                     printOrNot = '1';
                     this.Close();
-                }
-                else
-                {
-                    printOrNot = '2';
-                    this.Close();
-                }
+                //}
+                //else
+                //{
+                //    printOrNot = '2';
+                //    this.Close();
+                //}
             }
             else
             {
@@ -168,23 +168,23 @@ namespace CamemisOffLine.Windows
                    
                     gridButton.Visibility = Visibility.Collapsed;
                     this.Hide();
-                    MessageBoxControl message = new MessageBoxControl();
-                    message.Owner = this;
-                    message.title = "បោះពុម្ភ";
-                    message.discription = "តើអ្នកចង់បោះពុម្ភមែនទេ?";
-                    message.result = 0;
-                    this.Opacity = 0.5;
-                    message.ShowDialog();
-                    if (message.result == 1)
-                    {
+                    //MessageBoxControl message = new MessageBoxControl();
+                    //message.Owner = this;
+                    //message.title = "បោះពុម្ភ";
+                    //message.discription = "តើអ្នកចង់បោះពុម្ភមែនទេ?";
+                    //message.result = 0;
+                    //this.Opacity = 0.5;
+                    //message.ShowDialog();
+                    //if (message.result == 1)
+                    //{
                         this.Hide();
                         saveData(result);
                         this.Close();
-                    }
-                    else
-                    {
-                        this.Close();
-                    }
+                    //}
+                    //else
+                    //{
+                    //    this.Close();
+                    //}
                 }
             }
         }
@@ -463,8 +463,8 @@ namespace CamemisOffLine.Windows
             {
                 MessageBoxControl message = new MessageBoxControl();
                 message.Owner = this;
-                message.title = "បោះពុម្ភ";
-                message.discription = "ការបោះពុម្ភរបស់អ្នកមិនទទូលបានជោគជ័យ";
+                message.title = Properties.Langs.Lang.print;
+                message.discription = Properties.Langs.Lang.Unsuccessful_printing;
                 message.result = 2;
                 this.Opacity = 0.5;
                 message.ShowDialog();
@@ -514,8 +514,8 @@ namespace CamemisOffLine.Windows
             {
                 MessageBoxControl message = new MessageBoxControl();
                 message.Owner = this;
-                message.title = "បោះពុម្ភ";
-                message.discription = "ការបោះពុម្ភរបស់អ្នកមិនទទូលបានជោគជ័យ";
+                message.title = Properties.Langs.Lang.print;
+                message.discription = Properties.Langs.Lang.Unsuccessful_printing;
                 message.result = 2;
                 this.Opacity = 0.5;
                 message.ShowDialog();

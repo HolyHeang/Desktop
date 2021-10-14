@@ -256,7 +256,7 @@
     <value>តើអ្នកពិតជាចង់ធ្វើការគណនាមែនទេ?</value>
   </data>
   <data name="Do you really want to exit CAMEMIS DESKTOP?" xml:space="preserve">
-    <value>តើអ្នកពីតជាចង់ចាក់ចេញពី​ CAMEMIS DESKTOP​ មែនទេ?</value>
+    <value>តើអ្នកពិតជាចង់ចាកចេញពី​ CAMEMIS DESKTOP​ មែនទេ?</value>
   </data>
   <data name="Do you really want to submit" xml:space="preserve">
     <value>តើអ្នកពិតជាចង់ធ្វើការដាក់ស្នើមែនទេ?</value>
@@ -454,16 +454,16 @@
     <value>សូមជ្រើសរើស</value>
   </data>
   <data name="Please select a class and result type" xml:space="preserve">
-    <value>សូមជ្រើសរើសថ្នាក់ និងឆ្នាំ​/ឆមាស/ខែ</value>
+    <value>សូមជ្រើសរើសឆ្នាំ​/កម្រិត/ថ្នាក់ និង​ ឆមាស/ខែ</value>
   </data>
   <data name="Please select a school year and class" xml:space="preserve">
-    <value>សូមជ្រើសរើសឆ្នាំសិក្សា និងថ្នាក់!</value>
+    <value>សូមជ្រើសរើសឆ្នាំសិក្សា/កម្រិតនីមួយៗ និងថ្នាក់!</value>
   </data>
   <data name="Please select a school year and grade" xml:space="preserve">
-    <value>សូមជ្រើសរើសឆ្នាំសិក្សា និងកម្រិត!</value>
+    <value>សូមជ្រើសរើសឆ្នាំសិក្សា និងកម្រិតរួម!</value>
   </data>
   <data name="Please select a school year and group" xml:space="preserve">
-    <value>សូមជ្រើសរើសឆ្នាំសិក្សា និងក្រុម!</value>
+    <value>សូមជ្រើសរើសឆ្នាំសិក្សា និងកម្រិត!</value>
   </data>
   <data name="Please wait" xml:space="preserve">
     <value>សូមមេត្តារង់ចាំ</value>
@@ -646,7 +646,7 @@
     <value>បញ្ជីឈ្មោះសិស្ស</value>
   </data>
   <data name="student attendance by class" xml:space="preserve">
-    <value>បញ្ចីអវត្តមានសិស្សតាមថ្នាក់</value>
+    <value>បញ្ជីអវត្តមានសិស្សតាមថ្នាក់</value>
   </data>
   <data name="student Attendence Report" xml:space="preserve">
     <value>របាយការណ៏អវត្តមានសិស្ស</value>

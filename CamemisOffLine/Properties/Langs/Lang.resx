@@ -451,16 +451,16 @@
     <value>Please select</value>
   </data>
   <data name="Please select a class and result type" xml:space="preserve">
-    <value>Please select a class and year/semester/month</value>
+    <value>Please select a  year/grade/class and semester/month!</value>
   </data>
   <data name="Please select a school year and class" xml:space="preserve">
-    <value>Please select a school year and class!</value>
+    <value>Please select a school year/grade and class!</value>
   </data>
   <data name="Please select a school year and grade" xml:space="preserve">
-    <value>Please select a school year and grade!</value>
+    <value>Please select a school year and grade all!</value>
   </data>
   <data name="Please select a school year and group" xml:space="preserve">
-    <value>Please select a school year and group!</value>
+    <value>Please select a school year and grade!</value>
   </data>
   <data name="Please wait" xml:space="preserve">
     <value>Please wait</value>

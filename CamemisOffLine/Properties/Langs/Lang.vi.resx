@@ -454,10 +454,10 @@
     <value>Xin hãy lựa chọn</value>
   </data>
   <data name="Please select a class and result type" xml:space="preserve">
-    <value>Vui lòng chọn một lớp và loại kết quả</value>
+    <value>Vui lòng chọn một năm / lớp / lớp và học kỳ / tháng!</value>
   </data>
   <data name="Please select a school year and class" xml:space="preserve">
-    <value>Vui lòng chọn năm học và lớp học!</value>
+    <value>Vui lòng chọn từng năm học / cấp học và cấp lớp!</value>
   </data>
   <data name="Please select a school year and grade" xml:space="preserve">
     <value>Vui lòng chọn năm học và cấp lớp!</value>

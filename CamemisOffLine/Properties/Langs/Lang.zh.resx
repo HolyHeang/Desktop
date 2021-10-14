@@ -457,10 +457,10 @@
     <value>请选择</value>
   </data>
   <data name="Please select a class and result type" xml:space="preserve">
-    <value>请选择一个班级和结果类型</value>
+    <value>请选择年/年级/班级和学期/月!</value>
   </data>
   <data name="Please select a school year and class" xml:space="preserve">
-    <value>请选择学年和班级!</value>
+    <value>请选择每个学年/级别和年级!</value>
   </data>
   <data name="Please select a school year and grade" xml:space="preserve">
     <value>请选择学年和年级!</value>

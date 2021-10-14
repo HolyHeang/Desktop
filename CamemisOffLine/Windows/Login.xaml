@@ -7,11 +7,12 @@
         xmlns:local="clr-namespace:CamemisOffLine"
          xmlns:language="clr-namespace:CamemisOffLine.Properties.Langs"
         mc:Ignorable="d"
-        Title="Login" Height="1080" Width="1920" WindowStyle="None" AllowsTransparency="False" ResizeMode="CanResizeWithGrip" Loaded="Window_Loaded">
-    <Grid Name="GridForm">
-       
+        Title="Login" Height="1080" Width="1920" WindowStyle="None" MinWidth="1260" MinHeight="700" Loaded="Window_Loaded">
+    <Grid Name="GridForm" MouseLeftButtonDown="GridForm_MouseLeftButtonDown">
+
         <Grid>
-            <Image Source="/CamemisOffLine;component/Image/Nature3.jpg" Stretch="UniformToFill" Name="backgroundImg" Opacity="1"/>
+            <Image Source="/CamemisOffLine;component/Image/coverLogin.jpg" Stretch="UniformToFill" Name="backgroundImg" Opacity="1"/>
+            <Grid Background="#54000000"/>
         </Grid>
         <Grid Name="gridmax" Width="35" HorizontalAlignment="Right" Height="35" Cursor="Hand" ToolTip="{x:Static language:Lang.Tooltip_top_bar_Max}"  Margin="0,0,35,0" VerticalAlignment="Top" MouseDown="gridmax_MouseDown" MouseEnter="gridmax_MouseEnter" MouseLeave="gridmax_MouseLeave">
             <materialDesign:PackIcon Name="maximized" Kind="WindowRestore" FontSize="15" Height="20" Width="20" Foreground="White" Margin="7,8,0,0"/>
@@ -22,148 +23,133 @@
         <Grid Name="gridExit" Width="35" Cursor="Hand" Height="35"  HorizontalAlignment="Right" ToolTip="{x:Static language:Lang.Tooltip_top_bar_Close}" VerticalAlignment="Top" MouseDown="gridExit_MouseDown" MouseEnter="gridExit_MouseEnter" MouseLeave="gridExit_MouseLeave">
             <materialDesign:PackIcon Kind="Close" FontSize="15" Height="20" Width="20" Foreground="White" VerticalAlignment="Stretch" Margin="8,8,0,7"/>
         </Grid>
-        <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="70" Margin="0,272,22,270" Click="Button_Click_3" Height="50">
-            <Button.Background>
-                <ImageBrush ImageSource="/CamemisOffLine;component/Image/Nature3.jpg" Opacity="0.9"/>
-            </Button.Background>
 
-
-        </Button>
-        <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="70" Margin="0,217,22,325" Height="50" Click="Button_Click_2">
-            <Button.Background>
-                <ImageBrush ImageSource="/CamemisOffLine;component/Image/Nature2.jpg" Opacity="0.8"/>
-            </Button.Background>
-
-        </Button>
-        <Button VerticalAlignment="Center" Margin="0,164,22,378" Height="50" Click="Button_Click_1" HorizontalAlignment="Right" Width="70">
-            <Button.Background>
-                <ImageBrush ImageSource="/CamemisOffLine;component/Image/Nature1.jpg"></ImageBrush>
-            </Button.Background>
-        </Button>
-
-        <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="70" Margin="0,325,22,217" Click="Button_Click_4" Height="50">
-            <Button.Background>
-                <ImageBrush ImageSource="/CamemisOffLine;component/Image/Nature4.jpg" Opacity="0.8"/>
-            </Button.Background>
-
-        </Button>
-        <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="70" Margin="0,378,22,164" Click="Button_Click_5" Height="50">
-            <Button.Background>
-                <ImageBrush x:Name="back5" ImageSource="/CamemisOffLine;component/Image/Nature5.jpg"  Opacity="0.8"/>
-            </Button.Background>
-
-        </Button>
-
-
-        <Grid Name="gridLogin" Width="380" Height="450">
-
-            <Grid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0" Opacity="0.8">
-                    <GradientStop Color="#FF1ECAE6"/>
-                    <GradientStop Color="#FF91A257" Offset="0.751"/>
-                </LinearGradientBrush>
-            </Grid.Background>
-            <StackPanel>
-                <Image Source="/CamemisOffLine;component/Image/unnamed.png" Height="53" Margin="30">
-                    <Image.OpacityMask>
-                        <SolidColorBrush Color="Black" Opacity="0.5"/>
-                    </Image.OpacityMask>
-                </Image>
-
-                <TextBlock Text="CAMEMIS" Height="59" RenderTransformOrigin="0.506,-0.43" Foreground="White" HorizontalAlignment="Center" FontSize="18"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="126,-60"/>
-
-                <StackPanel Name="btnPassCode" Grid.Row="0">
-                    <StackPanel Orientation="Horizontal" Margin="74,10,26,10" ForceCursor="True">
-                        <materialDesign:PackIcon Kind="PasswordReset" Width="25" Background="Gray" Height="26" Foreground="#FFCAE8DE" Margin="0 9"/>
-                        <TextBox BorderBrush="Gray" BorderThickness="2" Padding="3,0,0,0" Background="#FFCAE8DE" materialDesign:HintAssist.Hint="School Code" Foreground="Black" Width="204" FontFamily="20" Name="txtCode" VerticalAlignment="Center" GotFocus="txtUser_GotFocus" ForceCursor="True" />
-
-                    </StackPanel>
-
-                </StackPanel>
-
-                <StackPanel Name="btnUser" Grid.Row="1">
-                    <StackPanel Orientation="Horizontal" Margin="74,17,26,17">
-                        <materialDesign:PackIcon Kind="User" Width="25" Background="Gray" Height="26" Foreground="#FFCAE8DE" Margin="0 0"/>
-                        <TextBox Name="txtUser" BorderBrush="Gray" BorderThickness="2" Padding="3,0,0,0" Margin="0 0" materialDesign:HintAssist.Hint="Enter Username/Email" Background="#FFCAE8DE" Foreground="Black" Width="204" FontFamily="20" GotFocus="txtUser_GotFocus"></TextBox>
-
-                    </StackPanel>
-                </StackPanel>
-
-                <StackPanel Name="btnPass" Grid.Row="1">
-                    <StackPanel Orientation="Horizontal" Margin="74,17,26,17">
-                        <materialDesign:PackIcon Kind="Lock" Background="Gray" Width="25" Height="26" Foreground="#FFCAE8DE" Margin="0 0"/>
-                        <PasswordBox  Margin="0 0" BorderBrush="Gray" BorderThickness="2" Padding="3,0,0,0" Background="#FFCAE8DE" materialDesign:HintAssist.Hint="Password" Foreground="Black" Width="204" FontFamily="20" Name="txtPass" GotFocus="txtUser_GotFocus"/>
-
-                    </StackPanel>
-                </StackPanel>
-                <StackPanel Margin="50,5">
-                    <Label Name="lblError" Foreground="Red" FontSize="10" Margin="10" Content="Incorrect Username or Password" VerticalAlignment="Center" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <CheckBox Name="cbRememberMe" FontSize="15" HorizontalAlignment="Center" Foreground="White"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang">
-                        <CheckBox.Resources>
-
-                            <!--Unchecked state-->
-                            <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
-                            <!--Checked state-->
-                            <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#1183CA"/>
-
-                        </CheckBox.Resources>
-
-                        <CheckBox.LayoutTransform>
-                            <ScaleTransform ScaleX="1.3" ScaleY="1.3" />
-                        </CheckBox.LayoutTransform>
-                    </CheckBox>
-                    <Label Content="Remenber me" Foreground="White" FontSize="13"/>
-                    </StackPanel>
-                </StackPanel>
-
-                <StackPanel Orientation="Horizontal">
-                    <Button Name="btnLogin" Click="btnLogin_Click" Height="40" Background="Transparent" MouseEnter="btnLogin_MouseEnter" MouseLeave="btnLogin_MouseLeave" BorderThickness="0" Margin="140,20,0,0" IsDefault="True" >
-                        <Grid Height="19" Width="62">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="12*"/>
-                            <ColumnDefinition Width="31*"/>
-
-
-                        </Grid.ColumnDefinitions>
-
-                        <Grid Grid.Column="0">
-                            <Grid Margin="0,-10,0,-11">
-                                <materialDesign:PackIcon Kind="Login" Height="27" Width="17" Margin="0,3,0,0"></materialDesign:PackIcon>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Border Margin="150" Background="#FFF5F1F1" CornerRadius="15">
+                    <Grid>
+                        <StackPanel Margin="30 0 30 0">
+                            <Grid Margin="0 40 0 15" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black" Content="Welcome to" FontSize="25" VerticalAlignment="Center"/>
+                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontWeight="Bold" Foreground="#1183CA" FontSize="25" VerticalAlignment="Center" Content="CAMEMIS"/>
+                                </StackPanel>
+                                
                             </Grid>
-                        </Grid>
-                        <Grid Grid.Column="1" Margin="0,0,-20,0">
-                                <Label Content="Sign in" Foreground="White" FontSize="15" Margin="0,-10,-14,0"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
-                        </Grid>
-                    </Grid>
+                            <Border  Name="btnPassCode" Margin="0 15 0 10" Height="40" BorderBrush="Gray" BorderThickness="1" CornerRadius="0">
+                                <Grid>
+                                    <materialDesign:PackIcon Name="MarPasscode" Kind="PasswordReset" Width="25" Height="26" Foreground="Gray" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+                                    <TextBox BorderThickness="0" Padding="22,0,0,0" VerticalContentAlignment="Center" materialDesign:HintAssist.Hint="School Code" Foreground="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="15" Height="42" Name="txtCode" GotFocus="txtUser_GotFocus" ForceCursor="True" MouseEnter="txtCode_MouseEnter" MouseLeave="txtCode_MouseLeave"/>
 
-                </Button>
-                    <Button Name="btnNext" Height="50" Background="Transparent" Width="100" Click="btnNext_Click" MouseEnter="btnLogin_MouseEnter" MouseLeave="btnLogin_MouseLeave" BorderThickness="0" IsDefault="True">
-                        <Grid Height="19" Width="62" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 5 0 0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="0.5*"/>
-                                <ColumnDefinition Width="*"/>
-
-
-                            </Grid.ColumnDefinitions>
-
-                            <Grid Grid.Column="0">
-                                <Grid Margin="0,-10,0,-11">
-                                    <materialDesign:PackIcon Kind="SkipNext" Height="27" Width="17" Margin="0,2,0,0"></materialDesign:PackIcon>
                                 </Grid>
+                            </Border>
+                            <Border Name="btnUser" Margin="0 15 0 10" Height="40" BorderBrush="Gray" BorderThickness="1" CornerRadius="0">
+                                <Grid>
+                                    <materialDesign:PackIcon Name="MarUser" Kind="User" Width="25" Height="26" Foreground="Gray" Margin="10 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                    <TextBox Name="txtUser" BorderThickness="0" Padding="22,0,0,0" Margin="0 0" materialDesign:HintAssist.Hint="Enter Username/Email" Foreground="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="15" Height="42" VerticalContentAlignment="Center" GotFocus="txtUser_GotFocus" MouseEnter="txtUser_MouseEnter" MouseLeave="txtUser_MouseLeave"></TextBox>
+                                </Grid>
+                            </Border>
+                            <Border Name="btnPass" Margin="0 15 0 10" Height="40" BorderBrush="Gray" BorderThickness="1" CornerRadius="0">
+                                <Grid>
+                                    <materialDesign:PackIcon Name="MarPass" Kind="Lock" Width="25" Height="26" Foreground="Gray" Margin="10 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                    <PasswordBox Padding="22,0,0,0" PasswordChanged="txtPass_PasswordChanged" materialDesign:HintAssist.Hint="Password" VerticalContentAlignment="Center" Foreground="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="15" Height="42" Name="txtPass" GotFocus="txtUser_GotFocus" MouseEnter="txtPass_MouseEnter" MouseLeave="txtPass_MouseLeave"/>
+                                    <TextBox Visibility="Collapsed" TextChanged="txtBoxPass_TextChanged" Padding="22,0,0,0" materialDesign:HintAssist.Hint="Password" VerticalContentAlignment="Center" Foreground="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="15" Height="42" Name="txtBoxPass" GotFocus="txtUser_GotFocus" MouseEnter="txtPass_MouseEnter" MouseLeave="txtPass_MouseLeave"/>
+                                    <materialDesign:PackIcon Cursor="Hand" MouseDown="showPass_MouseDown" Name="showPass" Kind="Eye" Width="25" Height="26" Foreground="Gray" Margin="0 0 10 0" VerticalAlignment="Center" HorizontalAlignment="Right" MouseEnter="txtPass_MouseEnter" MouseLeave="txtPass_MouseLeave"/>
+                                </Grid>
+                            </Border>
+                            <Grid Margin="0 0 0 20">
+                                <StackPanel HorizontalAlignment="Left">
+                                    <Label Name="lblError" Foreground="Red" FontSize="15" Margin="5 5 0 0" Content="Incorrect Username or Password" VerticalAlignment="Center" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5 5 0 0">
+                                        <CheckBox Name="cbRememberMe" HorizontalAlignment="Left"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang">
+                                            <CheckBox.Resources>
+
+                                                <!--Unchecked state-->
+                                                <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="Gray"/>
+                                                <!--Checked state-->
+                                                <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#1183CA"/>
+
+                                            </CheckBox.Resources>
+
+                                            <CheckBox.LayoutTransform>
+                                                <ScaleTransform ScaleX="1.3" ScaleY="1.3" />
+                                            </CheckBox.LayoutTransform>
+                                        </CheckBox>
+                                        <Label Content="Remenber me" Name="Remember" Foreground="Gray" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="15"/>
+                                    </StackPanel>
+                                </StackPanel>
                             </Grid>
-                            <Grid Grid.Column="1" Margin="0,0,-25,0">
-                                <Label Content="Next" Foreground="White" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-20 -12 0 0"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
+                            <Grid Margin="0 0 0 0" x:Name="gridNext">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="2">
+                                    <Button Name="btnNext" Background="#1183CA" Height="40" Click="btnNext_Click" BorderThickness="0" IsDefault="True">
+
+                                        <Grid Height="40" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Grid>
+                                                    <Label Content="Next" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="13"/> 
+                                                </Grid>
+                                                <Grid>
+                                                    <materialDesign:PackIcon Kind="NextTitle" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" Foreground="White"/>
+                                                </Grid>
+                                            </StackPanel>
+                                        </Grid>
+
+                                    </Button>
+                                </Grid>
+                                
                             </Grid>
-                        </Grid>
+                            <Grid Margin="0 0 0 0" Name="gridBackLogin">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Button Height="40" Name="btnBack" Click="btnBack_Click" Background="#FF506C7E" BorderThickness="0" IsDefault="True" >
 
-                    </Button>
+                                        <Grid Height="40" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <StackPanel Orientation="Horizontal">
 
-                </StackPanel>
-            </StackPanel>
-            <Grid Name="gridBack" VerticalAlignment="Top" Margin="0 0 0 0" HorizontalAlignment="Left" MouseDown="gridBack_MouseDown" MouseEnter="gridBack_MouseEnter" MouseLeave="gridBack_MouseLeave">
-                <materialDesign:PackIcon Kind="ArrowLeftThick" Cursor="Hand" Height="21" Width="22" ></materialDesign:PackIcon>
+                                                <Grid>
+                                                    <materialDesign:PackIcon Kind="ArrowBack" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" Foreground="White"/>
+                                                </Grid>
+                                                <Grid>
+                                                    <Label Content="Back" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="13"/>
+                                                </Grid>
+                                               
+                                            </StackPanel>
+                                        </Grid>
+                                    </Button>
+                                </Grid>
+                                <Grid Grid.Column="2">
+                                    <Button Name="btnLogin" Click="btnLogin_Click" Height="40" Background="#1183CA" BorderThickness="0" IsDefault="True" >
 
+                                        <Grid Height="40" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Grid>
+                                                    <Label Content="Login" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="13"/>
+                                                </Grid>
+                                                <Grid>
+                                                    <materialDesign:PackIcon Kind="LoginVariant" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" Foreground="White"/>
+                                                </Grid>
+                                            </StackPanel>
+                                        </Grid>
+                                    </Button>
+                                </Grid>
+                                    
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                </Border>
             </Grid>
         </Grid>
     </Grid>

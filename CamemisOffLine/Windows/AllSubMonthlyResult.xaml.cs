@@ -103,16 +103,16 @@ namespace CamemisOffLine.Windows
                 // p1 = 15 c1
                 // p2-> = >20 c2
                 //--------------end Formula-------------------------------------
-                MessageBoxControl message = new MessageBoxControl();
-                message.Owner = this;
-                message.title = Properties.Langs.Lang.print;
-                message.discription = Properties.Langs.Lang.do_you_want_to_print;
-                message.result = 0;
-                this.Opacity = 0.5;
-                message.ShowDialog();
+                //MessageBoxControl message = new MessageBoxControl();
+                //message.Owner = this;
+                //message.title = Properties.Langs.Lang.print;
+                //message.discription = Properties.Langs.Lang.do_you_want_to_print;
+                //message.result = 0;
+                //this.Opacity = 0.5;
+                //message.ShowDialog();
                 loading.Show();
-                if (message.result==1)
-                {
+                //if (message.result==1)
+                //{
                     //this.Hide();
                     //var for copy item
                     List<StudentMonthlyResult> copyResult = new List<StudentMonthlyResult>();
@@ -201,12 +201,12 @@ namespace CamemisOffLine.Windows
                     loading.Close();
                     this.Close();
                     Process.Start(filePath + "\\" + "allSubjectTemplate" + ".pdf");
-                }
-                else
-                {
-                    loading.Close();
-                    this.Close();
-                }
+                //}
+                //else
+                //{
+                //    loading.Close();
+                //    this.Close();
+                //}
             }
             else
             {

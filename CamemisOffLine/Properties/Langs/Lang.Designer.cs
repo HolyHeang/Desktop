@@ -1060,7 +1060,7 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please select a class and year/semester/month.
+        ///   Looks up a localized string similar to Please select a  year/grade/class and semester/month!.
         /// </summary>
         public static string Please_select_a_class_and_result_type {
             get {
@@ -1069,7 +1069,7 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please select a school year and class!.
+        ///   Looks up a localized string similar to Please select a school year/grade and class!.
         /// </summary>
         public static string Please_select_a_school_year_and_class {
             get {
@@ -1078,7 +1078,7 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please select a school year and grade!.
+        ///   Looks up a localized string similar to Please select a school year and grade all!.
         /// </summary>
         public static string Please_select_a_school_year_and_grade {
             get {
@@ -1087,7 +1087,7 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please select a school year and group!.
+        ///   Looks up a localized string similar to Please select a school year and grade!.
         /// </summary>
         public static string Please_select_a_school_year_and_group {
             get {

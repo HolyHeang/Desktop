@@ -184,14 +184,14 @@ namespace CamemisOffLine.Report
                     string path = filePath + "\\" + "សិស្ស" + j + ".pdf";
                     fileArray.Add(path);
                 }
-                MessageBoxControl message = new MessageBoxControl();
-                message.Owner = this;
-                message.title = Properties.Langs.Lang.print;
-                message.discription = Properties.Langs.Lang.print_successful;
-                message.buttonType = 2;
-                this.Opacity = 0.5;
-                message.ShowDialog();
-                this.Opacity = 1;
+                //MessageBoxControl message = new MessageBoxControl();
+                //message.Owner = this;
+                //message.title = Properties.Langs.Lang.print;
+                //message.discription = Properties.Langs.Lang.print_successful;
+                //message.buttonType = 2;
+                //this.Opacity = 0.5;
+                //message.ShowDialog();
+                //this.Opacity = 1;
                 MergePDF(fileArray.ToArray());
                 this.Close();
             }
