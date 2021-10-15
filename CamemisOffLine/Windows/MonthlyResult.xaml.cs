@@ -41,9 +41,10 @@ namespace CamemisOffLine.Windows
         {
             barRight.Visibility = Visibility.Collapsed;
             this.Hide();
+            PrintPopup prints = new PrintPopup();
             if (Properties.Settings.Default.role == "1")
             {
-                PrintPopup prints = new PrintPopup();
+               
                 this.IsEnabled = false;
                 this.Opacity = 0.5;
 
@@ -60,7 +61,7 @@ namespace CamemisOffLine.Windows
             }
             else
             {
-                PrintPopup prints = new PrintPopup();
+               
                 this.IsEnabled = false;
                 this.Opacity = 0.5;
 
@@ -75,137 +76,145 @@ namespace CamemisOffLine.Windows
                 barCenter.Visibility = prints.CheckCenter;
                 barRight.Visibility = prints.CheckRight;
             }
-            Loading loading = new Loading();
-            try
+
+            if (prints.isPrint == false)
+                this.Close();
+            else
             {
-                loading.Show();
-                this.Hide();
-
-                List<StudentMonthlyResult> copyResult = new List<StudentMonthlyResult>();
-                int startIndex = 0, endIndex = 27;
-                Document document = new Document(PageSize.A4, 0, 0, 0, 0);
-                PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "ResultTemplate" + ".pdf", FileMode.Create));
-                document.Open();
-                GC.Collect();
-
-                if (obj.Count <= 26)
+                Loading loading = new Loading();
+                try
                 {
-                    if (obj.Count <= 20)
+                    loading.Show();
+                    this.Hide();
+
+                    List<StudentMonthlyResult> copyResult = new List<StudentMonthlyResult>();
+                    int startIndex = 0, endIndex = 27;
+                    Document document = new Document(PageSize.A4, 0, 0, 0, 0);
+                    PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "ResultTemplate" + ".pdf", FileMode.Create));
+                    document.Open();
+                    GC.Collect();
+
+                    if (obj.Count <= 26)
                     {
-                        Grid.Dispatcher.Invoke(() =>
+                        if (obj.Count <= 20)
                         {
-                            showData(obj);
-                            Grid.UpdateLayout();
-                        });
-                        PrintList(document);
-                    }
-                    else
-                    {
-                        for (int i = 0; i < 2; i++)
-                        {
-                            if (i == 0)
+                            Grid.Dispatcher.Invoke(() =>
                             {
-                                Footer.Visibility = Visibility.Collapsed;
-                                Grid.Dispatcher.Invoke(() =>
-                                {
-                                    showData(obj);
-                                    Grid.UpdateLayout();
-                                });
-                                PrintList(document);
-                            }
-                            else if (i == 1)
-                            {
-                                Footer.Visibility = Visibility.Visible;
-                                Header.Visibility = Visibility.Collapsed;
-                                
-                                DatagridResult.Visibility = Visibility.Collapsed;
-                                Grid.Dispatcher.Invoke(() =>
-                                {
-                                    showData(obj);
-                                    Grid.UpdateLayout();
-                                });
-                                PrintList(document);
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    bool footerAvaliable = false;
-                    while (true)
-                    {
-                        copyResult.Clear();
-                        for (int i = startIndex; i < endIndex; i++)
-                        {
-                            if (obj[i] != null)
-                            {
-                                copyResult.Add(obj[i]);
-                            }
-                        }
-                        if (!footerAvaliable)
-                            Footer.Visibility = Visibility.Collapsed;
-
-                        Grid.Dispatcher.Invoke(() =>
-                        {
-                            showData(copyResult);
-                            Grid.UpdateLayout();
-                        });
-                        PrintList(document);
-                        if (endIndex == obj.ToList().Count())
-                        {
-                            if (!footerAvaliable)
-                            {
-                                Header.Visibility = Visibility.Collapsed;
-                               
-                                DatagridResult.Visibility = Visibility.Collapsed;
-                                Footer.Visibility = Visibility.Visible;
-                                PrintList(document);
-                            }
-
-                            break;
-                        }
-
-                        startIndex = endIndex;
-
-                        if (obj.ToList().Count() - endIndex > 26)
-                        {
-                            endIndex = startIndex + 30;
-                            Header.Visibility = Visibility.Collapsed;
-                          
+                                showData(obj);
+                                Grid.UpdateLayout();
+                            });
+                            PrintList(document);
                         }
                         else
                         {
-                            endIndex = obj.ToList().Count();
-                            if (obj.ToList().Count() - startIndex <= 30)
+                            for (int i = 0; i < 2; i++)
                             {
+                                if (i == 0)
+                                {
+                                    Footer.Visibility = Visibility.Collapsed;
+                                    Grid.Dispatcher.Invoke(() =>
+                                    {
+                                        showData(obj);
+                                        Grid.UpdateLayout();
+                                    });
+                                    PrintList(document);
+                                }
+                                else if (i == 1)
+                                {
+                                    Footer.Visibility = Visibility.Visible;
+                                    Header.Visibility = Visibility.Collapsed;
+
+                                    DatagridResult.Visibility = Visibility.Collapsed;
+                                    Grid.Dispatcher.Invoke(() =>
+                                    {
+                                        showData(obj);
+                                        Grid.UpdateLayout();
+                                    });
+                                    PrintList(document);
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        bool footerAvaliable = false;
+                        while (true)
+                        {
+                            copyResult.Clear();
+                            for (int i = startIndex; i < endIndex; i++)
+                            {
+                                if (obj[i] != null)
+                                {
+                                    copyResult.Add(obj[i]);
+                                }
+                            }
+                            if (!footerAvaliable)
+                                Footer.Visibility = Visibility.Collapsed;
+
+                            Grid.Dispatcher.Invoke(() =>
+                            {
+                                showData(copyResult);
+                                Grid.UpdateLayout();
+                            });
+                            PrintList(document);
+                            if (endIndex == obj.ToList().Count())
+                            {
+                                if (!footerAvaliable)
+                                {
+                                    Header.Visibility = Visibility.Collapsed;
+
+                                    DatagridResult.Visibility = Visibility.Collapsed;
+                                    Footer.Visibility = Visibility.Visible;
+                                    PrintList(document);
+                                }
+
+                                break;
+                            }
+
+                            startIndex = endIndex;
+
+                            if (obj.ToList().Count() - endIndex > 26)
+                            {
+                                endIndex = startIndex + 30;
                                 Header.Visibility = Visibility.Collapsed;
-                               
-                                Footer.Visibility = Visibility.Visible;
-                                footerAvaliable = true;
+
+                            }
+                            else
+                            {
+                                endIndex = obj.ToList().Count();
+                                if (obj.ToList().Count() - startIndex <= 30)
+                                {
+                                    Header.Visibility = Visibility.Collapsed;
+
+                                    Footer.Visibility = Visibility.Visible;
+                                    footerAvaliable = true;
+                                }
+
                             }
 
                         }
-
                     }
+
+                    document.Close();
+                    Process.Start(filePath + "\\" + "ResultTemplate" + ".pdf");
+                    loading.Close();
+                    this.Close();
+
                 }
-
-                document.Close();
-                Process.Start(filePath + "\\" + "ResultTemplate" + ".pdf");
-                loading.Close();
-                this.Close();
-
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    MessageBoxControl message = new MessageBoxControl();
+                    message.title = Properties.Langs.Lang.Data;
+                    message.discription = Properties.Langs.Lang.noresultdata;
+                    message.buttonType = 1;
+                    message.ShowDialog();
+                    this.Close();
+                    loading.Close();
+                }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                MessageBoxControl message = new MessageBoxControl();
-                message.title = Properties.Langs.Lang.Data;
-                message.discription = Properties.Langs.Lang.noresultdata;
-                message.buttonType = 1;
-                message.ShowDialog();
-                this.Close();
-                loading.Close();
-            }
+
+           
         }
         int num = 0;
         private void showData(List<StudentMonthlyResult> obj)

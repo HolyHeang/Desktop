@@ -6117,7 +6117,7 @@ namespace CamemisOffLine
                     {
                         respone = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/get-approve-learning?type=" + type + "&term=" + term, token);
                     }
-                    else if (type == "3")
+                    else if (type == "3") 
                     {
                         respone = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/get-approve-learning?type=" + type, token);
                     }

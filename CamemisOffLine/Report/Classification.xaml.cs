@@ -60,9 +60,10 @@ namespace CamemisOffLine.Report
         {
             barRight.Visibility = Visibility.Collapsed;
             this.Hide();
+            PrintPopup prints = new PrintPopup();
             if (Properties.Settings.Default.role == "1")
             {
-                PrintPopup prints = new PrintPopup();
+                
                 this.IsEnabled = false;
                 this.Opacity = 0.5;
 
@@ -78,7 +79,6 @@ namespace CamemisOffLine.Report
             }
             else
             {
-                PrintPopup prints = new PrintPopup();
                 this.IsEnabled = false;
                 this.Opacity = 0.5;
 
@@ -95,248 +95,256 @@ namespace CamemisOffLine.Report
 
 
             Loading loading = new Loading();
-            try
+
+            if (prints.isPrint == false)
+                this.Close();
+            else
             {
-                loading.Show();
-                this.Hide();
-                string str = "";
-                string[] data;
-                List<StudentMonthlyResult> obj = new List<StudentMonthlyResult>();
-                List<Morality> mol = new List<Morality>();
-                TitleSchool.Content = Properties.Settings.Default.schoolName;
-                if (term != "")
+                try
                 {
-                    if (ping <= 150 && !File.Exists(filePath + "\\" + "semester" + classId + ".txt"))
+                    loading.Show();
+                    this.Hide();
+                    string str = "";
+                    string[] data;
+                    List<StudentMonthlyResult> obj = new List<StudentMonthlyResult>();
+                    List<Morality> mol = new List<Morality>();
+                    TitleSchool.Content = Properties.Settings.Default.schoolName;
+                    if (term != "")
                     {
-                        str = await DataAsync(classId, "1");
-                        data = str.Split('|');
-                    }
-                    else
-                    {
-                        str = DecodeFrom64(File.ReadAllText(filePath + "\\" + "semester" + classId + ".txt"));
-                        data = str.Split('|');
-                    }
-                    if (term == "FIRST_SEMESTER")
-                    {
-                        obj = JObject.Parse(data[0]).ToObject<StudentMonthlyResultData>().data;
-                    }
-                    else
-                    {
-                        obj = JObject.Parse(data[1]).ToObject<StudentMonthlyResultData>().data;
-                    }
-                    obj = obj.Where(s => s.result_semester != null).ToList();
-                    obj = obj.OrderBy(s => s.result_semester.rank).ToList();
-                    foreach (var item in obj)
-                    {
-                        txtClassName.Text = "ថ្នាក់ទី " + item.class_name + " ";
-                        if (item.result_semester.avg_score == "0")
+                        if (ping <= 150 && !File.Exists(filePath + "\\" + "semester" + classId + ".txt"))
                         {
-                            item.result_semester.avg_score = "មិនចាត់ថ្នាក់";
-                            item.result_semester.color = "Red";
-                        }
-                        if (item.result_semester.morality == null)
-                            item.result_semester.morality = "--";
-                        if (item.result_semester.bangkeun_phal == null)
-                            item.result_semester.bangkeun_phal = "--";
-                        if (item.result_semester.health == null)
-                            item.result_semester.health = "--";
-                    }
-
-                    NumberList(obj.OrderBy(s => s.result_semester.rank).ToList());
-                    foreach (var item in obj)
-                    {
-                        mol.Add(new Morality
-                        {
-                            avg_score = item.result_semester.avg_score,
-                            bangkeun_phal = item.result_semester.bangkeun_phal,
-                            gender = item.gender,
-                            grading = item.result_semester.grading,
-                            id = item.student_school_id,
-                            health = item.result_semester.health,
-                            morality = item.result_semester.morality,
-                            name = item.name,
-                            number = item.numbers,
-                            profile = item.localProfileLink,
-                            rank = item.result_semester.rank
-                        });
-                    }
-
-                }
-                else
-                {
-                    if (ping <= 150 && !File.Exists(filePath + "\\" + "Year" + classId + ".txt"))
-                    {
-                        str = await DataAsync(classId, "2");
-                        data = str.Split('|');
-                    }
-                    else
-                    {
-                        str = DecodeFrom64(File.ReadAllText(filePath + "\\" + "Year" + classId + ".txt"));
-                        data = str.Split('|');
-                    }
-                    obj = JObject.Parse(data[0]).ToObject<StudentMonthlyResultData>().data;
-                    obj = obj.Where(s => s.result_yearly != null).ToList();
-                    obj = obj.OrderBy(s => s.result_yearly.rank).ToList();
-                    foreach (var item in obj)
-                    {
-                        txtClassName.Text = "ថ្នាក់ទី " + item.class_name + " ";
-                        if (item.result_yearly.avg_score == "0")
-                        {
-                            item.result_yearly.avg_score = "មិនចាត់ថ្នាក់";
-                            item.result_yearly.color = "Red";
-                        }
-                        if (item.result_yearly.morality == null)
-                            item.result_yearly.morality = "--";
-                        if (item.result_yearly.bangkeun_phal == null)
-                            item.result_yearly.bangkeun_phal = "--";
-                        if (item.result_yearly.health == null)
-                            item.result_yearly.health = "--";
-                    }
-                    NumberList(obj.OrderBy(s => s.result_yearly.rank).ToList());
-                    foreach (var item in obj)
-                    {
-                        mol.Add(new Morality
-                        {
-                            avg_score = item.result_yearly.avg_score,
-                            bangkeun_phal = item.result_yearly.bangkeun_phal,
-                            gender = item.gender,
-                            grading = item.result_yearly.grading,
-                            id = item.student_school_id,
-                            health = item.result_yearly.health,
-                            morality = item.result_yearly.morality,
-                            name = item.name,
-                            number = item.numbers,
-                            profile = item.localProfileLink,
-                            rank = item.result_yearly.rank
-                        });
-                    }
-                }
-               
-                List<Morality> copyResult = new List<Morality>();
-                int startIndex = 0, endIndex = 24;
-                Document document = new Document(PageSize.A4, 20, 0, 0, 0);
-                PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "ResultTemplate" + ".pdf", FileMode.Create));
-                document.Open();
-                GC.Collect();
-
-                if (obj.Count <= 26)
-                {
-                    if (obj.Count <= 20)
-                    {
-                        Grid.Dispatcher.Invoke(() =>
-                        {
-                            showData(mol);
-                            Grid.UpdateLayout();
-                        });
-                        PrintList(document);
-                    }
-                    else
-                    {
-                        for (int i = 0; i < 2; i++)
-                        {
-                            if (i == 0)
-                            {
-                                Footer.Visibility = Visibility.Collapsed;
-                                Grid.Dispatcher.Invoke(() =>
-                                {
-                                    showData(mol);
-                                    Grid.UpdateLayout();
-                                });
-                                PrintList(document);
-                            }
-                            else if (i == 1)
-                            {
-                                Footer.Visibility = Visibility.Visible;
-                                Header.Visibility = Visibility.Collapsed;
-                                title.Visibility = Visibility.Collapsed;
-                                DGResult.Visibility = Visibility.Collapsed;
-                                Grid.Dispatcher.Invoke(() =>
-                                {
-                                    showData(mol);
-                                    Grid.UpdateLayout();
-                                });
-                                PrintList(document);
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    bool footerAvaliable = false;
-                    while (true)
-                    {
-                        copyResult.Clear();
-                        for (int i = startIndex; i < endIndex; i++)
-                        {
-                            if (mol[i] != null)
-                            {
-                                copyResult.Add(mol[i]);
-                            }
-                        }
-                        if (!footerAvaliable)
-                            Footer.Visibility = Visibility.Collapsed;
-
-                        Grid.Dispatcher.Invoke(() =>
-                        {
-                            showData(copyResult);
-                            Grid.UpdateLayout();
-                        });
-                        PrintList(document);
-                        if (endIndex == obj.ToList().Count())
-                        {
-                            if (!footerAvaliable)
-                            {
-                                Header.Visibility = Visibility.Collapsed;
-                                title.Visibility = Visibility.Collapsed;
-                                DGResult.Visibility = Visibility.Collapsed;
-                                Footer.Visibility = Visibility.Visible;
-                                PrintList(document);
-                            }
-
-                            break;
-                        }
-
-                        startIndex = endIndex;
-
-                        if (obj.ToList().Count() - endIndex > 26)
-                        {
-                            endIndex = startIndex + 30;
-                            Header.Visibility = Visibility.Collapsed;
-                            title.Visibility = Visibility.Collapsed;
+                            str = await DataAsync(classId, "1");
+                            data = str.Split('|');
                         }
                         else
                         {
-                            endIndex = obj.ToList().Count();
-                            if (obj.ToList().Count() - startIndex <= 30)
+                            str = DecodeFrom64(File.ReadAllText(filePath + "\\" + "semester" + classId + ".txt"));
+                            data = str.Split('|');
+                        }
+                        if (term == "FIRST_SEMESTER")
+                        {
+                            obj = JObject.Parse(data[0]).ToObject<StudentMonthlyResultData>().data;
+                        }
+                        else
+                        {
+                            obj = JObject.Parse(data[1]).ToObject<StudentMonthlyResultData>().data;
+                        }
+                        obj = obj.Where(s => s.result_semester != null).ToList();
+                        obj = obj.OrderBy(s => s.result_semester.rank).ToList();
+                        foreach (var item in obj)
+                        {
+                            txtClassName.Text = "ថ្នាក់ទី " + item.class_name + " ";
+                            if (item.result_semester.avg_score == "0")
                             {
-                                Header.Visibility = Visibility.Collapsed;
-                                title.Visibility = Visibility.Collapsed;
-                                Footer.Visibility = Visibility.Visible;
-                                footerAvaliable = true;
+                                item.result_semester.avg_score = "មិនចាត់ថ្នាក់";
+                                item.result_semester.color = "Red";
                             }
+                            if (item.result_semester.morality == null)
+                                item.result_semester.morality = "--";
+                            if (item.result_semester.bangkeun_phal == null)
+                                item.result_semester.bangkeun_phal = "--";
+                            if (item.result_semester.health == null)
+                                item.result_semester.health = "--";
+                        }
 
+                        NumberList(obj.OrderBy(s => s.result_semester.rank).ToList());
+                        foreach (var item in obj)
+                        {
+                            mol.Add(new Morality
+                            {
+                                avg_score = item.result_semester.avg_score,
+                                bangkeun_phal = item.result_semester.bangkeun_phal,
+                                gender = item.gender,
+                                grading = item.result_semester.grading,
+                                id = item.student_school_id,
+                                health = item.result_semester.health,
+                                morality = item.result_semester.morality,
+                                name = item.name,
+                                number = item.numbers,
+                                profile = item.localProfileLink,
+                                rank = item.result_semester.rank
+                            });
                         }
 
                     }
+                    else
+                    {
+                        if (ping <= 150 && !File.Exists(filePath + "\\" + "Year" + classId + ".txt"))
+                        {
+                            str = await DataAsync(classId, "2");
+                            data = str.Split('|');
+                        }
+                        else
+                        {
+                            str = DecodeFrom64(File.ReadAllText(filePath + "\\" + "Year" + classId + ".txt"));
+                            data = str.Split('|');
+                        }
+                        obj = JObject.Parse(data[0]).ToObject<StudentMonthlyResultData>().data;
+                        obj = obj.Where(s => s.result_yearly != null).ToList();
+                        obj = obj.OrderBy(s => s.result_yearly.rank).ToList();
+                        foreach (var item in obj)
+                        {
+                            txtClassName.Text = "ថ្នាក់ទី " + item.class_name + " ";
+                            if (item.result_yearly.avg_score == "0")
+                            {
+                                item.result_yearly.avg_score = "មិនចាត់ថ្នាក់";
+                                item.result_yearly.color = "Red";
+                            }
+                            if (item.result_yearly.morality == null)
+                                item.result_yearly.morality = "--";
+                            if (item.result_yearly.bangkeun_phal == null)
+                                item.result_yearly.bangkeun_phal = "--";
+                            if (item.result_yearly.health == null)
+                                item.result_yearly.health = "--";
+                        }
+                        NumberList(obj.OrderBy(s => s.result_yearly.rank).ToList());
+                        foreach (var item in obj)
+                        {
+                            mol.Add(new Morality
+                            {
+                                avg_score = item.result_yearly.avg_score,
+                                bangkeun_phal = item.result_yearly.bangkeun_phal,
+                                gender = item.gender,
+                                grading = item.result_yearly.grading,
+                                id = item.student_school_id,
+                                health = item.result_yearly.health,
+                                morality = item.result_yearly.morality,
+                                name = item.name,
+                                number = item.numbers,
+                                profile = item.localProfileLink,
+                                rank = item.result_yearly.rank
+                            });
+                        }
+                    }
+
+                    List<Morality> copyResult = new List<Morality>();
+                    int startIndex = 0, endIndex = 24;
+                    Document document = new Document(PageSize.A4, 20, 0, 0, 0);
+                    PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "ResultTemplate" + ".pdf", FileMode.Create));
+                    document.Open();
+                    GC.Collect();
+
+                    if (obj.Count <= 26)
+                    {
+                        if (obj.Count <= 20)
+                        {
+                            Grid.Dispatcher.Invoke(() =>
+                            {
+                                showData(mol);
+                                Grid.UpdateLayout();
+                            });
+                            PrintList(document);
+                        }
+                        else
+                        {
+                            for (int i = 0; i < 2; i++)
+                            {
+                                if (i == 0)
+                                {
+                                    Footer.Visibility = Visibility.Collapsed;
+                                    Grid.Dispatcher.Invoke(() =>
+                                    {
+                                        showData(mol);
+                                        Grid.UpdateLayout();
+                                    });
+                                    PrintList(document);
+                                }
+                                else if (i == 1)
+                                {
+                                    Footer.Visibility = Visibility.Visible;
+                                    Header.Visibility = Visibility.Collapsed;
+                                    title.Visibility = Visibility.Collapsed;
+                                    DGResult.Visibility = Visibility.Collapsed;
+                                    Grid.Dispatcher.Invoke(() =>
+                                    {
+                                        showData(mol);
+                                        Grid.UpdateLayout();
+                                    });
+                                    PrintList(document);
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        bool footerAvaliable = false;
+                        while (true)
+                        {
+                            copyResult.Clear();
+                            for (int i = startIndex; i < endIndex; i++)
+                            {
+                                if (mol[i] != null)
+                                {
+                                    copyResult.Add(mol[i]);
+                                }
+                            }
+                            if (!footerAvaliable)
+                                Footer.Visibility = Visibility.Collapsed;
+
+                            Grid.Dispatcher.Invoke(() =>
+                            {
+                                showData(copyResult);
+                                Grid.UpdateLayout();
+                            });
+                            PrintList(document);
+                            if (endIndex == obj.ToList().Count())
+                            {
+                                if (!footerAvaliable)
+                                {
+                                    Header.Visibility = Visibility.Collapsed;
+                                    title.Visibility = Visibility.Collapsed;
+                                    DGResult.Visibility = Visibility.Collapsed;
+                                    Footer.Visibility = Visibility.Visible;
+                                    PrintList(document);
+                                }
+
+                                break;
+                            }
+
+                            startIndex = endIndex;
+
+                            if (obj.ToList().Count() - endIndex > 26)
+                            {
+                                endIndex = startIndex + 30;
+                                Header.Visibility = Visibility.Collapsed;
+                                title.Visibility = Visibility.Collapsed;
+                            }
+                            else
+                            {
+                                endIndex = obj.ToList().Count();
+                                if (obj.ToList().Count() - startIndex <= 30)
+                                {
+                                    Header.Visibility = Visibility.Collapsed;
+                                    title.Visibility = Visibility.Collapsed;
+                                    Footer.Visibility = Visibility.Visible;
+                                    footerAvaliable = true;
+                                }
+
+                            }
+
+                        }
+                    }
+
+                    document.Close();
+                    Process.Start(filePath + "\\" + "ResultTemplate" + ".pdf");
+                    loading.Close();
+                    this.Close();
+
                 }
+                catch (Exception ex)
+                {
 
-                document.Close();
-                Process.Start(filePath + "\\" + "ResultTemplate" + ".pdf");
-                loading.Close();
-                this.Close();
+                    MessageBoxControl message = new MessageBoxControl();
+                    message.title = Properties.Langs.Lang.Data;
+                    message.discription = Properties.Langs.Lang.noresultdata;
+                    message.buttonType = 1;
+                    message.ShowDialog();
+                    this.Close();
+                    loading.Close();
+                }
+            }
 
-            }
-            catch (Exception ex)
-            {
-                
-                MessageBoxControl message = new MessageBoxControl();
-                message.title = Properties.Langs.Lang.Data;
-                message.discription = Properties.Langs.Lang.noresultdata;
-                message.buttonType = 1;
-                message.ShowDialog();
-                this.Close();
-                loading.Close();
-            }
+          
         }
         private async Task<string> DataAsync(string classId,string task)
         {

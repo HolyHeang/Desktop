@@ -80,9 +80,10 @@ namespace CamemisOffLine.Windows
         {
             barRight.Visibility = Visibility.Collapsed;
             this.Hide();
+            PrintPopup prints = new PrintPopup();
             if (Properties.Settings.Default.role == "1")
             {
-                PrintPopup prints = new PrintPopup();
+                
                 this.IsEnabled = false;
                 this.Opacity = 0.5;
 
@@ -96,7 +97,6 @@ namespace CamemisOffLine.Windows
             }
             else
             {
-                PrintPopup prints = new PrintPopup();
                 this.IsEnabled = false;
                 this.Opacity = 0.5;
 
@@ -109,82 +109,87 @@ namespace CamemisOffLine.Windows
                 lblTeacherName.Visibility = Visibility.Visible;
             }
 
-            if (printCheck)
+            if (prints.isPrint == false)
+                this.Close();
+            else
             {
-                this.Hide();
-                //MessageBoxControl message = new MessageBoxControl();
-                //message.Owner = this;
-                //message.title = Properties.Langs.Lang.print; ;
-                //message.discription = Properties.Langs.Lang.do_you_want_to_print;
-                //message.result = 0;
-                //this.Opacity = 0.5;
-                //message.ShowDialog();
-                //this.Opacity = 1;
-                //if (message.result==1)
-                //{
-                  
+                if (printCheck)
+                {
+                    this.Hide();
+                    //MessageBoxControl message = new MessageBoxControl();
+                    //message.Owner = this;
+                    //message.title = Properties.Langs.Lang.print; ;
+                    //message.discription = Properties.Langs.Lang.do_you_want_to_print;
+                    //message.result = 0;
+                    //this.Opacity = 0.5;
+                    //message.ShowDialog();
+                    //this.Opacity = 1;
+                    //if (message.result==1)
+                    //{
+
                     gridButton.Visibility = Visibility.Collapsed;
                     loading.Show();
                     SaveFileInOne(results);
                     loading.Close();
                     printOrNot = '1';
                     this.Close();
-                //}
-                //else
-                //{
-                //    printOrNot = '2';
-                //    this.Close();
-                //}
-            }
-            else
-            {
-                if (printAll)
-                {
-                    this.Hide();
-                    System.Windows.Forms.FolderBrowserDialog openFileDlg = new System.Windows.Forms.FolderBrowserDialog();
-                    var resultFile = openFileDlg.ShowDialog();
-                    if (resultFile.ToString() == "OK")
-                    {
-                       
-                        gridButton.Visibility = Visibility.Collapsed;
-                        pathName = openFileDlg.SelectedPath;
-                        if (saveInOne)
-                        {
-                            this.Hide();
-                            loading.Show();
-                            SaveFileInOne(_class, month, results);
-                            Process.Start(pathName);
-                            loading.Close();
-                        }
-                        else
-                        {
-                            print(results);
-                        }
-                    }
-                }
-                else
-                {
-                    Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
-                   
-                    gridButton.Visibility = Visibility.Collapsed;
-                    this.Hide();
-                    //MessageBoxControl message = new MessageBoxControl();
-                    //message.Owner = this;
-                    //message.title = "បោះពុម្ភ";
-                    //message.discription = "តើអ្នកចង់បោះពុម្ភមែនទេ?";
-                    //message.result = 0;
-                    //this.Opacity = 0.5;
-                    //message.ShowDialog();
-                    //if (message.result == 1)
-                    //{
-                        this.Hide();
-                        saveData(result);
-                        this.Close();
                     //}
                     //else
                     //{
+                    //    printOrNot = '2';
                     //    this.Close();
                     //}
+                }
+                else
+                {
+                    if (printAll)
+                    {
+                        this.Hide();
+                        System.Windows.Forms.FolderBrowserDialog openFileDlg = new System.Windows.Forms.FolderBrowserDialog();
+                        var resultFile = openFileDlg.ShowDialog();
+                        if (resultFile.ToString() == "OK")
+                        {
+
+                            gridButton.Visibility = Visibility.Collapsed;
+                            pathName = openFileDlg.SelectedPath;
+                            if (saveInOne)
+                            {
+                                this.Hide();
+                                loading.Show();
+                                SaveFileInOne(_class, month, results);
+                                Process.Start(pathName);
+                                loading.Close();
+                            }
+                            else
+                            {
+                                print(results);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
+
+                        gridButton.Visibility = Visibility.Collapsed;
+                        this.Hide();
+                        //MessageBoxControl message = new MessageBoxControl();
+                        //message.Owner = this;
+                        //message.title = "បោះពុម្ភ";
+                        //message.discription = "តើអ្នកចង់បោះពុម្ភមែនទេ?";
+                        //message.result = 0;
+                        //this.Opacity = 0.5;
+                        //message.ShowDialog();
+                        //if (message.result == 1)
+                        //{
+                        this.Hide();
+                        saveData(result);
+                        this.Close();
+                        //}
+                        //else
+                        //{
+                        //    this.Close();
+                        //}
+                    }
                 }
             }
         }

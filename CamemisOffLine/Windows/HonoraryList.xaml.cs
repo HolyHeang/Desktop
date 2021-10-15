@@ -210,9 +210,10 @@ namespace CamemisOffLine.Windows
         {
             barRight.Visibility = Visibility.Collapsed;
             this.Hide();
+            PrintPopup prints = new PrintPopup();
             if (Properties.Settings.Default.role == "1")
             {
-                PrintPopup prints = new PrintPopup();
+               
 
                 prints.ShowDialog();
 
@@ -224,7 +225,7 @@ namespace CamemisOffLine.Windows
             }
             else
             {
-                PrintPopup prints = new PrintPopup();
+               
 
                 prints.ShowDialog();
 
@@ -235,10 +236,15 @@ namespace CamemisOffLine.Windows
                 barRight.Visibility = prints.CheckRight;
             }
 
-            Loading loading = new Loading();
-            loading.Show();
-            print();
-            loading.Close();
+            if (prints.isPrint == false)
+                this.Close();
+            else
+            {
+                Loading loading = new Loading();
+                loading.Show();
+                print();
+                loading.Close();
+            }
         }
     }
 }
