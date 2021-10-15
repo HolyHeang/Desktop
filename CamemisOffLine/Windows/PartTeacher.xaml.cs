@@ -2719,10 +2719,12 @@ namespace CamemisOffLine.Windows
                 cbSelectMonth.Text = Properties.Langs.Lang.Select_Month___Semester___Year;
                 cbSelectMonth.SelectedIndex = -1;
                 cbSelectResultMonth.SelectedIndex = -1;
+                cbSelectResultMonth.Text = Properties.Langs.Lang.Select_Month___Semester___Year;
                 cbSelectMonth.Visibility = Visibility.Collapsed;
                 btnCalculate.Visibility = Visibility.Collapsed;
                 TranscripPrint.Visibility = Visibility.Collapsed;
                 btnApproved.Visibility = Visibility.Collapsed;
+                btnDeleteApproved.Visibility = Visibility.Collapsed;
                 DGMonthlyResult.ItemsSource = null;
                 DGSemesterClass.ItemsSource = null;
                 DGSemesterExam.ItemsSource = null;
@@ -2783,6 +2785,8 @@ namespace CamemisOffLine.Windows
 
                     if (obj.data.Count <= 2)
                         checkRole = true;
+                    else
+                        checkRole = false;
 
                     //Task<string> task = GetMonthlyResultFormApiAsync();
                     SaveLocalSubject(JsonConvert.SerializeObject(obj), selection.Value);
@@ -3202,12 +3206,12 @@ namespace CamemisOffLine.Windows
                 TranscripPrint.Visibility = Visibility.Collapsed;
                 btnCalculate.Visibility = Visibility.Collapsed;
                 btnApproved.Visibility = Visibility.Collapsed;
+                btnDeleteApproved.Visibility = Visibility.Collapsed;
             }
             else
             {
                 TranscripPrint.Visibility = Visibility.Visible;
                 btnCalculate.Visibility = Visibility.Visible;
-                btnApproved.Visibility = Visibility.Visible;
             }
         }
 
