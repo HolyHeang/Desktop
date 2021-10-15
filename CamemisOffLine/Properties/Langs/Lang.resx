@@ -451,16 +451,16 @@
     <value>Please select</value>
   </data>
   <data name="Please select a class and result type" xml:space="preserve">
-    <value>Please select a class and year/semester/month</value>
+    <value>Please select a  year/grade/class and semester/month!</value>
   </data>
   <data name="Please select a school year and class" xml:space="preserve">
-    <value>Please select a school year and class!</value>
+    <value>Please select a school year/grade and class!</value>
   </data>
   <data name="Please select a school year and grade" xml:space="preserve">
-    <value>Please select a school year and grade!</value>
+    <value>Please select a school year and grade all!</value>
   </data>
   <data name="Please select a school year and group" xml:space="preserve">
-    <value>Please select a school year and group!</value>
+    <value>Please select a school year and grade!</value>
   </data>
   <data name="Please wait" xml:space="preserve">
     <value>Please wait</value>
@@ -473,6 +473,12 @@
   </data>
   <data name="print all sub" xml:space="preserve">
     <value>Print All Subject</value>
+  </data>
+  <data name="print attendance report" xml:space="preserve">
+    <value>Print attendance report</value>
+  </data>
+  <data name="Print attendance tamplate" xml:space="preserve">
+    <value>Print attendance tamplate</value>
   </data>
   <data name="Print Classification" xml:space="preserve">
     <value>Print Classification</value>
@@ -670,7 +676,7 @@
     <value>Submit to the commission check</value>
   </data>
   <data name="Summary table of student transcripts by core subject" xml:space="preserve">
-    <value>Summary table of student transcripts by core subject</value>
+    <value>Summary table of student transcripts</value>
   </data>
   <data name="Tea Menu" xml:space="preserve">
     <value>TEACHER MENU</value>

@@ -89,6 +89,7 @@ namespace CamemisOffLine.Report
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            barRight.Visibility = Visibility.Collapsed;
             string SchoolYearId = "11000317333438883781";
             this.Hide();
             List<Instructors> l1 = new List<Instructors>();

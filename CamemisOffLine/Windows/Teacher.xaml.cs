@@ -4199,214 +4199,291 @@ namespace CamemisOffLine
             m.title = Properties.Langs.Lang.Data;
             m.buttonType = 1;
             message.Owner = this;
-            if (item.id >= 1 && item.id <= 4)
+            if (item.id >= 1 && item.id <= 26)
             {
                 this.Opacity = 0.5;
                 message.title = Properties.Langs.Lang.print;
-                message.discription = Properties.Langs.Lang.Do_you_want_to_use_the_print_function_ + item.title + "?";
+                message.discription = Properties.Langs.Lang.Do_you_want_to_use_the_print_function_ + " " + item.title + "?";
                 message.ShowDialog();
                 this.Opacity = 1;
                 if (message.result == 1 && item.id == 1)
                 {
-                    this.Opacity = 0.5;
-                    if (schoolYearId == "")
+                    if (cmbAcademicYearStudentListPrint.Text=="" || cmbAcademicYearStudentListPrint.Text==Properties.Langs.Lang.Select_school_year)
                     {
-                        m.discription = Properties.Langs.Lang.Select_school_year;
-                        m.ShowDialog();
+                        this.Opacity = 0.5;
+                        MessageBoxControl messageBox = new MessageBoxControl();
+                        messageBox.title = Properties.Langs.Lang.print;
+                        messageBox.discription = Properties.Langs.Lang.Select_school_year;
+                        messageBox.buttonType = 1;
+                        messageBox.ShowDialog();
+                        this.Opacity = 1;
                     }
+                   
                     else
                     {
+                        this.Opacity = 0.5;
                         StudentList student = new StudentList(ping, 1, YearSelection);
                         student.schoolYearId = schoolYearId;
                         student.Show();
+                        this.Opacity = 1;
                     }
 
                 }
                 else if (message.result == 1 && item.id == 4)
                 {
-                    if (schoolYearId == "" || classId == "")
+                    if (cmbAcademicYearStudentListPrint.Text == "" || cmbAcademicYearStudentListPrint.Text == Properties.Langs.Lang.Select_school_year || cmbClassStudentListPrint.Text==Properties.Langs.Lang.select_class || cmbClassStudentListPrint.Text=="")
                     {
                         m.discription = Properties.Langs.Lang.Please_select_a_school_year_and_class;
                         m.ShowDialog();
                     }
                     else
                     {
+                        this.Opacity = 0.5;
                         StudentList student = new StudentList(ping, 2, studentClass);
                         student.classId = classId;
                         student.schoolYearId = schoolYearId;
                         student.Show();
+                        this.Opacity = 1;
                     }
                 }
                 else if (message.result == 1 && item.id == 3)
                 {
-                    if (schoolYearId == "" || gradeId == "")
+                    if (cmbAcademicYearStudentListPrint.Text == "" || cmbAcademicYearStudentListPrint.Text == Properties.Langs.Lang.Select_school_year || gradeId == "")
                     {
                         m.discription = Properties.Langs.Lang.Please_select_a_school_year_and_group;
                         m.ShowDialog();
                     }
                     else
                     {
+                        this.Opacity = 0.5;
                         StudentList student = new StudentList(ping, 3, gradName);
                         student.gradeId = gradeId;
                         student.schoolYearId = schoolYearId;
                         student.Show();
+                        this.Opacity = 1;
                     }
                 }
                 else if (message.result == 1 && item.id == 2)
                 {
-                    if (schoolYearId == "" || level == "")
+                    if (cmbAcademicYearStudentListPrint.Text == "" || cmbAcademicYearStudentListPrint.Text == Properties.Langs.Lang.Select_school_year || level == "")
                     {
                         m.discription = Properties.Langs.Lang.Please_select_a_school_year_and_grade;
                         m.ShowDialog();
                     }
                     else
                     {
+                        this.Opacity = 0.5;
                         StudentList student = new StudentList(ping, 4, level);
                         student.schoolYearId = schoolYearId;
                         student.level = level;
                         student.Show();
+                        this.Opacity = 1;
+                    }
+                }
+                else if (message.result == 1 && item.id == 5)
+                {
+                    if (cmbAcademicYearStudentListPrint.Text == "" || cmbAcademicYearStudentListPrint.Text == Properties.Langs.Lang.Select_school_year)
+                    {
+                        this.Opacity = 0.5;
+                        MessageBoxControl messageBox = new MessageBoxControl();
+                        messageBox.title = Properties.Langs.Lang.print;
+                        messageBox.discription = Properties.Langs.Lang.Select_school_year;
+                        messageBox.buttonType = 1;
+                        messageBox.ShowDialog();
+                        this.Opacity = 1;
+                    }
+                    else
+                    {
+                        this.Opacity = 0.5;
+                        Studemt_Exam_up_class up_Class = new Studemt_Exam_up_class(schoolYearId, YearSelection);
+                        up_Class.Show();
+                        this.Opacity = 1;
+                    }
+                   
+                }
+
+                else if (message.result == 1 && item.id == 6)
+                {
+                    if (cmbAcademicYearStudentListPrint.Text == "" || cmbAcademicYearStudentListPrint.Text == Properties.Langs.Lang.Select_school_year)
+                    {
+                        this.Opacity = 0.5;
+                        MessageBoxControl messageBox = new MessageBoxControl();
+                        messageBox.title = Properties.Langs.Lang.print;
+                        messageBox.discription = Properties.Langs.Lang.Select_school_year;
+                        messageBox.buttonType = 1;
+                        messageBox.ShowDialog();
+                        this.Opacity = 1;
+                    }
+                    else
+                    {
+                        this.Opacity = 0.5;
+                        List_of_repeat_students repeat_Students = new List_of_repeat_students(schoolYearId, YearSelection);
+                        repeat_Students.Show();
+                        this.Opacity = 1;
+                    }
+                   
+                }
+                else if (message.result == 1 && item.id == 7)
+                {
+                    if (cmbAcademicYearStudentListPrint.Text == "" || cmbAcademicYearStudentListPrint.Text == Properties.Langs.Lang.Select_school_year)
+                    {
+                        this.Opacity = 0.5;
+                        MessageBoxControl messageBox = new MessageBoxControl();
+                        messageBox.title = Properties.Langs.Lang.print;
+                        messageBox.discription = Properties.Langs.Lang.Select_school_year;
+                        messageBox.buttonType = 1;
+                        messageBox.ShowDialog();
+                        this.Opacity = 1;
+                    }
+                    else
+                    {
+                        this.Opacity = 0.5;
+                        ListStudentCencel studentCencel = new ListStudentCencel(schoolYearId, YearSelection);
+                        studentCencel.Show();
+                        this.Opacity = 1;
+                    }
+                   
+                }
+                else if (message.result == 1 && item.id == 9)
+                {
+                    this.Opacity = 0.5;
+                    StudenPrintMonthlySemesterResult();
+                    this.Opacity = 1;
+                }
+                else if (message.result == 1 && item.id == 10)
+                {
+                    this.Opacity = 0.5;
+                    StudentPrintMonthlySemesterTranscrip();
+                    this.Opacity = 1;
+                }
+                else if (message.result == 1 && item.id == 11)
+                {
+                    this.Opacity = 0.5;
+                    StudentPrintHonoraryList();
+                    this.Opacity = 1;
+                }
+                else if (message.result == 1 && item.id == 12)
+                {
+                    if (classId == "" || term == "" || YearSelection == "")
+                    {
+                        this.Opacity = 0.5;
+                        MessageBoxControl messageBox = new MessageBoxControl();
+                        messageBox.title = Properties.Langs.Lang.print;
+                        messageBox.discription = Properties.Langs.Lang.Please_select_a_class_and_result_type;
+                        messageBox.buttonType = 1;
+                        messageBox.ShowDialog();
+                        this.Opacity = 1;
+                    }
+                    else
+                    {
+                        this.Opacity = 0.5;
+                        Classification classification = new Classification(classId, term, YearSelection, ping);
+                        classification.Show();
+                        this.Opacity = 1;
+                    }
+                }
+                else if (message.result == 1 && item.id == 13)
+                {
+                    this.Opacity = 0.5;
+                    AllSubjectPrint();
+                    this.Opacity = 1;
+                }
+                else if (message.result == 1 && item.id == 14)
+                {
+                    if (yearId == "" || resulType == "" || studentMonth == "" || term == "" || studentMonth == "")
+                    {
+                        this.Opacity = 0.5;
+                        MessageBoxControl messageBox = new MessageBoxControl();
+                        messageBox.title = Properties.Langs.Lang.print;
+                        messageBox.discription = Properties.Langs.Lang.Please_select_a_class_and_result_type;
+                        messageBox.buttonType = 1;
+                        messageBox.ShowDialog();
+                        this.Opacity = 1;
+                    }
+                    else
+                    {
+                        this.Opacity = 0.5;
+                        Sumery_of_Students_Short summary = new Sumery_of_Students_Short(yearId, resulType, DateChange.checkMonthString(studentMonth).ToString(), term, studentMonth);
+                        summary.Show();
+                        this.Opacity = 1;
+                    }
+                }
+                else if (message.result == 1 && item.id == 16)
+                {
+                    if (classId == "" || month == "" || yearTitle == "" || studentClass == "")
+                    {
+                        this.Opacity = 0.5;
+                        MessageBoxControl messageBox = new MessageBoxControl();
+                        messageBox.title = Properties.Langs.Lang.print;
+                        messageBox.discription = Properties.Langs.Lang.Please_select_a_class_and_result_type;
+                        messageBox.buttonType = 1;
+                        messageBox.ShowDialog();
+                        this.Opacity = 1;
+                    }
+                    else
+                    {
+                        if (month == "0")
+                        {
+                            this.Opacity = 0.5;
+                            Student_Attendance_Year attendance_Year = new Student_Attendance_Year(classId, month, yearTitle, studentClass);
+                            attendance_Year.Show();
+                            this.Opacity = 1;
+                        }
+                        else
+                        {
+                            this.Opacity = 0.5;
+                            AttendanceReport attendance = new AttendanceReport(classId, month, yearTitle, studentClass);
+                            attendance.Show();
+                            this.Opacity = 1;
+                        }
+                    }
+                }
+
+                else if (message.result == 1 && item.id == 25)
+                {
+                    if (cmbAcademicYearStatistic12Print.Text=="" || cmbAcademicYearStatistic12Print.Text == Properties.Langs.Lang.Select_school_year)
+                    {
+                        this.Opacity = 0.5;
+                        MessageBoxControl messageBox = new MessageBoxControl();
+                        messageBox.title = Properties.Langs.Lang.print;
+                        messageBox.discription = Properties.Langs.Lang.Select_school_year;
+                        messageBox.buttonType = 1;
+                        messageBox.ShowDialog();
+                        this.Opacity = 1;
+                    }
+                    else
+                    {
+                        this.Opacity = 0.5;
+                        StatisticGrade9 statisticGrade9 = new StatisticGrade9(YearSelection);
+                        statisticGrade9.ShowDialog();
+                        this.Opacity = 1;
+                    }
+                }
+                else if (message.result == 1 && item.id == 26)
+                {
+                    if (cmbAcademicYearStatistic12Print.Text == "" || cmbAcademicYearStatistic12Print.Text == Properties.Langs.Lang.Select_school_year)
+                    {
+                        this.Opacity = 0.5;
+                        MessageBoxControl messageBox = new MessageBoxControl();
+                        messageBox.title = Properties.Langs.Lang.print;
+                        messageBox.discription = Properties.Langs.Lang.Select_school_year;
+                        messageBox.buttonType = 1;
+                        messageBox.ShowDialog();
+                        this.Opacity = 1;
+                    }
+                    else
+                    {
+                        this.Opacity = 0.5;
+                        StatisticGrade12 statisticGrade12 = new StatisticGrade12(YearSelection);
+                        statisticGrade12.ShowDialog();
+                        this.Opacity = 1;
                     }
                 }
 
                 this.Opacity = 1;
             }
-            else if (item.id == 5)
-            {
-                    Studemt_Exam_up_class up_Class = new Studemt_Exam_up_class(schoolYearId, YearSelection);      
-                    up_Class.Show();
-            }
+
             
-            else if (item.id == 6)
-            {
-                List_of_repeat_students repeat_Students = new List_of_repeat_students(schoolYearId, YearSelection);
-                repeat_Students.Show();
-            }
-            else if (item.id == 7)
-            {
-                ListStudentCencel studentCencel = new ListStudentCencel(schoolYearId, YearSelection);
-                studentCencel.Show();
-            }
-            else if (item.id == 9)
-            {
-                StudenPrintMonthlySemesterResult();
-            }
-            else if (item.id == 10)
-            {
-                StudentPrintMonthlySemesterTranscrip();
-            }
-            else if (item.id == 11)
-            {
-                StudentPrintHonoraryList();
-            }
-            else if (item.id == 12)
-            {
-               if(classId==""||term==""||YearSelection=="")
-                {
-                    this.Opacity = 0.5;
-                    MessageBoxControl messageBox = new MessageBoxControl();
-                    messageBox.title = Properties.Langs.Lang.print;
-                    messageBox.discription = Properties.Langs.Lang.Please_select_a_class_and_result_type;
-                    messageBox.buttonType = 1;
-                    messageBox.ShowDialog();
-                    this.Opacity = 1;
-                }
-                else
-                {
-                    Classification classification = new Classification(classId, term, YearSelection, ping);
-                    classification.Show();
-                }
-            }
-            else if (item.id == 13)
-            {
-
-                AllSubjectPrint();
-
-            }
-            else if(item.id==14)
-            {
-                if (yearId == "" || resulType == "" || studentMonth == "" || term == "" || studentMonth == "")
-                {
-                    this.Opacity = 0.5;
-                    MessageBoxControl messageBox = new MessageBoxControl();
-                    messageBox.title = Properties.Langs.Lang.print;
-                    messageBox.discription = Properties.Langs.Lang.Please_select_a_class_and_result_type;
-                    messageBox.buttonType = 1;
-                    messageBox.ShowDialog();
-                    this.Opacity = 1;
-                }
-                else
-                {
-                    Sumery_of_Students_Short summary = new Sumery_of_Students_Short(yearId, resulType, DateChange.checkMonthString(studentMonth).ToString(), term, studentMonth);
-                    summary.Show();
-                }
-            }
-            else if (item.id == 16)
-            {
-                if(classId==""||month==""||yearTitle==""||studentClass=="")
-                {
-                    this.Opacity = 0.5;
-                    MessageBoxControl messageBox = new MessageBoxControl();
-                    messageBox.title = Properties.Langs.Lang.print;
-                    messageBox.discription = Properties.Langs.Lang.Please_select_a_class_and_result_type;
-                    messageBox.buttonType = 1;
-                    messageBox.ShowDialog();
-                    this.Opacity = 1;
-                }
-                else
-                {
-                    if (month == "0")
-                    {
-                        Student_Attendance_Year attendance_Year = new Student_Attendance_Year(classId, month, yearTitle, studentClass);
-                        attendance_Year.Show();
-                    }
-                    else
-                    {
-                        AttendanceReport attendance = new AttendanceReport(classId, month, yearTitle, studentClass);
-                        attendance.Show();
-                    }
-                }
-            }
-           
-            else if (item.id == 25)
-            {
-                if (YearSelection == "")
-                {
-                    this.Opacity = 0.5;
-                    MessageBoxControl messageBox = new MessageBoxControl();
-                    messageBox.title = "បោះពុម្ភ";
-                    messageBox.discription = "សូមធ្វើការជ្រើសរើសឆ្នាំសិក្សា";
-                    messageBox.buttonType = 1;
-                    messageBox.ShowDialog();
-                    this.Opacity = 1;
-                }
-                else
-                {
-                    this.Opacity = 0.5;
-                    StatisticGrade9 statisticGrade9 = new StatisticGrade9(YearSelection);
-                    statisticGrade9.ShowDialog();
-                    this.Opacity = 1;
-                }
-            }
-            else if (item.id == 26)
-            {
-                if (YearSelection == "")
-                {
-                    this.Opacity = 0.5;
-                    MessageBoxControl messageBox = new MessageBoxControl();
-                    messageBox.title = "បោះពុម្ភ";
-                    messageBox.discription = "សូមធ្វើការជ្រើសរើសឆ្នាំសិក្សា";
-                    messageBox.buttonType = 1;
-                    messageBox.ShowDialog();
-                    this.Opacity = 1;
-                }
-                else
-                {
-                    this.Opacity = 0.5;
-                    StatisticGrade12 statisticGrade12 = new StatisticGrade12(YearSelection);
-                    statisticGrade12.ShowDialog();
-                    this.Opacity = 1;
-                }
-            }
             else
             {
                 this.Opacity = 0.5;
@@ -6040,7 +6117,7 @@ namespace CamemisOffLine
                     {
                         respone = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/get-approve-learning?type=" + type + "&term=" + term, token);
                     }
-                    else if (type == "3")
+                    else if (type == "3") 
                     {
                         respone = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/get-approve-learning?type=" + type, token);
                     }

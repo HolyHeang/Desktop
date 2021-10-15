@@ -16,7 +16,7 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
-                        <Grid Margin="15,0,0,0">
+                        <Grid Margin="15,20,0,0">
                             <StackPanel Orientation="Vertical" Margin="0,5,0,0">
                                 <Image Source="/CamemisOffLine;component/Image/MoEYS.png" Height="100" VerticalAlignment="Top" HorizontalAlignment="Center"></Image>
 
@@ -29,10 +29,19 @@
                         </Grid>
                     </Grid>
                     <Grid Grid.Column="1">
-
+                        <Grid VerticalAlignment="Top" HorizontalAlignment="Center" Name="barCenter">
+                            <StackPanel>
+                                <Grid Margin="0 -5 0 0">
+                                    <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="179"></Label>
+                                </Grid>
+                                <Grid Margin="0 -8 0 0">
+                                    <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="214"></Label>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
                     </Grid>
                     <Grid Grid.Column="2">
-                        <Grid>
+                        <Grid VerticalAlignment="Top" HorizontalAlignment="Center" Name="barRight">
                             <StackPanel>
                                 <Grid Margin="0 -5 0 0">
                                     <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="179"></Label>
@@ -44,7 +53,7 @@
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid Height="60" Margin="0 -10 0 0" Name="title">
+                <Grid Height="40" Margin="0 -10 0 0" Name="title">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <TextBlock Name="lblMonth" Text="បញ្ជីរាយនាមសិស្សបោះបង់ការសិក្សា " VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
                     </StackPanel>
@@ -287,7 +296,7 @@
                                         <TextBlock Text="{Binding Text,ElementName=lblMonths}" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                     </StackPanel>
                                 </Label>
-                                <Label Content="នាយកវិទ្យាល័យ" FontSize="15" HorizontalAlignment="Center" Margin=" 0 5 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
+                                <Label Name="txtPosition" Content="នាយក" FontSize="15" HorizontalAlignment="Center" Margin=" 0 5 0 0" Style="{DynamicResource Muol}"></Label>
                             </StackPanel>
                         </Grid>
                     </Grid>

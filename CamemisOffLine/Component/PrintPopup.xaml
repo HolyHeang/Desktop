@@ -7,25 +7,141 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:CamemisOffLine.Component"
         mc:Ignorable="d"
-        Title="" Height="168" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
-    <Border CornerRadius="10" Background="White" BorderBrush="Black" BorderThickness="0">
+        Title="" Height="500" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+    <Grid Background="#FFF">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid HorizontalAlignment="Right" VerticalAlignment="Center" Name="Exit" MouseEnter="Exit_MouseEnter" MouseLeave="Exit_MouseLeave" MouseDown="Exit_MouseDown">
+                    <materialDesign:PackIcon Kind="Close" Width="25" Height="25"></materialDesign:PackIcon>
+                </Grid>
+                <StackPanel>
+                <TextBlock Name="txtTitle" FontSize="16" Text="{x:Static language:Lang.print}" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Margin="0 0 0 0" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontWeight="Bold"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1" Background="#FFF9F9F9">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+
+                        <Grid Height="100" Margin="5">
+                            <Border BorderBrush="LightGray" BorderThickness="1"/>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Label Content="ការកំណត់ទីតាំង បាវចនា" FontWeight="Bold" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="12"/>
+                                    <Separator Background="LightGray" VerticalAlignment="Bottom" Margin="5 0 5 0"/>
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="80"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid Grid.Column="3">
+                                            <Grid Margin="0 10 0 10">
+                                                
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+
+                                                <Grid Grid.Row="0">
+                                                    <Border BorderThickness="1 0 0 0" BorderBrush="LightGray"/>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10 0 0 0" VerticalAlignment="Center">
+                                                        <RadioButton GroupName="ra" IsChecked="True" Name="checkCenter" Checked="checkCenter_Checked"/>
+                                                        <Label Content="Center"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                                <Grid Grid.Row="1">
+                                                    <Border BorderThickness="1 0 0 0" BorderBrush="LightGray"/>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10 0 0 0" VerticalAlignment="Center">
+                                                        <RadioButton GroupName="ra" Name="checkRight" Checked="checkCenter_Checked"/>
+                                                        <Label Content="Right"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                        
+                                        <Grid Grid.Column="1">
+                                            <Grid HorizontalAlignment="Center" Name="barcenter" VerticalAlignment="Center">
+                                                <StackPanel>
+                                                    <Grid Margin="0 0 0 0">
+                                                        <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="8"></Label>
+                                                    </Grid>
+                                                    <Grid Margin="0 0 0 0">
+                                                        <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="8"></Label>
+                                                    </Grid>
+                                                </StackPanel>
+                                            </Grid>
+                                        </Grid>
+                                        <Grid Grid.Column="2">
+                                            <Grid HorizontalAlignment="Center" Name="barRight" VerticalAlignment="Center" Visibility="Collapsed">
+                                                <StackPanel>
+                                                    <Grid Margin="0 0 0 0">
+                                                        <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="8"></Label>
+                                                    </Grid>
+                                                    <Grid Margin="0 0 0 0">
+                                                        <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="8"></Label>
+                                                    </Grid>
+                                                </StackPanel>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                             
+                        </Grid>
+                        
+                        <Grid>
+                            <Grid Height="80" Margin="5">
+                                <Border BorderBrush="LightGray" BorderThickness="1"/>
+                                <StackPanel>
+                                    <TextBlock Name="txtDis" FontSize="12" Text="សូមបំពេញ​តួនាទី ឬមុខតំណែង កន្លែងហត្ថលេខា" HorizontalAlignment="Left" Margin="5 5 0 0" VerticalAlignment="Top"
+                                        TextWrapping="Wrap" FontWeight="Bold" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Opacity="0.8" ScrollViewer.CanContentScroll="True"/>
+                                    <TextBox BorderThickness="1" BorderBrush="LightGray" Margin="5" Height="35" FontSize="12" Padding="5 0 0 0" Foreground="Black" VerticalContentAlignment="Center" materialDesign:HintAssist.Hint="នាយក​ ឬនាយកវិទ្យាល័យ ឬនាយកអនុវិទ្យាល័យ ឬនាយកបឋម"
+                                        FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Name="txtPosition"/>
+                                </StackPanel>
+
+                            </Grid>
+                        </Grid>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+
+            <Grid Grid.Row="2" Background="#FFF9F9F9">
+                <Grid>
+                    <Separator Margin="0 0 0 0" VerticalAlignment="Top"/>
+                    <Button Name="btnYes" Background="#1183CA" BorderBrush="Transparent" BorderThickness="0" Height="30" Width="auto" MinWidth="80" Content="{x:Static language:Lang.ok}" FontSize="12" 
+                VerticalContentAlignment="Bottom" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Center"
+                FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="0 0 20 0" Click="btnYes_Click"/>
+                </Grid>
+            </Grid>
+        </Grid>
+        
         <Grid>
             <StackPanel Orientation="Vertical">
-                <TextBlock Name="txtTitle" FontSize="16" Text="{x:Static language:Lang.print}" HorizontalAlignment="Left" VerticalAlignment="Top" 
-                       Margin="20 10 10 0" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontWeight="Bold"/>
-                <Separator Margin="20 0 20 0"/>
+           
+               
                 <StackPanel Orientation="Vertical"  Margin="30 10 10 0" Height="auto">
-                    <TextBlock Name="txtDis" FontSize="14" Text="សូមបំពេញ​តួនាទី ឬមុខតំណែង" HorizontalAlignment="Left" VerticalAlignment="Top"
-                       TextWrapping="Wrap" FontWeight="Bold" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Opacity="0.8" ScrollViewer.CanContentScroll="True"/>
-                    <TextBox BorderThickness="1" Margin="0,5,15,5" FontSize="14" Padding="5 0 0 0" Foreground="Black" materialDesign:HintAssist.Hint="នាយក​ ឬនាយកវិទ្យាល័យ ឬនាយកអនុវិទ្យាល័យ ឬនាយកបឋម"
-                             FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Name="txtPosition"/>
+                  
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"  Margin="0 0 24 15">
-                <Button Name="btnYes" Background="#1183CA" BorderBrush="Transparent" BorderThickness="0" Height="30" Width="auto" MinWidth="80" Content="{x:Static language:Lang.ok}" FontSize="12" 
-                VerticalContentAlignment="Bottom" HorizontalAlignment="Right" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"
-                FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="0 0 0 0" Click="btnYes_Click"/>
+               
             </StackPanel>
         </Grid>
-    </Border>
+    </Grid>
 </Window>

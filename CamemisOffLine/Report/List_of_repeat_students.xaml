@@ -29,10 +29,19 @@
                         </Grid>
                     </Grid>
                     <Grid Grid.Column="1">
-
+                        <Grid VerticalAlignment="Top" HorizontalAlignment="Center" Name="barCenter">
+                            <StackPanel>
+                                <Grid Margin="0 -5 0 0">
+                                    <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="179"></Label>
+                                </Grid>
+                                <Grid Margin="0 -8 0 0">
+                                    <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="214"></Label>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
                     </Grid>
                     <Grid Grid.Column="2">
-                        <Grid>
+                        <Grid VerticalAlignment="Top" HorizontalAlignment="Center" Name="barRight">
                             <StackPanel>
                                 <Grid Margin="0 -5 0 0">
                                     <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="179"></Label>
@@ -109,7 +118,7 @@
                                                 <Setter Property="VerticalAlignment" Value="Center"/>
                                             </Style>
                                         </DataGridTextColumn.ElementStyle>
-                                       
+
                                     </DataGridTextColumn>
 
                                     <!--//............................Date of birth............................-->
@@ -141,7 +150,7 @@
 
                                     </DataGridTextColumn>
 
-                                   
+
                                     <!--//............................Number Phone............................-->
                                     <DataGridTextColumn Width="170" Header="លេខទូរស័ព្ទ" FontSize="14" Binding="{Binding phone}">
 
@@ -234,7 +243,7 @@
                                         <TextBlock Text="{Binding Text,ElementName=lblMonths}" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                     </StackPanel>
                                 </Label>
-                                <Label Content="នាយកវិទ្យាល័យ" FontSize="15" HorizontalAlignment="Center" Margin=" 0 5 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
+                                <TextBlock Name="txtPosition" Text="នាយក" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
                             </StackPanel>
                         </Grid>
                     </Grid>

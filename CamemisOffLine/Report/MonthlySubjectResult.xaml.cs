@@ -1,4 +1,5 @@
-﻿using CamemisOffLine.Windows;
+﻿using CamemisOffLine.Component;
+using CamemisOffLine.Windows;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using Library;
@@ -38,12 +39,41 @@ namespace CamemisOffLine.Report
         string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            if(Properties.Settings.Default.role=="1")
+            barRight.Visibility = Visibility.Collapsed;
+            this.Hide();
+            if (Properties.Settings.Default.role == "1")
             {
-                titleTeacher.Content = "នាយកសាលា";
+                PrintPopup prints = new PrintPopup();
+                this.IsEnabled = false;
+                this.Opacity = 0.5;
+
+                prints.ShowDialog();
+
+                this.Opacity = 1;
+                this.IsEnabled = true;
+                titleTeacher.Content = prints.position;
                 titleAdmin.Visibility = Visibility.Collapsed;
                 lblTeacherName.Visibility = Visibility.Collapsed;
+                barCenter.Visibility = prints.CheckCenter;
+                barRight.Visibility = prints.CheckRight;
             }
+            else
+            {
+                PrintPopup prints = new PrintPopup();
+                this.IsEnabled = false;
+                this.Opacity = 0.5;
+
+                prints.ShowDialog();
+
+                this.Opacity = 1;
+                this.IsEnabled = true;
+                txtPosition.Text = prints.position;
+                titleAdmin.Visibility = Visibility.Visible;
+                lblTeacherName.Visibility = Visibility.Visible;
+                barCenter.Visibility = prints.CheckCenter;
+                barRight.Visibility = prints.CheckRight;
+            }
+
             lblSchoolName.Content = Properties.Settings.Default.schoolName;
             lblLogoNameLeft.Content = Properties.Settings.Default.logoNameLeft;
 

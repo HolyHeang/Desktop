@@ -184,14 +184,14 @@ namespace CamemisOffLine.Report
                     string path = filePath + "\\" + "សិស្ស" + j + ".pdf";
                     fileArray.Add(path);
                 }
-                MessageBoxControl message = new MessageBoxControl();
-                message.Owner = this;
-                message.title = Properties.Langs.Lang.print;
-                message.discription = Properties.Langs.Lang.print_successful;
-                message.buttonType = 2;
-                this.Opacity = 0.5;
-                message.ShowDialog();
-                this.Opacity = 1;
+                //MessageBoxControl message = new MessageBoxControl();
+                //message.Owner = this;
+                //message.title = Properties.Langs.Lang.print;
+                //message.discription = Properties.Langs.Lang.print_successful;
+                //message.buttonType = 2;
+                //this.Opacity = 0.5;
+                //message.ShowDialog();
+                //this.Opacity = 1;
                 MergePDF(fileArray.ToArray());
                 this.Close();
             }
@@ -231,77 +231,94 @@ namespace CamemisOffLine.Report
         }
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            this.Opacity = 0.5;
+            barRight.Visibility = Visibility.Collapsed;
             this.Hide();
-            Loading loading = new Loading();
-            loading.Show();
-            var respone = "";
-            var obj = new List<StuedntofTheYear>();
-            if (pings<=150 && Teacher.InternetChecker())
+
+            PrintPopup prints = new PrintPopup();
+            prints.ShowDialog();
+            txtPosition.Content = prints.position;
+
+            barCenter.Visibility = prints.CheckCenter;
+            barRight.Visibility = prints.CheckRight;
+            this.Opacity = 1;
+
+            if (prints.isPrint == false)
+                this.Close();
+            else
             {
-                string accessUrl = Properties.Settings.Default.acessUrl;
-                string token = Properties.Settings.Default.Token;
-               
-                if(type==1&&schoolYearId!="")
+                Loading loading = new Loading();
+                loading.Show();
+                var respone = "";
+                var obj = new List<StuedntofTheYear>();
+                if (pings <= 150 && Teacher.InternetChecker())
                 {
-                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សគ្រប់កម្រិតថ្នាក់ ឆ្នាំសិក្សា " + titleYear;
-                    respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId, token);
-                    encryptionString = Teacher.EncodeTo64(respone);
-                    SaveString(schoolYearId);
-                }
-                else if(type==2&&classId!="")
-                {
-                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សសម្រាប់ថ្នាក់" + titleYear;
-                    respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId+ "?classId="+classId, token);
-                }
-                else if(type==3&&gradeId!="")
-                {
-                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សសម្រាប់កម្រិតនីមួយៗ " + titleYear;
-                    respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId + "?gradeId=" + gradeId, token);
-                }
-                else if (type == 4&&level!="")
-                {
-                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សសម្រាប់កម្រិតរួម " + titleYear;
-                    respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId + "?level=" + level, token);
+                    string accessUrl = Properties.Settings.Default.acessUrl;
+                    string token = Properties.Settings.Default.Token;
+
+                    if (type == 1 && schoolYearId != "")
+                    {
+                        lblMonth.Text = "បញ្ជីរាយនាមសិស្សគ្រប់កម្រិតថ្នាក់ ឆ្នាំសិក្សា " + titleYear;
+                        respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId, token);
+                        encryptionString = Teacher.EncodeTo64(respone);
+                        SaveString(schoolYearId);
+                    }
+                    else if (type == 2 && classId != "")
+                    {
+                        lblMonth.Text = "បញ្ជីរាយនាមសិស្សថ្នាក់ទី " + titleYear;
+                        respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId + "?classId=" + classId, token);
+                    }
+                    else if (type == 3 && gradeId != "")
+                    {
+                        lblMonth.Text = "បញ្ជីរាយនាមសិស្ស " + titleYear;
+                        respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId + "?gradeId=" + gradeId, token);
+                    }
+                    else if (type == 4 && level != "")
+                    {
+                        lblMonth.Text = "បញ្ជីរាយនាមសិស្សថ្នាក់ទី " + titleYear;
+                        respone = await RESTApiHelper.GetAll(accessUrl, "/student-schoolyear-search/" + schoolYearId + "?level=" + level, token);
+                    }
+                    else
+                    {
+                        loading.Close();
+                    }
+                    obj = null;
                 }
                 else
                 {
-                    loading.Close();
-                }
-                obj = null;
-            }
-            else
-            {
-                respone = GetString(schoolYearId);
-                var data = JObject.Parse(respone).ToObject<AllStudentList>().data;
+                    respone = GetString(schoolYearId);
+                    var data = JObject.Parse(respone).ToObject<AllStudentList>().data;
 
-                if(type==1)
-                {
-                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សគ្រប់កម្រិតថ្នាក់ ឆ្នាំសិក្សា " + titleYear;
-                    obj = data;
+                    if (type == 1)
+                    {
+                        lblMonth.Text = "បញ្ជីរាយនាមសិស្សគ្រប់កម្រិតថ្នាក់ ឆ្នាំសិក្សា " + titleYear;
+                        obj = data;
+                    }
+                    else if (type == 2)
+                    {
+                        lblMonth.Text = "បញ្ជីរាយនាមសិស្សថ្នាក់ទី " + titleYear;
+                        obj = data.Where(s => s.current_class_id == classId).ToList();
+                    }
+                    else if (type == 3)
+                    {
+                        lblMonth.Text = "បញ្ជីរាយនាមសិស្ស " + titleYear;
+                        obj = data.Where(s => s.grade_id == gradeId).ToList();
+                    }
+                    else if (type == 4)
+                    {
+                        lblMonth.Text = "បញ្ជីរាយនាមសិស្សថ្នាក់ទី " + titleYear;
+                        obj = data.Where(s => s.level == level).ToList();
+                    }
+                    respone = null;
                 }
-                else if(type==2)
-                {
-                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សសម្រាប់ថ្នាក់" + titleYear;
-                    obj = data.Where(s => s.current_class_id == classId).ToList();
-                }
-                else if(type==3)
-                {
-                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សសម្រាប់ក្រុម​ " + titleYear;
-                    obj = data.Where(s => s.grade_id == gradeId).ToList();
-                }
-                else if(type==4)
-                {
-                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សសម្រាប់កម្រិត " + titleYear;
-                    obj = data.Where(s => s.level == level).ToList();
-                }
-                respone = null;
+                MessageBoxControl message = new MessageBoxControl();
+                message.title = Properties.Langs.Lang.print;
+                message.discription = Properties.Langs.Lang.print_successful;
+                message.buttonType = 1;
+                print(respone, obj);
+                loading.Close();
             }
-            MessageBoxControl message = new MessageBoxControl();
-            message.title = Properties.Langs.Lang.print;
-            message.discription = Properties.Langs.Lang.print_successful;
-            message.buttonType = 1;
-            print(respone,obj);
-            loading.Close();
+            
         }
         private void SaveString(string schoolId)
         {

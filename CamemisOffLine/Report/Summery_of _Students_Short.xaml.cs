@@ -52,194 +52,212 @@ namespace CamemisOffLine.Report
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            barRight.Visibility = Visibility.Collapsed;
             this.Hide();
-            Loading load = new Loading();
-            load.Show();
-            string reponse = "";
-            if (Teacher.InternetChecker())
-            {
-                reponse = await GetDataAsync();
-            }
+
+            PrintPopup prints = new PrintPopup();
+            this.IsEnabled = false;
+            this.Opacity = 0.5;
+
+            prints.ShowDialog();
+
+            this.Opacity = 1;
+            this.IsEnabled = true;
+            txtPosition.Content = prints.position;
+
+            barCenter.Visibility = prints.CheckCenter;
+            barRight.Visibility = prints.CheckRight;
+
+            if (prints.isPrint == false)
+                this.Close();
             else
             {
-                MessageBoxControl message = new MessageBoxControl();
-                message.title = Properties.Langs.Lang.Internet;
-                message.discription = Properties.Langs.Lang.No_internet_connection;
-                message.buttonType = 1;
-                message.ShowDialog();
-                load.Close();
-                this.Close();
-            }
-            var obj = JObject.Parse(reponse).ToObject<SummarySubjectGradingList>().data;
-
-            if(obj.All(s=>s.subjects.All(l=>l.grading_system.Count>4)))
-            {
-                Summary_of_Students students = new Summary_of_Students(yearId, type, month, semester, monthName);
-                students.Show();
-                load.Close();
-                this.Close();
-            }
-            else
-            {
-                Console.WriteLine("----------------------4---------------------");
-            }
-
-            try
-            {
-                int startIndex = 0, endIndex = 1, round = 1;
-                Document document = new Document(PageSize.A4.Rotate(), 5, 0, 0, 0);
-                PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "ResultTemplate" + ".pdf", FileMode.Create));
-                document.Open();
-                GC.Collect();
-
-                List<SummarySubjectGrading> copyResult = new List<SummarySubjectGrading>();
-                var sub1 = new List<Subjects>();
-                bool footerAvaliable = false;
-                while (true)
+                Loading load = new Loading();
+                load.Show();
+                string reponse = "";
+                if (Teacher.InternetChecker())
                 {
-                    copyResult.Clear();
-                    for (int i = startIndex; i < endIndex; i++)
-                    {
-                        if (obj[i] != null)
-                        {
-                            copyResult.Add(obj[i]);
-                        }
-                    }
+                    reponse = await GetDataAsync();
+                }
+                else
+                {
+                    MessageBoxControl message = new MessageBoxControl();
+                    message.title = Properties.Langs.Lang.Internet;
+                    message.discription = Properties.Langs.Lang.No_internet_connection;
+                    message.buttonType = 1;
+                    message.ShowDialog();
+                    load.Close();
+                    this.Close();
+                }
+                var obj = JObject.Parse(reponse).ToObject<SummarySubjectGradingList>().data;
 
-                   if(startIndex==5)
-                   {
-                        if (round == 1)
+                if (obj.All(s => s.subjects.All(l => l.grading_system.Count > 4)))
+                {
+                    Summary_of_Students students = new Summary_of_Students(yearId, type, month, semester, monthName);
+                    students.Show();
+                    load.Close();
+                    this.Close();
+                }
+                else
+                {
+                    Console.WriteLine("----------------------4---------------------");
+                }
+
+                try
+                {
+                    int startIndex = 0, endIndex = 1, round = 1;
+                    Document document = new Document(PageSize.A4.Rotate(), 5, 0, 0, 0);
+                    PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "ResultTemplate" + ".pdf", FileMode.Create));
+                    document.Open();
+                    GC.Collect();
+
+                    List<SummarySubjectGrading> copyResult = new List<SummarySubjectGrading>();
+                    var sub1 = new List<Subjects>();
+                    bool footerAvaliable = false;
+                    while (true)
+                    {
+                        copyResult.Clear();
+                        for (int i = startIndex; i < endIndex; i++)
                         {
-                            var sub = new List<Subjects>();
-                            sub1 = new List<Subjects>();
-                            foreach (var item in copyResult)
+                            if (obj[i] != null)
                             {
-                                foreach (var next in item.subjects)
+                                copyResult.Add(obj[i]);
+                            }
+                        }
+
+                        if (startIndex == 5)
+                        {
+                            if (round == 1)
+                            {
+                                var sub = new List<Subjects>();
+                                sub1 = new List<Subjects>();
+                                foreach (var item in copyResult)
                                 {
-                                    if (next.name.Contains("(សង្គម)"))
+                                    foreach (var next in item.subjects)
                                     {
-                                        sub.Add(next);
+                                        if (next.name.Contains("(សង្គម)"))
+                                        {
+                                            sub.Add(next);
+                                        }
+                                        else
+                                        {
+                                            sub1.Add(next);
+                                        }
                                     }
-                                    else
-                                    {
-                                        sub1.Add(next);
-                                    }
+                                    item.subjects = null;
+                                    item.subjects = sub;
                                 }
-                                item.subjects = null;
-                                item.subjects = sub;
+                                round++;
+                                endIndex--;
                             }
-                            round++;
-                            endIndex--;
-                        }
-                        else if (round == 2)
-                        {
-                            var sub = new List<Subjects>();
-                            foreach (var item in copyResult)
+                            else if (round == 2)
                             {
-                                item.subjects = null;
-                                item.subjects = sub1;
-                            }
-                        }
-                   }
-                   else if(startIndex==4)
-                    {
-                        if(round==1)
-                        {
-                            var sub = new List<Subjects>();
-                            sub1 = new List<Subjects>();
-                            foreach (var item in copyResult)
-                            {
-                                foreach (var next in item.subjects)
+                                var sub = new List<Subjects>();
+                                foreach (var item in copyResult)
                                 {
-                                    if (next.name.Contains("(សង្គម)"))
-                                    {
-                                        sub.Add(next);
-                                    }
-                                    else
-                                    {
-                                        sub1.Add(next);
-                                    }
+                                    item.subjects = null;
+                                    item.subjects = sub1;
                                 }
-                                item.subjects = null;
-                                item.subjects = sub;
                             }
-                            round++;
-                            endIndex--;
                         }
-                        else if(round==2)
+                        else if (startIndex == 4)
                         {
-                            var sub = new List<Subjects>();
-                            foreach (var item in copyResult)
+                            if (round == 1)
                             {
-                                item.subjects = null;
-                                item.subjects = sub1;
+                                var sub = new List<Subjects>();
+                                sub1 = new List<Subjects>();
+                                foreach (var item in copyResult)
+                                {
+                                    foreach (var next in item.subjects)
+                                    {
+                                        if (next.name.Contains("(សង្គម)"))
+                                        {
+                                            sub.Add(next);
+                                        }
+                                        else
+                                        {
+                                            sub1.Add(next);
+                                        }
+                                    }
+                                    item.subjects = null;
+                                    item.subjects = sub;
+                                }
+                                round++;
+                                endIndex--;
                             }
-                            round = 1;
+                            else if (round == 2)
+                            {
+                                var sub = new List<Subjects>();
+                                foreach (var item in copyResult)
+                                {
+                                    item.subjects = null;
+                                    item.subjects = sub1;
+                                }
+                                round = 1;
+                            }
                         }
-                    }
 
-                    if (!footerAvaliable)
-                        Footer.Visibility = Visibility.Collapsed;
-
-                    Grid.Dispatcher.Invoke(() =>
-                    {
-                        showData(copyResult);
-                        Grid.UpdateLayout();
-                    });
-                    PrintList(document);
-                    if (endIndex == obj.Count())
-                    {
                         if (!footerAvaliable)
+                            Footer.Visibility = Visibility.Collapsed;
+
+                        Grid.Dispatcher.Invoke(() =>
                         {
+                            showData(copyResult);
+                            Grid.UpdateLayout();
+                        });
+                        PrintList(document);
+                        if (endIndex == obj.Count())
+                        {
+                            if (!footerAvaliable)
+                            {
+                                Header.Visibility = Visibility.Collapsed;
+                                title.Visibility = Visibility.Collapsed;
+                                Body.Visibility = Visibility.Collapsed;
+                                Footer.Visibility = Visibility.Visible;
+                                PrintList(document);
+                            }
+                            break;
+                        }
+
+                        startIndex = endIndex;
+
+                        if (obj.Count() - endIndex > 1)
+                        {
+                            endIndex = startIndex + 1;
+                            if (endIndex > obj.Count)
+                                endIndex = obj.Count();
                             Header.Visibility = Visibility.Collapsed;
                             title.Visibility = Visibility.Collapsed;
-                            Body.Visibility = Visibility.Collapsed;
-                            Footer.Visibility = Visibility.Visible;
-                            PrintList(document);
+                            Footer.Visibility = Visibility.Collapsed;
                         }
-                        break;
-                    }
-
-                    startIndex = endIndex;
-
-                    if (obj.Count() - endIndex > 1)
-                    {
-                        endIndex = startIndex + 1;
-                        if (endIndex > obj.Count)
-                            endIndex = obj.Count();
-                        Header.Visibility = Visibility.Collapsed;
-                        title.Visibility = Visibility.Collapsed;
-                        Footer.Visibility = Visibility.Collapsed;
-                    }
-                    else
-                    {
-                        endIndex = obj.ToList().Count();
-                        Header.Visibility = Visibility.Collapsed;
-                        title.Visibility = Visibility.Collapsed;
-                        if (obj.ToList().Count() - startIndex <= 6 && round==2)
+                        else
                         {
-                            Footer.Visibility = Visibility.Visible;
-                            footerAvaliable = true;
+                            endIndex = obj.ToList().Count();
+                            Header.Visibility = Visibility.Collapsed;
+                            title.Visibility = Visibility.Collapsed;
+                            if (obj.ToList().Count() - startIndex <= 6 && round == 2)
+                            {
+                                Footer.Visibility = Visibility.Visible;
+                                footerAvaliable = true;
+                            }
+
                         }
 
                     }
-
+                    document.Close();
+                    Process.Start(filePath + "\\" + "ResultTemplate" + ".pdf");
+                    this.Close();
                 }
-                document.Close();
-                Process.Start(filePath + "\\" + "ResultTemplate" + ".pdf");
-                this.Close();
+                catch
+                {
+                    MessageBoxControl message = new MessageBoxControl();
+                    message.buttonType = 1;
+                    message.title = "បោះពុម្ភ";
+                    message.discription = "បោះពុម្ភមិនបានជោគជ័យ";
+                    message.ShowDialog();
+                }
+                load.Close();
             }
-            catch
-            {
-                MessageBoxControl message = new MessageBoxControl();
-                message.buttonType = 1;
-                message.title = "បោះពុម្ភ";
-                message.discription = "បោះពុម្ភមិនបានជោគជ័យ";
-                message.ShowDialog();
-            }
-            load.Close();
-
-
         }
         private async Task<string> GetDataAsync()
         {

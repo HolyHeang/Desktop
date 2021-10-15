@@ -19,19 +19,41 @@
                     <Label Name="lbllogoLeft" Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="14" HorizontalAlignment="Center"></Label>
                     <Label Name="lblSchoolName" Content="វិទ្យាល័យ ហ៊ុន សែន បូរី១០០ខ្នង" HorizontalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="14"></Label>
                 </StackPanel>
-                <StackPanel Orientation="Vertical" Grid.Column="1">
-                    <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="16" ></Label>
-                    <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="16" Margin="0 -15 0 0"></Label>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 50 0 0">
-                        <Label Content="លទ្ធផលប្រចាំ" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="14" Foreground="Blue"></Label>
-                        <Label Name="lblMonth" Content="--" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="14" Foreground="Blue"></Label>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 -10 0 0">
-                        <Label Content="ថ្នាក់ទី" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="14" Foreground="Blue"></Label>
-                        <Label Name="lblClass" Content="-- (2019-2020)" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="14" Foreground="Blue"></Label>
-                    </StackPanel>
-                </StackPanel>
-                <Grid Grid.Column="2"/>
+                <Grid Grid.Column="1">
+                    <Grid VerticalAlignment="Top" HorizontalAlignment="Center" Name="barCenter">
+                        <StackPanel>
+                            <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="16" ></Label>
+                            <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="16"></Label>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 10">
+                        <StackPanel>
+                            <Grid>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 50 0 0">
+                                    <Label Content="លទ្ធផលប្រចាំ" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="14" Foreground="Blue"></Label>
+                                    <Label Name="lblMonth" Content="--" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="14" Foreground="Blue"></Label>
+                                </StackPanel>
+                            </Grid>
+                            <Grid>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 -10 0 0">
+                                    <Label Content="ថ្នាក់ទី" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="14" Foreground="Blue"></Label>
+                                    <Label Name="lblClass" Content="-- (2019-2020)" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="14" Foreground="Blue"></Label>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                    
+                    
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Grid VerticalAlignment="Top" HorizontalAlignment="Center" Name="barRight">
+                        <StackPanel>
+                            <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="16" ></Label>
+                            <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="16"></Label>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
             </Grid>
             <Grid HorizontalAlignment="Center">
                 <DataGrid Name="Data" AutoGenerateColumns="False" CanUserAddRows="False" HeadersVisibility="Column" BorderBrush="Black" BorderThickness="1 1 1 0"  FontSize="14" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Hidden" HorizontalAlignment="Center" HorizontalContentAlignment="Center" MinWidth="38cm" Margin="10" Width="auto">
@@ -207,7 +229,7 @@
                         <Label HorizontalAlignment="Center" VerticalAlignment="Center">
                             <StackPanel Orientation="Vertical">
                                 <TextBlock Text="បានឃើញ និងឯកភាព" FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                                <TextBlock Text="នាយកសាលា" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
+                                <TextBlock Name="txtPosition" Text="នាយក" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
                             </StackPanel>
                         </Label>
                     </Grid>
@@ -216,13 +238,13 @@
                             <Label HorizontalAlignment="Center">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="ថ្ងៃ" FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                                    <TextBlock Name="lblDay" Text="..................." FontSize="12"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Name="lblDay" Text="................................" FontSize="12"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
                                     <TextBlock Text="ខែ" FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                                    <TextBlock Name="lblMonths" Text="..................." FontSize="12"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Name="lblMonths" Text="..............................." FontSize="12"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
                                     <TextBlock Text="ឆ្នាំ" FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                                    <TextBlock Name="lblYear" Text="..................." FontSize="12"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Name="lblYear" Text=".........................." FontSize="12"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
                                     <TextBlock Text="ព.ស" FontSize="14"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                                    <TextBlock Name="lblKhmerYear" Text="..................." FontSize="12"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
+                                    <TextBlock Name="lblKhmerYear" Text="........................" FontSize="12"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
                                 </StackPanel>
                             </Label>
                             <Label HorizontalAlignment="Center" Margin="0 10 0 0" FontSize="10">

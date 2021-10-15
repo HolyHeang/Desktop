@@ -55,14 +55,11 @@ namespace CamemisOffLine
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
            
-
             btnLogin.Visibility = Visibility.Collapsed;
             btnPass.Visibility = Visibility.Collapsed;
             btnUser.Visibility = Visibility.Collapsed;
-            btnNext.Margin = btnLogin.Margin;
-            gridBack.Visibility = Visibility.Collapsed;
-            gridLogin.Width = 380;
-            gridLogin.Height = 300;
+            gridBackLogin.Visibility = Visibility.Collapsed;
+            
 
             if (!InternetChecker())
             {
@@ -89,7 +86,10 @@ namespace CamemisOffLine
         //end start window
         private void txtUser_GotFocus(object sender, RoutedEventArgs e)
         {
+            var bc = new BrushConverter();
             lblError.Visibility = Visibility.Collapsed;
+            btnPassCode.BorderBrush = (Brush)bc.ConvertFrom("#1183CA");
+            btnPassCode.CornerRadius =  new CornerRadius(2);
         }
         //save data
         private void SaveData()
@@ -100,7 +100,8 @@ namespace CamemisOffLine
                 Properties.Settings.Default.password = txtPass.Password;
                 Properties.Settings.Default.schoolCode = txtCode.Text;
                 Properties.Settings.Default.remember = "yes";
-                Properties.Settings.Default.Save();
+                Properties.Settings.Default.Save();  
+
             }
             else
             {
@@ -109,6 +110,8 @@ namespace CamemisOffLine
                 Properties.Settings.Default.password = "";
                 Properties.Settings.Default.remember = "no";
                 Properties.Settings.Default.Save();
+               
+
             }
         }
         //end save data
@@ -123,58 +126,31 @@ namespace CamemisOffLine
                     txtPass.Password = Properties.Settings.Default.password;
                     txtCode.Text = Properties.Settings.Default.schoolCode;
                     cbRememberMe.IsChecked = true;
+                   
                 }
                 else
                 {
                     txtUser.Text = Properties.Settings.Default.username;
                     txtCode.Text = Properties.Settings.Default.schoolCode;
+                   
+
                 }
             }
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            backgroundImg.Source = new BitmapImage(new Uri(@"/CamemisOffLine;component/Image/Nature1.jpg", UriKind.Relative));
-            
-           
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            backgroundImg.Source = new BitmapImage(new Uri(@"/CamemisOffLine;component/Image/Nature2.jpg", UriKind.Relative));
-
-
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            backgroundImg.Source = new BitmapImage(new Uri(@"/CamemisOffLine;component/Image/Nature3.jpg", UriKind.Relative));
-            
-          
-        }
-
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-            backgroundImg.Source = new BitmapImage(new Uri(@"/CamemisOffLine;component/Image/Nature4.jpg", UriKind.Relative));
-           
-           
-        }
-
-        private void Button_Click_5(object sender, RoutedEventArgs e)
-        {
-            backgroundImg.Source = new BitmapImage(new Uri(@"/CamemisOffLine;component/Image/Nature5.jpg", UriKind.Relative));
-            
-           
         }
 
 
         private async void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            txtBoxPass.Visibility = Visibility.Collapsed;
+            txtPass.Visibility = Visibility.Visible;
+            txtPass.Password = txtBoxPass.Text;
+            showPass.Kind = MaterialDesignThemes.Wpf.PackIconKind.Eye;
+
             try
             {
                 if (InternetChecker())
                 {
-                    if (txtUser.Text.Equals("") || txtPass.Password.Equals(""))
+                    if (txtUser.Text.Equals("") || txtPass.Password.Equals("") || txtBoxPass.Text.Equals(""))
                     {
                         MessageBox.Show(Properties.Langs.Lang.Incorect_User_Pass);
                         Properties.Settings.Default.checkLoginOrLogut = "logout";
@@ -242,13 +218,13 @@ namespace CamemisOffLine
                 }
                 else
                 {
-                    if (txtUser.Text.Equals("") || txtPass.Password.Equals(""))
+                    if (txtUser.Text.Equals("") || txtPass.Password.Equals("") || txtBoxPass.Text.Equals(""))
                     {
                         MessageBox.Show(Properties.Langs.Lang.Incorect_User_Pass,Properties.Langs.Lang.Information, MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                     else
                     {
-                        if (name == txtUser.Text && pass == txtPass.Password)
+                        if (name == txtUser.Text && pass == txtPass.Password && pass == txtBoxPass.Text)
                         {
 
                             Properties.Settings.Default.checkLoginOrLogut = "login";
@@ -274,23 +250,18 @@ namespace CamemisOffLine
         }
         //mouse over exit button........
 
-        private void btnLogin_MouseEnter(object sender, MouseEventArgs e)
-        {
-            Button btn = (Button)sender;
-           btn.Background = Brushes.Gray;
-            
-        }
-
-        private void btnLogin_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.Background = Brushes.Transparent;
-        }
-
         //Button Click Next
         private async void btnNext_Click(object sender, RoutedEventArgs e)
         {
-            if(InternetChecker())
+            if (txtPass.Password == "")
+            {
+                showPass.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                showPass.Visibility = Visibility.Visible;
+            }
+            if (InternetChecker())
             {
                 using (HttpClient client = new HttpClient())
                 {
@@ -316,10 +287,9 @@ namespace CamemisOffLine
                                 btnUser.Visibility = Visibility.Visible;
                                 btnPass.Visibility = Visibility.Visible;
                                 btnLogin.Visibility = Visibility.Visible;
-                                gridBack.Visibility = Visibility.Visible;
+                                gridBackLogin.Visibility = Visibility.Visible;
                                 
-                                gridLogin.Width = 380;
-                                gridLogin.Height = 400;
+     
                             }
                             else
                             {
@@ -345,8 +315,7 @@ namespace CamemisOffLine
                         btnUser.Visibility = Visibility.Visible;
                         btnPass.Visibility = Visibility.Visible;
                         btnLogin.Visibility = Visibility.Visible;
-                        gridLogin.Width = 380;
-                        gridLogin.Height = 400;
+                       
                     }
                     else
                     {
@@ -445,29 +414,109 @@ namespace CamemisOffLine
             g.Background = Brushes.Transparent;
         }
 
-        private void gridBack_MouseDown(object sender, MouseButtonEventArgs e)
+        private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             btnLogin.Visibility = Visibility.Collapsed;
             btnPass.Visibility = Visibility.Collapsed;
             btnUser.Visibility = Visibility.Collapsed;
             btnPassCode.Visibility = Visibility.Visible;
             btnNext.Visibility = Visibility.Visible;
-            gridBack.Visibility = Visibility.Collapsed;
-            btnNext.Margin = btnLogin.Margin;
-            gridLogin.Width = 380;
-            gridLogin.Height = 300;
+            gridBackLogin.Visibility = Visibility.Collapsed;
+
+            txtBoxPass.Visibility = Visibility.Collapsed;
+            txtPass.Visibility = Visibility.Visible;
+            txtPass.Password = txtBoxPass.Text;
+            showPass.Kind = MaterialDesignThemes.Wpf.PackIconKind.Eye;
+
         }
 
-        private void gridBack_MouseEnter(object sender, MouseEventArgs e)
+        private void txtCode_MouseEnter(object sender, MouseEventArgs e)
         {
-            Grid g = (Grid)sender;
-            g.Background = Brushes.Blue;
+            var bc = new BrushConverter();
+            btnPassCode.BorderBrush = (Brush)bc.ConvertFrom("#1183CA");
+            btnPassCode.CornerRadius = new CornerRadius(0);
+            MarPasscode.Foreground= (Brush)bc.ConvertFrom("#1183CA");
         }
 
-        private void gridBack_MouseLeave(object sender, MouseEventArgs e)
+        private void txtCode_MouseLeave(object sender, MouseEventArgs e)
         {
-            Grid g = (Grid)sender;
-            g.Background = Brushes.Transparent;
+            var bc = new BrushConverter();
+            btnPassCode.BorderBrush = Brushes.Gray;
+            btnPassCode.CornerRadius = new CornerRadius(0);
+            MarPasscode.Foreground = Brushes.Gray;
+        }
+
+        private void txtPass_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var bc = new BrushConverter();
+            btnPass.BorderBrush = (Brush)bc.ConvertFrom("#1183CA");
+            btnPass.CornerRadius = new CornerRadius(0);
+            MarPass.Foreground = (Brush)bc.ConvertFrom("#1183CA");
+        }
+
+        private void txtPass_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var bc = new BrushConverter();
+            btnPass.BorderBrush = Brushes.Gray;
+            btnPass.CornerRadius = new CornerRadius(0);
+            MarPass.Foreground = Brushes.Gray;
+        }
+
+        private void txtUser_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var bc = new BrushConverter();
+            btnUser.BorderBrush = (Brush)bc.ConvertFrom("#1183CA");
+            btnUser.CornerRadius = new CornerRadius(0);
+            MarUser.Foreground = (Brush)bc.ConvertFrom("#1183CA");
+        }
+
+        private void txtUser_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var bc = new BrushConverter();
+            btnUser.BorderBrush = Brushes.Gray;
+            btnUser.CornerRadius = new CornerRadius(0);
+            MarUser.Foreground = Brushes.Gray;
+        }
+
+        private void showPass_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (showPass.Kind == MaterialDesignThemes.Wpf.PackIconKind.Eye)
+            {
+                txtPass.Visibility = Visibility.Collapsed;
+                txtBoxPass.Visibility = Visibility.Visible;
+                txtBoxPass.Text = txtPass.Password;
+                showPass.Kind = MaterialDesignThemes.Wpf.PackIconKind.EyeOff;
+            }
+            else
+            {
+                txtBoxPass.Visibility = Visibility.Collapsed;
+                txtPass.Visibility = Visibility.Visible;
+                txtPass.Password = txtBoxPass.Text;
+                showPass.Kind = MaterialDesignThemes.Wpf.PackIconKind.Eye;
+            }
+                
+        }
+
+        private void GridForm_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+        private void txtPass_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (txtPass.Password == "")
+            {
+                showPass.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                showPass.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void txtBoxPass_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
 
         //..................................End................................

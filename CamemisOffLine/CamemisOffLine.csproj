@@ -33,9 +33,9 @@
     <ProductName>CAMEMIS Desktop</ProductName>
     <PublisherName>Heang Holy</PublisherName>
     <SuiteName>Camemis</SuiteName>
-    <MinimumRequiredVersion>1.0.0.10</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.13</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationRevision>14</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -539,6 +539,7 @@
     <Resource Include="Image\PrintIcon.png" />
     <Resource Include="Image\Online.png" />
     <Resource Include="Component\undraw_Wall_post_re_y78d.png" />
+    <Resource Include="Image\coverLogin.jpg" />
     <Content Include="x64\SQLite.Interop.dll" />
     <Content Include="x86\SQLite.Interop.dll" />
     <EmbeddedResource Include="Properties\Langs\Lang.resx">

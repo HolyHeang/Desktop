@@ -59,13 +59,13 @@ namespace CamemisOffLine.Windows
         //------------event---------------------------------- 
         private void btnPrint_Click(object sender, RoutedEventArgs e)
         {
-            btnPrint.Visibility = Visibility.Visible;
+           
             gridButton.Visibility = Visibility.Visible;
             PrintDialog printDialog = new PrintDialog();
             PageMediaSize pageSize = null;
             if (printDialog.ShowDialog() == true)
             {
-                btnPrint.Visibility = Visibility.Collapsed;
+              
                 gridButton.Visibility = Visibility.Collapsed;
                 pageSize = new PageMediaSize(PageMediaSizeName.ISOA4);
                 printDialog.PrintTicket.PageMediaSize = pageSize;
@@ -78,87 +78,117 @@ namespace CamemisOffLine.Windows
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            barRight.Visibility = Visibility.Collapsed;
+            this.Hide();
+            PrintPopup prints = new PrintPopup();
             if (Properties.Settings.Default.role == "1")
             {
-                titleTeacher.Content = "នាយកសាលា";
+                
+                this.IsEnabled = false;
+                this.Opacity = 0.5;
+
+                prints.ShowDialog();
+
+                this.Opacity = 1;
+                this.IsEnabled = true;
+                titleTeacher.Content = prints.position;
                 titleAdmin.Visibility = Visibility.Collapsed;
                 lblTeacherName.Visibility = Visibility.Collapsed;
             }
-            if (printCheck)
+            else
             {
-                this.Hide();
-                MessageBoxControl message = new MessageBoxControl();
-                message.Owner = this;
-                message.title = "បោះពុម្ភ";
-                message.discription = "តើអ្នកចង់បោះពុម្ភមែនទេ?";
-                message.result = 0;
+                this.IsEnabled = false;
                 this.Opacity = 0.5;
-                message.ShowDialog();
+
+                prints.ShowDialog();
+
                 this.Opacity = 1;
-                if (message.result==1)
+                this.IsEnabled = true;
+                txtPosition.Text = prints.position;
+                titleAdmin.Visibility = Visibility.Visible;
+                lblTeacherName.Visibility = Visibility.Visible;
+            }
+
+            if (prints.isPrint == false)
+                this.Close();
+            else
+            {
+                if (printCheck)
                 {
-                    btnPrint.Visibility = Visibility.Collapsed;
+                    this.Hide();
+                    //MessageBoxControl message = new MessageBoxControl();
+                    //message.Owner = this;
+                    //message.title = Properties.Langs.Lang.print; ;
+                    //message.discription = Properties.Langs.Lang.do_you_want_to_print;
+                    //message.result = 0;
+                    //this.Opacity = 0.5;
+                    //message.ShowDialog();
+                    //this.Opacity = 1;
+                    //if (message.result==1)
+                    //{
+
                     gridButton.Visibility = Visibility.Collapsed;
                     loading.Show();
                     SaveFileInOne(results);
                     loading.Close();
                     printOrNot = '1';
                     this.Close();
+                    //}
+                    //else
+                    //{
+                    //    printOrNot = '2';
+                    //    this.Close();
+                    //}
                 }
                 else
                 {
-                    printOrNot = '2';
-                    this.Close();
-                }
-            }
-            else
-            {
-                if (printAll)
-                {
-                    this.Hide();
-                    System.Windows.Forms.FolderBrowserDialog openFileDlg = new System.Windows.Forms.FolderBrowserDialog();
-                    var resultFile = openFileDlg.ShowDialog();
-                    if (resultFile.ToString() == "OK")
-                    {
-                        btnPrint.Visibility = Visibility.Collapsed;
-                        gridButton.Visibility = Visibility.Collapsed;
-                        pathName = openFileDlg.SelectedPath;
-                        if (saveInOne)
-                        {
-                            this.Hide();
-                            loading.Show();
-                            SaveFileInOne(_class, month, results);
-                            Process.Start(pathName);
-                            loading.Close();
-                        }
-                        else
-                        {
-                            print(results);
-                        }
-                    }
-                }
-                else
-                {
-                    Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
-                    btnPrint.Visibility = Visibility.Collapsed;
-                    gridButton.Visibility = Visibility.Collapsed;
-                    this.Hide();
-                    MessageBoxControl message = new MessageBoxControl();
-                    message.Owner = this;
-                    message.title = "បោះពុម្ភ";
-                    message.discription = "តើអ្នកចង់បោះពុម្ភមែនទេ?";
-                    message.result = 0;
-                    this.Opacity = 0.5;
-                    message.ShowDialog();
-                    if (message.result == 1)
+                    if (printAll)
                     {
                         this.Hide();
-                        saveData(result);
-                        this.Close();
+                        System.Windows.Forms.FolderBrowserDialog openFileDlg = new System.Windows.Forms.FolderBrowserDialog();
+                        var resultFile = openFileDlg.ShowDialog();
+                        if (resultFile.ToString() == "OK")
+                        {
+
+                            gridButton.Visibility = Visibility.Collapsed;
+                            pathName = openFileDlg.SelectedPath;
+                            if (saveInOne)
+                            {
+                                this.Hide();
+                                loading.Show();
+                                SaveFileInOne(_class, month, results);
+                                Process.Start(pathName);
+                                loading.Close();
+                            }
+                            else
+                            {
+                                print(results);
+                            }
+                        }
                     }
                     else
                     {
+                        Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
+
+                        gridButton.Visibility = Visibility.Collapsed;
+                        this.Hide();
+                        //MessageBoxControl message = new MessageBoxControl();
+                        //message.Owner = this;
+                        //message.title = "បោះពុម្ភ";
+                        //message.discription = "តើអ្នកចង់បោះពុម្ភមែនទេ?";
+                        //message.result = 0;
+                        //this.Opacity = 0.5;
+                        //message.ShowDialog();
+                        //if (message.result == 1)
+                        //{
+                        this.Hide();
+                        saveData(result);
                         this.Close();
+                        //}
+                        //else
+                        //{
+                        //    this.Close();
+                        //}
                     }
                 }
             }
@@ -173,12 +203,12 @@ namespace CamemisOffLine.Windows
         //---------------Fuction---------------------------------
         void print(List<StudentMonthlyResult> results = null, string name = "Untitle")
         {
-            btnPrint.Visibility = Visibility.Visible;
+           
             gridButton.Visibility = Visibility.Visible;
             PrintDialog printDialog = new PrintDialog();
             PageMediaSize pageSize = null;
 
-            btnPrint.Visibility = Visibility.Collapsed;
+           
             gridButton.Visibility = Visibility.Collapsed;
             pageSize = new PageMediaSize(PageMediaSizeName.ISOA4);
             printDialog.PrintTicket.PageMediaSize = pageSize;
@@ -438,8 +468,8 @@ namespace CamemisOffLine.Windows
             {
                 MessageBoxControl message = new MessageBoxControl();
                 message.Owner = this;
-                message.title = "បោះពុម្ភ";
-                message.discription = "ការបោះពុម្ភរបស់អ្នកមិនទទូលបានជោគជ័យ";
+                message.title = Properties.Langs.Lang.print;
+                message.discription = Properties.Langs.Lang.Unsuccessful_printing;
                 message.result = 2;
                 this.Opacity = 0.5;
                 message.ShowDialog();
@@ -489,8 +519,8 @@ namespace CamemisOffLine.Windows
             {
                 MessageBoxControl message = new MessageBoxControl();
                 message.Owner = this;
-                message.title = "បោះពុម្ភ";
-                message.discription = "ការបោះពុម្ភរបស់អ្នកមិនទទូលបានជោគជ័យ";
+                message.title = Properties.Langs.Lang.print;
+                message.discription = Properties.Langs.Lang.Unsuccessful_printing;
                 message.result = 2;
                 this.Opacity = 0.5;
                 message.ShowDialog();

@@ -44,50 +44,54 @@ namespace CamemisOffLine.Windows
         bool print = true;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            if(Properties.Settings.Default.role=="1")
+            barRight.Visibility = Visibility.Collapsed;
+            this.Hide();
+            PrintPopup prints = new PrintPopup();
+            if (Properties.Settings.Default.role == "1")
             {
-                titleTeacher.Content = "នាយកសាលា";
+                
+                this.IsEnabled = false;
+                this.Opacity = 0.5;
+
+                prints.ShowDialog();
+
+                this.Opacity = 1;
+                this.IsEnabled = true;
+                titleTeacher.Content = prints.position;
                 titleAdmin.Visibility = Visibility.Collapsed;
                 lblTeacherName.Visibility = Visibility.Collapsed;
+                barCenter.Visibility = prints.CheckCenter;
+                barRight.Visibility = prints.CheckRight;
             }
-            if (print)
+            else
             {
-                Loading loading = new Loading();
-                this.Hide();
-               
-                //--------------Formula-------------------------------------
-                //data = 42
-                //if(data < 10)
-                //firstIndex = 0
-                //endIndex = data.lenth
-                //if(data > 10)
-                //firstIndex = 0
-                //endIndex = 10
-                //for{
-                // print
-                // firstIndex = endIndex
-                // if(data.length - 10 >= 20)
-                //endIndex = firstIndex + 20
-                // else
-                //endIndex = fistIndex + data.length - 10
-                //}
-                // p1 = 15 c1
-                // p2-> = >20 c2
-                //--------------end Formula-------------------------------------
-                MessageBoxControl message = new MessageBoxControl();
-                message.Owner = this;
-                message.title = Properties.Langs.Lang.print;
-                message.discription = Properties.Langs.Lang.do_you_want_to_print;
-                message.result = 0;
+                this.IsEnabled = false;
                 this.Opacity = 0.5;
-                message.ShowDialog();
-                loading.Show();
-                if (message.result==1)
+
+                prints.ShowDialog();
+
+                this.Opacity = 1;
+                this.IsEnabled = true;
+                txtPosition.Text = prints.position;
+                titleAdmin.Visibility = Visibility.Visible;
+                lblTeacherName.Visibility = Visibility.Visible;
+                barCenter.Visibility = prints.CheckCenter;
+                barRight.Visibility = prints.CheckRight;
+            }
+            if (prints.isPrint == false)
+                this.Close();
+            else
+            {
+                if (print)
                 {
-                    //this.Hide();
-                    //var for copy item
+
+
+                    Loading loading = new Loading();
+                    this.Hide();
+
+                    loading.Show();
                     List<StudentMonthlyResult> copyResult = new List<StudentMonthlyResult>();
-                    Document document = new Document(PageSize.A4.Rotate(),-5,-5,5,0);
+                    Document document = new Document(PageSize.A4.Rotate(), -5, -5, 5, 0);
                     PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "allSubjectTemplate" + ".pdf", FileMode.Create));
                     document.Open();
                     GC.Collect();
@@ -172,27 +176,29 @@ namespace CamemisOffLine.Windows
                     loading.Close();
                     this.Close();
                     Process.Start(filePath + "\\" + "allSubjectTemplate" + ".pdf");
+                    //}
+                    //else
+                    //{
+                    //    loading.Close();
+                    //    this.Close();
+                    //}
                 }
                 else
                 {
+                    this.Hide();
+                    Loading loading = new Loading(true);
+                    loading.Show();
+                    Grid.Dispatcher.Invoke(() =>
+                    {
+                        showData(obj);
+                        Grid.UpdateLayout();
+                        ExportDataToExcel();
+                    });
                     loading.Close();
                     this.Close();
                 }
             }
-            else
-            {
-                this.Hide();
-                Loading loading = new Loading(true);
-                loading.Show();
-                Grid.Dispatcher.Invoke(() =>
-                {
-                    showData(obj);
-                    Grid.UpdateLayout();
-                    ExportDataToExcel();
-                });
-                loading.Close();
-                this.Close();
-            }
+            
         }
 
         void PrintList(Document document)

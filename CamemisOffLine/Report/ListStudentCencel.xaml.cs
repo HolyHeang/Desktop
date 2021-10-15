@@ -47,159 +47,185 @@ namespace CamemisOffLine.Report
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Loading load = new Loading();
-            load.Show();
-            try
+            barRight.Visibility = Visibility.Collapsed;
+
+            this.Hide();
+
+            PrintPopup prints = new PrintPopup();
+            this.IsEnabled = false;
+            this.Opacity = 0.5;
+
+            prints.ShowDialog();
+
+            this.Opacity = 1;
+            this.IsEnabled = true;
+            txtPosition.Content = prints.position;
+
+            barCenter.Visibility = prints.CheckCenter;
+            barRight.Visibility = prints.CheckRight;
+
+            if(prints.isPrint==false)
             {
-                TitleSchool.Content = Properties.Settings.Default.schoolName;
-
-                lblMonth.Text = "បញ្ជីរាយនាមសិស្សបោះបង់ការសិក្សា " + titleYear;
-
-
-                this.Hide();
-                var respone = "";
-                if (Teacher.InternetChecker())
+                this.Close();
+            }
+            else
+            {
+                Loading load = new Loading();
+                load.Show();
+                try
                 {
-                    respone = await GetDataAsync(yearId);
-                }
-                else
-                {
-                    respone = File.ReadAllText(filePath + "\\" + "GiveUpStudent" + yearId + ".txt");
-                }
-                var obj = JObject.Parse(respone).ToObject<AllStudentList>().data;
-                
+                    TitleSchool.Content = Properties.Settings.Default.schoolName;
 
-               
+                    lblMonth.Text = "បញ្ជីរាយនាមសិស្សបោះបង់ការសិក្សា " + titleYear;
+
+
+                    this.Hide();
+                    var respone = "";
+                    if (Teacher.InternetChecker())
+                    {
+                        respone = await GetDataAsync(yearId);
+                    }
+                    else
+                    {
+                        respone = File.ReadAllText(filePath + "\\" + "GiveUpStudent" + yearId + ".txt");
+                    }
+                    var obj = JObject.Parse(respone).ToObject<AllStudentList>().data;
+
+
+
                     foreach (var item in obj)
                     {
                         item.number = number.ToString();
                         if (item.gender == "ស្រី")
                             gril++;
-                    number++;
-                }
-                    
-                int startIndex = 0, endIndex = 25;
-                Document document = new Document(PageSize.A4, 0, 0, 0, 0);
-                PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "ResultTemplate" + ".pdf", FileMode.Create));
-                document.Open();
-                GC.Collect();
-
-                List<StuedntofTheYear> copyResult = new List<StuedntofTheYear>();
-                if (obj.Count <= 25)
-                {
-                    if (obj.Count <= 18)
-                    {
-                        Grid.Dispatcher.Invoke(() =>
-                        {
-                            showData(obj);
-                            Grid.UpdateLayout();
-                        });
-                        PrintList(document);
+                        number++;
                     }
-                    else
+
+                    int startIndex = 0, endIndex = 25;
+                    Document document = new Document(PageSize.A4, 0, 0, 0, 0);
+                    PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "ResultTemplate" + ".pdf", FileMode.Create));
+                    document.Open();
+                    GC.Collect();
+
+                    List<StuedntofTheYear> copyResult = new List<StuedntofTheYear>();
+                    if (obj.Count <= 25)
                     {
-                        for (int i = 0; i < 2; i++)
+                        if (obj.Count <= 18)
                         {
-                            if (i == 0)
+                            Grid.Dispatcher.Invoke(() =>
                             {
-                                Footer.Visibility = Visibility.Collapsed;
-                                Grid.Dispatcher.Invoke(() =>
-                                {
-                                    showData(obj);
-                                    Grid.UpdateLayout();
-                                });
-                                PrintList(document);
-                            }
-                            else if (i == 1)
-                            {
-                                Footer.Visibility = Visibility.Visible;
-                                Header.Visibility = Visibility.Collapsed;
-
-                                Grid.Dispatcher.Invoke(() =>
-                                {
-                                    showData(obj);
-                                    Grid.UpdateLayout();
-                                });
-                                PrintList(document);
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    bool footerAvaliable = false;
-                    while (true)
-                    {
-                        copyResult.Clear();
-                        for (int i = startIndex; i < endIndex; i++)
-                        {
-                            if (obj[i] != null)
-                            {
-                                copyResult.Add(obj[i]);
-                            }
-                        }
-                        if (!footerAvaliable)
-                            Footer.Visibility = Visibility.Collapsed;
-
-                        Grid.Dispatcher.Invoke(() =>
-                        {
-                            showData(copyResult);
-                            Grid.UpdateLayout();
-                        });
-                        PrintList(document);
-                        if (endIndex == obj.Count())
-                        {
-                            if (!footerAvaliable)
-                            {
-                                Header.Visibility = Visibility.Collapsed;
-                                title.Visibility = Visibility.Collapsed;
-                                Body.Visibility = Visibility.Collapsed;
-                                Footer.Visibility = Visibility.Visible;
-                                PrintList(document);
-                            }
-
-                            break;
-                        }
-
-                        startIndex = endIndex;
-
-                        if (obj.Count() - endIndex > 30)
-                        {
-                            endIndex = startIndex + 32;
-                            if (endIndex > obj.Count)
-                                endIndex = obj.Count();
-                            Header.Visibility = Visibility.Collapsed;
-                            title.Visibility = Visibility.Collapsed;
-                            Footer.Visibility = Visibility.Collapsed;
+                                showData(obj);
+                                Grid.UpdateLayout();
+                            });
+                            PrintList(document);
                         }
                         else
                         {
-                            endIndex = obj.ToList().Count();
-                            Header.Visibility = Visibility.Collapsed;
-                            title.Visibility = Visibility.Collapsed;
-                            if (obj.ToList().Count() - startIndex <= 25)
+                            for (int i = 0; i < 2; i++)
                             {
-                                Footer.Visibility = Visibility.Visible;
-                                footerAvaliable = true;
+                                if (i == 0)
+                                {
+                                    Footer.Visibility = Visibility.Collapsed;
+                                    Grid.Dispatcher.Invoke(() =>
+                                    {
+                                        showData(obj);
+                                        Grid.UpdateLayout();
+                                    });
+                                    PrintList(document);
+                                }
+                                else if (i == 1)
+                                {
+                                    Footer.Visibility = Visibility.Visible;
+                                    Header.Visibility = Visibility.Collapsed;
+
+                                    Grid.Dispatcher.Invoke(() =>
+                                    {
+                                        showData(obj);
+                                        Grid.UpdateLayout();
+                                    });
+                                    PrintList(document);
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        bool footerAvaliable = false;
+                        while (true)
+                        {
+                            copyResult.Clear();
+                            for (int i = startIndex; i < endIndex; i++)
+                            {
+                                if (obj[i] != null)
+                                {
+                                    copyResult.Add(obj[i]);
+                                }
+                            }
+                            if (!footerAvaliable)
+                                Footer.Visibility = Visibility.Collapsed;
+
+                            Grid.Dispatcher.Invoke(() =>
+                            {
+                                showData(copyResult);
+                                Grid.UpdateLayout();
+                            });
+                            PrintList(document);
+                            if (endIndex == obj.Count())
+                            {
+                                if (!footerAvaliable)
+                                {
+                                    Header.Visibility = Visibility.Collapsed;
+                                    title.Visibility = Visibility.Collapsed;
+                                    Body.Visibility = Visibility.Collapsed;
+                                    Footer.Visibility = Visibility.Visible;
+                                    PrintList(document);
+                                }
+
+                                break;
+                            }
+
+                            startIndex = endIndex;
+
+                            if (obj.Count() - endIndex > 30)
+                            {
+                                endIndex = startIndex + 32;
+                                if (endIndex > obj.Count)
+                                    endIndex = obj.Count();
+                                Header.Visibility = Visibility.Collapsed;
+                                title.Visibility = Visibility.Collapsed;
+                                Footer.Visibility = Visibility.Collapsed;
+                            }
+                            else
+                            {
+                                endIndex = obj.ToList().Count();
+                                Header.Visibility = Visibility.Collapsed;
+                                title.Visibility = Visibility.Collapsed;
+                                if (obj.ToList().Count() - startIndex <= 25)
+                                {
+                                    Footer.Visibility = Visibility.Visible;
+                                    footerAvaliable = true;
+                                }
+
                             }
 
                         }
-
                     }
+                    document.Close();
+                    Process.Start(filePath + "\\" + "ResultTemplate" + ".pdf");
+                    this.Close();
                 }
-                document.Close();
-                Process.Start(filePath + "\\" + "ResultTemplate" + ".pdf");
-                this.Close();
+                catch
+                {
+                    MessageBoxControl message = new MessageBoxControl();
+                    message.buttonType = 1;
+                    message.title = Properties.Langs.Lang.print;
+                    message.discription = Properties.Langs.Lang.Unsuccessful_printing;
+                    message.ShowDialog();
+                }
+                load.Close();
             }
-            catch
-            {
-                MessageBoxControl message = new MessageBoxControl();
-                message.buttonType = 1;
-                message.title = Properties.Langs.Lang.print;
-                message.discription = Properties.Langs.Lang.Unsuccessful_printing;
-                message.ShowDialog();
-            }
-            load.Close();
+
+           
         }
         private async Task<string> GetDataAsync(string yearId)
         {

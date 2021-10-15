@@ -1,4 +1,5 @@
-﻿using iTextSharp.text;
+﻿using CamemisOffLine.Component;
+using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
@@ -81,6 +82,22 @@ namespace CamemisOffLine.Report
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            barRight.Visibility = Visibility.Collapsed;
+
+            this.Hide();
+
+            PrintPopup prints = new PrintPopup();
+            this.IsEnabled = false;
+            this.Opacity = 0.5;
+
+            prints.ShowDialog();
+
+            this.Opacity = 1;
+            this.IsEnabled = true;
+            txtPosition.Text = prints.position;
+            barCenter.Visibility = prints.CheckCenter;
+            barRight.Visibility = prints.CheckRight;
+
             print();
         }
     }

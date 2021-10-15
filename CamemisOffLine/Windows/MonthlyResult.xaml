@@ -27,21 +27,42 @@
                 </Grid>
                 <Grid Grid.Column="1">
                     <Grid>
-                        <StackPanel Orientation="Vertical" Grid.Column="1">
+                        <Grid Grid.Column="1">
+                            <Grid Name="barCenter" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <StackPanel>
+                                <Grid Margin="0 -5 0 0">
+                                    <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Margin="0 -0 0 0"></Label>
+                                </Grid>
+                                <Grid Margin="0 -8 0 0">
+                                    <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Margin="0 -5 0 0"></Label>
+                                </Grid>
+                            </StackPanel>
+                            </Grid>
+                            <Grid HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                                <StackPanel>
+                                <TextBlock Name="lblMonth" Text="លទ្ធផលប្រចាំ ខែ--" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="14" Foreground="Blue" Margin="0 0 0 0" TextDecorations="Underline"></TextBlock>
+                                <TextBlock Name="lblclass" Text="ថ្នាក់ទី ១១ខ (២០១៩-២០២០)" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="14" Foreground="Blue" Margin="0 0 0 0" TextDecorations="Underline"></TextBlock>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Column="2">
+                    <Grid Name="barRight" HorizontalAlignment="Center" VerticalAlignment="Top">
+                        <StackPanel>
                             <Grid Margin="0 -5 0 0">
                                 <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Margin="0 -0 0 0"></Label>
                             </Grid>
                             <Grid Margin="0 -8 0 0">
                                 <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Margin="0 -5 0 0"></Label>
                             </Grid>
-                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0 50 0 0">
-                                <TextBlock Name="lblMonth" Text="លទ្ធផលប្រចាំ ខែ--" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="14" Foreground="Blue" Margin="0 0 0 0" TextDecorations="Underline"></TextBlock>
-                                <TextBlock Name="lblclass" Text="ថ្នាក់ទី ១១ខ (២០១៩-២០២០)" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="14" Foreground="Blue" Margin="0 0 0 0" TextDecorations="Underline"></TextBlock>
-                            </StackPanel>
                         </StackPanel>
                     </Grid>
                 </Grid>
             </Grid>
+            
+            
             <Grid Name="Body" HorizontalAlignment="Center" MinWidth="27.5cm" Margin="0 20 0 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
@@ -49,7 +70,7 @@
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
                     <Grid>
-                        <DataGrid Margin="5 0 0 0" AutoGenerateColumns="False" Name="DatagridResult" BorderThickness="1 1 1 0" Background="White" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="26cm" CanUserAddRows="False">
+                        <DataGrid Margin="5 0 0 0" HorizontalScrollBarVisibility="Hidden" AutoGenerateColumns="False" Name="DatagridResult" BorderThickness="1 1 1 0" Background="White" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="26cm" CanUserAddRows="False">
                             <DataGrid.Resources>
                                 <Style TargetType="DataGrid">
                                     <Setter Property="Background" Value="Transparent"/>
@@ -199,18 +220,18 @@
                         <Label HorizontalAlignment="Center" VerticalAlignment="Center">
                             <StackPanel Orientation="Vertical">
                                 <TextBlock Text="បានឃើញ និងឯកភាព" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                                <TextBlock Text="នាយកសាលា" FontSize="16" Style="{DynamicResource Muol}" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
+                                <TextBlock x:Name="txtPosition" Text="នាយកសាលា" FontSize="16" Style="{DynamicResource Muol}" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
                             </StackPanel>
                         </Label>
                     </Grid>
-                    <Grid Grid.Column="1">
+                    <Grid Grid.Column="1" Margin="0 0 30 0">
                         <StackPanel Orientation="Vertical">
                             <Label HorizontalAlignment="Center">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="ថ្ងៃ" FontSize="14"  Style="{DynamicResource Siemreap}"></TextBlock>
-                                    <TextBlock Name="lblDay"  Text="..................." FontSize="14"  Style="{DynamicResource Siemreap}"></TextBlock>
+                                    <TextBlock Name="lblDay"  Text="..............................." FontSize="14"  Style="{DynamicResource Siemreap}"></TextBlock>
                                     <TextBlock Text="ខែ" FontSize="14" Style="{DynamicResource Siemreap}"></TextBlock>
-                                    <TextBlock Name="lblMonths" Text="..................." FontSize="14"  Style="{DynamicResource Siemreap}"></TextBlock>
+                                    <TextBlock Name="lblMonths" Text="..........................." FontSize="14"  Style="{DynamicResource Siemreap}"></TextBlock>
                                     <TextBlock Text="ឆ្នាំ" FontSize="14" Style="{DynamicResource Siemreap}"></TextBlock>
                                     <TextBlock Name="lblYear" Text="..................." FontSize="14"  Style="{DynamicResource Siemreap}"></TextBlock>
                                     <TextBlock Text="ព.ស" FontSize="14"  FontFamily="Khmer OS Siemreap"></TextBlock>
@@ -219,7 +240,7 @@
                             </Label>
                             <Label HorizontalAlignment="Center" Margin="0 10 0 0" FontSize="10">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="ធ្វើនៅ..............." FontSize="14"  Style="{DynamicResource Siemreap}"></TextBlock>
+                                    <TextBlock Text="ធ្វើនៅ........................" FontSize="14"  Style="{DynamicResource Siemreap}"></TextBlock>
                                     <TextBlock Text="ថ្ងៃទី" FontSize="14"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                     <TextBlock Text="{Binding Text,ElementName=lblDay}" FontSize="14" Style="{DynamicResource Siemreap}"></TextBlock>
                                     <TextBlock Text="ខែ" FontSize="14"  FontFamily="Khmer OS Siemreap"></TextBlock>

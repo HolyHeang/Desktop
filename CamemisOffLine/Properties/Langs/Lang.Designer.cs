@@ -1060,7 +1060,7 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please select a class and year/semester/month.
+        ///   Looks up a localized string similar to Please select a  year/grade/class and semester/month!.
         /// </summary>
         public static string Please_select_a_class_and_result_type {
             get {
@@ -1069,7 +1069,7 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please select a school year and class!.
+        ///   Looks up a localized string similar to Please select a school year/grade and class!.
         /// </summary>
         public static string Please_select_a_school_year_and_class {
             get {
@@ -1078,7 +1078,7 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please select a school year and grade!.
+        ///   Looks up a localized string similar to Please select a school year and grade all!.
         /// </summary>
         public static string Please_select_a_school_year_and_grade {
             get {
@@ -1087,7 +1087,7 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please select a school year and group!.
+        ///   Looks up a localized string similar to Please select a school year and grade!.
         /// </summary>
         public static string Please_select_a_school_year_and_group {
             get {
@@ -1128,6 +1128,24 @@ namespace CamemisOffLine.Properties.Langs {
         public static string print_all_sub {
             get {
                 return ResourceManager.GetString("print all sub", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Print attendance report.
+        /// </summary>
+        public static string print_attendance_report {
+            get {
+                return ResourceManager.GetString("print attendance report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Print attendance tamplate.
+        /// </summary>
+        public static string Print_attendance_tamplate {
+            get {
+                return ResourceManager.GetString("Print attendance tamplate", resourceCulture);
             }
         }
         
@@ -1717,7 +1735,7 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Summary table of student transcripts by core subject.
+        ///   Looks up a localized string similar to Summary table of student transcripts.
         /// </summary>
         public static string Summary_table_of_student_transcripts_by_core_subject {
             get {

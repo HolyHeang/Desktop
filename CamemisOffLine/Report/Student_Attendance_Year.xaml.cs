@@ -47,250 +47,275 @@ namespace CamemisOffLine.Report
         string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Loading load = new Loading();
-            load.Show();
-            try
+            barRight.Visibility = Visibility.Collapsed;
+
+            this.Hide();
+
+            PrintPopup prints = new PrintPopup();
+            this.IsEnabled = false;
+            this.Opacity = 0.5;
+
+            prints.ShowDialog();
+
+            this.Opacity = 1;
+            this.IsEnabled = true;
+            txtPosition.Text = prints.position;
+            txtPosition1.Text = prints.position;
+
+            barCenter.Visibility = prints.CheckCenter;
+            barRight.Visibility = prints.CheckRight;
+
+            if (prints.isPrint == false)
+                this.Close();
+            else
             {
-                TitleSchool.Content = Properties.Settings.Default.schoolName;
-                txtClass.Content = "ថ្នាក់​ :" + className;
-                lblMonth.Text = "ចំនួនអត្តមានសិស្សក្នុង ឆ្នាំសិក្សា " + titleYear;
+                Loading load = new Loading();
+                load.Show();
+                try
+                {
+                    TitleSchool.Content = Properties.Settings.Default.schoolName;
+                    txtClass.Content = "ថ្នាក់​ :" + className;
+                    lblMonth.Text = "ចំនួនអត្តមានសិស្សក្នុង ឆ្នាំសិក្សា " + titleYear;
 
 
-                this.Hide();
-                var respone = "";
-                if (Teacher.InternetChecker())
-                {
-                    respone = await GetDataAsync(classId);
-                }
-                else
-                {
-                    respone = File.ReadAllText(filePath + "\\" + "YearAttendance" + classId + ".txt");
-                }
-                int numb = 1;
-                var obj = JObject.Parse(respone).ToObject<ListStudentYearlyAtt>().data;
-                var ab = new List<SubListStudentAtt>();
-                foreach (var item in obj)
-                {
-                    var a = new SubListStudentAtt();
-                    int k = 1;
-                    foreach(var i in item.all_attendance)
+                    this.Hide();
+                    var respone = "";
+                    if (Teacher.InternetChecker())
                     {
-                        a.name = item.name;
-                        a.number = numb.ToString();
-                        a.student_school_id = item.student_school_id;
-                        if(k==1)
-                        {
-                            txtMonth1.Content = i.name;
-                            a.absent1 = i.total_absent;
-                            a.per1 = i.total_permission;
-                        }
-                        else if(k==2)
-                        {
-                            txtMonth2.Content = i.name;
-                            a.absent2 = i.total_absent;
-                            a.per2 = i.total_permission;
-                        }
-                        else if (k==3)
-                        {
-                            txtMonth3.Content = i.name;
-                            a.absent3 = i.total_absent;
-                            a.per3 = i.total_permission;
-                        }
-                        else if (k==4)
-                        {
-                            txtMonth4.Content = i.name;
-                            a.absent4 = i.total_absent;
-                            a.per4 = i.total_permission;
-                        }
-                        else if (k==5)
-                        {
-                            txtMonth5.Content = i.name;
-                            a.absent5 = i.total_absent;
-                            a.per5 = i.total_permission;
-                        }
-                        else if (k==6)
-                        {
-                            txtMonth6.Content = i.name;
-                            a.semersterAtt1 = i.total_absent;
-                            a.semesterPer1 = i.total_permission;
-                        }
-                        else if (k==7)
-                        {
-                            txtMonth6.Content = i.name;
-                            a.absent6 = i.total_absent;
-                            a.per6 = i.total_permission;
-                           
-                        }
-                        else if (k==8)
-                        {
-                            txtMonth7.Content = i.name;
-                            a.absent7 = i.total_absent;
-                            a.per7 = i.total_permission;
-                           
-                        }
-                        else if (k==9)
-                        {
-                            txtMonth8.Content = i.name;
-                            a.absent8 = i.total_absent;
-                            a.per8 = i.total_permission;
-                           
-                        }
-                        else if (k==10)
-                        {
-                            txtMonth9.Content = i.name;
-                            a.absent9 = i.total_absent;
-                            a.per9 = i.total_permission;
-                            
-                        }
-                        else if(k==11)
-                        {
-                            txtMonth10.Content = i.name;
-                            a.absent10 = i.total_absent;
-                            a.per10 = i.total_permission;
-                        }
-                        else if(k==12)
-                        {
-                            a.semester2 = i.name;
-                            a.semersterAtt2 = i.total_absent;
-                            a.semesterPer2 = i.total_permission;
-                        }
-                        else if(k==13)
-                        {
-                            a.yearly = i.name;
-                            a.yearlyAtt = i.total_absent;
-                            a.yearlyPer = i.total_permission;
-                            a.yearlyTotal = i.total;
-                        }
-                        k++;
-                    }
-                    ab.Add(a);
-                    numb++;
-                }
-
-                
-                int startIndex = 0, endIndex = 18;
-                Document document = new Document(PageSize.A4.Rotate(), -15, 0, 5, 0);
-                PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "ResultTemplate" + ".pdf", FileMode.Create));
-                document.Open();
-                GC.Collect();
-
-                List<SubListStudentAtt> copyResult = new List<SubListStudentAtt>();
-                if (ab.Count <= 18)
-                {
-                    if (ab.Count <= 15)
-                    {
-                        Grid.Dispatcher.Invoke(() =>
-                        {
-                            showData(ab);
-                            Grid.UpdateLayout();
-                        });
-                        PrintList(document);
+                        respone = await GetDataAsync(classId);
                     }
                     else
                     {
-                        for (int i = 0; i < 2; i++)
-                        {
-                            if (i == 0)
-                            {
-                                Footer.Visibility = Visibility.Collapsed;
-                                Grid.Dispatcher.Invoke(() =>
-                                {
-                                    showData(ab);
-                                    Grid.UpdateLayout();
-                                });
-                                PrintList(document);
-                            }
-                            else if (i == 1)
-                            {
-                                Footer.Visibility = Visibility.Visible;
-                                Header.Visibility = Visibility.Collapsed;
-
-                                Grid.Dispatcher.Invoke(() =>
-                                {
-                                    showData(ab);
-                                    Grid.UpdateLayout();
-                                });
-                                PrintList(document);
-                            }
-                        }
+                        respone = File.ReadAllText(filePath + "\\" + "YearAttendance" + classId + ".txt");
                     }
-                }
-                else
-                {
-                    bool footerAvaliable = false;
-                    while (true)
+                    int numb = 1;
+                    var obj = JObject.Parse(respone).ToObject<ListStudentYearlyAtt>().data;
+                    var ab = new List<SubListStudentAtt>();
+                    foreach (var item in obj)
                     {
-                        copyResult.Clear();
-                        for (int i = startIndex; i < endIndex; i++)
+                        var a = new SubListStudentAtt();
+                        int k = 1;
+                        foreach (var i in item.all_attendance)
                         {
-                            if (ab[i] != null)
+                            a.name = item.name;
+                            a.number = numb.ToString();
+                            a.student_school_id = item.student_school_id;
+                            if (k == 1)
                             {
-                                copyResult.Add(ab[i]);
+                                txtMonth1.Content = i.name;
+                                a.absent1 = i.total_absent;
+                                a.per1 = i.total_permission;
                             }
-                        }
-                        if (!footerAvaliable)
-                            Footer.Visibility = Visibility.Collapsed;
-
-                        Grid.Dispatcher.Invoke(() =>
-                        {
-                            showData(copyResult);
-                            Grid.UpdateLayout();
-                        });
-                        PrintList(document);
-                        if (endIndex == ab.Count())
-                        {
-                            if (!footerAvaliable)
+                            else if (k == 2)
                             {
-                                Header.Visibility = Visibility.Collapsed;
-                                title.Visibility = Visibility.Collapsed;
-                                Body.Visibility = Visibility.Collapsed;
-                                Footer.Visibility = Visibility.Visible;
-                                PrintList(document);
+                                txtMonth2.Content = i.name;
+                                a.absent2 = i.total_absent;
+                                a.per2 = i.total_permission;
                             }
+                            else if (k == 3)
+                            {
+                                txtMonth3.Content = i.name;
+                                a.absent3 = i.total_absent;
+                                a.per3 = i.total_permission;
+                            }
+                            else if (k == 4)
+                            {
+                                txtMonth4.Content = i.name;
+                                a.absent4 = i.total_absent;
+                                a.per4 = i.total_permission;
+                            }
+                            else if (k == 5)
+                            {
+                                txtMonth5.Content = i.name;
+                                a.absent5 = i.total_absent;
+                                a.per5 = i.total_permission;
+                            }
+                            else if (k == 6)
+                            {
+                                txtMonth6.Content = i.name;
+                                a.semersterAtt1 = i.total_absent;
+                                a.semesterPer1 = i.total_permission;
+                            }
+                            else if (k == 7)
+                            {
+                                txtMonth6.Content = i.name;
+                                a.absent6 = i.total_absent;
+                                a.per6 = i.total_permission;
 
-                            break;
+                            }
+                            else if (k == 8)
+                            {
+                                txtMonth7.Content = i.name;
+                                a.absent7 = i.total_absent;
+                                a.per7 = i.total_permission;
+
+                            }
+                            else if (k == 9)
+                            {
+                                txtMonth8.Content = i.name;
+                                a.absent8 = i.total_absent;
+                                a.per8 = i.total_permission;
+
+                            }
+                            else if (k == 10)
+                            {
+                                txtMonth9.Content = i.name;
+                                a.absent9 = i.total_absent;
+                                a.per9 = i.total_permission;
+
+                            }
+                            else if (k == 11)
+                            {
+                                txtMonth10.Content = i.name;
+                                a.absent10 = i.total_absent;
+                                a.per10 = i.total_permission;
+                            }
+                            else if (k == 12)
+                            {
+                                a.semester2 = i.name;
+                                a.semersterAtt2 = i.total_absent;
+                                a.semesterPer2 = i.total_permission;
+                            }
+                            else if (k == 13)
+                            {
+                                a.yearly = i.name;
+                                a.yearlyAtt = i.total_absent;
+                                a.yearlyPer = i.total_permission;
+                                a.yearlyTotal = i.total;
+                            }
+                            k++;
                         }
+                        ab.Add(a);
+                        numb++;
+                    }
 
-                        startIndex = endIndex;
 
-                        if (ab.Count() - endIndex > 22)
+                    int startIndex = 0, endIndex = 18;
+                    Document document = new Document(PageSize.A4.Rotate(), -15, 0, 5, 0);
+                    PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "ResultTemplate" + ".pdf", FileMode.Create));
+                    document.Open();
+                    GC.Collect();
+
+                    List<SubListStudentAtt> copyResult = new List<SubListStudentAtt>();
+                    if (ab.Count <= 18)
+                    {
+                        if (ab.Count <= 15)
                         {
-                            endIndex = startIndex + 25;
-                            if (endIndex > ab.Count)
-                                endIndex = ab.Count();
-                            Header.Visibility = Visibility.Collapsed;
-                            title.Visibility = Visibility.Collapsed;
-                            Footer.Visibility = Visibility.Collapsed;
+                            Grid.Dispatcher.Invoke(() =>
+                            {
+                                showData(ab);
+                                Grid.UpdateLayout();
+                            });
+                            PrintList(document);
                         }
                         else
                         {
-                            endIndex = ab.ToList().Count();
-                            Header.Visibility = Visibility.Collapsed;
-                            if (ab.ToList().Count() - startIndex <= 25)
+                            for (int i = 0; i < 2; i++)
                             {
+                                if (i == 0)
+                                {
+                                    Footer.Visibility = Visibility.Collapsed;
+                                    Grid.Dispatcher.Invoke(() =>
+                                    {
+                                        showData(ab);
+                                        Grid.UpdateLayout();
+                                    });
+                                    PrintList(document);
+                                }
+                                else if (i == 1)
+                                {
+                                    Footer.Visibility = Visibility.Visible;
+                                    Header.Visibility = Visibility.Collapsed;
+
+                                    Grid.Dispatcher.Invoke(() =>
+                                    {
+                                        showData(ab);
+                                        Grid.UpdateLayout();
+                                    });
+                                    PrintList(document);
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        bool footerAvaliable = false;
+                        while (true)
+                        {
+                            copyResult.Clear();
+                            for (int i = startIndex; i < endIndex; i++)
+                            {
+                                if (ab[i] != null)
+                                {
+                                    copyResult.Add(ab[i]);
+                                }
+                            }
+                            if (!footerAvaliable)
+                                Footer.Visibility = Visibility.Collapsed;
+
+                            Grid.Dispatcher.Invoke(() =>
+                            {
+                                showData(copyResult);
+                                Grid.UpdateLayout();
+                            });
+                            PrintList(document);
+                            if (endIndex == ab.Count())
+                            {
+                                if (!footerAvaliable)
+                                {
+                                    Header.Visibility = Visibility.Collapsed;
+                                    title.Visibility = Visibility.Collapsed;
+                                    Body.Visibility = Visibility.Collapsed;
+                                    Footer.Visibility = Visibility.Visible;
+                                    PrintList(document);
+                                }
+
+                                break;
+                            }
+
+                            startIndex = endIndex;
+
+                            if (ab.Count() - endIndex > 22)
+                            {
+                                endIndex = startIndex + 25;
+                                if (endIndex > ab.Count)
+                                    endIndex = ab.Count();
                                 Header.Visibility = Visibility.Collapsed;
                                 title.Visibility = Visibility.Collapsed;
-                                Footer.Visibility = Visibility.Visible;
-                                footerAvaliable = true;
+                                Footer.Visibility = Visibility.Collapsed;
+                            }
+                            else
+                            {
+                                endIndex = ab.ToList().Count();
+                                Header.Visibility = Visibility.Collapsed;
+                                if (ab.ToList().Count() - startIndex <= 25)
+                                {
+                                    Header.Visibility = Visibility.Collapsed;
+                                    title.Visibility = Visibility.Collapsed;
+                                    Footer.Visibility = Visibility.Visible;
+                                    footerAvaliable = true;
+                                }
+
                             }
 
                         }
-
                     }
+                    document.Close();
+                    Process.Start(filePath + "\\" + "ResultTemplate" + ".pdf");
+                    this.Close();
                 }
-                document.Close();
-                Process.Start(filePath + "\\" + "ResultTemplate" + ".pdf");
-                this.Close();
+                catch
+                {
+                    MessageBoxControl message = new MessageBoxControl();
+                    message.buttonType = 1;
+                    message.title = Properties.Langs.Lang.print;
+                    message.discription = Properties.Langs.Lang.Unsuccessful_printing;
+                    message.ShowDialog();
+                }
+                load.Close(); 
             }
-            catch
-            {
-                MessageBoxControl message = new MessageBoxControl();
-                message.buttonType = 1;
-                message.title = Properties.Langs.Lang.print;
-                message.discription = Properties.Langs.Lang.Unsuccessful_printing;
-                message.ShowDialog();
-            }
-            load.Close();
+
+           
         }
 
         private void Data_SelectionChanged(object sender, SelectionChangedEventArgs e)

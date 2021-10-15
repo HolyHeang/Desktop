@@ -276,7 +276,8 @@ namespace CamemisOffLine.Windows
             btnLearningResult.Background = Brushes.White;  
             btnInputScore.Background = (Brush)bc.ConvertFrom("#66D3D3D3");
             tabcontrolResulandInput.SelectedIndex = 1;
-            btnPrint.Visibility = Visibility.Collapsed;
+            TranscripPrint.Visibility = Visibility.Collapsed;
+            btnCalculate.Visibility = Visibility.Collapsed;
         }
 
         private void btnInputScore_Click(object sender, RoutedEventArgs e)
@@ -399,12 +400,12 @@ namespace CamemisOffLine.Windows
                 MateriaLangUp.Visibility = Visibility.Collapsed;
 
                 //..........btn Color............
-                btnColor.Visibility = Visibility.Visible;
+                btnColor.Visibility = Visibility.Collapsed;
                 MateriaColorDrop.Visibility = Visibility.Visible;
                 MateriaColorUp.Visibility = Visibility.Collapsed;
 
                 //...........btn..................
-                btnAbout.Visibility = Visibility.Visible;
+                btnAbout.Visibility = Visibility.Collapsed;
             }
             else
             {
@@ -2375,6 +2376,16 @@ namespace CamemisOffLine.Windows
             var bc = new BrushConverter();
             try
             {
+                if (checkRole)
+                {
+                    TranscripPrint.Visibility = Visibility.Collapsed;
+                    btnCalculate.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    TranscripPrint.Visibility = Visibility.Visible;
+                    btnCalculate.Visibility = Visibility.Visible;
+                }
                 var item = sender as ComboBox;
                 var selection = (KeyValuePair<string, string>)item.SelectedItem;
                 label = selection.Key;
@@ -2695,6 +2706,7 @@ namespace CamemisOffLine.Windows
             }
         }
         int time = 1;
+        bool checkRole = false;
         private async void cbSelectClass_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
@@ -2706,7 +2718,11 @@ namespace CamemisOffLine.Windows
                 cbSelectSubject.SelectedIndex = -1;
                 cbSelectMonth.Text = Properties.Langs.Lang.Select_Month___Semester___Year;
                 cbSelectMonth.SelectedIndex = -1;
+                cbSelectResultMonth.SelectedIndex = -1;
                 cbSelectMonth.Visibility = Visibility.Collapsed;
+                btnCalculate.Visibility = Visibility.Collapsed;
+                TranscripPrint.Visibility = Visibility.Collapsed;
+                btnApproved.Visibility = Visibility.Collapsed;
                 DGMonthlyResult.ItemsSource = null;
                 DGSemesterClass.ItemsSource = null;
                 DGSemesterExam.ItemsSource = null;
@@ -2764,6 +2780,10 @@ namespace CamemisOffLine.Windows
                     cbSelectSubject.ItemsSource = obj.data;
                     cbSelectSubject.DisplayMemberPath = "name";
                     cbSelectSubject.SelectedValuePath = "id";
+
+                    if (obj.data.Count <= 2)
+                        checkRole = true;
+
                     //Task<string> task = GetMonthlyResultFormApiAsync();
                     SaveLocalSubject(JsonConvert.SerializeObject(obj), selection.Value);
                     SaveAcademyMonth(JsonConvert.SerializeObject(obj1),schoolYearId);
@@ -2880,6 +2900,7 @@ namespace CamemisOffLine.Windows
             try
             {
                 var item = sender as ComboBox;
+                
                 string id="";
                 var selection = (KeyValuePair<string, string>)item.SelectedItem;
                 monthName = selection.Key;
@@ -3176,6 +3197,18 @@ namespace CamemisOffLine.Windows
                 }
             }
             catch { }
+            if (checkRole)
+            {
+                TranscripPrint.Visibility = Visibility.Collapsed;
+                btnCalculate.Visibility = Visibility.Collapsed;
+                btnApproved.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                TranscripPrint.Visibility = Visibility.Visible;
+                btnCalculate.Visibility = Visibility.Visible;
+                btnApproved.Visibility = Visibility.Visible;
+            }
         }
 
         public void SaveImage(string filename, ImageFormat format, string imageUrl)

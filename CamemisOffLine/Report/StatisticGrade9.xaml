@@ -6,20 +6,21 @@
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:CamemisOffLine.Report"
         mc:Ignorable="d"
-        Title="StatisticGrade9" Height="30cm" Width="21cm" WindowState="Normal" WindowStyle="None" Loaded="Window_Loaded" ResizeMode="NoResize" MaxWidth="30cm" WindowStartupLocation="Manual">
-    <ScrollViewer VerticalScrollBarVisibility="Hidden">
+        Title="StatisticGrade9" Height="18cm" Width="21cm" WindowStyle="None" Loaded="Window_Loaded" AllowsTransparency="True" ResizeMode="NoResize" MaxWidth="30cm" WindowStartupLocation="CenterScreen">
+    <Grid>
         <Grid HorizontalAlignment="Center">
+           
             <StackPanel Orientation="Vertical" Name="Grid" HorizontalAlignment="Center">
                 <Grid Name="Header" Margin="0 0 0 0" MouseDown="Header_MouseDown">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1.5*"></ColumnDefinition>
-                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
-                        <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
                         <Grid Margin="15,0,0,0">
-                            <StackPanel Orientation="Vertical" Margin="0,5,0,0">
-                                <Grid Name="gridPrint" Height="40" Margin="0 0 0 0">
+                            <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                                <Grid Name="gridPrint" Height="40" Margin="0 0 0 40">
 
                                     <Button Name="btnPrint" BorderThickness="0 0 0 0" BorderBrush="LightGray" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10 0 0 0" Height="35" Cursor="Hand" Width="82" Style="{DynamicResource Siemreap}" Click="btnPrint_Click">
                                         <Grid Height="35" Width="auto">
@@ -39,21 +40,33 @@
                                         </Grid>
                                     </Button>
                                 </Grid>
-                                <Image Source="/CamemisOffLine;component/Image/MoEYS.png" Height="100" VerticalAlignment="Top" HorizontalAlignment="Center"></Image>
+                                <StackPanel>
+                                    <Image Source="/CamemisOffLine;component/Image/MoEYS.png" Height="100" VerticalAlignment="Top" HorizontalAlignment="Center"></Image>
 
-                                <Label Name="lbllogoLeft" Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" Style="{DynamicResource Muol}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 15 0 0"></Label>
-                                <Grid Margin="0,0,0,0">
-                                    <Label Name="TitleSchool" Style="{DynamicResource Siemreap}" Content="វិទ្យាល័យ ហ៊ុនសែនបូរី១០០ខ្នង" FontSize="15" Foreground="Black" HorizontalAlignment="Center" Margin="0 0 0 0" VerticalAlignment="Center"></Label>
-                                </Grid>
-                                <Grid Margin="0,-12,0,0"/>
+                                    <Label Name="lbllogoLeft" Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" Style="{DynamicResource Muol}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 5 0 0"></Label>
+                                    <Grid Margin="0,0,0,0">
+                                        <Label Name="TitleSchool" Style="{DynamicResource Siemreap}" Content="វិទ្យាល័យ ហ៊ុនសែនបូរី១០០ខ្នង" FontSize="15" Foreground="Black" HorizontalAlignment="Center" Margin="0 0 0 0" VerticalAlignment="Center"></Label>
+                                    </Grid>
+                                    <Grid Margin="0,-12,0,0"/>
+                                </StackPanel>
+                               
                             </StackPanel>
                         </Grid>
                     </Grid>
                     <Grid Grid.Column="1">
-
+                        <Grid VerticalAlignment="Top" Margin="0 40 0 0" Name="barCenter">
+                            <StackPanel>
+                                <Grid Margin="0 -5 0 0">
+                                    <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15"></Label>
+                                </Grid>
+                                <Grid Margin="0 -8 0 0">
+                                    <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15"></Label>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
                     </Grid>
                     <Grid Grid.Column="2">
-                        <Grid>
+                        <Grid VerticalAlignment="Top">
                             <StackPanel>
                                 <Grid Height="40">
                                     <Grid Name="gridClose" HorizontalAlignment="Right" Height="35" Cursor="Hand" Width="35" VerticalAlignment="Top" MouseDown="gridClose_MouseDown" MouseEnter="gridClose_MouseEnter" MouseLeave="gridClose_MouseLeave">
@@ -61,12 +74,17 @@
                                     </Grid>
 
                                 </Grid>
-                                <Grid Margin="0 -5 0 0">
-                                    <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="179"></Label>
+                                <Grid  Name="barRight">
+                                    <StackPanel>
+                                        <Grid Margin="0 -5 0 0">
+                                            <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15"></Label>
+                                        </Grid>
+                                        <Grid Margin="0 -8 0 0">
+                                            <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15"></Label>
+                                        </Grid>
+                                    </StackPanel>
                                 </Grid>
-                                <Grid Margin="0 -8 0 0">
-                                    <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="214"></Label>
-                                </Grid>
+                                
                             </StackPanel>
                         </Grid>
                     </Grid>
@@ -121,10 +139,7 @@
 
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <StackPanel Margin="-16 -9 -16 -19">
-                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="70" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
-                                                    </TextBox>
-                                                </StackPanel>
+                                               
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
 
@@ -135,11 +150,7 @@
 
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <StackPanel Margin="-16 -9 -16 -19">
-                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="70" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
-
-                                                    </TextBox>
-                                                </StackPanel>
+                                               
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
 
@@ -150,11 +161,7 @@
 
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <StackPanel Margin="-16 -9 -16 -19">
-                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="70" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
-
-                                                    </TextBox>
-                                                </StackPanel>
+                                               
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
 
@@ -165,11 +172,7 @@
 
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <StackPanel Margin="-16 -9 -16 -19">
-                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="70" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
-
-                                                    </TextBox>
-                                                </StackPanel>
+                                               
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
 
@@ -180,11 +183,7 @@
 
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <StackPanel Margin="-16 -9 -16 -19">
-                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="70" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
-
-                                                    </TextBox>
-                                                </StackPanel>
+                                                
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
 
@@ -195,11 +194,7 @@
 
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <StackPanel Margin="-16 -9 -16 -19">
-                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="70" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
-
-                                                    </TextBox>
-                                                </StackPanel>
+                                               
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
 
@@ -209,11 +204,7 @@
 
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <StackPanel Margin="-16 -9 -16 -19">
-                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="70" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
-
-                                                    </TextBox>
-                                                </StackPanel>
+                                               
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
 
@@ -224,11 +215,7 @@
 
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <StackPanel Margin="-16 -9 -16 -19">
-                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="70" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
-
-                                                    </TextBox>
-                                                </StackPanel>
+                                                
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                         <DataGridTemplateColumn.Header>
@@ -322,11 +309,7 @@
 
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <StackPanel Margin="-16 -9 -16 -19">
-                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="70" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
-
-                                                    </TextBox>
-                                                </StackPanel>
+                                               
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
 
@@ -337,11 +320,7 @@
 
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <StackPanel Margin="-16 -9 -16 -19">
-                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="70" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
-
-                                                    </TextBox>
-                                                </StackPanel>
+                                               
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
 
@@ -351,11 +330,7 @@
 
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <StackPanel Margin="-16 -9 -16 -19">
-                                                    <TextBox HorizontalContentAlignment="Center" Foreground="Black" Height="40.5" Width="80" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="White">
-
-                                                    </TextBox>
-                                                </StackPanel>
+                                                
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
@@ -363,6 +338,92 @@
 
                                 </DataGrid.Columns>
                             </DataGrid>
+                        </Grid>
+                        <Grid Margin="5 0 15 0" Height="35">
+                            <Border BorderBrush="Black" BorderThickness="1 0 1 1"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="71"/>
+                                    <ColumnDefinition Width="70"/>
+                                    <ColumnDefinition Width="70"/>
+                                    <ColumnDefinition Width="70"/>
+                                    <ColumnDefinition Width="70"/>
+                                    <ColumnDefinition Width="70"/>
+                                    <ColumnDefinition Width="70"/>
+                                    <ColumnDefinition Width="70"/>
+                                    <ColumnDefinition Width="67"/>
+                                    <ColumnDefinition Width="67"/>
+                                    <ColumnDefinition Width="80"/>
+                                    
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                    <TextBox Style="{StaticResource styleTextbox}" Background="Transparent" HorizontalContentAlignment="Center" Foreground="Black" BorderThickness="0" Height="34" Width="69" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center">
+
+                                    </TextBox>
+                                </Grid>
+                                <Grid Grid.Column="1">
+                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                    <TextBox Style="{StaticResource styleTextbox}" HorizontalContentAlignment="Center" Foreground="Black" BorderThickness="0" Height="34" Width="67" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="Transparent">
+
+                                    </TextBox>
+                                </Grid>
+                                <Grid Grid.Column="2">
+                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                    <TextBox Style="{StaticResource styleTextbox}" HorizontalContentAlignment="Center" Foreground="Black" BorderThickness="0" Height="34" Width="69" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="Transparent">
+
+                                    </TextBox>
+                                </Grid>
+                                <Grid Grid.Column="3">
+                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                    <TextBox Style="{StaticResource styleTextbox}" HorizontalContentAlignment="Center" Foreground="Black" BorderThickness="0" Height="34" Width="69" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="Transparent">
+
+                                    </TextBox>
+                                </Grid>
+                                <Grid Grid.Column="4">
+                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                    <TextBox Style="{StaticResource styleTextbox}" HorizontalContentAlignment="Center" Foreground="Black" BorderThickness="0" Height="34" Width="69" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="Transparent">
+
+                                    </TextBox>
+                                </Grid>
+                                <Grid Grid.Column="5">
+                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                    <TextBox Style="{StaticResource styleTextbox}" HorizontalContentAlignment="Center" Foreground="Black" BorderThickness="0" Height="34" Width="69" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="Transparent">
+
+                                    </TextBox>
+                                </Grid>
+                                <Grid Grid.Column="6">
+                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                    <TextBox Style="{StaticResource styleTextbox}" HorizontalContentAlignment="Center" Foreground="Black" BorderThickness="0" Height="34" Width="69" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="Transparent">
+
+                                    </TextBox>
+                                </Grid>
+                                <Grid Grid.Column="7">
+                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                    <TextBox Style="{StaticResource styleTextbox}" HorizontalContentAlignment="Center" Foreground="Black" BorderThickness="0" Height="34" Width="69" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="Transparent">
+
+                                    </TextBox>
+                                </Grid>
+                                <Grid Grid.Column="8">
+                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                    <TextBox Style="{StaticResource styleTextbox}" HorizontalContentAlignment="Center" Foreground="Black" BorderThickness="0" Height="34" Width="65" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="Transparent">
+
+                                    </TextBox>
+                                </Grid>
+                                <Grid Grid.Column="9">
+                                    <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                    <TextBox Style="{StaticResource styleTextbox}" HorizontalContentAlignment="Center" Foreground="Black" BorderThickness="0" Height="34" Width="64" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="Transparent">
+
+                                    </TextBox>
+                                </Grid>
+                                <Grid Grid.Column="10">
+
+                                    <TextBox Style="{StaticResource styleTextbox}" HorizontalContentAlignment="Center" Foreground="Black" BorderThickness="0" Height="34" Width="76" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" VerticalContentAlignment="Center" Background="Transparent">
+
+                                    </TextBox>
+                                </Grid>
+                            </Grid>
+                           
                         </Grid>
                     </StackPanel>
 
@@ -385,13 +446,13 @@
                                 <Label HorizontalAlignment="Left" Margin="0 0 25 0">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="ថ្ងៃ" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                                        <TextBox Name="lblDay" Text="........................." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="auto" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0 -3 0 0"></TextBox>
+                                        <TextBlock Name="lblDay" Text="........................." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="auto"></TextBlock>
                                         <TextBlock Text="ខែ" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                                        <TextBox Name="lblMonths" Text="............." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="auto" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0 -3 0 0"></TextBox>
+                                        <TextBlock Name="lblMonths" Text="............." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="auto"></TextBlock>
                                         <TextBlock Text="ឆ្នាំ" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                                        <TextBox Name="lblYear" Text=".............." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="auto" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0 -3 0 0"></TextBox>
+                                        <TextBlock Name="lblYear" Text=".............." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="auto"></TextBlock>
                                         <TextBlock Text="ព.ស" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
-                                        <TextBox Name="lblKhmerYear" Text=".............." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="auto" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0 -3 0 0"></TextBox>
+                                        <TextBlock Name="lblKhmerYear" Text=".............." FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Width="auto"></TextBlock>
                                     </StackPanel>
                                 </Label>
                                 <Label HorizontalAlignment="Right" Margin="0 5 55 0" FontSize="10">
@@ -404,7 +465,7 @@
                                         <TextBlock Text="{Binding Text,ElementName=lblYear}" FontSize="15"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBlock>
                                     </StackPanel>
                                 </Label>
-                                <TextBox Text="នាយកវិទ្យាល័យ" FontSize="15" HorizontalAlignment="Center" Margin=" 0 5 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" BorderThickness="0"></TextBox>
+                                <Label Name="txtPosition" Content="នាយក" FontSize="15" HorizontalAlignment="Center" Margin=" 0 5 0 0" Style="{DynamicResource Muol}" BorderThickness="0"></Label>
                             </StackPanel>
                         </Grid>
                     </Grid>
@@ -412,5 +473,5 @@
                 <Rectangle Height="100" Fill="Transparent"></Rectangle>
             </StackPanel>
         </Grid>
-    </ScrollViewer>
+    </Grid>
 </Window>

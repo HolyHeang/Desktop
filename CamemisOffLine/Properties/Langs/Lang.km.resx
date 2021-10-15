@@ -256,7 +256,7 @@
     <value>តើអ្នកពិតជាចង់ធ្វើការគណនាមែនទេ?</value>
   </data>
   <data name="Do you really want to exit CAMEMIS DESKTOP?" xml:space="preserve">
-    <value>តើអ្នកពីតជាចង់ចាក់ចេញពី​ CAMEMIS DESKTOP​ មែនទេ?</value>
+    <value>តើអ្នកពិតជាចង់ចាកចេញពី​ CAMEMIS DESKTOP​ មែនទេ?</value>
   </data>
   <data name="Do you really want to submit" xml:space="preserve">
     <value>តើអ្នកពិតជាចង់ធ្វើការដាក់ស្នើមែនទេ?</value>
@@ -265,7 +265,7 @@
     <value>តើអ្នកចង់លុបទិន្នន័យនេះមែនទេ?</value>
   </data>
   <data name="do you want to print" xml:space="preserve">
-    <value>តើអ្នកចង់បោះពុម្ភមែនទេ?</value>
+    <value>តើអ្នកចង់បោះពុម្ពមែនទេ?</value>
   </data>
   <data name="do you want to transmit data now" xml:space="preserve">
     <value>តើអ្នកចង់បញ្ជូនទិន្នន័យឥឡូវនេះទេ?</value>
@@ -274,7 +274,7 @@
     <value>តើអ្នកចង់ប្រើប្រាស់ទិន្នន័យចាស់ ឬទិន្នន័យថ្មី?</value>
   </data>
   <data name="Do you want to use the print function?" xml:space="preserve">
-    <value>តើអ្នកចង់ប្រើមុខងារបោះពុម្ភ</value>
+    <value>តើអ្នកចង់ប្រើមុខងារបោះពុម្ព</value>
   </data>
   <data name="Download data" xml:space="preserve">
     <value>ទាញទិន្នន័យ</value>
@@ -436,7 +436,7 @@
     <value>ជម្រើស</value>
   </data>
   <data name="option print" xml:space="preserve">
-    <value>ជម្រើសបោះពុម្ភ</value>
+    <value>ជម្រើសបោះពុម្ព</value>
   </data>
   <data name="options" xml:space="preserve">
     <value>ជម្រើស៖</value>
@@ -454,16 +454,16 @@
     <value>សូមជ្រើសរើស</value>
   </data>
   <data name="Please select a class and result type" xml:space="preserve">
-    <value>សូមជ្រើសរើសថ្នាក់ និងឆ្នាំ​/ឆមាស/ខែ</value>
+    <value>សូមជ្រើសរើសឆ្នាំ​/កម្រិត/ថ្នាក់ និង​ ឆមាស/ខែ</value>
   </data>
   <data name="Please select a school year and class" xml:space="preserve">
-    <value>សូមជ្រើសរើសឆ្នាំសិក្សា និងថ្នាក់!</value>
+    <value>សូមជ្រើសរើសឆ្នាំសិក្សា/កម្រិតនីមួយៗ និងថ្នាក់!</value>
   </data>
   <data name="Please select a school year and grade" xml:space="preserve">
-    <value>សូមជ្រើសរើសឆ្នាំសិក្សា និងកម្រិត!</value>
+    <value>សូមជ្រើសរើសឆ្នាំសិក្សា និងកម្រិតរួម!</value>
   </data>
   <data name="Please select a school year and group" xml:space="preserve">
-    <value>សូមជ្រើសរើសឆ្នាំសិក្សា និងក្រុម!</value>
+    <value>សូមជ្រើសរើសឆ្នាំសិក្សា និងកម្រិត!</value>
   </data>
   <data name="Please wait" xml:space="preserve">
     <value>សូមមេត្តារង់ចាំ</value>
@@ -472,31 +472,37 @@
     <value>បោះពុម្ភពិន្ទុ</value>
   </data>
   <data name="print" xml:space="preserve">
-    <value>បោះពុម្ភ</value>
+    <value>បោះពុម្ព</value>
   </data>
   <data name="print all sub" xml:space="preserve">
-    <value>បោះពុម្ភមុខវិជ្ជាទាំងអស់</value>
+    <value>បោះពុម្ពមុខវិជ្ជាទាំងអស់</value>
+  </data>
+  <data name="print attendance report" xml:space="preserve">
+    <value>បោះពុម្ពទិន្នន័យវត្តមាន</value>
+  </data>
+  <data name="Print attendance tamplate" xml:space="preserve">
+    <value>បោះពុម្ពតារាងវត្តមាន</value>
   </data>
   <data name="Print Classification" xml:space="preserve">
-    <value>បោះពុម្ភចំណាត់ថ្នាក់ចំណាត់ប្រភេទ</value>
+    <value>បោះពុម្ពចំណាត់ថ្នាក់ចំណាត់ប្រភេទ</value>
   </data>
   <data name="print for educators" xml:space="preserve">
-    <value>បោះពុម្ភសម្រាប់បុគ្គលិកអប់រំ</value>
+    <value>បោះពុម្ពសម្រាប់បុគ្គលិកអប់រំ</value>
   </data>
   <data name="print for students" xml:space="preserve">
     <value>បោះពុម្ពសម្រាប់សិស្ស</value>
   </data>
   <data name="print honor table" xml:space="preserve">
-    <value>បោះពុម្ភតារាងកិត្តិយស</value>
+    <value>បោះពុម្ពតារាងកិត្តិយស</value>
   </data>
   <data name="Print Score Bulletin" xml:space="preserve">
-    <value>បោះពុម្ភព្រឹត្តិប័ត្រពិន្ទុទាំងអស់</value>
+    <value>បោះពុម្ពព្រឹត្តិប័ត្រពិន្ទុទាំងអស់</value>
   </data>
   <data name="Print Score Choice Bulletin" xml:space="preserve">
-    <value>បោះពុម្ភព្រឹត្តិប័ត្រពិន្ទុតាមជម្រើសសិស្ស</value>
+    <value>បោះពុម្ពព្រឹត្តិប័ត្រពិន្ទុតាមជម្រើសសិស្ស</value>
   </data>
   <data name="print successful" xml:space="preserve">
-    <value>ការបោះពុម្ភបានជោគជ័យ</value>
+    <value>ការបោះពុម្ពបានជោគជ័យ</value>
   </data>
   <data name="Programs running" xml:space="preserve">
     <value>កម្មវិធីកំពុងដំណើរការ......</value>
@@ -508,7 +514,7 @@
     <value>ចំណាត់ថ្នាក់-ចំណាត់ប្រភេទ</value>
   </data>
   <data name="rating-Classification semester by class" xml:space="preserve">
-    <value>ចំណាត់ថ្នាក់ ចំណាត់ប្រភេទប្រចាំឆមាសតាមថ្នាក់</value>
+    <value>ចំណាត់ថ្នាក់-ចំណាត់ប្រភេទប្រចាំឆមាសតាមថ្នាក់</value>
   </data>
   <data name="repeat class" xml:space="preserve">
     <value>ត្រួតថ្នាក់</value>
@@ -640,7 +646,7 @@
     <value>បញ្ជីឈ្មោះសិស្ស</value>
   </data>
   <data name="student attendance by class" xml:space="preserve">
-    <value>បញ្ចីអវត្តមានសិស្សតាមថ្នាក់</value>
+    <value>បញ្ជីអវត្តមានសិស្សតាមថ្នាក់</value>
   </data>
   <data name="student Attendence Report" xml:space="preserve">
     <value>របាយការណ៏អវត្តមានសិស្ស</value>

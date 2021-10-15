@@ -208,19 +208,43 @@ namespace CamemisOffLine.Windows
 
         private void Window_Loaded(object sender, RoutedEventArgs e) 
         {
+            barRight.Visibility = Visibility.Collapsed;
             this.Hide();
+            PrintPopup prints = new PrintPopup();
             if (Properties.Settings.Default.role == "1")
             {
-                PrintPopup prints = new PrintPopup();
+               
+
                 prints.ShowDialog();
+
                 titleTeacher.Content = prints.position;
                 titleAdmin.Visibility = Visibility.Collapsed;
                 lblTeacherName.Visibility = Visibility.Collapsed;
+                barCenter.Visibility = prints.CheckCenter;
+                barRight.Visibility = prints.CheckRight;
             }
-            Loading loading = new Loading();
-            loading.Show();
-            print();
-            loading.Close();
+            else
+            {
+               
+
+                prints.ShowDialog();
+
+                txtPosition.Text = prints.position;
+                titleAdmin.Visibility = Visibility.Visible;
+                lblTeacherName.Visibility = Visibility.Visible;
+                barCenter.Visibility = prints.CheckCenter;
+                barRight.Visibility = prints.CheckRight;
+            }
+
+            if (prints.isPrint == false)
+                this.Close();
+            else
+            {
+                Loading loading = new Loading();
+                loading.Show();
+                print();
+                loading.Close();
+            }
         }
     }
 }

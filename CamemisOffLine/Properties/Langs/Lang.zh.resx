@@ -457,10 +457,10 @@
     <value>请选择</value>
   </data>
   <data name="Please select a class and result type" xml:space="preserve">
-    <value>请选择一个班级和结果类型</value>
+    <value>请选择年/年级/班级和学期/月!</value>
   </data>
   <data name="Please select a school year and class" xml:space="preserve">
-    <value>请选择学年和班级!</value>
+    <value>请选择每个学年/级别和年级!</value>
   </data>
   <data name="Please select a school year and grade" xml:space="preserve">
     <value>请选择学年和年级!</value>
@@ -479,6 +479,12 @@
   </data>
   <data name="print all sub" xml:space="preserve">
     <value>打印所有主题</value>
+  </data>
+  <data name="print attendance report" xml:space="preserve">
+    <value>打印出勤报告</value>
+  </data>
+  <data name="Print attendance tamplate" xml:space="preserve">
+    <value>打印考勤模板</value>
   </data>
   <data name="Print Classification" xml:space="preserve">
     <value>印刷分类</value>

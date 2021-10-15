@@ -29,10 +29,19 @@
                             </Grid>
                         </Grid>
                         <Grid Grid.Column="1">
-
+                            <Grid Name="barCenter" VerticalAlignment="Top" HorizontalAlignment="Center">
+                                <StackPanel>
+                                    <Grid Margin="0 -5 0 0">
+                                        <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="179"></Label>
+                                    </Grid>
+                                    <Grid Margin="0 -8 0 0">
+                                        <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="214"></Label>
+                                    </Grid>
+                                </StackPanel>
+                            </Grid>
                         </Grid>
                         <Grid Grid.Column="2">
-                            <Grid>
+                            <Grid Name="barRight" VerticalAlignment="Top" HorizontalAlignment="Center">
                                 <StackPanel>
                                     <Grid Margin="0 -5 0 0">
                                         <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15" Width="179"></Label>
@@ -136,20 +145,21 @@
                                                 </Style>
                                             </DataGridTextColumn.ElementStyle>
                                             <DataGridTextColumn.Header>
-                                                <Grid Height="140" Background="White" Width="140" Margin="-70 1 0 0">
+                                                <Grid Height="139" Background="White" Width="139" Margin="-70 0 0 0">
                                                     <StackPanel Orientation="Vertical">
                                                         <Grid Height="92">
                                                             <Border BorderBrush="Black" BorderThickness="0 0 0 1"></Border>
                                                             <Label Content="សិស្សសរុប" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="15"></Label>
                                                         </Grid>
-                                                        <Grid Height="46">
+                                                        <Grid Height="47">
                                                             <StackPanel Orientation="Horizontal">
                                                                 <Grid Width="69">
                                                                     <Border BorderBrush="Black" BorderThickness="0 0 1 0"></Border>
                                                                     <Label Content="សរុប" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="15"></Label>
                                                                 </Grid>
                                                                 <Grid Width="70">
-                                                                    
+                                                                    <Border BorderBrush="Black" BorderThickness="0 0 0 0"></Border>
+
                                                                     <Label Content="ស្រី" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="15"></Label>
                                                                 </Grid>
                                                             </StackPanel>
@@ -552,7 +562,7 @@
                                             </DataGridTextColumn.ElementStyle>
 
                                             <DataGridTextColumn.Header>
-                                                <Grid Height="138" Width="924" Margin="-762 0 0 0" Background="White">
+                                                <Grid Height="139" Width="924" Margin="-762 0 0 0" Background="White">
                                                     <StackPanel Orientation="Vertical">
                                                         <Grid Height="46">
                                                             <Border BorderBrush="Black" BorderThickness="0 0 0 1"/>
@@ -693,7 +703,7 @@
                                             <TextBlock Text="{Binding Text,ElementName=lblMonths}" FontSize="15"  FontFamily="Khmer OS Siemreap"></TextBlock>
                                         </StackPanel>
                                     </Label>
-                                    <Label Content="នាយកវិទ្យាល័យ" FontSize="15" HorizontalAlignment="Center" Margin=" 0 5 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
+                                    <Label Name="txtPosition" Content="នាយក" FontSize="15" HorizontalAlignment="Center" Margin=" 0 5 0 0" Style="{DynamicResource Muol}"></Label>
                                 </StackPanel>
                             </Grid>
                         </Grid>
