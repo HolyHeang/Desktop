@@ -62,7 +62,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>VSSTeYZeNDvpcObENh6i7/k+p0cJD/mFIyVTF2K62gI=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>ufOvecOOdMaTBRnsOAinpqA6AX82QB5JGrTVF+VvZ0M=</dsig:DigestValue>
+>>>>>>> 6d286f9f8a68c5d18c4d6ee8c7fcbbbf8c5947c0
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,7 +78,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>Jhw4Xk/C8lwXKMj01h4BwBysRcs6rcJYRrY0FA+wwj4=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>id3VKkJw0sBwBfoLQL5GwCSRerThF1daCO3BzLErIbs=</dsig:DigestValue>
+>>>>>>> 6d286f9f8a68c5d18c4d6ee8c7fcbbbf8c5947c0
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +94,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>sX+35pSCZyIX37H16vCUZSGa1o9+NQ7MsRaMK72Up94=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>TzGUJjF1FZFemQjgVOAmLGQ/pc4Jnje5iDpCiVoxFzc=</dsig:DigestValue>
+>>>>>>> 6d286f9f8a68c5d18c4d6ee8c7fcbbbf8c5947c0
       </hash>
     </dependentAssembly>
   </dependency>
@@ -98,7 +110,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>TXZBePD7shQI+wZAIR8HlRBxNUfh7Vk6h9Ztxabr/5U=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>sfDy8TTw/ueA6AKM2rfL9FIvCa8GBmj+2Qb/M1riZzQ=</dsig:DigestValue>
+>>>>>>> 6d286f9f8a68c5d18c4d6ee8c7fcbbbf8c5947c0
       </hash>
     </dependentAssembly>
   </dependency>
