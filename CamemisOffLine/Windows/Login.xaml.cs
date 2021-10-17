@@ -24,6 +24,7 @@ using System.Diagnostics;
 using System.Drawing.Imaging;
 using System.IO;
 using CamemisOffLine.Windows;
+using CamemisOffLine.Component;
 
 namespace CamemisOffLine
 {
@@ -59,11 +60,18 @@ namespace CamemisOffLine
             btnPass.Visibility = Visibility.Collapsed;
             btnUser.Visibility = Visibility.Collapsed;
             gridBackLogin.Visibility = Visibility.Collapsed;
+            txtBoxPass.Text = txtPass.Password;
             
 
             if (!InternetChecker())
             {
-                MessageBox.Show("No internet connection", "Warnning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                this.Opacity = 0.5;
+                MessageBoxControl message = new MessageBoxControl();
+                message.title = Properties.Langs.Lang.Information;
+                message.discription = Properties.Langs.Lang.No_internet_connection;
+                message.buttonType = 2;
+                message.ShowDialog();
+                this.Opacity = 1;
             }
             lblError.Visibility = Visibility.Collapsed;
             Init_data();
@@ -141,20 +149,25 @@ namespace CamemisOffLine
 
         private async void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            txtBoxPass.Visibility = Visibility.Collapsed;
-            txtPass.Visibility = Visibility.Visible;
-            txtPass.Password = txtBoxPass.Text;
-            showPass.Kind = MaterialDesignThemes.Wpf.PackIconKind.Eye;
+           
 
             try
             {
                 if (InternetChecker())
                 {
-                    if (txtUser.Text.Equals("") || txtPass.Password.Equals("") || txtBoxPass.Text.Equals(""))
+                    if (txtUser.Text=="" || txtPass.Password=="")
                     {
-                        MessageBox.Show(Properties.Langs.Lang.Incorect_User_Pass);
+                        this.Opacity = 0.5;
+                        MessageBoxControl message = new MessageBoxControl();
+                        message.title = Properties.Langs.Lang.Information;
+                        message.discription = Properties.Langs.Lang.incorrectPassandUser;
+                        message.buttonType = 2;
+                        message.ShowDialog();
+                       
+                       
                         Properties.Settings.Default.checkLoginOrLogut = "logout";
                         Properties.Settings.Default.Save();
+                        this.Opacity = 1;
                     }
                     else
                     {
@@ -175,9 +188,15 @@ namespace CamemisOffLine
                                     }
                                     catch
                                     {
-                                        MessageBox.Show("No profile image.!!!","Warnning",MessageBoxButton.OK,MessageBoxImage.Warning);
+                                        this.Opacity = 0.5;
+                                        MessageBoxControl message = new MessageBoxControl();
+                                        message.title = Properties.Langs.Lang.Information;
+                                        message.discription = Properties.Langs.Lang.No_profile_image;
+                                        message.buttonType = 2;
+                                        message.ShowDialog();
                                         Properties.Settings.Default.localProfileLink = "";
                                         Properties.Settings.Default.Save();
+                                        this.Opacity = 1;
                                     }
                                     if (d.success)
                                     {
@@ -209,7 +228,13 @@ namespace CamemisOffLine
                                     {
                                         Properties.Settings.Default.checkLoginOrLogut = "logout";
                                         Properties.Settings.Default.Save();
-                                        MessageBox.Show(Properties.Langs.Lang.fail, Properties.Langs.Lang.Information, MessageBoxButton.OK, MessageBoxImage.Error);
+                                        this.Opacity = 0.5;
+                                        MessageBoxControl message = new MessageBoxControl();
+                                        message.title = Properties.Langs.Lang.Information;
+                                        message.discription = Properties.Langs.Lang.incorrectPassandUser;
+                                        message.buttonType = 2;
+                                        message.ShowDialog();
+                                        this.Opacity = 1;
                                     }
                                 }
                             }
@@ -220,7 +245,13 @@ namespace CamemisOffLine
                 {
                     if (txtUser.Text.Equals("") || txtPass.Password.Equals("") || txtBoxPass.Text.Equals(""))
                     {
-                        MessageBox.Show(Properties.Langs.Lang.Incorect_User_Pass,Properties.Langs.Lang.Information, MessageBoxButton.OK, MessageBoxImage.Error);
+                        this.Opacity = 0.5;
+                        MessageBoxControl message = new MessageBoxControl();
+                        message.title = Properties.Langs.Lang.Information;
+                        message.discription = Properties.Langs.Lang.incorrectPassandUser;
+                        message.buttonType = 2;
+                        message.ShowDialog();
+                        this.Opacity = 1;
                     }
                     else
                     {
@@ -238,7 +269,13 @@ namespace CamemisOffLine
 
                             Properties.Settings.Default.checkLoginOrLogut = "logout";
                             Properties.Settings.Default.Save();
-                            MessageBox.Show(Properties.Langs.Lang.Incorect_User_Pass, Properties.Langs.Lang.Information, MessageBoxButton.OK, MessageBoxImage.Error);
+                            this.Opacity = 0.5;
+                            MessageBoxControl message = new MessageBoxControl();
+                            message.title = Properties.Langs.Lang.Information;
+                            message.discription = Properties.Langs.Lang.incorrectPassandUser;
+                            message.buttonType = 2;
+                            message.ShowDialog();
+                            this.Opacity = 1;
                         }
                     }
                 }
@@ -247,6 +284,11 @@ namespace CamemisOffLine
             {
                 MessageBox.Show(ex.ToString());
             }
+
+            txtBoxPass.Visibility = Visibility.Collapsed;
+            txtPass.Visibility = Visibility.Visible;
+            txtPass.Password = txtBoxPass.Text;
+            showPass.Kind = MaterialDesignThemes.Wpf.PackIconKind.Eye;
         }
         //mouse over exit button........
 
@@ -293,7 +335,13 @@ namespace CamemisOffLine
                             }
                             else
                             {
-                                MessageBox.Show("School not Found.!!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                                this.Opacity = 0.5;
+                                MessageBoxControl message = new MessageBoxControl();
+                                message.title = Properties.Langs.Lang.Information;
+                                message.discription = Properties.Langs.Lang.School_code_not_found;
+                                message.buttonType = 2;
+                                message.ShowDialog();
+                                this.Opacity = 1;
                             }
                         }
                     }
@@ -303,7 +351,13 @@ namespace CamemisOffLine
             {
                 if (txtCode.Text.Equals(""))
                 {
-                    MessageBox.Show(Properties.Langs.Lang.Incorect_User_Pass, Properties.Langs.Lang.Information, MessageBoxButton.OK, MessageBoxImage.Error);
+                    this.Opacity = 0.5;
+                    MessageBoxControl message = new MessageBoxControl();
+                    message.title = Properties.Langs.Lang.Information;
+                    message.discription = Properties.Langs.Lang.incorrectPassandUser;
+                    message.buttonType = 2;
+                    message.ShowDialog();
+                    this.Opacity = 1;
                 }
                 else
                 {
@@ -319,7 +373,13 @@ namespace CamemisOffLine
                     }
                     else
                     {
-                        MessageBox.Show("School not Found.!!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        this.Opacity = 0.5;
+                        MessageBoxControl message = new MessageBoxControl();
+                        message.title = Properties.Langs.Lang.Information;
+                        message.discription = Properties.Langs.Lang.School_code_not_found;
+                        message.buttonType = 2;
+                        message.ShowDialog();
+                        this.Opacity = 1;
                     }
                 }
             }
@@ -482,16 +542,18 @@ namespace CamemisOffLine
         {
             if (showPass.Kind == MaterialDesignThemes.Wpf.PackIconKind.Eye)
             {
+                txtBoxPass.Text = txtPass.Password;
                 txtPass.Visibility = Visibility.Collapsed;
                 txtBoxPass.Visibility = Visibility.Visible;
-                txtBoxPass.Text = txtPass.Password;
+               
                 showPass.Kind = MaterialDesignThemes.Wpf.PackIconKind.EyeOff;
             }
             else
             {
+                txtPass.Password = txtBoxPass.Text;
                 txtBoxPass.Visibility = Visibility.Collapsed;
                 txtPass.Visibility = Visibility.Visible;
-                txtPass.Password = txtBoxPass.Text;
+                
                 showPass.Kind = MaterialDesignThemes.Wpf.PackIconKind.Eye;
             }
                 

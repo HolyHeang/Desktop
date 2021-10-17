@@ -55,50 +55,50 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CamemisOffLine.exe" size="6757824">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CamemisOffLine.exe" size="6761920">
       <assemblyIdentity name="CamemisOffLine" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>X0BKVVkQ2P5BmDCNMrWFiYERYQAMSbsPIJvUOgcTmOw=</dsig:DigestValue>
+        <dsig:DigestValue>VSSTeYZeNDvpcObENh6i7/k+p0cJD/mFIyVTF2K62gI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="km\CamemisOffLine.resources.dll" size="25088">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="km\CamemisOffLine.resources.dll" size="26624">
       <assemblyIdentity name="CamemisOffLine.resources" version="1.0.0.0" language="km" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>45+wBI6obictvcEG5eQ/B3wtZ8T0Lenlwb5BpkXZpFk=</dsig:DigestValue>
+        <dsig:DigestValue>Jhw4Xk/C8lwXKMj01h4BwBysRcs6rcJYRrY0FA+wwj4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="vi\CamemisOffLine.resources.dll" size="18944">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="vi\CamemisOffLine.resources.dll" size="19968">
       <assemblyIdentity name="CamemisOffLine.resources" version="1.0.0.0" language="vi" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>H+d5Bhrju4bInft3xWKno6QEtXvfP46HQSQ57V9XczU=</dsig:DigestValue>
+        <dsig:DigestValue>sX+35pSCZyIX37H16vCUZSGa1o9+NQ7MsRaMK72Up94=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="zh\CamemisOffLine.resources.dll" size="16896">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="zh\CamemisOffLine.resources.dll" size="17920">
       <assemblyIdentity name="CamemisOffLine.resources" version="1.0.0.0" language="zh" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>f3DFJeu1kEi9KqZAphc76EjHbpHnRa3gwt7/sfA2Z0M=</dsig:DigestValue>
+        <dsig:DigestValue>TXZBePD7shQI+wZAIR8HlRBxNUfh7Vk6h9Ztxabr/5U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -530,7 +530,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2nbLf/RLhWBUej5XjBjxWPu6uxm4KuQbKC9HgBJ370k=</dsig:DigestValue>
+        <dsig:DigestValue>w+WKWN8hrnAPMBVWrF/2DJ15GS7h6GEY4Dbbbs02KsQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -186,6 +186,9 @@
   <data name="cancel" xml:space="preserve">
     <value>取消</value>
   </data>
+  <data name="center" xml:space="preserve">
+    <value>中央</value>
+  </data>
   <data name="check internet connection" xml:space="preserve">
     <value>检查互联网连接</value>
   </data>
@@ -348,6 +351,9 @@
   <data name="Incorect User/Pass" xml:space="preserve">
     <value>用户名或密码错误！</value>
   </data>
+  <data name="incorrectPassandUser" xml:space="preserve">
+    <value>用户名或密码错误</value>
+  </data>
   <data name="Information" xml:space="preserve">
     <value>信息</value>
   </data>
@@ -377,6 +383,9 @@
   </data>
   <data name="login" xml:space="preserve">
     <value>登录</value>
+  </data>
+  <data name="loginname" xml:space="preserve">
+    <value>登录名</value>
   </data>
   <data name="logout" xml:space="preserve">
     <value>登出</value>
@@ -414,14 +423,23 @@
   <data name="monthly" xml:space="preserve">
     <value>每月一次</value>
   </data>
+  <data name="mottolocation" xml:space="preserve">
+    <value>座右铭位置</value>
+  </data>
   <data name="New" xml:space="preserve">
     <value>新的</value>
+  </data>
+  <data name="next" xml:space="preserve">
+    <value>下一个</value>
   </data>
   <data name="No data saved, please use internet to download new data" xml:space="preserve">
     <value>没有保存数据，请使用互联网下载新数据</value>
   </data>
   <data name="No internet connection" xml:space="preserve">
     <value>没有互联网连接</value>
+  </data>
+  <data name="No profile image" xml:space="preserve">
+    <value>没有个人资料图片</value>
   </data>
   <data name="No save data" xml:space="preserve">
     <value>没有保存数据</value>
@@ -444,6 +462,9 @@
   <data name="options" xml:space="preserve">
     <value>选项：</value>
   </data>
+  <data name="password" xml:space="preserve">
+    <value>密码</value>
+  </data>
   <data name="permission" xml:space="preserve">
     <value>权限</value>
   </data>
@@ -452,6 +473,9 @@
   </data>
   <data name="please connect to the internet" xml:space="preserve">
     <value>请连接到互联网</value>
+  </data>
+  <data name="Please fill in the role or position under the signature director" xml:space="preserve">
+    <value>请在署长署名下填写角色或职位</value>
   </data>
   <data name="please select" xml:space="preserve">
     <value>请选择</value>
@@ -470,6 +494,9 @@
   </data>
   <data name="Please wait" xml:space="preserve">
     <value>请稍等</value>
+  </data>
+  <data name="Principal or High School Principal" xml:space="preserve">
+    <value>校长或高中校长</value>
   </data>
   <data name="Pring Result" xml:space="preserve">
     <value>发布每月结果</value>
@@ -504,6 +531,9 @@
   <data name="print successful" xml:space="preserve">
     <value>打印成功</value>
   </data>
+  <data name="printsettings" xml:space="preserve">
+    <value>打印设置</value>
+  </data>
   <data name="QuseLogout" xml:space="preserve">
     <value>您确定要注销吗？</value>
   </data>
@@ -512,6 +542,9 @@
   </data>
   <data name="rating-Classification semester by class" xml:space="preserve">
     <value>按班级分级分类学期</value>
+  </data>
+  <data name="rememberme" xml:space="preserve">
+    <value>记住账号</value>
   </data>
   <data name="repeat class" xml:space="preserve">
     <value>复课</value>
@@ -525,6 +558,9 @@
   <data name="results study by class" xml:space="preserve">
     <value>班级学习成绩</value>
   </data>
+  <data name="right" xml:space="preserve">
+    <value>对</value>
+  </data>
   <data name="save" xml:space="preserve">
     <value>节省</value>
   </data>
@@ -534,11 +570,17 @@
   <data name="Sch Year" xml:space="preserve">
     <value>学年</value>
   </data>
+  <data name="School code not found" xml:space="preserve">
+    <value>找不到学校代码</value>
+  </data>
   <data name="School Newsletter" xml:space="preserve">
     <value>学校通讯</value>
   </data>
   <data name="school year" xml:space="preserve">
     <value>学年</value>
+  </data>
+  <data name="schoolcode" xml:space="preserve">
+    <value>学校代码</value>
   </data>
   <data name="science" xml:space="preserve">
     <value>科学</value>
@@ -743,6 +785,9 @@
   </data>
   <data name="weak internet service Please check your internet routine again" xml:space="preserve">
     <value>网络服务差！！ 请再次检查您的互联网常规</value>
+  </data>
+  <data name="welcometo" xml:space="preserve">
+    <value>欢迎来到</value>
   </data>
   <data name="your data is in trouble, please review" xml:space="preserve">
     <value>您的数据有问题，请检查</value>

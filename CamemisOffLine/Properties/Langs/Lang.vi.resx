@@ -186,6 +186,9 @@
   <data name="cancel" xml:space="preserve">
     <value>sự hủy bỏ</value>
   </data>
+  <data name="center" xml:space="preserve">
+    <value>Trung tâm</value>
+  </data>
   <data name="check internet connection" xml:space="preserve">
     <value>kiểm tra kết nối internet</value>
   </data>
@@ -345,6 +348,9 @@
   <data name="Incorect User/Pass" xml:space="preserve">
     <value>Tên đăng nhập hoặc mật khẩu không chính xác!</value>
   </data>
+  <data name="incorrectPassandUser" xml:space="preserve">
+    <value>Tên đăng nhập hoặc mật khẩu không chính xác</value>
+  </data>
   <data name="Information" xml:space="preserve">
     <value>Thông tin</value>
   </data>
@@ -374,6 +380,9 @@
   </data>
   <data name="login" xml:space="preserve">
     <value>Đăng nhập</value>
+  </data>
+  <data name="loginname" xml:space="preserve">
+    <value>Tên đăng nhập</value>
   </data>
   <data name="logout" xml:space="preserve">
     <value>Đăng xuất</value>
@@ -411,14 +420,23 @@
   <data name="monthly" xml:space="preserve">
     <value>hàng tháng</value>
   </data>
+  <data name="mottolocation" xml:space="preserve">
+    <value>Địa điểm phương châm</value>
+  </data>
   <data name="New" xml:space="preserve">
     <value>Mới mẻ</value>
+  </data>
+  <data name="next" xml:space="preserve">
+    <value>Kế tiếp</value>
   </data>
   <data name="No data saved, please use internet to download new data" xml:space="preserve">
     <value>Không có dữ liệu được lưu, vui lòng sử dụng Internet để tải xuống dữ liệu mới</value>
   </data>
   <data name="No internet connection" xml:space="preserve">
     <value>Không có kết nối Internet</value>
+  </data>
+  <data name="No profile image" xml:space="preserve">
+    <value>Không có hình ảnh hồ sơ</value>
   </data>
   <data name="No save data" xml:space="preserve">
     <value>Không lưu dữ liệu</value>
@@ -441,6 +459,9 @@
   <data name="options" xml:space="preserve">
     <value>Tùy chọn:</value>
   </data>
+  <data name="password" xml:space="preserve">
+    <value>Mật khẩu</value>
+  </data>
   <data name="permission" xml:space="preserve">
     <value>Sự cho phép</value>
   </data>
@@ -449,6 +470,9 @@
   </data>
   <data name="please connect to the internet" xml:space="preserve">
     <value>Vui lòng kết nối Internet</value>
+  </data>
+  <data name="Please fill in the role or position under the signature director" xml:space="preserve">
+    <value>Vui lòng điền vào vai trò hoặc chức vụ dưới chữ ký của giám đốc</value>
   </data>
   <data name="please select" xml:space="preserve">
     <value>Xin hãy lựa chọn</value>
@@ -467,6 +491,9 @@
   </data>
   <data name="Please wait" xml:space="preserve">
     <value>Vui lòng chờ</value>
+  </data>
+  <data name="Principal or High School Principal" xml:space="preserve">
+    <value>Hiệu trưởng hoặc Hiệu trưởng trường trung học</value>
   </data>
   <data name="Pring Result" xml:space="preserve">
     <value>Xuất bản kết quả hàng tháng</value>
@@ -504,6 +531,9 @@
   <data name="print successful" xml:space="preserve">
     <value>In thành công</value>
   </data>
+  <data name="printsettings" xml:space="preserve">
+    <value>Cài đặt in</value>
+  </data>
   <data name="QuseLogout" xml:space="preserve">
     <value>Bạn có chắc chắn bạn muốn thoát?</value>
   </data>
@@ -512,6 +542,9 @@
   </data>
   <data name="rating-Classification semester by class" xml:space="preserve">
     <value>Xếp loại-Phân loại học kỳ theo lớp</value>
+  </data>
+  <data name="rememberme" xml:space="preserve">
+    <value>Nhớ tôi</value>
   </data>
   <data name="repeat class" xml:space="preserve">
     <value>lớp học lặp lại</value>
@@ -525,6 +558,9 @@
   <data name="results study by class" xml:space="preserve">
     <value>Kết quả nghiên cứu theo lớp</value>
   </data>
+  <data name="right" xml:space="preserve">
+    <value>đúng</value>
+  </data>
   <data name="save" xml:space="preserve">
     <value>Cứu</value>
   </data>
@@ -534,11 +570,17 @@
   <data name="Sch Year" xml:space="preserve">
     <value>năm học</value>
   </data>
+  <data name="School code not found" xml:space="preserve">
+    <value>Không tìm thấy mã trường</value>
+  </data>
   <data name="School Newsletter" xml:space="preserve">
     <value>Bản tin trường học</value>
   </data>
   <data name="school year" xml:space="preserve">
     <value>Năm học</value>
+  </data>
+  <data name="schoolcode" xml:space="preserve">
+    <value>Mã trường</value>
   </data>
   <data name="science" xml:space="preserve">
     <value>Khoa học</value>
@@ -743,6 +785,9 @@
   </data>
   <data name="weak internet service Please check your internet routine again" xml:space="preserve">
     <value>Dịch vụ internet yếu !! Vui lòng kiểm tra lại quy trình sử dụng Internet của bạn</value>
+  </data>
+  <data name="welcometo" xml:space="preserve">
+    <value>Chào mừng bạn đến</value>
   </data>
   <data name="your data is in trouble, please review" xml:space="preserve">
     <value>Dữ liệu của bạn đang gặp sự cố, vui lòng xem lại</value>

@@ -183,6 +183,9 @@
   <data name="cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="center" xml:space="preserve">
+    <value>Center</value>
+  </data>
   <data name="check internet connection" xml:space="preserve">
     <value>Check internet connection</value>
   </data>
@@ -342,6 +345,9 @@
   <data name="Incorect User/Pass" xml:space="preserve">
     <value>Incorrect username or password!</value>
   </data>
+  <data name="incorrectPassandUser" xml:space="preserve">
+    <value>Incorrect Username or Password</value>
+  </data>
   <data name="Information" xml:space="preserve">
     <value>Information</value>
   </data>
@@ -371,6 +377,9 @@
   </data>
   <data name="login" xml:space="preserve">
     <value>Login</value>
+  </data>
+  <data name="loginname" xml:space="preserve">
+    <value>Login name</value>
   </data>
   <data name="logout" xml:space="preserve">
     <value>Logout</value>
@@ -408,14 +417,23 @@
   <data name="monthly" xml:space="preserve">
     <value>Monthly</value>
   </data>
+  <data name="mottolocation" xml:space="preserve">
+    <value>Motto location</value>
+  </data>
   <data name="New" xml:space="preserve">
     <value>New</value>
+  </data>
+  <data name="next" xml:space="preserve">
+    <value>Next</value>
   </data>
   <data name="No data saved, please use internet to download new data" xml:space="preserve">
     <value>No data saved, please use internet to download new data</value>
   </data>
   <data name="No internet connection" xml:space="preserve">
     <value>No internet connection</value>
+  </data>
+  <data name="No profile image" xml:space="preserve">
+    <value>No profile image</value>
   </data>
   <data name="No save data" xml:space="preserve">
     <value>No save data</value>
@@ -438,6 +456,9 @@
   <data name="options" xml:space="preserve">
     <value>Options:</value>
   </data>
+  <data name="password" xml:space="preserve">
+    <value>Password</value>
+  </data>
   <data name="permission" xml:space="preserve">
     <value>Permission</value>
   </data>
@@ -446,6 +467,9 @@
   </data>
   <data name="please connect to the internet" xml:space="preserve">
     <value>Please connect to the internet</value>
+  </data>
+  <data name="Please fill in the role or position under the signature director" xml:space="preserve">
+    <value>Please fill in the role or position under the signature Principal</value>
   </data>
   <data name="please select" xml:space="preserve">
     <value>Please select</value>
@@ -464,6 +488,9 @@
   </data>
   <data name="Please wait" xml:space="preserve">
     <value>Please wait</value>
+  </data>
+  <data name="Principal or High School Principal" xml:space="preserve">
+    <value>Principal or High School Principal</value>
   </data>
   <data name="Pring Result" xml:space="preserve">
     <value>Print monthly result</value>
@@ -501,6 +528,9 @@
   <data name="print successful" xml:space="preserve">
     <value>Print successful</value>
   </data>
+  <data name="printsettings" xml:space="preserve">
+    <value>Print settings</value>
+  </data>
   <data name="Programs running" xml:space="preserve">
     <value>Programs running</value>
   </data>
@@ -512,6 +542,9 @@
   </data>
   <data name="rating-Classification semester by class" xml:space="preserve">
     <value>Rating-Classification semester by class</value>
+  </data>
+  <data name="rememberme" xml:space="preserve">
+    <value>Remember me</value>
   </data>
   <data name="repeat class" xml:space="preserve">
     <value>Repeat class</value>
@@ -528,6 +561,9 @@
   <data name="Return" xml:space="preserve">
     <value>Return</value>
   </data>
+  <data name="right" xml:space="preserve">
+    <value>Right</value>
+  </data>
   <data name="save" xml:space="preserve">
     <value>Save</value>
   </data>
@@ -537,11 +573,17 @@
   <data name="Sch Year" xml:space="preserve">
     <value>School years</value>
   </data>
+  <data name="School code not found" xml:space="preserve">
+    <value>School code not found</value>
+  </data>
   <data name="School Newsletter" xml:space="preserve">
     <value>School Newsletter</value>
   </data>
   <data name="school year" xml:space="preserve">
     <value>School year</value>
+  </data>
+  <data name="schoolcode" xml:space="preserve">
+    <value>School Code</value>
   </data>
   <data name="science" xml:space="preserve">
     <value>Science</value>
@@ -746,6 +788,9 @@
   </data>
   <data name="weak internet service Please check your internet routine again" xml:space="preserve">
     <value>Weak internet service !! Please check your internet routine again</value>
+  </data>
+  <data name="welcometo" xml:space="preserve">
+    <value>Welcome to</value>
   </data>
   <data name="your data is in trouble, please review" xml:space="preserve">
     <value>Your data is in trouble, please review</value>
