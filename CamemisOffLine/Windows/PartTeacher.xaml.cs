@@ -106,6 +106,8 @@ namespace CamemisOffLine.Windows
             cbSelectClass.Visibility = Visibility.Collapsed;
             cbSelectMonth.Visibility = Visibility.Collapsed;
             cbSelectSubject.Visibility = Visibility.Collapsed;
+            gridSelectSubInpuscore.Visibility = Visibility.Collapsed;
+            gridSelectSubInpuscore.Background = Brushes.White;
             btnCalculate.Visibility = Visibility.Collapsed;
             btnApproved.Visibility = Visibility.Collapsed;
             btnDeleteApproved.Visibility = Visibility.Collapsed;
@@ -1220,7 +1222,9 @@ namespace CamemisOffLine.Windows
         {
             clearAllSelection();
             cbAcademyYear.Text = Properties.Langs.Lang.Select_school_year;
-            
+            lblTitleDataResult.Content = "";
+
+
         }
 
         void clearAllSelection()
@@ -1239,7 +1243,8 @@ namespace CamemisOffLine.Windows
            
             cbSelectMonth.Visibility = Visibility.Collapsed;
             cbSelectSubject.Visibility = Visibility.Collapsed;
-
+            gridSelectSubInpuscore.Visibility = Visibility.Collapsed;
+            gridSelectSubInpuscore.Background = Brushes.White;
             DockTree.Visibility = Visibility.Collapsed;
             tabcontrolResult.SelectedIndex = 1;
             tabcontrolScore.SelectedIndex = 1;
@@ -1565,9 +1570,10 @@ namespace CamemisOffLine.Windows
             {
                 DGMonthlyResult.ItemsSource = null;
                 loading.Close();
-                tabcontrolLearn1.SelectedIndex = 0;
+                //tabcontrolLearn1.SelectedIndex = 0;
                 Selectresult.Visibility = Visibility.Collapsed;
-                lblErrandSelect.Content = Properties.Langs.Lang.noresultdata;
+                //lblErrandSelect.Content = Properties.Langs.Lang.noresultdata;
+                tabcontrolLearn1.SelectedIndex = 7;
             }
         }
 
@@ -1648,9 +1654,10 @@ namespace CamemisOffLine.Windows
             {
                 DGMonthlyResult.ItemsSource = null;
                 loading.Close();
-                tabcontrolLearn1.SelectedIndex = 0;
+                //tabcontrolLearn1.SelectedIndex = 0;
                 Selectresult.Visibility = Visibility.Collapsed;
-                lblErrandSelect.Content = Properties.Langs.Lang.noresultdata;
+                //lblErrandSelect.Content = Properties.Langs.Lang.noresultdata;
+                tabcontrolLearn1.SelectedIndex = 7;
             }
             Selectresult.Visibility = Visibility.Visible;
         }
@@ -2681,7 +2688,7 @@ namespace CamemisOffLine.Windows
                         DGScoreMonth.ItemsSource = null;
                         DGScoreMonth.ItemsSource = obj.data;
                         File.Delete(filePath + "\\" + classId + " " + month + " " + SubjectId + ".txt");
-                        btnPrint.Visibility = Visibility.Visible;
+                        btnPrint.Visibility = Visibility.Collapsed;
                         btnSave.Visibility = Visibility.Collapsed;
                         loading.Close();
                         /*this.Opacity = 0.5;
@@ -2733,6 +2740,8 @@ namespace CamemisOffLine.Windows
                 //checkMonthButton = true;
                 TilteSelection.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title_select_Subject;
                 cbSelectSubject.Visibility = Visibility.Visible;
+                gridSelectSubInpuscore.Visibility = Visibility.Visible;
+                gridSelectSubInpuscore.Background = Brushes.WhiteSmoke;
                 var item = sender as ComboBox;
                 var selection = (KeyValuePair<string, string>)item.SelectedItem;
                 //treeViewItemChange(item.id);
@@ -2837,6 +2846,8 @@ namespace CamemisOffLine.Windows
                         message.ShowDialog();
                         this.Opacity = 1;
                         cbSelectSubject.Visibility = Visibility.Collapsed;
+                        gridSelectSubInpuscore.Visibility = Visibility.Collapsed;
+                        gridSelectSubInpuscore.Background = Brushes.White;
                     }
 
                     btnResultofTheYear1.Visibility = Visibility.Visible;
@@ -2863,6 +2874,8 @@ namespace CamemisOffLine.Windows
                             cbSelectSubject.ItemsSource = obj;
                             cbSelectSubject.DisplayMemberPath = "name";
                             cbSelectSubject.SelectedValuePath = "id";
+                            gridSelectSubInpuscore.Visibility = Visibility.Visible;
+                            gridSelectSubInpuscore.Background = Brushes.White;
                         }
                     }
                     catch
@@ -3014,9 +3027,10 @@ namespace CamemisOffLine.Windows
                         btnDeleteApproved.Visibility = Visibility.Collapsed;
                         btnCalculate.Visibility = Visibility.Visible;
                         loading.Close();
-                        tabcontrolLearn1.SelectedIndex = 0;
+                        //tabcontrolLearn1.SelectedIndex = 0;
                         Selectresult.Visibility = Visibility.Collapsed;
-                        lblErrandSelect.Content = Properties.Langs.Lang.noresultdata;
+                        //lblErrandSelect.Content = Properties.Langs.Lang.noresultdata;
+                        tabcontrolLearn1.SelectedIndex = 7;
                     }
                     Selectresult.Visibility = Visibility.Visible;
                 }
@@ -3120,9 +3134,10 @@ namespace CamemisOffLine.Windows
                         btnDeleteApproved.Visibility = Visibility.Collapsed;
                         btnCalculate.Visibility = Visibility.Visible;
                         loading.Close();
-                        tabcontrolLearn1.SelectedIndex = 0;
+                        //tabcontrolLearn1.SelectedIndex = 0;
                         Selectresult.Visibility = Visibility.Collapsed;
-                        lblErrandSelect.Content = Properties.Langs.Lang.noresultdata;
+                        tabcontrolLearn1.SelectedIndex = 7;
+                        //lblErrandSelect.Content = Properties.Langs.Lang.noresultdata;
                     }
                     Selectresult.Visibility = Visibility.Visible;
                 }
@@ -3191,9 +3206,10 @@ namespace CamemisOffLine.Windows
                     {
                         DGMonthlyResult.ItemsSource = null;
                         loading.Close();
-                        tabcontrolLearn1.SelectedIndex = 0;
+                        //tabcontrolLearn1.SelectedIndex = 0;
                         Selectresult.Visibility = Visibility.Collapsed;
-                        lblErrandSelect.Content = Properties.Langs.Lang.noresultdata;
+                        tabcontrolLearn1.SelectedIndex = 7;
+                        //lblErrandSelect.Content = Properties.Langs.Lang.noresultdata;
                         btnApproved.Visibility = Visibility.Collapsed;
                         btnDeleteApproved.Visibility = Visibility.Collapsed;
                         btnCalculate.Visibility = Visibility.Visible;

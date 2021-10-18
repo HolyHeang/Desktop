@@ -238,9 +238,9 @@
                         <Grid>
                             <TabControl BorderThickness="0" Margin=" 0 0 0 0" Name="tabcontrolMenu">
                                 <TabItem BorderThickness="0"  Name="tabScore">
-                                    <Grid Margin="-2 0 -2 -2" Background="White">
+                                    <Grid Margin="-2 0 -2 -2" Background="WhiteSmoke">
                                         <DockPanel LastChildFill="True">
-                                            <DockPanel Name="DockTree" HorizontalAlignment="Left" Width="250" Margin="7 0 0 0" Background="WhiteSmoke">
+                                            <DockPanel Name="DockTree" HorizontalAlignment="Left" Width="250" Margin="7 0 0 0" Background="White">
                                                 <Grid Margin="0 5 0 0">
                                                     <Grid.RowDefinitions>
                                                         <RowDefinition Height="40"/>
@@ -303,11 +303,19 @@
                                                 <Grid Margin="0 -7 0 0">
                                                     <TabControl BorderThickness="0 0 0 0" Name="tabcontrolResult">
                                                         <TabItem Name="TabErrorandSelect">
-                                                            <Grid Margin="-2 -1 -2 -2"  Background="WhiteSmoke">
+                                                            <Grid Margin="-2 -1 -2 -2"  Background="White">
                                                                 <Grid Margin="10">
-                                                                    <Grid Height="200" Margin="50 50 50 0" VerticalAlignment="Top" Background="White">
-                                                                        <Label Name="LabelTitle" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Content="{x:Static language:Lang.Message_Box_Stu_Result_Title_select_year}" Foreground="Black" Style="{DynamicResource Siemreap}" FontSize="18" FontWeight="Bold"/>
-                                                                    </Grid>
+                                                                    <StackPanel Margin="50 50 50 0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                                        <Grid VerticalAlignment="Center">
+                                                                            <Image Source="/CamemisOffLine;component/Image/undraw_date_picker_gorr.png" Height="295" Width="339"></Image>
+
+
+                                                                        </Grid>
+                                                                        <Grid>
+                                                                            <Label Name="LabelTitle" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Content="{x:Static language:Lang.Message_Box_Stu_Result_Title_select_year}" Foreground="Black" Style="{DynamicResource Siemreap}" FontSize="18" FontWeight="Bold"/>
+
+                                                                        </Grid>
+                                                                    </StackPanel>
                                                                 </Grid>
                                                             </Grid>
                                                         </TabItem>
@@ -393,21 +401,21 @@
                                                                         <TabControl Name="tabcontrolResulandInput" BorderThickness="0" Background="WhiteSmoke">
 
                                                                             <TabItem Name="tabInputScore">
-                                                                                <Grid Margin="-2 5 -2 -2" Background="WhiteSmoke">
-                                                                                    <Grid Margin="0 0 0 0" Background="WhiteSmoke">
+                                                                                <Grid Margin="-2 5 -2 -2" Background="White">
+                                                                                    <Grid Margin="0 0 0 0" Background="White">
                                                                                         <Grid.RowDefinitions>
                                                                                             <RowDefinition Height="50"/>
                                                                                             <RowDefinition Height="*"/>
                                                                                         </Grid.RowDefinitions>
 
-                                                                                        <Grid Grid.Row="0">
+                                                                                        <Grid Grid.Row="0" Name="gridSelectSubInpuscore" Background="WhiteSmoke">
                                                                                             <Grid.ColumnDefinitions>
                                                                                                 <ColumnDefinition Width="*"/>
                                                                                                 <ColumnDefinition Width="0"/>
                                                                                                 <ColumnDefinition Width="1.2*"/>
                                                                                             </Grid.ColumnDefinitions>
 
-                                                                                            <StackPanel Orientation="Horizontal" Grid.Column="0" Margin="10,0,0,-0.4">
+                                                                                            <StackPanel Orientation="Horizontal" Grid.Column="0" Margin="10,1,0,-0.4">
                                                                                                 <ComboBox Style="{StaticResource combobox}" Name="cbSelectSubject" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35" Text="{x:Static language:Lang.select_subjects}" IsEditable="True" BorderThickness="1" MinWidth="190" BorderBrush="WhiteSmoke" Margin="0,4,10,11" SelectionChanged="cbSelectSubject_SelectionChanged"/>
                                                                                                 <ComboBox Style="{StaticResource combobox}" Name="cbSelectMonth" FontSize="14" MinWidth="200" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35" Text="{x:Static language:Lang.Select_Month___Semester___Year}" IsEditable="True" BorderThickness="1" BorderBrush="WhiteSmoke" Margin="5,4,10,11" SelectionChanged="cbSelectMonth_SelectionChanged"/>
                                                                                             </StackPanel>
@@ -748,11 +756,15 @@
 
                                                                                                             <TabItem>
                                                                                                                 <Grid Background="White">
-                                                                                                                    <Grid Margin="0 5 0 0" Background="WhiteSmoke">
-                                                                                                                        <Grid Margin="50 50 50 0" Height="150" VerticalAlignment="Top" Background="White">
+                                                                                                                    <StackPanel Margin="0 5 0 0" Background="White" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                                                                                        <Grid>
+                                                                                                                            <Image Source="/CamemisOffLine;component/Image/undraw_date_picker_gorr.png" Height="295" Width="339"></Image>
+
+                                                                                                                        </Grid>
+                                                                                                                        <Grid VerticalAlignment="Center" Background="White">
                                                                                                                             <Label Name="TilteSelection" Content="{x:Static language:Lang.Message_Box_Stu_Result_Title_select_Subject}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18"/>
                                                                                                                         </Grid>
-                                                                                                                    </Grid>
+                                                                                                                    </StackPanel>
                                                                                                                 </Grid>
                                                                                                             </TabItem>
                                                                                                         </TabControl>
@@ -769,23 +781,23 @@
                                                                             </TabItem>
 
                                                                             <TabItem Name="tabcontrolLearn">
-                                                                                <Grid Margin="-2 0 -2 -2" Background="WhiteSmoke">
+                                                                                <Grid Margin="-2 0 -2 -2" Background="White">
                                                                                     <Grid.RowDefinitions>
                                                                                         <RowDefinition Height="50"/>
                                                                                         <RowDefinition Height="*"/>
                                                                                     </Grid.RowDefinitions>
 
-                                                                                    <Grid Grid.Row="0" Name="gridheaderResult">
+                                                                                    <Grid Grid.Row="0" Name="gridheaderResult" Background="WhiteSmoke">
                                                                                         <Grid.ColumnDefinitions>
                                                                                             <ColumnDefinition Width="250"/>
                                                                                             <ColumnDefinition Width="0"/>
                                                                                             <ColumnDefinition Width="2*"/>
                                                                                         </Grid.ColumnDefinitions>
-                                                                                        <StackPanel Grid.Column="0" Margin="10 0 0 0" Orientation="Horizontal">
+                                                                                        <StackPanel Grid.Column="0" Margin="10 5 0 0" Orientation="Horizontal">
                                                                                             <ComboBox Style="{StaticResource combobox}" Name="cbSelectResultMonth" FontSize="14" MinWidth="190" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35" Text="{x:Static language:Lang.Select_Month___Semester___Year}" IsEditable="True" BorderThickness="1" BorderBrush="WhiteSmoke" Margin="0,0,10,0" SelectionChanged="cbSelectResultMonth_SelectionChanged"/>
                                                                                         </StackPanel>
                                                                                         <StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Right" Margin="0 0 0 0">
-                                                                                            <TextBlock Name="txtDate" Text="{x:Static language:Lang.Date_of_data}" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Margin="0 0 10 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Visibility="Collapsed"/>
+                                                                                            <TextBlock Name="txtDate" Text="{x:Static language:Lang.Date_of_data}" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Margin="0 5 10 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Visibility="Collapsed"/>
                                                                                             
                                                                                             <!--<Button Name="btnPrintResult" BorderThickness="0 0 0 0" BorderBrush="LightGray" VerticalAlignment="Center" Margin="5 0 5 0" Height="35" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" Click="btnPrintResult_Click">
                                                                                                 <Grid Height="35" Width="auto">
@@ -806,7 +818,7 @@
 
                                                                                                 </Grid>
                                                                                             </Button>-->
-                                                                                            <Button Name="btnCalculate" BorderThickness="1" BorderBrush="#1183CA" VerticalAlignment="Center" Margin="5 0 0 0" Height="35" Cursor="Hand" MinWidth="90" Style="{DynamicResource Siemreap}" Click="btnCalculate_Click">
+                                                                                            <Button Name="btnCalculate" BorderThickness="1" BorderBrush="#1183CA" VerticalAlignment="Center" Margin="5 5 0 0" Height="35" Cursor="Hand" MinWidth="90" Style="{DynamicResource Siemreap}" Click="btnCalculate_Click">
                                                                                                 <Grid Height="35" MinWidth="90">
                                                                                                     <Grid.ColumnDefinitions>
                                                                                                         <ColumnDefinition Width="30"></ColumnDefinition>
@@ -825,7 +837,7 @@
 
                                                                                                 </Grid>
                                                                                             </Button>
-                                                                                            <Button Name="btnApproved" BorderThickness="1" BorderBrush="#1183CA" VerticalAlignment="Center" Margin="5 0 0 0" Height="35" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" Click="btnApproved_Click">
+                                                                                            <Button Name="btnApproved" BorderThickness="1" BorderBrush="#1183CA" VerticalAlignment="Center" Margin="5 5 0 0" Height="35" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" Click="btnApproved_Click">
                                                                                                 <Grid Height="35" Width="auto">
                                                                                                     <Grid.ColumnDefinitions>
                                                                                                         <ColumnDefinition Width="30"></ColumnDefinition>
@@ -844,7 +856,7 @@
 
                                                                                                 </Grid>
                                                                                             </Button>
-                                                                                            <Button Name="btnDeleteApproved" BorderThickness="1" BorderBrush="#1183CA" VerticalAlignment="Center" Margin="5 0 0 0" Height="35" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" Click="btnDeleteApproved_Click">
+                                                                                            <Button Name="btnDeleteApproved" BorderThickness="1" BorderBrush="#1183CA" VerticalAlignment="Center" Margin="5 5 0 0" Height="35" Cursor="Hand" Width="auto" Style="{DynamicResource Siemreap}" Click="btnDeleteApproved_Click">
                                                                                                 <Grid Height="35" Width="auto">
                                                                                                     <Grid.ColumnDefinitions>
                                                                                                         <ColumnDefinition Width="30"></ColumnDefinition>
@@ -864,7 +876,7 @@
                                                                                                 </Grid>
                                                                                             </Button>
 
-                                                                                            <Button Name="btnSaveSemester" BorderThickness="1" BorderBrush="#1183CA" Click="btnSaveSemester_Click" Height="35" MinWidth="90" VerticalAlignment="Center" Margin="5 0 0 0" Style="{DynamicResource Siemreap}" Visibility="Collapsed">
+                                                                                            <Button Name="btnSaveSemester" BorderThickness="1" BorderBrush="#1183CA" Click="btnSaveSemester_Click" Height="35" MinWidth="90" VerticalAlignment="Center" Margin="5 5 0 0" Style="{DynamicResource Siemreap}" Visibility="Collapsed">
 
                                                                                                 <Grid Height="35" MinWidth="90">
                                                                                                     <Grid.ColumnDefinitions>
@@ -882,7 +894,7 @@
                                                                                                     </Grid>
                                                                                                 </Grid>
                                                                                             </Button>
-                                                                                            <Button Name="btnPostSemester" BorderThickness="1" BorderBrush="#1183CA" Click="btnPostSemester_Click" Height="35" MinWidth="90" VerticalAlignment="Center" Margin="5 0 0 0" Style="{DynamicResource Siemreap}" Visibility="Collapsed">
+                                                                                            <Button Name="btnPostSemester" BorderThickness="1" BorderBrush="#1183CA" Click="btnPostSemester_Click" Height="35" MinWidth="90" VerticalAlignment="Center" Margin="5 5 0 0" Style="{DynamicResource Siemreap}" Visibility="Collapsed">
 
                                                                                                 <Grid Height="35" MinWidth="90">
                                                                                                     <Grid.ColumnDefinitions>
@@ -904,7 +916,7 @@
 
                                                                                             </Button>
 
-                                                                                            <Menu Name="Selectresult" Visibility="Visible" Margin="5 0 0 0" Width="90" Height="35" Background="#1183CA" FontSize="10">
+                                                                                            <Menu Name="Selectresult" Visibility="Visible" Margin="5 5 0 0" Width="90" Height="35" Background="#1183CA" FontSize="10">
                                                                                                 <MenuItem FontSize="12" Foreground="White" Style="{DynamicResource Siemreap}" Height="35" Background="#1183CA" Width="90">
                                                                                                     <MenuItem.Icon>
                                                                                                         <Grid  Margin="57,-6,-69,-6" Height="28" VerticalAlignment="Top">
@@ -930,7 +942,7 @@
 
                                                                                                 </MenuItem>
                                                                                             </Menu>
-                                                                                            <Menu Name="TranscripPrint" DockPanel.Dock="Top" Visibility="Visible" Margin="5,0,0,0" Width="90" Height="35" Background="#1183CA" FontSize="10">
+                                                                                            <Menu Name="TranscripPrint" DockPanel.Dock="Top" Visibility="Visible" Margin="5,5,10,0" Width="90" Height="35" Background="#1183CA" FontSize="10">
                                                                                                 <MenuItem FontSize="12" Foreground="White" Style="{DynamicResource Siemreap}" Height="35" Background="#1183CA" Width="90">
                                                                                                     <MenuItem.Icon>
 
@@ -1021,11 +1033,15 @@
                                                                                                 <TabControl BorderThickness="0" x:Name="tabcontrolLearn1">
                                                                                                     <TabItem>
                                                                                                         <Grid Background="White">
-                                                                                                            <Grid Margin="10 5 10 10" Background="WhiteSmoke">
-                                                                                                                <Grid Margin="50 50 50 0" Height="150" VerticalAlignment="Top" Background="White">
+                                                                                                            <StackPanel Margin="10 5 10 10" Background="White" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                                                                                    <Grid>
+                                                                                                                        <Image Source="/CamemisOffLine;component/Image/undraw_date_picker_gorr.png" Height="295" Width="339"></Image>
+
+                                                                                                                    </Grid>
+                                                                                                                <Grid VerticalAlignment="Top" Background="White">
                                                                                                                     <Label Name="lblErrandSelect" Content="{x:Static language:Lang.Message_Box_Stu_Result_Title_select_month}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18"/>
                                                                                                                 </Grid>
-                                                                                                            </Grid>
+                                                                                                            </StackPanel>
                                                                                                         </Grid>
                                                                                                     </TabItem>
                                                                                                     <TabItem Name="tabMonth">
@@ -1042,28 +1058,7 @@
                                                                                                                             <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#4C1183CA" />
                                                                                                                         </Grid.Resources>
                                                                                                                         <DataGrid Name="DGMonthlyResult" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" BorderThickness="1 0 1 1" RowHeight="60" BorderBrush="#7F808080" Grid.Column="0" FontSize="14" GridLinesVisibility="All" SelectionUnit="FullRow" SelectionMode="Extended" AutoGenerateColumns="False" Background="#7FFFFFFF" CanUserSortColumns="False" AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" VirtualizingPanel.ScrollUnit="Pixel" IsReadOnly="True" ScrollViewer.CanContentScroll="True">
-                                                                                                                            <DataGrid.RowStyle>
-                                                                                                                                <Style TargetType="DataGridRow">
-                                                                                                                                    <Setter Property="ToolTip">
-                                                                                                                                        <Setter.Value>
-                                                                                                                                            <Grid>
-                                                                                                                                                <Grid.ColumnDefinitions>
-                                                                                                                                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                                                                                                                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                                                                                                                                </Grid.ColumnDefinitions>
-                                                                                                                                                <Image Source="{Binding localProfileLink}" Height="100" Width="100" Stretch="Fill" Grid.Column="0" Margin="10"/>
-                                                                                                                                                <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10">
-                                                                                                                                                    <TextBlock Text="ព័ត៌មានអំពីសិស្ស" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" TextDecorations="Underline" HorizontalAlignment="Center" FontWeight="Bold"/>
-                                                                                                                                                    <TextBlock Text="{Binding student_school_id}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                    <TextBlock Text="{Binding name}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                    <TextBlock Text="{Binding gender}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                    <TextBlock Text="{Binding date_of_birth}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                </StackPanel>
-                                                                                                                                            </Grid>
-                                                                                                                                        </Setter.Value>
-                                                                                                                                    </Setter>
-                                                                                                                                </Style>
-                                                                                                                            </DataGrid.RowStyle>
+                                                                                                                            
                                                                                                                             <DataGrid.Resources>
                                                                                                                                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                                                                                                                                     <Setter Property="Background" Value="White" />
@@ -1247,28 +1242,7 @@
                                                                                                                             <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#4C1183CA" />
                                                                                                                         </Grid.Resources>
                                                                                                                         <DataGrid Name="DGSemester" Margin="0 3 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" BorderThickness="1 0 1 1" RowHeight="60" BorderBrush="#7F808080" Grid.Column="0" FontSize="14" GridLinesVisibility="All" SelectionUnit="FullRow" SelectionMode="Extended" AutoGenerateColumns="False" Background="#7FFFFFFF" CanUserSortColumns="False" AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" VirtualizingPanel.ScrollUnit="Pixel" IsReadOnly="True" ScrollViewer.CanContentScroll="True">
-                                                                                                                            <DataGrid.RowStyle>
-                                                                                                                                <Style TargetType="DataGridRow">
-                                                                                                                                    <Setter Property="ToolTip">
-                                                                                                                                        <Setter.Value>
-                                                                                                                                            <Grid>
-                                                                                                                                                <Grid.ColumnDefinitions>
-                                                                                                                                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                                                                                                                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                                                                                                                                </Grid.ColumnDefinitions>
-                                                                                                                                                <Image Source="{Binding localProfileLink}" Height="100" Width="100" Stretch="Fill" Grid.Column="0" Margin="10"/>
-                                                                                                                                                <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10">
-                                                                                                                                                    <TextBlock Text="ព័ត៌មានអំពីសិស្ស" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" TextDecorations="Underline" HorizontalAlignment="Center" FontWeight="Bold"/>
-                                                                                                                                                    <TextBlock Text="{Binding student_school_id}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                    <TextBlock Text="{Binding name}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                    <TextBlock Text="{Binding gender}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                    <TextBlock Text="{Binding date_of_birth}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                </StackPanel>
-                                                                                                                                            </Grid>
-                                                                                                                                        </Setter.Value>
-                                                                                                                                    </Setter>
-                                                                                                                                </Style>
-                                                                                                                            </DataGrid.RowStyle>
+                                                                                                                            
                                                                                                                             <DataGrid.Resources>
                                                                                                                                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                                                                                                                                     <Setter Property="Background" Value="White" />
@@ -1473,28 +1447,7 @@
                                                                                                                             <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#4C1183CA" />
                                                                                                                         </Grid.Resources>
                                                                                                                         <DataGrid Name="DGYear" Margin="0 3 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" BorderThickness="1 0 1 1" RowHeight="60" BorderBrush="#7F808080" Grid.Column="0" FontSize="14" GridLinesVisibility="All" SelectionUnit="FullRow" SelectionMode="Extended" AutoGenerateColumns="False" Background="#7FFFFFFF" CanUserSortColumns="False" AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" VirtualizingPanel.ScrollUnit="Pixel" IsReadOnly="True" ScrollViewer.CanContentScroll="True">
-                                                                                                                            <DataGrid.RowStyle>
-                                                                                                                                <Style TargetType="DataGridRow">
-                                                                                                                                    <Setter Property="ToolTip">
-                                                                                                                                        <Setter.Value>
-                                                                                                                                            <Grid>
-                                                                                                                                                <Grid.ColumnDefinitions>
-                                                                                                                                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                                                                                                                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                                                                                                                                </Grid.ColumnDefinitions>
-                                                                                                                                                <Image Source="{Binding localProfileLink}" Height="100" Width="100" Stretch="Fill" Grid.Column="0" Margin="10"/>
-                                                                                                                                                <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10">
-                                                                                                                                                    <TextBlock Text="ព័ត៌មានអំពីសិស្ស" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" TextDecorations="Underline" HorizontalAlignment="Center" FontWeight="Bold"/>
-                                                                                                                                                    <TextBlock Text="{Binding student_school_id}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                    <TextBlock Text="{Binding name}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                    <TextBlock Text="{Binding gender}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                    <TextBlock Text="{Binding date_of_birth}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                </StackPanel>
-                                                                                                                                            </Grid>
-                                                                                                                                        </Setter.Value>
-                                                                                                                                    </Setter>
-                                                                                                                                </Style>
-                                                                                                                            </DataGrid.RowStyle>
+                                                                                                                            
                                                                                                                             <DataGrid.Resources>
                                                                                                                                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                                                                                                                                     <Setter Property="Background" Value="White" />
@@ -1675,28 +1628,7 @@
                                                                                                                             <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#4C1183CA" />
                                                                                                                         </Grid.Resources>
                                                                                                                         <DataGrid Name="DGSemesterClass" Margin="0 3 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" BorderThickness="1 0 1 1" RowHeight="61" BorderBrush="#7F808080" Grid.Column="0" FontSize="13" GridLinesVisibility="All" SelectionUnit="FullRow" SelectionMode="Extended" AutoGenerateColumns="False" Background="#7FFFFFFF" CanUserSortColumns="False" AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" VirtualizingPanel.ScrollUnit="Pixel" IsReadOnly="True">
-                                                                                                                            <DataGrid.RowStyle>
-                                                                                                                                <Style TargetType="DataGridRow">
-                                                                                                                                    <Setter Property="ToolTip">
-                                                                                                                                        <Setter.Value>
-                                                                                                                                            <Grid>
-                                                                                                                                                <Grid.ColumnDefinitions>
-                                                                                                                                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                                                                                                                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                                                                                                                                </Grid.ColumnDefinitions>
-                                                                                                                                                <Image Source="{Binding profile}" Height="100" Width="100" Stretch="Fill" Grid.Column="0" Margin="10"/>
-                                                                                                                                                <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10">
-                                                                                                                                                    <TextBlock Text="ព័ត៌មានអំពីសិស្ស" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" TextDecorations="Underline" HorizontalAlignment="Center" FontWeight="Bold"/>
-                                                                                                                                                    <TextBlock Text="{Binding student_school_id}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                    <TextBlock Text="{Binding name}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                    <TextBlock Text="{Binding gender}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                    <TextBlock Text="{Binding date_of_birth}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                </StackPanel>
-                                                                                                                                            </Grid>
-                                                                                                                                        </Setter.Value>
-                                                                                                                                    </Setter>
-                                                                                                                                </Style>
-                                                                                                                            </DataGrid.RowStyle>
+                                                                                                                            
                                                                                                                             <DataGrid.Resources>
                                                                                                                                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                                                                                                                                     <Setter Property="Background" Value="White" />
@@ -1876,28 +1808,7 @@
                                                                                                                             <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#4C1183CA" />
                                                                                                                         </Grid.Resources>
                                                                                                                         <DataGrid Margin="0 3 0 0" Name="DGSemesterExam" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" BorderThickness="1 0 1 1" RowHeight="60" BorderBrush="#7F808080" Grid.Column="0" FontSize="14" GridLinesVisibility="All" SelectionUnit="FullRow" SelectionMode="Extended" AutoGenerateColumns="False" Background="#7FFFFFFF" CanUserSortColumns="False" AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" VirtualizingPanel.ScrollUnit="Pixel" IsReadOnly="True" ScrollViewer.CanContentScroll="True">
-                                                                                                                            <DataGrid.RowStyle>
-                                                                                                                                <Style TargetType="DataGridRow">
-                                                                                                                                    <Setter Property="ToolTip">
-                                                                                                                                        <Setter.Value>
-                                                                                                                                            <Grid>
-                                                                                                                                                <Grid.ColumnDefinitions>
-                                                                                                                                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                                                                                                                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                                                                                                                                </Grid.ColumnDefinitions>
-                                                                                                                                                <Image Source="{Binding localProfileLink}" Height="100" Width="100" Stretch="Fill" Grid.Column="0" Margin="10"/>
-                                                                                                                                                <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10">
-                                                                                                                                                    <TextBlock Text="ព័ត៌មានអំពីសិស្ស" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" TextDecorations="Underline" HorizontalAlignment="Center" FontWeight="Bold"/>
-                                                                                                                                                    <TextBlock Text="{Binding student_id}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                    <TextBlock Text="{Binding name}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                    <TextBlock Text="{Binding gender}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                    <TextBlock Text="{Binding date_of_birth}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                </StackPanel>
-                                                                                                                                            </Grid>
-                                                                                                                                        </Setter.Value>
-                                                                                                                                    </Setter>
-                                                                                                                                </Style>
-                                                                                                                            </DataGrid.RowStyle>
+                                                                                                                            
                                                                                                                             <DataGrid.Resources>
                                                                                                                                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                                                                                                                                     <Setter Property="Background" Value="White" />
@@ -2070,28 +1981,8 @@
                                                                                                                             <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#4C1183CA" />
                                                                                                                         </Grid.Resources>
                                                                                                                         <DataGrid Name="DGYearClass" Margin="0 3 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" BorderThickness="1 0 1 1" RowHeight="61" BorderBrush="#7F808080" Grid.Column="0" FontSize="13" GridLinesVisibility="All" SelectionUnit="FullRow" SelectionMode="Extended" AutoGenerateColumns="False" Background="#7FFFFFFF" CanUserSortColumns="False" AlternatingRowBackground="#B2D3D3D3" AlternationCount="1" VirtualizingPanel.ScrollUnit="Pixel" IsReadOnly="True" ScrollViewer.CanContentScroll="True">
-                                                                                                                            <DataGrid.RowStyle>
-                                                                                                                                <Style TargetType="DataGridRow">
-                                                                                                                                    <Setter Property="ToolTip">
-                                                                                                                                        <Setter.Value>
-                                                                                                                                            <Grid>
-                                                                                                                                                <Grid.ColumnDefinitions>
-                                                                                                                                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                                                                                                                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                                                                                                                                </Grid.ColumnDefinitions>
-                                                                                                                                                <Image Source="{Binding profile}" Height="100" Width="100" Stretch="Fill" Grid.Column="0" Margin="10"/>
-                                                                                                                                                <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10">
-                                                                                                                                                    <TextBlock Text="ព័ត៌មានអំពីសិស្ស" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" TextDecorations="Underline" HorizontalAlignment="Center" FontWeight="Bold"/>
-                                                                                                                                                    <TextBlock Text="{Binding student_school_id}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                    <TextBlock Text="{Binding name}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                    <TextBlock Text="{Binding gender}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                    <TextBlock Text="{Binding date_of_birth}" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" />
-                                                                                                                                                </StackPanel>
-                                                                                                                                            </Grid>
-                                                                                                                                        </Setter.Value>
-                                                                                                                                    </Setter>
-                                                                                                                                </Style>
-                                                                                                                            </DataGrid.RowStyle>
+                                                                                                                            
+                                                                                                                           
                                                                                                                             <DataGrid.Resources>
                                                                                                                                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                                                                                                                                     <Setter Property="Background" Value="White" />
@@ -2257,6 +2148,18 @@
                                                                                                             </ScrollViewer>
                                                                                                         </Grid>
                                                                                                     </TabItem>
+                                                                                                    <TabItem>
+                                                                                                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                                                                                <Grid>
+                                                                                                                    <Image Source="/CamemisOffLine;component/Image/undraw_empty_xct9.png" Height="295" Width="339" ></Image>
+
+                                                                                                                </Grid>
+                                                                                                                <Grid>
+                                                                                                                    <Label Name="LabelTitleAtNodataMonth" FontWeight="Bold" Foreground="Black" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Content="{x:Static language:Lang.noresultdata}" FontSize="18" Style="{DynamicResource Siemreap}"/>
+
+                                                                                                                </Grid>
+                                                                                                            </StackPanel>
+                                                                                                        </TabItem>
                                                                                                 </TabControl>
                                                                                                 <Rectangle Height="10" VerticalAlignment="Top" Margin="0 0 0 0" Fill="White"></Rectangle>
 
@@ -2267,7 +2170,7 @@
                                                                                 </Grid>
                                                                             </TabItem>
                                                                         </TabControl>
-                                                                        <Rectangle Height="10" VerticalAlignment="Top" Margin="0 0 0 0" Fill="White"></Rectangle>
+                                                                        <Rectangle Height="13" VerticalAlignment="Top" Margin="0 0 0 0" Fill="White"></Rectangle>
                                                                     </Grid>
 
                                                                 </Grid>

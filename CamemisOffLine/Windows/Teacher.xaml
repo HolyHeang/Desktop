@@ -318,7 +318,7 @@
                                         </Grid.RowDefinitions>
 
                                         <Grid Grid.Row="0">
-                                            <Grid Height="50" Margin="10 0 27 0" Background="White" VerticalAlignment="Center">
+                                            <Grid Height="50" Margin="10 0 10 0" Background="White" VerticalAlignment="Center">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*"/>
                                                     <ColumnDefinition Width="600"/>
@@ -2022,7 +2022,7 @@
 
                                                                             </Grid>
                                                                             <Grid>
-                                                                                <Label Name="LabelTitleAtNodataMonth" FontWeight="Bold" Foreground="Black" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Content="មិនមានទិន្នន័យ!" FontSize="18" Style="{DynamicResource Siemreap}" Width="695"/>
+                                                                                <Label Name="LabelTitleAtNodataMonth" FontWeight="Bold" Foreground="Black" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Content="{x:Static language:Lang.noresultdata}" FontSize="18" Style="{DynamicResource Siemreap}"/>
 
                                                                             </Grid>
                                                                         </StackPanel>
@@ -2038,7 +2038,7 @@
 
                                                                                 </Grid>
                                                                                 <Grid>
-                                                                                    <Label Name="LabelTitle" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Content="{x:Static language:Lang.Message_Box_Stu_Result_Title_select_year}" Foreground="Black" Style="{DynamicResource Siemreap}" FontSize="18" FontWeight="Bold" Margin="0,0,0,0" Width="695"/>
+                                                                                    <Label Name="LabelTitle" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Content="{x:Static language:Lang.Message_Box_Stu_Result_Title_select_year}" Foreground="Black" Style="{DynamicResource Siemreap}" FontSize="18" FontWeight="Bold"/>
 
                                                                                 </Grid>
                                                                             </StackPanel>
