@@ -33,9 +33,9 @@
     <ProductName>CAMEMIS Desktop</ProductName>
     <PublisherName>Heang Holy</PublisherName>
     <SuiteName>Camemis</SuiteName>
-    <MinimumRequiredVersion>1.0.0.13</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.14</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>14</ApplicationRevision>
+    <ApplicationRevision>15</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

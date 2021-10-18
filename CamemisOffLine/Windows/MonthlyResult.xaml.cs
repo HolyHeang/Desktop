@@ -44,13 +44,13 @@ namespace CamemisOffLine.Windows
             PrintPopup prints = new PrintPopup();
             if (Properties.Settings.Default.role == "1")
             {
-               
-                this.IsEnabled = false;
                 this.Opacity = 0.5;
+                this.IsEnabled = false;
+            
 
                 prints.ShowDialog();
 
-                this.Opacity = 1;
+                
                 this.IsEnabled = true;
                 titleTeacher.Content = prints.position;
                 titleAdmin.Visibility = Visibility.Collapsed;
@@ -58,16 +58,17 @@ namespace CamemisOffLine.Windows
 
                 barCenter.Visibility = prints.CheckCenter;
                 barRight.Visibility = prints.CheckRight;
+                this.Opacity = 1;
             }
             else
             {
-               
-                this.IsEnabled = false;
                 this.Opacity = 0.5;
+                this.IsEnabled = false;
+               
 
                 prints.ShowDialog();
 
-                this.Opacity = 1;
+               
                 this.IsEnabled = true;
                 txtPosition.Text = prints.position;
                 titleAdmin.Visibility = Visibility.Visible;
@@ -75,6 +76,7 @@ namespace CamemisOffLine.Windows
 
                 barCenter.Visibility = prints.CheckCenter;
                 barRight.Visibility = prints.CheckRight;
+                this.Opacity = 1;
             }
 
             if (prints.isPrint == false)

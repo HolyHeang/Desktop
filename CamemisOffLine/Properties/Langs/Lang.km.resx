@@ -186,6 +186,9 @@
   <data name="cancel" xml:space="preserve">
     <value>បោះបង់</value>
   </data>
+  <data name="center" xml:space="preserve">
+    <value>កណ្តាល</value>
+  </data>
   <data name="check internet connection" xml:space="preserve">
     <value>ពិនិត្យការតភ្ជាប់អ៊ីនធឺណិត</value>
   </data>
@@ -345,6 +348,9 @@
   <data name="Incorect User/Pass" xml:space="preserve">
     <value>ឈ្មោះអ្នកប្រើឬពាក្យសម្ងាត់មិនត្រឹមត្រូវ!</value>
   </data>
+  <data name="incorrectPassandUser" xml:space="preserve">
+    <value>ឈ្មោះអ្នកប្រើ ឬពាក្យសម្ងាត់មិនត្រឹមត្រូវ</value>
+  </data>
   <data name="Information" xml:space="preserve">
     <value>ព័ត៌មាន</value>
   </data>
@@ -374,6 +380,9 @@
   </data>
   <data name="login" xml:space="preserve">
     <value>ចូលប្រព័ន្ធ</value>
+  </data>
+  <data name="loginname" xml:space="preserve">
+    <value>ឈ្មោះចូល</value>
   </data>
   <data name="logout" xml:space="preserve">
     <value>ចាកចេញ</value>
@@ -411,14 +420,23 @@
   <data name="monthly" xml:space="preserve">
     <value>ប្រចាំខែ</value>
   </data>
+  <data name="mottolocation" xml:space="preserve">
+    <value>ទីតាំងបាវចនា</value>
+  </data>
   <data name="New" xml:space="preserve">
     <value>ថ្មី</value>
+  </data>
+  <data name="next" xml:space="preserve">
+    <value>បន្ទាប់</value>
   </data>
   <data name="No data saved, please use internet to download new data" xml:space="preserve">
     <value>មិនមានទិន្នន័យរក្សាទុក សូមប្រើប្រាស់អ៊ីនធឺណេតដើម្បីទាញទិន្នន័យថ្មី</value>
   </data>
   <data name="No internet connection" xml:space="preserve">
     <value>មិនមានការភ្ជាប់អ៊ីនធឺណេត</value>
+  </data>
+  <data name="No profile image" xml:space="preserve">
+    <value>គ្មានរូបភាពប្រវត្តិរូប</value>
   </data>
   <data name="No save data" xml:space="preserve">
     <value>គ្មានការរក្សាទុកទិន្នន័យ</value>
@@ -441,6 +459,9 @@
   <data name="options" xml:space="preserve">
     <value>ជម្រើស៖</value>
   </data>
+  <data name="password" xml:space="preserve">
+    <value>ពាក្យសម្ងាត់</value>
+  </data>
   <data name="permission" xml:space="preserve">
     <value>អវត្តមានឥតច្បាប់</value>
   </data>
@@ -449,6 +470,9 @@
   </data>
   <data name="please connect to the internet" xml:space="preserve">
     <value>សូមធ្វើការភ្ជាប់ អ៊ិនធឺណេត</value>
+  </data>
+  <data name="Please fill in the role or position under the signature director" xml:space="preserve">
+    <value>សូមបំពេញតួនាទី​ ឬមុខតំណែងនៅក្រោមហត្ថលេខានាយក</value>
   </data>
   <data name="please select" xml:space="preserve">
     <value>សូមជ្រើសរើស</value>
@@ -467,6 +491,9 @@
   </data>
   <data name="Please wait" xml:space="preserve">
     <value>សូមមេត្តារង់ចាំ</value>
+  </data>
+  <data name="Principal or High School Principal" xml:space="preserve">
+    <value>នាយក​ ឬនាយកវិទ្យាល័យ</value>
   </data>
   <data name="Pring Result" xml:space="preserve">
     <value>បោះពុម្ភពិន្ទុ</value>
@@ -504,6 +531,9 @@
   <data name="print successful" xml:space="preserve">
     <value>ការបោះពុម្ពបានជោគជ័យ</value>
   </data>
+  <data name="printsettings" xml:space="preserve">
+    <value>ការកំណត់បោះពុម្ព</value>
+  </data>
   <data name="Programs running" xml:space="preserve">
     <value>កម្មវិធីកំពុងដំណើរការ......</value>
   </data>
@@ -515,6 +545,9 @@
   </data>
   <data name="rating-Classification semester by class" xml:space="preserve">
     <value>ចំណាត់ថ្នាក់-ចំណាត់ប្រភេទប្រចាំឆមាសតាមថ្នាក់</value>
+  </data>
+  <data name="rememberme" xml:space="preserve">
+    <value>ចងចាំ</value>
   </data>
   <data name="repeat class" xml:space="preserve">
     <value>ត្រួតថ្នាក់</value>
@@ -531,6 +564,9 @@
   <data name="Return" xml:space="preserve">
     <value>ត្រឡប់ក្រោយ</value>
   </data>
+  <data name="right" xml:space="preserve">
+    <value>ស្ដាំ</value>
+  </data>
   <data name="save" xml:space="preserve">
     <value>រក្សាទុក</value>
   </data>
@@ -540,11 +576,17 @@
   <data name="Sch Year" xml:space="preserve">
     <value>ឆ្នាំសិក្សា</value>
   </data>
+  <data name="School code not found" xml:space="preserve">
+    <value>រកមិនឃើញលេខកូដសាលា</value>
+  </data>
   <data name="School Newsletter" xml:space="preserve">
     <value>ព្រឹត្តិប័ត្រព័ត៌មាន សាលា</value>
   </data>
   <data name="school year" xml:space="preserve">
     <value>ឆ្នាំសិក្សា</value>
+  </data>
+  <data name="schoolcode" xml:space="preserve">
+    <value>លេខកូដសាលា</value>
   </data>
   <data name="science" xml:space="preserve">
     <value>វិទ្យាសាស្រ្ត</value>
@@ -749,6 +791,9 @@
   </data>
   <data name="weak internet service Please check your internet routine again" xml:space="preserve">
     <value>សេវាអ៊ីនធឺណែតខ្សោយ!! សូមត្រួតពីនិត្យអ៊ីនធឺណែតរបស់អ្នកម្តងទៀត</value>
+  </data>
+  <data name="welcometo" xml:space="preserve">
+    <value>ស្វាគមន៍​មកកាន់</value>
   </data>
   <data name="your data is in trouble, please review" xml:space="preserve">
     <value>ទិន្នន័យរបស់អ្នកមានបញ្ហាសូមពិនិត្យឡើងវិញ</value>

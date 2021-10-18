@@ -32,38 +32,42 @@
             <Grid Grid.Column="1">
                 <Border Margin="150" Background="#FFF5F1F1" CornerRadius="15">
                     <Grid>
-                        <StackPanel Margin="30 0 30 0">
-                            <Grid Margin="0 40 0 15" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <StackPanel Orientation="Horizontal">
-                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black" Content="Welcome to" FontSize="25" VerticalAlignment="Center"/>
-                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontWeight="Bold" Foreground="#1183CA" FontSize="25" VerticalAlignment="Center" Content="CAMEMIS"/>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Margin="30 0 30 0">
+                            <Grid Margin="0 40 0 15">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black" Content="{x:Static language:Lang.welcometo}" FontSize="22" VerticalAlignment="Center"/>
+                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontWeight="Bold" Foreground="#1183CA" FontSize="22" VerticalAlignment="Center" Content="CAMEMIS"/>
                                 </StackPanel>
                                 
                             </Grid>
                             <Border  Name="btnPassCode" Margin="0 15 0 10" Height="40" BorderBrush="Gray" BorderThickness="1" CornerRadius="0">
                                 <Grid>
                                     <materialDesign:PackIcon Name="MarPasscode" Kind="PasswordReset" Width="25" Height="26" Foreground="Gray" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
-                                    <TextBox BorderThickness="0" Padding="22,0,0,0" VerticalContentAlignment="Center" materialDesign:HintAssist.Hint="School Code" Foreground="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="15" Height="42" Name="txtCode" GotFocus="txtUser_GotFocus" ForceCursor="True" MouseEnter="txtCode_MouseEnter" MouseLeave="txtCode_MouseLeave"/>
+                                    <TextBox BorderThickness="0" Padding="22,0,0,0" VerticalContentAlignment="Center" materialDesign:HintAssist.Hint="{x:Static language:Lang.schoolcode}" Foreground="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="15" Height="42" Name="txtCode" GotFocus="txtUser_GotFocus" ForceCursor="True" MouseEnter="txtCode_MouseEnter" MouseLeave="txtCode_MouseLeave"/>
 
                                 </Grid>
                             </Border>
                             <Border Name="btnUser" Margin="0 15 0 10" Height="40" BorderBrush="Gray" BorderThickness="1" CornerRadius="0">
                                 <Grid>
                                     <materialDesign:PackIcon Name="MarUser" Kind="User" Width="25" Height="26" Foreground="Gray" Margin="10 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                                    <TextBox Name="txtUser" BorderThickness="0" Padding="22,0,0,0" Margin="0 0" materialDesign:HintAssist.Hint="Enter Username/Email" Foreground="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="15" Height="42" VerticalContentAlignment="Center" GotFocus="txtUser_GotFocus" MouseEnter="txtUser_MouseEnter" MouseLeave="txtUser_MouseLeave"></TextBox>
+                                    <TextBox Name="txtUser" BorderThickness="0" Padding="22,0,0,0" Margin="0 0" materialDesign:HintAssist.Hint="{x:Static language:Lang.loginname}" Foreground="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="15" Height="42" VerticalContentAlignment="Center" GotFocus="txtUser_GotFocus" MouseEnter="txtUser_MouseEnter" MouseLeave="txtUser_MouseLeave"></TextBox>
                                 </Grid>
                             </Border>
                             <Border Name="btnPass" Margin="0 15 0 10" Height="40" BorderBrush="Gray" BorderThickness="1" CornerRadius="0">
                                 <Grid>
                                     <materialDesign:PackIcon Name="MarPass" Kind="Lock" Width="25" Height="26" Foreground="Gray" Margin="10 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                                    <PasswordBox Padding="22,0,0,0" PasswordChanged="txtPass_PasswordChanged" materialDesign:HintAssist.Hint="Password" VerticalContentAlignment="Center" Foreground="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="15" Height="42" Name="txtPass" GotFocus="txtUser_GotFocus" MouseEnter="txtPass_MouseEnter" MouseLeave="txtPass_MouseLeave"/>
-                                    <TextBox Visibility="Collapsed" TextChanged="txtBoxPass_TextChanged" Padding="22,0,0,0" materialDesign:HintAssist.Hint="Password" VerticalContentAlignment="Center" Foreground="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="15" Height="42" Name="txtBoxPass" GotFocus="txtUser_GotFocus" MouseEnter="txtPass_MouseEnter" MouseLeave="txtPass_MouseLeave"/>
+                                    <PasswordBox Padding="22,0,0,0" PasswordChanged="txtPass_PasswordChanged" materialDesign:HintAssist.Hint="{x:Static language:Lang.password}" VerticalContentAlignment="Center" Foreground="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="15" Height="42" Name="txtPass" GotFocus="txtUser_GotFocus" MouseEnter="txtPass_MouseEnter" MouseLeave="txtPass_MouseLeave"/>
+                                    <TextBox Visibility="Collapsed" TextChanged="txtBoxPass_TextChanged" Padding="22,0,0,0" materialDesign:HintAssist.Hint="{x:Static language:Lang.password}" VerticalContentAlignment="Center" Foreground="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="15" Height="42" Name="txtBoxPass" GotFocus="txtUser_GotFocus" MouseEnter="txtPass_MouseEnter" MouseLeave="txtPass_MouseLeave"/>
                                     <materialDesign:PackIcon Cursor="Hand" MouseDown="showPass_MouseDown" Name="showPass" Kind="Eye" Width="25" Height="26" Foreground="Gray" Margin="0 0 10 0" VerticalAlignment="Center" HorizontalAlignment="Right" MouseEnter="txtPass_MouseEnter" MouseLeave="txtPass_MouseLeave"/>
                                 </Grid>
                             </Border>
                             <Grid Margin="0 0 0 20">
                                 <StackPanel HorizontalAlignment="Left">
-                                    <Label Name="lblError" Foreground="Red" FontSize="15" Margin="5 5 0 0" Content="Incorrect Username or Password" VerticalAlignment="Center" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
+                                    <Label Name="lblError" Foreground="Red" FontSize="15" Margin="5 5 0 0" Content="{x:Static language:Lang.incorrectPassandUser}" VerticalAlignment="Center" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Label>
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5 5 0 0">
                                         <CheckBox Name="cbRememberMe" HorizontalAlignment="Left"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang">
                                             <CheckBox.Resources>
@@ -79,7 +83,7 @@
                                                 <ScaleTransform ScaleX="1.3" ScaleY="1.3" />
                                             </CheckBox.LayoutTransform>
                                         </CheckBox>
-                                        <Label Content="Remenber me" Name="Remember" Foreground="Gray" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="15"/>
+                                        <Label Content="{x:Static language:Lang.rememberme}" Name="Remember" Foreground="Gray" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="15"/>
                                     </StackPanel>
                                 </StackPanel>
                             </Grid>
@@ -95,7 +99,7 @@
                                         <Grid Height="40" HorizontalAlignment="Center" VerticalAlignment="Center">
                                             <StackPanel Orientation="Horizontal">
                                                 <Grid>
-                                                    <Label Content="Next" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="13"/> 
+                                                    <Label Content="{x:Static language:Lang.next}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="13"/> 
                                                 </Grid>
                                                 <Grid>
                                                     <materialDesign:PackIcon Kind="NextTitle" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" Foreground="White"/>
@@ -123,7 +127,7 @@
                                                     <materialDesign:PackIcon Kind="ArrowBack" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" Foreground="White"/>
                                                 </Grid>
                                                 <Grid>
-                                                    <Label Content="Back" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="13"/>
+                                                    <Label Content="{x:Static language:Lang.back}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="13"/>
                                                 </Grid>
                                                
                                             </StackPanel>
@@ -136,7 +140,7 @@
                                         <Grid Height="40" HorizontalAlignment="Center" VerticalAlignment="Center">
                                             <StackPanel Orientation="Horizontal">
                                                 <Grid>
-                                                    <Label Content="Login" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="13"/>
+                                                    <Label Content="{x:Static language:Lang.login}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="13"/>
                                                 </Grid>
                                                 <Grid>
                                                     <materialDesign:PackIcon Kind="LoginVariant" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" Foreground="White"/>
@@ -148,6 +152,11 @@
                                     
                             </Grid>
                         </StackPanel>
+                        <Grid Grid.Row="1">
+
+                            <Label Content="Power by CAMEMIS" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"  Foreground="Black"/>
+
+                        </Grid>
                     </Grid>
                 </Border>
             </Grid>
