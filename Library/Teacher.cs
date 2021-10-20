@@ -23,6 +23,7 @@ namespace Library
     }
     public class TeachingClass
     {
+        public bool isSelected { get; set; } = true;
         public string id { get; set; }
         public string object_type { get; set; }
         public string name { get; set; }

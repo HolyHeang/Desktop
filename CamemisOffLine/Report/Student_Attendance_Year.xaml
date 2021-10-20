@@ -253,10 +253,8 @@
                                         <!--<..........................អត់ច្បាប់....................>-->
                                         <DataGridTextColumn Width="0.5*" MinWidth="50" Binding="{Binding absent4}">
                                             <DataGridTextColumn.ElementStyle>
-
                                                 <Style TargetType="TextBlock">
                                                     <Setter Property="Foreground" Value="Black"></Setter>
-
                                                     <Setter Property="FontWeight" Value="Thin"></Setter>
                                                     <Setter Property="HorizontalAlignment" Value="Center"/>
                                                     <Setter Property="VerticalAlignment" Value="Center"/>

@@ -146,8 +146,12 @@ namespace CamemisOffLine
             //....................End.........................
 
             //-------------User Profile----------------
-            if (Properties.Settings.Default.localProfileLink.ToString() != "")
-                imgUserProfile.Source = new BitmapImage(new Uri(Properties.Settings.Default.localProfileLink.ToString()));
+            try
+            {
+                if (Properties.Settings.Default.localProfileLink.ToString() != "")
+                    imgUserProfile.Source = new BitmapImage(new Uri(Properties.Settings.Default.localProfileLink.ToString()));
+            }
+            catch { }
             //------------------------------------------
 
             //Check Start Program
