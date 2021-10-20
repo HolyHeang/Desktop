@@ -341,7 +341,24 @@
                                                                                   BorderThickness="1 2 1 1" BorderBrush="White" SelectionChanged="cbAcademyYear_SelectionChanged" />
                                                                     </Grid>
                                                                     <Grid Grid.Column="1">
-                                                                        <ComboBox Style="{StaticResource combobox}" Name="cbSelectClass" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35"  Width="200" Text="{x:Static language:Lang.select_class}" IsEditable="True" BorderThickness="1" BorderBrush="WhiteSmoke" Margin="0 0 0 0" SelectionChanged="cbSelectClass_SelectionChanged"/>
+                                                                        <ComboBox Style="{StaticResource combobox}" Name="cbSelectClass" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35"  Width="200" Text="{x:Static language:Lang.select_class}" IsEditable="True" BorderThickness="1" BorderBrush="WhiteSmoke" Margin="0 0 0 0" SelectionChanged="cbSelectClass_SelectionChanged">
+                                                                            <ComboBox.ItemContainerStyle>
+                                                                                <Style TargetType="ComboBoxItem">
+                                                                                    <Style.Triggers>
+                                                                                        <Trigger Property="IsEnabled" Value="False">
+                                                                                            <Setter Property="Background" Value="LightGray"/>
+                                                                                            <Setter Property="ToolTipService.ShowOnDisabled" Value="True"/>
+                                                                                            <Setter Property="ToolTip">
+                                                                                                <Setter.Value>
+                                                                                                    <Label Content="មិនមានការរក្សាទុកទិន្នន័យ" FontSize="14" Style="{DynamicResource Siemreap}" Foreground="White"/>
+                                                                                                </Setter.Value>
+                                                                                            </Setter>
+                                                                                        </Trigger>
+                                                                                    </Style.Triggers>
+                                                                                    <Setter Property="IsEnabled" Value="{Binding Value}"/>
+                                                                                </Style>
+                                                                            </ComboBox.ItemContainerStyle>
+                                                                        </ComboBox>
 
                                                                     </Grid>
                                                                     
@@ -417,7 +434,24 @@
 
                                                                                             <StackPanel Orientation="Horizontal" Grid.Column="0" Margin="10,1,0,-0.4">
                                                                                                 <ComboBox Style="{StaticResource combobox}" Name="cbSelectSubject" FontSize="14" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35" Text="{x:Static language:Lang.select_subjects}" IsEditable="True" BorderThickness="1" MinWidth="190" BorderBrush="WhiteSmoke" Margin="0,4,10,11" SelectionChanged="cbSelectSubject_SelectionChanged"/>
-                                                                                                <ComboBox Style="{StaticResource combobox}" Name="cbSelectMonth" FontSize="14" MinWidth="200" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35" Text="{x:Static language:Lang.Select_Month___Semester___Year}" IsEditable="True" BorderThickness="1" BorderBrush="WhiteSmoke" Margin="5,4,10,11" SelectionChanged="cbSelectMonth_SelectionChanged"/>
+                                                                                                <ComboBox Style="{StaticResource combobox}" Name="cbSelectMonth" FontSize="14" MinWidth="200" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35" Text="{x:Static language:Lang.Select_Month___Semester___Year}" IsEditable="True" BorderThickness="1" BorderBrush="WhiteSmoke" Margin="5,4,10,11" SelectionChanged="cbSelectMonth_SelectionChanged">
+                                                                                                    <ComboBox.ItemContainerStyle>
+                                                                                                        <Style TargetType="ComboBoxItem">
+                                                                                                            <Style.Triggers>
+                                                                                                                <Trigger Property="IsEnabled" Value="False">
+                                                                                                                    <Setter Property="Background" Value="LightGray"/>
+                                                                                                                    <Setter Property="ToolTipService.ShowOnDisabled" Value="True"/>
+                                                                                                                    <Setter Property="ToolTip">
+                                                                                                                        <Setter.Value>
+                                                                                                                            <Label Content="មិនមានការរក្សាទុកទិន្នន័យ" FontSize="14" Style="{DynamicResource Siemreap}" Foreground="White"/>
+                                                                                                                        </Setter.Value>
+                                                                                                                    </Setter>
+                                                                                                                </Trigger>
+                                                                                                            </Style.Triggers>
+                                                                                                            <Setter Property="IsEnabled" Value="{Binding Value}"/>
+                                                                                                        </Style>
+                                                                                                    </ComboBox.ItemContainerStyle>
+                                                                                                </ComboBox>
                                                                                             </StackPanel>
                                                                                             <StackPanel Name="stacButtonTop" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="2" Margin="0,0,0,-0.4" Grid.ColumnSpan="2">
                                                                                                 <Label Name="txtxCheckAutoSave" HorizontalAlignment="Right" Content="រក្សាទុកស្វ័យប្រវត្តិ"  VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Width="auto" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="0 0 10 0" Visibility="Collapsed"></Label>

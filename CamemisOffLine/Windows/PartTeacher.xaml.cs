@@ -131,8 +131,12 @@ namespace CamemisOffLine.Windows
                 txtxCheckinternet.Content = "Offline";
             }
             //-------------User Profile----------------
-            if (Properties.Settings.Default.localProfileLink.ToString() != "")
-                imgUserProfile.Source = new BitmapImage(new Uri(Properties.Settings.Default.localProfileLink.ToString()));
+            try
+            {
+                if (Properties.Settings.Default.localProfileLink.ToString() != "")
+                    imgUserProfile.Source = new BitmapImage(new Uri(Properties.Settings.Default.localProfileLink.ToString()));
+            }
+            catch { }
             //------------------------------------------
 
             //...............select Menu Stype.................
@@ -334,7 +338,7 @@ namespace CamemisOffLine.Windows
             clearAllSelection();
             
             
-            List<KeyValuePair<string, string>> data = new List<KeyValuePair<string, string>>();
+            List<KeyValuePair<string, int>> data = new List<KeyValuePair<string, int>>();
             try
             {
                 if (checkSelection)
@@ -361,14 +365,34 @@ namespace CamemisOffLine.Windows
                 {
                     schoolYearId = item.schoolyear;
                     titleYear = item.name;
-                    foreach(var i in item.teaching_classes)
+                    if(internet&&Teacher.InternetChecker())
                     {
-                        data.Add(new KeyValuePair<string, string>(i.name,i.id));
-                        cbSelectClass.Visibility = Visibility.Visible;
-                        TilteSelection.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title;
+                        foreach (var i in item.teaching_classes)
+                        {
+                            data.Add(new KeyValuePair<string, int>(i.name, int.Parse(i.id)));
+                            cbSelectClass.Visibility = Visibility.Visible;
+                            TilteSelection.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title;
+                        }
+                    }
+                    else
+                    {
+                        foreach (var i in item.teaching_classes)
+                        {
+                            if(File.Exists(filePath+"\\"+i.id+".txt"))
+                            {
+                                data.Add(new KeyValuePair<string, int>(i.name, int.Parse(i.id)));
+                            }
+                            else
+                            {
+                                data.Add(new KeyValuePair<string, int>(i.name, 0));
+                            }
+                            cbSelectClass.Visibility = Visibility.Visible;
+                            TilteSelection.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title;
+                        }
                     }
                 }
                 //tvAcademy.ItemsSource = obj;
+
                 cbSelectClass.ItemsSource = data;
                 cbSelectClass.DisplayMemberPath = "Key";
                 cbSelectClass.SelectedValuePath = "Value";
@@ -704,14 +728,15 @@ namespace CamemisOffLine.Windows
                     Properties.Settings.Default.Save();
                     var obj = JObject.Parse(respone).ToObject<TimesButton>().data;
                     lButton.ItemsSource = obj;
-                    foreach(var item in obj)
+                    foreach (var item in obj)
                     {
-                        foreach(var month in item.months)
+                        foreach (var month in item.months)
                         {
                             data.Add(new KeyValuePair<string, string>(month.displayMonth, item.semester));
                         }
                         data.Add(new KeyValuePair<string, string>(item.name, item.semester));
                     }
+
                     cbSelectMonth.ItemsSource = data;
                     cbSelectMonth.DisplayMemberPath = "Key";
                     cbSelectMonth.SelectedValuePath = "Value";
@@ -734,9 +759,23 @@ namespace CamemisOffLine.Windows
                     {
                         foreach (var month in item.months)
                         {
-                            data.Add(new KeyValuePair<string, string>(month.displayMonth, item.semester));
+                            if (File.Exists(filePath + "\\" + classId + " " + month.month + " " + SubjectId + ".txt"))
+                            {
+                                data.Add(new KeyValuePair<string, string>(month.displayMonth, item.semester));
+                            }
+                            else
+                            {
+                                data.Add(new KeyValuePair<string, string>(month.displayMonth, "False"));
+                            }
                         }
-                        data.Add(new KeyValuePair<string, string>(item.name, item.semester));
+                        if (File.Exists(filePath + "\\" + classId + " " + item.semester + " " + SubjectId + ".txt"))
+                        {
+                            data.Add(new KeyValuePair<string, string>(item.name, item.semester));
+                        }
+                        else
+                        {
+                            data.Add(new KeyValuePair<string, string>(item.name,"False"));
+                        }
                     }
                     cbSelectMonth.ItemsSource = data;
                     cbSelectMonth.DisplayMemberPath = "Key";
@@ -2705,6 +2744,20 @@ namespace CamemisOffLine.Windows
                         TilteSelection.Content = Properties.Langs.Lang.noresultdata;
                     }
                 }
+
+                string JsonString = JsonConvert.SerializeObject(obj);
+                Thread t1 = new Thread(() => saveLocalString(months, JsonString, false));
+                if (t1.IsAlive)
+                {
+                    t1.Abort();
+                    t1.IsBackground = true;
+                    t1.Start();
+                }
+                else
+                {
+                    t1.IsBackground = true;
+                    t1.Start();
+                }
             }
 
             catch
@@ -2743,9 +2796,9 @@ namespace CamemisOffLine.Windows
                 gridSelectSubInpuscore.Visibility = Visibility.Visible;
                 gridSelectSubInpuscore.Background = Brushes.WhiteSmoke;
                 var item = sender as ComboBox;
-                var selection = (KeyValuePair<string, string>)item.SelectedItem;
+                var selection = (KeyValuePair<string, int>)item.SelectedItem;
                 //treeViewItemChange(item.id);
-                classId = selection.Value;              
+                classId = selection.Value.ToString();              
                 LabelTitle.Content = Properties.Langs.Lang.Message_Box_Stu_Result_Title_select_month;
                 tabcontrolScore.SelectedIndex = 1;
 
@@ -2756,7 +2809,7 @@ namespace CamemisOffLine.Windows
                     string token = Properties.Settings.Default.Token;
                     var respone = await RESTApiHelper.GetAll(accessUrl, "/get-teaching-subject-class/" + selection.Value, token);
                     var obj = JObject.Parse(respone).ToObject<GetTeachingSubjectClass>();
-                    obj.classId = selection.Value;
+                    obj.classId = selection.Value.ToString();
                     obj.teacherId = Properties.Settings.Default.teacherId;
                     
 
@@ -2798,7 +2851,7 @@ namespace CamemisOffLine.Windows
                         checkRole = false;
 
                     //Task<string> task = GetMonthlyResultFormApiAsync();
-                    SaveLocalSubject(JsonConvert.SerializeObject(obj), selection.Value);
+                    SaveLocalSubject(JsonConvert.SerializeObject(obj), selection.Value.ToString());
                     SaveAcademyMonth(JsonConvert.SerializeObject(obj1),schoolYearId);
                     DockTree.Visibility = Visibility.Collapsed;
                     tabcontrolResult.SelectedIndex = 1;
@@ -2855,7 +2908,7 @@ namespace CamemisOffLine.Windows
 
                     try
                     {
-                        var obj = GetSubjectFromLocal(selection.Value).data;
+                        var obj = GetSubjectFromLocal(selection.Value.ToString()).data;
                         if (obj == null)
                         {
                             MessageBoxControl message = new MessageBoxControl();
@@ -3878,7 +3931,6 @@ namespace CamemisOffLine.Windows
             {
                 return null;
             }
-            
         }
         //----------------------------------------------------------------
         //----------------------Get Academy month from local--------------
