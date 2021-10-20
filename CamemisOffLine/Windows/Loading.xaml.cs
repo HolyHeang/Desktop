@@ -29,12 +29,15 @@ namespace CamemisOffLine.Windows
             {
                 check = img;
                 image.Visibility = Visibility.Collapsed;
+                image1.Visibility = Visibility.Collapsed;
                 Mouse.OverrideCursor = System.Windows.Input.Cursors.Wait;
             }
             else
             {
                 image.Visibility = Visibility.Visible;
+                image1.Visibility = Visibility.Visible;
             }
         }
+
     }
 }

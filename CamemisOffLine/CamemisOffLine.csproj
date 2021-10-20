@@ -540,6 +540,8 @@
     <Resource Include="Image\Online.png" />
     <Resource Include="Component\undraw_Wall_post_re_y78d.png" />
     <Resource Include="Image\coverLogin.jpg" />
+    <Resource Include="Image\Downloads.gif" />
+    <Resource Include="Image\Load.gif" />
     <Content Include="x64\SQLite.Interop.dll" />
     <Content Include="x86\SQLite.Interop.dll" />
     <EmbeddedResource Include="Properties\Langs\Lang.resx">
