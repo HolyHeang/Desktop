@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CamemisOffLine.Windows"
+        xmlns:local="clr-namespace:CamemisOffLine"
         xmlns:gif="http://wpfanimatedgif.codeplex.com"
         xmlns:language="clr-namespace:CamemisOffLine.Properties.Langs"
         mc:Ignorable="d"
@@ -13,8 +13,14 @@
         </Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"   FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black" FontWeight="Bold" Text="{x:Static language:Lang.Programs_running}"></TextBlock>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"   FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black" Text="{x:Static language:Lang.Please_wait}"></TextBlock>
-            <Image Name="image" HorizontalAlignment="Center" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="/CamemisOffLine;component/Image/animation_640_kmyd9rg2.gif" Source="/CamemisOffLine;component/Image/animation_640_kmyd9rg2.gif" Height="80" VerticalAlignment="Center" Margin="0 20 0 0"></Image>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"   FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black" Text="{x:Static language:Lang.Please_wait}"></TextBlock>
+                <Image Name="image1" HorizontalAlignment="Center" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="/CamemisOffLine;component/Image/Load.gif" Source="/CamemisOffLine;component/Image/Load.gif" Height="30" VerticalAlignment="Center" Margin="0 10 0 0"></Image>
+
+            </StackPanel>
+            <!--<local:UserControlLoad x:Name="Header"/>-->
+            <Grid></Grid>
+            <Image Name="image" HorizontalAlignment="Center" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="/CamemisOffLine;component/Image/Downloads.gif" Source="/CamemisOffLine;component/Image/Downloads.gif" Height="40" VerticalAlignment="Center" Margin="0 0 0 0"></Image>
         </StackPanel>
     </Grid>
 </Window>

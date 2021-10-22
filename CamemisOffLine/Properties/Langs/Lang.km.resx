@@ -246,6 +246,9 @@
   <data name="Delete data" xml:space="preserve">
     <value>លុបទិន្នន័យ</value>
   </data>
+  <data name="Delete data record" xml:space="preserve">
+    <value>លុបកំណត់ត្រាទិន្នន័យ</value>
+  </data>
   <data name="delete submit to the Commission check" xml:space="preserve">
     <value>លុបដាក់ស្នើរគណៈកម្មការត្រួតពិនិត្យ</value>
   </data>
@@ -535,7 +538,7 @@
     <value>ការកំណត់បោះពុម្ព</value>
   </data>
   <data name="Programs running" xml:space="preserve">
-    <value>កម្មវិធីកំពុងដំណើរការ......</value>
+    <value>កម្មវិធីកំពុងដំណើរការ</value>
   </data>
   <data name="QuseLogout" xml:space="preserve">
     <value>តើអ្នកពិតជាចង់ចាកចេញឬ?</value>
@@ -603,6 +606,9 @@
   <data name="search" xml:space="preserve">
     <value>ស្វែងរក</value>
   </data>
+  <data name="Search for staff alphabetically" xml:space="preserve">
+    <value>ស្វែងរកបុគ្គលិកតាមអក្ខរក្រម</value>
+  </data>
   <data name="search students:" xml:space="preserve">
     <value>ស្វែងរកសិស្ស៖</value>
   </data>
@@ -620,9 +626,6 @@
   </data>
   <data name="Select school year" xml:space="preserve">
     <value>ជ្រើសរើសឆ្នាំសិក្សា</value>
-  </data>
-  <data name="select students" xml:space="preserve">
-    <value>ស្វែងរកសិស្សតាមអក្ខរក្រម</value>
   </data>
   <data name="select subjects" xml:space="preserve">
     <value>ជ្រើសរើសមុខវិជ្ជា</value>

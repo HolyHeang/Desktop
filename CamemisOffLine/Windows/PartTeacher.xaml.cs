@@ -2446,7 +2446,6 @@ namespace CamemisOffLine.Windows
                     stacButtonTop.Visibility = Visibility.Visible;
                     try
                     {
-
                         string respone = "";
 
                         term = selection.Value;
@@ -2899,8 +2898,8 @@ namespace CamemisOffLine.Windows
                         message.ShowDialog();
                         this.Opacity = 1;
                         cbSelectSubject.Visibility = Visibility.Collapsed;
-                        gridSelectSubInpuscore.Visibility = Visibility.Collapsed;
-                        gridSelectSubInpuscore.Background = Brushes.White;
+                        //gridSelectSubInpuscore.Visibility = Visibility.Collapsed;
+                        //gridSelectSubInpuscore.Background = Brushes.White;
                     }
 
                     btnResultofTheYear1.Visibility = Visibility.Visible;
@@ -2912,8 +2911,8 @@ namespace CamemisOffLine.Windows
                         if (obj == null)
                         {
                             MessageBoxControl message = new MessageBoxControl();
-                            message.title = "ដំណឹង";
-                            message.discription = "មិនមានទីន្នន័យមុខវិជ្ចាបង្រៀនរក្សាទុក";
+                            message.title = Properties.Langs.Lang.Information;
+                            message.discription = Properties.Langs.Lang.No_subject_data_saved;
                             message.buttonType = 1;
                             this.Opacity = 0.5;
                             message.ShowDialog();
@@ -2927,8 +2926,8 @@ namespace CamemisOffLine.Windows
                             cbSelectSubject.ItemsSource = obj;
                             cbSelectSubject.DisplayMemberPath = "name";
                             cbSelectSubject.SelectedValuePath = "id";
-                            gridSelectSubInpuscore.Visibility = Visibility.Visible;
-                            gridSelectSubInpuscore.Background = Brushes.White;
+                            //gridSelectSubInpuscore.Visibility = Visibility.Visible;
+                            //gridSelectSubInpuscore.Background = Brushes.White;
                         }
                     }
                     catch

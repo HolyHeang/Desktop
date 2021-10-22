@@ -33,9 +33,9 @@
     <ProductName>CAMEMIS Desktop</ProductName>
     <PublisherName>Heang Holy</PublisherName>
     <SuiteName>Camemis</SuiteName>
-    <MinimumRequiredVersion>1.0.0.14</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.16</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>15</ApplicationRevision>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -219,6 +219,9 @@
     <Compile Include="Report\Education_Staff_Information_Sheet.xaml.cs">
       <DependentUpon>Education_Staff_Information_Sheet.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Report\gradeStudentClass.xaml.cs">
+      <DependentUpon>gradeStudentClass.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Report\ListStudentCencel.xaml.cs">
       <DependentUpon>ListStudentCencel.xaml</DependentUpon>
     </Compile>
@@ -390,6 +393,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Report\gradeStudentClass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Report\ListStudentCencel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -540,6 +547,8 @@
     <Resource Include="Image\Online.png" />
     <Resource Include="Component\undraw_Wall_post_re_y78d.png" />
     <Resource Include="Image\coverLogin.jpg" />
+    <Resource Include="Image\Downloads.gif" />
+    <Resource Include="Image\Load.gif" />
     <Content Include="x64\SQLite.Interop.dll" />
     <Content Include="x86\SQLite.Interop.dll" />
     <EmbeddedResource Include="Properties\Langs\Lang.resx">
