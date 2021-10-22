@@ -246,6 +246,9 @@
   <data name="Delete data" xml:space="preserve">
     <value>删除数据</value>
   </data>
+  <data name="Delete data record" xml:space="preserve">
+    <value>删除数据记录</value>
+  </data>
   <data name="delete submit to the Commission check" xml:space="preserve">
     <value>删除提交给委员会检查</value>
   </data>
@@ -597,6 +600,9 @@
   <data name="search" xml:space="preserve">
     <value>搜索</value>
   </data>
+  <data name="Search for staff alphabetically" xml:space="preserve">
+    <value>寻找员工</value>
+  </data>
   <data name="search students:" xml:space="preserve">
     <value>搜索学生：</value>
   </data>
@@ -614,9 +620,6 @@
   </data>
   <data name="Select school year" xml:space="preserve">
     <value>选择学年</value>
-  </data>
-  <data name="select students" xml:space="preserve">
-    <value>选择学生</value>
   </data>
   <data name="select subjects" xml:space="preserve">
     <value>选择科目</value>

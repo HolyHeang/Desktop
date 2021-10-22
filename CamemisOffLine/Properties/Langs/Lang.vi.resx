@@ -246,6 +246,9 @@
   <data name="Delete data" xml:space="preserve">
     <value>Xóa dữ liệu</value>
   </data>
+  <data name="Delete data record" xml:space="preserve">
+    <value>Xóa bản ghi dữ liệu</value>
+  </data>
   <data name="delete submit to the Commission check" xml:space="preserve">
     <value>xóa gửi đến Ủy ban kiểm tra</value>
   </data>
@@ -597,6 +600,9 @@
   <data name="search" xml:space="preserve">
     <value>Tìm kiếm</value>
   </data>
+  <data name="Search for staff alphabetically" xml:space="preserve">
+    <value>Tìm kiếm nhân viên</value>
+  </data>
   <data name="search students:" xml:space="preserve">
     <value>Tìm kiếm sinh viên:</value>
   </data>
@@ -614,9 +620,6 @@
   </data>
   <data name="Select school year" xml:space="preserve">
     <value>Chọn năm học</value>
-  </data>
-  <data name="select students" xml:space="preserve">
-    <value>Chọn học sinh</value>
   </data>
   <data name="select subjects" xml:space="preserve">
     <value>chọn chủ đề</value>

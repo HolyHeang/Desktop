@@ -1,0 +1,395 @@
+﻿<Window x:Class="CamemisOffLine.Report.gradeStudentClass"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CamemisOffLine.Report"
+        mc:Ignorable="d"
+        Title="gradeStudentClass" Height="26cm" Width="23cm" WindowStyle="None" Loaded="Window_Loaded">
+    <Grid>
+        <Grid>
+            <StackPanel Name="Grid">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="330"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" Margin="0 60 0 0">
+                        <StackPanel>
+                            <Image Source="/CamemisOffLine;component/Image/MoEYS.png" Height="100" VerticalAlignment="Top" HorizontalAlignment="Center"></Image>
+
+                            <Label Name="lbllogoLeft" Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" Style="{DynamicResource Muol}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 5 0 0"></Label>
+                            <Grid Margin="0,0,0,0">
+                                <Label Name="TitleSchool" Style="{DynamicResource Siemreap}" Content="វិទ្យាល័យ ហ៊ុនសែនបូរី១០០ខ្នង" FontSize="15" Foreground="Black" HorizontalAlignment="Center" Margin="0 0 0 0" VerticalAlignment="Center"></Label>
+                            </Grid>
+                            <Grid Margin="0,-12,0,0"/>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid VerticalAlignment="Top" Margin="0 40 0 0" Name="barCenter">
+                            <StackPanel Margin="-60 0 0 0">
+                                <Grid Margin="0 -5 0 0">
+                                    <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15"></Label>
+                                </Grid>
+                                <Grid Margin="0 -8 0 0">
+                                    <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15"></Label>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Grid VerticalAlignment="Top" Margin="0 40 0 0" Name="barRight">
+                            <StackPanel>
+                                <Grid Margin="0 -5 0 0">
+                                    <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15"></Label>
+                                </Grid>
+                                <Grid Margin="0 -8 0 0">
+                                    <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="15"></Label>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid Margin="0 10 0 0">
+                    <TextBlock Text="និទ្ទេសតាមថ្នាក់​ ខែកក្កដា" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+
+                </Grid>
+
+                <Grid Margin="0 15 0 0">
+                    <DataGrid Name="DGStatistic9" Margin="1 0 1 0" AutoGenerateColumns="False" RowHeight="40" BorderThickness="1 1 1 0" BorderBrush="Black" Background="White" FontSize="15" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" MaxWidth="22cm" CanUserAddRows="False" CanUserResizeColumns="False" HorizontalScrollBarVisibility="Hidden">
+                        <DataGrid.Resources>
+
+                            <Style TargetType="DataGrid">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="BorderBrush" Value="LightGray"/>
+                                <Setter Property="BorderThickness" Value="0"/>
+                            </Style>
+
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="Background" Value="White"/>
+                                <Setter Property="BorderBrush" Value="Black"/>
+                                <Setter Property="BorderThickness" Value="0 0 1 1"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                <Setter Property="Height" Value="80"/>
+                                <Setter Property="FontFamily" Value="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                            </Style>
+                            <Style BasedOn="{StaticResource {x:Type DataGridRowHeader}}" TargetType="{x:Type DataGridRowHeader}">
+                                <Setter Property="Background" Value="Transparent" />
+                                <Setter Property="Width" Value="0"/>
+                                <Setter Property="Height" Value="0"></Setter>
+                            </Style>
+                        </DataGrid.Resources>
+
+
+                        <DataGrid.Columns>
+
+                            <!--//............................Class............................-->
+                            <DataGridTemplateColumn Width="60" Header="ថ្នាក់ទី">
+
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+
+                            </DataGridTemplateColumn>
+                            <!--//............................Student Total............................-->
+                            <DataGridTemplateColumn Width="55">
+
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+
+                            </DataGridTemplateColumn>
+
+                            <!--//............................Student Female............................-->
+                            <DataGridTemplateColumn Width="55">
+
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+
+                            </DataGridTemplateColumn>
+
+                            <!--//............................Student Total............................-->
+                            <DataGridTemplateColumn Width="55">
+
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+
+                            </DataGridTemplateColumn>
+
+                            <!--//............................Student Female............................-->
+                            <DataGridTemplateColumn Width="55">
+
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+
+                            </DataGridTemplateColumn>
+
+                            <!--//............................Student Total............................-->
+                            <DataGridTemplateColumn Width="55">
+
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+
+                            </DataGridTemplateColumn>
+
+                            <!--//............................Student Female............................-->
+                            <DataGridTemplateColumn Width="55">
+
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+
+                            </DataGridTemplateColumn>
+                            <!--//............................Student Total............................-->
+                            <DataGridTemplateColumn Width="55">
+
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+
+                            </DataGridTemplateColumn>
+
+                            <!--//............................Student Female............................-->
+                            <DataGridTemplateColumn Width="55">
+
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+
+                            </DataGridTemplateColumn>
+                            <!--//............................Student Total............................-->
+                            <DataGridTemplateColumn Width="55">
+
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+
+                            </DataGridTemplateColumn>
+
+                            <!--//............................Student Female............................-->
+                            <DataGridTemplateColumn Width="55">
+
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+
+                            </DataGridTemplateColumn>
+                            <!--//............................Student Total............................-->
+                            <DataGridTemplateColumn Width="55">
+
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+
+                            </DataGridTemplateColumn>
+
+                            <!--//............................Student Female............................-->
+                            <DataGridTemplateColumn Width="55">
+
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+
+                            </DataGridTemplateColumn>
+
+                            <!--//............................Student Total............................-->
+                            <DataGridTemplateColumn Width="55">
+
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+
+                            </DataGridTemplateColumn>
+
+                            <!--//............................Student Female............................-->
+                            <DataGridTemplateColumn Width="55">
+
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+
+                                <DataGridTemplateColumn.Header>
+                                    <Grid Height="80" Width="770" Margin="-715 0 0 0" Background="White">
+                                        <StackPanel>
+                                            <Grid Height="40">
+                                                <Border BorderBrush="Black" BorderThickness="0 0 0 1"/>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                        <TextBlock Text="A" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                        <TextBlock Text="B" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                        <TextBlock Text="C" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                        <TextBlock Text="D" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                        <TextBlock Text="E" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                        <TextBlock Text="F" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+
+                                                    </Grid>
+                                                    <Grid Width="165">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                        <TextBlock Text="សរុបរួម" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+
+                                                    </Grid>
+
+                                                </StackPanel>
+                                            </Grid>
+                                            <Grid Height="40">
+                                                <Border BorderBrush="Gray" BorderThickness="0 0 0 1"/>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                        <TextBlock Text="សរុប" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                        <TextBlock Text="ស្រី" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                        <TextBlock Text="សរុប" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                        <TextBlock Text="ស្រី" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                        <TextBlock Text="សរុប" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                        <TextBlock Text="ស្រី" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                        <TextBlock Text="សរុប" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                        <TextBlock Text="ស្រី" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                        <TextBlock Text="សរុប" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                        <TextBlock Text="ស្រី" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                        <TextBlock Text="សរុប" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                        <TextBlock Text="ស្រី" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                        <TextBlock Text="សរុប" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+
+                                                    </Grid>
+                                                    <Grid Width="55">
+                                                        <Border BorderBrush="Black" BorderThickness="0 0 1 0"/>
+                                                        <TextBlock Text="ស្រី" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="15" Foreground="Black" Margin="0 0 0 0"></TextBlock>
+
+                                                    </Grid>
+
+                                                </StackPanel>
+                                            </Grid>
+                                        </StackPanel>
+                                    </Grid>
+                                </DataGridTemplateColumn.Header>
+
+                            </DataGridTemplateColumn>
+
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+                
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

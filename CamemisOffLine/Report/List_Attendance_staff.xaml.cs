@@ -46,20 +46,29 @@ namespace CamemisOffLine.Report
             barRight.Visibility = Visibility.Collapsed;
 
             this.Hide();
+            this.Opacity = 0.5;
             PrintPopup prints = new PrintPopup();
             this.IsEnabled = false;
-            this.Opacity = 0.5;
+            
 
             prints.ShowDialog();
 
-            this.Opacity = 1;
+            
             this.IsEnabled = true;
             txtPosition.Text = prints.position;
 
             barCenter.Visibility = prints.CheckCenter;
             barRight.Visibility = prints.CheckRight;
 
+            this.Opacity = 1;
+
             Loading load = new Loading();
+
+            if (prints.isPrint == false)
+                this.Close();
+
+            else
+            {          
             load.Show();
             var trimeDate = date.Split('/');
             var day = new DateTime(int.Parse(trimeDate[2]), int.Parse(trimeDate[1]), int.Parse(trimeDate[0]));
@@ -220,6 +229,7 @@ namespace CamemisOffLine.Report
                 message.discription = Properties.Langs.Lang.Unsuccessful_printing;
                 message.ShowDialog();
             }
+           }
             load.Close();
         }
 

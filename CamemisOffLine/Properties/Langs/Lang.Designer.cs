@@ -439,6 +439,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete data record.
+        /// </summary>
+        public static string Delete_data_record {
+            get {
+                return ResourceManager.GetString("Delete data record", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Selete submit to the commission check.
         /// </summary>
         public static string delete_submit_to_the_Commission_check {
@@ -1510,6 +1519,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Search for staff alphabetically.
+        /// </summary>
+        public static string Search_for_staff_alphabetically {
+            get {
+                return ResourceManager.GetString("Search for staff alphabetically", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Search students:.
         /// </summary>
         public static string search_students_ {
@@ -1560,15 +1578,6 @@ namespace CamemisOffLine.Properties.Langs {
         public static string Select_school_year {
             get {
                 return ResourceManager.GetString("Select school year", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Select students.
-        /// </summary>
-        public static string select_students {
-            get {
-                return ResourceManager.GetString("select students", resourceCulture);
             }
         }
         
