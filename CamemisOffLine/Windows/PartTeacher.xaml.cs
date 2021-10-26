@@ -2929,6 +2929,10 @@ namespace CamemisOffLine.Windows
                             //gridSelectSubInpuscore.Visibility = Visibility.Visible;
                             //gridSelectSubInpuscore.Background = Brushes.White;
                         }
+                        if (obj.Count <= 2)
+                            checkRole = true;
+                        else
+                            checkRole = false;
                     }
                     catch
                     {
