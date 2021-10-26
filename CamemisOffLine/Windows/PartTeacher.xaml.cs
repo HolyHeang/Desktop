@@ -3816,6 +3816,52 @@ namespace CamemisOffLine.Windows
             }
         }
 
+        private void btnDeleteData_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxControl message = new MessageBoxControl();
+            message.title = "បញ្ចាក់";
+            message.subtxt = "តើអ្នកចង់លុបកំណត់ត្រាពិន្ទុមែនទេ?";
+            this.Opacity = 0.5;
+            message.ShowDialog();
+            this.Opacity = 1;
+            if(message.result==1)
+            {
+                File.Delete(filePath + "\\" + classId + " " + months + " " + SubjectId + ".txt");
+                List<KeyValuePair<string, string>> data = new List<KeyValuePair<string, string>>();
+                string respone = Properties.Settings.Default.monthofTheAcademyYear;
+                var obj = JObject.Parse(respone).ToObject<TimesButton>().data;
+                foreach (var item in obj)
+                {
+                    foreach (var month in item.months)
+                    {
+                        if (File.Exists(filePath + "\\" + classId + " " + month.month + " " + SubjectId + ".txt"))
+                        {
+                            data.Add(new KeyValuePair<string, string>(month.displayMonth, item.semester));
+                        }
+                        else
+                        {
+                            data.Add(new KeyValuePair<string, string>(month.displayMonth, "False"));
+                        }
+                    }
+                    if (File.Exists(filePath + "\\" + classId + " " + item.semester + " " + SubjectId + ".txt"))
+                    {
+                        data.Add(new KeyValuePair<string, string>(item.name, item.semester));
+                    }
+                    else
+                    {
+                        data.Add(new KeyValuePair<string, string>(item.name, "False"));
+                    }
+                }
+                cbSelectMonth.ItemsSource = null;
+                cbSelectMonth.SelectedItem = -1;
+                cbSelectMonth.Text = "សូមជ្រើសរើសខែ/ឆមាស/ប្រចាំឆ្នាំ";
+                cbSelectMonth.ItemsSource = data;
+                cbSelectMonth.DisplayMemberPath = "Key";
+                cbSelectMonth.SelectedValuePath = "Value";
+                DGScoreMonth.ItemsSource = null;
+            }
+        }
+
         private async void btnDeleteApproved_Click(object sender, RoutedEventArgs e)
         {
             Loading load = new Loading();
