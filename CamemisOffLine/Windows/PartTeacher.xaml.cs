@@ -1115,7 +1115,7 @@ namespace CamemisOffLine.Windows
             {
                 message1.title = Properties.Langs.Lang.Internet;
                 message1.discription = Properties.Langs.Lang.No_internet_connection;
-                message1.subtxt = Properties.Langs.Lang.Please_select_a_class_and_result_type;
+                message1.subtxt = Properties.Langs.Lang.please_connect_to_the_internet;
                 message1.buttonType = 2;
                 message1.Owner = this;
                 this.Opacity = 0.5;
