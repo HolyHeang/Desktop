@@ -502,6 +502,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you want to delete the data record?.
+        /// </summary>
+        public static string Do_you_want_to_delete_the_data_record_ {
+            get {
+                return ResourceManager.GetString("Do you want to delete the data record?", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you want to delete this data?.
         /// </summary>
         public static string Do_you_want_to_delete_this_data {

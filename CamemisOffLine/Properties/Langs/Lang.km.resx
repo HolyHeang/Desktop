@@ -267,6 +267,9 @@
   <data name="Do you really want to submit" xml:space="preserve">
     <value>តើអ្នកពិតជាចង់ធ្វើការដាក់ស្នើមែនទេ?</value>
   </data>
+  <data name="Do you want to delete the data record?" xml:space="preserve">
+    <value>តើអ្នកចង់លុបកំណត់ត្រាទិន្ន័យមែនទេ?</value>
+  </data>
   <data name="Do you want to delete this data" xml:space="preserve">
     <value>តើអ្នកចង់លុបទិន្នន័យនេះមែនទេ?</value>
   </data>

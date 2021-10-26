@@ -2584,7 +2584,7 @@ namespace CamemisOffLine
             txtDataDate.Content = GetDataDate();
             grid_ResultLearning.Visibility = Visibility.Visible;
             lbltitleMonth.Visibility = Visibility.Visible;
-            btnStatistic.Visibility = Visibility.Visible;
+            btnStatistic.Visibility = Visibility.Collapsed;
             DGMonthlyResult.Visibility = Visibility.Visible;
             Selectresult.Visibility = Visibility.Visible;
 
@@ -2770,7 +2770,7 @@ namespace CamemisOffLine
             grid_ResultLearning.Visibility = Visibility.Visible;
             Selectresult.Visibility = Visibility.Collapsed;
             lbltitleMonth.Visibility = Visibility.Visible;
-            btnStatistic.Visibility = Visibility.Visible;
+            btnStatistic.Visibility = Visibility.Collapsed;
             DGMonthlyResult.Visibility = Visibility.Visible;
             checkStart = true;
             int girlTotal = 0;
@@ -3165,7 +3165,7 @@ namespace CamemisOffLine
             txtDataDate.Content = GetDataDate();
             grid_ResultLearning.Visibility = Visibility.Visible;
             lbltitleMonth.Visibility = Visibility.Visible;
-            btnStatistic.Visibility = Visibility.Visible;
+            btnStatistic.Visibility = Visibility.Collapsed;
             DGMonthlyResult.Visibility = Visibility.Visible;
             checkStart = true;
             title = "year";
