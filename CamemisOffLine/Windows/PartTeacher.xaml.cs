@@ -1595,7 +1595,7 @@ namespace CamemisOffLine.Windows
                     item.localProfileLink = filePath + "\\" + item.profileMedia.id + ".jpg";
                 }
 
-                NumberList(obj,"1");
+                NumberList(obj, "1");
                 DGMonthlyResult.ItemsSource = null;
                 DGMonthlyResult.ItemsSource = obj;
                 loading.Close();
@@ -1632,7 +1632,7 @@ namespace CamemisOffLine.Windows
             try
             {
                 List<Morality> moralities1 = new List<Morality>();
-                string respone = "",date="";
+                string respone = "", date = "";
                 var button = sender as Button;
                 nameSemester = button.Content.ToString();
                 message.title = Properties.Langs.Lang.Information;
@@ -1643,9 +1643,9 @@ namespace CamemisOffLine.Windows
                 tabcontrolLearn1.SelectedIndex = 1;
 
                 obj = GetData("", "semester", button.Content.ToString());
-                NumberList(obj,"2");
+                NumberList(obj, "2");
 
-                if(!File.Exists(filePath + "\\" + classId + " " + nameSemester + ".txt"))
+                if (!File.Exists(filePath + "\\" + classId + " " + nameSemester + ".txt"))
                 {
                     foreach (var item in obj)
                     {
@@ -1662,7 +1662,7 @@ namespace CamemisOffLine.Windows
                             morality = item.result_semester.morality,
                             health = item.result_semester.health,
                             grading = item.result_semester.grading,
-                            profile= item.localProfileLink
+                            profile = item.localProfileLink
                         });
                     }
                     date = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
@@ -1680,7 +1680,7 @@ namespace CamemisOffLine.Windows
                 DGSemesterClass.ItemsSource = null;
                 DGSemester.ItemsSource = obj;
                 DGSemesterExam.ItemsSource = obj;
-                DGSemesterClass.ItemsSource = moralities.OrderBy(s=>s.rank);
+                DGSemesterClass.ItemsSource = moralities.OrderBy(s => s.rank);
                 loading.Close();
                 this.Opacity = 0.5;
                 message.ShowDialog();
@@ -2012,7 +2012,6 @@ namespace CamemisOffLine.Windows
                 }
             }
         }
-        // Fuck all you guys
         //--------------------------------------------------------
 
         //---------------button focus--------------
@@ -2884,6 +2883,7 @@ namespace CamemisOffLine.Windows
                         cbSelectMonth.ItemsSource = data;
                         cbSelectMonth.DisplayMemberPath = "Key";
                         cbSelectMonth.SelectedValuePath = "Value";
+                        data.Add(new KeyValuePair<string, string>("លទ្ធផលប្រចាំឆ្នាំ", "លទ្ធផលប្រចាំឆ្នាំ"));
                         cbSelectResultMonth.ItemsSource = data;
                         cbSelectResultMonth.DisplayMemberPath = "Key";
                         cbSelectResultMonth.SelectedValuePath = "Value";
@@ -3232,8 +3232,6 @@ namespace CamemisOffLine.Windows
                         {
                             item1.localProfileLink = filePath + "\\" + item1.profileMedia.id + ".jpg";
                         }
-
-                        NumberList(resultData, "1");
                         foreach (var item1 in resultData)
                         {
                             if (item1.profileMedia.id == null)
@@ -3244,7 +3242,7 @@ namespace CamemisOffLine.Windows
                         }
 
                         resultData = resultData.OrderBy(r => r.result_monthly != null).ThenBy(r => r.result_monthly.rank).ToList();
-
+                        NumberList(resultData, "1");
                         DGMonthlyResult.ItemsSource = null;
                         DGMonthlyResult.ItemsSource = resultData;
                         loading.Close();
