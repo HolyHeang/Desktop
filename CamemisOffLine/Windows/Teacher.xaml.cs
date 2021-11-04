@@ -4203,7 +4203,7 @@ namespace CamemisOffLine
             m.title = Properties.Langs.Lang.Data;
             m.buttonType = 1;
             message.Owner = this;
-            if (item.id >= 1 && item.id <= 26)
+            if (item.id >= 1 && item.id <= 27)
             {
                 this.Opacity = 0.5;
                 message.title = Properties.Langs.Lang.print;
@@ -4348,25 +4348,45 @@ namespace CamemisOffLine
                     }
                    
                 }
-                else if (message.result == 1 && item.id == 9)
+                else if(message.result==1 && item.id == 9)
+                {
+                    if (cmbAcademicYearScedulePrint.Text == "" || cmbAcademicYearScedulePrint.Text == Properties.Langs.Lang.school_year || cmbGradeScedulePrint.Text == "" || cmbGradeScedulePrint.Text == Properties.Langs.Lang.select_grade || cmbClassScedulePrint.Text == "" || cmbClassScedulePrint.Text == Properties.Langs.Lang.select_class)
+                    {
+                        this.Opacity = 0.5;
+                        MessageBoxControl messageBox = new MessageBoxControl();
+                        messageBox.title = Properties.Langs.Lang.print;
+                        messageBox.discription = Properties.Langs.Lang.Select_school_year;
+                        messageBox.buttonType = 1;
+                        messageBox.ShowDialog();
+                        this.Opacity = 1;
+                    }
+                    else
+                    {
+                        this.Opacity = 0.5;
+                        schedule_student schedulestu = new schedule_student();
+                        schedulestu.Show();
+                        this.Opacity = 1;
+                    }
+                }
+                else if (message.result == 1 && item.id == 10)
                 {
                     this.Opacity = 0.5;
                     StudenPrintMonthlySemesterResult();
                     this.Opacity = 1;
                 }
-                else if (message.result == 1 && item.id == 10)
+                else if (message.result == 1 && item.id == 11)
                 {
                     this.Opacity = 0.5;
                     StudentPrintMonthlySemesterTranscrip();
                     this.Opacity = 1;
                 }
-                else if (message.result == 1 && item.id == 11)
+                else if (message.result == 1 && item.id == 12)
                 {
                     this.Opacity = 0.5;
                     StudentPrintHonoraryList();
                     this.Opacity = 1;
                 }
-                else if (message.result == 1 && item.id == 12)
+                else if (message.result == 1 && item.id == 13)
                 {
                     if (classId == "" || term == "" || YearSelection == "")
                     {
@@ -4386,13 +4406,13 @@ namespace CamemisOffLine
                         this.Opacity = 1;
                     }
                 }
-                else if (message.result == 1 && item.id == 13)
+                else if (message.result == 1 && item.id == 14)
                 {
                     this.Opacity = 0.5;
                     AllSubjectPrint();
                     this.Opacity = 1;
                 }
-                else if (message.result == 1 && item.id == 14)
+                else if (message.result == 1 && item.id == 15)
                 {
                     if (yearId == "" || resulType == "" || studentMonth == "" || term == "" || studentMonth == "")
                     {
@@ -4412,7 +4432,7 @@ namespace CamemisOffLine
                         this.Opacity = 1;
                     }
                 }
-                else if (message.result == 1 && item.id == 16)
+                else if (message.result == 1 && item.id == 17)
                 {
                     if (classId == "" || month == "" || yearTitle == "" || studentClass == "")
                     {
@@ -4443,7 +4463,7 @@ namespace CamemisOffLine
                     }
                 }
 
-                else if (message.result == 1 && item.id == 25)
+                else if (message.result == 1 && item.id == 26)
                 {
                     if (cmbAcademicYearStatistic12Print.Text=="" || cmbAcademicYearStatistic12Print.Text == Properties.Langs.Lang.Select_school_year)
                     {
@@ -4463,7 +4483,7 @@ namespace CamemisOffLine
                         this.Opacity = 1;
                     }
                 }
-                else if (message.result == 1 && item.id == 26)
+                else if (message.result == 1 && item.id == 27)
                 {
                     if (cmbAcademicYearStatistic12Print.Text == "" || cmbAcademicYearStatistic12Print.Text == Properties.Langs.Lang.Select_school_year)
                     {

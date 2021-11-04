@@ -1,0 +1,190 @@
+﻿<Window x:Class="CamemisOffLine.Report.student_card"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CamemisOffLine.Report"
+        mc:Ignorable="d"
+        Title="student_card" Height="9.7cm" Width="6.7cm" WindowStyle="None">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Border BorderBrush="#FF00A2FF" BorderThickness="3">
+                    <Grid>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="22"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="45"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="45"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Image Source="/CamemisOffLine;component/Image/MoEYS.png" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Image>
+
+                                </Grid>
+                                <Grid Grid.Column="1">
+                                    <StackPanel>
+                                        <Grid Margin="0 -5 0 0">
+                                            <Label Content="ព្រះរាជាណាចក្រកម្ពុជា" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="11"></Label>
+                                        </Grid>
+                                        <Grid Margin="0 -13 0 0">
+                                            <Label Content="ជាតិ​ សាសនា ព្រះមហាក្សត្រ" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="11"></Label>
+                                        </Grid>
+                                        <Grid Margin="0 -30 0 0">
+                                            <Label Content="6" HorizontalAlignment="Center" FontFamily="/CamemisOffLine;component/FontStyle/#Tacteing A" FontSize="45"></Label>
+                                        </Grid>
+                                    </StackPanel>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <Grid Margin="0 -3 0 0">
+                                    <Label Content="មន្ទីរអប់រំ យុវជន និងកីឡា រាជធានីភ្នំពេញ" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Muol}" Foreground="#FF00A2FF" FontSize="9"></Label>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Border BorderBrush="#FF00A2FF" BorderThickness="3 0 3 3">
+                    <Grid>
+                        <Image Source="/CamemisOffLine;component/Image/MoEYS.png" Height="210" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 -50 0 0" Opacity="0.1" Width="155"></Image>
+                        <Grid>
+                            <StackPanel>
+                                <Grid Margin="0 5 0 0">
+                                    <TextBlock Text="ប័ណ្ណសម្គាល់ខ្លួនសិស្ស" HorizontalAlignment="Center" Style="{DynamicResource Muol}" Foreground="#FF00A2FF" FontSize="13"></TextBlock>
+                                </Grid>
+                                <Grid Margin="0 -2 0 0">
+                                    <TextBlock Text="ឆ្នាំសិក្សា ២០២១~២០២២" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="10"></TextBlock>
+                                </Grid>
+                                <Grid Margin="0 -2 0 0">
+                                    <TextBlock Text="ថ្នាក់ទី ១១" HorizontalAlignment="Center" Style="{DynamicResource Muol}" FontSize="10"></TextBlock>
+                                </Grid>
+                                <Grid Height="25" Margin="0 -2 0 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="*"/>
+                                        
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <TextBlock Text="គោត្តនាម នាម :" Margin="10 0 0 0" FontSize="11" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                    </Grid>
+                                    <Grid Grid.Column="1">
+                                        <TextBlock Text="សុវណ្ណ សុខសេរីរដ្ឋនា" Padding="0 2 0 0" Margin="10 0 0 0" FontSize="10" Style="{DynamicResource Muol}" Foreground="#FF00A2FF"/>
+                                    </Grid>
+                                   
+                                </Grid>
+                                <Grid Height="25" Margin="0 -7 0 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="*"/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <TextBlock Text="ភេទ                : " Margin="10 0 0 0" FontSize="11" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                    </Grid>
+                                    <Grid Grid.Column="1">
+                                        <TextBlock Text="ស្រី" Margin="10 0 0 0" FontSize="11" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="#FF00A2FF"/>
+                                    </Grid>
+
+                                </Grid>
+                                <Grid Height="25" Margin="0 -7 0 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="*"/>
+                                       
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <TextBlock Text="ថ្ងៃខែឆ្នាំកំណើត:" Margin="10 0 0 0" FontSize="11" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                    </Grid>
+                                    <Grid Grid.Column="1">
+                                        <TextBlock Text="៣០ មករា ១៩៩៩" Padding="0 2 0 0" Margin="10 0 0 0" FontSize="10" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="#FF00A2FF"/>
+                                    </Grid>
+                                    
+                                </Grid>
+                                <Grid Height="25" Margin="0 -7 0 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="*"/>
+                                        
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <TextBlock Text="ទីកន្លែងកំណើត:" Margin="10 0 0 0" FontSize="11" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                    </Grid>
+                                    <Grid Grid.Column="1">
+                                        <TextBlock Text="ពងទឹក ពងទឹក ដង្កោ ភ្នំពេញ" Padding="0 2 0 0" Margin="10 0 0 0" FontSize="10" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="#FF00A2FF"/>
+                                    </Grid>
+                                   
+                                </Grid>
+                                <Grid Height="25" Margin="0 -7 0 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="*"/>
+                                      
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <TextBlock Text="ឪពុកឈ្មោះ     :" Margin="10 0 0 0" FontSize="11" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                    </Grid>
+                                    <Grid Grid.Column="1">
+                                        <TextBlock Text="សុវណ្ណ សុខសេរីរដ្ឋនា" Padding="0 2 0 0" Margin="10 0 0 0" FontSize="10" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="#FF00A2FF"/>
+                                    </Grid>
+                                    
+                                </Grid>
+                                <Grid Height="25" Margin="0 -7 0 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="*"/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <TextBlock Text="ម្ដាយឈ្មោះ     :" Margin="10 0 0 0" FontSize="11" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
+                                    </Grid>
+                                    <Grid Grid.Column="1">
+                                        <TextBlock Text="សុវណ្ណ សុខសេរីរដ្ឋនា" Padding="0 2 0 0" Margin="10 0 0 0" FontSize="10" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="#FF00A2FF"/>
+                                    </Grid>
+
+                                </Grid>
+                                <Grid HorizontalAlignment="Right" Width="155" Margin="0 -7 10 2">
+                                    <TextBlock TextWrapping="WrapWithOverflow" Text="វិទ្យាល័យ ហ៊ុន សែន បុរី ១០០ខ្នង" Padding="0 2 0 0" Margin="0 0 0 0" FontSize="9" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" Foreground="#FF15B985">
+                                       
+                                    </TextBlock>
+                                </Grid>
+                                <Grid HorizontalAlignment="Right" Width="155" Margin="0 -5 10 0">
+                                    <TextBlock TextWrapping="WrapWithOverflow" Text="ធ្វើនៅរាជធានីភ្នំពេញ ថ្ងែទី ៣០ ខែសីហា ឆ្នាំ២០២១" Padding="0 2 0 0" Margin="0 0 0 0" FontSize="9" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black">
+
+                                    </TextBlock>
+                                </Grid>
+                                <Grid HorizontalAlignment="Right" Width="155" Margin="0 -5 10 0">
+                                    <TextBlock TextWrapping="WrapWithOverflow" Text="នាយកវិទ្យាល័យ" Padding="0 2 0 0" Margin="0 0 0 0" FontSize="9" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" Foreground="Black" HorizontalAlignment="Center">
+
+                                    </TextBlock>
+                                </Grid>
+                                <Grid Height="25">
+                                    
+                                </Grid>
+                                <Grid HorizontalAlignment="Right" Width="155" Margin="0 -5 10 0">
+                                    <TextBlock TextWrapping="WrapWithOverflow" Text="ភោគ ផលបុណ្យ" Padding="0 2 0 0" Margin="0 0 0 0" FontSize="9" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" Foreground="Red" HorizontalAlignment="Right">
+
+                                    </TextBlock>
+                                </Grid>
+                                <Border HorizontalAlignment="Left" Width="63" BorderThickness="1" BorderBrush="Black" Margin="5 -76 0 0" Height="80">
+                                    <Grid>
+                                        
+                                    </Grid>
+                                </Border>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

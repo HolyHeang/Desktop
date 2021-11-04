@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASUS\\Desktop\\Camemis\\Desktop\\Library\\Library.csproj": {}
+    "D:\\HEANG-HOLY\\Work\\Camis Desktop\\Camemis\\Desktop\\Library\\Library.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASUS\\Desktop\\Camemis\\Desktop\\Library\\Library.csproj": {
+    "D:\\HEANG-HOLY\\Work\\Camis Desktop\\Camemis\\Desktop\\Library\\Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\Camemis\\Desktop\\Library\\Library.csproj",
+        "projectUniqueName": "D:\\HEANG-HOLY\\Work\\Camis Desktop\\Camemis\\Desktop\\Library\\Library.csproj",
         "projectName": "Library",
-        "projectPath": "C:\\Users\\ASUS\\Desktop\\Camemis\\Desktop\\Library\\Library.csproj",
+        "projectPath": "D:\\HEANG-HOLY\\Work\\Camis Desktop\\Camemis\\Desktop\\Library\\Library.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\Desktop\\Camemis\\Desktop\\Library\\obj\\",
+        "outputPath": "D:\\HEANG-HOLY\\Work\\Camis Desktop\\Camemis\\Desktop\\Library\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
