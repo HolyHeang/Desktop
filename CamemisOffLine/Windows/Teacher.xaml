@@ -1584,7 +1584,7 @@
                                                                         <Image Source="/CamemisOffLine;component/Image/iconfinder_excel_272697.png"/>
                                                                     </MenuItem.Icon>
                                                                 </MenuItem>
-                                                                <MenuItem Header="{x:Static language:Lang.telegram}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Click="MenuItem_Click" Foreground="Black" Background="#FFEFF3F3">
+                                                                <MenuItem Header="{x:Static language:Lang.telegram}" Visibility="Collapsed" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Click="MenuItem_Click" Foreground="Black" Background="#FFEFF3F3">
                                                                     <MenuItem.Icon>
                                                                         <Image Source="/CamemisOffLine;component/Image/telegram.png"/>
                                                                     </MenuItem.Icon>
@@ -1745,7 +1745,7 @@
                                                                                     </DataTemplate>
                                                                                 </ItemsControl.ItemTemplate>
                                                                             </ListView>
-                                                                            <Button Name="btnResultofTheYear" Content="លទ្ធផលប្រចាំឆ្នាំ" Width="270" Height="30" Click="btnResultofTheYear_Click" Foreground="Red" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="12" FontWeight="Bold" Margin="0 -1 0 0" Visibility="Collapsed" HorizontalAlignment="Center" BorderBrush="#66D3D3D3" BorderThickness="0 1 0 1" GotFocus="Button_GotFocus" LostFocus="Button_LostFocus" Background="WhiteSmoke" Tag="{Binding Text,ElementName=txtSemester}">
+                                                                            <Button Name="btnResultofTheYear" Content="លទ្ធផលប្រចាំឆ្នាំ" Width="270" Height="30" Click="btnResultofTheYear_Click" Foreground="Red" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="12" FontWeight="Bold" Margin="0 -1 0 0" Visibility="Collapsed" HorizontalAlignment="Center" BorderBrush="#66D3D3D3" BorderThickness="0 1 0 1" Background="{Binding colors}" Tag="{Binding Text,ElementName=txtSemester}">
                                                                                 <!--<Button.Style>
                                                                                     <Style TargetType="{x:Type Button}">
                                                                                         <Setter Property="Background" Value="Transparent"/>
@@ -1820,7 +1820,7 @@
                                                                             </Grid>
                                                                         </Button>
 
-                                                                        <Button Name="btnSave" Cursor="Hand" Height="28" Width="auto" HorizontalAlignment="Right" Style="{DynamicResource Siemreap}" Background="LightGray" Margin="5,0,5,0" Click="btnSave_Click">
+                                                                        <Button Name="btnSave" Cursor="Hand" Height="28" Width="auto" HorizontalAlignment="Right" Style="{DynamicResource Siemreap}" Background="LightGray" Margin="5,0,0,0" Click="btnSave_Click">
                                                                             <Grid Height="28" Width="Auto">
                                                                                 <Grid.ColumnDefinitions>
                                                                                     <ColumnDefinition Width="30"/>
@@ -1841,7 +1841,7 @@
                                                                         </Button>
                                                                        
 
-                                                                        <Button Name="btngoto" Height="28" Cursor="Hand" Width="90" HorizontalAlignment="Right" Style="{DynamicResource Siemreap}" Background="LightGray" Margin="0,0,5,0" Click="btngoto_Click">
+                                                                        <Button Name="btngoto" Height="28" Cursor="Hand" Width="90" HorizontalAlignment="Right" Style="{DynamicResource Siemreap}" Background="LightGray" Margin="5,0,0,0" Click="btngoto_Click">
                                                                             <Grid Height="28" Width="90">
                                                                                 <Grid.ColumnDefinitions>
                                                                                     <ColumnDefinition Width="30"></ColumnDefinition>
@@ -3249,7 +3249,7 @@
                                                 </ItemsControl>
                                             </StackPanel>
                                             <!--Sceduule List Print-->
-                                            <StackPanel Name="L2" Visibility="Collapsed">
+                                            <StackPanel Name="L2">
                                                 <TextBlock Text="{x:Static language:Lang.student_schedule}" HorizontalAlignment="Left" FontSize="18" Margin="20 20 0 0" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                 <Separator Margin="20 10 20 0"/>
                                                 <Grid Height="60" Background="White" Margin="20 10 20 0">

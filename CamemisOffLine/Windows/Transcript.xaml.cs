@@ -81,6 +81,7 @@ namespace CamemisOffLine.Windows
             barRight.Visibility = Visibility.Collapsed;
             this.Hide();
             PrintPopup prints = new PrintPopup();
+           
             if (Properties.Settings.Default.role == "1")
             {
                 
@@ -94,6 +95,9 @@ namespace CamemisOffLine.Windows
                 titleTeacher.Content = prints.position;
                 titleAdmin.Visibility = Visibility.Collapsed;
                 lblTeacherName.Visibility = Visibility.Collapsed;
+
+                barCenter.Visibility = prints.CheckCenter;
+                barRight.Visibility = prints.CheckRight;
             }
             else
             {
@@ -107,6 +111,9 @@ namespace CamemisOffLine.Windows
                 txtPosition.Text = prints.position;
                 titleAdmin.Visibility = Visibility.Visible;
                 lblTeacherName.Visibility = Visibility.Visible;
+
+                barCenter.Visibility = prints.CheckCenter;
+                barRight.Visibility = prints.CheckRight;
             }
 
             if (prints.isPrint == false)

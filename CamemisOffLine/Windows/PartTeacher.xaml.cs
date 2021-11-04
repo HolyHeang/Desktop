@@ -1115,7 +1115,7 @@ namespace CamemisOffLine.Windows
             {
                 message1.title = Properties.Langs.Lang.Internet;
                 message1.discription = Properties.Langs.Lang.No_internet_connection;
-                message1.subtxt = Properties.Langs.Lang.Please_select_a_class_and_result_type;
+                message1.subtxt = Properties.Langs.Lang.please_connect_to_the_internet;
                 message1.buttonType = 2;
                 message1.Owner = this;
                 this.Opacity = 0.5;
@@ -3821,8 +3821,8 @@ namespace CamemisOffLine.Windows
         private void btnDeleteData_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxControl message = new MessageBoxControl();
-            message.title = "បញ្ចាក់";
-            message.subtxt = "តើអ្នកចង់លុបកំណត់ត្រាពិន្ទុមែនទេ?";
+            message.title = Properties.Langs.Lang.Information;
+            message.discription = Properties.Langs.Lang.Do_you_want_to_delete_the_data_record_;
             this.Opacity = 0.5;
             message.ShowDialog();
             this.Opacity = 1;

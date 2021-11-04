@@ -33,9 +33,9 @@
     <ProductName>CAMEMIS Desktop</ProductName>
     <PublisherName>Heang Holy</PublisherName>
     <SuiteName>Camemis</SuiteName>
-    <MinimumRequiredVersion>1.0.0.16</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.17</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationRevision>18</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -234,6 +234,9 @@
     <Compile Include="Report\MonthlySubjectResult.xaml.cs">
       <DependentUpon>MonthlySubjectResult.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Report\schedule_student.xaml.cs">
+      <DependentUpon>schedule_student.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Report\Semi-classification.xaml.cs">
       <DependentUpon>Semi-classification.xaml</DependentUpon>
     </Compile>
@@ -251,6 +254,9 @@
     </Compile>
     <Compile Include="Report\Student_Attendance_Year.xaml.cs">
       <DependentUpon>Student_Attendance_Year.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report\student_card.xaml.cs">
+      <DependentUpon>student_card.xaml</DependentUpon>
     </Compile>
     <Compile Include="Report\Summery_of _Students_Short.xaml.cs">
       <DependentUpon>Summery_of _Students_Short.xaml</DependentUpon>
@@ -413,6 +419,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Report\schedule_student.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Report\Semi-classification.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -434,6 +444,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Report\Student_Attendance_Year.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Report\student_card.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -578,6 +592,7 @@
     <Resource Include="FontStyle\KHMEROSBATTAMBANG-BOLD.TTF" />
     <Resource Include="FontStyle\KHMEROSBATTAMBANG-REGULAR.TTF" />
     <None Include="CamemisOffLine_TemporaryKey.pfx" />
+    <Resource Include="FontStyle\TACTENG.TTF" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
