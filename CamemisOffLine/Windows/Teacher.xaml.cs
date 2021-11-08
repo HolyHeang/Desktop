@@ -4363,7 +4363,7 @@ namespace CamemisOffLine
                     else
                     {
                         this.Opacity = 0.5;
-                        schedule_student schedulestu = new schedule_student();
+                        schedule_student schedulestu = new schedule_student(classId,className,yearTitle,instrctorName);
                         schedulestu.Show();
                         this.Opacity = 1;
                     }
@@ -5886,6 +5886,34 @@ namespace CamemisOffLine
                     loading.Close();
                 },DispatcherPriority.ApplicationIdle);
             }
+        }
+        string instrctorName;
+        private void cmbClassScedulePrint_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var items = sender as ComboBox;
+            var selection = (KeyValuePair<string, string>)items.SelectedItem;
+            var obj = JObject.Parse(Properties.Settings.Default.schoolAcademyYear).ToObject<YearofAcademy>().data.Where(y => y.name.Equals(YearSelection.ToString()));
+            foreach (var item in obj)
+            {
+                schoolYearId = item.id;
+
+                foreach (var grades in item.school_system)
+                {
+                   foreach(var classes in grades.grade)
+                    {
+                        foreach(var child in classes.children)
+                        {
+                            if(child.name == selection.Key)
+                            {
+                                instrctorName = child.first_intructor_object.name;
+                            }
+                        }
+                    }
+                }
+            }
+            classId = selection.Value;
+            className = selection.Key;
+            Console.WriteLine(selection.Value);
         }
 
         private void MaProRequse_MouseDown(object sender, MouseButtonEventArgs e)

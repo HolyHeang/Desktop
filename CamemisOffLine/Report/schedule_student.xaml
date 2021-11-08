@@ -58,7 +58,7 @@
                         <TextBlock Name="lblMonth" Text="កាលវិភាគប្រចាំសប្តាហ៏" TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="18" Foreground="Blue" Margin="0 0 0 0"></TextBlock>
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="3">
                             <TextBlock Name="txtClassName" Text="ថ្នាក់ទី១១​ A2 " VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="18" Foreground="Blue" Margin="0 0 0 0"></TextBlock>
-                            <TextBlock Text="ឆ្នាំសិក្សា " VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="18" Foreground="Blue" Margin="0 0 0 0"></TextBlock>
+                            <TextBlock Text=" ឆ្នាំសិក្សា " VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="18" Foreground="Blue" Margin="0 0 0 0"></TextBlock>
                             <TextBlock Name="txtYear" Text="២០២០-២០២១" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="18" Foreground="Blue" Margin="0 0 0 0"></TextBlock>
                         </StackPanel>
                         <TextBlock Name="lblTecher" Text="គ្រូប្រចាំថ្នាក់: ចៅ ឈីឈី"  VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Siemreap}" FontSize="18" Foreground="Blue" Margin="0 0 0 0"></TextBlock>
@@ -99,7 +99,7 @@
 
                                 <DataGrid.Columns>
 
-                                    <DataGridTextColumn Header="ពេលវាលា" Width="1.4*" MinWidth="142">
+                                    <DataGridTextColumn Header="ពេលវេលា" Width="1.4*" MinWidth="142" Binding="{Binding full_time}">
                                         <DataGridTextColumn.ElementStyle>
                                             <Style TargetType="TextBlock">
                                                 <Setter Property="Foreground" Value="Black"></Setter>
@@ -115,10 +115,10 @@
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <StackPanel Orientation="Vertical">
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="គណិតវិទ្យា" FontSize="15" FontWeight="Bold" Name="subject_mon"/>
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="ចៅ ឈីឈី" FontSize="14" Name="teacher_name_mon"/>
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="០១២៣២៧៣៤" FontSize="14" Name="num_phone_mon"/>
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="ថ្នាក់ ១២B" FontSize="14" Name="class_mon"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding MO.event_title}" FontSize="15" FontWeight="Bold" Name="subject_mon"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding MO.teacher.name}" FontSize="14" Name="teacher_name_mon"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding MO.teacher.phone}" FontSize="14" Name="num_phone_mon"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding MO.room.name}" FontSize="14" Name="class_mon"/>
                                                 </StackPanel>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -128,10 +128,10 @@
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <StackPanel Orientation="Vertical">
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="គណិតវិទ្យា" FontSize="15" FontWeight="Bold" Name="subject_tue"/>
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="ចៅ ឈីឈី" FontSize="14" Name="teacher_name_tue"/>
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="០១២៣២៧៣៤" FontSize="14" Name="num_phone_tue"/>
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="ថ្នាក់ ១២B" FontSize="14" Name="class_tue"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding TU.event_title}" FontSize="15" FontWeight="Bold" Name="subject_mon"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding TU.teacher.name}" FontSize="14" Name="teacher_name_mon"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding TU.teacher.phone}" FontSize="14" Name="num_phone_mon"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding TU.room.name}" FontSize="14" Name="class_mon"/>
                                                 </StackPanel>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -141,10 +141,10 @@
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <StackPanel Orientation="Vertical">
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="គណិតវិទ្យា" FontSize="15" FontWeight="Bold" Name="subject_wed"/>
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="ចៅ ឈីឈី" FontSize="14" Name="teacher_name_wed"/>
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="០១២៣២៧៣៤" FontSize="14" Name="num_phone_wed"/>
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="ថ្នាក់ ១២B" FontSize="14" Name="class_wed"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding WE.event_title}" FontSize="15" FontWeight="Bold" Name="subject_mon"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding WE.teacher.name}" FontSize="14" Name="teacher_name_mon"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding WE.teacher.phone}" FontSize="14" Name="num_phone_mon"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding WE.room.name}" FontSize="14" Name="class_mon"/>
                                                 </StackPanel>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -154,10 +154,10 @@
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <StackPanel Orientation="Vertical">
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="គណិតវិទ្យា" FontSize="15" FontWeight="Bold" Name="subject_thu"/>
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="ចៅ ឈីឈី" FontSize="14" Name="teacher_name_thu"/>
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="០១២៣២៧៣៤" FontSize="14" Name="num_phone_thu"/>
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="ថ្នាក់ ១២B" FontSize="14" Name="class_thu"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding TH.event_title}" FontSize="15" FontWeight="Bold" Name="subject_mon"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding TH.teacher.name}" FontSize="14" Name="teacher_name_mon"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding TH.teacher.phone}" FontSize="14" Name="num_phone_mon"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding TH.room.name}" FontSize="14" Name="class_mon"/>
                                                 </StackPanel>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -167,10 +167,10 @@
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <StackPanel Orientation="Vertical">
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="គណិតវិទ្យា" FontSize="15" FontWeight="Bold" Name="subject_fri"/>
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="ចៅ ឈីឈី" FontSize="14" Name="teacher_name_fri"/>
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="០១២៣២៧៣៤" FontSize="14" Name="num_phone_fri"/>
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="ថ្នាក់ ១២B" FontSize="14" Name="class_fri"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding FR.event_title}" FontSize="15" FontWeight="Bold" Name="subject_mon"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding FR.teacher.name}" FontSize="14" Name="teacher_name_mon"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding FR.teacher.phone}" FontSize="14" Name="num_phone_mon"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding FR.room.name}" FontSize="14" Name="class_mon"/>
                                                 </StackPanel>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -181,10 +181,10 @@
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <StackPanel Orientation="Vertical">
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="គណិតវិទ្យា" FontSize="15" FontWeight="Bold" Name="subject_Sat"/>
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="ចៅ ឈីឈី" FontSize="14" Name="teacher_name_Sat"/>
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="០១២៣២៧៣៤" FontSize="14" Name="num_phone_Sat"/>
-                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="ថ្នាក់ ១២B" FontSize="14" Name="class_Sat"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding SA.event_title}" FontSize="15" FontWeight="Bold" Name="subject_mon"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding SA.teacher.name}" FontSize="14" Name="teacher_name_mon"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding SA.teacher.phone}" FontSize="14" Name="num_phone_mon"/>
+                                                    <Label FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Content="{Binding SA.room.name}" FontSize="14" Name="class_mon"/>
                                                 </StackPanel>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>

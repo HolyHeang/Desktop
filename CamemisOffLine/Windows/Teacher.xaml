@@ -3256,7 +3256,7 @@
                                                     <StackPanel Orientation="Horizontal">
                                                     <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
                                                         <TextBlock Text="{x:Static language:Lang.school_year}" FontSize="14" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 0 0 0" VerticalAlignment="Center"/>
-                                                            <ComboBox Name="cmbAcademicYearScedulePrint" Style="{StaticResource combobox}" Height="40" Text="{x:Static language:Lang.Select_school_year}" IsEditable="True" HorizontalAlignment="Left" Width="200" Margin="10 0 0 0"  VerticalAlignment="Center" Padding="5 10 0 0"
+                                                            <ComboBox Name="cmbAcademicYearScedulePrint" Style="{StaticResource combobox}" Height="40" Text="{x:Static language:Lang.Select_school_year}" IsEditable="True" HorizontalAlignment="Left" Width="200" Margin="10,10,0,10"  VerticalAlignment="Center" Padding="5 10 0 0"
                                                                           BorderThickness="1 2 1 1" BorderBrush="Black" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"
                                                                           FontSize="14" SelectionChanged="cmbAcademicYearResultPrint_SelectionChanged" ItemsSource="{Binding ItemsSource,ElementName=cmbAcademicYearResultPrint}"/>
                                                     </StackPanel>
@@ -3269,8 +3269,8 @@
                                                     <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
                                                             <TextBlock Text="{x:Static language:Lang._class}" FontSize="14" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 0 0 0" VerticalAlignment="Center"/>
                                                             <ComboBox Name="cmbClassScedulePrint" Text="{x:Static language:Lang.select_class}" IsEditable="True" Style="{StaticResource combobox}" Height="40" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Width="200" VerticalAlignment="Center"  Margin="10 0 0 0" Padding="5 10 0 0"
-                                                                          BorderThickness="1 2 1 1" BorderBrush="Black" materialDesign:HintAssist.Hint=" ជ្រើសរើស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="14" ItemsSource="{Binding ItemsSource,ElementName=cmbClassResultPrint}"
-                                                              SelectionChanged="cmbClassResultPrint_SelectionChanged"/>
+                                                                          BorderThickness="1 2 1 1" BorderBrush="Black" materialDesign:HintAssist.Hint=" ជ្រើសរើស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="14" ItemsSource="{Binding ItemsSource,ElementName=cmbClassResultPrint}" DisplayMemberPath="Key" SelectedValuePath="Value"
+                                                              SelectionChanged="cmbClassScedulePrint_SelectionChanged"/>
                                                     </StackPanel>
                                                     </StackPanel>
                                                 </Grid>
