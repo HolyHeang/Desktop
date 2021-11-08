@@ -59,6 +59,7 @@
     <Compile Include="InputScore.cs" />
     <Compile Include="Instructor.cs" />
     <Compile Include="ListMapteacherCode.cs" />
+    <Compile Include="ListSchdule.cs" />
     <Compile Include="ListStudentYearlyAtt.cs" />
     <Compile Include="ListTeacher.cs" />
     <Compile Include="MonthlyScoreExpire.cs" />

@@ -307,7 +307,7 @@ namespace CamemisOffLine.Windows
                     txtTeacherRecommend.Text = result.result_monthly.recommendation;
                     txtTeacherCommend.Text = result.result_monthly.teacher_comment;
                     txtBehavoiur.Text = result.result_monthly.behavior;
-                    lblTeacherName.Content = result.instructor.name;
+                    lblTeacherName.Content = result.instructor.name; 
                     if (result.gender == "1")
                     {
                         txtGender.Text = "ភេទ : ប្រុស";

@@ -68,5 +68,10 @@ namespace CamemisOffLine
         [JsonProperty("name_en")]
         public string name_en { get; set; }
         public string color { get; set; } = "Black";
+        public FirstIntructorObject first_intructor_object { get; set; }
+    }
+    public class FirstIntructorObject
+    {
+        public string name { get; set; }
     }
 }

@@ -2,6 +2,8 @@
 using CamemisOffLine.Windows;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using Library;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -25,18 +27,51 @@ namespace CamemisOffLine.Report
     /// </summary>
     public partial class schedule_student : Window
     {
+        string classId = "555",className,yearTitle,instructorName;
         public schedule_student()
         {
             InitializeComponent();
             lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
             TitleSchool.Content = Properties.Settings.Default.schoolName;
+        }
+        public schedule_student(string classId,string className,string yearTitle,string instructorName)
+        {
+            InitializeComponent();
+            this.classId = classId;
+            this.className = className;
+            this.yearTitle = yearTitle;
+            this.instructorName = instructorName;
 
+            lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
+            TitleSchool.Content = Properties.Settings.Default.schoolName;
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            Loading loading = new Loading();
+            loading.Show();
+            this.Hide();
+            string respone = await DataAsync(classId);
+            txtClassName.Text = "ថ្នាក់ "+className;
+            txtYear.Text = yearTitle;
+            lblTecher.Text = "គ្រូប្រចាំថ្នាក់: "+instructorName;
+            var obj = JObject.Parse(respone).ToObject<ListSchduleData>().data;
 
+            Datagridschedule.ItemsSource = null;
+
+            var schdule = new List<Schedule>();
+
+            foreach(var item in obj)
+            {
+                foreach(var schdules in item.schedule)
+                {
+                    schdule.Add(schdules);
+                }
+            }
+
+            Datagridschedule.ItemsSource = schdule;
             print();
+            loading.Close();
         }
 
         string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
@@ -55,7 +90,7 @@ namespace CamemisOffLine.Report
 
             this.Opacity = 1;
             this.IsEnabled = true;
-     
+
             barCenter.Visibility = prints.CheckCenter;
             barRight.Visibility = prints.CheckRight;
 
@@ -112,6 +147,16 @@ namespace CamemisOffLine.Report
             else
                 this.Close();
 
+        }
+
+        private async Task<string> DataAsync(string classId)
+        {
+            string accessUrl = Properties.Settings.Default.acessUrl;
+            string token = Properties.Settings.Default.Token;
+            string respone = "";
+
+            respone = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/schedule-with-format", token);
+            return respone;
         }
     }
 }
