@@ -4203,7 +4203,7 @@ namespace CamemisOffLine
             m.title = Properties.Langs.Lang.Data;
             m.buttonType = 1;
             message.Owner = this;
-            if (item.id >= 1 && item.id <= 27)
+            if (item.id >= 1 && item.id <= 28)
             {
                 this.Opacity = 0.5;
                 message.title = Properties.Langs.Lang.print;
@@ -4500,6 +4500,26 @@ namespace CamemisOffLine
                         this.Opacity = 0.5;
                         StatisticGrade12 statisticGrade12 = new StatisticGrade12(YearSelection);
                         statisticGrade12.ShowDialog();
+                        this.Opacity = 1;
+                    }
+                }
+                else if (message.result == 1 && item.id == 28)
+                {
+                    if (cmbAcademicYearStatistic12Print.Text == "" || cmbAcademicYearStatistic12Print.Text == Properties.Langs.Lang.Select_school_year)
+                    {
+                        this.Opacity = 0.5;
+                        MessageBoxControl messageBox = new MessageBoxControl();
+                        messageBox.title = Properties.Langs.Lang.print;
+                        messageBox.discription = Properties.Langs.Lang.Select_school_year;
+                        messageBox.buttonType = 1;
+                        messageBox.ShowDialog();
+                        this.Opacity = 1;
+                    }
+                    else
+                    {
+                        this.Opacity = 0.5;
+                        student_card _Card = new student_card();
+                        _Card.ShowDialog();
                         this.Opacity = 1;
                     }
                 }
@@ -4811,9 +4831,10 @@ namespace CamemisOffLine
             //SubScoreReportListPrint.ItemsSource = list[7];
             //StatisticResultReportListPrint.ItemsSource = list[8];
             StatisticResultGrade12ReportListPrint.ItemsSource = list[9];
-            //StatisticbyClassReportListPrint.ItemsSource = list[10];
-            //GradeSummaryReportListPrint.ItemsSource = list[11];
-            //StudentbyAgeReportListPrint.ItemsSource = list[12];
+            StudentcardListPrint.ItemsSource = list[10];
+            //StatisticbyClassReportListPrint.ItemsSource = list[11];
+            //GradeSummaryReportListPrint.ItemsSource = list[12];
+            //StudentbyAgeReportListPrint.ItemsSource = list[13];
 
 
         }

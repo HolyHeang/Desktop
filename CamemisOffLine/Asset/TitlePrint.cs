@@ -22,7 +22,7 @@ namespace CamemisOffLine.Asset
             new string[]{"តាមថ្នាក់នីមួយៗ", "សរុបតាមកម្រិតនីមួយៗ" },
             new string[]{"សញ្ញាប័ត្ររបស់បុគ្គលិក","និទ្ទេសតាមថ្នាក់","និទ្ទេស​តាមកម្រិត​"},
             new string[]{ Properties.Langs.Lang.general_knowledge_and_Completion_Grade_9, Properties.Langs.Lang.general_knowledge_and_Completion_Grade_12},
-            new string[]{"សិស្សសរុបតាមថ្នាក់នីមួយៗ"},
+            new string[]{"កាតសិស្ស"},
             new string[]{"និទ្ទេសមុខវិជ្ជាតាមថ្នាក់", "និទ្ទេសមុខវិជ្ជាតាមកម្រិត" },
             new string[]{"តាមថ្នាក់នីមួយៗ", "សរុបតាមកម្រិតនីមួយៗ" },
         };
