@@ -36,7 +36,19 @@ namespace Library
     }
     public class Mo
     {
-        public string event_title { get; set; }
+        string subString;
+        public string event_title 
+        {
+            get 
+            {
+                return subString;    
+            }
+            set
+            {
+                var sub = value.Split('(');
+                subString = sub[0].ToString();
+            } 
+        }
         public string session_period { get; set; }
         public string start_time { get; set; }
         public string end_time { get; set; }
@@ -45,7 +57,19 @@ namespace Library
     }
     public class Tu
     {
-        public string event_title { get; set; }
+        string subString;
+        public string event_title
+        {
+            get
+            {
+                return subString;
+            }
+            set
+            {
+                var sub = value.Split('(');
+                subString = sub[0].ToString();
+            }
+        }
         public string session_period { get; set; }
         public string start_time { get; set; }
         public string end_time { get; set; }
@@ -54,7 +78,19 @@ namespace Library
     }
     public class We
     {
-        public string event_title { get; set; }
+        string subString;
+        public string event_title
+        {
+            get
+            {
+                return subString;
+            }
+            set
+            {
+                var sub = value.Split('(');
+                subString = sub[0].ToString();
+            }
+        }
         public string session_period { get; set; }
         public string start_time { get; set; }
         public string end_time { get; set; }
@@ -63,7 +99,19 @@ namespace Library
     }
     public class TH
     {
-        public string event_title { get; set; }
+        string subString;
+        public string event_title
+        {
+            get
+            {
+                return subString;
+            }
+            set
+            {
+                var sub = value.Split('(');
+                subString = sub[0].ToString();
+            }
+        }
         public string session_period { get; set; }
         public string start_time { get; set; }
         public string end_time { get; set; }
@@ -72,7 +120,19 @@ namespace Library
     }
     public class Fr
     {
-        public string event_title { get; set; }
+        string subString;
+        public string event_title
+        {
+            get
+            {
+                return subString;
+            }
+            set
+            {
+                var sub = value.Split('(');
+                subString = sub[0].ToString();
+            }
+        }
         public string session_period { get; set; }
         public string start_time { get; set; }
         public string end_time { get; set; }
@@ -81,7 +141,19 @@ namespace Library
     }
     public class Sa
     {
-        public string event_title { get; set; }
+        string subString;
+        public string event_title
+        {
+            get
+            {
+                return subString;
+            }
+            set
+            {
+                var sub = value.Split('(');
+                subString = sub[0].ToString();
+            }
+        }
         public string session_period { get; set; }
         public string start_time { get; set; }
         public string end_time { get; set; }
