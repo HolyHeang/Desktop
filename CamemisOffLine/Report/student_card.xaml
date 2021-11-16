@@ -137,7 +137,7 @@
                                                     <TextBlock Text="ទីកន្លែងកំណើត :" Margin="10 0 0 0" FontSize="8" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                 </Grid>
                                                 <Grid Grid.Column="1">
-                                                    <TextBlock Text="{Binding }" Padding="0 -1 0 0" Margin="10 0 0 0" FontSize="9" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="#FF00A2FF"/>
+                                                    <TextBlock Text="{Binding birth_place}" Padding="0 -1 0 0" Margin="10 0 0 0" FontSize="9" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="#FF00A2FF"/>
                                                 </Grid>
 
                                             </Grid>
@@ -151,7 +151,7 @@
                                                     <TextBlock Text="ឪពុកឈ្មោះ      :" Margin="10 0 0 0" FontSize="8" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                 </Grid>
                                                 <Grid Grid.Column="1">
-                                                    <TextBlock Text="សុវណ្ណ សុខសេរីរដ្ឋនា" Padding="0 -1 0 0" Margin="10 0 0 0" FontSize="9" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="#FF00A2FF"/>
+                                                    <TextBlock Text="{Binding father_name}" Padding="0 -1 0 0" Margin="10 0 0 0" FontSize="9" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="#FF00A2FF"/>
                                                 </Grid>
 
                                             </Grid>
@@ -165,7 +165,7 @@
                                                     <TextBlock Text="ម្ដាយឈ្មោះ      :" Margin="10 0 0 0" FontSize="8" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"/>
                                                 </Grid>
                                                 <Grid Grid.Column="1">
-                                                    <TextBlock Text="សុវណ្ណ សុខសេរីរដ្ឋនា" Padding="0 -1 0 0" Margin="10 0 0 0" FontSize="9" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="#FF00A2FF"/>
+                                                    <TextBlock Text="{Binding mother_name}" Padding="0 -1 0 0" Margin="10 0 0 0" FontSize="9" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="#FF00A2FF"/>
                                                 </Grid>
 
                                             </Grid>
@@ -176,7 +176,7 @@
                                             </Grid>
                                             <Grid HorizontalAlignment="Right" Width="155" Margin="0 -5 10 0">
                                                 <StackPanel Orientation="Horizontal">
-                                                    <TextBlock TextWrapping="WrapWithOverflow" Text="ធ្វើនៅរាជធានីភ្នំពេញ " Padding="0 2 0 0" Margin="0 0 0 0" FontSize="8" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black">
+                                                    <TextBlock TextWrapping="WrapWithOverflow" Text="{Binding location}" Padding="0 2 0 0" Margin="0 0 0 0" FontSize="8" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black">
 
                                                     </TextBlock>
                                                     <TextBlock TextWrapping="WrapWithOverflow" Text="{Binding day}" Padding="0 2 0 0" Margin="0 0 0 0" FontSize="8" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black">
@@ -194,7 +194,7 @@
 
                                             </Grid>
                                             <Grid HorizontalAlignment="Right" Width="155" Margin="0 -5 10 0">
-                                                <TextBlock Name="txtAdmin" TextWrapping="WrapWithOverflow" Text="ភោគ ផលបុណ្យ" Padding="0 2 0 0" Margin="0 0 0 0" FontSize="7" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" Foreground="Red" HorizontalAlignment="Right">
+                                                <TextBlock Name="txtAdmin" TextWrapping="WrapWithOverflow" Text="{Binding director}" Padding="0 2 0 0" Margin="0 0 0 0" FontSize="7" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" Foreground="Red" HorizontalAlignment="Right">
 
                                                 </TextBlock>
                                             </Grid>

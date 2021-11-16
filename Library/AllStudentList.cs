@@ -44,5 +44,10 @@ namespace Library
         public string expireDate { get; set; }
         public string logoNameLeft { get; set; }
         public bool print { get; set; } = false;
+        public string father_name { get; set; }
+        public string mother_name { get; set; }
+        public string birth_place { get; set; }
+        public string director { get; set; }
+        public string location { get; set; }
     }
 }

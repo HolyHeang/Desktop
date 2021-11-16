@@ -72,6 +72,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RESTApiHelper.cs" />
     <Compile Include="School.cs" />
+    <Compile Include="SchoolSetting.cs" />
     <Compile Include="SchoolUrl.cs" />
     <Compile Include="SQLiteHelper.cs" />
     <Compile Include="StaffAttendaceAndPermissionList.cs" />

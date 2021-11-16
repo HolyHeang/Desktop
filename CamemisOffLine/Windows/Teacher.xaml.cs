@@ -143,7 +143,12 @@ namespace CamemisOffLine
             MateriaSettingUp.Visibility = Visibility.Collapsed;
             btnLang.Visibility = Visibility.Collapsed;
             gridLanguage.Visibility = Visibility.Collapsed;
+
             //....................End.........................
+            string Url = Properties.Settings.Default.acessUrl;
+            var re = await RESTApiHelper.GetAll(Url, "/get-school-setting", token);
+            Properties.Settings.Default.schoolSetting = re;
+            Properties.Settings.Default.Save();
 
             //-------------User Profile----------------
             try

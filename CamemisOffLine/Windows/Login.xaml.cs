@@ -212,6 +212,7 @@ namespace CamemisOffLine
                                         Properties.Settings.Default.password = txtPass.Password;
                                         Properties.Settings.Default.Save();
                                         SaveData();
+
                                         Teacher teacher = new Teacher();
                                         PartTeacher partTeacher = new PartTeacher();
                                         this.Close();
