@@ -58,6 +58,7 @@
     <Compile Include="GradeTime.cs" />
     <Compile Include="InputScore.cs" />
     <Compile Include="Instructor.cs" />
+    <Compile Include="ListAllSchedule.cs" />
     <Compile Include="ListMapteacherCode.cs" />
     <Compile Include="ListSchdule.cs" />
     <Compile Include="ListStudentYearlyAtt.cs" />

@@ -293,6 +293,9 @@
     <Compile Include="Windows\ShowListStudentToPrint.xaml.cs">
       <DependentUpon>ShowListStudentToPrint.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ShowListStudentToPrintCard.xaml.cs">
+      <DependentUpon>ShowListStudentToPrintCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\StudentResultDetail.xaml.cs">
       <DependentUpon>StudentResultDetail.xaml</DependentUpon>
     </Compile>
@@ -508,6 +511,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Windows\ShowListStudentToPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ShowListStudentToPrintCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

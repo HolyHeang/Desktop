@@ -3624,7 +3624,7 @@ namespace CamemisOffLine
             else if (tabStudentResult.SelectedIndex == 2)
                 title = "semester";
             this.Opacity = 0.5;
-            ShowListStudentToPrint show = new ShowListStudentToPrint(report.data.ToList(), title, yearTitle: yearTitle);
+            ShowListStudentToPrint show = new ShowListStudentToPrint(report.data.ToList(), title, yearTitle: yearTitle,1);
             show.Owner = this;
             show.ShowDialog();
             this.Opacity = 1;
@@ -4203,7 +4203,7 @@ namespace CamemisOffLine
             m.title = Properties.Langs.Lang.Data;
             m.buttonType = 1;
             message.Owner = this;
-            if (item.id >= 1 && item.id <= 28)
+            if (item.id >= 1 && item.id <= 29)
             {
                 this.Opacity = 0.5;
                 message.title = Properties.Langs.Lang.print;
@@ -4348,6 +4348,26 @@ namespace CamemisOffLine
                     }
                    
                 }
+                else if (message.result == 1 && item.id == 8)
+                {
+                    if (parentId=="")
+                    {
+                        this.Opacity = 0.5;
+                        MessageBoxControl messageBox = new MessageBoxControl();
+                        messageBox.title = Properties.Langs.Lang.print;
+                        messageBox.discription = Properties.Langs.Lang.Select_school_year;
+                        messageBox.buttonType = 1;
+                        messageBox.ShowDialog();
+                        this.Opacity = 1;
+                    }
+                    else
+                    {
+                        this.Opacity = 0.5;
+                        schedule_student schedulestu = new schedule_student(classId, className, yearTitle, instrctorName,parentId,internet,true);
+                        schedulestu.Show();
+                        this.Opacity = 1;
+                    }
+                }
                 else if(message.result==1 && item.id == 9)
                 {
                     if (cmbAcademicYearScedulePrint.Text == "" || cmbAcademicYearScedulePrint.Text == Properties.Langs.Lang.school_year || cmbGradeScedulePrint.Text == "" || cmbGradeScedulePrint.Text == Properties.Langs.Lang.select_grade || cmbClassScedulePrint.Text == "" || cmbClassScedulePrint.Text == Properties.Langs.Lang.select_class)
@@ -4363,7 +4383,7 @@ namespace CamemisOffLine
                     else
                     {
                         this.Opacity = 0.5;
-                        schedule_student schedulestu = new schedule_student(classId,className,yearTitle,instrctorName);
+                        schedule_student schedulestu = new schedule_student(classId,className,yearTitle,instrctorName,parentId,internet:internet,false);
                         schedulestu.Show();
                         this.Opacity = 1;
                     }
@@ -4377,6 +4397,7 @@ namespace CamemisOffLine
                 else if (message.result == 1 && item.id == 11)
                 {
                     this.Opacity = 0.5;
+                    printMethod = 1;
                     StudentPrintMonthlySemesterTranscrip();
                     this.Opacity = 1;
                 }
@@ -4505,7 +4526,7 @@ namespace CamemisOffLine
                 }
                 else if (message.result == 1 && item.id == 28)
                 {
-                    if (cmbAcademicYearStatistic12Print.Text == "" || cmbAcademicYearStatistic12Print.Text == Properties.Langs.Lang.Select_school_year)
+                    if (false)
                     {
                         this.Opacity = 0.5;
                         MessageBoxControl messageBox = new MessageBoxControl();
@@ -4518,12 +4539,32 @@ namespace CamemisOffLine
                     else
                     {
                         this.Opacity = 0.5;
-                        student_card _Card = new student_card();
+                        student_card _Card = new student_card(schoolYearId,yearTitle,classId,gradeId,level,2,internet);
                         _Card.ShowDialog();
                         this.Opacity = 1;
                     }
                 }
 
+                else if (message.result == 1 && item.id == 29)
+                {
+                    if (false)
+                    {
+                        this.Opacity = 0.5;
+                        MessageBoxControl messageBox = new MessageBoxControl();
+                        messageBox.title = Properties.Langs.Lang.print;
+                        messageBox.discription = Properties.Langs.Lang.Select_school_year;
+                        messageBox.buttonType = 1;
+                        messageBox.ShowDialog();
+                        this.Opacity = 1;
+                    }
+                    else
+                    {
+                        this.Opacity = 0.5;
+                        student_card _Card = new student_card(schoolYearId, yearTitle, classId, gradeId, level, 1, internet);
+                        _Card.ShowDialog();
+                        this.Opacity = 1;
+                    }
+                }
                 this.Opacity = 1;
             }
 
@@ -4653,6 +4694,7 @@ namespace CamemisOffLine
             return returnValue;
         }
         string YearSelection = "";
+        string parentId = "";
         private void cmbAcademicYearResultPrint_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -4676,6 +4718,7 @@ namespace CamemisOffLine
                     {
                         foreach (var gradeName in grades.grade.OrderBy(s=>s.sortkey))
                         {
+                            parentId = gradeName.parent;
                             grade.Add(gradeName.name);
                         }
                     }
@@ -4944,6 +4987,7 @@ namespace CamemisOffLine
             var item = sender as ComboBox;
             var selection = item.SelectedItem;
             YearSelection = selection.ToString();
+            yearTitle = selection.ToString();
             var obj = JObject.Parse(Properties.Settings.Default.schoolAcademyYear).ToObject<YearofAcademy>().data.Where(y => y.name.Equals(selection.ToString()));
             foreach (var items in obj)
             {
@@ -4959,6 +5003,9 @@ namespace CamemisOffLine
             cmbGradeStudentListPrint.ItemsSource = list;
             cmbGradeStudentListPrint.DisplayMemberPath = "Key";
             cmbGradeStudentListPrint.SelectedValuePath = "Value";
+            cmbGradeStatisticbyClassPrint.ItemsSource = list;
+            cmbGradeStatisticbyClassPrint.DisplayMemberPath = "Key";
+            cmbGradeStatisticbyClassPrint.SelectedValuePath = "Value";
             st1.Visibility = Visibility.Visible;
             st3.Visibility = Visibility.Visible;
         }
@@ -5404,6 +5451,7 @@ namespace CamemisOffLine
                 }
             }
         }
+        int printMethod;
         private async void StudentPrintMonthlySemesterTranscrip()
         {
             if(classId=="" || studentMonth == "")
@@ -5438,7 +5486,7 @@ namespace CamemisOffLine
 
                     if (data != null)
                     {
-                        ShowListStudentToPrint show = new ShowListStudentToPrint(data, title, yearTitle: yearTitle);
+                        ShowListStudentToPrint show = new ShowListStudentToPrint(data, title, yearTitle: yearTitle,printMethod);
                         show.Owner = this;
                         show.ShowDialog();
                     }
@@ -5935,6 +5983,57 @@ namespace CamemisOffLine
             classId = selection.Value;
             className = selection.Key;
             Console.WriteLine(selection.Value);
+        }
+
+        private void cmbGradeStatisticbyClassPrint_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+
+                var list = new List<KeyValuePair<string, string>>();
+                var select = sender as ComboBox;
+                var item = (KeyValuePair<string, string>)select.SelectedItem;
+                gradeId = item.Value.ToString();
+                gradName = item.Key.ToString();
+                var obj = JObject.Parse(Properties.Settings.Default.schoolAcademyYear).ToObject<YearofAcademy>().data.Where(y => y.name.Equals(YearSelection));
+                foreach (var items in obj)
+                {
+                    foreach (var grades in items.school_system)
+                    {
+                        foreach (var gradeName in grades.grade)
+                        {
+                            if (gradeName.id.Equals(gradeId))
+                            {
+                                foreach (var className in gradeName.children)
+                                {
+                                    list.Add(new KeyValuePair<string, string>(className.name, className.id.ToString()));
+                                }
+                                break;
+                            }
+                        }
+                    }
+                }
+                cmbClassStatisticbyClassPrint.ItemsSource = list;
+                cmbClassStatisticbyClassPrint.DisplayMemberPath = "Key";
+                cmbClassStatisticbyClassPrint.SelectedValuePath = "Value";
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("=---------------------------------------" + ex);
+            }
+        }
+
+        private void cmbClassStatisticbyClassPrint_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                var items = sender as ComboBox;
+                var selection = (KeyValuePair<string, string>)items.SelectedItem;
+                studentClass = selection.Key;
+                classId = selection.Value;
+            }
+            catch { }
         }
 
         private void MaProRequse_MouseDown(object sender, MouseButtonEventArgs e)
