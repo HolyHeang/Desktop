@@ -3787,7 +3787,7 @@ namespace CamemisOffLine.Windows
             else if (type=="2")
                 title = "semester";
             this.Opacity = 0.5;
-            ShowListStudentToPrint show = new ShowListStudentToPrint(resultData, title, yearTitle: titleYear);
+            ShowListStudentToPrint show = new ShowListStudentToPrint(resultData, title, yearTitle: titleYear,1);
             show.Owner = this;
             show.ShowDialog();
             this.Opacity = 1;

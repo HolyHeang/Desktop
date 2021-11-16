@@ -23,16 +23,18 @@ namespace CamemisOffLine.Windows
     {
         List<StudentMonthlyResult> obj = new List<StudentMonthlyResult>();
         string title = "",yearTitle;
+        int printMethod;
         public ShowListStudentToPrint()
         {
             InitializeComponent();
         }
-        public ShowListStudentToPrint(List<StudentMonthlyResult> obj,string title,string yearTitle)
+        public ShowListStudentToPrint(List<StudentMonthlyResult> obj,string title,string yearTitle,int printMethod)
         {
             InitializeComponent();
             this.obj = obj;
             this.title = title;
             this.yearTitle = yearTitle;
+            this.printMethod = printMethod;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -76,16 +78,19 @@ namespace CamemisOffLine.Windows
                 }
                 if (student.Count>0)
                 {
-                    Transcript transcript = new Transcript(null, student, false, false, "", "", true,title:title, yearTitle: yearTitle);
-                    transcript.Show();
-                    Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
-                    if(transcript.printOrNot=='1')
+                    if(printMethod==1)
                     {
-                        this.Close();
-                    }
-                    else if(transcript.printOrNot == '3')
-                    {
-                        this.Close();
+                        Transcript transcript = new Transcript(null, student, false, false, "", "", true, title: title, yearTitle: yearTitle);
+                        transcript.Show();
+                        Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
+                        if (transcript.printOrNot == '1')
+                        {
+                            this.Close();
+                        }
+                        else if (transcript.printOrNot == '3')
+                        {
+                            this.Close();
+                        }
                     }
                 }
                 else

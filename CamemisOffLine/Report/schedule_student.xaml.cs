@@ -27,20 +27,24 @@ namespace CamemisOffLine.Report
     /// </summary>
     public partial class schedule_student : Window
     {
-        string classId = "555",className,yearTitle,instructorName;
+        string classId = "555",className,yearTitle,instructorName,parentId;
+        bool internet,isPrintAll;
         public schedule_student()
         {
             InitializeComponent();
             lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
             TitleSchool.Content = Properties.Settings.Default.schoolName;
         }
-        public schedule_student(string classId,string className,string yearTitle,string instructorName)
+        public schedule_student(string classId,string className,string yearTitle,string instructorName,string parentId = "",bool internet = false,bool isPrintAll = false)
         {
             InitializeComponent();
             this.classId = classId;
             this.className = className;
             this.yearTitle = yearTitle;
             this.instructorName = instructorName;
+            this.parentId = parentId;
+            this.internet = internet;
+            this.isPrintAll = isPrintAll;
 
             lbllogoLeft.Content = Properties.Settings.Default.logoNameLeft;
             TitleSchool.Content = Properties.Settings.Default.schoolName;
@@ -51,27 +55,144 @@ namespace CamemisOffLine.Report
             Loading loading = new Loading();
             loading.Show();
             this.Hide();
-            string respone = await DataAsync(classId);
             txtClassName.Text = "ថ្នាក់ "+className;
             txtYear.Text = yearTitle;
             lblTecher.Text = "គ្រូប្រចាំថ្នាក់: "+instructorName;
-            var obj = JObject.Parse(respone).ToObject<ListSchduleData>().data;
 
-            Datagridschedule.ItemsSource = null;
+            List<ListAllSchedule> obj = new List<ListAllSchedule>();
+            List<ListSchedule> obj1 = new List<ListSchedule>();
+            var rawData = new List<Schedule_Data>();
+            var rawData1 = new List<Schedule>();
+            var listClassName = new List<string>();
 
-            var schdule = new List<Schedule>();
+            string respone = "";
 
-            foreach(var item in obj)
+            if(internet&&Teacher.InternetChecker())
             {
-                foreach(var schdules in item.schedule)
+                respone = await DataAsync(classId, parentId);
+                obj = JObject.Parse(respone).ToObject<ListAllScheduleData>().data;
+                obj1 = JObject.Parse(respone).ToObject<ListSchduleData>().data;
+            }
+            else
+            {
+                respone = getDataFromLocal(parentId);
+                obj = JObject.Parse(respone).ToObject<ListAllScheduleData>().data;
+                foreach(var item in obj)
                 {
-                    schdule.Add(schdules);
+                    if (item.id == classId)  
+                    {
+                        className = item.name;
+                        instructorName = item.first_instructor.name;
+                        foreach (var schdules in item.schedule_data)
+                        {
+                           foreach(var schdule in schdules.schedule)
+                            {
+                                rawData1.Add(schdule);
+                            }
+                        }
+                    }
                 }
             }
 
-            Datagridschedule.ItemsSource = schdule;
-            print();
-            loading.Close();
+            if(!isPrintAll)
+            {
+                if(internet&&Teacher.InternetChecker())
+                {
+                    foreach (var item in obj1)
+                    {
+                        foreach (var i in item.schedule)
+                        {
+                            rawData1.Add(i);
+                        }
+                    }
+                }
+
+                txtClassName.Text = "ថ្នាក់ " + className;
+                txtYear.Text = yearTitle;
+                lblTecher.Text = "គ្រូប្រចាំថ្នាក់: " + instructorName;
+                Datagridschedule.ItemsSource = null;
+                Datagridschedule.ItemsSource = rawData1;
+                print();
+                loading.Close();
+                this.Close();
+            }
+            else
+            {
+                foreach (var item in obj)
+                {
+                    listClassName.Add(item.name);
+                    foreach (var i in item.schedule_data)
+                    {
+                        rawData.Add(i);
+                    }
+                }
+
+                Document document = new Document(PageSize.A4, 5, 0, 0, 0);
+                PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "កាលវិភាគសិស្ស" + ".pdf", FileMode.Create));
+                document.Open();
+                GC.Collect();
+
+                for (int i = 0; i < obj.Count(); i++)
+                {
+                    var schdule = new List<Schedule>();
+
+                    try
+                    {
+                        if (obj[i].schedule_data.Count > 1)
+                        {
+                            for (int j = 0; j < 2; j++)
+                            {
+                                foreach (var item in rawData[j + i].schedule)
+                                {
+                                    schdule.Add(item);
+                                }
+                            }
+                            i++;
+                        }
+                        else
+                        {
+                            foreach (var item in rawData[i].schedule)
+                            {
+                                schdule.Add(item);
+                            }
+                        }
+                        txtClassName.Text = "ថ្នាក់ " + listClassName[i];
+                        txtYear.Text = yearTitle;
+                        lblTecher.Text = "គ្រូប្រចាំថ្នាក់: " + obj[i].first_instructor.name;
+                        Datagridschedule.ItemsSource = null;
+                        Datagridschedule.ItemsSource = schdule;
+                        Grid.UpdateLayout();
+
+                        string targetFile = System.IO.Path.GetTempFileName();
+                        using (FileStream outStream = new FileStream(targetFile, FileMode.Create))
+                        {
+
+                            PngBitmapEncoder enc = new PngBitmapEncoder();
+                            var bitmap = new RenderTargetBitmap((int)Grid.ActualWidth * 2, (int)Grid.ActualHeight * 2, 115, 115, PixelFormats.Pbgra32);
+                            bitmap.Render(Grid);
+                            enc.Frames.Add(BitmapFrame.Create(bitmap));
+                            enc.Save(outStream);
+                            bitmap = null;
+
+                            outStream.Dispose();
+                        }
+                        using (FileStream fs = new FileStream(targetFile, FileMode.Open))
+                        {
+                            iTextSharp.text.Image png = iTextSharp.text.Image.GetInstance(System.Drawing.Image.FromStream(fs), System.Drawing.Imaging.ImageFormat.Png);
+                            png.ScalePercent(49f);
+                            document.Add(png);
+                        }
+                    }
+                    catch { }
+                }
+
+                GC.Collect();
+                document.Close();
+                GC.Collect();
+                Process.Start(filePath + "\\" + "កាលវិភាគសិស្ស" + ".pdf");
+                loading.Close();
+                this.Close();
+            }
         }
 
         string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
@@ -149,14 +270,31 @@ namespace CamemisOffLine.Report
 
         }
 
-        private async Task<string> DataAsync(string classId)
+        private async Task<string> DataAsync(string classId,string parentId)
         {
             string accessUrl = Properties.Settings.Default.acessUrl;
             string token = Properties.Settings.Default.Token;
             string respone = "";
 
-            respone = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/schedule-with-format", token);
+            if (!isPrintAll)
+            {
+                respone = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/schedule-with-format", token);
+            }
+            else
+            {
+                respone = await RESTApiHelper.GetAll(accessUrl, "/academic/" + parentId + "/schoolyear-all-schedule-with-format", token);
+                File.WriteAllText(filePath + "//schdule" + parentId+".txt", respone);
+            }
             return respone;
+        }
+        private string getDataFromLocal(string parentId)
+        {
+            string respone = File.ReadAllText(filePath + "//schdule" + parentId + ".txt");
+            if(respone!=null)
+            {
+                return respone;
+            }
+            return null;
         }
     }
 }

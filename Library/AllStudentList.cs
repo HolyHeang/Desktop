@@ -37,5 +37,12 @@ namespace Library
         public string give_up_date { get; set; }
         public string phone { get; set; }
         public string go_to_class { get; set; }
+        public string admin { get; set; }
+        public string year { get; set; }
+        public string schoolName { get; set; }
+        public string day { get; set; }
+        public string expireDate { get; set; }
+        public string logoNameLeft { get; set; }
+        public bool print { get; set; } = false;
     }
 }
