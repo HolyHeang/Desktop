@@ -55,14 +55,22 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+<<<<<<< HEAD
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CamemisOffLine.exe" size="7120832">
+=======
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CamemisOffLine.exe" size="7118784">
+>>>>>>> 9af6c3da3f5f7f1ff498b6ce460ee205655a977a
       <assemblyIdentity name="CamemisOffLine" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>0rLL0YWWcwatDL6UyPnPshyeBeHLxIMaFoPIMG+OCwU=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>3bdvFbHX+/NNvWmGcThLL9+/+7xIvAXnLNSNoXyz4IA=</dsig:DigestValue>
+>>>>>>> 9af6c3da3f5f7f1ff498b6ce460ee205655a977a
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,7 +82,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>O64OxfPg+NyyE3/ytdokvkeh1qPkLVX7Co0iuT+7Haw=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>qy6bYWdwMFFS3qWutASTz0kK1Z00uVGFZyET+WjGHQU=</dsig:DigestValue>
+>>>>>>> 9af6c3da3f5f7f1ff498b6ce460ee205655a977a
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +98,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>cuyYZZBj6CXcZwdsgxnM8gDc79BlzN65ozWiBq2sgQI=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>ndMZL81JHQ6IPXSTOADMBapGGtBlrnrLRye+DXh/m9o=</dsig:DigestValue>
+>>>>>>> 9af6c3da3f5f7f1ff498b6ce460ee205655a977a
       </hash>
     </dependentAssembly>
   </dependency>
@@ -98,7 +114,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>IbFNDo9G3JlyRN2mT4uqc8c3v1NeB3SAQiGCa/VbV4A=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>4O4toZ/kMpgviVlqvpd2l48f59us0W8AcKyv6laxPeI=</dsig:DigestValue>
+>>>>>>> 9af6c3da3f5f7f1ff498b6ce460ee205655a977a
       </hash>
     </dependentAssembly>
   </dependency>
@@ -355,14 +375,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Library.dll" size="122368">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Library.dll" size="124928">
       <assemblyIdentity name="Library" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>F9mceeL0ew9xkhAxjBywtH/SJnne0H66ToPg7KCYRUs=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>nGC2kI2b5AfBL7TgDtrS1LJPIks03VUw0egASOrYYPs=</dsig:DigestValue>
+>>>>>>> 9af6c3da3f5f7f1ff498b6ce460ee205655a977a
       </hash>
     </dependentAssembly>
   </dependency>
@@ -594,13 +618,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="CamemisOffLine.exe.config" size="4042">
+  <file name="CamemisOffLine.exe.config" size="4138">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>SiGOeQKWG7bmFXWCB23wjbEDWeYlH7Wt8Gr65X3gHJU=</dsig:DigestValue>
+      <dsig:DigestValue>ei2kSbNzcxAGP8BuDelSnuGp5Ygdr9LFBLQHYgm4MEc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="DataBase.db" size="8192">

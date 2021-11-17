@@ -133,7 +133,7 @@ namespace CamemisOffLine.Report
                 printCard.ShowDialog();
                 obj = printCard.obj;
             }
-
+            var setting = JObject.Parse(Properties.Settings.Default.schoolSetting).ToObject<SchoolSettings>();
             try
             {
                 int startIndex = 0;
@@ -158,7 +158,10 @@ namespace CamemisOffLine.Report
                             item.schoolName = Properties.Settings.Default.schoolName;
                             item.day = date;
                             item.expireDate = exipireDate;
+                            item.director = setting.DIRECTOR;
+                            item.location = setting.LOCATION;
                             item.logoNameLeft = Properties.Settings.Default.logoNameLeft;
+
                         }
                         showData(copyData);
                         PrintList(document);
@@ -176,6 +179,8 @@ namespace CamemisOffLine.Report
                         item.schoolName = Properties.Settings.Default.schoolName;
                         item.day = date;
                         item.expireDate = exipireDate;
+                        item.director = setting.DIRECTOR;
+                        item.location = setting.LOCATION;
                         item.logoNameLeft = Properties.Settings.Default.logoNameLeft;
                     }
                     showData(copyData);

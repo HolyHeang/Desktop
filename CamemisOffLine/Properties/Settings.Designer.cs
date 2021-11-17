@@ -322,5 +322,17 @@ namespace CamemisOffLine.Properties {
                 this["logoNameLeft"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string schoolSetting {
+            get {
+                return ((string)(this["schoolSetting"]));
+            }
+            set {
+                this["schoolSetting"] = value;
+            }
+        }
     }
 }
