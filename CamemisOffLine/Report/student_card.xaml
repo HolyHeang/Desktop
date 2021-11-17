@@ -174,16 +174,16 @@
 
                                                 </TextBlock>
                                             </Grid>
-                                            <Grid HorizontalAlignment="Right" Width="155" Margin="0 -5 10 0">
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock TextWrapping="WrapWithOverflow" Text="ធ្វើនៅរាជធានីភ្នំពេញ " Padding="0 2 0 0" Margin="0 0 0 0" FontSize="8" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black">
+                                            <Grid HorizontalAlignment="Left" Margin="92 -5 10 0">
+                                                <TextBlock TextWrapping="WrapWithOverflow" Text="ធ្វើនៅរាជធានីភ្នំពេញ " Padding="0 2 0 0" Margin="0 0 0 0" FontSize="8" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black">
 
-                                                    </TextBlock>
-                                                    <TextBlock TextWrapping="WrapWithOverflow" Text="{Binding day}" Padding="0 2 0 0" Margin="0 0 0 0" FontSize="8" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black">
+                                                </TextBlock>
+                                                
+                                            </Grid>
+                                            <Grid HorizontalAlignment="Right" Margin="0 -5 10 0">
+                                                <TextBlock TextWrapping="Wrap" Width="100" Text="{Binding day}" Padding="0 2 0 0" Margin="0 0 0 0" FontSize="8" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black" HorizontalAlignment="Left">
 
-                                                    </TextBlock>
-                                                </StackPanel>
-                                               
+                                                </TextBlock>
                                             </Grid>
                                             <Grid HorizontalAlignment="Right" Width="155" Margin="0 -5 10 0">
                                                 <TextBlock TextWrapping="WrapWithOverflow" Text="នាយកវិទ្យាល័យ" Padding="0 2 0 0" Margin="0 0 0 0" FontSize="7" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" Foreground="Black" HorizontalAlignment="Center">

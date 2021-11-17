@@ -699,11 +699,23 @@
   <data name="student Attendence Report" xml:space="preserve">
     <value>របាយការណ៏អវត្តមានសិស្ស</value>
   </data>
+  <data name="student card" xml:space="preserve">
+    <value>កាតសិស្ស</value>
+  </data>
+  <data name="student card for all grade levels" xml:space="preserve">
+    <value>កាតសិស្សសម្រាប់គ្រប់កម្រិតថ្នាក់</value>
+  </data>
+  <data name="student card for each class" xml:space="preserve">
+    <value>កាតសិស្សសម្រាប់ថ្នាក់នីមួយៗ</value>
+  </data>
   <data name="student list" xml:space="preserve">
     <value>បញ្ជីឈ្មោះសិស្ស</value>
   </data>
   <data name="student schedule" xml:space="preserve">
     <value>កាលវិភាគសិស្ស</value>
+  </data>
+  <data name="student schedule for all grade levels" xml:space="preserve">
+    <value>កាលវិភាគសិស្សគ្រប់កម្រិតថ្នាក់</value>
   </data>
   <data name="student Score Bulletin" xml:space="preserve">
     <value>ព្រឹត្តិបត្រពិន្ទុសិស្ស</value>

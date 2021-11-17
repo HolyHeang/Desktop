@@ -13,7 +13,7 @@ namespace CamemisOffLine.Asset
         public string[][] titel = new string[][]
         {
             new string[]{Properties.Langs.Lang.total_by_school_year,Properties.Langs.Lang.by_common_level, Properties.Langs.Lang.by_each_level,Properties.Langs.Lang.by_each_class,Properties.Langs.Lang.exam_promote_class,Properties.Langs.Lang.repeat_class,Properties.Langs.Lang.studies_cancel},
-            new string[]{ "កាលវិភាគសិស្សគ្រប់ថ្នាក់",Properties.Langs.Lang.class_schedule},
+            new string[]{Properties.Langs.Lang.student_schedule_for_all_grade_levels,Properties.Langs.Lang.class_schedule},
             new string[]{Properties.Langs.Lang.results_study_by_class,Properties.Langs.Lang.student_Score_Bulletin,Properties.Langs.Lang.honor_tables_by_class,Properties.Langs.Lang.rating_Classification_semester_by_class,Properties.Langs.Lang.results_learning_all_subjects,Properties.Langs.Lang.Summary_table_of_student_transcripts_by_core_subject},
             new string[]{"កាលវិភាគសិក្សារបស់សិស្ស"},
             new string[]{Properties.Langs.Lang.student_attendance_by_class},
@@ -21,8 +21,8 @@ namespace CamemisOffLine.Asset
             new string[]{"ចំណាត់ថ្នាក់ ចំណាត់ប្រភេទប្រចាំឆមាសតាមថ្នាក់"},
             new string[]{"តាមថ្នាក់នីមួយៗ", "សរុបតាមកម្រិតនីមួយៗ" },
             new string[]{"សញ្ញាប័ត្ររបស់បុគ្គលិក","និទ្ទេសតាមថ្នាក់","និទ្ទេស​តាមកម្រិត​"},
-            new string[]{ Properties.Langs.Lang.general_knowledge_and_Completion_Grade_9, Properties.Langs.Lang.general_knowledge_and_Completion_Grade_12},
-            new string[]{"កាតសិស្សសម្រាប់ថ្នាក់នីមួយៗ","កាតសិស្សសម្រាប់គ្រប់ថ្នាក់"},
+            new string[]{Properties.Langs.Lang.general_knowledge_and_Completion_Grade_9, Properties.Langs.Lang.general_knowledge_and_Completion_Grade_12},
+            new string[]{Properties.Langs.Lang.student_card_for_each_class,Properties.Langs.Lang.student_card_for_all_grade_levels},
             new string[]{"និទ្ទេសមុខវិជ្ជាតាមថ្នាក់", "និទ្ទេសមុខវិជ្ជាតាមកម្រិត" },
             new string[]{"តាមថ្នាក់នីមួយៗ", "សរុបតាមកម្រិតនីមួយៗ"},
         };

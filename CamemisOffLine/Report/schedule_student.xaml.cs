@@ -52,224 +52,246 @@ namespace CamemisOffLine.Report
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Loading loading = new Loading();
-            loading.Show();
+
+            barRight.Visibility = Visibility.Collapsed;
             this.Hide();
-            txtClassName.Text = "ថ្នាក់ "+className;
-            txtYear.Text = yearTitle;
-            lblTecher.Text = "គ្រូប្រចាំថ្នាក់: "+instructorName;
-
-            List<ListAllSchedule> obj = new List<ListAllSchedule>();
-            List<ListSchedule> obj1 = new List<ListSchedule>();
-            var rawData = new List<Schedule_Data>();
-            var rawData1 = new List<Schedule>();
-            var listClassName = new List<string>();
-
-            string respone = "";
-
-            if(internet&&Teacher.InternetChecker())
+            PrintPopup prints = new PrintPopup();
+            if (Properties.Settings.Default.role == "1")
             {
-                respone = await DataAsync(classId, parentId);
-                obj = JObject.Parse(respone).ToObject<ListAllScheduleData>().data;
-                obj1 = JObject.Parse(respone).ToObject<ListSchduleData>().data;
+
+                this.IsEnabled = false;
+                this.Opacity = 0.5;
+
+                prints.ShowDialog();
+
+                this.Opacity = 1;
+                this.IsEnabled = true;
+                titleTeacher.Text = prints.position;
+                titleAdmin.Visibility = Visibility.Collapsed;
+                barCenter.Visibility = prints.CheckCenter;
+                barRight.Visibility = prints.CheckRight;
+
             }
             else
             {
-                respone = getDataFromLocal(parentId);
-                obj = JObject.Parse(respone).ToObject<ListAllScheduleData>().data;
-                foreach(var item in obj)
+                this.IsEnabled = false;
+                this.Opacity = 0.5;
+
+                prints.ShowDialog();
+
+                this.Opacity = 1;
+                this.IsEnabled = true;
+                txtPosition.Text = prints.position;
+                titleAdmin.Visibility = Visibility.Visible;
+                barCenter.Visibility = prints.CheckCenter;
+                barRight.Visibility = prints.CheckRight;
+
+            }
+            if (prints.isPrint == false)
+                this.Close();
+            else
+            {
+                Loading loading = new Loading();
+                loading.Show();
+                this.Hide();
+                txtClassName.Text = "ថ្នាក់ " + className;
+                txtYear.Text = yearTitle;
+                lblTecher.Text = "គ្រូប្រចាំថ្នាក់: " + instructorName;
+
+                List<ListAllSchedule> obj = new List<ListAllSchedule>();
+                List<ListSchedule> obj1 = new List<ListSchedule>();
+                var rawData = new List<Schedule_Data>();
+                var rawData1 = new List<Schedule>();
+                var listClassName = new List<string>();
+
+                string respone = "";
+
+                if (internet && Teacher.InternetChecker())
                 {
-                    if (item.id == classId)  
+                    respone = await DataAsync(classId, parentId);
+                    obj = JObject.Parse(respone).ToObject<ListAllScheduleData>().data;
+                    obj1 = JObject.Parse(respone).ToObject<ListSchduleData>().data;
+                }
+                else
+                {
+                    respone = getDataFromLocal(parentId);
+                    obj = JObject.Parse(respone).ToObject<ListAllScheduleData>().data;
+                    foreach (var item in obj)
                     {
-                        className = item.name;
-                        instructorName = item.first_instructor.name;
-                        foreach (var schdules in item.schedule_data)
+                        if (item.id == classId)
                         {
-                           foreach(var schdule in schdules.schedule)
+                            className = item.name;
+                            instructorName = item.first_instructor.name;
+                            foreach (var schdules in item.schedule_data)
                             {
-                                rawData1.Add(schdule);
+                                foreach (var schdule in schdules.schedule)
+                                {
+                                    rawData1.Add(schdule);
+                                }
                             }
                         }
                     }
                 }
-            }
 
-            if(!isPrintAll)
-            {
-                if(internet&&Teacher.InternetChecker())
+                if (!isPrintAll)
                 {
-                    foreach (var item in obj1)
+                    if (internet && Teacher.InternetChecker())
                     {
-                        foreach (var i in item.schedule)
+                        foreach (var item in obj1)
                         {
-                            rawData1.Add(i);
+                            foreach (var i in item.schedule)
+                            {
+                                rawData1.Add(i);
+                            }
                         }
                     }
+
+                    txtClassName.Text = "ថ្នាក់ " + className;
+                    txtYear.Text = yearTitle;
+                    lblTecher.Text = "គ្រូប្រចាំថ្នាក់: " + instructorName;
+                    Datagridschedule.ItemsSource = null;
+                    Datagridschedule.ItemsSource = rawData1;
+                    print();
+                    loading.Close();
+                    this.Close();
                 }
-
-                txtClassName.Text = "ថ្នាក់ " + className;
-                txtYear.Text = yearTitle;
-                lblTecher.Text = "គ្រូប្រចាំថ្នាក់: " + instructorName;
-                Datagridschedule.ItemsSource = null;
-                Datagridschedule.ItemsSource = rawData1;
-                print();
-                loading.Close();
-                this.Close();
-            }
-            else
-            {
-                foreach (var item in obj)
+                else
                 {
-                    listClassName.Add(item.name);
-                    foreach (var i in item.schedule_data)
+                    foreach (var item in obj)
                     {
-                        rawData.Add(i);
-                    }
-                }
-
-                Document document = new Document(PageSize.A4, 5, 0, 0, 0);
-                PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "កាលវិភាគសិស្ស" + ".pdf", FileMode.Create));
-                document.Open();
-                GC.Collect();
-
-                for (int i = 0; i < obj.Count(); i++)
-                {
-                    var schdule = new List<Schedule>();
-
-                    try
-                    {
-                        if (obj[i].schedule_data.Count > 1)
+                        listClassName.Add(item.name);
+                        foreach (var i in item.schedule_data)
                         {
-                            for (int j = 0; j < 2; j++)
+                            rawData.Add(i);
+                        }
+                    }
+
+                    Document document = new Document(PageSize.A4, 5, 0, 0, 0);
+                    PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "កាលវិភាគសិស្ស" + ".pdf", FileMode.Create));
+                    document.Open();
+                    GC.Collect();
+
+                    for (int i = 0; i < obj.Count(); i++)
+                    {
+                        var schdule = new List<Schedule>();
+
+                        try
+                        {
+                            if (obj[i].schedule_data.Count > 1)
                             {
-                                foreach (var item in rawData[j + i].schedule)
+                                for (int j = 0; j < 2; j++)
+                                {
+                                    foreach (var item in rawData[j + i].schedule)
+                                    {
+                                        schdule.Add(item);
+                                    }
+                                }
+                                i++;
+                            }
+                            else
+                            {
+                                foreach (var item in rawData[i].schedule)
                                 {
                                     schdule.Add(item);
                                 }
                             }
-                            i++;
-                        }
-                        else
-                        {
-                            foreach (var item in rawData[i].schedule)
+                            txtClassName.Text = "" + listClassName[i];
+                            txtYear.Text = yearTitle;
+                            lblTecher.Text = "គ្រូប្រចាំថ្នាក់: " + obj[i].first_instructor.name;
+                            Datagridschedule.ItemsSource = null;
+                            Datagridschedule.ItemsSource = schdule;
+                            Grid.UpdateLayout();
+
+                            string targetFile = System.IO.Path.GetTempFileName();
+                            using (FileStream outStream = new FileStream(targetFile, FileMode.Create))
                             {
-                                schdule.Add(item);
+
+                                PngBitmapEncoder enc = new PngBitmapEncoder();
+                                var bitmap = new RenderTargetBitmap((int)Grid.ActualWidth * 2, (int)Grid.ActualHeight * 2, 115, 115, PixelFormats.Pbgra32);
+                                bitmap.Render(Grid);
+                                enc.Frames.Add(BitmapFrame.Create(bitmap));
+                                enc.Save(outStream);
+                                bitmap = null;
+
+                                outStream.Dispose();
+                            }
+                            using (FileStream fs = new FileStream(targetFile, FileMode.Open))
+                            {
+                                iTextSharp.text.Image png = iTextSharp.text.Image.GetInstance(System.Drawing.Image.FromStream(fs), System.Drawing.Imaging.ImageFormat.Png);
+                                png.ScalePercent(49f);
+                                document.Add(png);
                             }
                         }
-                        txtClassName.Text = "ថ្នាក់ " + listClassName[i];
-                        txtYear.Text = yearTitle;
-                        lblTecher.Text = "គ្រូប្រចាំថ្នាក់: " + obj[i].first_instructor.name;
-                        Datagridschedule.ItemsSource = null;
-                        Datagridschedule.ItemsSource = schdule;
-                        Grid.UpdateLayout();
-
-                        string targetFile = System.IO.Path.GetTempFileName();
-                        using (FileStream outStream = new FileStream(targetFile, FileMode.Create))
-                        {
-
-                            PngBitmapEncoder enc = new PngBitmapEncoder();
-                            var bitmap = new RenderTargetBitmap((int)Grid.ActualWidth * 2, (int)Grid.ActualHeight * 2, 115, 115, PixelFormats.Pbgra32);
-                            bitmap.Render(Grid);
-                            enc.Frames.Add(BitmapFrame.Create(bitmap));
-                            enc.Save(outStream);
-                            bitmap = null;
-
-                            outStream.Dispose();
-                        }
-                        using (FileStream fs = new FileStream(targetFile, FileMode.Open))
-                        {
-                            iTextSharp.text.Image png = iTextSharp.text.Image.GetInstance(System.Drawing.Image.FromStream(fs), System.Drawing.Imaging.ImageFormat.Png);
-                            png.ScalePercent(49f);
-                            document.Add(png);
-                        }
-                    }
-                    catch { }
-                }
-
-                GC.Collect();
-                document.Close();
-                GC.Collect();
-                Process.Start(filePath + "\\" + "កាលវិភាគសិស្ស" + ".pdf");
-                loading.Close();
-                this.Close();
-            }
-        }
-
-        string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
-        private void print()
-        {
-
-            barRight.Visibility = Visibility.Collapsed;
-
-            this.Hide();
-
-            PrintPopup prints = new PrintPopup();
-            this.IsEnabled = false;
-            this.Opacity = 0.5;
-
-            prints.ShowDialog();
-
-            this.Opacity = 1;
-            this.IsEnabled = true;
-
-            barCenter.Visibility = prints.CheckCenter;
-            barRight.Visibility = prints.CheckRight;
-
-            if (prints.isPrint == true)
-            {
-                Loading load = new Loading();
-                load.Show();
-
-                try
-                {
-
-                    this.Hide();
-                    Document document = new Document(PageSize.A4, 5, 0, 0, 0);
-                    PdfWriter.GetInstance(document, new System.IO.FileStream(filePath + "\\" + "កាលវិភាគសិស្ស" + ".pdf", FileMode.Create));
-
-                    document.Open();
-
-                    GC.Collect();
-
-                    string targetFile = System.IO.Path.GetTempFileName();
-                    using (FileStream outStream = new FileStream(targetFile, FileMode.Create))
-                    {
-
-                        PngBitmapEncoder enc = new PngBitmapEncoder();
-                        var bitmap = new RenderTargetBitmap((int)Grid.ActualWidth * 2, (int)Grid.ActualHeight * 2, 115, 115, PixelFormats.Pbgra32);
-                        bitmap.Render(Grid);
-                        enc.Frames.Add(BitmapFrame.Create(bitmap));
-                        enc.Save(outStream);
-                        bitmap = null;
-
-                        outStream.Dispose();
-                    }
-                    using (FileStream fs = new FileStream(targetFile, FileMode.Open))
-                    {
-                        iTextSharp.text.Image png = iTextSharp.text.Image.GetInstance(System.Drawing.Image.FromStream(fs), System.Drawing.Imaging.ImageFormat.Png);
-                        png.ScalePercent(49f);
-                        document.Add(png);
+                        catch { }
                     }
 
                     GC.Collect();
                     document.Close();
                     GC.Collect();
                     Process.Start(filePath + "\\" + "កាលវិភាគសិស្ស" + ".pdf");
-                    this.Close();
-                    load.Close();
-                }
-                catch
-                {
-                    MessageBox.Show("ការបោះពុម្ភរបស់អ្នកមិនទទូលបានជោគជ័យ", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+                    loading.Close();
                     this.Close();
                 }
-
             }
-            else
-                this.Close();
-
+            
         }
 
+        string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Templates);
+        private void print()
+        {
+            Loading load = new Loading();
+            load.Show();
+
+            try
+            {
+
+                this.Hide();
+                Document document = new Document(PageSize.A4, 5, 0, 0, 0);
+                PdfWriter.GetInstance(document, new System.IO.FileStream(filePath + "\\" + "កាលវិភាគសិស្ស" + ".pdf", FileMode.Create));
+
+                document.Open();
+
+                GC.Collect();
+
+                string targetFile = System.IO.Path.GetTempFileName();
+                using (FileStream outStream = new FileStream(targetFile, FileMode.Create))
+                {
+
+                    PngBitmapEncoder enc = new PngBitmapEncoder();
+                    var bitmap = new RenderTargetBitmap((int)Grid.ActualWidth * 2, (int)Grid.ActualHeight * 2, 115, 115, PixelFormats.Pbgra32);
+                    bitmap.Render(Grid);
+                    enc.Frames.Add(BitmapFrame.Create(bitmap));
+                    enc.Save(outStream);
+                    bitmap = null;
+
+                    outStream.Dispose();
+                }
+                using (FileStream fs = new FileStream(targetFile, FileMode.Open))
+                {
+                    iTextSharp.text.Image png = iTextSharp.text.Image.GetInstance(System.Drawing.Image.FromStream(fs), System.Drawing.Imaging.ImageFormat.Png);
+                    png.ScalePercent(49f);
+                    document.Add(png);
+                }
+
+                GC.Collect();
+                document.Close();
+                GC.Collect();
+                Process.Start(filePath + "\\" + "កាលវិភាគសិស្ស" + ".pdf");
+                this.Close();
+                load.Close();
+            }
+            catch
+            {
+                MessageBoxControl message = new MessageBoxControl();
+                message.title = Properties.Langs.Lang.Data;
+                message.discription = Properties.Langs.Lang.noresultdata;
+                message.buttonType = 1;
+                message.ShowDialog();
+                this.Close();
+                load.Close();
+            }
+
+        }
         private async Task<string> DataAsync(string classId,string parentId)
         {
             string accessUrl = Properties.Settings.Default.acessUrl;

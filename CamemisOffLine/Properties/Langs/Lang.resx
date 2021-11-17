@@ -696,11 +696,23 @@
   <data name="student Attendence Report" xml:space="preserve">
     <value>Student Attendence Report</value>
   </data>
+  <data name="student card" xml:space="preserve">
+    <value />
+  </data>
+  <data name="student card for all grade levels" xml:space="preserve">
+    <value>Student card for all grade levels</value>
+  </data>
+  <data name="student card for each class" xml:space="preserve">
+    <value>Student card for each class</value>
+  </data>
   <data name="student list" xml:space="preserve">
     <value>Student list</value>
   </data>
   <data name="student schedule" xml:space="preserve">
     <value>Student Schedule</value>
+  </data>
+  <data name="student schedule for all grade levels" xml:space="preserve">
+    <value>Student schedule for all grade levels</value>
   </data>
   <data name="student Score Bulletin" xml:space="preserve">
     <value>Student Score Bulletin</value>

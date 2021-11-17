@@ -693,11 +693,23 @@
   <data name="student Attendence Report" xml:space="preserve">
     <value>学生出勤报告</value>
   </data>
+  <data name="student card" xml:space="preserve">
+    <value>学生卡</value>
+  </data>
+  <data name="student card for all grade levels" xml:space="preserve">
+    <value>各年级学生卡</value>
+  </data>
+  <data name="student card for each class" xml:space="preserve">
+    <value>每个班级的学生证</value>
+  </data>
   <data name="student list" xml:space="preserve">
     <value>学生名单</value>
   </data>
   <data name="student schedule" xml:space="preserve">
     <value>学生日程</value>
+  </data>
+  <data name="student schedule for all grade levels" xml:space="preserve">
+    <value>所有年级的学生时间表</value>
   </data>
   <data name="student Score Bulletin" xml:space="preserve">
     <value>学生成绩公告</value>

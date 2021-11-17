@@ -693,11 +693,23 @@
   <data name="student Attendence Report" xml:space="preserve">
     <value>Báo cáo chuyên cần của học sinh</value>
   </data>
+  <data name="student card" xml:space="preserve">
+    <value>Thẻ sinh viên</value>
+  </data>
+  <data name="student card for all grade levels" xml:space="preserve">
+    <value>Thẻ sinh viên cho tất cả các cấp lớp</value>
+  </data>
+  <data name="student card for each class" xml:space="preserve">
+    <value>Thẻ sinh viên cho mỗi lớp</value>
+  </data>
   <data name="student list" xml:space="preserve">
     <value>Danh sách sinh viên</value>
   </data>
   <data name="student schedule" xml:space="preserve">
     <value>Thời khóa biểu của sinh viên</value>
+  </data>
+  <data name="student schedule for all grade levels" xml:space="preserve">
+    <value>Thời khóa biểu của học sinh cho tất cả các cấp lớp</value>
   </data>
   <data name="student Score Bulletin" xml:space="preserve">
     <value>Bản tin điểm sinh viên</value>

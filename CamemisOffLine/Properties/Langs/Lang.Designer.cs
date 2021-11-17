@@ -1798,6 +1798,33 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string student_card {
+            get {
+                return ResourceManager.GetString("student card", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Student card for all grade levels.
+        /// </summary>
+        public static string student_card_for_all_grade_levels {
+            get {
+                return ResourceManager.GetString("student card for all grade levels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Student card for each class.
+        /// </summary>
+        public static string student_card_for_each_class {
+            get {
+                return ResourceManager.GetString("student card for each class", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Student list.
         /// </summary>
         public static string student_list {
@@ -1812,6 +1839,15 @@ namespace CamemisOffLine.Properties.Langs {
         public static string student_schedule {
             get {
                 return ResourceManager.GetString("student schedule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Student schedule for all grade levels.
+        /// </summary>
+        public static string student_schedule_for_all_grade_levels {
+            get {
+                return ResourceManager.GetString("student schedule for all grade levels", resourceCulture);
             }
         }
         
