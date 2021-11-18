@@ -174,14 +174,10 @@
 
                                                 </TextBlock>
                                             </Grid>
-<<<<<<< HEAD
-                                            <Grid HorizontalAlignment="Left" Margin="92 -5 10 0">
-                                                <TextBlock TextWrapping="WrapWithOverflow" Text="ធ្វើនៅរាជធានីភ្នំពេញ " Padding="0 2 0 0" Margin="0 0 0 0" FontSize="8" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black">
-=======
+                                           
                                             <Grid HorizontalAlignment="Right" Width="155" Margin="0 -5 10 0">
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock TextWrapping="WrapWithOverflow" Text="{Binding location}" Padding="0 2 0 0" Margin="0 0 0 0" FontSize="8" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black">
->>>>>>> 9af6c3da3f5f7f1ff498b6ce460ee205655a977a
+
+                                                <TextBlock TextWrapping="WrapWithOverflow" Text="{Binding location}" Padding="0 2 0 0" Margin="0 0 0 0" FontSize="8" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Foreground="Black">
 
                                                 </TextBlock>
                                                 

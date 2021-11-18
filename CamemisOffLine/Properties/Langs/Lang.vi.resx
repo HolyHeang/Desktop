@@ -252,6 +252,9 @@
   <data name="delete submit to the Commission check" xml:space="preserve">
     <value>xóa gửi đến Ủy ban kiểm tra</value>
   </data>
+  <data name="Deselect" xml:space="preserve">
+    <value>Bỏ chọn</value>
+  </data>
   <data name="Differentfile" xml:space="preserve">
     <value>Gửi một tệp khác</value>
   </data>
@@ -495,6 +498,9 @@
   <data name="Please select a school year and group" xml:space="preserve">
     <value>Vui lòng chọn năm học và nhóm!</value>
   </data>
+  <data name="Please select students first" xml:space="preserve">
+    <value>Vui lòng chọn học sinh trước</value>
+  </data>
   <data name="Please wait" xml:space="preserve">
     <value>Vui lòng chờ</value>
   </data>
@@ -609,6 +615,9 @@
   <data name="search students:" xml:space="preserve">
     <value>Tìm kiếm sinh viên:</value>
   </data>
+  <data name="Select all" xml:space="preserve">
+    <value>Chọn tất cả</value>
+  </data>
   <data name="select class" xml:space="preserve">
     <value>Tốt nghiệp</value>
   </data>
@@ -704,6 +713,12 @@
   </data>
   <data name="student list" xml:space="preserve">
     <value>Danh sách sinh viên</value>
+  </data>
+  <data name="Student Name for Score Bulletin Printing" xml:space="preserve">
+    <value>Tên học sinh để in bản tin điểm</value>
+  </data>
+  <data name="Student name for student card printing" xml:space="preserve">
+    <value>In thẻ sinh viên tên sinh viên</value>
   </data>
   <data name="student schedule" xml:space="preserve">
     <value>Thời khóa biểu của sinh viên</value>

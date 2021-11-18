@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:CamemisOffLine.Windows"
+                xmlns:language="clr-namespace:CamemisOffLine.Properties.Langs"
+
         mc:Ignorable="d"
         Title="" Height="600" Width="400" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded" WindowStyle="None">
     <Grid Background="LightGray">
@@ -13,15 +15,15 @@
                 <Grid Name="gridExit" Width="35" Margin="0 0 0 0" Cursor="Hand" Height="35" HorizontalAlignment="Right" VerticalAlignment="Top" MouseDown="gridExit_MouseDown" MouseEnter="gridExit_MouseEnter" MouseLeave="gridExit_MouseLeave">
                     <materialDesign:PackIcon Kind="Close" FontSize="15" Height="20" Width="20" Foreground="Black" VerticalAlignment="Stretch" Margin="8,8,0,7"/>
                 </Grid>
-                <TextBlock Text="តារាឈ្មោះសិស្សសម្រាប់ធ្វើការបោះពុម្ភកាតសិស្ស" HorizontalAlignment="Center" Margin="10" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="16" ></TextBlock>
+                <TextBlock Text="{x:Static language:Lang.Student_name_for_student_card_printing}" HorizontalAlignment="Center" Margin="10" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="16" ></TextBlock>
                 <StackPanel Orientation="Vertical" Margin="10 0 0 0">
-                    <TextBlock Text="ស្វែងរកសិស្ស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="13"/>
+                    <TextBlock Text="{x:Static language:Lang.search_students_}" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" FontSize="13"/>
                     <StackPanel Orientation="Horizontal">
-                        <TextBox Name="txtStudentName" materialDesign:HintAssist.Hint="បញ្ចូលឈ្មោះសិស្ស" BorderThickness="1" Height="35" Width="230" VerticalAlignment="Center" HorizontalAlignment="Left" TextChanged="txtStudentName_TextChanged" Padding="3 0 0 0" VerticalContentAlignment="Center" BorderBrush="Gray" MouseEnter="txtStudentName_MouseEnter" MouseLeave="txtStudentName_MouseLeave" GotFocus="txtStudentName_GotFocus" LostFocus="txtStudentName_LostFocus" MouseDown="txtStudentName_MouseDown" FontSize="13" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBox>
+                        <TextBox Name="txtStudentName" materialDesign:HintAssist.Hint="{x:Static language:Lang.search}" BorderThickness="1" Height="35" Width="230" VerticalAlignment="Center" HorizontalAlignment="Left" TextChanged="txtStudentName_TextChanged" Padding="3 0 0 0" VerticalContentAlignment="Center" BorderBrush="Gray" MouseEnter="txtStudentName_MouseEnter" MouseLeave="txtStudentName_MouseLeave" GotFocus="txtStudentName_GotFocus" LostFocus="txtStudentName_LostFocus" MouseDown="txtStudentName_MouseDown" FontSize="13" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></TextBox>
                         <materialDesign:PackIcon Name="iconClose" Kind="Close" VerticalAlignment="Center" Foreground="Gray" Margin="-18 0 0 0" MouseUp="iconClose_MouseUp" Cursor="Hand" Visibility="Collapsed"/>
                     </StackPanel>
                 </StackPanel>
-                <CheckBox Name="checkAll" Content="ជ្រើសរើសទាំងអស់" Margin="10 10 0 0" Background="LightBlue" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Click="checkAll_Click" FontSize="13"></CheckBox>
+                <CheckBox Name="checkAll" Content="{x:Static language:Lang.Select_all}" Margin="10 10 0 0" Background="LightBlue" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Click="checkAll_Click" FontSize="13"></CheckBox>
                 <DataGrid Name="DGStudentName" VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False" GridLinesVisibility="None" IsReadOnly="True" CanUserSortColumns="False" SelectionMode="Extended" SelectionUnit="FullRow" ScrollViewer.CanContentScroll="True" Margin="10,-10,0,0" Background="Transparent" BorderThickness="0" Width="380" HorizontalAlignment="Left" Height="350" VirtualizingPanel.ScrollUnit="Pixel" ScrollViewer.HorizontalScrollBarVisibility="Hidden" AlternatingRowBackground="WhiteSmoke">
                     <DataGrid.Columns>
                         <DataGridTemplateColumn>
@@ -36,8 +38,8 @@
                     </DataGrid.Columns>
                 </DataGrid>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin=" 0 20 10 0">
-                    <Button Name="btnNamePrint" Content="បោះពុម្ភ" Width="100" Margin="0 0 10 0" Background="Gray" BorderBrush="Transparent" Click="btnNamePrint_Click" FontSize="13" Height="35" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Button>
-                    <Button Name="btnCancel" Content="ដកការជ្រើសរើស" Width="120" Background="Red" BorderBrush="Transparent" Click="btnCancel_Click" FontSize="13" Height="35" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Button>
+                    <Button Name="btnNamePrint" Content="{x:Static language:Lang.print}" Width="100" Margin="0 0 10 0" Background="Gray" BorderBrush="Transparent" Click="btnNamePrint_Click" FontSize="13" Height="35" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Button>
+                    <Button Name="btnCancel" Content="{x:Static language:Lang.Deselect}" Width="120" Background="Red" BorderBrush="Transparent" Click="btnCancel_Click" FontSize="13" Height="35" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"></Button>
                 </StackPanel>
             </StackPanel>
             <Border HorizontalAlignment="Right" VerticalAlignment="Bottom" CornerRadius="50" Height="15" Width="15" Background="Red" BorderBrush="Black" BorderThickness="1" Margin="0,0,140,52">
