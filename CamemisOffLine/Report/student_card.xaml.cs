@@ -1,4 +1,5 @@
-﻿using CamemisOffLine.Windows;
+﻿using CamemisOffLine.Component;
+using CamemisOffLine.Windows;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using Library;
@@ -131,7 +132,14 @@ namespace CamemisOffLine.Report
             {
                 ShowListStudentToPrintCard printCard = new ShowListStudentToPrintCard(obj);
                 printCard.ShowDialog();
-                obj = printCard.obj;
+                if(printCard.isClose)
+                {
+                    obj = null;
+                }
+                else
+                {
+                    obj = printCard.obj;
+                }
             }
             var setting = JObject.Parse(Properties.Settings.Default.schoolSetting).ToObject<SchoolSettings>();
             try
@@ -196,7 +204,8 @@ namespace CamemisOffLine.Report
             }
             catch
             {
-
+                loading.Close();
+                this.Close();
             }
 
           
@@ -219,6 +228,8 @@ namespace CamemisOffLine.Report
 
         private void print()
         {
+
+
             Loading load = new Loading();
             load.Show();
 
@@ -262,7 +273,11 @@ namespace CamemisOffLine.Report
             }
             catch
             {
-                MessageBox.Show("ការបោះពុម្ភរបស់អ្នកមិនទទូលបានជោគជ័យ", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBoxControl message = new MessageBoxControl();
+                message.buttonType = 1;
+                message.title = Properties.Langs.Lang.print;
+                message.discription = Properties.Langs.Lang.Unsuccessful_printing;
+                message.ShowDialog();
                 this.Close();
             }
         }

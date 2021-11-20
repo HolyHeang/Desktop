@@ -31,11 +31,11 @@
     <InstallUrl>https://camemis.000webhostapp.com/camemis/</InstallUrl>
     <UpdateUrl>https://camemis.000webhostapp.com/camemis/</UpdateUrl>
     <ProductName>CAMEMIS Desktop</ProductName>
-    <PublisherName>Heang Holy</PublisherName>
-    <SuiteName>Camemis</SuiteName>
-    <MinimumRequiredVersion>1.0.0.17</MinimumRequiredVersion>
+    <PublisherName>CAMIS</PublisherName>
+    <SuiteName>Camis</SuiteName>
+    <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>18</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

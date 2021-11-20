@@ -457,6 +457,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Deselect.
+        /// </summary>
+        public static string Deselect {
+            get {
+                return ResourceManager.GetString("Deselect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Different file.
         /// </summary>
         public static string Differentfile {
@@ -1186,6 +1195,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select students first.
+        /// </summary>
+        public static string Please_select_students_first {
+            get {
+                return ResourceManager.GetString("Please select students first", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please wait.
         /// </summary>
         public static string Please_wait {
@@ -1546,6 +1564,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select all.
+        /// </summary>
+        public static string Select_all {
+            get {
+                return ResourceManager.GetString("Select all", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select class.
         /// </summary>
         public static string select_class {
@@ -1798,6 +1825,33 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string student_card {
+            get {
+                return ResourceManager.GetString("student card", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Student card for all grade levels.
+        /// </summary>
+        public static string student_card_for_all_grade_levels {
+            get {
+                return ResourceManager.GetString("student card for all grade levels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Student card for each class.
+        /// </summary>
+        public static string student_card_for_each_class {
+            get {
+                return ResourceManager.GetString("student card for each class", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Student list.
         /// </summary>
         public static string student_list {
@@ -1807,11 +1861,38 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Student Name for Score Bulletin Printing.
+        /// </summary>
+        public static string Student_Name_for_Score_Bulletin_Printing {
+            get {
+                return ResourceManager.GetString("Student Name for Score Bulletin Printing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Student name for student card printing.
+        /// </summary>
+        public static string Student_name_for_student_card_printing {
+            get {
+                return ResourceManager.GetString("Student name for student card printing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Student Schedule.
         /// </summary>
         public static string student_schedule {
             get {
                 return ResourceManager.GetString("student schedule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Student schedule for all grade levels.
+        /// </summary>
+        public static string student_schedule_for_all_grade_levels {
+            get {
+                return ResourceManager.GetString("student schedule for all grade levels", resourceCulture);
             }
         }
         

@@ -4355,7 +4355,7 @@ namespace CamemisOffLine
                 }
                 else if (message.result == 1 && item.id == 8)
                 {
-                    if (parentId=="")
+                    if (cmbAcademicYearScedulePrint.Text == "" || cmbAcademicYearScedulePrint.Text == Properties.Langs.Lang.Select_school_year)
                     {
                         this.Opacity = 0.5;
                         MessageBoxControl messageBox = new MessageBoxControl();
@@ -4375,12 +4375,12 @@ namespace CamemisOffLine
                 }
                 else if(message.result==1 && item.id == 9)
                 {
-                    if (cmbAcademicYearScedulePrint.Text == "" || cmbAcademicYearScedulePrint.Text == Properties.Langs.Lang.school_year || cmbGradeScedulePrint.Text == "" || cmbGradeScedulePrint.Text == Properties.Langs.Lang.select_grade || cmbClassScedulePrint.Text == "" || cmbClassScedulePrint.Text == Properties.Langs.Lang.select_class)
+                    if (cmbAcademicYearScedulePrint.Text == "" || cmbAcademicYearScedulePrint.Text == Properties.Langs.Lang.Select_school_year || cmbGradeScedulePrint.Text == "" || cmbGradeScedulePrint.Text == Properties.Langs.Lang.select_grade || cmbClassScedulePrint.Text == "" || cmbClassScedulePrint.Text == Properties.Langs.Lang.select_class)
                     {
                         this.Opacity = 0.5;
                         MessageBoxControl messageBox = new MessageBoxControl();
                         messageBox.title = Properties.Langs.Lang.print;
-                        messageBox.discription = Properties.Langs.Lang.Select_school_year;
+                        messageBox.discription = Properties.Langs.Lang.Please_select_a_school_year_and_class;
                         messageBox.buttonType = 1;
                         messageBox.ShowDialog();
                         this.Opacity = 1;
@@ -4531,12 +4531,14 @@ namespace CamemisOffLine
                 }
                 else if (message.result == 1 && item.id == 28)
                 {
-                    if (false)
+                    if (cmbAcademicYearStatisticbyClassPrint.Text=="" || cmbAcademicYearStatisticbyClassPrint.Text==Properties.Langs.Lang.Select_school_year
+                        || cmbGradeStatisticbyClassPrint.Text=="" || cmbGradeStatisticbyClassPrint.Text ==Properties.Langs.Lang.select_grade || 
+                        cmbClassStatisticbyClassPrint.Text=="" || cmbClassStatisticbyClassPrint.Text==Properties.Langs.Lang.select_class)
                     {
                         this.Opacity = 0.5;
                         MessageBoxControl messageBox = new MessageBoxControl();
                         messageBox.title = Properties.Langs.Lang.print;
-                        messageBox.discription = Properties.Langs.Lang.Select_school_year;
+                        messageBox.discription = Properties.Langs.Lang.Please_select_a_school_year_and_class;
                         messageBox.buttonType = 1;
                         messageBox.ShowDialog();
                         this.Opacity = 1;
@@ -4552,7 +4554,7 @@ namespace CamemisOffLine
 
                 else if (message.result == 1 && item.id == 29)
                 {
-                    if (false)
+                    if (cmbAcademicYearStatisticbyClassPrint.Text == "" || cmbAcademicYearStatisticbyClassPrint.Text == Properties.Langs.Lang.Select_school_year)
                     {
                         this.Opacity = 0.5;
                         MessageBoxControl messageBox = new MessageBoxControl();

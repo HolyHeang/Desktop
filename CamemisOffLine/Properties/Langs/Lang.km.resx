@@ -252,6 +252,9 @@
   <data name="delete submit to the Commission check" xml:space="preserve">
     <value>លុបដាក់ស្នើរគណៈកម្មការត្រួតពិនិត្យ</value>
   </data>
+  <data name="Deselect" xml:space="preserve">
+    <value>ដកការជ្រើសរើស</value>
+  </data>
   <data name="Differentfile" xml:space="preserve">
     <value>ដាក់ឯកសារផ្សេងគ្នា</value>
   </data>
@@ -495,6 +498,9 @@
   <data name="Please select a school year and group" xml:space="preserve">
     <value>សូមជ្រើសរើសឆ្នាំសិក្សា និងកម្រិត!</value>
   </data>
+  <data name="Please select students first" xml:space="preserve">
+    <value>សូមធ្វើការជ្រើសរើសសិស្សជាមុនសិន</value>
+  </data>
   <data name="Please wait" xml:space="preserve">
     <value>សូមមេត្តារង់ចាំ</value>
   </data>
@@ -615,6 +621,9 @@
   <data name="search students:" xml:space="preserve">
     <value>ស្វែងរកសិស្ស៖</value>
   </data>
+  <data name="Select all" xml:space="preserve">
+    <value>ជ្រើសរើស​ទាំងអស់</value>
+  </data>
   <data name="select class" xml:space="preserve">
     <value>ជ្រើសរើសថ្នាក់</value>
   </data>
@@ -699,11 +708,29 @@
   <data name="student Attendence Report" xml:space="preserve">
     <value>របាយការណ៏អវត្តមានសិស្ស</value>
   </data>
+  <data name="student card" xml:space="preserve">
+    <value>កាតសិស្ស</value>
+  </data>
+  <data name="student card for all grade levels" xml:space="preserve">
+    <value>កាតសិស្សសម្រាប់គ្រប់កម្រិតថ្នាក់</value>
+  </data>
+  <data name="student card for each class" xml:space="preserve">
+    <value>កាតសិស្សសម្រាប់ថ្នាក់នីមួយៗ</value>
+  </data>
   <data name="student list" xml:space="preserve">
     <value>បញ្ជីឈ្មោះសិស្ស</value>
   </data>
+  <data name="Student Name for Score Bulletin Printing" xml:space="preserve">
+    <value>តារាឈ្មោះសិស្សសម្រាប់ធ្វើការបោះពុម្ភព្រឹត្តិប័ត្រពិន្ទុ</value>
+  </data>
+  <data name="Student name for student card printing" xml:space="preserve">
+    <value>តារាឈ្មោះសិស្សសម្រាប់ធ្វើការបោះពុម្ភកាតសិស្ស</value>
+  </data>
   <data name="student schedule" xml:space="preserve">
     <value>កាលវិភាគសិស្ស</value>
+  </data>
+  <data name="student schedule for all grade levels" xml:space="preserve">
+    <value>កាលវិភាគសិស្សគ្រប់កម្រិតថ្នាក់</value>
   </data>
   <data name="student Score Bulletin" xml:space="preserve">
     <value>ព្រឹត្តិបត្រពិន្ទុសិស្ស</value>

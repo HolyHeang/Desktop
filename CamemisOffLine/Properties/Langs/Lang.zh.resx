@@ -252,6 +252,9 @@
   <data name="delete submit to the Commission check" xml:space="preserve">
     <value>删除提交给委员会检查</value>
   </data>
+  <data name="Deselect" xml:space="preserve">
+    <value>取消选择</value>
+  </data>
   <data name="Differentfile" xml:space="preserve">
     <value>归档其他文件</value>
   </data>
@@ -498,6 +501,9 @@
   <data name="Please select a school year and group" xml:space="preserve">
     <value>请选择学年和组!</value>
   </data>
+  <data name="Please select students first" xml:space="preserve">
+    <value>请先选择学生</value>
+  </data>
   <data name="Please wait" xml:space="preserve">
     <value>请稍等</value>
   </data>
@@ -609,6 +615,9 @@
   <data name="search students:" xml:space="preserve">
     <value>搜索学生：</value>
   </data>
+  <data name="Select all" xml:space="preserve">
+    <value>全选</value>
+  </data>
   <data name="select class" xml:space="preserve">
     <value>研究生</value>
   </data>
@@ -693,11 +702,29 @@
   <data name="student Attendence Report" xml:space="preserve">
     <value>学生出勤报告</value>
   </data>
+  <data name="student card" xml:space="preserve">
+    <value>学生卡</value>
+  </data>
+  <data name="student card for all grade levels" xml:space="preserve">
+    <value>各年级学生卡</value>
+  </data>
+  <data name="student card for each class" xml:space="preserve">
+    <value>每个班级的学生证</value>
+  </data>
   <data name="student list" xml:space="preserve">
     <value>学生名单</value>
   </data>
+  <data name="Student Name for Score Bulletin Printing" xml:space="preserve">
+    <value>打印分数公告的学生姓名</value>
+  </data>
+  <data name="Student name for student card printing" xml:space="preserve">
+    <value>学生证打印学生姓名</value>
+  </data>
   <data name="student schedule" xml:space="preserve">
     <value>学生日程</value>
+  </data>
+  <data name="student schedule for all grade levels" xml:space="preserve">
+    <value>所有年级的学生时间表</value>
   </data>
   <data name="student Score Bulletin" xml:space="preserve">
     <value>学生成绩公告</value>

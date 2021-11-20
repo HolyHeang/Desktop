@@ -30,8 +30,8 @@ D:\HEANG-HOLY\Work\Camis Desktop\Camemis\Desktop\Library\bin\Debug\System.Data.S
 D:\HEANG-HOLY\Work\Camis Desktop\Camemis\Desktop\Library\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
 D:\HEANG-HOLY\Work\Camis Desktop\Camemis\Desktop\Library\bin\Debug\System.Net.Http.Formatting.dll
 D:\HEANG-HOLY\Work\Camis Desktop\Camemis\Desktop\Library\bin\Debug\System.Net.Http.Formatting.xml
-D:\HEANG-HOLY\Work\Camis Desktop\Camemis\Desktop\Library\obj\Debug\Library.csprojAssemblyReference.cache
 D:\HEANG-HOLY\Work\Camis Desktop\Camemis\Desktop\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
 D:\HEANG-HOLY\Work\Camis Desktop\Camemis\Desktop\Library\obj\Debug\Library.csproj.CopyComplete
 D:\HEANG-HOLY\Work\Camis Desktop\Camemis\Desktop\Library\obj\Debug\Library.dll
 D:\HEANG-HOLY\Work\Camis Desktop\Camemis\Desktop\Library\obj\Debug\Library.pdb
+D:\HEANG-HOLY\Work\Camis Desktop\Camemis\Desktop\Library\obj\Debug\Library.csprojAssemblyReference.cache

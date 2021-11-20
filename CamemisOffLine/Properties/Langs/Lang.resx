@@ -249,6 +249,9 @@
   <data name="delete submit to the Commission check" xml:space="preserve">
     <value>Selete submit to the commission check</value>
   </data>
+  <data name="Deselect" xml:space="preserve">
+    <value>Deselect</value>
+  </data>
   <data name="Differentfile" xml:space="preserve">
     <value>Different file</value>
   </data>
@@ -492,6 +495,9 @@
   <data name="Please select a school year and group" xml:space="preserve">
     <value>Please select a school year and grade!</value>
   </data>
+  <data name="Please select students first" xml:space="preserve">
+    <value>Please select students first</value>
+  </data>
   <data name="Please wait" xml:space="preserve">
     <value>Please wait</value>
   </data>
@@ -612,6 +618,9 @@
   <data name="search students:" xml:space="preserve">
     <value>Search students:</value>
   </data>
+  <data name="Select all" xml:space="preserve">
+    <value>Select all</value>
+  </data>
   <data name="select class" xml:space="preserve">
     <value>Select class</value>
   </data>
@@ -696,11 +705,29 @@
   <data name="student Attendence Report" xml:space="preserve">
     <value>Student Attendence Report</value>
   </data>
+  <data name="student card" xml:space="preserve">
+    <value />
+  </data>
+  <data name="student card for all grade levels" xml:space="preserve">
+    <value>Student card for all grade levels</value>
+  </data>
+  <data name="student card for each class" xml:space="preserve">
+    <value>Student card for each class</value>
+  </data>
   <data name="student list" xml:space="preserve">
     <value>Student list</value>
   </data>
+  <data name="Student Name for Score Bulletin Printing" xml:space="preserve">
+    <value>Student Name for Score Bulletin Printing</value>
+  </data>
+  <data name="Student name for student card printing" xml:space="preserve">
+    <value>Student name for student card printing</value>
+  </data>
   <data name="student schedule" xml:space="preserve">
     <value>Student Schedule</value>
+  </data>
+  <data name="student schedule for all grade levels" xml:space="preserve">
+    <value>Student schedule for all grade levels</value>
   </data>
   <data name="student Score Bulletin" xml:space="preserve">
     <value>Student Score Bulletin</value>

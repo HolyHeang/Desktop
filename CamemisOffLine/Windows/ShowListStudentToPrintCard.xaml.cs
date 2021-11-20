@@ -1,4 +1,5 @@
-﻿using Library;
+﻿using CamemisOffLine.Component;
+using Library;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,7 @@ namespace CamemisOffLine.Windows
     public partial class ShowListStudentToPrintCard : Window
     {
        public List<StuedntofTheYear> obj = new List<StuedntofTheYear>();
+        public bool isClose;
         public ShowListStudentToPrintCard()
         {
             InitializeComponent();
@@ -75,16 +77,32 @@ namespace CamemisOffLine.Windows
                 }
                 else
                 {
-                    MessageBox.Show("សូមធ្វើការជ្រើសរើសសិស្សជាមុនសិន", "សារបញ្ចាក់", MessageBoxButton.OK, MessageBoxImage.Error);
-                    Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
-                    DGStudentName.ItemsSource = obj;
+                    this.Opacity = 0.5;
+                    MessageBoxControl messageBox = new MessageBoxControl();
+                    messageBox.title = Properties.Langs.Lang.print;
+                    messageBox.discription = Properties.Langs.Lang.Please_select_students_first;
+                    messageBox.buttonType = 1;
+                    messageBox.ShowDialog();
+                    isClose = true;
+                    this.Opacity = 1;
+                    //MessageBox.Show("សូមធ្វើការជ្រើសរើសសិស្សជាមុនសិន", "សារបញ្ចាក់", MessageBoxButton.OK, MessageBoxImage.Error);
+                    //Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
+                    //DGStudentName.ItemsSource = obj;
                 }
             }
             catch
             {
-                MessageBox.Show("សូមធ្វើការជ្រើសរើសសិស្សជាមុនសិន", "សារបញ្ចាក់", MessageBoxButton.OK, MessageBoxImage.Error);
-                Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
-                DGStudentName.ItemsSource = obj;
+                this.Opacity = 0.5;
+                MessageBoxControl messageBox = new MessageBoxControl();
+                messageBox.title = Properties.Langs.Lang.print;
+                messageBox.discription = Properties.Langs.Lang.Please_select_students_first;
+                messageBox.buttonType = 1;
+                messageBox.ShowDialog();
+                isClose = true;
+                this.Opacity = 1;
+                //MessageBox.Show("សូមធ្វើការជ្រើសរើសសិស្សជាមុនសិន", "សារបញ្ចាក់", MessageBoxButton.OK, MessageBoxImage.Error);
+                //Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
+                //DGStudentName.ItemsSource = obj;
             }
 
 
@@ -170,6 +188,7 @@ namespace CamemisOffLine.Windows
 
         private void gridExit_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            isClose = true;
             this.Close();
 
         }
