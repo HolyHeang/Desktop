@@ -355,10 +355,14 @@ namespace CamemisOffLine
                         Properties.Settings.Default.schoolAcademyYear = respone;
                         Properties.Settings.Default.Save();
                         List<Year> year = new List<Year>();
-                        foreach (var item in obj)
+                        try
                         {
-                            year.Add(new Year { name = item.name });
+                            foreach (var item in obj)
+                            {
+                                year.Add(new Year { name = item.name });
+                            }
                         }
+                        catch { }
                         cbAcademyYear.ItemsSource = year;
                         cbAcademyYear.DisplayMemberPath = "name";
                         cbAcademyYear.SelectedValuePath = "name";
@@ -4017,13 +4021,13 @@ namespace CamemisOffLine
 
         private void btnStatistic_Click(object sender, RoutedEventArgs e)
         {
-            Loading loading = new Loading();
-            this.IsEnabled = false;
-            loading.Show();
-            MonthlyStatisticResult monthly = new MonthlyStatisticResult(report.data.ToList());
-            loading.Close();
-            monthly.Show();
-            this.IsEnabled = true;
+            //Loading loading = new Loading();
+            //this.IsEnabled = false;
+            //loading.Show();
+            //MonthlyStatisticResult monthly = new MonthlyStatisticResult(report.data.ToList());
+            //loading.Close();
+            //monthly.Show();
+            //this.IsEnabled = true;
         }
        
 

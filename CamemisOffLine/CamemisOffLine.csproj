@@ -17,10 +17,10 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
-    <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>\\Heang-Holy\Users\ASUS\Desktop\test pub\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Web</InstallFrom>
+    <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -28,14 +28,14 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://camemis.000webhostapp.com/camemis/</InstallUrl>
-    <UpdateUrl>https://camemis.000webhostapp.com/camemis/</UpdateUrl>
+    <InstallUrl>\\Heang-Holy\Users\ASUS\Desktop\test pub\</InstallUrl>
+    <UpdateUrl>\\Heang-Holy\Users\ASUS\Desktop\test pub\</UpdateUrl>
     <ProductName>CAMEMIS Desktop</ProductName>
     <PublisherName>CAMIS</PublisherName>
     <SuiteName>Camis</SuiteName>
-    <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.3</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -284,9 +284,6 @@
     <Compile Include="Windows\MonthlyResult.xaml.cs">
       <DependentUpon>MonthlyResult.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\MonthlyStatisticResult.xaml.cs">
-      <DependentUpon>MonthlyStatisticResult.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Windows\PartTeacher.xaml.cs">
       <DependentUpon>PartTeacher.xaml</DependentUpon>
     </Compile>
@@ -499,10 +496,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Windows\MonthlyResult.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\MonthlyStatisticResult.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
