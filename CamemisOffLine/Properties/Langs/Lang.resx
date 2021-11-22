@@ -753,6 +753,9 @@
   <data name="Summary table of student transcripts by core subject" xml:space="preserve">
     <value>Summary table of student transcripts</value>
   </data>
+  <data name="Summary table of student transcripts by core subject by class" xml:space="preserve">
+    <value>Summary table of student transcripts by core subject by class</value>
+  </data>
   <data name="Tea Menu" xml:space="preserve">
     <value>TEACHER MENU</value>
   </data>

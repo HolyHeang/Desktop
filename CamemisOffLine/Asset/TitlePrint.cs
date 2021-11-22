@@ -14,7 +14,7 @@ namespace CamemisOffLine.Asset
         {
             new string[]{Properties.Langs.Lang.total_by_school_year,Properties.Langs.Lang.by_common_level, Properties.Langs.Lang.by_each_level,Properties.Langs.Lang.by_each_class,Properties.Langs.Lang.exam_promote_class,Properties.Langs.Lang.repeat_class,Properties.Langs.Lang.studies_cancel},
             new string[]{Properties.Langs.Lang.student_schedule_for_all_grade_levels,Properties.Langs.Lang.class_schedule},
-            new string[]{Properties.Langs.Lang.results_study_by_class,Properties.Langs.Lang.student_Score_Bulletin,Properties.Langs.Lang.honor_tables_by_class,Properties.Langs.Lang.rating_Classification_semester_by_class,Properties.Langs.Lang.results_learning_all_subjects,Properties.Langs.Lang.Summary_table_of_student_transcripts_by_core_subject},
+            new string[]{Properties.Langs.Lang.results_study_by_class,Properties.Langs.Lang.student_Score_Bulletin,Properties.Langs.Lang.honor_tables_by_class,Properties.Langs.Lang.rating_Classification_semester_by_class,Properties.Langs.Lang.results_learning_all_subjects,Properties.Langs.Lang.Summary_table_of_student_transcripts_by_core_subject,Properties.Langs.Lang.Summary_table_of_student_transcripts_by_core_subject_by_class},
             new string[]{"កាលវិភាគសិក្សារបស់សិស្ស"},
             new string[]{Properties.Langs.Lang.student_attendance_by_class},
             new string[]{"តាមថ្នាក់នីមួយៗ","សរុបតាមកម្រិតនីមួយៗ"},

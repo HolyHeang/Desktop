@@ -319,7 +319,7 @@ namespace CamemisOffLine.Report
             {
 
                 PngBitmapEncoder enc = new PngBitmapEncoder();
-                var bitmap = new RenderTargetBitmap((int)Grid.ActualWidth * 2, (int)Grid.ActualHeight * 2, 145, 120, PixelFormats.Pbgra32);
+                var bitmap = new RenderTargetBitmap((int)Grid.ActualWidth * 2, (int)Grid.ActualHeight * 2, 145, 110, PixelFormats.Pbgra32);
                 bitmap.Render(Grid);
                 enc.Frames.Add(BitmapFrame.Create(bitmap));
                 enc.Save(outStream);

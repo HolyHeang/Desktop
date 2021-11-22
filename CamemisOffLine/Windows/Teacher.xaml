@@ -3343,7 +3343,7 @@
                                                                     </LinearGradientBrush>
                                                                 </Button.Background>
                                                                 <Grid HorizontalAlignment="Stretch" Width="335">
-                                                                    <TextBlock  Text="{Binding title}" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
+                                                                    <TextBlock  Text="{Binding title}" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" TextWrapping="Wrap" Width="250"/>
                                                                     <Image Source="/Image/PrintIcon.png" Height="40" Opacity="0.5" HorizontalAlignment="Right"/>
                                                                 </Grid>
                                                             </Button>

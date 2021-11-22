@@ -756,6 +756,9 @@
   <data name="Summary table of student transcripts by core subject" xml:space="preserve">
     <value>តារាងសង្ខេបនិន្ទេសសិស្សតាមមុខវិជ្ជាគោល</value>
   </data>
+  <data name="Summary table of student transcripts by core subject by class" xml:space="preserve">
+    <value>តារាងសង្ខេបនិន្ទេសសិស្សតាមមុខវិជ្ជាគោលតាមថ្នាក់</value>
+  </data>
   <data name="Tea Menu" xml:space="preserve">
     <value>ទម្រង់គ្រូ</value>
   </data>

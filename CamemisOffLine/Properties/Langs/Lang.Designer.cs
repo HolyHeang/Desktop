@@ -1969,6 +1969,15 @@ namespace CamemisOffLine.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Summary table of student transcripts by core subject by class.
+        /// </summary>
+        public static string Summary_table_of_student_transcripts_by_core_subject_by_class {
+            get {
+                return ResourceManager.GetString("Summary table of student transcripts by core subject by class", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to TEACHER MENU.
         /// </summary>
         public static string Tea_Menu {
