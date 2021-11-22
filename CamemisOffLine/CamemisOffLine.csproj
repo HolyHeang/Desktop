@@ -18,11 +18,7 @@
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
     <IsWebBootstrapper>true</IsWebBootstrapper>
-<<<<<<< HEAD
-    <PublishUrl>\\Heang-Holy\Users\ASUS\Desktop\test pub\</PublishUrl>
-=======
     <PublishUrl>publish\</PublishUrl>
->>>>>>> 6489e7e35e3d077862c43b541c718448b4f7fe4b
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -33,21 +29,13 @@
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>https://camemis.000webhostapp.com/CAMEMIS_DESKTOP/</InstallUrl>
-<<<<<<< HEAD
-    <UpdateUrl>\\Heang-Holy\Users\ASUS\Desktop\test pub\</UpdateUrl>
-=======
     <UpdateUrl>https://camemis.000webhostapp.com/CAMEMIS_DESKTOP/</UpdateUrl>
->>>>>>> 6489e7e35e3d077862c43b541c718448b4f7fe4b
     <ProductName>CAMEMIS Desktop</ProductName>
     <PublisherName>CAMIS</PublisherName>
     <SuiteName>Camis</SuiteName>
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
-<<<<<<< HEAD
-    <ApplicationRevision>4</ApplicationRevision>
-=======
     <ApplicationRevision>0</ApplicationRevision>
->>>>>>> 6489e7e35e3d077862c43b541c718448b4f7fe4b
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
