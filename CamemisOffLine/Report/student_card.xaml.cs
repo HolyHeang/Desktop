@@ -61,7 +61,7 @@ namespace CamemisOffLine.Report
             var date = "ថ្ងៃទី "+DateChange.Num(int.Parse(dateParse[0]))+"​ "+DateChange.checkMonth(int.Parse(dateParse[1]))+" ឆ្នាំ"+ DateChange.Num(int.Parse(dateParse[2]));
             var exipireDate = "ថ្ងៃផុតកំណត់​ ថ្ងៃ" + DateChange.Num(int.Parse(dateParse[0])) + "​ " + DateChange.checkMonth(int.Parse(dateParse[1])) + " ឆ្នាំ" + DateChange.Num(int.Parse(dateParse[2])+1);
             var yearParse = "";
-
+            
             try
             {
                 var year = yearTitle.Split('-');

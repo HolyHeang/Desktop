@@ -210,6 +210,7 @@ namespace CamemisOffLine
                                         Properties.Settings.Default.userData = datas;
                                         Properties.Settings.Default.username = txtUser.Text;
                                         Properties.Settings.Default.password = txtPass.Password;
+                                        Properties.Settings.Default.ExpireDate = d.laravel_token_data.expires_in_date;
                                         Properties.Settings.Default.Save();
                                         SaveData();
 

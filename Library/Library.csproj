@@ -84,6 +84,7 @@
     <Compile Include="SubAttendanceClass.cs" />
     <Compile Include="SubClassMapteacher.cs" />
     <Compile Include="Subject.cs" />
+    <Compile Include="SummarySubjectGrading.cs" />
     <Compile Include="SummarySubjectGradingscale.cs" />
     <Compile Include="Teacher.cs" />
     <Compile Include="TimeShift.cs" />

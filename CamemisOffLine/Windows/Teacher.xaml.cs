@@ -136,6 +136,20 @@ namespace CamemisOffLine
         ObservableCollection<GradeTimeButton> DataButton = new ObservableCollection<GradeTimeButton>();
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
+
+            string d = DateTime.Now.ToString();
+            var d1 = d.Split();
+            var d2 = Properties.Settings.Default.ExpireDate.Split();
+
+            if (d1[0].Equals(d2[0]))
+            {
+                Properties.Settings.Default.checkLoginOrLogut = "logout";
+                Properties.Settings.Default.Save();
+                Login login = new Login();
+                login.Show();
+                this.Close();
+            }
+
             DPStaffAtt.DisplayDate = DateTime.Now;
             ///.................Part Setting...................
             btnAbout.Visibility = Visibility.Collapsed;
@@ -149,7 +163,7 @@ namespace CamemisOffLine
             var re = await RESTApiHelper.GetAll(Url, "/get-school-setting", token);
             Properties.Settings.Default.schoolSetting = re;
             Properties.Settings.Default.Save();
-
+            
             //-------------User Profile----------------
             try
             {
@@ -4462,7 +4476,27 @@ namespace CamemisOffLine
                         this.Opacity = 1;
                     }
                 }
-                else if (message.result == 1 && item.id == 17)
+                else if (message.result == 1 && item.id == 16)
+                {
+                    if (yearId == "" || resulType == "" || studentMonth == "" || term == "" || studentMonth == "")
+                    {
+                        this.Opacity = 0.5;
+                        MessageBoxControl messageBox = new MessageBoxControl();
+                        messageBox.title = Properties.Langs.Lang.print;
+                        messageBox.discription = Properties.Langs.Lang.Please_select_a_class_and_result_type;
+                        messageBox.buttonType = 1;
+                        messageBox.ShowDialog();
+                        this.Opacity = 1;
+                    }
+                    else
+                    {
+                        this.Opacity = 0.5;
+                        Sumery_of_Students_Short_By_Class summary = new Sumery_of_Students_Short_By_Class(classId, resulType, DateChange.checkMonthString(studentMonth).ToString(), term, studentMonth);
+                        summary.Show();
+                        this.Opacity = 1;
+                    }
+                }
+                else if (message.result == 1 && item.id == 18)
                 {
                     if (classId == "" || month == "" || yearTitle == "" || studentClass == "")
                     {
@@ -4493,7 +4527,7 @@ namespace CamemisOffLine
                     }
                 }
 
-                else if (message.result == 1 && item.id == 26)
+                else if (message.result == 1 && item.id == 27)
                 {
                     if (cmbAcademicYearStatistic12Print.Text=="" || cmbAcademicYearStatistic12Print.Text == Properties.Langs.Lang.Select_school_year)
                     {
@@ -4513,7 +4547,7 @@ namespace CamemisOffLine
                         this.Opacity = 1;
                     }
                 }
-                else if (message.result == 1 && item.id == 27)
+                else if (message.result == 1 && item.id == 28)
                 {
                     if (cmbAcademicYearStatistic12Print.Text == "" || cmbAcademicYearStatistic12Print.Text == Properties.Langs.Lang.Select_school_year)
                     {
@@ -4533,7 +4567,7 @@ namespace CamemisOffLine
                         this.Opacity = 1;
                     }
                 }
-                else if (message.result == 1 && item.id == 28)
+                else if (message.result == 1 && item.id == 29)
                 {
                     if (cmbAcademicYearStatisticbyClassPrint.Text=="" || cmbAcademicYearStatisticbyClassPrint.Text==Properties.Langs.Lang.Select_school_year
                         || cmbGradeStatisticbyClassPrint.Text=="" || cmbGradeStatisticbyClassPrint.Text ==Properties.Langs.Lang.select_grade || 
@@ -4556,7 +4590,7 @@ namespace CamemisOffLine
                     }
                 }
 
-                else if (message.result == 1 && item.id == 29)
+                else if (message.result == 1 && item.id == 30)
                 {
                     if (cmbAcademicYearStatisticbyClassPrint.Text == "" || cmbAcademicYearStatisticbyClassPrint.Text == Properties.Langs.Lang.Select_school_year)
                     {

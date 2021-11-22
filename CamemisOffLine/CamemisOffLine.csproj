@@ -258,6 +258,12 @@
     <Compile Include="Report\student_card.xaml.cs">
       <DependentUpon>student_card.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Report\Summary_of_Students_By_Class.xaml.cs">
+      <DependentUpon>Summary_of_Students_By_Class.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Summery_of _Students_Short_By_Class.xaml.cs">
+      <DependentUpon>Summery_of _Students_Short_By_Class.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Report\Summery_of _Students_Short.xaml.cs">
       <DependentUpon>Summery_of _Students_Short.xaml</DependentUpon>
     </Compile>
@@ -450,6 +456,14 @@
     <Page Include="Report\student_card.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Report\Summary_of_Students_By_Class.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Report\Summery_of _Students_Short_By_Class.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Report\Summery_of _Students_Short.xaml">
       <SubType>Designer</SubType>

@@ -14,6 +14,7 @@ namespace Library
     public class SummarySubjectGrading
     {
         public string level { get; set; }
+        public string name { get; set; }
         public string schoolyear { get; set; }
         public string schooltype { get; set; }
         public string international_edu { get; set; }
