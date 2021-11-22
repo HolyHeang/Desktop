@@ -192,8 +192,11 @@
 
                                                 </TextBlock>
                                             </Grid>
-                                            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent">
-                                                <Image Name="imgProfile1" Source="{Binding localProfileLink}" Stretch="Fill" Height="30" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="90 0 0 0"></Image>
+                                            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="100" Background="Black" Margin="120 0 0 0">
+                                                <Border BorderBrush="Black" BorderThickness="4"/>
+                                                <Image Name="imgProfile1" Source="{Binding localProfileLink}" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                    
+                                                </Image>
                                             </Grid>
                                             <Grid HorizontalAlignment="Right" Width="155" Margin="0 -5 10 0">
                                                 <TextBlock Name="txtAdmin" TextWrapping="WrapWithOverflow" Text="{Binding director}" Padding="0 2 0 0" Margin="0 0 0 0" FontSize="7" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" Foreground="Red" HorizontalAlignment="Right">

@@ -14,23 +14,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-<<<<<<< HEAD
     <dependentAssembly dependencyType="install" codebase="CamemisOffLine.exe.manifest" size="37796">
-      <assemblyIdentity name="CamemisOffLine.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
-=======
-    <dependentAssembly dependencyType="install" codebase="CamemisOffLine.exe.manifest" size="27527">
       <assemblyIdentity name="CamemisOffLine.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
->>>>>>> 98696c9bab2bc090c8b1bc08f307e5e3302eea5a
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-<<<<<<< HEAD
-        <dsig:DigestValue>rTtQgpQxeytVfcvAH6zaWnkLMb8asDu6kqnQdDw3wRU=</dsig:DigestValue>
-=======
-        <dsig:DigestValue>sicaVLnqZXJNkpY0ByJ1n0aWZ3GsgotcyHjCc6xoq/0=</dsig:DigestValue>
->>>>>>> 98696c9bab2bc090c8b1bc08f307e5e3302eea5a
+        <dsig:DigestValue>Q1cdXU/eGJTcQOCjf4eV3hXQyYojsXpS0Ji3s/ydIko=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

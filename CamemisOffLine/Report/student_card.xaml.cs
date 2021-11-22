@@ -153,7 +153,7 @@ namespace CamemisOffLine.Report
                 GC.Collect();
                 if(setting.DIRECTOR_SIGNATURE!="")
                 {
-                    SaveImage("adminSignature", ImageFormat.Png, setting.DIRECTOR_SIGNATURE);
+                    SaveImage("adminSignature", ImageFormat.Jpeg, setting.DIRECTOR_SIGNATURE);
                 }
                 if(obj.Count>8)
                 {
@@ -328,7 +328,7 @@ namespace CamemisOffLine.Report
 
             if (bitmap != null)
             {
-                bitmap.Save(filePath + "\\" + filename + ".png", format);
+                bitmap.Save(filePath + "\\" + filename + ".jpg", format);
             }
 
             stream.Flush();
