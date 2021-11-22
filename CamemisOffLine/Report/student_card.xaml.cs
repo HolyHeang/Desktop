@@ -7,8 +7,10 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -149,6 +151,10 @@ namespace CamemisOffLine.Report
                 PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "ResultTemplate" + ".pdf", FileMode.Create));
                 document.Open();
                 GC.Collect();
+                if(setting.DIRECTOR_SIGNATURE!="")
+                {
+                    SaveImage("adminSignature", ImageFormat.Png, setting.DIRECTOR_SIGNATURE);
+                }
                 if(obj.Count>8)
                 {
                     int numberOfData = 8;
@@ -169,6 +175,7 @@ namespace CamemisOffLine.Report
                             item.director = setting.DIRECTOR;
                             item.location = setting.LOCATION;
                             item.logoNameLeft = Properties.Settings.Default.logoNameLeft;
+                            item.localProfileLink = filePath + "\\" + "adminSignature" + ".jpg";
 
                         }
                         showData(copyData);
@@ -190,6 +197,7 @@ namespace CamemisOffLine.Report
                         item.director = setting.DIRECTOR;
                         item.location = setting.LOCATION;
                         item.logoNameLeft = Properties.Settings.Default.logoNameLeft;
+                        item.localProfileLink = filePath + "\\" + "adminSignature" + ".jpg";
                     }
                     showData(copyData);
                     PrintList(document);
@@ -310,6 +318,22 @@ namespace CamemisOffLine.Report
                 document.Add(png);
             }
 
+        }
+        public void SaveImage(string filename, ImageFormat format, string imageUrl)
+        {
+            WebClient client = new WebClient();
+            Stream stream = client.OpenRead(imageUrl);
+            System.Drawing.Bitmap bitmap;
+            bitmap = new System.Drawing.Bitmap(stream);
+
+            if (bitmap != null)
+            {
+                bitmap.Save(filePath + "\\" + filename + ".png", format);
+            }
+
+            stream.Flush();
+            stream.Close();
+            client.Dispose();
         }
     }
 }

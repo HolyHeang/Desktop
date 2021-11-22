@@ -49,5 +49,6 @@ namespace Library
         public string birth_place { get; set; }
         public string director { get; set; }
         public string location { get; set; }
+        public string localProfileLink { get; set; }
     }
 }
