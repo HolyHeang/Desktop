@@ -160,9 +160,14 @@ namespace CamemisOffLine
 
             //....................End.........................
             string Url = Properties.Settings.Default.acessUrl;
-            var re = await RESTApiHelper.GetAll(Url, "/get-school-setting", token);
-            Properties.Settings.Default.schoolSetting = re;
-            Properties.Settings.Default.Save();
+            try
+            {
+                var re = await RESTApiHelper.GetAll(Url, "/get-school-setting", token);
+                Properties.Settings.Default.schoolSetting = re;
+                Properties.Settings.Default.Save();
+            }
+            catch { }
+           
             
             //-------------User Profile----------------
             try
