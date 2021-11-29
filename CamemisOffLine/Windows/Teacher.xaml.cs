@@ -4077,9 +4077,17 @@ namespace CamemisOffLine
             //----------------AccessUrl and Token---------------------------
             string accessUrl = Properties.Settings.Default.acessUrl;
             string token = Properties.Settings.Default.Token, id = "";
-
+ 
             //---------------------------------------------------------------
-            var months = Properties.Settings.Default.monthofTheAcademyYear;
+            string months = Properties.Settings.Default.monthofTheAcademyYear;
+            if(months!="")
+            {
+                var respone = await RESTApiHelper.GetAll(accessUrl, "/academic/" + classId + "/grade-time-shift", token);
+                DataButton = JObject.Parse(respone).ToObject<TimesButton>().data;
+                SaveAcademyMonth(respone, schoolYearId);
+                Properties.Settings.Default.monthofTheAcademyYear = respone;
+                Properties.Settings.Default.Save();
+            }
             List<StudentMonthlyResult> photo = new List<StudentMonthlyResult>();
             Thread t = new Thread(async () => downloadPicture(photo));
             var obj = JObject.Parse(months).ToObject<TimesButton>().data;
@@ -5551,6 +5559,7 @@ namespace CamemisOffLine
                     this.Opacity = 0.5;
                     messageBox.ShowDialog();
                     this.Opacity = 1;
+                    this.IsEnabled = true;
                 }
             }
         }

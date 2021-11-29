@@ -3308,10 +3308,10 @@
                                                     <StackPanel Orientation="Horizontal">
                                                     <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
                                                         <TextBlock Text="{x:Static language:Lang.school_year}" FontSize="14" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 0 0 0" VerticalAlignment="Center"/>
-                                                            <ComboBox Name="cmbAcademicYearResultPrint" Text="{x:Static language:Lang.Select_school_year}" IsEditable="True" Style="{StaticResource combobox}" Height="40" HorizontalAlignment="Left" Width="200" Margin="10 0 0 0"  VerticalAlignment="Center" Padding="5 10 0 0"
+                                                            <ComboBox x:Name="cmbAcademicYearResultPrint" Text="{x:Static language:Lang.Select_school_year}" IsEditable="True" Style="{StaticResource combobox}" Height="40" HorizontalAlignment="Left" Width="200" Margin="10,10,0,10"  VerticalAlignment="Center" Padding="5 10 0 0"
                                                                           BorderThickness="1 2 1 1" BorderBrush="Black" materialDesign:HintAssist.Hint=" ជ្រើសរើស" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang"
                                                                           FontSize="14" SelectionChanged="cmbAcademicYearResultPrint_SelectionChanged"/>
-                                                    </StackPanel>
+                                                        </StackPanel>
                                                     <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
                                                             <TextBlock Text="{x:Static language:Lang.Grade}" FontSize="14" TextWrapping="Wrap" FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Battambang" Margin="10 0 0 0" VerticalAlignment="Center"/>
                                                             <ComboBox Name="cmbGradeResultPrint" Text="{x:Static language:Lang.select_grade}" IsEditable="True" Style="{StaticResource combobox}" Height="40" HorizontalAlignment="Left" Width="200" Margin="10 0 0 0"  VerticalAlignment="Center" Padding="5 10 0 0"
