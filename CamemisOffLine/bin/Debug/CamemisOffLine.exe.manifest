@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="CamemisOffLine.exe" version="1.0.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="CamemisOffLine.exe" version="1.0.0.5" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="Image\CAMEMIS.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>CV19ozyTKSRIRihOr5qrONDl2h7fzvPtjsSDOIVvgAc=</dsig:DigestValue>
+        <dsig:DigestValue>wKtiER7lGA3KDp3KLWx/EL/89mbCEVmH8XqmA9QEzI8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Fyv2k9iPpLK5p+z1i2Hx6gB+Jpg4juehHoqtnE5OegM=</dsig:DigestValue>
+        <dsig:DigestValue>DpCPGcnlEDXVIFfr9DgMDEQJyRJGEsavaYp2GE3wq0c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+MDS1/MxhZEu9bpfHqcqbSJixMqErrhBCsTemf1k5H4=</dsig:DigestValue>
+        <dsig:DigestValue>tKKNJK+4u0uYSozwYu+idkwV4QKeDumiiCHwPXwR5zQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -98,7 +98,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>i04AIjaeUwlqNfM7yVrwTRJZfcCOz6aG3KAoZja6WrI=</dsig:DigestValue>
+        <dsig:DigestValue>v307GnCSWMTno9Fz3UkLaoR/Ae77aAqzoDwoEUTrol4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

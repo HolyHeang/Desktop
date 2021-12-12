@@ -27,18 +27,7 @@
                         </StackPanel>
                     </Grid>
 
-                    <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                        <StackPanel>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 80 0 0">
-                                <Label Content="តារាងកិត្តិយស" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="12" Foreground="Blue"></Label>
-                                <Label Name="lblMonth" Content="--" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="12" Foreground="Blue"></Label>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <Label Content="ថ្នាក់ទី" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="12" Foreground="Blue"></Label>
-                                <Label Name="lblClass" Content="-- (2019-2020)" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="12" Foreground="Blue"></Label>
-                            </StackPanel>
-                        </StackPanel>
-                    </Grid>
+                    
                     
                 </Grid>
                 <Grid Grid.Column="2">
@@ -49,6 +38,18 @@
                         </StackPanel>
                     </Grid>
                 </Grid>
+            </Grid>
+            <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 0">
+                        <Label Content="តារាងកិត្តិយស" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="12" Foreground="Blue"></Label>
+                        <Label Name="lblMonth" Content="--" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="12" Foreground="Blue"></Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Label Content="ថ្នាក់ទី" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="12" Foreground="Blue"></Label>
+                        <Label Name="lblClass" Content="-- (2019-2020)" HorizontalAlignment="Center"  FontFamily="/CamemisOffLine;component/FontStyle/#Khmer OS Muol Light" FontSize="12" Foreground="Blue"></Label>
+                    </StackPanel>
+                </StackPanel>
             </Grid>
             <Grid Margin="0 0 0 0">
                 <Grid.ColumnDefinitions>

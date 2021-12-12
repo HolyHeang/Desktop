@@ -33,9 +33,9 @@
     <ProductName>CAMEMIS Desktop</ProductName>
     <PublisherName>CAMIS</PublisherName>
     <SuiteName>Camis</SuiteName>
-    <MinimumRequiredVersion>1.0.0.3</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.4</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
