@@ -99,16 +99,16 @@ namespace CamemisOffLine.Report
                         number++;
                     }
 
-                    int startIndex = 0, endIndex = 25;
+                    int startIndex = 0, endIndex = 22;
                     Document document = new Document(PageSize.A4, 0, 0, 0, 0);
                     PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "ResultTemplate" + ".pdf", FileMode.Create));
                     document.Open();
                     GC.Collect();
 
                     List<StuedntofTheYear> copyResult = new List<StuedntofTheYear>();
-                    if (obj.Count <= 25)
+                    if (obj.Count <= 22)
                     {
-                        if (obj.Count <= 18)
+                        if (obj.Count <= 20)
                         {
                             Grid.Dispatcher.Invoke(() =>
                             {
@@ -135,12 +135,8 @@ namespace CamemisOffLine.Report
                                 {
                                     Footer.Visibility = Visibility.Visible;
                                     Header.Visibility = Visibility.Collapsed;
-
-                                    Grid.Dispatcher.Invoke(() =>
-                                    {
-                                        showData(obj);
-                                        Grid.UpdateLayout();
-                                    });
+                                    title.Visibility = Visibility.Collapsed;
+                                    Body.Visibility = Visibility.Collapsed;
                                     PrintList(document);
                                 }
                             }
@@ -184,9 +180,9 @@ namespace CamemisOffLine.Report
 
                             startIndex = endIndex;
 
-                            if (obj.Count() - endIndex > 30)
+                            if (obj.Count() - endIndex > 29)
                             {
-                                endIndex = startIndex + 32;
+                                endIndex = startIndex + 29;
                                 if (endIndex > obj.Count)
                                     endIndex = obj.Count();
                                 Header.Visibility = Visibility.Collapsed;
@@ -198,7 +194,7 @@ namespace CamemisOffLine.Report
                                 endIndex = obj.ToList().Count();
                                 Header.Visibility = Visibility.Collapsed;
                                 title.Visibility = Visibility.Collapsed;
-                                if (obj.ToList().Count() - startIndex <= 25)
+                                if (obj.ToList().Count() - startIndex <= 20)
                                 {
                                     Footer.Visibility = Visibility.Visible;
                                     footerAvaliable = true;

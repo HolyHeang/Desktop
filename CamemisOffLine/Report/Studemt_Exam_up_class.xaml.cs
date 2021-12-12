@@ -98,20 +98,20 @@ namespace CamemisOffLine.Report
                         number++;
                     }
 
-                    int startIndex = 0, endIndex = 25;
+                    int startIndex = 0, endIndex = 22;
                     Document document = new Document(PageSize.A4, 0, 0, 0, 0);
                     PdfWriter.GetInstance(document, new FileStream(filePath + "\\" + "ResultTemplate" + ".pdf", FileMode.Create));
                     document.Open();
                     GC.Collect();
 
                     List<StuedntofTheYear> copyResult = new List<StuedntofTheYear>();
-                    if (obj.Count <= 25)
+                    if (obj.Count <= 22)
                     {
-                        if (obj.Count <= 18)
+                        if (obj.Count <= 16)
                         {
                             Grid.Dispatcher.Invoke(() =>
                             {
-                                showData(obj);
+                                showData(obj,obj.Count);
                                 Grid.UpdateLayout();
                             });
                             PrintList(document);
@@ -125,7 +125,7 @@ namespace CamemisOffLine.Report
                                     Footer.Visibility = Visibility.Collapsed;
                                     Grid.Dispatcher.Invoke(() =>
                                     {
-                                        showData(obj);
+                                        showData(obj,obj.Count);
                                         Grid.UpdateLayout();
                                     });
                                     PrintList(document);
@@ -137,7 +137,7 @@ namespace CamemisOffLine.Report
 
                                     Grid.Dispatcher.Invoke(() =>
                                     {
-                                        showData(obj);
+                                        showData(obj,obj.Count);
                                         Grid.UpdateLayout();
                                     });
                                     PrintList(document);
@@ -163,7 +163,7 @@ namespace CamemisOffLine.Report
 
                             Grid.Dispatcher.Invoke(() =>
                             {
-                                showData(copyResult);
+                                showData(copyResult,obj.Count);
                                 Grid.UpdateLayout();
                             });
                             PrintList(document);
@@ -183,9 +183,9 @@ namespace CamemisOffLine.Report
 
                             startIndex = endIndex;
 
-                            if (obj.Count() - endIndex > 30)
+                            if (obj.Count() - endIndex > 29)
                             {
-                                endIndex = startIndex + 32;
+                                endIndex = startIndex + 29;
                                 if (endIndex > obj.Count)
                                     endIndex = obj.Count();
                                 Header.Visibility = Visibility.Collapsed;
@@ -197,7 +197,7 @@ namespace CamemisOffLine.Report
                                 endIndex = obj.ToList().Count();
                                 Header.Visibility = Visibility.Collapsed;
                                 title.Visibility = Visibility.Collapsed;
-                                if (obj.ToList().Count() - startIndex <= 25)
+                                if (obj.ToList().Count() - startIndex <= 20)
                                 {
                                     Footer.Visibility = Visibility.Visible;
                                     footerAvaliable = true;
@@ -249,10 +249,10 @@ namespace CamemisOffLine.Report
                 return null;
             }
         }
-        private void showData(List<StuedntofTheYear> obj)
+        private void showData(List<StuedntofTheYear> obj,int total)
         {
             Data.ItemsSource = null;
-            txtTotalStudent.Text = "បញ្ឈប់បញ្ជីត្រឹមចំនួន " + DateChange.Num(obj.Count) + "នាក់ ស្រី " + DateChange.Num(gril) + "នាក់";
+            txtTotalStudent.Text = "បញ្ឈប់បញ្ជីត្រឹមចំនួន " + DateChange.Num(total) + "នាក់ ស្រី " + DateChange.Num(gril) + "នាក់";
             Data.ItemsSource = obj;
         }
         void PrintList(Document document)

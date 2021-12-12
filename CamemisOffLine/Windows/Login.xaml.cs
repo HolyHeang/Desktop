@@ -175,7 +175,7 @@ namespace CamemisOffLine
                         {
                             client.DefaultRequestHeaders.Accept.Add(
                            new MediaTypeWithQualityHeaderValue("application/json"));
-                            using (HttpResponseMessage res = client.PostAsJsonAsync("https://mobile-campus.camemis-learn.com", new PersonalLogin { action_key = "EnOLNTB1Q", schoolUrl = txtCode.Text,username=txtUser.Text,password=txtPass.Password }).Result)
+                            using (HttpResponseMessage res = client.PostAsJsonAsync("https://api-camemis-mobile.camis-info.com", new PersonalLogin { action_key = "EnOLNTB1Q", schoolUrl = txtCode.Text,username=txtUser.Text,password=txtPass.Password }).Result)
                             {
                                 using (HttpContent content = res.Content)
                                 {
@@ -311,7 +311,7 @@ namespace CamemisOffLine
                 {
                     client.DefaultRequestHeaders.Accept.Add(
                    new MediaTypeWithQualityHeaderValue("application/json"));
-                    using (HttpResponseMessage res = client.PostAsJsonAsync("https://mobile-campus.camemis-learn.com",new Schools {action_key= "Pu0QUvj82x",url=txtCode.Text }).Result)
+                    using (HttpResponseMessage res = client.PostAsJsonAsync("https://api-camemis-mobile.camis-info.com", new Schools {action_key= "Pu0QUvj82x",url=txtCode.Text }).Result)
                     {
                         using (HttpContent content = res.Content)
                         {

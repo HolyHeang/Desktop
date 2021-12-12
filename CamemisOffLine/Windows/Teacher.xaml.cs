@@ -5551,6 +5551,7 @@ namespace CamemisOffLine
                     this.Opacity = 0.5;
                     messageBox.ShowDialog();
                     this.Opacity = 1;
+
                 }
             }
         }
