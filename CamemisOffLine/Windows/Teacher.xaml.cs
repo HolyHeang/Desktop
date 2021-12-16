@@ -677,26 +677,30 @@ namespace CamemisOffLine
                         i++;
                     }
                     i = 1;
-                    foreach (var item in listAttStaff.data)
+                    try
                     {
-                        requestIdPermission = item.id;
-                        staffName.Add(item.name);
-                        item.number = i.ToString();
-                        if (item.gender == "1")
-                            item.gender = "ប្រុស";
-                        else
-                            item.gender = "ស្រី";
-                        if (!item.daily_present.morning.in_time.Equals(""))
-                            item.mIn = "Red";
-                        if (!item.daily_present.morning.out_time.Equals(""))
-                            item.mOut = "Red";
-                        if (!item.daily_present.afternoon.out_time.Equals(""))
-                            item.aOut = "Red";
-                        if (!item.daily_present.afternoon.in_time.Equals(""))
-                            item.aIn = "Red";
+                        foreach (var item in listAttStaff.data)
+                        {
+                            requestIdPermission = item.id;
+                            staffName.Add(item.name);
+                            item.number = i.ToString();
+                            if (item.gender == "1")
+                                item.gender = "ប្រុស";
+                            else
+                                item.gender = "ស្រី";
+                            if (!item.daily_present.morning.in_time.Equals(""))
+                                item.mIn = "Red";
+                            if (!item.daily_present.morning.out_time.Equals(""))
+                                item.mOut = "Red";
+                            if (!item.daily_present.afternoon.out_time.Equals(""))
+                                item.aOut = "Red";
+                            if (!item.daily_present.afternoon.in_time.Equals(""))
+                                item.aIn = "Red";
 
-                        i++;
+                            i++;
+                        }
                     }
+                    catch { }
                     DGStaffAtt.ItemsSource = obj;
                     DGStaffAtt1.ItemsSource = listAttStaff.data;
                     staffs = obj1;
@@ -4088,8 +4092,8 @@ namespace CamemisOffLine
             loading.Show();
             if(internet&&InternetChecker())
             {
-                await Task.Run(async () =>
-                {
+                //await Task.Run(async () =>
+                //{
                     foreach (var item in obj)
                     {
                         foreach (var month in item.months)
@@ -4161,7 +4165,7 @@ namespace CamemisOffLine
                         else
                             id = i.profileMedia.id;
                     }
-                });
+                //});
             }
             else
             {
